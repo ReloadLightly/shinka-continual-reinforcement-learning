@@ -1,0 +1,1079 @@
+{
+  "schema_version": 1,
+  "kind": "paired_static_finalist_validation",
+  "plot_script": "scripts/plot_validation.py",
+  "plot_script_sha256": "86b29874c309be354114812fd54180d3544828ecd42a76a93b433afc7db7a95c",
+  "input_report": "validation-static-20261002",
+  "input_sha256": {
+    "summary.json": "65fd015d023103cd2d0aa2c76466ed73d49d8028687b16a086c17e0216fe81c6",
+    "checksums.json": "5ab6f732e9e3d4cb6ba189b7088ab1d055075ed63db29ece76f5238ec0c78051",
+    "raw/plan.json": "5964abf5b8cfb513a9ac252a75c25501944f868a6c65ce89c880224eaf72f061",
+    "raw/finalists/manifest.json": "4dcbc024b1f65ea0ddd1194417b6f9a3dbfec0e83e3815e252000e41b84ae7d2",
+    "raw/finalists/programs/c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183.py": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "raw/trials/candidate_001/seed_2001/training/attempt_001/manifest.json": "67e13ddaaffb73a10906fcfe152837c696095e75e4a60ff15cc2ecb60d639fea",
+    "raw/trials/candidate_001/seed_2001/training/attempt_001/training_metrics.json": "65e7ae46879329fe5c97064128ca5ff22b70e82ef80c0d97e3f54be25af852c5",
+    "raw/trials/candidate_001/seed_2001/analysis/attempt_001/evaluation.json": "2bff441492c7c84a7f0cd1e9672573eec7fa0e0a5a9d6a689ce1599984599528",
+    "raw/trials/candidate_001/seed_2002/training/attempt_001/manifest.json": "ae60ca6dc28907ed5643410a026a5f84132c4dd63166f609ac07862397b8c705",
+    "raw/trials/candidate_001/seed_2002/training/attempt_001/training_metrics.json": "719980521998931d257f59c8b6abc8058c23f7091580b58a2760eb8e942f9580",
+    "raw/trials/candidate_001/seed_2002/analysis/attempt_001/evaluation.json": "7a3e150797b057184c3350fc8222c1ad2955251224a8af9eb8ff2d1542340386",
+    "raw/trials/candidate_001/seed_2003/training/attempt_001/manifest.json": "9753b0e8eed84886d2f66660a4689fed1cc813fb7ed4a0773944e1c753cb5665",
+    "raw/trials/candidate_001/seed_2003/training/attempt_001/training_metrics.json": "1ebfc912277f6dd98e7b89fa226ce9d0144631d4ac182ed9bbf54746c8d0a5f6",
+    "raw/trials/candidate_001/seed_2003/analysis/attempt_001/evaluation.json": "b674dad001da76373b98222e3a156a253cec41410b80235ec58676de8149ef50",
+    "raw/trials/candidate_001/seed_2004/training/attempt_001/manifest.json": "85e8df6991fdf9f1c81ad291321b6d1cfa1770cce85837b26c1bea432965eb4f",
+    "raw/trials/candidate_001/seed_2004/training/attempt_001/training_metrics.json": "58722ebb509e0c95346c2cd8e784338990fc5cff440f70617589f9c848b25e15",
+    "raw/trials/candidate_001/seed_2004/analysis/attempt_001/evaluation.json": "df88dc9ca9a5453a8f036941e8e9d058490804a57ac64ab86e0d8add0c135553",
+    "raw/trials/candidate_001/seed_2005/training/attempt_001/manifest.json": "b56ff21c0dc6469634bdd77b62b7d42ae17d19c0670c18c4d49a0ca8634e7246",
+    "raw/trials/candidate_001/seed_2005/training/attempt_001/training_metrics.json": "65ebfc0e52b3f8d849a3164d04359e8f0da9b0ca1e04ea1deef8f2a99509ba9f",
+    "raw/trials/candidate_001/seed_2005/analysis/attempt_001/evaluation.json": "e375146bdba9a5d7b2438af2ec9d58e8d815d2d4766471dec3d6802114ca5f09",
+    "raw/finalists/programs/c3aa3bf759e623757a67918344c2a706315628264634a70b49eec58e893e9d4e.py": "c3aa3bf759e623757a67918344c2a706315628264634a70b49eec58e893e9d4e",
+    "raw/trials/candidate_002/seed_2001/training/attempt_001/manifest.json": "5047994bd0088af3f9aaf2b6285b9fc471b5ed86cf70362d005dccf296c3f616",
+    "raw/trials/candidate_002/seed_2001/training/attempt_001/training_metrics.json": "25a6896cad97f559e30d5c64131e1541cf21d1b29e7a1cd0c4064a41e5692f00",
+    "raw/trials/candidate_002/seed_2001/analysis/attempt_001/evaluation.json": "c3337cc2db40febddc14c411f371a6af3a77ecf333832ad0c5b993f6e3f39d47",
+    "raw/trials/candidate_002/seed_2002/training/attempt_001/manifest.json": "67629e9b69f9aa2ff42f299f7c65d5cdec9e46709bc8a258b9eac8b9f68b3ebf",
+    "raw/trials/candidate_002/seed_2002/training/attempt_001/training_metrics.json": "1cc41867a054735091e126e5047ad09c570459127b954dd4064c3fc5f8d95a66",
+    "raw/trials/candidate_002/seed_2002/analysis/attempt_001/evaluation.json": "e90f9ef2a8feab47b7abb08e668e1fda892100c68ae40af08a79e17df5568f47",
+    "raw/trials/candidate_002/seed_2003/training/attempt_001/manifest.json": "251243ae3bc9c686349f3e943faa60d270b79689b85aebbb54d4c8000c5319b1",
+    "raw/trials/candidate_002/seed_2003/training/attempt_001/training_metrics.json": "b42f855d802256bdebdbf2519423b202bce0079577804092a644edd9da59d8b7",
+    "raw/trials/candidate_002/seed_2003/analysis/attempt_001/evaluation.json": "7d6c2bacd30df02e4a1e5c6b8435f361faf6d3bf3ac3b1da7ec4b9e467d27281",
+    "raw/trials/candidate_002/seed_2004/training/attempt_001/manifest.json": "076c7f5e06a8213e621659a1e0e67c7a2d5b9a53373ae216d855b3266b174fe5",
+    "raw/trials/candidate_002/seed_2004/training/attempt_001/training_metrics.json": "900d9abc63f5599ffdae4dd26ede6ed1d7bbbf08d38e1bb5455333d0803d428b",
+    "raw/trials/candidate_002/seed_2004/analysis/attempt_001/evaluation.json": "3eead07458f54edd66a09dfb48c02d6b534584d77a787223ba365f376d04477c",
+    "raw/trials/candidate_002/seed_2005/training/attempt_001/manifest.json": "bdf505a9e10ade99917a71e16d6505b5311e40121a2e405e8ef8155c72215be8",
+    "raw/trials/candidate_002/seed_2005/training/attempt_001/training_metrics.json": "052ad58418e4b2bf5b627f68398bf8a9fd418224c33eb4a7c72c3f133f2b5e57",
+    "raw/trials/candidate_002/seed_2005/analysis/attempt_001/evaluation.json": "7f9422a61ee2bf5843ad124e62bb8c019448f5111c371a2f1b06ef99aa9ad86c",
+    "raw/finalists/programs/ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501.py": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+    "raw/trials/candidate_003/seed_2001/training/attempt_001/manifest.json": "73500b9c21151e4f6c2e9f22566d0576cb0c02329aa65115a13524c67ea67116",
+    "raw/trials/candidate_003/seed_2001/training/attempt_001/training_metrics.json": "ec9c797d2b1a25fed233c73567fd4721ccf3a6f46a9c77183aea38d7b40c9135",
+    "raw/trials/candidate_003/seed_2001/analysis/attempt_001/evaluation.json": "30b6d2380876233687a32152e4d7d29f8fe4aa44ceac858f66d5f39e98a3c668",
+    "raw/trials/candidate_003/seed_2002/training/attempt_001/manifest.json": "33e0a3c17a6f54cb608932ddd1c8ea568fc5ca65bd52b15e776514db7d03260f",
+    "raw/trials/candidate_003/seed_2002/training/attempt_001/training_metrics.json": "913a5cd7b910de284e665d2851d15c072f54897dd8a12e9080fcf15bcc3cb279",
+    "raw/trials/candidate_003/seed_2002/analysis/attempt_001/evaluation.json": "3da513420953f417cd320a5147d3b7a543c3de93a7913c6bfd03e4858aa3489f",
+    "raw/trials/candidate_003/seed_2003/training/attempt_001/manifest.json": "47c2633b6c456465b4d59fbfcbaf9c1d8094c7c61115357fad375fed85bf8f8c",
+    "raw/trials/candidate_003/seed_2003/training/attempt_001/training_metrics.json": "ff083f07d5b73bc59e4a50daccf5ef3f1e28abcbed891683349c7c73ee0fa2ff",
+    "raw/trials/candidate_003/seed_2003/analysis/attempt_001/evaluation.json": "3ebad9f87a800bc36c313926659935776f4f1d7ea59583384bef03927ca1f1b1",
+    "raw/trials/candidate_003/seed_2004/training/attempt_001/manifest.json": "a7e2c04dff9ed2f80a891e92744af141d4cf0bf3b1079ffb5dc31243d3c353bb",
+    "raw/trials/candidate_003/seed_2004/training/attempt_001/training_metrics.json": "3d8492e243128f372dfe56fa7a7f973bb3558b51705a190b0c61b56dec1b982f",
+    "raw/trials/candidate_003/seed_2004/analysis/attempt_001/evaluation.json": "778350b5ff252a85edc5b2226783a8a949a020f85808716b40cb756888ce50cd",
+    "raw/trials/candidate_003/seed_2005/training/attempt_001/manifest.json": "31caf0abf3e9034febd7d358c913e41a0b673f23c9affaecace9fda23a82fe49",
+    "raw/trials/candidate_003/seed_2005/training/attempt_001/training_metrics.json": "d8bf9fdcbc578e9eb667800c4226c8d5491e7ae0ba2733f9d39f1bf8c4de8530",
+    "raw/trials/candidate_003/seed_2005/analysis/attempt_001/evaluation.json": "b86495d84ef5d17bbb3167439b27030d9c523c553cb6c3fb864ba8af279f0e62",
+    "raw/finalists/programs/ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e.py": "ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e",
+    "raw/trials/candidate_004/seed_2001/training/attempt_001/manifest.json": "072f1d065e0408d023b3f948676a4d0a0cc2169f4f53206e8905f90c517eace2",
+    "raw/trials/candidate_004/seed_2001/training/attempt_001/training_metrics.json": "1723be2e7e750596d1e835fa4fe15f8032c862b2b350180c6898e7707fe62910",
+    "raw/trials/candidate_004/seed_2001/analysis/attempt_001/evaluation.json": "84167f4b93215029b061bc5616484b864f91959465b6a9012a050dba6d6a4592",
+    "raw/trials/candidate_004/seed_2002/training/attempt_001/manifest.json": "61cd4e2b5349f94ff6fabc9480e65bdb08f2dcec682a3ca31a8593f1a80287f0",
+    "raw/trials/candidate_004/seed_2002/training/attempt_001/training_metrics.json": "3c2a61bdb67e3211a9ae8713a655393e3750a0a263766900b45af5f4621b0680",
+    "raw/trials/candidate_004/seed_2002/analysis/attempt_001/evaluation.json": "c3daae92bff258b56adb5ee5e92e2383319c39368d8d42db83dce812d5adbed0",
+    "raw/trials/candidate_004/seed_2003/training/attempt_001/manifest.json": "11bfa1363d98268d205829a76b4aaa0774cc3261d4d0d30b8a0a93df5965852a",
+    "raw/trials/candidate_004/seed_2003/training/attempt_001/training_metrics.json": "9dd3783a1033541fefba313d2f650e6e5a4888aae3fee46c376efa816204aa5c",
+    "raw/trials/candidate_004/seed_2003/analysis/attempt_001/evaluation.json": "75a36d694c1af56810ecc413bb0b9d97a78ba6ad56c9ad53dc4a9ddeaceb5bf7",
+    "raw/trials/candidate_004/seed_2004/training/attempt_001/manifest.json": "9baf9fbf6ee92b5befcce1a0fdec18e9715e603cca27f74a81e1943778331f57",
+    "raw/trials/candidate_004/seed_2004/training/attempt_001/training_metrics.json": "78432ae1a4ccfeec3627297903f654e4b11a5ed7bec84e88372acdc16eccaddf",
+    "raw/trials/candidate_004/seed_2004/analysis/attempt_001/evaluation.json": "ae82cc116d056d02225add11745dc45be1135484d6d3114a25dc03df9af4224a",
+    "raw/trials/candidate_004/seed_2005/training/attempt_001/manifest.json": "ee1068634e05b7433927a1090d35b41eed66ea847bcdbedf42404c06cafa8f8d",
+    "raw/trials/candidate_004/seed_2005/training/attempt_001/training_metrics.json": "3c65ccfc19cc7757203c410ad19f78cb34128f0842b0f119219239242c84b444",
+    "raw/trials/candidate_004/seed_2005/analysis/attempt_001/evaluation.json": "7e2ca614647732be3ec877f432d0a8b2553bed754421ddfdd8e3295f22719aef",
+    "raw/finalists/programs/cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9.py": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+    "raw/trials/candidate_005/seed_2001/training/attempt_001/manifest.json": "d192d061dc435b6f4f44204f2501892401b295d2c781ef5817b2990026d3b596",
+    "raw/trials/candidate_005/seed_2001/training/attempt_001/training_metrics.json": "2db0cd48a6a68668e3746bec4aa80f290dbba50b173246ac221b6a7a8d6149bd",
+    "raw/trials/candidate_005/seed_2001/analysis/attempt_001/evaluation.json": "2ae53a968e5c1d6c1e8390a5fa00c88d1c924aab0f038c5165ec5cf169b5aa27",
+    "raw/trials/candidate_005/seed_2002/training/attempt_001/manifest.json": "911ba96817a7bfd5a20a31fa380d8c5d9ac0d1d024dff41227c92ef163c502b5",
+    "raw/trials/candidate_005/seed_2002/training/attempt_001/training_metrics.json": "70ebc0e4b58541ef13ea0001186d30c99184ab67a3c3f39cc886b7d05d4b8821",
+    "raw/trials/candidate_005/seed_2002/analysis/attempt_001/evaluation.json": "cba693f09233cbdd6120424ed4679f523de4100d2faf98ac8dbba75316a033c1",
+    "raw/trials/candidate_005/seed_2003/training/attempt_001/manifest.json": "56622959df52fe00d0824142d4194470d7dae30551988ea1c0b9b7800afbc6df",
+    "raw/trials/candidate_005/seed_2003/training/attempt_001/training_metrics.json": "d908c13f048be32490275c38866f08d930d101d55cf30a5435100b045df63aba",
+    "raw/trials/candidate_005/seed_2003/analysis/attempt_001/evaluation.json": "cb811fba6d1588eef3359b2316166279d4f53f82cd78836a01e0d29848623959",
+    "raw/trials/candidate_005/seed_2004/training/attempt_001/manifest.json": "b69c96912e3950887f8e23c89869c05d5f82c5e6c2c9781234be809caad2dbc0",
+    "raw/trials/candidate_005/seed_2004/training/attempt_001/training_metrics.json": "d8ff5f690d337c0de1da632c4c1fdf7e6690ea80d43f2b1326b65c4333ab4915",
+    "raw/trials/candidate_005/seed_2004/analysis/attempt_001/evaluation.json": "36b7965183eb30d97a33df817aee2a11a06b028a8c0870c16964ac3a9d81d27e",
+    "raw/trials/candidate_005/seed_2005/training/attempt_001/manifest.json": "e84a01178a8a03208a7d9bc035b934b97f8790a28be20b62617d624a3a8f2aff",
+    "raw/trials/candidate_005/seed_2005/training/attempt_001/training_metrics.json": "fb79e643d33d1d323e5329021bd1835a79753baf18e2f7b441433f645f540bc4",
+    "raw/trials/candidate_005/seed_2005/analysis/attempt_001/evaluation.json": "214a9051ec3f4573e8242d64a940ac64d523668f0a8e2c879628a1cb6e302be9"
+  },
+  "matplotlib_version": "3.11.1",
+  "profile": {
+    "name": "cartpole-validation",
+    "purpose": "One reserved static-finalist comparison after development search closes",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 10,
+    "seeds": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005
+    ],
+    "ne": {
+      "num_generations": 320,
+      "task_interval": 80,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "seeds": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005
+  ],
+  "candidates": [
+    {
+      "candidate_id": "candidate_001",
+      "label": "Default",
+      "color": "#65717D",
+      "memberships": [
+        {
+          "arm": "default",
+          "development_rank": null,
+          "index": 0,
+          "combined_score": 0.5654111158291499,
+          "report_program_path": "shinka/gen_0/main.py",
+          "program_path": "programs/c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183.py",
+          "program_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+          "settings": {
+            "sigma": 0.5,
+            "elite_ratio": 0.5
+          }
+        }
+      ],
+      "settings": {
+        "sigma": 0.5,
+        "elite_ratio": 0.5
+      },
+      "program_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+      "trials": [
+        {
+          "seed": 2001,
+          "trial": 2002,
+          "active_score": 0.8933481258690357,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 452.8,
+              "forgetting": 47.19999999999999
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 196.6,
+              "forgetting": 303.4
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            }
+          ],
+          "mean_forgetting": 116.86666666666666
+        },
+        {
+          "seed": 2002,
+          "trial": 2003,
+          "active_score": 0.8633843754887581,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 12.0,
+              "forgetting": 488.0
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 15.6,
+              "forgetting": 484.4
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 15.1,
+              "forgetting": 484.9
+            }
+          ],
+          "mean_forgetting": 485.76666666666665
+        },
+        {
+          "seed": 2003,
+          "trial": 2004,
+          "active_score": 0.822469376552105,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 10.5,
+              "forgetting": 489.5
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 81.3,
+              "after": 10.2,
+              "forgetting": 71.1
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 14.6,
+              "forgetting": 485.4
+            }
+          ],
+          "mean_forgetting": 348.6666666666667
+        },
+        {
+          "seed": 2004,
+          "trial": 2005,
+          "active_score": 0.8354525002241134,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 64.9,
+              "forgetting": 435.1
+            }
+          ],
+          "mean_forgetting": 145.03333333333333
+        },
+        {
+          "seed": 2005,
+          "trial": 2006,
+          "active_score": 0.44544062827229497,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 10.6,
+              "forgetting": 489.4
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 434.6,
+              "after": 9.9,
+              "forgetting": 424.70000000000005
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 12.7,
+              "forgetting": 487.3
+            }
+          ],
+          "mean_forgetting": 467.1333333333334
+        }
+      ],
+      "mean_active_score": 0.7720190012812614,
+      "sample_sd_active_score": 0.18458796747594147
+    },
+    {
+      "candidate_id": "candidate_002",
+      "label": "Shinka 12",
+      "color": "#2263A5",
+      "memberships": [
+        {
+          "arm": "shinka",
+          "development_rank": 1,
+          "index": 12,
+          "combined_score": 0.8720944463888805,
+          "report_program_path": "shinka/gen_12/main.py",
+          "program_path": "programs/c3aa3bf759e623757a67918344c2a706315628264634a70b49eec58e893e9d4e.py",
+          "program_sha256": "c3aa3bf759e623757a67918344c2a706315628264634a70b49eec58e893e9d4e",
+          "settings": {
+            "sigma": 0.08,
+            "elite_ratio": 0.075
+          }
+        }
+      ],
+      "settings": {
+        "sigma": 0.08,
+        "elite_ratio": 0.075
+      },
+      "program_sha256": "c3aa3bf759e623757a67918344c2a706315628264634a70b49eec58e893e9d4e",
+      "trials": [
+        {
+          "seed": 2001,
+          "trial": 2002,
+          "active_score": 0.9598887506663799,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 12.6,
+              "forgetting": 487.4
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 222.4,
+              "forgetting": 277.6
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            }
+          ],
+          "mean_forgetting": 255.0
+        },
+        {
+          "seed": 2002,
+          "trial": 2003,
+          "active_score": 0.9418662507116794,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 75.5,
+              "forgetting": 424.5
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 13.9,
+              "forgetting": 486.1
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 44.8,
+              "forgetting": 455.2
+            }
+          ],
+          "mean_forgetting": 455.26666666666665
+        },
+        {
+          "seed": 2003,
+          "trial": 2004,
+          "active_score": 0.9093368760585785,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 78.3,
+              "forgetting": 421.7
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 9.7,
+              "forgetting": 490.3
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 30.7,
+              "forgetting": 469.3
+            }
+          ],
+          "mean_forgetting": 460.43333333333334
+        },
+        {
+          "seed": 2004,
+          "trial": 2005,
+          "active_score": 0.962725000923872,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 103.7,
+              "forgetting": 396.3
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            }
+          ],
+          "mean_forgetting": 132.1
+        },
+        {
+          "seed": 2005,
+          "trial": 2006,
+          "active_score": 0.6730325037062168,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 29.2,
+              "forgetting": 470.8
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 243.0,
+              "after": 9.9,
+              "forgetting": 233.1
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.4,
+              "forgetting": 490.6
+            }
+          ],
+          "mean_forgetting": 398.1666666666667
+        }
+      ],
+      "mean_active_score": 0.8893698764133453,
+      "sample_sd_active_score": 0.12279077239047398
+    },
+    {
+      "candidate_id": "candidate_003",
+      "label": "Shinka 11",
+      "color": "#2263A5",
+      "memberships": [
+        {
+          "arm": "shinka",
+          "development_rank": 2,
+          "index": 11,
+          "combined_score": 0.858391668899854,
+          "report_program_path": "shinka/gen_11/main.py",
+          "program_path": "programs/ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501.py",
+          "program_sha256": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+          "settings": {
+            "sigma": 0.065,
+            "elite_ratio": 0.075
+          }
+        }
+      ],
+      "settings": {
+        "sigma": 0.065,
+        "elite_ratio": 0.075
+      },
+      "program_sha256": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+      "trials": [
+        {
+          "seed": 2001,
+          "trial": 2002,
+          "active_score": 0.9501043754041195,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 316.6,
+              "forgetting": 183.39999999999998
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 9.5,
+              "forgetting": 490.5
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            }
+          ],
+          "mean_forgetting": 224.63333333333333
+        },
+        {
+          "seed": 2002,
+          "trial": 2003,
+          "active_score": 0.932279375743866,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 17.5,
+              "forgetting": 482.5
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 9.5,
+              "forgetting": 490.5
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.4,
+              "forgetting": 490.6
+            }
+          ],
+          "mean_forgetting": 487.8666666666666
+        },
+        {
+          "seed": 2003,
+          "trial": 2004,
+          "active_score": 0.9272537513494492,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.8,
+              "forgetting": 490.2
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 159.2,
+              "forgetting": 340.8
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.7,
+              "forgetting": 490.3
+            }
+          ],
+          "mean_forgetting": 440.43333333333334
+        },
+        {
+          "seed": 2004,
+          "trial": 2005,
+          "active_score": 0.9644193754673004,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 43.8,
+              "forgetting": 456.2
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            }
+          ],
+          "mean_forgetting": 152.06666666666666
+        },
+        {
+          "seed": 2005,
+          "trial": 2006,
+          "active_score": 0.8601650035917758,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 14.3,
+              "forgetting": 485.7
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 419.9,
+              "after": 9.9,
+              "forgetting": 410.0
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.4,
+              "forgetting": 490.6
+            }
+          ],
+          "mean_forgetting": 462.1000000000001
+        }
+      ],
+      "mean_active_score": 0.9268443763113022,
+      "sample_sd_active_score": 0.04008975452779198
+    },
+    {
+      "candidate_id": "candidate_004",
+      "label": "Random 7",
+      "color": "#C65F31",
+      "memberships": [
+        {
+          "arm": "random",
+          "development_rank": 1,
+          "index": 7,
+          "combined_score": 0.8857000019709269,
+          "report_program_path": "random_programs/candidate_007.py",
+          "program_path": "programs/ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e.py",
+          "program_sha256": "ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e",
+          "settings": {
+            "sigma": 0.3301865812992913,
+            "elite_ratio": 0.06220834172412074
+          }
+        }
+      ],
+      "settings": {
+        "sigma": 0.3301865812992913,
+        "elite_ratio": 0.06220834172412074
+      },
+      "program_sha256": "ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e",
+      "trials": [
+        {
+          "seed": 2001,
+          "trial": 2002,
+          "active_score": 0.9687425003588199,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 13.1,
+              "forgetting": 486.9
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 42.6,
+              "forgetting": 457.4
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            }
+          ],
+          "mean_forgetting": 314.76666666666665
+        },
+        {
+          "seed": 2002,
+          "trial": 2003,
+          "active_score": 0.9608312507808209,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.8,
+              "forgetting": 490.2
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 15.2,
+              "forgetting": 484.8
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 288.4,
+              "forgetting": 211.60000000000002
+            }
+          ],
+          "mean_forgetting": 395.5333333333333
+        },
+        {
+          "seed": 2003,
+          "trial": 2004,
+          "active_score": 0.9632793754756451,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.3,
+              "forgetting": 490.7
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 10.1,
+              "forgetting": 489.9
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 23.5,
+              "forgetting": 476.5
+            }
+          ],
+          "mean_forgetting": 485.7
+        },
+        {
+          "seed": 2004,
+          "trial": 2005,
+          "active_score": 0.9498393756091594,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 385.5,
+              "forgetting": 114.5
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 420.9,
+              "forgetting": 79.10000000000002
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 114.7,
+              "forgetting": 385.3
+            }
+          ],
+          "mean_forgetting": 192.9666666666667
+        },
+        {
+          "seed": 2005,
+          "trial": 2006,
+          "active_score": 0.532939378541708,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.3,
+              "forgetting": 490.7
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 133.6,
+              "after": 9.9,
+              "forgetting": 123.69999999999999
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 177.5,
+              "forgetting": 322.5
+            }
+          ],
+          "mean_forgetting": 312.3
+        }
+      ],
+      "mean_active_score": 0.8751263761532306,
+      "sample_sd_active_score": 0.19141200926132787
+    },
+    {
+      "candidate_id": "candidate_005",
+      "label": "Random 24",
+      "color": "#C65F31",
+      "memberships": [
+        {
+          "arm": "random",
+          "development_rank": 2,
+          "index": 24,
+          "combined_score": 0.8506138914108277,
+          "report_program_path": "random_programs/candidate_024.py",
+          "program_path": "programs/cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9.py",
+          "program_sha256": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+          "settings": {
+            "sigma": 0.224195451112929,
+            "elite_ratio": 0.0921597481719689
+          }
+        }
+      ],
+      "settings": {
+        "sigma": 0.224195451112929,
+        "elite_ratio": 0.0921597481719689
+      },
+      "program_sha256": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+      "trials": [
+        {
+          "seed": 2001,
+          "trial": 2002,
+          "active_score": 0.9691218759179115,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 500.0,
+              "forgetting": 0.0
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 9.4,
+              "forgetting": 490.6
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.8,
+              "forgetting": 490.2
+            }
+          ],
+          "mean_forgetting": 326.93333333333334
+        },
+        {
+          "seed": 2002,
+          "trial": 2003,
+          "active_score": 0.9561075006067753,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 33.4,
+              "forgetting": 466.6
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 9.5,
+              "forgetting": 490.5
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.4,
+              "forgetting": 490.6
+            }
+          ],
+          "mean_forgetting": 482.56666666666666
+        },
+        {
+          "seed": 2003,
+          "trial": 2004,
+          "active_score": 0.9570100004196167,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.3,
+              "forgetting": 490.7
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 9.4,
+              "forgetting": 490.6
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 35.6,
+              "forgetting": 464.4
+            }
+          ],
+          "mean_forgetting": 481.8999999999999
+        },
+        {
+          "seed": 2004,
+          "trial": 2005,
+          "active_score": 0.9677056251049041,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 500.0,
+              "after": 70.9,
+              "forgetting": 429.1
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 500.0,
+              "after": 60.7,
+              "forgetting": 439.3
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.3,
+              "forgetting": 490.7
+            }
+          ],
+          "mean_forgetting": 453.03333333333336
+        },
+        {
+          "seed": 2005,
+          "trial": 2006,
+          "active_score": 0.8028600049614907,
+          "switches": [
+            {
+              "from_phase": 0,
+              "to_phase": 1,
+              "task": 0,
+              "before": 477.6,
+              "after": 9.3,
+              "forgetting": 468.3
+            },
+            {
+              "from_phase": 1,
+              "to_phase": 2,
+              "task": 1,
+              "before": 445.5,
+              "after": 9.9,
+              "forgetting": 435.6
+            },
+            {
+              "from_phase": 2,
+              "to_phase": 3,
+              "task": 0,
+              "before": 500.0,
+              "after": 9.4,
+              "forgetting": 490.6
+            }
+          ],
+          "mean_forgetting": 464.8333333333333
+        }
+      ],
+      "mean_active_score": 0.9305610014021397,
+      "sample_sd_active_score": 0.07163515508466264
+    }
+  ],
+  "synthetic": false,
+  "aggregation": "Arithmetic mean of five paired training seeds; no confidence interval or smoothing",
+  "forgetting_definition": "own return at phase i minus previous-task return at phase i+1, each from ten fresh centroid episodes",
+  "pairing": "Seed labels pair task draws and initialization seeds; they do not imply identical post-training policies",
+  "outputs_sha256": {
+    "validation-static-20261002.svg": "eec19edc8a502917455351e358333086f7f7fb15245ea041990991a37be3e10f",
+    "validation-static-20261002.pdf": "5a7cf2bf8720c17af03da842df46261827f5c666e756cd7b5ee18fc5c8868055"
+  }
+}

@@ -123,7 +123,7 @@ subscription charge or remaining-quota meter. Public package and pricing metadat
 requests may still occur; they are not paid model inference. The completed
 endpoint contains 25 Shinka programs and 24 random controls. The
 [evidence](../../reports/search-endpoint-20261002/summary.json) retains every
-proposal and training result; held-out evaluation remains pending.
+proposal and training result. The [reserved finalist comparison](../../reports/validation-static-20261002/summary.json) is also complete; final reporting remains pending.
 
 ### Preflight and staged launch
 
@@ -197,7 +197,9 @@ The primary comparison uses the first 17 controls to match distinct mutations;
 the full 24 controls match actual additional evaluations. Repeated training
 remains charged. See the [audited endpoint](../../reports/search-endpoint-20261002/summary.json)
 and [frozen finalists](../../reports/finalists-static-20261002/manifest.json).
-This archive is closed to further proposals before reserved validation.
+This archive is closed to further proposals. Reserved validation selected Shinka
+program 11 and random control 24; their exact sources and settings are frozen in
+the [validation report](../../reports/validation-static-20261002/summary.json).
 
 The job configuration explicitly sets `numeric_threads_per_job: 1`; the native
 default otherwise overrides outer thread variables. Both arms use identical

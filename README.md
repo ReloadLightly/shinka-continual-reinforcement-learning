@@ -14,9 +14,9 @@
 
 ## Abstract
 
-This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. The completed static-search pilot evaluated 25 Shinka programs, including the default, and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and 7 repeated evaluations. Best development scores were 0.8721 for Shinka, 0.8857 for the full random pool, and 0.5654 for the default. These selected outcomes from one search per arm do not establish search-method superiority, retention, or generalization. Static tuning supplies the baseline for the main extension, executable adaptive mutation rules.
+This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. These results establish an executable research pipeline and static baselines; they do not establish search-method superiority or a full-paper reproduction. The main extension remains executable adaptive mutation rules.
 
-> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Finalist validation running · Adaptive rules and full reproduction pending.
+> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Finalist validation complete · Adaptive rules and full reproduction pending.
 
 ## 1. Research questions
 
@@ -291,9 +291,9 @@ reconstructed. The [five-program](reports/search-integration-20261002/summary.js
 and [13-program](reports/search-stage13-20261002/summary.json) checkpoints remain
 available.
 
-The static search is closed. The full-budget development reference is complete,
-and the frozen finalists are undergoing reserved validation. Validation feedback
-will not be used for further proposals from this archive.
+The static search is closed. The full-budget development reference and reserved
+finalist validation are complete. Validation feedback will not be used for
+further proposals from this archive.
 
 ### Paper-budget development reference
 
@@ -304,7 +304,7 @@ per saved phase checkpoint supplied the continual-learning measurements.
 
 ![Default GA across the full task schedule and observed phase times](figures/reference-timing-20261002.svg)
 
-<sub>Figure 3. One paper-budget development trial. The centroid is evaluated on both tasks throughout training; A/B labels mark the active task. Curves are unsmoothed. Timing includes in-loop evaluation and checkpoint I/O; phase one additionally includes startup and JIT compilation. [PDF](figures/reference-timing-20261002.pdf) · [Exact curves, all 19 switch differences, and provenance](figures/reference-timing-20261002.json).</sub>
+<sub>Figure 3. One paper-budget development trial. The centroid is evaluated on both tasks throughout training; A/B labels mark the active task. Curves are unsmoothed and use different episode draws from Table 9's fresh checkpoint analysis. Timing includes in-loop evaluation and checkpoint I/O; phase one additionally includes startup and JIT compilation. [PDF](figures/reference-timing-20261002.pdf) · [Exact curves, all 19 switch differences, and provenance](figures/reference-timing-20261002.json).</sub>
 
 | Measurement | Observed value |
 | :--- | ---: |
@@ -329,6 +329,60 @@ retries, review, and hardware contention. This estimate does not apply to ES or
 PPO; their full-budget runtime still needs measurement. The paper-scale
 comparison and final-reporting trials remain pending.
 
+### Reserved static-finalist validation
+
+The five candidates frozen at the static endpoint completed their single
+reserved comparison on **seeds 2001–2005 and task trials 2002–2006**. Each trial
+used four phases of 80 generations, population 64, and ten evaluation episodes.
+These new task draws and longer phases differ from development search. No
+validation result was fed back to the proposer.
+Random finalists were ranked over all 24 frozen controls, as declared; this
+validation follows the full-pool comparison, not the 17-control prefix.
+
+![All frozen static finalists on reserved validation seeds](figures/validation-static-20261002.svg)
+
+<sub>Figure 4. All five reserved validation seeds and every signed switch difference are retained. Positive forgetting denotes lost return; negative values denote improvement. Lines connect measurements from the same seed. [PDF](figures/validation-static-20261002.pdf) · [Exact plotted values and provenance](figures/validation-static-20261002.json).</sub>
+
+| Frozen configuration | Active score, J ↑ | LA ↑ | F ↓ | LA − F ↑ | ZT ↑ | Cum. / (steps × 500) ↑ |
+| :--- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Default GA | 0.7720 ± 0.1846 | 475.8 ± 45.5 | 312.7 ± 174.3 | 163.1 ± 188.7 | 180.7 ± 232.6 | 0.770 ± 0.185 |
+| Shinka 12 | 0.8894 ± 0.1228 | 487.1 ± 28.7 | 340.2 ± 142.8 | 147.0 ± 152.0 | 141.2 ± 154.8 | 0.888 ± 0.123 |
+| Shinka 11 | 0.9268 ± 0.0401 | 496.0 ± 9.0 | 353.4 ± 153.8 | 142.6 ± 157.5 | 128.5 ± 141.6 | 0.925 ± 0.040 |
+| Random 7 | 0.8751 ± 0.1914 | 457.1 ± 95.8 | 340.3 ± 108.8 | 116.9 ± 134.2 | 118.6 ± 120.2 | 0.874 ± 0.191 |
+| Random 24 | 0.9306 ± 0.0716 | 496.2 ± 8.6 | 441.9 ± 65.4 | 54.3 ± 67.6 | 62.6 ± 74.5 | 0.929 ± 0.072 |
+
+<sub>Table 10. Reserved validation, mean ± sample standard deviation across five seeds per configuration. Reward metrics use raw CartPole units. The declared selection criterion is the active-task score over all 320 checkpoints; retention metrics do not choose the winners. The cumulative column uses the reference integration convention. [All trials, switch differences, resolved settings, and costs](reports/validation-static-20261002/summary.json).</sub>
+
+The declared rule selects **Shinka 11** for the Shinka arm
+(J = 0.9268) and **Random 24** for the random arm
+(J = 0.9306). Exact source hashes and settings are retained
+in the report's `selected_winners`; all five outcomes remain visible. These
+selected validation scores are not final-reporting estimates or evidence that
+one search method is generally superior. No further static proposals will use
+this partition.
+
+Both selected configurations have higher mean active return than the default
+(0.7720), but also higher mean forgetting: **353.4** for Shinka 11 and **441.9**
+for Random 24, versus **312.7** for the default. The selected arms differ by only
+0.0037 in active score. These five-seed observations support reporting the
+learning–retention trade-off; they do not establish a general ranking. The
+single full-budget reference above uses a different seed and budget and is not
+a matched comparator for this table.
+
+| Frozen control | Mutation width, σ | Archive fraction | Elites at population 64 / 512 |
+| :--- | ---: | ---: | ---: |
+| Default GA | 0.500000 | 0.500000 | 32 / 256 |
+| Shinka 11 | 0.065000 | 0.075000 | 4 / 38 |
+| Random 24 | 0.224195 | 0.092160 | 5 / 47 |
+
+<sub>Table 11. Parameters retained for subsequent comparisons. Archive counts follow the unchanged integer conversion; population-512 counts are derived, not additional experiments. Displayed parameters are rounded; the [selected sources and exact settings](reports/validation-static-20261002/summary.json) are authoritative.</sub>
+
+The comparison completed **25 training trials**, totalling **768 million nominal
+training steps**, in **26.59 minutes** including checkpoint
+analysis and verification. The [first five trials](reports/validation-stage5-20261002/summary.json) were verified and reused when
+the remaining block resumed. Incomplete training attempts: **0**.
+Reporting seeds 42–51 and task trials 1–10 remain untouched.
+
 ### Remaining scientific evaluation
 
 One full-budget development GA trial is complete; no full-budget comparison has been completed. The table below tracks the evidence needed to answer the research questions.
@@ -337,8 +391,8 @@ One full-budget development GA trial is complete; no full-budget comparison has 
 | :--- | :--- | :--- |
 | Reference GA / ES / PPO | Ten trials, full task schedule, continual-learning metrics | Pilot complete; full protocol pending |
 | Stationary control | Matched task and learner settings without switching | Development control complete |
-| Shinka-selected GA | Frozen candidate evaluated on reporting trials | 25-program search complete; validation pending |
-| Random-search control | Matched search budget and reporting protocol | 24-control search complete; validation pending |
+| Shinka-selected GA | Frozen candidate evaluated on reporting trials | Static winner frozen after validation; reporting pending |
+| Random-search control | Matched search budget and reporting protocol | Static winner frozen after validation; reporting pending |
 
 ## 5. Reproducibility
 
@@ -459,16 +513,12 @@ The current search space contains two static GA settings. It cannot discover ada
 
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
-The next steps preserve the reproduction as the foundation and make adaptive
-programs the main extension:
-
-1. **Validate static finalists once** on the reserved validation partition,
-   reporting learning accuracy, each switch's forgetting, and cumulative return.
-2. **Implement executable adaptive rules** with the controls in Section 3,
-   short identity-trace checks under stationary and switching conditions, and one
-   varying-width actuation check. Freeze a retention-sensitive objective and a
-   separate protocol before proposing adaptive code. The completed baseline pilot
-   does not need another large preparatory repeat.
+The next implementation is the [adaptive mutation adapter](docs/adaptive-programs.md),
+with the controls in Section 3. First verify short identity traces under
+stationary and switching conditions, then verify that a varying width changes
+the generated offspring. Freeze the separate objective, seed allocation, grammar,
+and duplicate-proposal policy before proposing adaptive code. The completed
+baseline pilot does not need another large preparatory repeat.
 
 The [experimental roadmap](docs/experimental-roadmap.md) specifies staged budgets,
 the full-budget timing trial, adaptive interface, upstream adaptive control, and

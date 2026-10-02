@@ -1,0 +1,23 @@
+{
+  "name": "cartpole-validation",
+  "purpose": "One reserved static-finalist comparison after development search closes",
+  "env": "CartPole-v1_sigma0.5",
+  "num_phases": 4,
+  "num_tasks": 2,
+  "episode_length": 500,
+  "eval_episodes": 10,
+  "seeds": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005
+  ],
+  "ne": {
+    "num_generations": 320,
+    "task_interval": 80,
+    "pop_size": 64,
+    "num_evals": 3
+  },
+  "ppo": null
+}

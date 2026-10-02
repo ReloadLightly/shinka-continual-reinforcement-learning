@@ -238,10 +238,6 @@ def plot_validation(report_dir: Path, output: Path) -> dict:
         forgetting_ax.axhline(0, color="#65717D", linewidth=1.0, zorder=1)
         forgetting_ax.set(ylim=(-525, 525), ylabel="Forgetting: return before − return after")
         forgetting_ax.set_yticks([-500, -250, 0, 250, 500])
-        forgetting_ax.text(.99, .97, "positive: loss", transform=forgetting_ax.transAxes,
-                           ha="right", va="top", fontsize=7.5, color="#65717D")
-        forgetting_ax.text(.99, .03, "negative: improvement", transform=forgetting_ax.transAxes,
-                           ha="right", va="bottom", fontsize=7.5, color="#65717D")
         forgetting_ax.legend(handles=[Line2D([0], [0], marker=marker, linestyle="none",
                                              color="#65717D", markersize=5, label=label)
                                       for marker, label in zip(SWITCH_MARKERS, SWITCH_LABELS)],
@@ -249,8 +245,8 @@ def plot_validation(report_dir: Path, output: Path) -> dict:
                               ncol=3, handletextpad=.35, columnspacing=1.3, fontsize=7.5)
         fig.text(.065, .073, "Left: points are five validation seeds; diamonds are means; thin lines "
                  "connect the same seed across configurations.", fontsize=7.5, color="#65717D")
-        fig.text(.065, .03, "Right: each seed's three signed switch losses. Negative mean forgetting "
-                 "can coexist with positive losses at individual switches.", fontsize=7.5, color="#65717D")
+        fig.text(.065, .03, "Right: positive = loss; negative = improvement. Each seed contributes "
+                 "three switches; their mean can conceal individual losses.", fontsize=7.5, color="#65717D")
         if data["synthetic"]:
             fig.text(.065, .95, "SYNTHETIC TEST FIXTURE — NOT EXPERIMENTAL RESULTS",
                      fontsize=8, color="#C65F31")

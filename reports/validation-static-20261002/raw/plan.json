@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "finalist_manifest_sha256": "4dcbc024b1f65ea0ddd1194417b6f9a3dbfec0e83e3815e252000e41b84ae7d2",
+  "profile": {
+    "name": "cartpole-validation",
+    "purpose": "One reserved static-finalist comparison after development search closes",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 10,
+    "seeds": [
+      2001,
+      2002,
+      2003,
+      2004,
+      2005
+    ],
+    "ne": {
+      "num_generations": 320,
+      "task_interval": 80,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "candidate_ids": [
+    "candidate_001",
+    "candidate_002",
+    "candidate_003",
+    "candidate_004",
+    "candidate_005"
+  ],
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "source_sha256": {
+    "src/shinka_crl/validation.py": "f08b70ab0a0cd906d3280dc6a7e38786d72656486d4105f666e6f1980fe8f21e",
+    "scripts/run_validation.py": "153bfe7ccdedbb9b11cf57d8d3a58a0ccee8a516979df6df3276f2d086513c7e",
+    "scripts/report_validation.py": "2b5da0f5a9ba5881f1d19b6045dd8f597e560f27d3c0b32681927a08e19d62ef",
+    "scripts/freeze_finalists.py": "bf913d47fdf396ab4011ae1cbf33b30583713dd938fa81d3d46f60fe74ec3f85",
+    "scripts/report_search.py": "b374321944d5050833e556da052d4b344f2e11a2ad3fd9a058133e01b1fb4b95",
+    "tasks/cartpole_ga/evaluate.py": "83c87de2d6eadf198cb88b61276708469863eab68df553f24b370703f6d5c2d5",
+    "src/shinka_crl/experiment.py": "088ac1e844e4254e81cca1b72bbbbf9f28c69e6c415fdc02883320eca83181b0",
+    "src/shinka_crl/analysis.py": "6ec9691d8cb40415d162fd2483f9ca1765cd03e484279ae465e6154b2bb2f11b",
+    "src/shinka_crl/baseline_contract.py": "d778e09868f23a19f4828e15ca4eea8dc7899f6d24098a29cc5876a928461a8d",
+    "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+    "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43",
+    "src/shinka_crl/profiles/cartpole-validation.json": "0b7c92fe49a153d4cf566c173d781079b04cd112862b7252187c3b6cffc32993",
+    "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+    "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267"
+  },
+  "python": "<repo>/.upstream/continual_neuroevolution/.venv/bin/python",
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "thread_environment": {
+    "JAX_PLATFORMS": "cpu",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "MKL_DYNAMIC": "FALSE",
+    "NUMEXPR_NUM_THREADS": "1",
+    "NUMEXPR_MAX_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "GOTO_NUM_THREADS": "1"
+  },
+  "posthoc_episodes": 10,
+  "eval_seed_offset": 900000
+}

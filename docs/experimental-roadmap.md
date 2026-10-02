@@ -58,7 +58,7 @@ experiment. The unchanged GA evolves policy weights inside each evaluation.
 | Validation | 2001–2005 | 2002–2006 | One finalist comparison after search |
 | Final reporting | 42–51 | 1–10 | Frozen algorithms and paper-scale protocol |
 
-<sub>Table 1. Proposed seed partitions. The upstream task offset depends on the
+<sub>Table 1. Study seed partitions. The upstream task offset depends on the
 task trial, so disjoint training seeds alone would not provide disjoint tasks.
 Development and validation use `trial=seed+1`; reporting retains trials 1–10.</sub>
 
@@ -85,7 +85,7 @@ conditions retain the 500-step episode cap and four equal checkpoint phases.
 | Evaluation episodes per checkpoint | 10 | 10 | 10 |
 | Nominal training steps per trial | 7,680,000 | 7,680,000 | 7,680,000 |
 
-<sub>Table 2. Proposed pilot budget. GA/ES: 80 × 64 × 3 × 500; PPO: 600 ×
+<sub>Table 2. Matched pilot budget. GA/ES: 80 × 64 × 3 × 500; PPO: 600 ×
 256 × 50. Each phase receives 1,920,000 nominal training steps. Other optimizer
 settings retain their pinned baseline values. PPO's reduced rollout and
 minibatch counts are explicit development deviations.</sub>
@@ -276,7 +276,7 @@ these stages.
 | Search-behavior gate | 1 | 12 | 39 |
 | Pilot endpoint | 1 | 24 | 75 |
 
-<sub>Table 4. Proposed Shinka stages under the three-seed search profile. Counts
+<sub>Table 4. Declared Shinka stages under the three-seed search profile. Counts
 are cumulative and include the initial candidate. Proposal slots are an outer
 budget, not a count of successful evaluations or inner GA generations.</sub>
 
@@ -396,6 +396,8 @@ evaluation episodes, and episode cap 500. This is **30,720,000 nominal training
 steps per seed**, at most **25 seed trials**, and at most **768,000,000 steps**.
 It probes both new task draws and a longer adaptation interval. Record complete
 centroid curves and post-hoc LA, F, LA − F, and ZT.
+
+**Completed comparison:** all 25 reserved trials finished in **26.59 minutes**, with no failed training attempts. The declared rule selected Shinka 11 (J = 0.9268) and random 24 (J = 0.9306), compared with default J = 0.7720. Their mean forgetting was 353.4 and 441.9 versus default 312.7; the active-score gains do not establish better retention. Random finalists were ranked over all 24 controls. See the [complete validation evidence](../reports/validation-static-20261002/summary.json) and [README tables](../README.md#reserved-static-finalist-validation). The adaptive objective proposal in Section 7 was recorded before these outcomes and is not fitted to them.
 
 Select one finalist per search arm using the same active-return objective on
 validation; break exact ties by lower development rank, then source hash. Freeze
@@ -610,7 +612,7 @@ mechanism; a better scalar score alone does not establish better retention.
 | 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Complete: 24 actual proposals and 2 → 5 → 13 → 25 resume |
 | 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | Complete: 25 programs, 24 controls; 17 distinct mutations, seven charged repeats |
 | 6 | One paper-budget default-GA development trial | 20 phases, population 512, seed 1001/trial 1002; measured time and memory; reporting trials untouched | Complete: 30.20 min training, 843.2 MiB peak trainer RSS; all 20 phases |
-| 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Five finalists frozen; reserved comparison running in whole-trial blocks |
+| 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Complete: 25 trials, 26.59 min; Shinka 11 and random 24 selected |
 | 8 | Adaptive-program adapter and required controls | Short identity traces, varying-sigma check, explicit upstream adaptive control, frozen objective | Pending |
 | 9 | Shinka search over executable adaptive rules | Separate archive and seed allocation; control comparisons; individual learning and forgetting trajectories | Main extension; pending |
 
