@@ -1,0 +1,12 @@
+{
+  "name": "smoke",
+  "purpose": "Pipeline check only; not a reproduction or matched comparison",
+  "env": "CartPole-v1_sigma0.5",
+  "num_phases": 2,
+  "num_tasks": 2,
+  "episode_length": 32,
+  "eval_episodes": 1,
+  "seeds": [1001],
+  "ne": {"num_generations": 4, "task_interval": 2, "pop_size": 8, "num_evals": 1},
+  "ppo": {"num_updates": 4, "task_interval": 2, "num_envs": 8, "num_steps": 16, "num_minibatches": 2}
+}
