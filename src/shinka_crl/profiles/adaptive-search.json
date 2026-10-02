@@ -1,0 +1,12 @@
+{
+  "name": "adaptive-search",
+  "purpose": "Adaptive mutation program development; fresh partition and active/previous-task objective",
+  "env": "CartPole-v1_sigma0.5",
+  "num_phases": 4,
+  "num_tasks": 2,
+  "episode_length": 500,
+  "eval_episodes": 3,
+  "seeds": [4001, 4002, 4003],
+  "ne": {"num_generations": 80, "task_interval": 20, "pop_size": 64, "num_evals": 3},
+  "ppo": null
+}

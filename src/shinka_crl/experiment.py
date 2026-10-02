@@ -22,7 +22,8 @@ DEFAULT_UPSTREAM = REPO_ROOT / ".upstream" / "continual_neuroevolution"
 DEFAULT_PYTHON = DEFAULT_UPSTREAM / ".venv" / "bin" / "python"
 PROFILE_NAMES = ("smoke", "search", "pilot-stationary", "pilot-switching", "paper-cartpole",
                  "paper-cartpole-timing", "cartpole-validation",
-                 "adaptive-gate-stationary", "adaptive-gate-switching")
+                 "adaptive-gate-stationary", "adaptive-gate-switching",
+                 "adaptive-search", "adaptive-validation")
 NE_METHODS = ("ga", "ga_focus", "es")
 
 
@@ -82,7 +83,8 @@ def validate_profile(profile: dict) -> None:
         budget = profile[family]
         if family == "ppo" and budget is None:
             if profile["name"] not in {"search", "paper-cartpole-timing", "cartpole-validation",
-                                       "adaptive-gate-stationary", "adaptive-gate-switching"}:
+                                       "adaptive-gate-stationary", "adaptive-gate-switching",
+                                       "adaptive-search", "adaptive-validation"}:
                 raise ValueError("Only GA development profiles may omit a PPO budget")
             continue
         if not isinstance(budget, dict) or set(budget) != fields:

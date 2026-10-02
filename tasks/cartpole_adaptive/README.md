@@ -1,7 +1,7 @@
 # Adaptive mutation-width programs
 
-This task contains the implemented program interface and fixed diagnostic rules.
-It does not yet provide an adaptive Shinka proposer or selection evaluator.
+This task contains the implemented program interface, fixed diagnostic rules,
+and a Shinka-compatible selection evaluator. Adaptive proposal search is pending.
 See the [protocol](../../docs/adaptive-programs.md) for the full scientific contract.
 
 ```python
@@ -38,3 +38,10 @@ Run the complete diagnostic suite with:
 Omit `--execute` to inspect the frozen seven-trial plan. Outputs must be fresh;
 failed attempts remain available with their logs, source hashes, and receipts.
 The suite uses diagnostic seed 3001, two logical CPUs, and no model calls.
+
+The [adaptive evaluation runbook](../../docs/adaptive-evaluation.md) defines the
+new development partition, combined learning/previous-task score, five fixed
+controls, and verified result cache. `evaluate.py` requires
+`SHINKA_ADAPTIVE_STUDY` and writes Shinka's `correct.json` / `metrics.json`
+contract. It accepts only the frozen development study; reserved validation
+and final reporting trials are separate.

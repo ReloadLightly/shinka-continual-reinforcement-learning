@@ -4,8 +4,9 @@ The main ShinkaEvolve extension will evolve an executable mutation-width update
 from training feedback. The completed two-parameter search supplies static
 baselines. This specification details the next search space in the
 [experimental roadmap](experimental-roadmap.md#7-second-search-space-adaptive-mutation-programs);
-the restricted adapter is implemented. Adaptive proposal search remains pending
-the separate objective, development partition, and cache protocol.
+the restricted adapter, fixed objective, development partition, and verified
+cache are implemented. See the [evaluation protocol](adaptive-evaluation.md).
+Adaptive Shinka proposal search remains pending.
 
 Keep archive size, survivor selection, policy architecture, task draws, and
 interaction budgets fixed. The first program family changes only the Gaussian
@@ -171,7 +172,7 @@ still record `method="ga"`; that field alone must not place an adaptive run in
 the default-GA group. Match interaction and checkpoint budgets across controls,
 including Focus's training centroid. Account for post-hoc evaluation separately.
 
-## 6. Proposed selection objective
+## 6. Selection objective
 
 For the new switching-task study, combine active-task learning with fresh
 performance on previously trained tasks:
@@ -192,13 +193,16 @@ may inform the outer proposer; they never enter `update_sigma`.
 This objective avoids rewarding lower early own-task performance through the
 subtraction in `LA−F`. Previous-task return can nevertheless reflect later
 acquisition of a poorly learned task. Report LA, all signed switch differences,
-mean F, LA−F, and ZT alongside it. The objective is a proposed extension metric;
+mean F, LA−F, and ZT alongside it. The objective is an extension metric;
 static selection and reference-paper metrics remain fixed.
 
-Adaptive development and validation seed/trial partitions are **unallocated**.
+Adaptive development uses seeds **4001–4003** / task trials **4002–4004**;
+reserved validation uses **5001–5005** / **5002–5006**. Fresh evaluation uses
+training seed + 900000. The [allocation audit](adaptive-seed-allocation-20261003.json)
+confirmed these were unused before the study was frozen.
 The adapter gate alone reserves diagnostic seed 3001 / task trial 3002 and
 independent evaluation seed 903001; these are not adaptive search seeds.
-Check local experiment manifests before assigning and freezing them. Do not use
+Do not use
 reserved static validation or final-reporting outcomes to choose this objective,
 grammar, search budget, or program. A single outer search evaluates its resulting
 program; stronger claims about the search method require repeated outer searches.

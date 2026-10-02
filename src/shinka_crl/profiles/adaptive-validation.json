@@ -1,0 +1,12 @@
+{
+  "name": "adaptive-validation",
+  "purpose": "Reserved adaptive finalist validation; different phase interval and untouched partition",
+  "env": "CartPole-v1_sigma0.5",
+  "num_phases": 4,
+  "num_tasks": 2,
+  "episode_length": 500,
+  "eval_episodes": 10,
+  "seeds": [5001, 5002, 5003, 5004, 5005],
+  "ne": {"num_generations": 320, "task_interval": 80, "pop_size": 64, "num_evals": 3},
+  "ppo": null
+}

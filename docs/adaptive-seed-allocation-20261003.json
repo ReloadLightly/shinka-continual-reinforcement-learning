@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "audited_at_utc": "2026-10-02T22:54:08.590008+00:00",
+  "repository_commit": "928d26da1fa26675cb26915783ec5e09ae7f1be8",
+  "scope": "All existing JSON files recursively under local results/ and published reports/, including ignored local artifacts; exact field names seed, seeds, trial, eval_seed. Duplicated published snapshots are included in file count.",
+  "json_files_scanned": 4071,
+  "observed": {
+    "seed": [
+      1001,
+      1002,
+      1003,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      3001,
+      20261002
+    ],
+    "seeds": [
+      1001,
+      1002,
+      1003,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      3001
+    ],
+    "trial": [
+      1002,
+      1003,
+      1004,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      3002
+    ],
+    "eval_seed": [
+      901001,
+      901002,
+      901003,
+      902001,
+      902002,
+      902003,
+      902004,
+      902005,
+      903001
+    ]
+  },
+  "proposed": {
+    "adaptive_search": {
+      "seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "trials": [
+        4002,
+        4003,
+        4004
+      ],
+      "eval_seeds": [
+        904001,
+        904002,
+        904003
+      ]
+    },
+    "adaptive_validation": {
+      "seeds": [
+        5001,
+        5002,
+        5003,
+        5004,
+        5005
+      ],
+      "trials": [
+        5002,
+        5003,
+        5004,
+        5005,
+        5006
+      ],
+      "eval_seeds": [
+        905001,
+        905002,
+        905003,
+        905004,
+        905005
+      ]
+    }
+  },
+  "proposed_existing_hits": [],
+  "invalid_json": [],
+  "paper_reporting": {
+    "configured_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserved_trials": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "existing_seed_hits": [],
+    "existing_trial_hits": []
+  },
+  "notes": [
+    "Observed seed 20261002 is the frozen random-control proposal RNG seed, not a training seed.",
+    "Task trials are independently audited because task offsets depend on trial identity.",
+    "This allocation audit does not use observed learning or retention outcomes."
+  ]
+}
