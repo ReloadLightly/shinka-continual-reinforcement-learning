@@ -1,0 +1,12 @@
+{
+  "name": "pilot-switching",
+  "purpose": "Matched continual development pilot; alternating observation-offset tasks A-B-A-B",
+  "env": "CartPole-v1_sigma0.5",
+  "num_phases": 4,
+  "num_tasks": 2,
+  "episode_length": 500,
+  "eval_episodes": 10,
+  "seeds": [1001, 1002, 1003],
+  "ne": {"num_generations": 80, "task_interval": 20, "pop_size": 64, "num_evals": 3},
+  "ppo": {"num_updates": 600, "task_interval": 150, "num_envs": 256, "num_steps": 50, "num_minibatches": 8}
+}

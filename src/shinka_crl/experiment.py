@@ -16,12 +16,93 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 UPSTREAM_COMMIT = "821570eb6a22db0f7aa77111b2ea541fe8fa795b"
 DEFAULT_UPSTREAM = REPO_ROOT / ".upstream" / "continual_neuroevolution"
 DEFAULT_PYTHON = DEFAULT_UPSTREAM / ".venv" / "bin" / "python"
+PROFILE_NAMES = ("smoke", "search", "pilot-stationary", "pilot-switching", "paper-cartpole")
+
+
+def _positive_integer(value: object, label: str) -> None:
+    if type(value) is not int or value <= 0:
+        raise ValueError(f"{label} must be a positive integer")
+
+
+def nominal_training_steps(profile: dict, method: str) -> int:
+    """Configured training transitions, excluding evaluation and diagnostics.
+
+    NE counts episode caps, including the masked steps after termination. This
+    matches the reference budget convention, not useful transitions or FLOPs.
+    """
+    if method in {"ga", "es"}:
+        ne = profile["ne"]
+        return (ne["num_generations"] * ne["pop_size"] * ne["num_evals"]
+                * profile["episode_length"])
+    if method != "ppo":
+        raise ValueError("Supported baseline methods: ga, es, ppo")
+    if profile["ppo"] is None:
+        raise ValueError("This development profile does not define a PPO comparison")
+    ppo = profile["ppo"]
+    return ppo["num_updates"] * ppo["num_envs"] * ppo["num_steps"]
+
+
+def validate_profile(profile: dict) -> None:
+    """Reject inconsistent budgets before an upstream process is launched."""
+    keys = {"name", "purpose", "env", "num_phases", "num_tasks", "episode_length",
+            "eval_episodes", "seeds", "ne", "ppo"}
+    if not isinstance(profile, dict) or set(profile) != keys:
+        raise ValueError("Profile must contain exactly the documented protocol fields")
+    if profile["name"] not in PROFILE_NAMES:
+        raise ValueError(f"Unknown profile: {profile['name']}")
+    if not isinstance(profile["purpose"], str) or not profile["purpose"].strip():
+        raise ValueError("Profile purpose must be a nonempty string")
+    for key in ("num_phases", "num_tasks", "episode_length", "eval_episodes"):
+        _positive_integer(profile[key], key)
+    if profile["episode_length"] > 500:
+        raise ValueError("CartPole episode_length must not exceed 500")
+    task_counts = {"CartPole-v1": 1, "CartPole-v1_sigma0.5": 2}
+    if (not isinstance(profile["env"], str) or profile["env"] not in task_counts
+            or profile["num_tasks"] != task_counts[profile["env"]]):
+        raise ValueError("Profile environment and number of tasks are inconsistent")
+    if profile["num_phases"] % profile["num_tasks"]:
+        raise ValueError("Profile phases must contain complete task cycles")
+    seeds = profile["seeds"]
+    if (not isinstance(seeds, list) or not seeds
+            or any(type(seed) is not int or not 0 <= seed < 2**32 for seed in seeds)
+            or len(set(seeds)) != len(seeds)):
+        raise ValueError("Profile seeds must be distinct nonnegative 32-bit integers")
+    expected_keys = {
+        "ne": {"num_generations", "task_interval", "pop_size", "num_evals"},
+        "ppo": {"num_updates", "task_interval", "num_envs", "num_steps", "num_minibatches"},
+    }
+    for family, fields in expected_keys.items():
+        budget = profile[family]
+        if family == "ppo" and budget is None:
+            if profile["name"] != "search":
+                raise ValueError("Only the search profile may omit a PPO budget")
+            continue
+        if not isinstance(budget, dict) or set(budget) != fields:
+            raise ValueError(f"Unexpected {family} budget fields")
+        for key, value in budget.items():
+            _positive_integer(value, f"{family}.{key}")
+        length = budget["num_generations" if family == "ne" else "num_updates"]
+        if length != profile["num_phases"] * budget["task_interval"]:
+            raise ValueError(f"{family} budget does not match the phase grid")
+    if profile["ne"]["pop_size"] % 2:
+        raise ValueError("NE population must be even for the ES antithetic pairs")
+    ppo = profile["ppo"]
+    if ppo is not None:
+        if (ppo["num_envs"] * ppo["num_steps"]) % ppo["num_minibatches"]:
+            raise ValueError("PPO rollout batch must divide evenly into minibatches")
+        if (profile["name"] != "smoke"
+                and nominal_training_steps(profile, "ga") != nominal_training_steps(profile, "ppo")):
+            raise ValueError("Comparison profiles require matched nominal training budgets")
 
 
 def load_profile(name: str) -> dict:
-    if name not in {"smoke", "search", "paper-cartpole"}:
+    if name not in PROFILE_NAMES:
         raise ValueError(f"Unknown profile: {name}")
-    return json.loads(files("shinka_crl").joinpath("profiles", f"{name}.json").read_text())
+    profile = json.loads(files("shinka_crl").joinpath("profiles", f"{name}.json").read_text())
+    validate_profile(profile)
+    if profile["name"] != name:
+        raise ValueError("Profile resource name does not match its declared name")
+    return profile
 
 
 def validate_ga_settings(settings: dict) -> dict:
@@ -61,6 +142,10 @@ def verify_upstream(upstream: Path) -> str:
 def build_command(*, profile: dict, method: str, seed: int, output_dir: Path,
                   upstream: Path = DEFAULT_UPSTREAM, python: str = str(DEFAULT_PYTHON),
                   ga_settings: dict | None = None, trial: int = 1) -> list[str]:
+    validate_profile(profile)
+    if type(seed) is not int or not 0 <= seed < 2**32:
+        raise ValueError("seed must be a nonnegative 32-bit integer")
+    _positive_integer(trial, "trial")
     if method not in {"ga", "es", "ppo"}:
         raise ValueError("Supported baseline methods: ga, es, ppo")
     if ga_settings is not None and method != "ga":
@@ -100,18 +185,24 @@ def score_curve(records: list[dict], *, profile: dict, method: str) -> dict:
     This is not the paper's full suite of continual-learning metrics. Each
     generation/update contributes once; missing, duplicate or corrupt rows fail.
     """
+    validate_profile(profile)
+    nominal_training_steps(profile, method)  # Validate the method and presence of its budget.
     budget = profile["ppo"] if method == "ppo" else profile["ne"]
     expected = budget["num_updates" if method == "ppo" else "num_generations"]
-    if not isinstance(records, list) or len(records) != expected:
+    if not isinstance(records, list):
+        raise ValueError("Metric records must be a list")
+    if len(records) != expected:
         raise ValueError(f"Expected {expected} metric rows, got {len(records)}")
     values = []
     for index, record in enumerate(records):
+        if not isinstance(record, dict):
+            raise ValueError(f"Metric row {index} must be an object")
         task = (index // budget["task_interval"]) % profile["num_tasks"]
-        if record.get("task") != task:
+        if type(record.get("task")) is not int or record["task"] != task:
             raise ValueError(f"Unexpected task schedule at row {index}")
         # Both upstream loops serialize their zero-based step as generation.
         step_key = "generation"
-        if record.get(step_key) != index:
+        if type(record.get(step_key)) is not int or record[step_key] != index:
             raise ValueError(f"Unexpected {step_key} at row {index}")
         value = record.get(f"centroid_task{task}")
         if type(value) not in (float, int) or not math.isfinite(value):

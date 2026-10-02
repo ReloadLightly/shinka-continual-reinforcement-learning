@@ -7,13 +7,13 @@ from pathlib import Path
 import shlex
 
 from shinka_crl.experiment import (
-    DEFAULT_PYTHON, DEFAULT_UPSTREAM, build_command, load_profile, run_experiment,
+    DEFAULT_PYTHON, DEFAULT_UPSTREAM, PROFILE_NAMES, build_command, load_profile, run_experiment,
 )
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--profile", choices=["smoke", "search", "paper-cartpole"], default="smoke")
+    parser.add_argument("--profile", choices=PROFILE_NAMES, default="smoke")
     parser.add_argument("--method", choices=["ga", "es", "ppo"], default="ga")
     parser.add_argument("--results-dir", type=Path, default=Path("results/baselines"))
     parser.add_argument("--upstream", type=Path,

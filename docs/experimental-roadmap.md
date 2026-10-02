@@ -136,13 +136,19 @@ record, or a final-checkpoint-only forgetting calculation. The upstream
 `zero_shot_carried_best` training field concerns the carried incumbent, which can
 differ from the centroid. Preserve that field as a diagnostic with its own label.
 
-For cumulative return, integrate the active-task centroid curve against a common
-nominal environment-step clock. In the pilot, GA/ES checkpoints are 96,000 steps
-apart and PPO checkpoints are 12,800 steps apart. The analysis should record
-whether an evaluation occurs before or after an update and implement the pinned
-integration convention. A mean of unaligned GA and PPO log rows is not a common
-cumulative-return measurement. Store the raw integral in reward × steps, and
-optionally divide by total steps and 500 for a dimensionless curve average.
+For cumulative return, use the pinned integration convention on a common
+training clock. Source inspection confirms that rows are recorded **after** the
+update, so their completed-step positions are `(generation + 1) * step_size`.
+In the pilot, GA/ES checkpoints are 96,000 steps apart and PPO checkpoints are
+12,800 steps apart. The upstream plotter expresses that clock in NE-generation
+equivalents, and its metric resamples onto the unit generation grid before
+trapezoidal integration, with constant first/last tails. Our primary Cum follows
+that discretization and converts its units to reward × nominal environment
+steps. Also retain the integral over all logged knots as a separately labelled
+diagnostic: intermediate PPO samples make it differ from the resampled metric.
+A mean of unaligned GA and PPO rows is not the paper's cumulative-return metric.
+Divide primary Cum by total steps and 500 only for a fixed dimensionless curve
+average; the constant initial tail is not an untrained-policy evaluation.
 
 Report raw reward units for the pilot. The fixed `/500` search normalization is
 different from the paper's rescaling against an untrained reference and the best

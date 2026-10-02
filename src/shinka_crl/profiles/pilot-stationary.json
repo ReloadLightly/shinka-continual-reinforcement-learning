@@ -1,0 +1,12 @@
+{
+  "name": "pilot-stationary",
+  "purpose": "Matched stationary development control; four checkpoint phases, one unchanged task",
+  "env": "CartPole-v1",
+  "num_phases": 4,
+  "num_tasks": 1,
+  "episode_length": 500,
+  "eval_episodes": 10,
+  "seeds": [1001, 1002, 1003],
+  "ne": {"num_generations": 80, "task_interval": 20, "pop_size": 64, "num_evals": 3},
+  "ppo": {"num_updates": 600, "task_interval": 150, "num_envs": 256, "num_steps": 50, "num_minibatches": 8}
+}
