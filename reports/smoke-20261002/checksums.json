@@ -1,0 +1,310 @@
+{
+  "suite.json": {
+    "source": "suite.json",
+    "original_sha256": "76ccc005d206bdd118a49626a0ca998c8bc5ac8b179cf54bcee03426ee49b56f",
+    "original_bytes": 178,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "76ccc005d206bdd118a49626a0ca998c8bc5ac8b179cf54bcee03426ee49b56f",
+    "exported_bytes": 178
+  },
+  "environment.json": {
+    "source": "environment.json",
+    "original_sha256": "dfd82a1a5960052299fb269f8320a6c34721f8e504f33bd23c8edbcc87bba7c0",
+    "original_bytes": 2330,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "dfd82a1a5960052299fb269f8320a6c34721f8e504f33bd23c8edbcc87bba7c0",
+    "exported_bytes": 2330
+  },
+  "ga/training_metrics.json": {
+    "source": "baselines/smoke/ga/trial_1002/training_metrics.json",
+    "original_sha256": "13ef814202e4f98edc413af5cb60592fe174400e664bfc203af99894d5e0c747",
+    "original_bytes": 4338,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "13ef814202e4f98edc413af5cb60592fe174400e664bfc203af99894d5e0c747",
+    "exported_bytes": 4338
+  },
+  "ga/results.json": {
+    "source": "baselines/smoke/ga/trial_1002/results.json",
+    "original_sha256": "8e6121068ebafc22b253c7be49d79a96544ee17d9c248a7ada2799b986c0c9a1",
+    "original_bytes": 2071,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8e6121068ebafc22b253c7be49d79a96544ee17d9c248a7ada2799b986c0c9a1",
+    "exported_bytes": 2071
+  },
+  "ga/summary.json": {
+    "source": "baselines/smoke/ga/trial_1002/summary.json",
+    "original_sha256": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+    "original_bytes": 214,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+    "exported_bytes": 214
+  },
+  "ga/manifest.json": {
+    "source": "baselines/smoke/ga/trial_1002/manifest.json",
+    "original_sha256": "0cb12e4ad781317324b7a3d5f664784233329f04a0d5a8cdb1ce6e27c546cf6d",
+    "original_bytes": 1748,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8159ab44f766e15f8a062a386b81f6863e8c46110a0008487cd9718bcdf0e52e",
+    "exported_bytes": 1592
+  },
+  "ga/train.log": {
+    "source": "baselines/smoke/ga/trial_1002/train.log",
+    "original_sha256": "97e3e118f6c5f694e2a31664e5ba9d08b85b826934e345b2ae94f9c474c7fcb7",
+    "original_bytes": 403,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "03af318141675aafca489463aa728506b35adb559260031296520689200dd7dd",
+    "exported_bytes": 299
+  },
+  "ga/process.log": {
+    "source": "baselines/smoke/ga/trial_1002/process.log",
+    "original_sha256": "f91e233ac178dd92cb38bbe7f736d9fc08e3cc65a21eaed66201bff82bff8904",
+    "original_bytes": 1080,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "dcb9b29fd29188836af715226df624474275a9b08637ba3d02a17e9bca54a205",
+    "exported_bytes": 924
+  },
+  "ga/checkpoints.npz": {
+    "source": "baselines/smoke/ga/trial_1002/checkpoints.npz",
+    "original_sha256": "5295587129267c96aebc6fc9d43183e6e69657a157393e32aa0e9b40f6cd4b1e",
+    "original_bytes": 6756,
+    "exported": false,
+    "reason": "Binary checkpoint retained locally"
+  },
+  "ga/trajectory.npz": {
+    "source": "baselines/smoke/ga/trial_1002/trajectory.npz",
+    "original_sha256": "4c31160b5f56d007e99e68f39c7008b3cd6b503df4a2b9531a8275582533b80c",
+    "original_bytes": 3618,
+    "exported": false,
+    "reason": "Binary checkpoint retained locally"
+  },
+  "es/training_metrics.json": {
+    "source": "baselines/smoke/es/trial_1002/training_metrics.json",
+    "original_sha256": "e011b1d1bd39f41ddb376a33043a33248a7bae61420c80dafdc3236a95394178",
+    "original_bytes": 4372,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e011b1d1bd39f41ddb376a33043a33248a7bae61420c80dafdc3236a95394178",
+    "exported_bytes": 4372
+  },
+  "es/results.json": {
+    "source": "baselines/smoke/es/trial_1002/results.json",
+    "original_sha256": "80a198819d0bc28a45a9406946960d3aff877747979d8169c0af4059bab94186",
+    "original_bytes": 1853,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "80a198819d0bc28a45a9406946960d3aff877747979d8169c0af4059bab94186",
+    "exported_bytes": 1853
+  },
+  "es/summary.json": {
+    "source": "baselines/smoke/es/trial_1002/summary.json",
+    "original_sha256": "571cf2937179aa480adc6759c422b667b61e26b723ec9905d14563f0f167eb65",
+    "original_bytes": 216,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "571cf2937179aa480adc6759c422b667b61e26b723ec9905d14563f0f167eb65",
+    "exported_bytes": 216
+  },
+  "es/manifest.json": {
+    "source": "baselines/smoke/es/trial_1002/manifest.json",
+    "original_sha256": "ba12fbf0b32fac889a1477fdef062cee34412a51feb205202df7c307fdb77798",
+    "original_bytes": 1749,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "ba03c44cb9abae74792fb79033ecdee36cf87348906e3c971f6c3ae21ae22337",
+    "exported_bytes": 1593
+  },
+  "es/train.log": {
+    "source": "baselines/smoke/es/trial_1002/train.log",
+    "original_sha256": "99f88f567dfa36733a5a841345d2692dc1c9a6e8c2bc0ca4911f542a5b4fd474",
+    "original_bytes": 403,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "4a871dbf2b8b53e68a598bf47a43d5aeb10a32ede3db13d3bf291e02151772d3",
+    "exported_bytes": 299
+  },
+  "es/process.log": {
+    "source": "baselines/smoke/es/trial_1002/process.log",
+    "original_sha256": "2a629841c3ebcd443151517c616eb8a5356ed8186b38ea3cf5ce5d22239b3696",
+    "original_bytes": 1080,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "dffe371ba5eeb39f712eb312a41b1bdecc922abb930eb03f85c4abd1fd6c7dcd",
+    "exported_bytes": 924
+  },
+  "es/checkpoints.npz": {
+    "source": "baselines/smoke/es/trial_1002/checkpoints.npz",
+    "original_sha256": "f1322f8f9b0206d26f455a92131de545e7ffbfe32726b2b26765708efa4ac0a2",
+    "original_bytes": 9563,
+    "exported": false,
+    "reason": "Binary checkpoint retained locally"
+  },
+  "es/trajectory.npz": {
+    "source": "baselines/smoke/es/trial_1002/trajectory.npz",
+    "original_sha256": "9f33947c8fd23abdd2596b68e5d9d705719fe1091bb09eeda7c89326e797a5b7",
+    "original_bytes": 6408,
+    "exported": false,
+    "reason": "Binary checkpoint retained locally"
+  },
+  "ppo/training_metrics.json": {
+    "source": "baselines/smoke/ppo/trial_1002/training_metrics.json",
+    "original_sha256": "3725cad75b008996aee2f3efffc4e1922214629ed27716fbd58f82e9059896bd",
+    "original_bytes": 1574,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3725cad75b008996aee2f3efffc4e1922214629ed27716fbd58f82e9059896bd",
+    "exported_bytes": 1574
+  },
+  "ppo/results.json": {
+    "source": "baselines/smoke/ppo/trial_1002/results.json",
+    "original_sha256": "0492672684d95edc796b03862bb5bafad5cd2ac1e22a7a0bbe86ab2adf04d0ab",
+    "original_bytes": 1709,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0492672684d95edc796b03862bb5bafad5cd2ac1e22a7a0bbe86ab2adf04d0ab",
+    "exported_bytes": 1709
+  },
+  "ppo/summary.json": {
+    "source": "baselines/smoke/ppo/trial_1002/summary.json",
+    "original_sha256": "e21d31e1329ac5c9ca1f68d0715a480824ff4c6d7d1010af8379b9f1d59aefd2",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e21d31e1329ac5c9ca1f68d0715a480824ff4c6d7d1010af8379b9f1d59aefd2",
+    "exported_bytes": 217
+  },
+  "ppo/manifest.json": {
+    "source": "baselines/smoke/ppo/trial_1002/manifest.json",
+    "original_sha256": "b3f6280a18e4937a9043d03c285d1cc05cb3acb6173e46e216b0566c23d65d85",
+    "original_bytes": 1775,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "4b1aa1c291338101a34e568d666fa68269975a7816e679a8ce2e05b6a8ed9e36",
+    "exported_bytes": 1619
+  },
+  "ppo/train.log": {
+    "source": "baselines/smoke/ppo/trial_1002/train.log",
+    "original_sha256": "be64f5ccf9bfecc7854f1f15027d66364f488ec6ccbbe922b3d0215e35bcfaca",
+    "original_bytes": 399,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "6b71aba5f3f8ec90d35fd7632a9a8c762da3be0cdc6b139ef876b9e6e08a032a",
+    "exported_bytes": 295
+  },
+  "ppo/process.log": {
+    "source": "baselines/smoke/ppo/trial_1002/process.log",
+    "original_sha256": "92a05f1229ef0f04bc68b5a1a77710d3227eadc7a5ef50137371b86290bafb82",
+    "original_bytes": 1148,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "9805bd24889fcd1dd39732a1db4f205f1e96c57e275255457df7996db8d2c342",
+    "exported_bytes": 992
+  },
+  "ppo/checkpoints.npz": {
+    "source": "baselines/smoke/ppo/trial_1002/checkpoints.npz",
+    "original_sha256": "210accc887d8a43a0f17da1ad5fb58b9c345f5a5a83a70d05ea73ee9fceae5b1",
+    "original_bytes": 3349,
+    "exported": false,
+    "reason": "Binary checkpoint retained locally"
+  },
+  "ppo/trajectory.npz": {
+    "source": "baselines/smoke/ppo/trial_1002/trajectory.npz",
+    "original_sha256": "7590f4154aedf4cf3534e396c5243f1703580c1b57605982efa5ef6038df5232",
+    "original_bytes": 3559,
+    "exported": false,
+    "reason": "Binary checkpoint retained locally"
+  },
+  "shinka/training_metrics.json": {
+    "source": "shinka/seed_1001/training_metrics.json",
+    "original_sha256": "13ef814202e4f98edc413af5cb60592fe174400e664bfc203af99894d5e0c747",
+    "original_bytes": 4338,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "13ef814202e4f98edc413af5cb60592fe174400e664bfc203af99894d5e0c747",
+    "exported_bytes": 4338
+  },
+  "shinka/results.json": {
+    "source": "shinka/seed_1001/results.json",
+    "original_sha256": "cb0c9c08616b9b84d235c5063f247640b7009b6576fc1642eb5a4043de44670c",
+    "original_bytes": 2071,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cb0c9c08616b9b84d235c5063f247640b7009b6576fc1642eb5a4043de44670c",
+    "exported_bytes": 2071
+  },
+  "shinka/summary.json": {
+    "source": "shinka/seed_1001/summary.json",
+    "original_sha256": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+    "original_bytes": 214,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+    "exported_bytes": 214
+  },
+  "shinka/manifest.json": {
+    "source": "shinka/seed_1001/manifest.json",
+    "original_sha256": "c676fc8afdb1c1170c932b5b170f321e8ff74ade2c12523c2b40bbeb2daa900f",
+    "original_bytes": 1855,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "54fbe3a99ffdbe0714c40e7bd2ca1aedd03219e8c055e850b6334fa4b2dd3080",
+    "exported_bytes": 1699
+  },
+  "shinka/train.log": {
+    "source": "shinka/seed_1001/train.log",
+    "original_sha256": "c1a8498380ba0407b6d96c9e312baadf1cb51a663e05645bc1845df34a19c78e",
+    "original_bytes": 377,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "55033231ee0accb77fedebe3425136f389c724639279688f5d9676bfa95fec9a",
+    "exported_bytes": 273
+  },
+  "shinka/process.log": {
+    "source": "shinka/seed_1001/process.log",
+    "original_sha256": "ef444a0141e3f0e3a036b27ed3ad58f3199b7a897ffadc801e487021cfb2ae0f",
+    "original_bytes": 1112,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5073f0a7b7ca2e36459527a205fe0cdfdef3daf03586fb76d54982d39e936f2a",
+    "exported_bytes": 956
+  },
+  "shinka/checkpoints.npz": {
+    "source": "shinka/seed_1001/checkpoints.npz",
+    "original_sha256": "5295587129267c96aebc6fc9d43183e6e69657a157393e32aa0e9b40f6cd4b1e",
+    "original_bytes": 6756,
+    "exported": false,
+    "reason": "Binary checkpoint retained locally"
+  },
+  "shinka/trajectory.npz": {
+    "source": "shinka/seed_1001/trajectory.npz",
+    "original_sha256": "4c31160b5f56d007e99e68f39c7008b3cd6b503df4a2b9531a8275582533b80c",
+    "original_bytes": 3618,
+    "exported": false,
+    "reason": "Binary checkpoint retained locally"
+  },
+  "shinka/metrics.json": {
+    "source": "shinka/metrics.json",
+    "original_sha256": "660cbfa954f32392c1d3afce95004274fb3075e1affd651c9ba36fc7593824fc",
+    "original_bytes": 394,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "660cbfa954f32392c1d3afce95004274fb3075e1affd651c9ba36fc7593824fc",
+    "exported_bytes": 394
+  },
+  "shinka/correct.json": {
+    "source": "shinka/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  }
+}

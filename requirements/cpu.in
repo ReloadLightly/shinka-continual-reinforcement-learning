@@ -1,0 +1,9 @@
+# CPU-only runtime for unchanged upstream gymnax GA, ES and PPO trainers.
+# Each direct and transitive version comes from the pinned upstream uv.lock.
+# Gymnax eagerly imports plotting support, so matplotlib/seaborn are required.
+# Excludes the optional CUDA, Torch, Brax, MuJoCo and Kinetix stacks.
+jax==0.5.3
+flax==0.10.6
+optax==0.2.6
+gymnax==0.0.9
+pyyaml==6.0.3

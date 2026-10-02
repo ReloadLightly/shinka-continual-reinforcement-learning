@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "profile": {
+    "name": "smoke",
+    "purpose": "Pipeline check only; not a reproduction or matched comparison",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 2,
+    "num_tasks": 2,
+    "episode_length": 32,
+    "eval_episodes": 1,
+    "seeds": [
+      1001
+    ],
+    "ne": {
+      "num_generations": 4,
+      "task_interval": 2,
+      "pop_size": 8,
+      "num_evals": 1
+    },
+    "ppo": {
+      "num_updates": 4,
+      "task_interval": 2,
+      "num_envs": 8,
+      "num_steps": 16,
+      "num_minibatches": 2
+    }
+  },
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "suite_wall_seconds": 56.2285150710959,
+  "caption": "Single-seed pipeline smoke validation only; training budgets are not matched. Returns are active-task centroid evaluation means, not reproduction or comparative performance evidence. Nominal training steps exclude evaluation and may include post-termination rollout padding. Wall time includes process startup and compilation.",
+  "rows": [
+    {
+      "method": "ga",
+      "seed": 1001,
+      "trial": 1002,
+      "metric_rows": 4,
+      "task_schedule": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "active_centroid_returns": [
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "mean_return": 10.0,
+      "normalized_score": 0.3125,
+      "training_env_steps_nominal": 1024,
+      "wall_seconds": 20.77014776598662
+    },
+    {
+      "method": "es",
+      "seed": 1001,
+      "trial": 1002,
+      "metric_rows": 4,
+      "task_schedule": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "active_centroid_returns": [
+        16.0,
+        9.0,
+        9.0,
+        16.0
+      ],
+      "mean_return": 12.5,
+      "normalized_score": 0.390625,
+      "training_env_steps_nominal": 1024,
+      "wall_seconds": 11.614547097007744
+    },
+    {
+      "method": "ppo",
+      "seed": 1001,
+      "trial": 1002,
+      "metric_rows": 4,
+      "task_schedule": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "active_centroid_returns": [
+        32.0,
+        32.0,
+        13.0,
+        17.0
+      ],
+      "mean_return": 23.5,
+      "normalized_score": 0.734375,
+      "training_env_steps_nominal": 512,
+      "wall_seconds": 8.1268489259528
+    },
+    {
+      "method": "shinka",
+      "seed": 1001,
+      "trial": 1002,
+      "metric_rows": 4,
+      "task_schedule": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "active_centroid_returns": [
+        10.0,
+        10.0,
+        10.0,
+        10.0
+      ],
+      "mean_return": 10.0,
+      "normalized_score": 0.3125,
+      "training_env_steps_nominal": 1024,
+      "wall_seconds": 14.665818581008352
+    }
+  ],
+  "validation": {
+    "complete_manifests": true,
+    "metric_hashes_match": true,
+    "task_vectors_match": true,
+    "shinka_correct": true,
+    "shinka_initial_matches_ga": true
+  },
+  "noise_vectors": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -0.5717431306838989,
+      -0.20802041888237,
+      -0.14799921214580536,
+      0.10802476108074188
+    ]
+  ],
+  "artifact_policy": "Text artifacts retained; local repository paths replaced by <repo>. Original and exported SHA-256 hashes identify any redacted copies. Binary NPZ checkpoints remain local; only their hashes are exported. Raw upstream JSON may contain NaN placeholders; derived summary is strict finite JSON."
+}

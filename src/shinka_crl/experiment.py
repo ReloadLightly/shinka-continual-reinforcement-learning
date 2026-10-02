@@ -149,7 +149,9 @@ def run_experiment(*, profile: dict, method: str, seed: int, output_dir: Path,
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
     started = time.monotonic()
     try:
-        with (output_dir / "train.log").open("w") as log:
+        # Upstream creates train.log itself; sharing that path corrupts both
+        # streams when its Tee reopens the file. Capture the process separately.
+        with (output_dir / "process.log").open("w") as log:
             subprocess.run(command, cwd=upstream, stdout=log, stderr=subprocess.STDOUT,
                            timeout=timeout, check=True, env={**os.environ, "PYTHONUNBUFFERED": "1"})
         metric_path = output_dir / "training_metrics.json"

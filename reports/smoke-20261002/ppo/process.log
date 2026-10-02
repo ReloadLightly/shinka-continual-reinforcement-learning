@@ -1,0 +1,18 @@
+======================================================================
+gymnax | ppo (rl) | CartPole-v1_sigma0.5 | continual | trial 1002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 2
+  schedule       : switch, 2 sub-tasks
+  matched budget : 3.072e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_updates, num_envs, num_steps)
+  ppo overrides  : {'num_envs': 8, 'num_steps': 16, 'num_minibatches': 2}
+  seed           : 1001
+  boundary info  : none
+  output         : <repo>/results/smoke-20261002-validated/baselines/smoke/ppo/trial_1002
+======================================================================
+  update     0 task= 0 H=0.688 t0=   32.0 t1=   18.0 gen'ist=   18.0
+  update     3 task= 1 H=0.687 t0=   32.0 t1=   17.0 gen'ist=   17.0
+  wrote <repo>/results/smoke-20261002-validated/baselines/smoke/ppo/trial_1002
+
+Done. <repo>/results/smoke-20261002-validated/baselines/smoke/ppo/trial_1002

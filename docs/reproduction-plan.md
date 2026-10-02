@@ -1,6 +1,6 @@
 # Reproduction plan
 
-This project starts a reproduction of [Continual Reinforcement Learning with Neuroevolution](https://arxiv.org/abs/2610.01583), by Eleni Nisioti, Andrea Cossu, Kathrin Korte, and Sebastian Risi (arXiv:2610.01583v1, October 1, 2026). The initial scope is a CartPole comparison with upstream GA, ES, and PPO, followed by a ShinkaEvolve extension. No experiment results or reproduced findings are claimed yet.
+This project starts a reproduction of [Continual Reinforcement Learning with Neuroevolution](https://arxiv.org/abs/2610.01583), by Eleni Nisioti, Andrea Cossu, Kathrin Korte, and Sebastian Risi (arXiv:2610.01583v1, October 1, 2026). The initial scope is a CartPole comparison with upstream GA, ES, and PPO, followed by a ShinkaEvolve extension. [CPU smoke validation](../reports/smoke-20261002/summary.json) is complete; full-budget experiments and reproduced findings remain pending.
 
 The reference implementation is pinned to [`821570eb6a22db0f7aa77111b2ea541fe8fa795b`](https://github.com/eleninisioti/continual_neuroevolution/tree/821570eb6a22db0f7aa77111b2ea541fe8fa795b). Keep it as an external checkout; no top-level license was present at that revision. This repository contains the integration and experiment specification, rather than a vendored copy of that implementation.
 
@@ -41,10 +41,18 @@ Keep population size, episode cap, generations, task sequence, evaluation budget
 
 ## Milestones and acceptance criteria
 
-1. **Validate the scaffold.** Check command construction, parameter bounds, metric parsing, and evaluator failure behavior. A reduced-budget smoke run establishes that the pipeline works; it cannot substantiate the paper's findings.
-2. **Validate upstream baselines.** Run GA, ES, and PPO without search. Inspect saved configurations and task schedules, confirm matched budgets, and preserve centroid checkpoint evaluations. Retain a stationary control before interpreting continual-learning behavior.
+1. **Validate the scaffold — complete.** Command construction, parameter bounds, metric parsing, evaluator failure behavior, and real GA/ES/PPO training have been checked. The initial Shinka candidate reproduces the GA baseline's entire two-task centroid trace. These reduced-budget runs establish pipeline execution only.
+2. **Validate a matched pilot — next.** Define a reduced but compute-matched budget, retain the 500-step episode cap, and run GA, ES, and PPO on several development trials under both stationary and switching conditions. Inspect saved configurations, task schedules, centroid checkpoint evaluations, and memory/runtime costs before launching the full experiment. Reserve reporting trials 1–10.
 3. **Run the full CartPole slice.** Use ten trials, the 20-phase protocol, and held-out evaluation episodes. Report learning accuracy, forgetting, their difference, cumulative return, and zero-shot transfer with trial uncertainty. For alternating tasks, forgetting must average loss at consecutive switches in both directions; a final-checkpoint-only formula is inappropriate. Follow the paper's Appendix A.3 for definitions and normalization.
 4. **Evaluate the Shinka extension.** Compare the frozen searched configuration against the original GA and a search-budget-matched random hyperparameter search. Preserve ES and PPO as reference learners. Report individual trial outcomes as well as aggregates, and account for search cost.
 5. **Expand after baseline validation.** Add other task variations and environments, continual PPO variants, and neighborhood analysis. Adaptive mutation or selection rules are a later search space requiring their own interface and controlled comparisons.
 
 Keep smoke outputs, search-development scores, and final reporting results distinguishable in artifact metadata. Record deviations from the pinned protocol before running comparisons; do not infer successful reproduction from a single favorable curve.
+
+## Validation record · October 2, 2026
+
+The [published smoke evidence](../reports/smoke-20261002/summary.json) contains four real CPU runs: GA, ES, PPO, and the initial GA configuration passed through the Shinka evaluator. Each run uses seed 1001, task trial 1002, four recorded steps, and the task order `[0, 0, 1, 1]`. Training budgets are intentionally unmatched (1,024 nominal steps for GA/ES versus 512 for PPO), so the observed returns do not support a method ranking.
+
+The CPU runtime contains 45 packages, all at versions present in the pinned upstream lock. It is a Linux x86_64 / CPython 3.11 subset for this benchmark, omitting CUDA and unrelated benchmark dependencies. The reference source is unchanged. Package versions, source hashes, raw metrics, configurations, logs, and artifact checksums are included in the report.
+
+An initial run completed numerically but exposed a logging collision: both the harness and upstream `Tee` opened `train.log`. The harness now captures stdout/stderr in `process.log`, leaving `train.log` to upstream. The initial outputs remain in the local ignored directory `results/smoke-20261002`; the published evidence comes from a fresh rerun at `results/smoke-20261002-validated`. The rerun retained the same scores and has intact logs. No LLM proposals were requested.

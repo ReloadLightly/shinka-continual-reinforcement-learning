@@ -62,6 +62,8 @@ def test_runner_writes_complete_provenance_and_summary(
 
     def train(command, **kwargs):
         launches.append((command, kwargs))
+        # Model upstream's own logger. A shared path would overwrite this text.
+        (output / "train.log").write_text("Upstream trainer log.\n")
         kwargs["stdout"].write("Mock trainer finished.\n")
         write_smoke_metrics(command)
         return subprocess.CompletedProcess(command, 0)
@@ -91,7 +93,8 @@ def test_runner_writes_complete_provenance_and_summary(
     assert options["cwd"] == checkout.resolve()
     assert options["timeout"] == 17
     assert options["check"] is True
-    assert "Mock trainer finished" in (output / "train.log").read_text()
+    assert "Mock trainer finished" in (output / "process.log").read_text()
+    assert (output / "train.log").read_text() == "Upstream trainer log.\n"
 
 
 @pytest.mark.parametrize("failure", ["nonzero", "timeout", "incomplete_metrics"])
@@ -128,7 +131,7 @@ def test_runner_records_failed_runs_without_success_summary(
     assert manifest["wall_seconds"] >= 0
     assert "metrics_sha256" not in manifest
     assert not (output / "summary.json").exists()
-    assert "Trainer started" in (output / "train.log").read_text()
+    assert "Trainer started" in (output / "process.log").read_text()
 
 
 def test_runner_refuses_to_overwrite_existing_artifacts(
