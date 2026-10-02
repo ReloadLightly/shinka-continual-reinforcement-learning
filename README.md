@@ -16,7 +16,7 @@
 
 This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. Its frozen active/previous-task evaluator has now completed 15 fixed-control trials on fresh development seeds and two verified cache checks. These results establish an executable research pipeline, static baselines, and a verified adaptive interface; they do not establish search-method superiority or a full-paper reproduction. Adaptive Shinka proposal search remains pending.
 
-> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Finalist validation complete · Adaptive rules and full reproduction pending.
+> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Finalist validation complete · Adaptive controls complete · Adaptive Shinka search and full reproduction pending.
 
 ## 1. Research questions
 
@@ -632,7 +632,7 @@ The proposer will use the previously verified subscription route. Invalid and
 duplicate proposals consume slots; verified duplicates reuse training evidence.
 The fixed controls and both static winners remain comparison baselines.
 
-The measured controls cost 2.6–3.8 minutes per three-seed evaluation. Four new
+The measured controls cost 2.5–3.8 minutes per three-seed evaluation. Four new
 valid programs would therefore provisionally require about 10–15 minutes of
 evaluation, plus model proposal and archive overhead; new rules can change
 episode lengths and runtime. Inspect the first block before extending it.

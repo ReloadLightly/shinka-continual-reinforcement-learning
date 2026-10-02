@@ -122,7 +122,7 @@ These are fixed-control development results. No adaptive Shinka proposals or
 model calls occurred. The objective and arithmetic rule were not changed after
 observing outcomes. The next experiment creates a separate Shinka archive with
 five total slots before extending to 13 and 25. The measured controls took
-2.6–3.8 minutes per candidate; four new valid candidates provisionally need
+2.5–3.8 minutes per candidate; four new valid candidates provisionally need
 10–15 minutes of evaluation plus proposal overhead. Reserved validation remains
 unused until a later frozen handoff.
 
