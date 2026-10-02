@@ -4,7 +4,7 @@
 
 **Reproducing continual neuroevolution · Searching with ShinkaEvolve**
 
-[Reference paper](https://arxiv.org/abs/2610.01583v1) · [Experimental protocol](docs/reproduction-plan.md) · [Shinka task](tasks/cartpole_ga/README.md) · [Source pins](upstream.lock.json)
+[Reference paper](https://arxiv.org/abs/2610.01583v1) · [Experimental roadmap](docs/experimental-roadmap.md) · [Shinka task](tasks/cartpole_ga/README.md) · [Source pins](upstream.lock.json)
 
 <sub>A living research report · CartPole study · October 2026</sub>
 
@@ -14,9 +14,9 @@
 
 ## Abstract
 
-This project investigates whether program search can improve neuroevolution in continual reinforcement learning. We begin with a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), using their pinned implementation of genetic algorithms (GA), evolution strategies (ES), and proximal policy optimization (PPO). The first environment is CartPole with alternating observation offsets. Our initial ShinkaEvolve extension searches two static GA hyperparameters under a fixed development budget. CPU smoke runs successfully validate all three learners and the initial candidate evaluator. The full ten-trial comparison remains pending; no reproduced findings or improvements over the reference paper are claimed.
+This project investigates whether program search can improve neuroevolution in continual reinforcement learning. We begin with a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), using their pinned implementation of genetic algorithms (GA), evolution strategies (ES), and proximal policy optimization (PPO). The first environment is CartPole with alternating observation offsets. Our initial ShinkaEvolve extension searches two static GA hyperparameters under a fixed development budget. CPU smoke runs validate all three learners; a three-seed development evaluation measures 114.69 seconds per candidate on two logical CPUs. The full ten-trial comparison remains pending; no reproduced findings or improvements over the reference paper are claimed.
 
-> **Study status:** CPU pipeline validated on 2 October 2026 · 4/4 runs passed · Full-budget experiments and LLM search pending.
+> **Study status:** CPU pipeline and search timing validated on 2 October 2026 · Subscription configuration prepared · Matched pilot and LLM search pending.
 
 ## 1. Research questions
 
@@ -77,6 +77,31 @@ $$
 
 Here, $a(t)$ is the active task, $H$ the episode cap, and $T$ the number of recorded generations. Larger scores are better. This objective selects configurations; final reporting additionally requires the paper's learning accuracy, forgetting, cumulative return, and zero-shot transfer metrics with uncertainty across trials. The selected configuration must be frozen before reporting trials.
 
+The complete initial candidate is:
+
+```python
+# EVOLVE-BLOCK-START
+def get_ga_config():
+    return {"sigma": 0.5, "elite_ratio": 0.5}
+# EVOLVE-BLOCK-END
+```
+
+There are two distinct evolutionary loops. Shinka selects a parent program from its archive and asks Codex to propose a code mutation. The fixed evaluator then trains a fresh population of policy networks for each development seed. One outer candidate therefore requires **three trials × 80 inner GA generations**, or 23.04 million nominal training steps. Policy weights are not inherited between candidate evaluations.
+
+```mermaid
+flowchart LR
+    A[Parent program + scores] --> B[Codex proposal]
+    B --> C[Static contract validation]
+    C --> D[GA training · 3 fixed seeds]
+    D --> E[Score + feedback]
+    E --> F[Shinka archive + SQLite]
+    F --> A
+```
+
+The planned first search has one initial candidate and **24 proposal slots**, compared with a matched random-search control. Shinka's total generation targets are **5 → 13 → 25**; each completed block can be resumed from the same result directory. These are targets for attempts, not guarantees of distinct valid programs. A higher active-task score alone is not evidence of reduced forgetting.
+
+The subsequent algorithm-search experiment will evolve a pure `update_sigma(sigma, stats, memory)` function using training statistics and bounded persistent state. It will preserve the baseline's selection, policy, random stream, and budgets. This adaptive interface is specified in the [roadmap](docs/experimental-roadmap.md), but is not yet implemented.
+
 ## 4. Results
 
 ### Pipeline validation
@@ -93,6 +118,21 @@ Real training, metric validation, and the Shinka evaluator contract all complete
 <sub>Table 4. Observed smoke results, 2 October 2026. Returns average active-task centroid evaluations across four checkpoints. Wall times include trainer startup and compilation. These values validate execution; unequal budgets and one seed preclude a scientific comparison.</sub>
 
 The initial candidate matches the default GA score and returns `correct: true`, validating the evaluator without model calls. The [evidence archive](reports/smoke-20261002) contains raw metrics, resolved configurations, logs, environment details, and checksums. The first execution exposed a log-file collision; the validated rerun separates harness output (`process.log`) from the upstream training log (`train.log`). The first attempt is retained locally.
+
+### Development runtime calibration
+
+The unchanged initial candidate also completed the full `search` profile: 80 generations per seed, four alternating phases, population 64, three training and evaluation episodes, and a 500-step cap. The three sequential trials took **114.69 seconds** including imports, compilation, training, and scoring. Maximum individual child-process resident memory was 722 MiB; this is not aggregate system memory.
+
+| Development seed | Task trial | Generations | Wall time (s) |
+| :--- | ---: | ---: | ---: |
+| 1001 | 1002 | 80 | 43.82 |
+| 1002 | 1003 | 80 | 28.46 |
+| 1003 | 1004 | 80 | 42.03 |
+| **Complete candidate evaluation** | **3 trials** | **240** | **114.69** |
+
+<sub>Table 5. Measured search evaluation on two logical CPUs, 2 October 2026. The complete duration includes evaluator overhead. This is one configuration's runtime calibration, not an estimate of variation across configurations or an algorithm comparison. [Protocol, raw evidence, and checksums](reports/search-timing-20261002).</sub>
+
+At this measured rate, 25 candidate evaluations require approximately 48 minutes of local training. Assuming an additional 0.5–2 minutes per Codex proposal, the planned search takes approximately **60–100 minutes** before review, retries, or quota pauses. Proposal latency is an assumption to replace after the first block. The 24-configuration random control adds approximately 46 minutes of evaluation. These projections apply to the current reduced profile; they do not estimate full-paper runtime.
 
 ### Scientific evaluation
 
@@ -151,6 +191,8 @@ uv run --frozen python scripts/run_baseline.py --profile paper-cartpole --method
 
 For full-budget training, set `--timeout` to suit the available hardware; the default is 1,800 seconds per trial. The [task documentation](tasks/cartpole_ga/README.md) covers candidate validation, provider configuration, and explicit Shinka launches. Installing the optional `shinka` extra does not start a model search.
 
+The planned model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing). No model proposals have been run for this study, and a paid API key is not required for the planned pilot.
+
 Each real trial retains its command, profile, seed, task trial, source revision, interpreter version, device selection, duration, upstream configuration and metrics, training log, and metric-file hash. Modified upstream tracked files and untracked source files are rejected. Source revisions are fixed in [`upstream.lock.json`](upstream.lock.json):
 
 | Component | Pinned revision |
@@ -165,7 +207,9 @@ The [GitHub Actions template](ci/github-actions.yml) runs the harness checks. CI
 
 The current search space contains two static GA settings. It cannot discover adaptive update rules, change policies, or alter experiment budgets. Reduced-budget development scores may not predict performance across the full task sequence. Smoke scores support no ranking of GA, ES, and PPO because they use one seed and unmatched training budgets.
 
-The next experiment is a multi-seed CartPole baseline pilot with 500-step episodes, matched training budgets, a stationary control, and the paper's continual-learning metrics. It will use development trials while reserving reporting trials 1–10, test task-transition analysis, and inform the cost of the full ten-trial protocol before configuration search begins. Full-paper reproduction additionally requires other environments, task variations, continual PPO variants, and neighborhood analysis. The [reproduction plan](docs/reproduction-plan.md) defines acceptance criteria and the reporting metrics.
+The next experiment is an **18-trial matched baseline pilot**: GA, ES, and PPO × stationary and alternating conditions × three development seeds. Each trial uses four phases, a 500-step episode cap, and 7.68 million nominal training steps. GA/ES use 80 generations with population 64 and three training episodes; PPO uses 600 updates with 256 environments and 50 rollout steps. Held-out evaluation uses ten episodes. This reduced protocol must pass task-transition and metric checks before configuration search begins.
+
+The [experimental roadmap](docs/experimental-roadmap.md) specifies stage gates, random controls, reserved validation seeds, the adaptive-program interface, and the work still needed to execute the pilot. The [reproduction specification](docs/reproduction-plan.md) preserves the full paper protocol. Full-paper reproduction additionally requires other environments, task variations, continual PPO variants, and neighborhood analysis.
 
 ## References
 

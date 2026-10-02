@@ -1,5 +1,7 @@
 # Reproduction plan
 
+The [experimental roadmap](experimental-roadmap.md) defines the immediate matched pilot, subscription-backed Shinka stages, validation split, and adaptive-rule extension. This document retains the full reproduction specification; completing the reduced search is not completion of the paper reproduction.
+
 This project starts a reproduction of [Continual Reinforcement Learning with Neuroevolution](https://arxiv.org/abs/2610.01583), by Eleni Nisioti, Andrea Cossu, Kathrin Korte, and Sebastian Risi (arXiv:2610.01583v1, October 1, 2026). The initial scope is a CartPole comparison with upstream GA, ES, and PPO, followed by a ShinkaEvolve extension. [CPU smoke validation](../reports/smoke-20261002/summary.json) is complete; full-budget experiments and reproduced findings remain pending.
 
 The reference implementation is pinned to [`821570eb6a22db0f7aa77111b2ea541fe8fa795b`](https://github.com/eleninisioti/continual_neuroevolution/tree/821570eb6a22db0f7aa77111b2ea541fe8fa795b). Keep it as an external checkout; no top-level license was present at that revision. This repository contains the integration and experiment specification, rather than a vendored copy of that implementation.

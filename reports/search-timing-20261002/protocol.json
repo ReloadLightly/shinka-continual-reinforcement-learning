@@ -1,0 +1,21 @@
+{
+  "name": "search",
+  "purpose": "Reduced GA development budget; disjoint from final reporting seeds",
+  "env": "CartPole-v1_sigma0.5",
+  "num_phases": 4,
+  "num_tasks": 2,
+  "episode_length": 500,
+  "eval_episodes": 3,
+  "seeds": [
+    1001,
+    1002,
+    1003
+  ],
+  "ne": {
+    "num_generations": 80,
+    "task_interval": 20,
+    "pop_size": 64,
+    "num_evals": 3
+  },
+  "ppo": null
+}

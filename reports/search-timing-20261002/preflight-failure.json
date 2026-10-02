@@ -1,0 +1,7 @@
+{
+  "status": "failed_before_training",
+  "error": "importlib.metadata.PackageNotFoundError: evosax",
+  "cause": "Optional metadata lookup assumed evosax was installed as a package; upstream vendors its code.",
+  "resolution": "Collect all installed distribution versions instead of assuming evosax metadata exists.",
+  "training_started": false
+}

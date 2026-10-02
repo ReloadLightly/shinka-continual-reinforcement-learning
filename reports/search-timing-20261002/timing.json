@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "purpose": "runtime calibration; no performance comparison",
+  "profile": "search",
+  "seeds": [
+    1001,
+    1002,
+    1003
+  ],
+  "nominal_training_steps_per_seed": 7680000,
+  "timing_boundary": "evaluator subprocess; includes imports, compilation, training and scoring",
+  "timeout_seconds": 600,
+  "training_process_timeout_seconds": 600,
+  "command": [
+    "$REPO_ROOT/.venv/bin/python",
+    "$REPO_ROOT/tasks/cartpole_ga/evaluate.py",
+    "--program_path",
+    "$REPO_ROOT/tasks/cartpole_ga/initial.py",
+    "--results_dir",
+    "$REPO_ROOT/results/search-timing-20261002/evaluation/candidate"
+  ],
+  "returncode": 0,
+  "wall_seconds": 114.69371253694408,
+  "maximum_child_process_rss_kib": 739604,
+  "memory_note": "Linux RUSAGE_CHILDREN ru_maxrss; maximum child-process RSS, not aggregate",
+  "seed_timings": [
+    {
+      "seed": 1001,
+      "status": "complete",
+      "wall_seconds": 43.82263611408416
+    },
+    {
+      "seed": 1002,
+      "status": "complete",
+      "wall_seconds": 28.459970278898254
+    },
+    {
+      "seed": 1003,
+      "status": "complete",
+      "wall_seconds": 42.03336671402212
+    }
+  ]
+}

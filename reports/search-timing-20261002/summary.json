@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "purpose": "Runtime calibration of the current initial candidate; not a performance comparison or paper reproduction",
+  "profile": {
+    "name": "search",
+    "purpose": "Reduced GA development budget; disjoint from final reporting seeds",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 3,
+    "seeds": [
+      1001,
+      1002,
+      1003
+    ],
+    "ne": {
+      "num_generations": 80,
+      "task_interval": 20,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "candidate": {
+    "path": "tasks/cartpole_ga/initial.py",
+    "sigma": 0.5,
+    "elite_ratio": 0.5
+  },
+  "evaluator_wall_seconds": 114.69371253694408,
+  "maximum_child_process_rss_kib": 739604,
+  "nominal_training_steps_per_seed": 7680000,
+  "nominal_training_steps_per_candidate": 23040000,
+  "nominal_steps_note": "80 generations \u00d7 64 population \u00d7 3 training rollouts \u00d7 500-step cap; excludes evaluation and may include rollout padding after termination.",
+  "timing_note": "One candidate measurement with sequential fresh training processes; includes imports, compilation, training and scoring. Environment probe is excluded. Model proposals, review and retry overhead are excluded. Seed variation is not an estimate of across-candidate timing uncertainty.",
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "thread_environment": {
+    "JAX_PLATFORMS": "cpu",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "rows": [
+    {
+      "seed": 1001,
+      "trial": 1002,
+      "metric_rows": 80,
+      "wall_seconds": 43.82263611408416,
+      "mean_return": 268.7583344459534,
+      "normalized_score": 0.5375166688919067
+    },
+    {
+      "seed": 1002,
+      "trial": 1003,
+      "metric_rows": 80,
+      "wall_seconds": 28.459970278898254,
+      "mean_return": 346.81666855812074,
+      "normalized_score": 0.6936333371162415
+    },
+    {
+      "seed": 1003,
+      "trial": 1004,
+      "metric_rows": 80,
+      "wall_seconds": 42.03336671402212,
+      "mean_return": 232.54167073965073,
+      "normalized_score": 0.46508334147930147
+    }
+  ],
+  "combined_score": 0.5654111158291499,
+  "validation": {
+    "complete_manifests": true,
+    "strict_json": true,
+    "metric_hashes_match": true,
+    "source_hashes_match": true,
+    "task_schedule_matches": true,
+    "score_recomputed": true,
+    "candidate_correct": true
+  },
+  "artifact_policy": "Text artifacts are published with local repository paths replaced by $REPO_ROOT. Original and published hashes are recorded. Binary checkpoints remain local and their original hashes are recorded.",
+  "preflight_failure": "A package-metadata lookup for vendored evosax failed before training. The probe was corrected to enumerate installed distributions. Both the failure record and successful run are retained."
+}
