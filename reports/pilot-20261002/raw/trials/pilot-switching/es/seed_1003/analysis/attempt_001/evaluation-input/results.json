@@ -1,0 +1,89 @@
+{
+  "config": {
+    "env": "CartPole-v1",
+    "method": "es",
+    "schedule": "switch",
+    "num_generations": 80,
+    "task_interval": 20,
+    "task_warmup": 0,
+    "pop_size": 64,
+    "sigma": 0.1,
+    "learning_rate": 0.05,
+    "optimizer": "sgd",
+    "shaping": "zscore",
+    "sigma_lr": 0.0,
+    "num_evals": 3,
+    "noise_range": 0.5,
+    "num_tasks": 2,
+    "first_task_clean": true,
+    "pool_size": null,
+    "pair_repeats": 5,
+    "expand_every": 25,
+    "searcher_kwargs": {},
+    "searcher_resolved": {},
+    "objective": "mean",
+    "worst_k": 1,
+    "tasks_per_batch": null,
+    "track_population": false,
+    "population_interval": 20,
+    "descriptor": null,
+    "traj_steps": 50,
+    "aurora": null,
+    "task_sequence": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "eval_episodes": 10,
+    "seed": 1003,
+    "trial": 1004,
+    "track_members": false,
+    "population_snapshot_interval": 0,
+    "snapshot_members": 128,
+    "hidden_dims": [
+      16,
+      16
+    ],
+    "episode_length": 500,
+    "obs_norm": false,
+    "checkpoint_every": null,
+    "track_plasticity": true,
+    "track_diversity": true,
+    "elite_convention": "best_member",
+    "plasticity_interval": 10,
+    "num_params": 386,
+    "solved_threshold": 475.0,
+    "column_naming": "gymnax_aliases_v1"
+  },
+  "noise_vectors": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.2679859399795532,
+      1.158277153968811,
+      0.8169869184494019,
+      -0.8507702946662903
+    ]
+  ],
+  "elapsed_seconds": 19.414110898971558,
+  "final": {
+    "centroid_task0": 214.10000610351562,
+    "centroid_task1": 493.3000183105469,
+    "centroid_generalist": 214.10000610351562,
+    "centroid_mean_over_tasks": 353.70001220703125
+  },
+  "best_generalist": {
+    "generation": 77,
+    "score": 323.6000061035156,
+    "task0": 323.6000061035156,
+    "task1": 364.5
+  },
+  "final_solves_all_tasks": false,
+  "env_steps": 7680000,
+  "env_steps_per_generation": 96000
+}

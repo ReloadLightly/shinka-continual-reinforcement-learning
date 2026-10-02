@@ -1,0 +1,21 @@
+======================================================================
+gymnax | ppo (rl) | CartPole-v1 | noncontinual | trial 1004
+  environment    : CartPole-v1
+  schedule       : task0, 1 sub-tasks
+  matched budget : 4.608e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_updates, num_envs, num_steps)
+  ppo overrides  : {'num_envs': 256, 'num_steps': 50, 'num_minibatches': 8}
+  seed           : 1003
+  boundary info  : none
+  output         : <runs>/trials/pilot-stationary/ppo/seed_1003/training/attempt_001
+======================================================================
+  update     0 task= 0 H=0.683 t0=   45.1 gen'ist=   45.1
+  update   100 task= 0 H=0.552 t0=  500.0 gen'ist=  500.0
+  update   200 task= 0 H=0.562 t0=  500.0 gen'ist=  500.0
+  update   300 task= 0 H=0.557 t0=  500.0 gen'ist=  500.0
+  update   400 task= 0 H=0.521 t0=  500.0 gen'ist=  500.0
+  update   500 task= 0 H=0.523 t0=  500.0 gen'ist=  500.0
+  update   599 task= 0 H=0.505 t0=  500.0 gen'ist=  500.0
+  wrote <runs>/trials/pilot-stationary/ppo/seed_1003/training/attempt_001
+
+Done. <runs>/trials/pilot-stationary/ppo/seed_1003/training/attempt_001

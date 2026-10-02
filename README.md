@@ -14,9 +14,9 @@
 
 ## Abstract
 
-This project investigates whether program search can improve neuroevolution in continual reinforcement learning. We begin with a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), using their pinned implementation of genetic algorithms (GA), evolution strategies (ES), and proximal policy optimization (PPO). The first environment is CartPole with alternating observation offsets. Our initial ShinkaEvolve extension searches two static GA hyperparameters under a fixed development budget. CPU smoke runs validate all three learners; a three-seed development evaluation measures 114.69 seconds per candidate on two logical CPUs. The full ten-trial comparison remains pending; no reproduced findings or improvements over the reference paper are claimed.
+This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned genetic algorithm (GA), evolution strategy (ES), and proximal policy optimization (PPO) implementations, beginning with CartPole under alternating observation offsets. A matched 18-trial CPU pilot completed 138.24 million nominal training steps and passed the predefined stationary-learning gate for all three methods. Saved-checkpoint analysis measures learning, forgetting, and transfer; the reduced pilot exhibits substantial variability and does not establish the paper's headline ranking. The initial Shinka extension will search two static GA hyperparameters before adaptive learning rules are introduced. Model search and the full ten-trial reproduction remain pending.
 
-> **Study status:** CPU pipeline and search timing validated on 2 October 2026 · Subscription configuration prepared · Matched pilot and LLM search pending.
+> **Study status:** Matched pilot complete on 2 October 2026 · 18/18 trials validated · Learning gate passed · Shinka proposals and full reproduction pending.
 
 ## 1. Research questions
 
@@ -53,9 +53,25 @@ The `paper-cartpole` profile explicitly requests **20 phases**. The upstream YAM
 | :--- | :--- | :--- | ---: | :--- |
 | `smoke` | Validate execution and artifacts | 1001 | 2 | 4 generations/updates; episode cap 32 |
 | `search` | Select GA configurations | 1001–1003 | 4 | 80 generations × 64 candidates × 3 episodes |
+| `pilot-stationary` / `pilot-switching` | Matched baseline development comparison | 1001–1003 | 4 | 7.68 × 10⁶ nominal steps per learner and trial |
 | `paper-cartpole` | Final reporting | 42–51 | 20 | Full protocol in Table 1 |
 
 <sub>Table 2. Experiment profiles. Smoke budgets are intentionally small and are not compute-matched across methods.</sub>
+
+**Pilot measurements.** GA and ES are reported through their saved centroids;
+PPO through its saved policy. Ten fresh greedy evaluation episodes per checkpoint
+measure learning accuracy (LA), consecutive-switch forgetting (F), and zero-shot
+transfer (ZT). Both switching directions enter forgetting, and negative values
+are retained. Stationary transfer metrics are left undefined. Post-hoc evaluation
+preserves the reference's method-specific random-key derivation; a shared base
+evaluation seed does not imply identical episodes across methods.
+
+Cumulative return follows the reference's completed-update clock and unit
+NE-generation resampling grid before trapezoidal integration. The evidence also
+retains an integral over every logged sample, because the two conventions can
+differ for PPO. The first observed return is held back to step zero; it is not a
+measurement of an untrained policy. Raw reward units and fixed `/500`
+normalization remain distinct from the paper's reference-based rescaling.
 
 ## 3. ShinkaEvolve extension
 
@@ -134,14 +150,53 @@ The unchanged initial candidate also completed the full `search` profile: 80 gen
 
 At this measured rate, 25 candidate evaluations require approximately 48 minutes of local training. Assuming an additional 0.5–2 minutes per Codex proposal, the planned search takes approximately **60–100 minutes** before review, retries, or quota pauses. Proposal latency is an assumption to replace after the first block. The 24-configuration random control adds approximately 46 minutes of evaluation. These projections apply to the current reduced profile; they do not estimate full-paper runtime.
 
-### Scientific evaluation
+### Matched development pilot
+
+The pilot completed GA, ES, and PPO under stationary and alternating conditions
+on seeds 1001–1003. Every trial used four phases and 7.68 million nominal training
+steps; ten fresh episodes evaluated each saved phase checkpoint. Training,
+analysis, and verification took **36.08 minutes** on two logical CPUs across two
+sessions. Resuming verified and reused the first six trials without retraining.
+
+![Matched CartPole learning curves: three seeds per method under stationary and switching conditions](figures/pilot-20261002.svg)
+
+<sub>Figure 1. Observed active-task centroid returns at matched nominal training steps. Thin lines show individual trials; bold lines show three-seed means, with no smoothing or confidence bands. Shaded phases introduce a fixed observation offset. [Vector PDF](figures/pilot-20261002.pdf) · [Figure provenance](figures/pilot-20261002.json).</sub>
+
+| Condition | Method | LA ↑ | F ↓ | LA − F ↑ | ZT ↑ | Cum. / (steps × 500) ↑ |
+| :--- | :--- | ---: | ---: | ---: | ---: | ---: |
+| Stationary | GA | 315.2 ± 77.7 | — | — | — | 0.506 ± 0.176 |
+| Stationary | ES | 448.4 ± 51.5 | — | — | — | 0.745 ± 0.135 |
+| Stationary | PPO | 476.3 ± 41.0 | — | — | — | 0.964 ± 0.002 |
+| Switching | GA | 321.0 ± 82.3 | −9.3 ± 62.6 | 330.3 ± 119.1 | 166.2 ± 89.8 | 0.561 ± 0.114 |
+| Switching | ES | 407.3 ± 35.5 | 127.8 ± 127.5 | 279.5 ± 147.6 | 137.7 ± 109.0 | 0.604 ± 0.154 |
+| Switching | PPO | 481.2 ± 18.0 | 360.0 ± 156.7 | 121.2 ± 140.4 | 104.4 ± 122.6 | 0.908 ± 0.045 |
+
+<sub>Table 6. Observed development metrics, mean ± sample standard deviation across three trials. LA, F, LA − F, and ZT use raw CartPole reward units; the final column is the reference-grid cumulative integral divided by nominal training steps and episode cap. It is not the paper's reference-based rescaling. Stationary transfer metrics are undefined. LA averages all four phase endpoints, so it can be lower than final-phase performance. [Complete evidence and per-trial values](reports/pilot-20261002/summary.json).</sub>
+
+All three methods passed the predefined adequacy gate: every stationary trial
+finished with last-phase mean return above 400. GA and ES also improved by at
+least 50 points between their first and last phases in all three trials. PPO
+learned early and passed through the final-performance criterion. This supports
+using the reduced budget for development; it is not a significance test.
+
+Under switching, PPO has the highest observed learning accuracy and cumulative
+return, alongside the largest measured forgetting. GA's lower forgetting
+coincides with lower learning accuracy, illustrating why retention alone is
+insufficient. The negative GA forgetting estimate is preserved rather than
+clamped. With only three trials, four phases, and reduced populations, these
+outcomes do not establish a general method ranking or reproduce the full study.
+The [evidence archive](reports/pilot-20261002) includes resolved configurations,
+raw trajectories and episode returns, source/runtime provenance, artifact
+checksums, and the complete gate decision. Binary checkpoints remain local.
+
+### Remaining scientific evaluation
 
 No full-budget comparison has been completed. The table below tracks the evidence needed to answer the research questions.
 
 | Experiment | Required evidence | Status |
 | :--- | :--- | :--- |
-| Reference GA / ES / PPO | Ten trials, full task schedule, continual-learning metrics | Pending |
-| Stationary control | Matched task and learner settings without switching | Pending |
+| Reference GA / ES / PPO | Ten trials, full task schedule, continual-learning metrics | Pilot complete; full protocol pending |
+| Stationary control | Matched task and learner settings without switching | Development control complete |
 | Shinka-selected GA | Frozen candidate evaluated on reporting trials | Pending |
 | Random-search control | Matched search budget and reporting protocol | Pending |
 
@@ -189,6 +244,29 @@ uv run --frozen python scripts/report_smoke.py \
 uv run --frozen python scripts/run_baseline.py --profile paper-cartpole --method ga
 ```
 
+The matched pilot is independently executable and resumes at trial boundaries.
+It validates exact source/profile identity, runtime packages, resolved baseline
+settings, task vectors, checkpoint shapes, and artifact hashes before reusing a
+completed trial. Failed attempts remain in their original directories; a retry
+uses a fresh attempt directory.
+
+```bash
+# Preview all 18 jobs and their matched budget.
+uv run --frozen python scripts/run_pilot.py --results-dir results/pilot-local
+
+# Complete one six-trial block, then resume the remaining trials.
+uv run --frozen python scripts/run_pilot.py \
+  --results-dir results/pilot-local --execute --max-trials 6
+uv run --frozen python scripts/run_pilot.py \
+  --results-dir results/pilot-local --execute --resume
+
+# Validate and publish compact evidence; keep binary checkpoints local.
+uv run --frozen python scripts/report_pilot.py \
+  --runs-root results/pilot-local --output reports/pilot-local
+.upstream/continual_neuroevolution/.venv/bin/python scripts/plot_pilot.py \
+  --report-dir reports/pilot-local --output figures/pilot-local.svg
+```
+
 For full-budget training, set `--timeout` to suit the available hardware; the default is 1,800 seconds per trial. The [task documentation](tasks/cartpole_ga/README.md) covers candidate validation, provider configuration, and explicit Shinka launches. Installing the optional `shinka` extra does not start a model search.
 
 The planned model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing). No model proposals have been run for this study, and a paid API key is not required for the planned pilot.
@@ -207,7 +285,9 @@ The [GitHub Actions template](ci/github-actions.yml) runs the harness checks. CI
 
 The current search space contains two static GA settings. It cannot discover adaptive update rules, change policies, or alter experiment budgets. Reduced-budget development scores may not predict performance across the full task sequence. Smoke scores support no ranking of GA, ES, and PPO because they use one seed and unmatched training budgets.
 
-The next experiment is an **18-trial matched baseline pilot**: GA, ES, and PPO × stationary and alternating conditions × three development seeds. Each trial uses four phases, a 500-step episode cap, and 7.68 million nominal training steps. GA/ES use 80 generations with population 64 and three training episodes; PPO uses 600 updates with 256 environments and 50 rollout steps. Held-out evaluation uses ten episodes. This reduced protocol must pass task-transition and metric checks before configuration search begins.
+The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
+
+The next experiment is the **first four subscription-backed Shinka proposals**, following an initial candidate evaluation. Freeze the random-search pool and protocol first, verify source-to-score ancestry and archive resume at this five-slot integration gate, then extend the same search to 13 and 25 total slots. Compare against the matched random-search control and validate finalists once on reserved trials. Static configuration search is an integration and hypothesis-screening stage; adaptive-program evolution remains a distinct extension requiring a neutral-baseline equivalence check.
 
 The [experimental roadmap](docs/experimental-roadmap.md) specifies stage gates, random controls, reserved validation seeds, the adaptive-program interface, and the work still needed to execute the pilot. The [reproduction specification](docs/reproduction-plan.md) preserves the full paper protocol. Full-paper reproduction additionally requires other environments, task variations, continual PPO variants, and neighborhood analysis.
 

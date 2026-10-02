@@ -6,10 +6,18 @@ matched nominal training budgets and a stationary control. A staged search over
 static GA settings follows only after the pilot validates learning and analysis.
 Adaptive mutation programs are a separate subsequent experiment.
 
-The numerical budgets below are proposed protocol choices, not observed results.
-The existing constant-configuration evaluator is executable; the pilot profiles,
-post-hoc analysis adapter, validation runner, and adaptive-program adapter still
-require implementation. Source revisions remain fixed by
+**Pilot outcome, 2 October 2026:** all 18 trials completed; the predefined
+stationary-learning gate passed for GA, ES, and PPO. The frozen protocol is
+therefore retained for the first configuration-search experiment. See the
+[per-trial evidence and gate decision](../reports/pilot-20261002/summary.json)
+and [README results](../README.md#matched-development-pilot). This development
+outcome does not establish reproduction of the full paper's findings.
+
+The numerical budgets below define the protocol; observed results belong in the
+README and linked evidence archives. The constant-configuration evaluator,
+matched pilot profiles, resumable trial runner, checkpoint analysis, evidence
+exporter, and figure generator are implemented. Finalist validation and the
+adaptive-program adapter still require implementation. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 
@@ -78,6 +86,11 @@ program-search training are separate costs. Nominal steps refer to the configure
 episode caps for NE and collected transitions for PPO; they do not imply equal
 useful transitions before termination, floating-point work, or wall time.
 
+The upstream startup banner prints `NOT MATCHED` whenever its default budget is
+overridden. For this deliberately reduced pilot, matching is established from
+the resolved configurations and recorded step totals, rather than that banner:
+all three methods must record exactly 7,680,000 nominal training steps per trial.
+
 Acceptance requires matching resolved configurations, the expected task traces,
 four phase checkpoints per trial, finite metrics, and valid post-hoc evaluations.
 Show all three seed outcomes. A three-seed pilot diagnoses behavior and runtime;
@@ -130,6 +143,12 @@ provide the GA/ES measurements and its `final` entries provide PPO measurements.
 Own-task returns supply LA, `zero_shot_next_returns` supply ZT, and the following
 phase's `prev_returns` supply the second term in each forgetting difference.
 The adapter must validate source labels, phase identities, and episode counts.
+
+The implemented adapter runs the unchanged evaluator against fresh copies of
+the saved checkpoint and run configuration, leaving training artifacts intact.
+It uses `eval_seed=900000+training_seed`. The reference combines that seed with
+method and run identity when deriving episode keys, so this is reproducible
+independent evaluation, not identical episode draws across methods.
 
 Do not substitute the GA's best individual, the first post-switch training
 record, or a final-checkpoint-only forgetting calculation. The upstream
@@ -428,19 +447,19 @@ same training budget.
 
 ## 8. Next implementation deliverables
 
-| Order | Deliverable | Acceptance evidence |
-| :--- | :--- | :--- |
-| 1 | Switching and stationary pilot profiles; resumable trial manifest | Exact budget arithmetic, resolved configurations, reduced real runs |
-| 2 | Post-hoc evaluation and reporting adapter | Known-trace metric checks, correct centroid sources, real checkpoint evaluation |
-| 3 | Eighteen-trial pilot | Raw curves, per-seed metrics, costs, adequacy-gate decision |
-| 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication without separately billed API inference, candidate ancestry, validity contracts, tested stage resume |
-| 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison |
-| 6 | One validation comparison and frozen finalists | Reserved trials used once, candidate hashes, all continual metrics |
-| 7 | Full CartPole timing and resource plan | Measured representative paper-shape trial or segment before bulk scheduling |
-| 8 | Adaptive-program adapter and neutral gate | Unchanged baseline trace, varying-sigma test, no task-boundary inputs |
+| Order | Deliverable | Acceptance evidence | Status |
+| :--- | :--- | :--- | :--- |
+| 1 | Switching and stationary pilot profiles; resumable trial manifest | Exact budgets, resolved configurations, reduced real runs, six-trial resume | Complete |
+| 2 | Post-hoc evaluation and reporting adapter | Known-trace checks, correct centroid sources, real checkpoint evaluation | Complete |
+| 3 | Eighteen-trial pilot | Raw curves, per-seed metrics, costs, passing adequacy gate | Complete |
+| 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Authentication preflight complete; first proposals next |
+| 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | Pending |
+| 6 | One validation comparison and frozen finalists | Reserved trials used once, candidate hashes, all continual metrics | Pending |
+| 7 | Full CartPole timing and resource plan | Measured representative paper-shape trial or segment before bulk scheduling | Pending |
+| 8 | Adaptive-program adapter and neutral gate | Unchanged baseline trace, varying-sigma test, no task-boundary inputs | Pending |
 
-<sub>Table 7. Planned deliverables. A listed gate describes required future
-evidence; it does not imply the corresponding implementation or run exists.</sub>
+<sub>Table 7. Deliverables and observed status. The successful baseline-trial
+resume does not substitute for testing Shinka's separate archive-resume path.</sub>
 
 After each substantive experiment, update the README as a scientific report:
 state the frozen protocol, link compact raw evidence and hashes, distinguish

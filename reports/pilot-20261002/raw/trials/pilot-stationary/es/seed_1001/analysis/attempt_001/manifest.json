@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "episodes": 10,
+  "eval_seed": 901001,
+  "command": [
+    "<repo>/.upstream/continual_neuroevolution/.venv/bin/python",
+    "<repo>/.upstream/continual_neuroevolution/scripts/analysis/evaluate_continual.py",
+    "--root",
+    "<runs>/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation-input",
+    "--episodes",
+    "10",
+    "--seed",
+    "901001"
+  ],
+  "training_run": "<runs>/trials/pilot-stationary/es/seed_1001/training/attempt_001",
+  "input_sha256": {
+    "manifest.json": "1119bff5b17c6e72ff8856fdfefd8669d81c51528f30f413cb6d176015a139ca",
+    "results.json": "6781bc15ba72a36c70b85effc343aa3c534af03efe21926271d741ee370fbb9a",
+    "config.json": "22c94716f546a19327c748388bb67e9207cf1af1814502b596db248100e9d394",
+    "training_metrics.json": "4fa5137efc3ecc028bad278ef9fc6be0b186b4a4b235867ee63d4811af7bbc84",
+    "checkpoints.npz": "de1f812a0dd04f3342484bae402f48a445a0f62913442f8300252714647019a6"
+  },
+  "analysis_source_sha256": "6ec9691d8cb40415d162fd2483f9ca1765cd03e484279ae465e6154b2bb2f11b",
+  "upstream_source_sha256": {
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b"
+  },
+  "jax_platforms": "cpu",
+  "python_version": "Python 3.11.15",
+  "output_sha256": {
+    "evaluation.json": "fae544b7efd22aa183bc64d4ae9b11d4ed3be51200bf00f6a403f84e8ccb12eb",
+    "checkpoint-metadata.json": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "summary.json": "9a72f9bc2666e73a1d8517703ecdf2867b4d14cbf033ca8f92657d97b08c4a72",
+    "process.log": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "evaluation-input/results.json": "6781bc15ba72a36c70b85effc343aa3c534af03efe21926271d741ee370fbb9a",
+    "evaluation-input/checkpoints.npz": "de1f812a0dd04f3342484bae402f48a445a0f62913442f8300252714647019a6"
+  },
+  "wall_seconds": 5.442922112066299
+}

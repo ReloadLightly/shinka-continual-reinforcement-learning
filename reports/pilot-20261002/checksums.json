@@ -1,0 +1,2999 @@
+{
+  "raw/environment.json": {
+    "source": "environment.json",
+    "original_sha256": "f3451ee6ecde3970cea35be2f860f92627e0faa548c153a16a659970b771634a",
+    "original_bytes": 2565,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f3451ee6ecde3970cea35be2f860f92627e0faa548c153a16a659970b771634a",
+    "exported_bytes": 2565
+  },
+  "raw/plan.json": {
+    "source": "plan.json",
+    "original_sha256": "089d50b6832b286a107c3dfad49102ae6f28d8fbebd9ac8f0a818aaa39d66eab",
+    "original_bytes": 5233,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2fb6637087b514f8f5fe39ff4f4b94065a4b4d69f1c07d0331a6f44e8e146db6",
+    "exported_bytes": 5181
+  },
+  "raw/suite.json": {
+    "source": "suite.json",
+    "original_sha256": "e41f9884056ac608c591574d0da8b0da081a912917aa46a4ef1966efbf8d382a",
+    "original_bytes": 53732,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e41f9884056ac608c591574d0da8b0da081a912917aa46a4ef1966efbf8d382a",
+    "exported_bytes": 53732
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "original_bytes": 422,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "exported_bytes": 422
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "de1f812a0dd04f3342484bae402f48a445a0f62913442f8300252714647019a6",
+    "original_bytes": 18096,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "fae544b7efd22aa183bc64d4ae9b11d4ed3be51200bf00f6a403f84e8ccb12eb",
+    "original_bytes": 3290,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "fae544b7efd22aa183bc64d4ae9b11d4ed3be51200bf00f6a403f84e8ccb12eb",
+    "exported_bytes": 3290
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "6781bc15ba72a36c70b85effc343aa3c534af03efe21926271d741ee370fbb9a",
+    "original_bytes": 1719,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6781bc15ba72a36c70b85effc343aa3c534af03efe21926271d741ee370fbb9a",
+    "exported_bytes": 1719
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/analysis/attempt_001/evaluation.json",
+    "original_sha256": "fae544b7efd22aa183bc64d4ae9b11d4ed3be51200bf00f6a403f84e8ccb12eb",
+    "original_bytes": 3290,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "fae544b7efd22aa183bc64d4ae9b11d4ed3be51200bf00f6a403f84e8ccb12eb",
+    "exported_bytes": 3290
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/analysis/attempt_001/manifest.json",
+    "original_sha256": "799246a044ebc891c27a0850c88ed2759cfbcca5fb60809e179bad348e1db237",
+    "original_bytes": 2341,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "0d6807b0664ce616632ca5d95299a0a77207100f27a8efb57bef0a0d82336024",
+    "exported_bytes": 2087
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/es/seed_1001/analysis/attempt_001/process.log",
+    "original_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/analysis/attempt_001/summary.json",
+    "original_sha256": "9a72f9bc2666e73a1d8517703ecdf2867b4d14cbf033ca8f92657d97b08c4a72",
+    "original_bytes": 2023,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9a72f9bc2666e73a1d8517703ecdf2867b4d14cbf033ca8f92657d97b08c4a72",
+    "exported_bytes": 2023
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/checkpoints.npz",
+    "original_sha256": "de1f812a0dd04f3342484bae402f48a445a0f62913442f8300252714647019a6",
+    "original_bytes": 18096,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/config.json",
+    "original_sha256": "22c94716f546a19327c748388bb67e9207cf1af1814502b596db248100e9d394",
+    "original_bytes": 1167,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "22c94716f546a19327c748388bb67e9207cf1af1814502b596db248100e9d394",
+    "exported_bytes": 1167
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/manifest.json",
+    "original_sha256": "1119bff5b17c6e72ff8856fdfefd8669d81c51528f30f413cb6d176015a139ca",
+    "original_bytes": 1821,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "4b5d0a8b728da183bbd0bbd26a1872751cccf2bd5d78b04a3f6d6e420b7954e9",
+    "exported_bytes": 1642
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/process.log",
+    "original_sha256": "8f5c38d9937b0e9c9f654c9f53f8cf66480e8fe0ac613e50830db529145a2426",
+    "original_bytes": 1098,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "578ed83c504677ec2c39da24022521c4d8e979bba4342d2369371a1749746b00",
+    "exported_bytes": 873
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/receipt.json",
+    "original_sha256": "08ad3c25413edfc6c0155ccdd4e6aee9b76da0ea4432bd7a4080650ae8f4e1c9",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "08ad3c25413edfc6c0155ccdd4e6aee9b76da0ea4432bd7a4080650ae8f4e1c9",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/results.json",
+    "original_sha256": "6781bc15ba72a36c70b85effc343aa3c534af03efe21926271d741ee370fbb9a",
+    "original_bytes": 1719,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6781bc15ba72a36c70b85effc343aa3c534af03efe21926271d741ee370fbb9a",
+    "exported_bytes": 1719
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/summary.json",
+    "original_sha256": "8d607b6bc043e163afcc1c9a3ef5162c0ff60ce18204c3511c3724524b19721a",
+    "original_bytes": 252,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d607b6bc043e163afcc1c9a3ef5162c0ff60ce18204c3511c3724524b19721a",
+    "exported_bytes": 252
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/train.log",
+    "original_sha256": "eed43040221fa59b0609645b493581f699c0ae9cfe72850913391b01b039d8c7",
+    "original_bytes": 478,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "e2f6a8bff3530b323c6e822541434c46bb74bdd4832baf78f8a432a8b270c772",
+    "exported_bytes": 328
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/training_metrics.json",
+    "original_sha256": "4fa5137efc3ecc028bad278ef9fc6be0b186b4a4b235867ee63d4811af7bbc84",
+    "original_bytes": 64583,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4fa5137efc3ecc028bad278ef9fc6be0b186b4a4b235867ee63d4811af7bbc84",
+    "exported_bytes": 64583
+  },
+  "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/es/seed_1001/training/attempt_001/trajectory.npz",
+    "original_sha256": "a149cc667db3f331f8cffc3297ec18c2310240a4f8316a42b9eff09386e04d74",
+    "original_bytes": 107240,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "original_bytes": 422,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "exported_bytes": 422
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/es/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "e42ac45046f9f84c162ebbd9b19334721986412b3391d380e00311f17625db67",
+    "original_bytes": 18143,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "e91e02980a51eecdfcf4b5683ba7e3042464d287590e21c374740636beabcfa0",
+    "original_bytes": 3334,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e91e02980a51eecdfcf4b5683ba7e3042464d287590e21c374740636beabcfa0",
+    "exported_bytes": 3334
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "2c362aed5563b5566eb37456afac19448f91184992b465ffb8a97450045cdf50",
+    "original_bytes": 1720,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2c362aed5563b5566eb37456afac19448f91184992b465ffb8a97450045cdf50",
+    "exported_bytes": 1720
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/analysis/attempt_001/evaluation.json",
+    "original_sha256": "e91e02980a51eecdfcf4b5683ba7e3042464d287590e21c374740636beabcfa0",
+    "original_bytes": 3334,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e91e02980a51eecdfcf4b5683ba7e3042464d287590e21c374740636beabcfa0",
+    "exported_bytes": 3334
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/analysis/attempt_001/manifest.json",
+    "original_sha256": "cf954ab9748bbbc64112687b8ec607c1378ae66da1d9a084b70e5906a902874e",
+    "original_bytes": 2341,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "ec0dda4a0be95e2c0f667691b5789854c64021dbaf3f381fe94f0cb4cd3affdf",
+    "exported_bytes": 2087
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/es/seed_1002/analysis/attempt_001/process.log",
+    "original_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/analysis/attempt_001/summary.json",
+    "original_sha256": "63856f17e70bdbcd875506444343c7291732f908ecff177f1c5c0bbf746128b0",
+    "original_bytes": 2007,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "63856f17e70bdbcd875506444343c7291732f908ecff177f1c5c0bbf746128b0",
+    "exported_bytes": 2007
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/checkpoints.npz",
+    "original_sha256": "e42ac45046f9f84c162ebbd9b19334721986412b3391d380e00311f17625db67",
+    "original_bytes": 18143,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/config.json",
+    "original_sha256": "d7e93fc1faa8fd723a9a8e9b82cead9708f1512670b04ab0c3689832e990b86f",
+    "original_bytes": 1167,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d7e93fc1faa8fd723a9a8e9b82cead9708f1512670b04ab0c3689832e990b86f",
+    "exported_bytes": 1167
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/manifest.json",
+    "original_sha256": "c11782fe481669b7cdf36d0d81fb57d3dfc5c5dc05838840d20663fd5ce00152",
+    "original_bytes": 1821,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "d28a1df29db8297ee08a658bf1b325e37f716bf7367cb833ee6a488078fd2472",
+    "exported_bytes": 1642
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/process.log",
+    "original_sha256": "0e75c566131387c58053a600be9c651a88ae79109cf5ac5bf4ae5f26b5f14f6a",
+    "original_bytes": 1098,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "696867218a076b65b456167119e7e3d80ded22e4ae4b4a8f14b2c11c65041644",
+    "exported_bytes": 873
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/receipt.json",
+    "original_sha256": "2cc4de692200223477b66b61608b01492cc659932a7b344e92ed009e359da989",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2cc4de692200223477b66b61608b01492cc659932a7b344e92ed009e359da989",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/results.json",
+    "original_sha256": "2c362aed5563b5566eb37456afac19448f91184992b465ffb8a97450045cdf50",
+    "original_bytes": 1720,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2c362aed5563b5566eb37456afac19448f91184992b465ffb8a97450045cdf50",
+    "exported_bytes": 1720
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/summary.json",
+    "original_sha256": "d97c03ccabb8685d1551120049d1f6e62e90cd0218a5e69db970beb0075e7088",
+    "original_bytes": 251,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d97c03ccabb8685d1551120049d1f6e62e90cd0218a5e69db970beb0075e7088",
+    "exported_bytes": 251
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/train.log",
+    "original_sha256": "0eb71477e344682f3f192211eff169e942388d7df18b49cb9ed13c5e95166136",
+    "original_bytes": 478,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "e3e3994e817670d4c92fb2ac590a3382888b15d35d6aceef8e3ed3a33ec52563",
+    "exported_bytes": 328
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/training_metrics.json",
+    "original_sha256": "7d181ca795b8b0429b08a9959db184e926cc51107e1cf523cd8bbc5cbdb32f00",
+    "original_bytes": 61695,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7d181ca795b8b0429b08a9959db184e926cc51107e1cf523cd8bbc5cbdb32f00",
+    "exported_bytes": 61695
+  },
+  "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/es/seed_1002/training/attempt_001/trajectory.npz",
+    "original_sha256": "0bfd6b9a4c06672368dea8997a92a769099e26ddf70dea5fa0736dde552702e0",
+    "original_bytes": 82279,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "original_bytes": 422,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "exported_bytes": 422
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/es/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "cef7a2a4c9d13a133de8191e64161c3cbb4cb089f06999a9c2c73f26b7b1c16e",
+    "original_bytes": 18131,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "162a24bfcc4951d768a9bdc0a9a133f80572637fdb724b8630c43490206d8392",
+    "original_bytes": 3334,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "162a24bfcc4951d768a9bdc0a9a133f80572637fdb724b8630c43490206d8392",
+    "exported_bytes": 3334
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "278f3c4d99659deef168c75199e46549eb15cedf991cfac8e13b81b0c53651fd",
+    "original_bytes": 1720,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "278f3c4d99659deef168c75199e46549eb15cedf991cfac8e13b81b0c53651fd",
+    "exported_bytes": 1720
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/analysis/attempt_001/evaluation.json",
+    "original_sha256": "162a24bfcc4951d768a9bdc0a9a133f80572637fdb724b8630c43490206d8392",
+    "original_bytes": 3334,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "162a24bfcc4951d768a9bdc0a9a133f80572637fdb724b8630c43490206d8392",
+    "exported_bytes": 3334
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/analysis/attempt_001/manifest.json",
+    "original_sha256": "7f0042580dd4a54a27412eadee99a41dec8739f955361b2bc17de67bd506bc52",
+    "original_bytes": 2341,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "b4974a99f8c8efc26866b6c62ec13b67356fee63c741b06b4aceeb78bd495c55",
+    "exported_bytes": 2087
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/es/seed_1003/analysis/attempt_001/process.log",
+    "original_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/analysis/attempt_001/summary.json",
+    "original_sha256": "4e2d740efd20cde05fa7a14f67fa84ae263a93289766f0b3e1a80a0706ecd30e",
+    "original_bytes": 2010,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4e2d740efd20cde05fa7a14f67fa84ae263a93289766f0b3e1a80a0706ecd30e",
+    "exported_bytes": 2010
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/checkpoints.npz",
+    "original_sha256": "cef7a2a4c9d13a133de8191e64161c3cbb4cb089f06999a9c2c73f26b7b1c16e",
+    "original_bytes": 18131,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/config.json",
+    "original_sha256": "ce37e0e6856915964d74ca994d188f66dc6a6909143884b45aa736d610157f9f",
+    "original_bytes": 1167,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ce37e0e6856915964d74ca994d188f66dc6a6909143884b45aa736d610157f9f",
+    "exported_bytes": 1167
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/manifest.json",
+    "original_sha256": "c2393174a48f90afa3c19067ad035cb1ff126e9c8920c308928b68e2cf1a74ef",
+    "original_bytes": 1821,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2bf295de1fdcc836fb5bc6dfbea9c7b802a34ab6496f05fbdd0fe86648d74aa1",
+    "exported_bytes": 1642
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/process.log",
+    "original_sha256": "4eab04b02c3c4a9fea08b6959eb79e74b03d2c27e3ba34ef13a5ecfbe60030cd",
+    "original_bytes": 1098,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "ee288056d17994784fc1d3f582ebf9cd72f4215716c3d21e3ba478630b2e8360",
+    "exported_bytes": 873
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/receipt.json",
+    "original_sha256": "87dc3b05530165ca3867d128d54b777bbb2b15c7d0af2b48cf7e0ed81fb00e40",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "87dc3b05530165ca3867d128d54b777bbb2b15c7d0af2b48cf7e0ed81fb00e40",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/results.json",
+    "original_sha256": "278f3c4d99659deef168c75199e46549eb15cedf991cfac8e13b81b0c53651fd",
+    "original_bytes": 1720,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "278f3c4d99659deef168c75199e46549eb15cedf991cfac8e13b81b0c53651fd",
+    "exported_bytes": 1720
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/summary.json",
+    "original_sha256": "ab85daf55877ac54abb44b7aa3e7a3b356b54e835642b17396a4199f99c8a555",
+    "original_bytes": 252,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ab85daf55877ac54abb44b7aa3e7a3b356b54e835642b17396a4199f99c8a555",
+    "exported_bytes": 252
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/train.log",
+    "original_sha256": "c67109df5784c0f6eb9232e243b876ab2dcd4925d7b0dda012c3c987e37813df",
+    "original_bytes": 478,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "9ebb2f62995aa330f6801a82ecb161ee967b50633522c7e095fd1031fa107e5d",
+    "exported_bytes": 328
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/training_metrics.json",
+    "original_sha256": "2d400258a4a2966571fb86f6b161a0212dc819dd6e3ac5a56afa164e5dfe7b25",
+    "original_bytes": 62366,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2d400258a4a2966571fb86f6b161a0212dc819dd6e3ac5a56afa164e5dfe7b25",
+    "exported_bytes": 62366
+  },
+  "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/es/seed_1003/training/attempt_001/trajectory.npz",
+    "original_sha256": "6f4b13fe5f90f118c732a466bf26784b192efa6cc7213c37ed4f507dc1e498d8",
+    "original_bytes": 96934,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "original_bytes": 422,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "exported_bytes": 422
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "7201338f7196527310105389e6749aae5886bfffca8f02ab4d4850bbe32b1164",
+    "original_bytes": 18136,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "33d9c030745927dd7f862485da14fe8e1a45a868e4456f25f12458a9eed6e339",
+    "original_bytes": 3257,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "33d9c030745927dd7f862485da14fe8e1a45a868e4456f25f12458a9eed6e339",
+    "exported_bytes": 3257
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "29ca0b9317ab7adcc32178cc955e68ded175f40dca13525d48057b669d4fa559",
+    "original_bytes": 1982,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "29ca0b9317ab7adcc32178cc955e68ded175f40dca13525d48057b669d4fa559",
+    "exported_bytes": 1982
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/evaluation.json",
+    "original_sha256": "33d9c030745927dd7f862485da14fe8e1a45a868e4456f25f12458a9eed6e339",
+    "original_bytes": 3257,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "33d9c030745927dd7f862485da14fe8e1a45a868e4456f25f12458a9eed6e339",
+    "exported_bytes": 3257
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/manifest.json",
+    "original_sha256": "115eb9dcdfc771cb9c23c0b4a7c58c42dadf375aa8c64c5038d9e204b77632f6",
+    "original_bytes": 2340,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "961db422dc4c35c70aab3a4cd9728d3bab25e7caf5f28be2c449a9c579b9c8d4",
+    "exported_bytes": 2086
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/process.log",
+    "original_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/analysis/attempt_001/summary.json",
+    "original_sha256": "9d83260ee8519108d5f1f38f314c485fcb2a646c5c174909bb73e28632e127a1",
+    "original_bytes": 2031,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9d83260ee8519108d5f1f38f314c485fcb2a646c5c174909bb73e28632e127a1",
+    "exported_bytes": 2031
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/checkpoints.npz",
+    "original_sha256": "7201338f7196527310105389e6749aae5886bfffca8f02ab4d4850bbe32b1164",
+    "original_bytes": 18136,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/config.json",
+    "original_sha256": "2eb63c6b0d74c262909c3dd94c92ebd91db99931945f9461eb7a63839c170237",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2eb63c6b0d74c262909c3dd94c92ebd91db99931945f9461eb7a63839c170237",
+    "exported_bytes": 1369
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/manifest.json",
+    "original_sha256": "47e04ca2289b02a551974ec8eb291ef8767aacbee988ee58c765b3b770abc987",
+    "original_bytes": 1820,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "0130d8d0c334458162135d2df9c5de44bbffe1d5c6eb140e7dd31b9fc1f9628a",
+    "exported_bytes": 1641
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/process.log",
+    "original_sha256": "7e4fda7b95f8b909926f1fac61f3cd11e22ba83b5912100f8e40523177115598",
+    "original_bytes": 1098,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "6fa138f84bcb4f5620f35aa36cdd6928774508e0cfa509f0d3cc3ef3e95a70ce",
+    "exported_bytes": 873
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/receipt.json",
+    "original_sha256": "e94e071d3f2389063ce318d0c3b9a11ae646aea31daf732dc869f5cbccfb7f16",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e94e071d3f2389063ce318d0c3b9a11ae646aea31daf732dc869f5cbccfb7f16",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/results.json",
+    "original_sha256": "29ca0b9317ab7adcc32178cc955e68ded175f40dca13525d48057b669d4fa559",
+    "original_bytes": 1982,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "29ca0b9317ab7adcc32178cc955e68ded175f40dca13525d48057b669d4fa559",
+    "exported_bytes": 1982
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/summary.json",
+    "original_sha256": "3495e3b1ef9aced2974161b76d03f84d5cafdb5c6ed42c9ab96e0e1150d55366",
+    "original_bytes": 251,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3495e3b1ef9aced2974161b76d03f84d5cafdb5c6ed42c9ab96e0e1150d55366",
+    "exported_bytes": 251
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/train.log",
+    "original_sha256": "10cd87096dcb9bce6ada691abb287b79168bc84b4484be76f3a6145cd4eed763",
+    "original_bytes": 478,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "e3c79fda507b2f8c5cd72ff745b8e3aaf097dc2b74ef772df5d1f1c15dd033b1",
+    "exported_bytes": 328
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/training_metrics.json",
+    "original_sha256": "02a5b31b433b2aa42580729009dc0640654c5d846727a6dd9aaa5c748e84e6d5",
+    "original_bytes": 63530,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "02a5b31b433b2aa42580729009dc0640654c5d846727a6dd9aaa5c748e84e6d5",
+    "exported_bytes": 63530
+  },
+  "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1001/training/attempt_001/trajectory.npz",
+    "original_sha256": "493b671af195a85a589b9a06a94ee72cdc8d75b968ad953d668ecaca1f294427",
+    "original_bytes": 78673,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "original_bytes": 422,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "exported_bytes": 422
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "bdd9ed5bd6de0be4dbcc48cb16e567039287c4a28eb861d2a67709b35733e4bf",
+    "original_bytes": 18112,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "188f63e2698a21c83c18d9300ba856f3134c000413869754b25204137377e193",
+    "original_bytes": 3334,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "188f63e2698a21c83c18d9300ba856f3134c000413869754b25204137377e193",
+    "exported_bytes": 3334
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "e29cd207d1fb621824b2abfdc2118afb79bfe43fa6382eccbcb22537246c9f08",
+    "original_bytes": 1941,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e29cd207d1fb621824b2abfdc2118afb79bfe43fa6382eccbcb22537246c9f08",
+    "exported_bytes": 1941
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/evaluation.json",
+    "original_sha256": "188f63e2698a21c83c18d9300ba856f3134c000413869754b25204137377e193",
+    "original_bytes": 3334,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "188f63e2698a21c83c18d9300ba856f3134c000413869754b25204137377e193",
+    "exported_bytes": 3334
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/manifest.json",
+    "original_sha256": "1d1a831f7dbfc62ea98a0aef8c92209a52a26b6ea356634908117ba49f4cf8ae",
+    "original_bytes": 2341,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "534ed65b0bbf35888eab3940bc69d018bc790f5b2d768deaa23d310c878d9a18",
+    "exported_bytes": 2087
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/process.log",
+    "original_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/analysis/attempt_001/summary.json",
+    "original_sha256": "7fae69004e7079a381fbed3f6b5c1eceb3e6beacc4bab04dbd132397f8fc9ace",
+    "original_bytes": 2023,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7fae69004e7079a381fbed3f6b5c1eceb3e6beacc4bab04dbd132397f8fc9ace",
+    "exported_bytes": 2023
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/checkpoints.npz",
+    "original_sha256": "bdd9ed5bd6de0be4dbcc48cb16e567039287c4a28eb861d2a67709b35733e4bf",
+    "original_bytes": 18112,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/config.json",
+    "original_sha256": "bd6cdca1e4e1b1f675c990a607b87b0ae7c3bc17ff25f04ee11c4e332731a039",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "bd6cdca1e4e1b1f675c990a607b87b0ae7c3bc17ff25f04ee11c4e332731a039",
+    "exported_bytes": 1369
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/manifest.json",
+    "original_sha256": "744b59be06a5e631e72f4cb7fb447cfebc4545e4156a6a35e44c388c040d96e3",
+    "original_bytes": 1821,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "80a7a50015dcc5d394d094a3cfc14fce21589200aaa39abecaabade02b26d87f",
+    "exported_bytes": 1642
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/process.log",
+    "original_sha256": "214ad6ac25491cd913bca7ab9c8fb92fd6ccba651652ca5d165d4cd5fd303900",
+    "original_bytes": 1098,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "fcb0cb6f7ee74e15596a29f16265c789a34c39079f84658cd6793920de165e67",
+    "exported_bytes": 873
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/receipt.json",
+    "original_sha256": "76d0d747e1ad4f07d6b17e60502134fe24c0f0c1f80d9c87e93dcfc8b8f3ef19",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "76d0d747e1ad4f07d6b17e60502134fe24c0f0c1f80d9c87e93dcfc8b8f3ef19",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/results.json",
+    "original_sha256": "e29cd207d1fb621824b2abfdc2118afb79bfe43fa6382eccbcb22537246c9f08",
+    "original_bytes": 1941,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e29cd207d1fb621824b2abfdc2118afb79bfe43fa6382eccbcb22537246c9f08",
+    "exported_bytes": 1941
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/summary.json",
+    "original_sha256": "ee54d6684bbe99494148b0db3bfadcac60d07eba727ca3dc322f8d8930d3bef0",
+    "original_bytes": 250,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ee54d6684bbe99494148b0db3bfadcac60d07eba727ca3dc322f8d8930d3bef0",
+    "exported_bytes": 250
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/train.log",
+    "original_sha256": "7ee761a694019a13a2e98bd91615462182d973cf7964492b913c7033f371e77f",
+    "original_bytes": 478,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "6c61b50733abcb47e79ab32abb5e4cc934d16ccffe6ac7169d9fbd549f28aad6",
+    "exported_bytes": 328
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/training_metrics.json",
+    "original_sha256": "fed644d09d06b64473d409076bfcbe1c8b1a00e3279c81408562bfe1b095b5ad",
+    "original_bytes": 63429,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "fed644d09d06b64473d409076bfcbe1c8b1a00e3279c81408562bfe1b095b5ad",
+    "exported_bytes": 63429
+  },
+  "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1002/training/attempt_001/trajectory.npz",
+    "original_sha256": "332bf698966e5231fd1238b1b009aa4e9cb2e66f0d8fdbc21b5147e89c4749c0",
+    "original_bytes": 89959,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "original_bytes": 422,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cc0926dba3cc4bfebdc237a17b431e08f190d69724ffd13b5ab77507659be25e",
+    "exported_bytes": 422
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "fb41cdc7c45e0adbac2163780cbf278e6b72bdd029f51f59d86fa640449c152f",
+    "original_bytes": 18165,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "5810d29ce7c08a5438e0bab6d065d60427acdd66e2a3580db5b3d7264a17783b",
+    "original_bytes": 3309,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5810d29ce7c08a5438e0bab6d065d60427acdd66e2a3580db5b3d7264a17783b",
+    "exported_bytes": 3309
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "cfaca4b1f15f6a3da51d47563dd5224a99e52779ba6cc043f8bfeada84f3781d",
+    "original_bytes": 1942,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cfaca4b1f15f6a3da51d47563dd5224a99e52779ba6cc043f8bfeada84f3781d",
+    "exported_bytes": 1942
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/evaluation.json",
+    "original_sha256": "5810d29ce7c08a5438e0bab6d065d60427acdd66e2a3580db5b3d7264a17783b",
+    "original_bytes": 3309,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5810d29ce7c08a5438e0bab6d065d60427acdd66e2a3580db5b3d7264a17783b",
+    "exported_bytes": 3309
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/manifest.json",
+    "original_sha256": "96ed4a85aa61d08b75155d943a5e1b5d8cd22e51bca5f4a961b234febb0c8437",
+    "original_bytes": 2341,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "55ef9cc75b6d96c39ca9291289457681820b0cce32bacabc6b70e8ef95cb108a",
+    "exported_bytes": 2087
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/process.log",
+    "original_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/analysis/attempt_001/summary.json",
+    "original_sha256": "88b0aacde062c0395f04b5e28074d131b12c46da0b5af1ec6c45e32bd9c945f8",
+    "original_bytes": 2026,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "88b0aacde062c0395f04b5e28074d131b12c46da0b5af1ec6c45e32bd9c945f8",
+    "exported_bytes": 2026
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/checkpoints.npz",
+    "original_sha256": "fb41cdc7c45e0adbac2163780cbf278e6b72bdd029f51f59d86fa640449c152f",
+    "original_bytes": 18165,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/config.json",
+    "original_sha256": "295a19885ce89ba8633e096134283118a3a4824b66db91258ffeb01e25445c71",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "295a19885ce89ba8633e096134283118a3a4824b66db91258ffeb01e25445c71",
+    "exported_bytes": 1369
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/manifest.json",
+    "original_sha256": "06f560e78f95cc19bbac46d9b27007d3546ae1126b95f18ce8af5fde512f6cb2",
+    "original_bytes": 1821,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "970cc7b2cdc4a57619cf276d9cd9a65e899087e933722dcbdf7abb0ec051b5ca",
+    "exported_bytes": 1642
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/process.log",
+    "original_sha256": "3afd7e7c3600457322f2ae3c6462a446b48029545758c975cffbb06d2eae9597",
+    "original_bytes": 1098,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "6cfdb19f35ca2d299e8f6ec6badbe8201447893da99172a6aa55e2418c738cd0",
+    "exported_bytes": 873
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/receipt.json",
+    "original_sha256": "4fd6b854de6aba59e94ea6477c69f8ab5a62fbfb708aa2c9b891d08e7f8f8906",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4fd6b854de6aba59e94ea6477c69f8ab5a62fbfb708aa2c9b891d08e7f8f8906",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/results.json",
+    "original_sha256": "cfaca4b1f15f6a3da51d47563dd5224a99e52779ba6cc043f8bfeada84f3781d",
+    "original_bytes": 1942,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cfaca4b1f15f6a3da51d47563dd5224a99e52779ba6cc043f8bfeada84f3781d",
+    "exported_bytes": 1942
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/summary.json",
+    "original_sha256": "0ae2611e00bfa44fc34087906811942e446493ef4e312fc97a5995616480ebcd",
+    "original_bytes": 252,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0ae2611e00bfa44fc34087906811942e446493ef4e312fc97a5995616480ebcd",
+    "exported_bytes": 252
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/train.log",
+    "original_sha256": "e557aecd55ab6c6e1ffcac93f5ad72b57491ebb081189d6e440e040bb1768eb6",
+    "original_bytes": 478,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "bcb5a3d1c83c8e93675d47f128dc6ea8fc3227fd032015cfd0e5f6b0e6795f62",
+    "exported_bytes": 328
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/training_metrics.json",
+    "original_sha256": "730f48f678704409dc49e51fb2c6b67986dea9d78f5d1fa97e82273b45cfc109",
+    "original_bytes": 63946,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "730f48f678704409dc49e51fb2c6b67986dea9d78f5d1fa97e82273b45cfc109",
+    "exported_bytes": 63946
+  },
+  "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/ga/seed_1003/training/attempt_001/trajectory.npz",
+    "original_sha256": "96073068c4be23c10dc3925ec8e33ccc82d2269a389e445b61e0c367c8d6b8e4",
+    "original_bytes": 74389,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "0cc7ba2064d2fbd40ff599510fb05ef4a81e17bd14f45bd3ca39321d09e725d4",
+    "original_bytes": 330,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0cc7ba2064d2fbd40ff599510fb05ef4a81e17bd14f45bd3ca39321d09e725d4",
+    "exported_bytes": 330
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "fede254e7ae5ccbed1cc0c047407e6b339b15e9e9573a40afd212c57c92f7ccc",
+    "original_bytes": 6175,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "7aa7b2edd5cfc52d81bc7d39a9c906585a66f7db7d77da6e27ec6e3520dcc420",
+    "original_bytes": 1200,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7aa7b2edd5cfc52d81bc7d39a9c906585a66f7db7d77da6e27ec6e3520dcc420",
+    "exported_bytes": 1200
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "3d219af506c53e772b4a18fe349efb183b2e9f090e4bbcae8cbfd8592f1a3722",
+    "original_bytes": 1583,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3d219af506c53e772b4a18fe349efb183b2e9f090e4bbcae8cbfd8592f1a3722",
+    "exported_bytes": 1583
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/evaluation.json",
+    "original_sha256": "7aa7b2edd5cfc52d81bc7d39a9c906585a66f7db7d77da6e27ec6e3520dcc420",
+    "original_bytes": 1200,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7aa7b2edd5cfc52d81bc7d39a9c906585a66f7db7d77da6e27ec6e3520dcc420",
+    "exported_bytes": 1200
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/manifest.json",
+    "original_sha256": "e8f97dd6cfe8835787c4e40607b3d8008b1f977960e8629a3bb251c27f4b0000",
+    "original_bytes": 2344,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "a10cdc04d29c8fe72da529ef608a56a359225f11afac3b2d69bc8835892048ac",
+    "exported_bytes": 2090
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/process.log",
+    "original_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/analysis/attempt_001/summary.json",
+    "original_sha256": "ebe92d15483b50408f562749e9d787a9bd52a39aa702cc95e3de7c2340e2dd02",
+    "original_bytes": 2032,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ebe92d15483b50408f562749e9d787a9bd52a39aa702cc95e3de7c2340e2dd02",
+    "exported_bytes": 2032
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/checkpoints.npz",
+    "original_sha256": "fede254e7ae5ccbed1cc0c047407e6b339b15e9e9573a40afd212c57c92f7ccc",
+    "original_bytes": 6175,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/config.json",
+    "original_sha256": "231e2a4bcd1b6e8a04faaab89f251da6896a78c1336161a0a03590cbba5e0bc0",
+    "original_bytes": 1065,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "231e2a4bcd1b6e8a04faaab89f251da6896a78c1336161a0a03590cbba5e0bc0",
+    "exported_bytes": 1065
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/manifest.json",
+    "original_sha256": "96653d96ff1ece97c4c5bd5c011810e3bd8904a68704d8445f228641558e0997",
+    "original_bytes": 1852,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "16b2c80440d699bbf318e379c8a42d5b9b4e647a31ce96bacb19cf05a780bec3",
+    "exported_bytes": 1673
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/process.log",
+    "original_sha256": "cd67a2c3bc40e1fd553db316354f6b642369b960b63adf38b1c85f6b8eb00e1a",
+    "original_bytes": 1408,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "a11d5d7ed676c569d0379eb1b9e78933b8a390f91eb5ad01a056564a7462dbfb",
+    "exported_bytes": 1183
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/receipt.json",
+    "original_sha256": "34474035c5465fd3212e421638350dcd10fae613b477edb932a79be4678237a0",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "34474035c5465fd3212e421638350dcd10fae613b477edb932a79be4678237a0",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/results.json",
+    "original_sha256": "3d219af506c53e772b4a18fe349efb183b2e9f090e4bbcae8cbfd8592f1a3722",
+    "original_bytes": 1583,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3d219af506c53e772b4a18fe349efb183b2e9f090e4bbcae8cbfd8592f1a3722",
+    "exported_bytes": 1583
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/summary.json",
+    "original_sha256": "b3a223b3696e8c3c3df0a7c3f50188d272be426bca2e5ca730326db23a0da704",
+    "original_bytes": 253,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b3a223b3696e8c3c3df0a7c3f50188d272be426bca2e5ca730326db23a0da704",
+    "exported_bytes": 253
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/train.log",
+    "original_sha256": "112cf6ab0f773561742d937a8af9e2603bc7dec6ec22716114e4fe1dd7d6fe94",
+    "original_bytes": 703,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f917ec8358f79f8f8b8c0a3f6124b5262d42712bfbd98f2b2b5ae7237cbe64cc",
+    "exported_bytes": 553
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/training_metrics.json",
+    "original_sha256": "e5b264aca947c8738b23ee2e8cf0ca40bceede6403ab3b7bd9da989579c031ef",
+    "original_bytes": 209798,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e5b264aca947c8738b23ee2e8cf0ca40bceede6403ab3b7bd9da989579c031ef",
+    "exported_bytes": 209798
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1001/training/attempt_001/trajectory.npz",
+    "original_sha256": "47ad2a55b1602d9259d5b34d8b89288066798e9728c58f0c64edeff26639123b",
+    "original_bytes": 171137,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "0cc7ba2064d2fbd40ff599510fb05ef4a81e17bd14f45bd3ca39321d09e725d4",
+    "original_bytes": 330,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0cc7ba2064d2fbd40ff599510fb05ef4a81e17bd14f45bd3ca39321d09e725d4",
+    "exported_bytes": 330
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "a893cf4f68dbc6cb388de7eed2ccf58aa16fc9c9e829774f743387b9dfd396fe",
+    "original_bytes": 6052,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "de35914a4c5985dfbd87705d9266069871a350f832a279b7da33ef4dbeb7ed9b",
+    "original_bytes": 1200,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "de35914a4c5985dfbd87705d9266069871a350f832a279b7da33ef4dbeb7ed9b",
+    "exported_bytes": 1200
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "805a4ee6b502a5df98938c89139ae24f0b2fd92e68e132e6f0996fc6eed0f8d9",
+    "original_bytes": 1582,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "805a4ee6b502a5df98938c89139ae24f0b2fd92e68e132e6f0996fc6eed0f8d9",
+    "exported_bytes": 1582
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/evaluation.json",
+    "original_sha256": "de35914a4c5985dfbd87705d9266069871a350f832a279b7da33ef4dbeb7ed9b",
+    "original_bytes": 1200,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "de35914a4c5985dfbd87705d9266069871a350f832a279b7da33ef4dbeb7ed9b",
+    "exported_bytes": 1200
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/manifest.json",
+    "original_sha256": "0bbe8ba353183b7314459ade5d15e6b9e5cf8a45803f2d4095c339fb2d3dab08",
+    "original_bytes": 2343,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "6da6140d26b17e9d177329915b8ab87d9355bdcf3d0f8fec886ce6a976c94102",
+    "exported_bytes": 2089
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/process.log",
+    "original_sha256": "1e12901482311cbe1cebd4036209432406a58b537b03dcc49f4c4a40de4a0e20",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1e12901482311cbe1cebd4036209432406a58b537b03dcc49f4c4a40de4a0e20",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/analysis/attempt_001/summary.json",
+    "original_sha256": "8b471c82ed25285bf1299365aaa93958e79491791c351ae87690b9146b656d50",
+    "original_bytes": 2045,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8b471c82ed25285bf1299365aaa93958e79491791c351ae87690b9146b656d50",
+    "exported_bytes": 2045
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/checkpoints.npz",
+    "original_sha256": "a893cf4f68dbc6cb388de7eed2ccf58aa16fc9c9e829774f743387b9dfd396fe",
+    "original_bytes": 6052,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/config.json",
+    "original_sha256": "4f9c683399a16041ac25381025263834a9e1522142f80cd7e51a37ed3b6c60b3",
+    "original_bytes": 1065,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4f9c683399a16041ac25381025263834a9e1522142f80cd7e51a37ed3b6c60b3",
+    "exported_bytes": 1065
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/manifest.json",
+    "original_sha256": "65941a23bf28593e47f96d1d1d2bfa976d1b5c3a3a7585766d30029fb6cf66f4",
+    "original_bytes": 1849,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "9db333f890deae02d3e5f9c70d8a096823d3faf863eb5b572b8de5141aa89077",
+    "exported_bytes": 1670
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/process.log",
+    "original_sha256": "aee427b481775350ef30aaca56525fac498812109354c86f951c197dc008baf4",
+    "original_bytes": 1408,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "54235ed0d44a2149cadf88714f77590d37be50ec937e397911d7ebbcb1e84341",
+    "exported_bytes": 1183
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/receipt.json",
+    "original_sha256": "85f3d0ea6a70b412f2c55a5b239c825ac1356d4632f96f3b47010d2c3a8f1f94",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "85f3d0ea6a70b412f2c55a5b239c825ac1356d4632f96f3b47010d2c3a8f1f94",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/results.json",
+    "original_sha256": "805a4ee6b502a5df98938c89139ae24f0b2fd92e68e132e6f0996fc6eed0f8d9",
+    "original_bytes": 1582,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "805a4ee6b502a5df98938c89139ae24f0b2fd92e68e132e6f0996fc6eed0f8d9",
+    "exported_bytes": 1582
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/summary.json",
+    "original_sha256": "735c560196ea4ada900f5f50699dd8dc7ba37aec88c4dc86fbb8497ffab8b8ec",
+    "original_bytes": 254,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "735c560196ea4ada900f5f50699dd8dc7ba37aec88c4dc86fbb8497ffab8b8ec",
+    "exported_bytes": 254
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/train.log",
+    "original_sha256": "c102bf7bc95e69b19e657f7c181a15bd528c50810efa77b7a662de0106afb8c1",
+    "original_bytes": 703,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "cd2c0b4f65fc1573a080764d03beb92d943553961863dca8aac11c6f4e6cf802",
+    "exported_bytes": 553
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/training_metrics.json",
+    "original_sha256": "9076a9446fbb3f41d6e70dc3f3ef6cd6ae790b66fcd6472dab12a7954d5d6f1a",
+    "original_bytes": 210239,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9076a9446fbb3f41d6e70dc3f3ef6cd6ae790b66fcd6472dab12a7954d5d6f1a",
+    "exported_bytes": 210239
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1002/training/attempt_001/trajectory.npz",
+    "original_sha256": "89ae1b238646d60513acedf0187bd44a6ca914f122f76d85be673ea8ada92d0f",
+    "original_bytes": 163191,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "0cc7ba2064d2fbd40ff599510fb05ef4a81e17bd14f45bd3ca39321d09e725d4",
+    "original_bytes": 330,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0cc7ba2064d2fbd40ff599510fb05ef4a81e17bd14f45bd3ca39321d09e725d4",
+    "exported_bytes": 330
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "2d0781fc6bd10d49b5d178886db199e1a9ee1f226c5326e7cd263b04ec06afb3",
+    "original_bytes": 5985,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "32f3655b74380fc2ef12e8fe07af17fea0f1c997b2b9d75c24993f559b274046",
+    "original_bytes": 1200,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "32f3655b74380fc2ef12e8fe07af17fea0f1c997b2b9d75c24993f559b274046",
+    "exported_bytes": 1200
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "9417d8f4de741e4e25233e2bc2c29a5d520a59b43a42bcb8f3d8a201d8dbec14",
+    "original_bytes": 1582,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9417d8f4de741e4e25233e2bc2c29a5d520a59b43a42bcb8f3d8a201d8dbec14",
+    "exported_bytes": 1582
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/evaluation.json",
+    "original_sha256": "32f3655b74380fc2ef12e8fe07af17fea0f1c997b2b9d75c24993f559b274046",
+    "original_bytes": 1200,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "32f3655b74380fc2ef12e8fe07af17fea0f1c997b2b9d75c24993f559b274046",
+    "exported_bytes": 1200
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/manifest.json",
+    "original_sha256": "0703cef518f0fd89144581dd780bf005ba4472cb9b855039b942ffe3623f587f",
+    "original_bytes": 2343,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "54443e8fc3f3ac1ea20bd1ff83b8557fa253203b30a81c7ba39f5236f89930e6",
+    "exported_bytes": 2089
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/process.log",
+    "original_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/analysis/attempt_001/summary.json",
+    "original_sha256": "8eb7317a14881b38691b855aa0e17961e08da98be6aa91d7d9802ad4c6b9ad9a",
+    "original_bytes": 2036,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8eb7317a14881b38691b855aa0e17961e08da98be6aa91d7d9802ad4c6b9ad9a",
+    "exported_bytes": 2036
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/checkpoints.npz",
+    "original_sha256": "2d0781fc6bd10d49b5d178886db199e1a9ee1f226c5326e7cd263b04ec06afb3",
+    "original_bytes": 5985,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/config.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/config.json",
+    "original_sha256": "a867de39438dd8db13a8ad35839c32ee0b04a38d30c7ac361f760f70c3284a7d",
+    "original_bytes": 1065,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a867de39438dd8db13a8ad35839c32ee0b04a38d30c7ac361f760f70c3284a7d",
+    "exported_bytes": 1065
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/manifest.json",
+    "original_sha256": "0907c4da02054da62287b4c0b5e5df2670a70dddc87cdc8778551c40d8df7dd2",
+    "original_bytes": 1853,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f99f02718ee098e2d424ed1b30de1987791cb6aee8b170bdb72c26f968ab172e",
+    "exported_bytes": 1674
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/process.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/process.log",
+    "original_sha256": "33b3e93c56e88e87d928e68c13872cb63befa96ecb32046401698744c6d02988",
+    "original_bytes": 1408,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "de3e9a9b5e3c9e878d3c67b6658b41cf95fc3f9fd6a27332f10975e1af212b60",
+    "exported_bytes": 1183
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/receipt.json",
+    "original_sha256": "76d12978c73ecd95da40e91b06b0580962f33fa73db6576daa091d1aafef1a70",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "76d12978c73ecd95da40e91b06b0580962f33fa73db6576daa091d1aafef1a70",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/results.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/results.json",
+    "original_sha256": "9417d8f4de741e4e25233e2bc2c29a5d520a59b43a42bcb8f3d8a201d8dbec14",
+    "original_bytes": 1582,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9417d8f4de741e4e25233e2bc2c29a5d520a59b43a42bcb8f3d8a201d8dbec14",
+    "exported_bytes": 1582
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/summary.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/summary.json",
+    "original_sha256": "f7647b927ad7b93883045bed95b0c62bd7be1684d1213f390adb05a483649716",
+    "original_bytes": 254,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f7647b927ad7b93883045bed95b0c62bd7be1684d1213f390adb05a483649716",
+    "exported_bytes": 254
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/train.log": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/train.log",
+    "original_sha256": "afadea2c79080eef4e6b5fb2f9bdf58a3272974992fbc341bd185cf8675732a8",
+    "original_bytes": 703,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "715f761ed89057c1f2229c987cad15fec4ccb049493742b6c1c68b7e436cb5dc",
+    "exported_bytes": 553
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/training_metrics.json",
+    "original_sha256": "8a919388f8c8ddf5d45740dfad2204a6e8f3cbd31a7af1a597bfcc89dbf36940",
+    "original_bytes": 209156,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8a919388f8c8ddf5d45740dfad2204a6e8f3cbd31a7af1a597bfcc89dbf36940",
+    "exported_bytes": 209156
+  },
+  "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-stationary/ppo/seed_1003/training/attempt_001/trajectory.npz",
+    "original_sha256": "0fefb5108d783383d236d0f08b03a12ed115c13cfbbd0615bd719bae2030c6ba",
+    "original_bytes": 164970,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1001/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/es/seed_1001/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "7fbee0b5815a37d86967c32e9cb30ed8843b6452859d5cf4ec53049f18e0eada",
+    "original_bytes": 548,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7fbee0b5815a37d86967c32e9cb30ed8843b6452859d5cf4ec53049f18e0eada",
+    "exported_bytes": 548
+  },
+  "raw/trials/pilot-switching/es/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/es/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "1cb4b9e1cf6d40167de6fbe8e1254c598f85ccd3b55d3e4cb52e3d50ff948670",
+    "original_bytes": 18121,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/es/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "2187873d772dca29b37040dd970800373cffcd1db5814304595fd0243507f322",
+    "original_bytes": 3214,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2187873d772dca29b37040dd970800373cffcd1db5814304595fd0243507f322",
+    "exported_bytes": 3214
+  },
+  "raw/trials/pilot-switching/es/seed_1001/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/es/seed_1001/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "48d7d82625c66484c75c56280081f969feecc7301a6b6a62c850296a8272e39e",
+    "original_bytes": 1888,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "48d7d82625c66484c75c56280081f969feecc7301a6b6a62c850296a8272e39e",
+    "exported_bytes": 1888
+  },
+  "raw/trials/pilot-switching/es/seed_1001/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/es/seed_1001/analysis/attempt_001/evaluation.json",
+    "original_sha256": "2187873d772dca29b37040dd970800373cffcd1db5814304595fd0243507f322",
+    "original_bytes": 3214,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2187873d772dca29b37040dd970800373cffcd1db5814304595fd0243507f322",
+    "exported_bytes": 3214
+  },
+  "raw/trials/pilot-switching/es/seed_1001/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/es/seed_1001/analysis/attempt_001/manifest.json",
+    "original_sha256": "bc9c2e8dd57fc69b1bea97eddceef67c09195a26c931eecf0a80cbbd8f4aac47",
+    "original_bytes": 2339,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "0b8b70401515a4b7e4d927140d18219a9b1eacf44fac1ba52c58e2e742d02897",
+    "exported_bytes": 2085
+  },
+  "raw/trials/pilot-switching/es/seed_1001/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/es/seed_1001/analysis/attempt_001/process.log",
+    "original_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/es/seed_1001/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/es/seed_1001/analysis/attempt_001/summary.json",
+    "original_sha256": "15a12090e7d64fae489e74a30369357f309c0b126ac4d14fea846d9174d574e1",
+    "original_bytes": 2045,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "15a12090e7d64fae489e74a30369357f309c0b126ac4d14fea846d9174d574e1",
+    "exported_bytes": 2045
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/checkpoints.npz",
+    "original_sha256": "1cb4b9e1cf6d40167de6fbe8e1254c598f85ccd3b55d3e4cb52e3d50ff948670",
+    "original_bytes": 18121,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/config.json",
+    "original_sha256": "1c154ab7fdd487d0a17485722546056d45aaa5149e0887162316747e9ed254f1",
+    "original_bytes": 1168,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1c154ab7fdd487d0a17485722546056d45aaa5149e0887162316747e9ed254f1",
+    "exported_bytes": 1168
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/manifest.json",
+    "original_sha256": "5c8be11363caa4f7bd0063071d276ac349b086f5e750b0b8a50c9ae0ab9429be",
+    "original_bytes": 1835,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "38a29c7d9a849eb3c1bf3693abed5720af0c312cf884a698adbceef31812ff91",
+    "exported_bytes": 1656
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/process.log",
+    "original_sha256": "00d5185591d16b15980fda99997cc17d19bbb0dc257bde0fdf5fdb1e0f7f6bfe",
+    "original_bytes": 1192,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "745d45e07a6b8d69837470f26b9479fdc3b92fc534ed128dd04ebe1d994b3b85",
+    "exported_bytes": 967
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/receipt.json",
+    "original_sha256": "078cff77b896b30e3deba5c4d445bb6a0321ff1fc88354502892e875ad545e3a",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "078cff77b896b30e3deba5c4d445bb6a0321ff1fc88354502892e875ad545e3a",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/results.json",
+    "original_sha256": "48d7d82625c66484c75c56280081f969feecc7301a6b6a62c850296a8272e39e",
+    "original_bytes": 1888,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "48d7d82625c66484c75c56280081f969feecc7301a6b6a62c850296a8272e39e",
+    "exported_bytes": 1888
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/summary.json",
+    "original_sha256": "2a61d9e44a08bf8a59629275461891d021d795729426c55649125f7e2a43dc49",
+    "original_bytes": 248,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2a61d9e44a08bf8a59629275461891d021d795729426c55649125f7e2a43dc49",
+    "exported_bytes": 248
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/train.log",
+    "original_sha256": "0e9a30e98bc083afafa2032a9d78b5b811ac83f0cd2f688991ed06283412b603",
+    "original_bytes": 509,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "0912eb0e0f0092e36787d3c7d82db46f1633ba86594b4fa9185bcc63c0d06855",
+    "exported_bytes": 359
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/training_metrics.json",
+    "original_sha256": "dd7a545a44fae04b5df324b93f26aa3b809d05ef1d19b1c7aa735a5610b25376",
+    "original_bytes": 72072,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "dd7a545a44fae04b5df324b93f26aa3b809d05ef1d19b1c7aa735a5610b25376",
+    "exported_bytes": 72072
+  },
+  "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/es/seed_1001/training/attempt_001/trajectory.npz",
+    "original_sha256": "fc3f92af8c27a274b469d85d36555fa1c7fd97ceb974167fca11f3d97ff7480e",
+    "original_bytes": 93661,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1002/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/es/seed_1002/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "c6df3a689371997bb2bc250e11c710aa88148ffadc0444f82e2caed19d331593",
+    "original_bytes": 548,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c6df3a689371997bb2bc250e11c710aa88148ffadc0444f82e2caed19d331593",
+    "exported_bytes": 548
+  },
+  "raw/trials/pilot-switching/es/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/es/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "fd0398e6bf25fbc1c113762ba99fdc0b2e7b7cd294a7681e7f8a565fa1a702f1",
+    "original_bytes": 18147,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/es/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "48fd21f1647df033a107434bad013eb47dc2bad5fe001db1ebaa4fbf2ab948a5",
+    "original_bytes": 3255,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "48fd21f1647df033a107434bad013eb47dc2bad5fe001db1ebaa4fbf2ab948a5",
+    "exported_bytes": 3255
+  },
+  "raw/trials/pilot-switching/es/seed_1002/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/es/seed_1002/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "9e440b49817bf0dc15a412494e4099006baa233b0687450c6c3d7ddac0adecb1",
+    "original_bytes": 1927,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9e440b49817bf0dc15a412494e4099006baa233b0687450c6c3d7ddac0adecb1",
+    "exported_bytes": 1927
+  },
+  "raw/trials/pilot-switching/es/seed_1002/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/es/seed_1002/analysis/attempt_001/evaluation.json",
+    "original_sha256": "48fd21f1647df033a107434bad013eb47dc2bad5fe001db1ebaa4fbf2ab948a5",
+    "original_bytes": 3255,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "48fd21f1647df033a107434bad013eb47dc2bad5fe001db1ebaa4fbf2ab948a5",
+    "exported_bytes": 3255
+  },
+  "raw/trials/pilot-switching/es/seed_1002/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/es/seed_1002/analysis/attempt_001/manifest.json",
+    "original_sha256": "94bf2d73f06060171a02961a028a3c0a5896c59e50dcc66339819c8a4ed8ebbc",
+    "original_bytes": 2339,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "6eb244a646935096e675c2aeae88098c174da8b416fbac110616b15ff439dff3",
+    "exported_bytes": 2085
+  },
+  "raw/trials/pilot-switching/es/seed_1002/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/es/seed_1002/analysis/attempt_001/process.log",
+    "original_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/es/seed_1002/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/es/seed_1002/analysis/attempt_001/summary.json",
+    "original_sha256": "f6fa6089550e8ccaa7d1fa47b73293ebddeefb187c5f72416b7135e69c12bebd",
+    "original_bytes": 2084,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f6fa6089550e8ccaa7d1fa47b73293ebddeefb187c5f72416b7135e69c12bebd",
+    "exported_bytes": 2084
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/checkpoints.npz",
+    "original_sha256": "fd0398e6bf25fbc1c113762ba99fdc0b2e7b7cd294a7681e7f8a565fa1a702f1",
+    "original_bytes": 18147,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/config.json",
+    "original_sha256": "f41bca5dc3c2dc00c6db3b4d9ca7ffb2901a4b110c53b9a482d8a858ff4c2e46",
+    "original_bytes": 1168,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f41bca5dc3c2dc00c6db3b4d9ca7ffb2901a4b110c53b9a482d8a858ff4c2e46",
+    "exported_bytes": 1168
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/manifest.json",
+    "original_sha256": "dbfd8c8eb8738d909872b0acc4c96ea6ce99d7c085dae7835c72779830f6ea99",
+    "original_bytes": 1835,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2b375b3ca2b2682dc87924ee9af34ae68e7b89ed5e693c23a45b13ce1397f3c6",
+    "exported_bytes": 1656
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/process.log",
+    "original_sha256": "574c6737cda86532497fa474d6c1e8a73b4f1ff4c066dbe1b2a8702db6286b77",
+    "original_bytes": 1192,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "7e87e4d1debcbf4c7d058d3e5730e99d712bf2a3a7987e9d2626cd741b44e212",
+    "exported_bytes": 967
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/receipt.json",
+    "original_sha256": "8eeecdc437a73546872295cc33e57a2f2dd42dcc503da6519edafd63ee057b30",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8eeecdc437a73546872295cc33e57a2f2dd42dcc503da6519edafd63ee057b30",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/results.json",
+    "original_sha256": "9e440b49817bf0dc15a412494e4099006baa233b0687450c6c3d7ddac0adecb1",
+    "original_bytes": 1927,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9e440b49817bf0dc15a412494e4099006baa233b0687450c6c3d7ddac0adecb1",
+    "exported_bytes": 1927
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/summary.json",
+    "original_sha256": "0e1d3675a80a69b42254247dbd9fa6528dac8e264793808d5315a3bb4d0e9521",
+    "original_bytes": 250,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0e1d3675a80a69b42254247dbd9fa6528dac8e264793808d5315a3bb4d0e9521",
+    "exported_bytes": 250
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/train.log",
+    "original_sha256": "97285b85a609782e3d38295651342292a9c213b62cb4779dff13948e3cd0b8f6",
+    "original_bytes": 509,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "81d52ecc80299c936738c0ee99bdcac5be3b56efa13b689b8b9e77f53fc1fe5b",
+    "exported_bytes": 359
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/training_metrics.json",
+    "original_sha256": "ef402b499ef3cbaad89b599a10ee128c1ff66a8e1b59bb592d4ea36a141a74a1",
+    "original_bytes": 73450,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ef402b499ef3cbaad89b599a10ee128c1ff66a8e1b59bb592d4ea36a141a74a1",
+    "exported_bytes": 73450
+  },
+  "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/es/seed_1002/training/attempt_001/trajectory.npz",
+    "original_sha256": "5b20cffb302dbafc6c9884a8172c00ffbb25524a686807fa36c66f4332f4141f",
+    "original_bytes": 103347,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1003/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/es/seed_1003/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "1370e9f548415bb680bd0ae79a5bc281f90bce6805219951cd5a8f7670ceb35d",
+    "original_bytes": 542,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1370e9f548415bb680bd0ae79a5bc281f90bce6805219951cd5a8f7670ceb35d",
+    "exported_bytes": 542
+  },
+  "raw/trials/pilot-switching/es/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/es/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "9d9154036b40f1b91494b43b7245d1cc9d646f5a1c3e8c3bf84325c577662ad6",
+    "original_bytes": 18106,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/es/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "051be2873a752d0baddc03da085e3ca79596f249cf1ed5ac7545ed5abd8d01ca",
+    "original_bytes": 3129,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "051be2873a752d0baddc03da085e3ca79596f249cf1ed5ac7545ed5abd8d01ca",
+    "exported_bytes": 3129
+  },
+  "raw/trials/pilot-switching/es/seed_1003/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/es/seed_1003/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "ebb33ced6edf7fa2edcec05a73568b58410f9ebc5ff686a92e1b365b19ad19a8",
+    "original_bytes": 1962,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ebb33ced6edf7fa2edcec05a73568b58410f9ebc5ff686a92e1b365b19ad19a8",
+    "exported_bytes": 1962
+  },
+  "raw/trials/pilot-switching/es/seed_1003/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/es/seed_1003/analysis/attempt_001/evaluation.json",
+    "original_sha256": "051be2873a752d0baddc03da085e3ca79596f249cf1ed5ac7545ed5abd8d01ca",
+    "original_bytes": 3129,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "051be2873a752d0baddc03da085e3ca79596f249cf1ed5ac7545ed5abd8d01ca",
+    "exported_bytes": 3129
+  },
+  "raw/trials/pilot-switching/es/seed_1003/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/es/seed_1003/analysis/attempt_001/manifest.json",
+    "original_sha256": "adaa83e112335a449f832bcfc9f17c4401ef6530df449d6cdb43d759b55894a9",
+    "original_bytes": 2339,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "12bd3f870273bbe82f31b1acbc5aa9ddedc709b2b2cb36fa0178afd918f95f77",
+    "exported_bytes": 2085
+  },
+  "raw/trials/pilot-switching/es/seed_1003/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/es/seed_1003/analysis/attempt_001/process.log",
+    "original_sha256": "5805c5332a078f627c0f40e67b89d285b65548855806c793df28dcdd37c8b00e",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5805c5332a078f627c0f40e67b89d285b65548855806c793df28dcdd37c8b00e",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/es/seed_1003/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/es/seed_1003/analysis/attempt_001/summary.json",
+    "original_sha256": "e2654d288861def4538fea4b5f69e3d7abd33f08a5951e12b9d80064ca75a0cf",
+    "original_bytes": 2086,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e2654d288861def4538fea4b5f69e3d7abd33f08a5951e12b9d80064ca75a0cf",
+    "exported_bytes": 2086
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/checkpoints.npz",
+    "original_sha256": "9d9154036b40f1b91494b43b7245d1cc9d646f5a1c3e8c3bf84325c577662ad6",
+    "original_bytes": 18106,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/config.json",
+    "original_sha256": "755438f977fde48962360eaf74adad1ee8b9614632546e9fdba22b3933ef4cc2",
+    "original_bytes": 1168,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "755438f977fde48962360eaf74adad1ee8b9614632546e9fdba22b3933ef4cc2",
+    "exported_bytes": 1168
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/manifest.json",
+    "original_sha256": "5c9ee7019da3dcbfad8ce53ccc982d5388923056b4b54776a01d8355f3f294f8",
+    "original_bytes": 1836,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "49108e16cf0f3b7ebfdf918c158cb3a79d44efe1ddd62af728072a90c6b6ed01",
+    "exported_bytes": 1657
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/process.log",
+    "original_sha256": "1211fd92e16d86d8cc8dcf4818484fe0e8dc518b1ac18c5162f1945aade84ad9",
+    "original_bytes": 1192,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "6db119e0bdccf2a19eabb1d61880721a1a57e77daf28a0d08bf9d1ea9751903d",
+    "exported_bytes": 967
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/receipt.json",
+    "original_sha256": "49bf3dd6faca6132a74ab0e01b322a926f89abc720b24513a23fff5a51a9b5dc",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "49bf3dd6faca6132a74ab0e01b322a926f89abc720b24513a23fff5a51a9b5dc",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/results.json",
+    "original_sha256": "ebb33ced6edf7fa2edcec05a73568b58410f9ebc5ff686a92e1b365b19ad19a8",
+    "original_bytes": 1962,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ebb33ced6edf7fa2edcec05a73568b58410f9ebc5ff686a92e1b365b19ad19a8",
+    "exported_bytes": 1962
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/summary.json",
+    "original_sha256": "7d9fa0d44bc820d0a5da703a4a62af1dd3afcc0c11d07d928e226025c5f69796",
+    "original_bytes": 251,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7d9fa0d44bc820d0a5da703a4a62af1dd3afcc0c11d07d928e226025c5f69796",
+    "exported_bytes": 251
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/train.log",
+    "original_sha256": "8da9f12e3c088087e3ec8a939b863fd1854f7f1e5608a228e161721abaa47519",
+    "original_bytes": 509,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5a5d1a081da60d505c2902462b0a6ff34b1c1c0860c18fefcba6678163db636b",
+    "exported_bytes": 359
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/training_metrics.json",
+    "original_sha256": "0c8725cad6a19e5d4c55647bc18c09ade953027892680d3f79fba5810e822535",
+    "original_bytes": 74983,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0c8725cad6a19e5d4c55647bc18c09ade953027892680d3f79fba5810e822535",
+    "exported_bytes": 74983
+  },
+  "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/es/seed_1003/training/attempt_001/trajectory.npz",
+    "original_sha256": "b3c19021235ab75ac4f34175de302b0962df928014dd3ee95ee3656a12caed2e",
+    "original_bytes": 115376,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "7fbee0b5815a37d86967c32e9cb30ed8843b6452859d5cf4ec53049f18e0eada",
+    "original_bytes": 548,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7fbee0b5815a37d86967c32e9cb30ed8843b6452859d5cf4ec53049f18e0eada",
+    "exported_bytes": 548
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/ga/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "ea598f28c83b1c615c953261fc693ec9a3641d98e6e0131138c91d905dc63d17",
+    "original_bytes": 18151,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "9d244d3529d014a8520b2c4060059ae1d4e589a8dd42bb482a72324a0efbcd24",
+    "original_bytes": 3231,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9d244d3529d014a8520b2c4060059ae1d4e589a8dd42bb482a72324a0efbcd24",
+    "exported_bytes": 3231
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "0a892c2d87b6bef3a1bc6246ec1db74a86b080fb68b16f2f387ff0ff1b67533b",
+    "original_bytes": 2110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0a892c2d87b6bef3a1bc6246ec1db74a86b080fb68b16f2f387ff0ff1b67533b",
+    "exported_bytes": 2110
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/analysis/attempt_001/evaluation.json",
+    "original_sha256": "9d244d3529d014a8520b2c4060059ae1d4e589a8dd42bb482a72324a0efbcd24",
+    "original_bytes": 3231,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9d244d3529d014a8520b2c4060059ae1d4e589a8dd42bb482a72324a0efbcd24",
+    "exported_bytes": 3231
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/analysis/attempt_001/manifest.json",
+    "original_sha256": "8ab4d9f61c17167f71ff1a0df21400c426b9e3be8619f78e9321235899bb70f2",
+    "original_bytes": 2339,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "3ed3f2bd85b4ebd58eb4bdfc456d9a1c1779be036165ff09fc66a756758f2cfe",
+    "exported_bytes": 2085
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ga/seed_1001/analysis/attempt_001/process.log",
+    "original_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/analysis/attempt_001/summary.json",
+    "original_sha256": "a58b98c6d372d714d5f0c7f245e95c9ee3221f9d173b07a295f6b4b186f6c7ef",
+    "original_bytes": 2084,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a58b98c6d372d714d5f0c7f245e95c9ee3221f9d173b07a295f6b4b186f6c7ef",
+    "exported_bytes": 2084
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/checkpoints.npz",
+    "original_sha256": "ea598f28c83b1c615c953261fc693ec9a3641d98e6e0131138c91d905dc63d17",
+    "original_bytes": 18151,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/config.json",
+    "original_sha256": "8e7be09794daa46c01ac0800d00ca1433d3ab34eb3b509945765274e5f027682",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8e7be09794daa46c01ac0800d00ca1433d3ab34eb3b509945765274e5f027682",
+    "exported_bytes": 1370
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/manifest.json",
+    "original_sha256": "6d45de1cf7ba49ff7624615d733873c5db563dba5d99af5877ed6cde039e828e",
+    "original_bytes": 1835,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "06822a37e7ec88719248b1ceb13cc07fa0eeb237777adda7c19e13f170df908c",
+    "exported_bytes": 1656
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/process.log",
+    "original_sha256": "de3e833b07709d19f7ff6d09ab271b35036c6e56a5ccbe9dd944683b41ecdaf3",
+    "original_bytes": 1192,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "a1a2a5d0ebd64710b8173eab91b52c042f672aa67498431df0fb87dd6d9e3da4",
+    "exported_bytes": 967
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/receipt.json",
+    "original_sha256": "e1b60f4431869cd77a6de7b074ebd059438f5a68e072f49d967fdb3927c5ad18",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e1b60f4431869cd77a6de7b074ebd059438f5a68e072f49d967fdb3927c5ad18",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/results.json",
+    "original_sha256": "0a892c2d87b6bef3a1bc6246ec1db74a86b080fb68b16f2f387ff0ff1b67533b",
+    "original_bytes": 2110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0a892c2d87b6bef3a1bc6246ec1db74a86b080fb68b16f2f387ff0ff1b67533b",
+    "exported_bytes": 2110
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/summary.json",
+    "original_sha256": "74aa5a152a345192d12cbdfb21fda13855932c8636a4163f040bf40c6816e1f7",
+    "original_bytes": 250,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "74aa5a152a345192d12cbdfb21fda13855932c8636a4163f040bf40c6816e1f7",
+    "exported_bytes": 250
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/train.log",
+    "original_sha256": "dfdd75e4f62746e22fcb6a8e00468ed83ad4c937b99174504c11e5725347d903",
+    "original_bytes": 509,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f2f7ecb8d74c4c9ba70c3f1c71449a396c8f31635299485b5c2cf44a0a478889",
+    "exported_bytes": 359
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/training_metrics.json",
+    "original_sha256": "bdee4865e2916a2f7cec68df30accc357b16603fd47486846a7669f17f2f1a67",
+    "original_bytes": 73274,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "bdee4865e2916a2f7cec68df30accc357b16603fd47486846a7669f17f2f1a67",
+    "exported_bytes": 73274
+  },
+  "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/ga/seed_1001/training/attempt_001/trajectory.npz",
+    "original_sha256": "c817ba512a503c48279175ceda98f4fe3977f79a568587097150834711a6558d",
+    "original_bytes": 87174,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "c6df3a689371997bb2bc250e11c710aa88148ffadc0444f82e2caed19d331593",
+    "original_bytes": 548,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c6df3a689371997bb2bc250e11c710aa88148ffadc0444f82e2caed19d331593",
+    "exported_bytes": 548
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/ga/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "b89c7810825e713405ed4015805438e7f5fb49a5929102e9106523f9ae47aa87",
+    "original_bytes": 18113,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "4eaedc744e43fa51f3605c4e00092b0fd5573d2703832d2a0de3cd1e02cb07ee",
+    "original_bytes": 3324,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4eaedc744e43fa51f3605c4e00092b0fd5573d2703832d2a0de3cd1e02cb07ee",
+    "exported_bytes": 3324
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "5a3ea61bc6ba9650c90111c2df593c362342758e60b7ec9a7fa4790714765f84",
+    "original_bytes": 2148,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5a3ea61bc6ba9650c90111c2df593c362342758e60b7ec9a7fa4790714765f84",
+    "exported_bytes": 2148
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/analysis/attempt_001/evaluation.json",
+    "original_sha256": "4eaedc744e43fa51f3605c4e00092b0fd5573d2703832d2a0de3cd1e02cb07ee",
+    "original_bytes": 3324,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4eaedc744e43fa51f3605c4e00092b0fd5573d2703832d2a0de3cd1e02cb07ee",
+    "exported_bytes": 3324
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/analysis/attempt_001/manifest.json",
+    "original_sha256": "11760d12fc60b09b151fe843901e3543fc2ff86fbee7bec88e0dcc98b530c042",
+    "original_bytes": 2339,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "cc2551f91d4a2aa82296195f9aaaa2f8a55bc3021f5e4ff9e9a3a9f7416cd355",
+    "exported_bytes": 2085
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ga/seed_1002/analysis/attempt_001/process.log",
+    "original_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/analysis/attempt_001/summary.json",
+    "original_sha256": "6d369dcd290d04caf3b20382f0ff0a6cdafb9b03b19bf1ddbf33a2ac0d4425e8",
+    "original_bytes": 2061,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6d369dcd290d04caf3b20382f0ff0a6cdafb9b03b19bf1ddbf33a2ac0d4425e8",
+    "exported_bytes": 2061
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/checkpoints.npz",
+    "original_sha256": "b89c7810825e713405ed4015805438e7f5fb49a5929102e9106523f9ae47aa87",
+    "original_bytes": 18113,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/config.json",
+    "original_sha256": "248faa28971e48c84b9f9dae61cfdd353f98fda38e9b18cbafdc86949b92f15a",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "248faa28971e48c84b9f9dae61cfdd353f98fda38e9b18cbafdc86949b92f15a",
+    "exported_bytes": 1370
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/manifest.json",
+    "original_sha256": "b39fb184a8574636a03ee88d4735bd7f8f96b16458bbf93aaf8774cd69eeaea4",
+    "original_bytes": 1836,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "9a1b72360e852a040f8dd70b2a8b65dc6568584bd8f34be7f2fd0f32c3e3afb3",
+    "exported_bytes": 1657
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/process.log",
+    "original_sha256": "c4d31acc016aea28eb574700600279e2d2cd8ab1677b83d33a56e51dfc430024",
+    "original_bytes": 1192,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "9b063a00bb7b440fb89d0122f942106b43094a00ef4fc1306127f7fa502e6fd5",
+    "exported_bytes": 967
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/receipt.json",
+    "original_sha256": "416fa2b32d3a06a4a0d1c86359252b5c953c7aa3c514b13563a357dc25adc6fb",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "416fa2b32d3a06a4a0d1c86359252b5c953c7aa3c514b13563a357dc25adc6fb",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/results.json",
+    "original_sha256": "5a3ea61bc6ba9650c90111c2df593c362342758e60b7ec9a7fa4790714765f84",
+    "original_bytes": 2148,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5a3ea61bc6ba9650c90111c2df593c362342758e60b7ec9a7fa4790714765f84",
+    "exported_bytes": 2148
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/summary.json",
+    "original_sha256": "a945dbcdd8f5b708eb442100b506b82195aa96d9d52b7fd0eaf1d33e7334f388",
+    "original_bytes": 249,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a945dbcdd8f5b708eb442100b506b82195aa96d9d52b7fd0eaf1d33e7334f388",
+    "exported_bytes": 249
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/train.log",
+    "original_sha256": "40902689caff1aa95fd13b868bce7ac8d772fe34360fb91810f6ea2d0752d935",
+    "original_bytes": 509,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "7b9ea74268e685757badd8a0a0d8b21fe7dc5bff0297dc7f7d6e7053e2adb30d",
+    "exported_bytes": 359
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/training_metrics.json",
+    "original_sha256": "ff75fa8f82c613fcf513c32c7763b7d366c1ae433600b287620facabc3063d78",
+    "original_bytes": 73390,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ff75fa8f82c613fcf513c32c7763b7d366c1ae433600b287620facabc3063d78",
+    "exported_bytes": 73390
+  },
+  "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/ga/seed_1002/training/attempt_001/trajectory.npz",
+    "original_sha256": "0c6cdbabb3758ba42799adfc9dee9c79e10c1e9fb039063eb8c4544560dc6f04",
+    "original_bytes": 88594,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "1370e9f548415bb680bd0ae79a5bc281f90bce6805219951cd5a8f7670ceb35d",
+    "original_bytes": 542,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1370e9f548415bb680bd0ae79a5bc281f90bce6805219951cd5a8f7670ceb35d",
+    "exported_bytes": 542
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/ga/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "a1e442ce44e455477f207cd1c9891d3f23a95d74e26ed0f12855734b5c38c752",
+    "original_bytes": 18170,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "f1c4aa261cb4a24cc7f5b7fb9892b111ab048d660a109f2512d53040332379c3",
+    "original_bytes": 3169,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f1c4aa261cb4a24cc7f5b7fb9892b111ab048d660a109f2512d53040332379c3",
+    "exported_bytes": 3169
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "500d2eca507af4d1d3122dc0abe75c42da862ea658e057c9cba87c150fcefc68",
+    "original_bytes": 2145,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "500d2eca507af4d1d3122dc0abe75c42da862ea658e057c9cba87c150fcefc68",
+    "exported_bytes": 2145
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/analysis/attempt_001/evaluation.json",
+    "original_sha256": "f1c4aa261cb4a24cc7f5b7fb9892b111ab048d660a109f2512d53040332379c3",
+    "original_bytes": 3169,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f1c4aa261cb4a24cc7f5b7fb9892b111ab048d660a109f2512d53040332379c3",
+    "exported_bytes": 3169
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/analysis/attempt_001/manifest.json",
+    "original_sha256": "7e74eadb1f198c21b204e4e870eb0410cf5fd3ad3a127a89245c1932ed706901",
+    "original_bytes": 2339,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5fec5db542defa2254e3c90c0ea43c5712131d127e0c9b29078e29bc6b747d71",
+    "exported_bytes": 2085
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ga/seed_1003/analysis/attempt_001/process.log",
+    "original_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/analysis/attempt_001/summary.json",
+    "original_sha256": "8d9b025ebfa09a0386be242fc6e24e6ea4b51edb2f9bca319ddef615477ee9f3",
+    "original_bytes": 2094,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d9b025ebfa09a0386be242fc6e24e6ea4b51edb2f9bca319ddef615477ee9f3",
+    "exported_bytes": 2094
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/checkpoints.npz",
+    "original_sha256": "a1e442ce44e455477f207cd1c9891d3f23a95d74e26ed0f12855734b5c38c752",
+    "original_bytes": 18170,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/config.json",
+    "original_sha256": "2ac2f6b8fe43538a13fef54fd0c5d683faf084085702e3b70cf1d2dfac50bdd1",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2ac2f6b8fe43538a13fef54fd0c5d683faf084085702e3b70cf1d2dfac50bdd1",
+    "exported_bytes": 1370
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/manifest.json",
+    "original_sha256": "edecec567e38f2a02dda9b4b775f6232b6bcb849b4db7f62f182440e2acaad00",
+    "original_bytes": 1835,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "aaa43c5c43b279aab74871c3c074027ce0064ad31ca6a8d1f05aef68956da0c7",
+    "exported_bytes": 1656
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/process.log",
+    "original_sha256": "9c0570de93f17802e65b9a4259670360527bf812d186dc24256eddbd9c4afa9e",
+    "original_bytes": 1192,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "3bee263d16da5252e83a650085045f49cf87aef047670ba9b2121d0b3a90e9bc",
+    "exported_bytes": 967
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/receipt.json",
+    "original_sha256": "ce5a55cc7500c73b90d6d67cec00e822751758f2a0455fb0ba47143a57ef42ad",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ce5a55cc7500c73b90d6d67cec00e822751758f2a0455fb0ba47143a57ef42ad",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/results.json",
+    "original_sha256": "500d2eca507af4d1d3122dc0abe75c42da862ea658e057c9cba87c150fcefc68",
+    "original_bytes": 2145,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "500d2eca507af4d1d3122dc0abe75c42da862ea658e057c9cba87c150fcefc68",
+    "exported_bytes": 2145
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/summary.json",
+    "original_sha256": "950d3b78788b7adccec4054ac7cc5ebd47edd24e1b775642aff3c7cdf85a7fff",
+    "original_bytes": 251,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "950d3b78788b7adccec4054ac7cc5ebd47edd24e1b775642aff3c7cdf85a7fff",
+    "exported_bytes": 251
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/train.log",
+    "original_sha256": "0df0b8f451e2f4957f42ed5bd543d14431680bbf2c9f6d62953ce0094a652173",
+    "original_bytes": 509,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "d96ca6f641247e0789077d2387979e9f6bce3da8dcaabfc0d68bcab23892b74a",
+    "exported_bytes": 359
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/training_metrics.json",
+    "original_sha256": "a3c1696b52d3d1ff88b531fb6e8b6ba565726ef62c1e0700007813470d643b59",
+    "original_bytes": 75259,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a3c1696b52d3d1ff88b531fb6e8b6ba565726ef62c1e0700007813470d643b59",
+    "exported_bytes": 75259
+  },
+  "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/ga/seed_1003/training/attempt_001/trajectory.npz",
+    "original_sha256": "1438113131d392421d10d71a172e8fb7ba7094648fb4d6c57ef1ded0b82421b5",
+    "original_bytes": 68795,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "834ebdf20d4561c8a75f80448f78bfd5b1c8b21a0887dd9b12f7fd040be3cd9a",
+    "original_bytes": 456,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "834ebdf20d4561c8a75f80448f78bfd5b1c8b21a0887dd9b12f7fd040be3cd9a",
+    "exported_bytes": 456
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "5e4bd226142248f525918551ede8ccaba5202e08b59cb681b12ca94c68f91727",
+    "original_bytes": 6095,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "7050e5258ad22222add00a027ee5c50877ab817114df4047be92782ed41db1ed",
+    "original_bytes": 1200,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7050e5258ad22222add00a027ee5c50877ab817114df4047be92782ed41db1ed",
+    "exported_bytes": 1200
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "3d72fada112893d121cff4516ce92bbb0da81ff45afe75abf06f7517ff9ccc26",
+    "original_bytes": 1791,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3d72fada112893d121cff4516ce92bbb0da81ff45afe75abf06f7517ff9ccc26",
+    "exported_bytes": 1791
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/evaluation.json",
+    "original_sha256": "7050e5258ad22222add00a027ee5c50877ab817114df4047be92782ed41db1ed",
+    "original_bytes": 1200,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7050e5258ad22222add00a027ee5c50877ab817114df4047be92782ed41db1ed",
+    "exported_bytes": 1200
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/manifest.json",
+    "original_sha256": "30b15258e8f784dd6fc395e9a1381b9580d1c9255043410d6628c6456428118f",
+    "original_bytes": 2341,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2096a80ecb02698d2f35721722b68cc6e27753453eb0ee2343fe24495dac0caf",
+    "exported_bytes": 2087
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/process.log",
+    "original_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/analysis/attempt_001/summary.json",
+    "original_sha256": "7468123f22e8e0fa2ab226541a3aa5ec5d0e155eb5eede672d410685579d9515",
+    "original_bytes": 2095,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7468123f22e8e0fa2ab226541a3aa5ec5d0e155eb5eede672d410685579d9515",
+    "exported_bytes": 2095
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/checkpoints.npz",
+    "original_sha256": "5e4bd226142248f525918551ede8ccaba5202e08b59cb681b12ca94c68f91727",
+    "original_bytes": 6095,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/config.json",
+    "original_sha256": "f367ea5006b742a7bfe8a567117b2d1f8ad33195044f4afc6ff3241391bcaa6b",
+    "original_bytes": 1066,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f367ea5006b742a7bfe8a567117b2d1f8ad33195044f4afc6ff3241391bcaa6b",
+    "exported_bytes": 1066
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/manifest.json",
+    "original_sha256": "b91e272046583846969f9e057536c4eaeecde89b2a1b1a68bb806f781cf8f6d4",
+    "original_bytes": 1868,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "be80be31e1e3ad4cb1a8b64b4c9f0a38c604e4dff147ca2ad83f510f884aeb17",
+    "exported_bytes": 1689
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/process.log",
+    "original_sha256": "1cba2133399c4884f7b66d31b8fc7de7d60aab1a61c7b7f31a5106894d3d427a",
+    "original_bytes": 1546,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8cc9c22dee781855c855acd3c4a59be6639ebbb3bade81a21ca1aab249a21881",
+    "exported_bytes": 1321
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/receipt.json",
+    "original_sha256": "9a8b08df6bd1cbf246658a0233d7f84e0f51d1ac1bcbbbfbbb25e867ed5d4c61",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9a8b08df6bd1cbf246658a0233d7f84e0f51d1ac1bcbbbfbbb25e867ed5d4c61",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/results.json",
+    "original_sha256": "3d72fada112893d121cff4516ce92bbb0da81ff45afe75abf06f7517ff9ccc26",
+    "original_bytes": 1791,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3d72fada112893d121cff4516ce92bbb0da81ff45afe75abf06f7517ff9ccc26",
+    "exported_bytes": 1791
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/summary.json",
+    "original_sha256": "0ab56c96195e5085e8c72437e737388123435a726c44805e86615784aec7200e",
+    "original_bytes": 252,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0ab56c96195e5085e8c72437e737388123435a726c44805e86615784aec7200e",
+    "exported_bytes": 252
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/train.log",
+    "original_sha256": "8dbfa4f233532c4cd93394b095c205a3c0d2d582d945a17d31e1539fb41b880e",
+    "original_bytes": 778,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "30f5c60b3e541926107c98733976c6a3020b5157898abbd128a3144800fd1c6d",
+    "exported_bytes": 628
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/training_metrics.json",
+    "original_sha256": "424908a767001b99ad39a3599fee4dca0f2a2c95d87916cc5574a7cde9beec38",
+    "original_bytes": 239612,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "424908a767001b99ad39a3599fee4dca0f2a2c95d87916cc5574a7cde9beec38",
+    "exported_bytes": 239612
+  },
+  "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1001/training/attempt_001/trajectory.npz",
+    "original_sha256": "6f4a6c906e1267db22da88318e22ea52d88d5799c96e952bb83c5f190310051e",
+    "original_bytes": 167296,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "4c448f949cc98e4dc9301781e7f8cbac9d1493ed8a637014e48c5378efaf1949",
+    "original_bytes": 456,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4c448f949cc98e4dc9301781e7f8cbac9d1493ed8a637014e48c5378efaf1949",
+    "exported_bytes": 456
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "13995197be2c682bfa948d17d160b913cc06c0f18b70d0bf8c83ee98e5c8b56c",
+    "original_bytes": 6095,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "f0f1400933312ba0938a284d7c8fa3a81d78341dba325fc8a07a328a37da1087",
+    "original_bytes": 1135,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f0f1400933312ba0938a284d7c8fa3a81d78341dba325fc8a07a328a37da1087",
+    "exported_bytes": 1135
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "8f07b367440aa52e48b8370ce7656a18fe198d970c157b6100738a1d098770ee",
+    "original_bytes": 1823,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8f07b367440aa52e48b8370ce7656a18fe198d970c157b6100738a1d098770ee",
+    "exported_bytes": 1823
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/evaluation.json",
+    "original_sha256": "f0f1400933312ba0938a284d7c8fa3a81d78341dba325fc8a07a328a37da1087",
+    "original_bytes": 1135,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f0f1400933312ba0938a284d7c8fa3a81d78341dba325fc8a07a328a37da1087",
+    "exported_bytes": 1135
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/manifest.json",
+    "original_sha256": "1d0df5b75a0935a51ae4b61efcd4a6a1b30d026ce4bd3365430b9220157a45e3",
+    "original_bytes": 2341,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "aeaee830fd427649eb0abc75bf4e3177dd5e46c3f65f1fbc1f4e25e6d01819ae",
+    "exported_bytes": 2087
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/process.log",
+    "original_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/analysis/attempt_001/summary.json",
+    "original_sha256": "3aa5ed91831237db65f0439bab794e80567f1330776be0477b5acbe416087a3c",
+    "original_bytes": 2084,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3aa5ed91831237db65f0439bab794e80567f1330776be0477b5acbe416087a3c",
+    "exported_bytes": 2084
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/checkpoints.npz",
+    "original_sha256": "13995197be2c682bfa948d17d160b913cc06c0f18b70d0bf8c83ee98e5c8b56c",
+    "original_bytes": 6095,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/config.json",
+    "original_sha256": "5215e6f3bde8c0aed3fa2dd85d281f17d3ac2a932a3f518ef63509bdebd44999",
+    "original_bytes": 1066,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5215e6f3bde8c0aed3fa2dd85d281f17d3ac2a932a3f518ef63509bdebd44999",
+    "exported_bytes": 1066
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/manifest.json",
+    "original_sha256": "9aad008857d63b610e7317277dc608c9a2414e33bb204fa0cdb40e70aff4f76e",
+    "original_bytes": 1867,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "98952eaa0a9d6c236e968be86eebd8fd06f1f22cc58be412dc964268a50e09bf",
+    "exported_bytes": 1688
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/process.log",
+    "original_sha256": "19dd60beaefc881638b0e3026f01d171c1cfc32c74e1c6b7fb087787427385ef",
+    "original_bytes": 1546,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "68fc4502c20e4e214564dafecbba8f8f41768bcca97e9d23dd8492a46eb4d530",
+    "exported_bytes": 1321
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/receipt.json",
+    "original_sha256": "607de94d098b18bf3fd392041171b42c93e514908d55298cbd873c015d9b3397",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "607de94d098b18bf3fd392041171b42c93e514908d55298cbd873c015d9b3397",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/results.json",
+    "original_sha256": "8f07b367440aa52e48b8370ce7656a18fe198d970c157b6100738a1d098770ee",
+    "original_bytes": 1823,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8f07b367440aa52e48b8370ce7656a18fe198d970c157b6100738a1d098770ee",
+    "exported_bytes": 1823
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/summary.json",
+    "original_sha256": "48023fc5d88f67f0acbca29ac034510db3341559da8dcfd879f0f99db8dd952a",
+    "original_bytes": 252,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "48023fc5d88f67f0acbca29ac034510db3341559da8dcfd879f0f99db8dd952a",
+    "exported_bytes": 252
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/train.log",
+    "original_sha256": "661bdb5ea39544b22b9db3bc88069cc43d34e6fbe9ca491b7c4f70737c6beabc",
+    "original_bytes": 778,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "c8e8e73d61267f9ca7b518f2568aea4554e0a6015afc118aeaa33f1be72b5094",
+    "exported_bytes": 628
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/training_metrics.json",
+    "original_sha256": "62d3dde711d9afce6f8fd2584d5545d6c956e1cc939b2556ec20674e6d153936",
+    "original_bytes": 241172,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "62d3dde711d9afce6f8fd2584d5545d6c956e1cc939b2556ec20674e6d153936",
+    "exported_bytes": 241172
+  },
+  "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1002/training/attempt_001/trajectory.npz",
+    "original_sha256": "479d207218a229ce1774a6314c838ee62c4b9663dc482f143cc07119fc4ca201",
+    "original_bytes": 155263,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/checkpoint-metadata.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/checkpoint-metadata.json",
+    "original_sha256": "6253449e707e21399ab92cc72339d0fb24bc40f0b9c56100c4e03d96d6a9c70c",
+    "original_bytes": 450,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6253449e707e21399ab92cc72339d0fb24bc40f0b9c56100c4e03d96d6a9c70c",
+    "exported_bytes": 450
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/evaluation-input/checkpoints.npz",
+    "original_sha256": "fbec409d61ed079bee65907347a8739f7d4a03b23741ba8f12e7d5d36c5c01c8",
+    "original_bytes": 6063,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/evaluation-input/evaluation.json",
+    "original_sha256": "cbb3063dab576e2b385c7853665b0e2a38a7ed9a1ec784eb421c2f710d63a4f0",
+    "original_bytes": 1140,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cbb3063dab576e2b385c7853665b0e2a38a7ed9a1ec784eb421c2f710d63a4f0",
+    "exported_bytes": 1140
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/evaluation-input/results.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/evaluation-input/results.json",
+    "original_sha256": "24a948cda821151b217ce3ade6f76064bb880d60f02a34837189086dd31ed899",
+    "original_bytes": 1749,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "24a948cda821151b217ce3ade6f76064bb880d60f02a34837189086dd31ed899",
+    "exported_bytes": 1749
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/evaluation.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/evaluation.json",
+    "original_sha256": "cbb3063dab576e2b385c7853665b0e2a38a7ed9a1ec784eb421c2f710d63a4f0",
+    "original_bytes": 1140,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cbb3063dab576e2b385c7853665b0e2a38a7ed9a1ec784eb421c2f710d63a4f0",
+    "exported_bytes": 1140
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/manifest.json",
+    "original_sha256": "49ac938bb07b584caec6a997d31c814473fb7c3e70b1dd8d55c196fd6f67226b",
+    "original_bytes": 2341,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "ad1f1a01b7ac3f32369dc26ec85e7020a89408036fc4a408c65a3810e82e70b5",
+    "exported_bytes": 2087
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/process.log",
+    "original_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "original_bytes": 82,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "exported_bytes": 82
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/analysis/attempt_001/summary.json",
+    "original_sha256": "5a59870cd0406dee4929d4a5d729ea95194c50a2c7eae76b2f831c593ed51832",
+    "original_bytes": 2090,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5a59870cd0406dee4929d4a5d729ea95194c50a2c7eae76b2f831c593ed51832",
+    "exported_bytes": 2090
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/checkpoints.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/checkpoints.npz",
+    "original_sha256": "fbec409d61ed079bee65907347a8739f7d4a03b23741ba8f12e7d5d36c5c01c8",
+    "original_bytes": 6063,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/config.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/config.json",
+    "original_sha256": "bc57c3b1295c99f8e0ad6227db8bd9f8245eed827a794758cf76ea0b9bb647eb",
+    "original_bytes": 1066,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "bc57c3b1295c99f8e0ad6227db8bd9f8245eed827a794758cf76ea0b9bb647eb",
+    "exported_bytes": 1066
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/manifest.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/manifest.json",
+    "original_sha256": "d15a03c1dd603a487ebc05d80643edd5b4e424038f00f7bc55a259ead9854eb9",
+    "original_bytes": 1867,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "1c413c4a0cc6b0fb6339d348b3ff510f322e1b7b2cec6a5cf0e39a0f62db5a4e",
+    "exported_bytes": 1688
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/process.log": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/process.log",
+    "original_sha256": "e2bf0788216f27382341469e2f69e387ee8b451b5d95ce92334ba7f47133dfda",
+    "original_bytes": 1546,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "3aff7a3ad27fdc71a723bdb7172dd5adb5aa7034ec91032325627de0936e3c9b",
+    "exported_bytes": 1321
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/receipt.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/receipt.json",
+    "original_sha256": "7ac8c6e82d6f116bdda37760e1891d6aacafe6a1362dcc0b9327ba3c31c1171a",
+    "original_bytes": 699,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7ac8c6e82d6f116bdda37760e1891d6aacafe6a1362dcc0b9327ba3c31c1171a",
+    "exported_bytes": 699
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/results.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/results.json",
+    "original_sha256": "24a948cda821151b217ce3ade6f76064bb880d60f02a34837189086dd31ed899",
+    "original_bytes": 1749,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "24a948cda821151b217ce3ade6f76064bb880d60f02a34837189086dd31ed899",
+    "exported_bytes": 1749
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/stacks.txt": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/summary.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/summary.json",
+    "original_sha256": "530a4bc1905d72e85f836723161b2dd775f218c4bcc1e53a31e142b7c8fb8802",
+    "original_bytes": 253,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "530a4bc1905d72e85f836723161b2dd775f218c4bcc1e53a31e142b7c8fb8802",
+    "exported_bytes": 253
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/train.log": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/train.log",
+    "original_sha256": "8374f17ad76a9641062487d85f28193713a564fbfaa7fdc95432800b10f3f283",
+    "original_bytes": 778,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "d947fc2003106352bad888d1d62fbd6a38439abe0d8ab3b39a7700e6fa664c67",
+    "exported_bytes": 628
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/training_metrics.json": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/training_metrics.json",
+    "original_sha256": "61e967b1ae6596b7e35d6a6348e28e48dac2fa1e1d8173f9772c35a4f3b071c3",
+    "original_bytes": 243060,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "61e967b1ae6596b7e35d6a6348e28e48dac2fa1e1d8173f9772c35a4f3b071c3",
+    "exported_bytes": 243060
+  },
+  "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/trajectory.npz": {
+    "source": "trials/pilot-switching/ppo/seed_1003/training/attempt_001/trajectory.npz",
+    "original_sha256": "3e75459de8283b8217340f14d6c33de36141ff2cf2ac6fccfc62a30d9693f841",
+    "original_bytes": 152842,
+    "exported": false,
+    "reason": "Binary artifact retained locally"
+  }
+}

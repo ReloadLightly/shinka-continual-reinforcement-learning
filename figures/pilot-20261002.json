@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "kind": "development_pilot_learning_curves",
+  "plot_script": "scripts/plot_pilot.py",
+  "plot_script_sha256": "dc2cc97adffcded616ca565bf1dd508f36918f851dad37014539c2ad1dfa8c51",
+  "input_report": "pilot-20261002",
+  "input_sha256": {
+    "summary.json": "480c7466318131402dcd827105438103e5f4dd2d45f449e32c5f045552dbff4b",
+    "raw/plan.json": "2fb6637087b514f8f5fe39ff4f4b94065a4b4d69f1c07d0331a6f44e8e146db6",
+    "checksums.json": "031642e49f91fd7cede4ac6cc8ade42a7cefef56172b31bc17e8823d90a636e9",
+    "raw/trials/pilot-stationary/es/seed_1001/training/attempt_001/training_metrics.json": "4fa5137efc3ecc028bad278ef9fc6be0b186b4a4b235867ee63d4811af7bbc84",
+    "raw/trials/pilot-stationary/es/seed_1002/training/attempt_001/training_metrics.json": "7d181ca795b8b0429b08a9959db184e926cc51107e1cf523cd8bbc5cbdb32f00",
+    "raw/trials/pilot-stationary/es/seed_1003/training/attempt_001/training_metrics.json": "2d400258a4a2966571fb86f6b161a0212dc819dd6e3ac5a56afa164e5dfe7b25",
+    "raw/trials/pilot-stationary/ga/seed_1001/training/attempt_001/training_metrics.json": "02a5b31b433b2aa42580729009dc0640654c5d846727a6dd9aaa5c748e84e6d5",
+    "raw/trials/pilot-stationary/ga/seed_1002/training/attempt_001/training_metrics.json": "fed644d09d06b64473d409076bfcbe1c8b1a00e3279c81408562bfe1b095b5ad",
+    "raw/trials/pilot-stationary/ga/seed_1003/training/attempt_001/training_metrics.json": "730f48f678704409dc49e51fb2c6b67986dea9d78f5d1fa97e82273b45cfc109",
+    "raw/trials/pilot-stationary/ppo/seed_1001/training/attempt_001/training_metrics.json": "e5b264aca947c8738b23ee2e8cf0ca40bceede6403ab3b7bd9da989579c031ef",
+    "raw/trials/pilot-stationary/ppo/seed_1002/training/attempt_001/training_metrics.json": "9076a9446fbb3f41d6e70dc3f3ef6cd6ae790b66fcd6472dab12a7954d5d6f1a",
+    "raw/trials/pilot-stationary/ppo/seed_1003/training/attempt_001/training_metrics.json": "8a919388f8c8ddf5d45740dfad2204a6e8f3cbd31a7af1a597bfcc89dbf36940",
+    "raw/trials/pilot-switching/es/seed_1001/training/attempt_001/training_metrics.json": "dd7a545a44fae04b5df324b93f26aa3b809d05ef1d19b1c7aa735a5610b25376",
+    "raw/trials/pilot-switching/es/seed_1002/training/attempt_001/training_metrics.json": "ef402b499ef3cbaad89b599a10ee128c1ff66a8e1b59bb592d4ea36a141a74a1",
+    "raw/trials/pilot-switching/es/seed_1003/training/attempt_001/training_metrics.json": "0c8725cad6a19e5d4c55647bc18c09ade953027892680d3f79fba5810e822535",
+    "raw/trials/pilot-switching/ga/seed_1001/training/attempt_001/training_metrics.json": "bdee4865e2916a2f7cec68df30accc357b16603fd47486846a7669f17f2f1a67",
+    "raw/trials/pilot-switching/ga/seed_1002/training/attempt_001/training_metrics.json": "ff75fa8f82c613fcf513c32c7763b7d366c1ae433600b287620facabc3063d78",
+    "raw/trials/pilot-switching/ga/seed_1003/training/attempt_001/training_metrics.json": "a3c1696b52d3d1ff88b531fb6e8b6ba565726ef62c1e0700007813470d643b59",
+    "raw/trials/pilot-switching/ppo/seed_1001/training/attempt_001/training_metrics.json": "424908a767001b99ad39a3599fee4dca0f2a2c95d87916cc5574a7cde9beec38",
+    "raw/trials/pilot-switching/ppo/seed_1002/training/attempt_001/training_metrics.json": "62d3dde711d9afce6f8fd2584d5545d6c956e1cc939b2556ec20674e6d153936",
+    "raw/trials/pilot-switching/ppo/seed_1003/training/attempt_001/training_metrics.json": "61e967b1ae6596b7e35d6a6348e28e48dac2fa1e1d8173f9772c35a4f3b071c3"
+  },
+  "matplotlib_version": "3.11.1",
+  "numpy_version": "1.26.4",
+  "methods": [
+    "ga",
+    "es",
+    "ppo"
+  ],
+  "seeds_per_method_condition": 3,
+  "curve_clock": "(zero_based_generation + 1) * nominal_steps_per_update",
+  "aggregation": "Arithmetic mean across three training seeds; no confidence bands",
+  "smoothing": null,
+  "outputs_sha256": {
+    "pilot-20261002.svg": "fed44761e8b2f57acd2eb90f57a05a1bb913340afa66f1ebc0568369107fa048",
+    "pilot-20261002.pdf": "c151f46400f1e601c2dc638809eebf9fcfbd78d8dc1e4734782eff613c048f5e"
+  }
+}
