@@ -142,6 +142,22 @@ def test_monitor_stops_on_terminal_native_failure(tmp_path):
     assert result["wall_seconds"] < 5
 
 
+def test_interrupted_session_retains_elapsed_compute(tmp_path, runtime, monkeypatch):
+    output = tmp_path / "search"
+    search.run_search(output=output, prepare_only=True)
+
+    def interrupt(*args, **kwargs):
+        raise KeyboardInterrupt
+
+    monkeypatch.setattr(search, "monitored_run", interrupt)
+    with pytest.raises(KeyboardInterrupt):
+        search.run_search(output=output, target=2, resume=True)
+    session = search.read_json(output / "state.json")["sessions"][0]
+    assert session["status"] == "failed"
+    assert session["wall_seconds"] >= 0
+    assert session["error"].startswith("KeyboardInterrupt")
+
+
 def test_subscription_environment_excludes_key_route(monkeypatch):
     monkeypatch.setenv("OPENAI_API_KEY", "not-a-real-key")
     monkeypatch.setenv("OPENAI_BASE_URL", "https://invalid.example")
@@ -154,3 +170,15 @@ def test_subscription_environment_excludes_key_route(monkeypatch):
     assert env["SHINKA_CRL_PROFILE"] == "search"
     assert env["SHINKA_CRL_PYTHON"] == str(search.DEFAULT_PYTHON)
     assert env["SHINKA_CRL_UPSTREAM"] == str(search.DEFAULT_UPSTREAM)
+
+
+def test_native_scheduler_and_random_controls_share_numeric_thread_limits():
+    yaml = pytest.importorskip("yaml")
+    scheduler = pytest.importorskip("shinka.launch.scheduler")
+    config = yaml.safe_load((search.TASK / "shinka-subscription.yaml").read_text())
+    assert config["job"]["numeric_threads_per_job"] == 1
+    # Exercise the actual pinned scheduler conversion, not just the YAML spelling.
+    overrides = scheduler._numeric_thread_env(config["job"]["numeric_threads_per_job"])
+    random_env = search.subscription_environment("gpt-6.1-sol", 600)
+    assert overrides and all(random_env[name] == value for name, value in overrides.items())
+    assert all(search.SEARCH_THREAD_ENV[name] == value for name, value in overrides.items())

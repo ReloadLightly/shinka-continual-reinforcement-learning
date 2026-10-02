@@ -1,2 +1,4 @@
 # Preserve Matplotlib SVG output verbatim, including whitespace in path data.
 figures/*.svg -whitespace
+# Preserve captured console formatting so published log hashes remain exact.
+reports/**/*.log -whitespace

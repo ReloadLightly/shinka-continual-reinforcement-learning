@@ -172,6 +172,20 @@ def test_final_profile_is_held_out(tmp_path, monkeypatch):
     assert "held out" in json.loads((output / "correct.json").read_text())["error"]
 
 
+@pytest.mark.parametrize("name,value", [
+    ("SHINKA_CRL_EXPECTED_THREAD_ENV", '{"OMP_NUM_THREADS": "unexpected"}'),
+    ("SHINKA_CRL_EXPECTED_AFFINITY", "[]"),
+])
+def test_runtime_mismatch_fails_before_any_training(tmp_path, monkeypatch, name, value):
+    monkeypatch.setenv(name, value)
+    monkeypatch.setattr(task, "run_experiment", lambda **kwargs: pytest.fail("Training must not run"))
+    output = tmp_path / "result"
+    assert not task.evaluate_program(TASK_DIR / "initial.py", output)
+    assert "differs from frozen plan" in json.loads((output / "correct.json").read_text())["error"]
+    provenance = json.loads((output / "metrics.json").read_text())["private"]["provenance"]
+    assert set(provenance["thread_environment"]) == set(task.THREAD_ENV_NAMES)
+
+
 def test_invalid_candidate_writes_failure_without_running(tmp_path, monkeypatch):
     monkeypatch.setenv("SHINKA_CRL_PROFILE", "smoke")
     candidate = write_candidate(tmp_path, "raise RuntimeError('must never execute')")

@@ -1,0 +1,28 @@
+{
+  "status": "interrupted_setup_attempt",
+  "reason": "Native Shinka automatically set numeric_threads_per_job=8, overriding frozen outer thread variables=1. Stopped before any model proposal.",
+  "source_commit": "7f461db",
+  "model_launches": 0,
+  "successful_candidates": 0,
+  "completed_seed_trials": 2,
+  "completed_nominal_training_steps": 15360000,
+  "partial_seed_trials": 1,
+  "partial_training_steps": null,
+  "seed_results": [
+    {
+      "seed": 1001,
+      "trial": 1002,
+      "normalized_score": 0.5375166688919067,
+      "mean_return": 268.7583344459534
+    },
+    {
+      "seed": 1002,
+      "trial": 1003,
+      "normalized_score": 0.6936333371162415,
+      "mean_return": 346.81666855812074
+    }
+  ],
+  "evidence": "raw/sessions/session_001.log reports configured local numeric thread cap8; request ledger absent; SQLite has zero programs.",
+  "interpretation": "Excluded from search comparison. Completed and partial setup work retained separately; no subscription proposal used.",
+  "repair": "Set job.numeric_threads_per_job=1 explicitly, record child runtime, then freeze a new study directory."
+}

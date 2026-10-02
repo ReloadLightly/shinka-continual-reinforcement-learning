@@ -31,13 +31,6 @@ from shinka_crl.pilot import THREAD_ENV, read_json, require, sha256, write_json
 RANDOM_SEED = 20261002
 PROPOSAL_SLOTS = 24
 TASK = REPO_ROOT / "tasks/cartpole_ga"
-# Match all overrides made by the pinned native JobScheduler in both search arms.
-SEARCH_THREAD_ENV = {
-    **THREAD_ENV, "OMP_THREAD_LIMIT": "1", "OMP_DYNAMIC": "FALSE",
-    "OMP_WAIT_POLICY": "PASSIVE", "MKL_DYNAMIC": "FALSE", "NUMEXPR_NUM_THREADS": "1",
-    "NUMEXPR_MAX_THREADS": "1", "VECLIB_MAXIMUM_THREADS": "1",
-    "BLIS_NUM_THREADS": "1", "GOTO_NUM_THREADS": "1",
-}
 SOURCE_FILES = (
     "src/shinka_crl/search.py", "scripts/run_search.py", "src/shinka_crl/pilot.py",
     "src/shinka_crl/experiment.py", "src/shinka_crl/profiles/search.json",
@@ -84,7 +77,7 @@ def random_pool(seed: int = RANDOM_SEED) -> dict:
 def subscription_environment(model: str, timeout: int) -> dict[str, str]:
     guard = runpy.run_path(str(REPO_ROOT / "scripts/subscription_headless.py"))
     env = guard["subscription_env"](dict(os.environ))
-    env.update(SEARCH_THREAD_ENV)
+    env.update(THREAD_ENV)
     env.update({"SHINKA_CODEX_MODEL": model,
                 "SHINKA_HEADLESS_COMMAND": shlex.join([
                     sys.executable, str(REPO_ROOT / "scripts/subscription_headless.py")]),
@@ -155,7 +148,7 @@ def make_plan(*, model: str, affinity: list[int], timeout: int, env: dict) -> di
         "profile": profile, "upstream_commit": UPSTREAM_COMMIT,
         "source_sha256": {name: sha256(REPO_ROOT / name) for name in SOURCE_FILES},
         "model": model, "reasoning_effort": "medium", "auth": "chatgpt",
-        "cpu_affinity": affinity, "thread_environment": SEARCH_THREAD_ENV,
+        "cpu_affinity": affinity, "thread_environment": THREAD_ENV,
         "training_python": str(DEFAULT_PYTHON), "harness_python": sys.executable,
         "training_timeout_seconds": timeout, "proposal_timeout_seconds": timeout,
         "proposal_slots": PROPOSAL_SLOTS, "stages": [2, 5, 13, 25],
@@ -276,8 +269,6 @@ def run_search(*, output: Path, model: str = "gpt-6.1-sol", cpus: int = 2,
     os.sched_setaffinity(0, affinity)
     env = subscription_environment(model, timeout)
     env["SHINKA_SUBSCRIPTION_LEDGER"] = str(output / "model_requests.jsonl")
-    env["SHINKA_CRL_EXPECTED_THREAD_ENV"] = json.dumps(SEARCH_THREAD_ENV, sort_keys=True)
-    env["SHINKA_CRL_EXPECTED_AFFINITY"] = json.dumps(affinity)
     plan = make_plan(model=model, affinity=affinity, timeout=timeout, env=env)
     if output.exists():
         require(resume, f"Output exists; explicitly use --resume: {output}")
@@ -330,7 +321,6 @@ def run_search(*, output: Path, model: str = "gpt-6.1-sol", cpus: int = 2,
         write_json(output / "state.json", state)
         log = output / "sessions" / f"session_{session['index']:03d}.log"
         print(f"Running {arm} endpoint {endpoint}; log: {log}", flush=True)
-        session_started = time.monotonic()
         try:
             result = monitored_run(command, log=log, env=env,
                                    timeout=(endpoint + 1) * 4 * timeout if arm == "shinka"
@@ -357,7 +347,6 @@ def run_search(*, output: Path, model: str = "gpt-6.1-sol", cpus: int = 2,
             state["status"] = "failed"
             raise
         finally:
-            session.setdefault("wall_seconds", time.monotonic() - session_started)
             state["programs"] = database_snapshot(output / "shinka/programs.sqlite")
             state["artifact_sha256"] = artifact_receipts(output)
             rng = output / "shinka/rng_state.json"

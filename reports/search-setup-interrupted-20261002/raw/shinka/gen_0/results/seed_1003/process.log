@@ -1,0 +1,13 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 1004
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  ne overrides   : ['sigma=0.5', 'searcher_kwargs.elite_ratio=0.5'] []
+  seed           : 1003
+  boundary info  : none
+  output         : /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/gen_0/results/seed_1003
+======================================================================

@@ -16,11 +16,6 @@ from typing import Any
 
 BOUNDS = {"sigma": (0.001, 2.0), "elite_ratio": (0.05, 0.95)}
 SEARCH_PROFILES = {"smoke", "search"}
-THREAD_ENV_NAMES = (
-    "JAX_PLATFORMS", "OMP_NUM_THREADS", "OMP_THREAD_LIMIT", "OPENBLAS_NUM_THREADS",
-    "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS", "NUMEXPR_MAX_THREADS", "VECLIB_MAXIMUM_THREADS",
-    "BLIS_NUM_THREADS", "GOTO_NUM_THREADS", "OMP_DYNAMIC", "MKL_DYNAMIC", "OMP_WAIT_POLICY",
-)
 
 
 def parse_ga_config(program_path: Path) -> dict[str, float]:
@@ -117,17 +112,7 @@ def evaluate_program(program_path: Path, results_dir: Path) -> bool:
         metrics["private"]["provenance"].update(
             program_sha256=hashlib.sha256(program_path.read_bytes()).hexdigest(),
             evaluator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-            cpu_affinity=sorted(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else None,
-            thread_environment={name: os.environ.get(name) for name in THREAD_ENV_NAMES},
         )
-        expected_threads = os.environ.get("SHINKA_CRL_EXPECTED_THREAD_ENV")
-        if expected_threads is not None:
-            if metrics["private"]["provenance"]["thread_environment"] != json.loads(expected_threads):
-                raise ValueError("Actual evaluator thread environment differs from frozen plan")
-        expected_affinity = os.environ.get("SHINKA_CRL_EXPECTED_AFFINITY")
-        if expected_affinity is not None:
-            if metrics["private"]["provenance"]["cpu_affinity"] != json.loads(expected_affinity):
-                raise ValueError("Actual evaluator CPU affinity differs from frozen plan")
         if profile_name not in SEARCH_PROFILES:
             raise ValueError(
                 "Shinka development profile must be smoke or search; paper-cartpole is held out"

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "sessions": [
+    {
+      "index": 1,
+      "arm": "shinka",
+      "endpoint": 2,
+      "command": [
+        "/home/roland/actir/shinka-continual-reinforcement-learning/.venv/bin/python",
+        "-m",
+        "shinka_crl.search",
+        "--native",
+        "/home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/rng_state.json",
+        "--task-dir",
+        "/home/roland/actir/shinka-continual-reinforcement-learning/tasks/cartpole_ga",
+        "--config-fname",
+        "shinka-subscription.yaml",
+        "--results_dir",
+        "/home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka",
+        "--num_generations",
+        "2"
+      ],
+      "status": "failed",
+      "error": "KeyboardInterrupt: "
+    }
+  ],
+  "programs": [],
+  "artifact_sha256": {
+    "shinka/gen_0/main.py": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "shinka/gen_0/results/correct.json": "dcf196bd4506507b95edd7eb74268fc5088a5965e8af0050b32859dbe3d0dd53",
+    "shinka/gen_0/results/job_log.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shinka/gen_0/results/job_log.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shinka/gen_0/results/metrics.json": "1164cb19c107b2fdacf73fcc395bed35bbd932fabde36db9722f8dfd385bbe6a",
+    "shinka/gen_0/results/seed_1001/checkpoints.npz": "ea598f28c83b1c615c953261fc693ec9a3641d98e6e0131138c91d905dc63d17",
+    "shinka/gen_0/results/seed_1001/config.json": "9851395faa3ed9252453ed575a0cf94d772ec62064bbb8aca79b1a0d4e65fa58",
+    "shinka/gen_0/results/seed_1001/manifest.json": "d1a9468ba7839db275cdcc6196ea2b059b2c2e7a2ad37ca1f163d337acba4b18",
+    "shinka/gen_0/results/seed_1001/process.log": "0034b3516a3a32722e77cf8a3a3ebd8ef15dd15a6cff2d28c094cb786a6b047f",
+    "shinka/gen_0/results/seed_1001/results.json": "c648b902c55be3fb95faaa3c67a3043f45a8e7b15df5f8112f1df8885e769c06",
+    "shinka/gen_0/results/seed_1001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shinka/gen_0/results/seed_1001/summary.json": "308e076a50e5b92d7eca9a80047243355afbdeea2267f1cb976c09620b96a696",
+    "shinka/gen_0/results/seed_1001/train.log": "77ba289a8ede0d459de11e9100fa76d78b7a1cc1b61436e295d9d990428a01a9",
+    "shinka/gen_0/results/seed_1001/training_metrics.json": "57f61b2950ba61bde4ba1404d5fede5ca8ae509443dc7c13464216b7224c479f",
+    "shinka/gen_0/results/seed_1001/trajectory.npz": "c817ba512a503c48279175ceda98f4fe3977f79a568587097150834711a6558d",
+    "shinka/gen_0/results/seed_1002/checkpoints.npz": "b89c7810825e713405ed4015805438e7f5fb49a5929102e9106523f9ae47aa87",
+    "shinka/gen_0/results/seed_1002/config.json": "842ca041ca975f3ea1349d73066819ec361ebb0304aced31cd2e8c1a06b96bbf",
+    "shinka/gen_0/results/seed_1002/manifest.json": "a4efc9df79312035bc492afd413c05f2697a2cb95a31d5df80444d27084716e7",
+    "shinka/gen_0/results/seed_1002/process.log": "adf42e471e23fca2375a09a96389a957cd4c7c86452593cfdb3ac96f49638d2a",
+    "shinka/gen_0/results/seed_1002/results.json": "f142d097f18bf8aac81cea9b3fea8a90da8efcc1dc630dbcd7df51584597adf1",
+    "shinka/gen_0/results/seed_1002/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shinka/gen_0/results/seed_1002/summary.json": "e5fcf3d6c3a71c46eb02731037254ec87a2643a1d14b8e9f0b9172110922d4b7",
+    "shinka/gen_0/results/seed_1002/train.log": "900e7185032304a4b32825fbaefa17d4eab6c06bf18c66004f9599c92a486821",
+    "shinka/gen_0/results/seed_1002/training_metrics.json": "5dba76b245eb152536fa3e9bc85bfe7cb948d20d91025edf6bb5deedf2a7981b",
+    "shinka/gen_0/results/seed_1002/trajectory.npz": "0c6cdbabb3758ba42799adfc9dee9c79e10c1e9fb039063eb8c4544560dc6f04",
+    "shinka/gen_0/results/seed_1003/manifest.json": "fedd045f53fa01b2d4397490fede822653da88b33255e4159eeaae820446b9b9",
+    "shinka/gen_0/results/seed_1003/process.log": "fb8d58bcff50c841376094c94bd6842ebb6ec2a5fc5aa8a9c6d0dc934af286ea",
+    "shinka/gen_0/results/seed_1003/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shinka/gen_0/results/seed_1003/train.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "random_completed": 0,
+  "rng_sha256": null,
+  "model_requests_sha256": null
+}

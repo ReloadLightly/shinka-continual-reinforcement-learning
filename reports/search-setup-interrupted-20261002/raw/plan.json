@@ -1,0 +1,699 @@
+{
+  "schema_version": 1,
+  "purpose": "development configuration-search integration",
+  "profile": {
+    "name": "search",
+    "purpose": "Reduced GA development budget; disjoint from final reporting seeds",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 3,
+    "seeds": [
+      1001,
+      1002,
+      1003
+    ],
+    "ne": {
+      "num_generations": 80,
+      "task_interval": 20,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "source_sha256": {
+    "src/shinka_crl/search.py": "b49a4232f47a376e2a5ac81f5f82cae8e82fd6b4b5e739e15e14c0feb7bb3824",
+    "scripts/run_search.py": "3c930c0768c154b8a2faf0d3624fc800189cbc1d9a818e1fc1cd6e6e5689769d",
+    "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+    "src/shinka_crl/experiment.py": "90d63b859c5fc8a0b8f4a1738ce07352f99461c77cea32ae007411c3b7a7b3ef",
+    "src/shinka_crl/profiles/search.json": "36c85eb72900adead2933544aaf53db4cc829834f35f836e1ac5128cf53fb192",
+    "tasks/cartpole_ga/evaluate.py": "fd65de0024fae19c4c59c52cc4409c966871f201b8bd311596986a7a949586c1",
+    "tasks/cartpole_ga/initial.py": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "tasks/cartpole_ga/shinka-subscription.yaml": "655e4d594b35e1cf2dc4f36f47fc8ea8c84a882eba0b5d46e257bc2ae3de282e",
+    "scripts/subscription_headless.py": "e528653c8945438d1cff90801532e7ec9d48cf554c2d72f4088a86d8b05d65b7",
+    "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+    "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267"
+  },
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "auth": "chatgpt",
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "thread_environment": {
+    "JAX_PLATFORMS": "cpu",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "training_python": "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution/.venv/bin/python",
+  "harness_python": "/home/roland/actir/shinka-continual-reinforcement-learning/.venv/bin/python",
+  "training_timeout_seconds": 600,
+  "proposal_timeout_seconds": 600,
+  "proposal_slots": 24,
+  "stages": [
+    2,
+    5,
+    13,
+    25
+  ],
+  "outer_random_seed": 20261002,
+  "random_pool_seed": 20261002,
+  "random_pool": {
+    "schema_version": 1,
+    "seed": 20261002,
+    "count": 24,
+    "distribution": {
+      "sigma": "log-uniform[0.001,2.0]",
+      "elite_ratio": "uniform[0.05,0.95]"
+    },
+    "effective_identity": "float32(sigma), max(1,int(64*elite_ratio))",
+    "entries": [
+      {
+        "index": 1,
+        "settings": {
+          "sigma": 0.003399474261510367,
+          "elite_ratio": 0.17736779880870845
+        },
+        "effective_key": [
+          0.003399474313482642,
+          11
+        ],
+        "program_path": "random_programs/candidate_001.py",
+        "program_sha256": "c95507812b177f517162810418a06c799bd66db1317ab4c319b8cc8cdc7c591c"
+      },
+      {
+        "index": 2,
+        "settings": {
+          "sigma": 1.0483669904161388,
+          "elite_ratio": 0.3834150319193743
+        },
+        "effective_key": [
+          1.0483670234680176,
+          24
+        ],
+        "program_path": "random_programs/candidate_002.py",
+        "program_sha256": "51215337c41b68a9020e4dc80ca0eb9270e050c9f6454ed4767d035b49b4adb0"
+      },
+      {
+        "index": 3,
+        "settings": {
+          "sigma": 0.20508637078358974,
+          "elite_ratio": 0.8695438555203774
+        },
+        "effective_key": [
+          0.2050863653421402,
+          55
+        ],
+        "program_path": "random_programs/candidate_003.py",
+        "program_sha256": "29031b0f582be7f6eeb96dd7261292191b359d9204babcdf84c8df0ad09ffc8a"
+      },
+      {
+        "index": 4,
+        "settings": {
+          "sigma": 0.1406499551917009,
+          "elite_ratio": 0.49862601373188964
+        },
+        "effective_key": [
+          0.1406499594449997,
+          31
+        ],
+        "program_path": "random_programs/candidate_004.py",
+        "program_sha256": "590b23cd3cb18739f1da2aa939ea71fbe0779798b607146e23d4afc66775bc15"
+      },
+      {
+        "index": 5,
+        "settings": {
+          "sigma": 0.007908675557538497,
+          "elite_ratio": 0.597960923322848
+        },
+        "effective_key": [
+          0.007908675819635391,
+          38
+        ],
+        "program_path": "random_programs/candidate_005.py",
+        "program_sha256": "b72aaec0f44fefee64affeb30e23650ce571db32afcddf188779a56e1a307936"
+      },
+      {
+        "index": 6,
+        "settings": {
+          "sigma": 0.7111909008161807,
+          "elite_ratio": 0.8575234602274239
+        },
+        "effective_key": [
+          0.7111908793449402,
+          54
+        ],
+        "program_path": "random_programs/candidate_006.py",
+        "program_sha256": "438e7ad033cd9da0316cec7d0359c6ac2e80e8338a8e9f8e9394dfd633bccbc8"
+      },
+      {
+        "index": 7,
+        "settings": {
+          "sigma": 0.3301865812992913,
+          "elite_ratio": 0.06220834172412074
+        },
+        "effective_key": [
+          0.3301865756511688,
+          3
+        ],
+        "program_path": "random_programs/candidate_007.py",
+        "program_sha256": "ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e"
+      },
+      {
+        "index": 8,
+        "settings": {
+          "sigma": 0.7899123545101336,
+          "elite_ratio": 0.4549278158591343
+        },
+        "effective_key": [
+          0.7899123430252075,
+          29
+        ],
+        "program_path": "random_programs/candidate_008.py",
+        "program_sha256": "ab1db681050bc126f2c8c42b51eb10837060affb9ba72385f08415275a0d4a26"
+      },
+      {
+        "index": 9,
+        "settings": {
+          "sigma": 0.004863153236788878,
+          "elite_ratio": 0.39061918456157285
+        },
+        "effective_key": [
+          0.004863153211772442,
+          24
+        ],
+        "program_path": "random_programs/candidate_009.py",
+        "program_sha256": "3903bf01044bdc95e5edb47a29cf4f37f95a38ebf8628fbdf2f1badb1bab0ed9"
+      },
+      {
+        "index": 10,
+        "settings": {
+          "sigma": 0.0018837711017893669,
+          "elite_ratio": 0.6208127297678082
+        },
+        "effective_key": [
+          0.0018837711540982127,
+          39
+        ],
+        "program_path": "random_programs/candidate_010.py",
+        "program_sha256": "467116f8ce600a0e8b984066be305d89f1970d0a2d22fbae58523ed78d8b892d"
+      },
+      {
+        "index": 11,
+        "settings": {
+          "sigma": 0.0011297312506783302,
+          "elite_ratio": 0.2427677510532763
+        },
+        "effective_key": [
+          0.0011297313030809164,
+          15
+        ],
+        "program_path": "random_programs/candidate_011.py",
+        "program_sha256": "884b173ba1de55c7770cb31628f34846fa9994771a555a50ea7def830903ced2"
+      },
+      {
+        "index": 12,
+        "settings": {
+          "sigma": 0.0022980551009176907,
+          "elite_ratio": 0.8525318219411424
+        },
+        "effective_key": [
+          0.0022980552166700363,
+          54
+        ],
+        "program_path": "random_programs/candidate_012.py",
+        "program_sha256": "3acb510780ba18059a8611d65dd8d56edf52570d7cf6bc6676b82cd50e7510cf"
+      },
+      {
+        "index": 13,
+        "settings": {
+          "sigma": 0.0026513568491121895,
+          "elite_ratio": 0.11774024140621445
+        },
+        "effective_key": [
+          0.0026513568591326475,
+          7
+        ],
+        "program_path": "random_programs/candidate_013.py",
+        "program_sha256": "7d1183519bf6871a392e60d14cf689eda5053f13ea4bea724b628272b947a364"
+      },
+      {
+        "index": 14,
+        "settings": {
+          "sigma": 0.19792790692632195,
+          "elite_ratio": 0.8791107899289051
+        },
+        "effective_key": [
+          0.19792790710926056,
+          56
+        ],
+        "program_path": "random_programs/candidate_014.py",
+        "program_sha256": "05ab3cad17f6d8ff15ad939d9b3a64fe5e364f15b55547e52f989a4e48dae64c"
+      },
+      {
+        "index": 15,
+        "settings": {
+          "sigma": 0.0029726183500612888,
+          "elite_ratio": 0.45868528695608435
+        },
+        "effective_key": [
+          0.002972618443891406,
+          29
+        ],
+        "program_path": "random_programs/candidate_015.py",
+        "program_sha256": "9e064b194de94417798213728e6ead817abfcfa01551acf31f5aeca5a6bfc837"
+      },
+      {
+        "index": 16,
+        "settings": {
+          "sigma": 0.007241840795800648,
+          "elite_ratio": 0.3434446732328077
+        },
+        "effective_key": [
+          0.007241840939968824,
+          21
+        ],
+        "program_path": "random_programs/candidate_016.py",
+        "program_sha256": "22263856b01fc1b1c24560c414b65c88179551e5526878e1c600d8e3c503852f"
+      },
+      {
+        "index": 17,
+        "settings": {
+          "sigma": 0.09028444298542129,
+          "elite_ratio": 0.2653862553982214
+        },
+        "effective_key": [
+          0.09028444439172745,
+          16
+        ],
+        "program_path": "random_programs/candidate_017.py",
+        "program_sha256": "3807e445270aa3350d2c73559780b8726220e655f232cf8c26018c06e09824e1"
+      },
+      {
+        "index": 18,
+        "settings": {
+          "sigma": 0.4940314660976954,
+          "elite_ratio": 0.4024158474593327
+        },
+        "effective_key": [
+          0.49403145909309387,
+          25
+        ],
+        "program_path": "random_programs/candidate_018.py",
+        "program_sha256": "fe7ed45144963acec5a321117716f1b855e12eb7fea251370845a8d857adcaf7"
+      },
+      {
+        "index": 19,
+        "settings": {
+          "sigma": 0.004154338986312971,
+          "elite_ratio": 0.8341142856893812
+        },
+        "effective_key": [
+          0.004154338967055082,
+          53
+        ],
+        "program_path": "random_programs/candidate_019.py",
+        "program_sha256": "6c7426b3816d33770663b424f3c0dfe5419d12fe2b9176fcdd3b4fadae7c8253"
+      },
+      {
+        "index": 20,
+        "settings": {
+          "sigma": 0.004407203025956789,
+          "elite_ratio": 0.776549117476981
+        },
+        "effective_key": [
+          0.004407202824950218,
+          49
+        ],
+        "program_path": "random_programs/candidate_020.py",
+        "program_sha256": "d977006d745bf5fa281035d24a00245054403b3df1f32285d7ab9246e46ecac9"
+      },
+      {
+        "index": 21,
+        "settings": {
+          "sigma": 1.5934706750445051,
+          "elite_ratio": 0.25432630722717275
+        },
+        "effective_key": [
+          1.5934706926345825,
+          16
+        ],
+        "program_path": "random_programs/candidate_021.py",
+        "program_sha256": "69142612814b80c273982f4ca66963b1b6becb8269916f0e526c7d3e19589c4f"
+      },
+      {
+        "index": 22,
+        "settings": {
+          "sigma": 0.014136188774201898,
+          "elite_ratio": 0.057581100586642724
+        },
+        "effective_key": [
+          0.01413618866354227,
+          3
+        ],
+        "program_path": "random_programs/candidate_022.py",
+        "program_sha256": "85b8f0bba3d999445ed95e81796aa5a356ffe1a2f1e2ad65952497888165729a"
+      },
+      {
+        "index": 23,
+        "settings": {
+          "sigma": 0.00691628776155316,
+          "elite_ratio": 0.8516514832670102
+        },
+        "effective_key": [
+          0.006916287820786238,
+          54
+        ],
+        "program_path": "random_programs/candidate_023.py",
+        "program_sha256": "4fcf1d88c5f7e1c3446d38b535a7a89015fc0f37a757b9636015749e23a97032"
+      },
+      {
+        "index": 24,
+        "settings": {
+          "sigma": 0.224195451112929,
+          "elite_ratio": 0.0921597481719689
+        },
+        "effective_key": [
+          0.2241954505443573,
+          5
+        ],
+        "program_path": "random_programs/candidate_024.py",
+        "program_sha256": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9"
+      }
+    ]
+  },
+  "nominal_training_steps_per_candidate": 23040000,
+  "max_model_requests_per_slot": 1,
+  "duplicates": "consume a slot and are evaluated again; charge actual seed work",
+  "failure_policy": "stop on terminal proposal/evaluation failure; no automatic retry",
+  "rng_policy": "save/restore Python and NumPy host RNG; restart initialization, model responses and async ordering prevent an uninterrupted-trajectory guarantee",
+  "runtime": {
+    "harness": {
+      "python": "3.11.15",
+      "packages": {
+        "yarl": "1.25.1",
+        "PyYAML": "6.0.3",
+        "hydra-core": "1.3.2",
+        "proglog": "0.1.12",
+        "aiosignal": "1.4.0",
+        "adjustText": "1.4.0",
+        "narwhals": "2.26.0",
+        "threadpoolctl": "3.7.0",
+        "jiter": "0.14.0",
+        "urllib3": "2.8.0",
+        "six": "1.17.0",
+        "pyparsing": "3.3.3",
+        "tqdm": "4.70.1",
+        "pydantic_core": "2.46.5",
+        "dill": "0.4.1",
+        "pycparser": "3.0",
+        "pyasn1": "0.6.4",
+        "colorama": "0.4.6",
+        "mdurl": "0.1.2",
+        "sniffio": "1.3.1",
+        "google-auth": "2.59.1",
+        "docstring_parser": "0.18.0",
+        "httpx": "0.28.1",
+        "cffi": "2.1.1",
+        "Levenshtein": "0.27.5",
+        "tenacity": "9.1.4",
+        "networkx": "3.6.1",
+        "certifi": "2026.7.22",
+        "jmespath": "1.1.0",
+        "rich": "14.3.4",
+        "Markdown": "3.11",
+        "aiohttp": "3.14.3",
+        "backoff": "2.2.1",
+        "psutil": "7.2.2",
+        "RapidFuzz": "3.14.6",
+        "cryptography": "50.0.2",
+        "click": "8.5.0",
+        "Jinja2": "3.1.6",
+        "typing_extensions": "4.16.0",
+        "Pygments": "2.21.0",
+        "scipy": "1.17.1",
+        "ruff": "0.16.10",
+        "iniconfig": "2.3.0",
+        "seaborn": "0.13.2",
+        "openai": "3.3.0",
+        "shellingham": "1.5.4",
+        "annotated-types": "0.8.0",
+        "fonttools": "4.66.1",
+        "distro": "1.9.0",
+        "propcache": "0.5.4",
+        "truststore": "0.10.4",
+        "markdown-it-py": "4.2.0",
+        "aiohappyeyeballs": "2.7.1",
+        "instructor": "1.17.0",
+        "httpcore": "1.0.9",
+        "contourpy": "1.3.3",
+        "shinka-continual-reinforcement-learning": "0.1.0",
+        "pillow": "11.3.0",
+        "omegaconf": "2.3.1",
+        "kiwisolver": "1.5.1",
+        "annotated-doc": "0.0.5",
+        "packaging": "26.3",
+        "s3transfer": "0.19.2",
+        "boto3": "1.43.107",
+        "aiofiles": "25.1.0",
+        "scikit-learn": "1.9.1",
+        "httpcore2": "2.13.1",
+        "regex": "2026.9.29",
+        "typing-inspection": "0.4.4",
+        "pluggy": "1.6.0",
+        "joblib": "1.6.0",
+        "mando": "0.7.1",
+        "pytest": "9.1.1",
+        "unidiff": "1.0.1",
+        "websockets": "16.1.1",
+        "typer": "0.27.2",
+        "botocore": "1.43.107",
+        "moviepy": "2.2.1",
+        "frozenlist": "1.8.0",
+        "antlr4-python3-runtime": "4.9.3",
+        "attrs": "26.1.0",
+        "anyio": "4.15.1",
+        "radon": "6.0.1",
+        "anthropic": "1.11.0",
+        "google-genai": "2.27.0",
+        "charset-normalizer": "3.5.2",
+        "pydantic": "2.13.5",
+        "MarkupSafe": "3.0.3",
+        "numpy": "2.4.6",
+        "matplotlib": "3.11.2",
+        "ImageIO": "2.38.0",
+        "cloudpickle": "3.1.2",
+        "httpx2": "2.13.1",
+        "pyasn1_modules": "0.4.2",
+        "shinka-evolve": "0.0.7",
+        "python-dateutil": "2.9.0.post0",
+        "idna": "3.20",
+        "python-dotenv": "1.2.4",
+        "decorator": "5.3.1",
+        "h11": "0.16.0",
+        "python-Levenshtein": "0.27.5",
+        "cycler": "0.12.1",
+        "imageio-ffmpeg": "0.6.0",
+        "pandas": "3.0.6",
+        "multidict": "6.9.1",
+        "requests": "2.34.2"
+      },
+      "shinka_direct_url": {
+        "url": "https://github.com/SakanaAI/ShinkaEvolve.git",
+        "vcs_info": {
+          "vcs": "git",
+          "commit_id": "9912af12d423504b8d580f4179fd15f5f88b8c50",
+          "requested_revision": "9912af12d423504b8d580f4179fd15f5f88b8c50"
+        }
+      },
+      "dotenv_files_present": [],
+      "shinka_source_sha256": {
+        "__init__.py": "36b299fcca12a27c6d72b9705616ebf08d4cadca0e5f0e5f52667c387c10ccf1",
+        "azure_openai_config.py": "11cc3d5b0f66512db402f43139b02850e39d4a1e505266796a9d223e6ff822f2",
+        "cli/__init__.py": "4393ea9f01d919692f24f831633a536f5b2b47bddea6d01741d1f6bfe122e630",
+        "cli/launch.py": "8ac2d0134b22193e72921c008c6b1410148d82949f46288f55ceac0b8966eaa3",
+        "cli/models.py": "82d6a98de0a01b48a8ac6438fb0d829ff6d2f2e41961c8a91a6d7678124b5c40",
+        "cli/run.py": "8e9ce2723c5e8dbd59152a4c4ad34a95e461b62d4901c54ec3e5e1116bbf52e5",
+        "cli/run_config.py": "40d04707ac12b3e69cd4b20c54617075c81430e107a305668bae962ff15ff533",
+        "configs/__init__.py": "0ffc7f5ff800432b6ecdfc54957b752ef2e319e1f84a0c467de692ff914985ba",
+        "configs/cluster/__init__.py": "028f1c6fceff0212aa968c5c2fa5390bd8d481938910305483d5d75fdddded02",
+        "configs/database/__init__.py": "d4db612d80944948637f84f428ae737f23df5bc7d8938779233e60537f128215",
+        "configs/evolution/__init__.py": "3eb630091a5bbac4b163269e332fe037d36b0569b98d1a8151cc62ad0b56e062",
+        "configs/task/__init__.py": "2f0fe4243abd5bbb4fcad10fa59b0a064977896c70aba9dbfaff9b44d6ff9f6c",
+        "configs/variant/__init__.py": "bdb7376f83c44c6bf1632eb8b7ba98ef64e268a970c2839e36a767406f55931e",
+        "core/__init__.py": "2e849c6789cdcf766de0a4cb10fc8abb1e04ed2a32a62ba16631a7de2b3fcc92",
+        "core/async_novelty_judge.py": "c7a7a600810fe2e08013537f79fa0a3f0b592dc898b43a3cdeaac7c7076e1cbe",
+        "core/async_runner.py": "153a6e1b9a7bdb673767bd3109de085c2f4e60cae07a0107858c5318f7557fed",
+        "core/async_summarizer.py": "eb515bb1427c7162b6c7a205dc005cf873eef52058036c5e3bb01527b4cba66e",
+        "core/config.py": "c1ef2fab4b9707b5e2d6d280ec4bcf383d0fb99ad4b570501f6333bc411bf39e",
+        "core/novelty_judge.py": "5369cb0665883f6e4395c3d9825e7668a2aa14d89f5382a8ba82824053f2e60a",
+        "core/pipeline_timing.py": "19efcefaec740c3a397bcceb118e57c39fd2051627875534be0f62f31a531eba",
+        "core/prompt_evolver.py": "c106421ebfed4fb2c74ed18639c3f14d3acb1518fc9a65fecf9a59a9e287ab9e",
+        "core/runtime_slots.py": "78ba0440ca18a77eeb77d75cf1f6e65751366a4c31eab76675f5f386c2ce6d13",
+        "core/sampler.py": "cdfa7fcbe0d3be09a0901f972ca579628074b87df34224d4549bb03bd758e29d",
+        "core/summarizer.py": "91f61b67b9714f9e98087955f71e2680fcaaa6ef41af519cce1ac9fe684d0f20",
+        "core/wrap_eval.py": "a043101117e4135f3616c3327d456fb8ca8ad1ade2b1a606867665c8d0a05ef9",
+        "database/__init__.py": "5422f5d1ae8438014532c5fcf062593ed40cf4838acd984850ec3601f68f38ec",
+        "database/async_dbase.py": "2dce0625e4b9d47c3e48a65dfd0da7b564a4a237e17367de17c2e8144a33bd20",
+        "database/complexity.py": "814778b7aeff4ec5f35f81a110690dd0972a2799dba3d427d0495915c3be41de",
+        "database/dbase.py": "8179b5dc05c8863978b7d7c37d38210b12eb2f7d79343319c7d6c9eedf579b1b",
+        "database/display.py": "a72e3ba3e05d602a914b32e24c7ce7f03e684075f8c5802581c3aec40b426cee",
+        "database/inspirations.py": "50ffe1993ec79e482abd49715cd7669ee5b1b77cc9a10e32c2b7e8f82d78b49a",
+        "database/island_sampler.py": "ba42c62835496b0bd1e1192ba0f02a6ddf5780bb0002766c1f77bfddf30e34e6",
+        "database/islands.py": "539b8d9b6e848793f260f4d8a1a3713c4272cfa081442b83e3876a277c102f8c",
+        "database/parents.py": "3bd262bdacee19e063758b0712d9c8c792e9c6b5e12b97a522df79a37cba616a",
+        "database/prompt_dbase.py": "e61fa0c383180c46208e00bcca14217782e215aa055701072d6cb3b8f68d286f",
+        "defaults.py": "a4842f9ebdc07d7b602e7c9d72c0d04548deeecc0e893fd6578fdc918da0e0f2",
+        "edit/__init__.py": "b2ec3a6b6990382a03bba4e32a78e7e199dd5d1b27783c918c3672bbb66e8d26",
+        "edit/apply_diff.py": "bf08c016c0bf1283f59b7a0d54b07ab13cf90e221f4763797bf70d807d38858b",
+        "edit/apply_full.py": "5f92e6ca0fd833c8bc86ed1aced3102a4f1bedbcc8486454509482f7c9611e07",
+        "edit/async_apply.py": "c1b2e55764a55d5754b1a6ab286ca3252ce1aae9fb0fa687b8ee28edb9cb56a9",
+        "edit/marker_validation.py": "c876c6f87804c7f135a55781c6f62fef276bf345956f30a2e1842391df960027",
+        "edit/summary.py": "2abeda7cc509ae4a073913dc656ee49bd13214a64595e4d46b752e7d4261c6b1",
+        "embed/__init__.py": "ba794327413a599cb047381a273579d8482f34b0258b823ccbf6d925ebbdc20a",
+        "embed/client.py": "1c6745c39a312d3a6db0f949f26bd60f6d64a2a1c3bea0679e970a6b834ff7d5",
+        "embed/embedding.py": "ecd371ae3233722d6a8b3e03770e45305fba1e3524cac6f34098f971f226a581",
+        "embed/providers/__init__.py": "5ed289162270ad2b4756a3d31152997a71ad399323cde759c363779b045a959d",
+        "embed/providers/pricing.py": "20b13401c35bca7b558f00b2f483b26eb0eb59af05debd8416d1009980c3deec",
+        "env.py": "f4735c598fb2c6bc3a11fcff44d9374b18ff5ae02b29e7d518db8a588dd3c565",
+        "eval_hydra.py": "2e61fe5a22bca04bc1f46f6191d1209cd41d37f970d02176dda875e7a857bfbc",
+        "google_genai.py": "6769543f13ee3e3ceb33881d044a61f4fc0f9d9a4f6c9fda7a0cb23cabbd5623",
+        "launch/__init__.py": "57a26821e9a6fb89a0368f87b09757c6c9c8db26dc13bfa540f5ac0a840a8043",
+        "launch/local.py": "16eccbc364b642383ad8c77034a06645f1f2b7d0e9bd71862ceb5db7f99c6a48",
+        "launch/scheduler.py": "c32d0682ac0c572d01dc10b49887cb54eb7d6b6ba760ba74c132465a1366266b",
+        "launch/slurm.py": "6e0a42b476a1dc86ef708bb4182b68fa114ce9cb0d2e5a696b797cb66116be82",
+        "launch_hydra.py": "4c417e2da33a25eaae887c90836af2ec42b2237bb87839870a806563f5fc6ca6",
+        "llm/__init__.py": "60612197bd0fac545318c9566bc8e2059784b13705d43e9be39eff11977b92ec",
+        "llm/client.py": "c39ad62b778a936137653ff800d80f103e561cf3abb2d4a07b87331cf65f8189",
+        "llm/constants.py": "c1da0113db9f366061f7c9a0998ec4d7f88ddd754ff1543b145c6b3999cee2f7",
+        "llm/kwargs.py": "85ca0a0a914eef38aa1688e5e51c652acf7f81b2d281a8faa9bb51fc40241fc5",
+        "llm/llm.py": "92d115a53d1381414c095592e5afaaca3af3b83df65b161970a9f451ec6e84cf",
+        "llm/prioritization.py": "be3f007775f75ad2bacba3e66deeea8cef5dd7084ed1b23bb66b988ac9a8c3a6",
+        "llm/providers/__init__.py": "38e9d18c359ab010d87cfbd9e7882d013ad324dfd77aaab7d46077f5acf05837",
+        "llm/providers/anthropic.py": "66daacaf8defb70c0c1a86566336b7633ade4ce2cabfcd02f21fe58f687950cd",
+        "llm/providers/deepseek.py": "3fd5363e40732f77357fb77fa8c757e0b65d30f43f57860da3f1e0d80e16df94",
+        "llm/providers/errors.py": "7ac167ff6f03e8e15a55db4668573ef653050c0fc513a82a08fa1510aa811e28",
+        "llm/providers/gemini.py": "f3fdf4c4789cf92d3462f7f457a5e1148f4046bbeef2891ff67c937288446a44",
+        "llm/providers/headless.py": "c9a5295c615eb9dd2b6dfc353b1f6ca08dcbfb3536582f39dcad048ee6a8693f",
+        "llm/providers/local_openai.py": "19ef5f119f76dd29bc3123dd98bd4df3ca66d18c0246f50c0b8c93ef9d7cf438",
+        "llm/providers/model_resolver.py": "969327422c2bbeadb32bccdb3403ca50937ba59d9d70a42331335a60a7147b82",
+        "llm/providers/openai.py": "003c426a92854eb3cbf3514642733f504a5d326ed1eaaa3f37f873281940f739",
+        "llm/providers/pricing.py": "282b559722eaeb67a2c6985d1993385be4d5b8497c1bafb9317088bba4dec484",
+        "llm/providers/result.py": "444615a7276551853ec2820c9e9cc25067a8f653efc9c0242c88571bb3f18a98",
+        "llm/query.py": "d4aa3210033d453805fc67a6da12e31ab68dba11f1b9d47d9263ece8248259ce",
+        "local_openai_config.py": "479dc1826537af309eab43913b913aa43a722b5f80be757257af51e844ef22c0",
+        "logo.py": "2a575a9e6bc7c5d6fde8b82119f9efa25f559fd969942dad344130e0b96b7f22",
+        "model_availability.py": "5694374ba15f4044c361005cf8f768b4f07aff912603d3ced41ad05d8024fffc",
+        "plots/__init__.py": "3a8d875086b943664143bfd2363f13de2d204ed831db393ac418655f97126164",
+        "plots/code_path_anim.py": "de36f74ad8bed749968c1e059601a75d07afcddf85a12a2742a1e5a8495e43fb",
+        "plots/plot_costs.py": "3a5a9484934a018bc3c9f30fc9fd7811efa85ef7d9ee426c60a1eb0bde66e5cd",
+        "plots/plot_evals.py": "bc423b0b88c4ecfd98c43d9511b0e47174b0ca3efb7fc10dda0807c394b79247",
+        "plots/plot_lineage_tree.py": "711a3c73537740b47d7245b6ca377ab1c1fe5b286adadf6d5b9ae982d9b7b337",
+        "plots/plot_llm.py": "d4a9899d634e48a1fa6ec36d459872044ad45dc933c30f6269abfc4556135547",
+        "plots/plot_pareto.py": "74b7e771755b8d3d1197c9db827dce32ff577f5ff6eeb8ba6ad71ae3bac7c849",
+        "plots/plot_similarity.py": "292c8589d9570c7bf521bdeac8ba8c7884121b3561cc5511e870e32d2ded6bc1",
+        "plots/plot_throughput.py": "6188c72292fae5b71081888cdbecc03c1c56148e28ba2f823ae925fb790c82a7",
+        "plots/plot_time.py": "35606549870036385c68151aa7870d42da0e14f786cfc7b42d562731795580f3",
+        "pricing/__init__.py": "b9c0d1057d9ca38c4767a082be2fb743cc27a90ef833dcf410ccbef51f850e9c",
+        "pricing/catalog.py": "f6088e31b9a843b37cfe5cd70955eb6f8635e292e76a07d52282fc30b65e6051",
+        "pricing/normalization.py": "263260520d1c506cdd5839f3bd4757d7459520909d7513871526e486b776eac3",
+        "pricing/rendering.py": "f03479176422d81d1bb15138bfb3e15b2a0d52abb94fac48db2c3fd0be30c4cf",
+        "prompts/__init__.py": "fa2f66681436f46299f654ec8db42c2edf62e882ea9a1b533797cbdc6de2e977",
+        "prompts/prompts_base.py": "81b63d3d90c60e32a7e72c17594c41c6ff310ddd8e2923347b176bd093801039",
+        "prompts/prompts_cross.py": "03cb16c15ce0bce873eb70299d64597665c9cfa3aadb8ab246c7488c4ec465db",
+        "prompts/prompts_diff.py": "5414b3c84f2a544325db1646e9c0dd2c92890e892356689a6f9e9518f02cc54a",
+        "prompts/prompts_fix.py": "3c425716e0059050478d8d5ce466bf07f49c4e8e6de5e5240d1bc7db6477db90",
+        "prompts/prompts_full.py": "ff281a3290768278c4309852de603d72261fb5205a830dda7da10549172b4a28",
+        "prompts/prompts_init.py": "f514d91cf53f952b8d196ad2e5af6e69c027b5d82d8111da59285b5f7d2f72fe",
+        "prompts/prompts_meta.py": "3bf40eb1fc8970bbf2d33f2bdcc775ae43e9c9488155e120b70c4e65d0b9f950",
+        "prompts/prompts_novelty.py": "7f1574880c462a2355afabad5854b0047856d9ed46fae85732f3d5d3fae86bac",
+        "prompts/prompts_prompt_evo.py": "4345f8b00468eac1b592253af5ff44097b00b2edee7003bfefd570dc9dc24dae",
+        "release_check.py": "bd63236fb1202fe70f97c96f9343a365168e9cb6a36e33a404972f66e788b7e2",
+        "telemetry_safety.py": "2261738e6bb8393a20b6fd90c1481606b57b9160e7cdd4de5bb47e80aedf5982",
+        "tools/__init__.py": "36916767401bcbdcb4e40325098b038cf4366b771616c0cd96d735812ccf922f",
+        "tools/pricing/__init__.py": "6da622b95931e9eb9a2e8248ce7b62dae6d5a0e116254d775dd5836cd248a40e",
+        "tools/pricing/generate_csvs.py": "6b8c5782e718b29a81d24fdab94f66a562696608010ec151262f2033699f99fb",
+        "utils/__init__.py": "c83904f7bfff913c84196bdae5007c79bb4708b0cc86a74de9aef8925352a0fc",
+        "utils/eval_stop.py": "55653c46032ada7c165c71db5876108fb59179f3ff90c4b844625c53dd21d0df",
+        "utils/general.py": "350c68cd1d223362779f8b4a968b477c27d6031c2e5e1c4b5149f3bb010edb0c",
+        "utils/languages.py": "18f9a965a4a95cfef4c851202a62e2e810414943f26be31e04822c605653c1c1",
+        "utils/load_df.py": "5e2c0879be36031e718b6dcf9b2c3bb0a93285d2144b66f6352359e21d21ae5f",
+        "utils/utils_hydra.py": "bf4f2308a5830b0a9b90aef0dfdcfab4bda571df3c695af44e05b07a0f9b152f",
+        "utils/wolfram.py": "c6ff438c5ae94f84dfeb227113473222547f013c7cde434dca58957b117cab60",
+        "wandb_logging.py": "dcec2142c20e6bed1cddc8e51e15a5279b0ab3c3ac7ad978293d27641c393520",
+        "wandb_metrics.py": "8dc78921c443dfdc7019af6e625a46394d9ce010216139ef3c8027f59f95bc16",
+        "webui/visualization.py": "e40c924e1634ec7b0b5e0a8be870e7a1234a470aa6c8d61a28768264139f1ae9"
+      }
+    },
+    "training": {
+      "python": "3.11.15",
+      "packages": {
+        "PyYAML": "6.0.3",
+        "rich": "15.0.0",
+        "six": "1.17.0",
+        "tensorstore": "0.1.84",
+        "fonttools": "4.63.0",
+        "mdurl": "0.1.2",
+        "flax": "0.10.6",
+        "toolz": "1.1.0",
+        "pandas": "3.0.5",
+        "optax": "0.2.6",
+        "jaxlib": "0.5.3",
+        "ml_dtypes": "0.5.4",
+        "chex": "0.1.90",
+        "typing_extensions": "4.16.0",
+        "scipy": "1.17.1",
+        "seaborn": "0.13.2",
+        "humanize": "4.16.0",
+        "markdown-it-py": "4.2.0",
+        "simplejson": "4.1.1",
+        "contourpy": "1.3.3",
+        "pillow": "12.3.0",
+        "opt_einsum": "3.4.0",
+        "zipp": "4.1.0",
+        "aiofiles": "25.1.0",
+        "jax": "0.5.3",
+        "numpy": "1.26.4",
+        "nest-asyncio": "1.6.0",
+        "treescope": "0.1.10",
+        "protobuf": "6.33.6",
+        "Pygments": "2.20.0",
+        "packaging": "26.2",
+        "pyparsing": "3.3.2",
+        "kiwisolver": "1.5.0",
+        "absl-py": "2.5.0",
+        "matplotlib": "3.11.1",
+        "etils": "1.14.0",
+        "cloudpickle": "3.1.2",
+        "Farama-Notifications": "0.0.6",
+        "python-dateutil": "2.9.0.post0",
+        "gymnasium": "1.2.3",
+        "msgpack": "1.2.1",
+        "fsspec": "2026.6.0",
+        "cycler": "0.12.1",
+        "orbax-checkpoint": "0.11.24",
+        "gymnax": "0.0.9"
+      },
+      "jax_backend": "cpu",
+      "jax_devices": [
+        "TFRT_CPU_0"
+      ]
+    },
+    "subscription_preflight": {
+      "auth": "chatgpt",
+      "model": "gpt-6.1-sol",
+      "headless": "@roberttlange/headless@0.6.1",
+      "inference_calls": 0
+    },
+    "proposal_tools": {
+      "codex_version": "codex-cli 0.159.3",
+      "node_version": "v24.20.0",
+      "headless_cli_sha256": "12e050c62ad623de02c8af9fdcee4d23eec3c1c69e107355b2e26d3f3bb60123",
+      "headless_package_sha256": "017c35d27be0de42b5c7562c432025cd4f0368bfda3efb3e685466cd4cdf9edf"
+    }
+  }
+}

@@ -158,6 +158,15 @@ demonstrated that duplicate evaluations still consume training work. This tests
 transport, evaluation, and resume, rather than proposal quality; all artifacts
 are retained in the [native integration evidence](reports/native-integration-20261002/summary.json).
 
+Runtime inspection before the first model proposal found that native Shinka
+overrode the outer numerical thread cap with eight threads. The initial search
+setup was stopped after two complete seeds and one partial seed, preserving
+15.36 million completed nominal steps plus unquantified partial work. No model
+request occurred. The corrected job configuration explicitly caps numerical
+threads at one in both search arms and records the evaluator's actual runtime.
+This setup attempt is excluded from candidate comparisons and retained in the
+[interrupted-attempt evidence](reports/search-setup-interrupted-20261002/summary.json).
+
 ### Matched development pilot
 
 The pilot completed GA, ES, and PPO under stationary and alternating conditions

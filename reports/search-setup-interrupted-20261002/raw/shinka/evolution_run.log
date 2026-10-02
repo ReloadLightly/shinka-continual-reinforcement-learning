@@ -1,0 +1,34 @@
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Pricing catalog: source=cache fetched_at=2026-09-29T21:42:25.870992+00:00 stale=False sha256=04431b4104a0b954c511e30c898a7cba12c881e63ae7592b61398a1f26231ab5
+
+░██████╗██╗░░██╗██╗███╗░░██╗██╗░░██╗░█████╗░   ░█████╗░██╗░░░░░██╗
+██╔════╝██║░░██║██║████╗░██║██║░██╔╝██╔══██╗   ██╔══██╗██║░░░░░██║
+╚█████╗░███████║██║██╔██╗██║█████═╝░███████║   ██║░░╚═╝██║░░░░░██║
+░╚═══██╗██╔══██║██║██║╚████║██╔═██╗░██╔══██║   ██║░░██╗██║░░░░░██║
+██████╔╝██║░░██║██║██║░╚███║██║░╚██╗██║░░██║   ╚█████╔╝███████╗██║
+╚═════╝░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝╚═╝░░╚═╝╚═╝░░╚═╝   ░╚════╝░╚══════╝╚═╝
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Saved init_program_str to /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/init_program.py
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Saved evaluate_str to /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/evaluate.py
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - 🖥️  System resources detected:
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO -    • CPU cores: 8
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO -    • Memory: 3.7 GB
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - 🔧 Concurrency settings:
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO -    • Evaluation jobs: 1
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO -    • Proposal jobs: 1
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO -    • DB workers: 1
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO -    • Total threads: 3
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Configured local numeric thread cap per eval process: 8
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - ================================================================================
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - ASYNC EVOLUTION RUN STARTED
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - ================================================================================
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Max evaluation jobs: 1
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Max proposal jobs: 1
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Target generations: 2
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Language: python
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Results directory: /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Log file: /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/evolution_run.log
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - ================================================================================
+2026-10-02 20:28:30 - shinka.database.async_dbase - INFO - 🔧 AsyncDB initialized with 1 workers, 1 concurrent DB ops (WAL mode)
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Copying initial program from /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/init_program.py
+2026-10-02 20:28:30 - shinka.core.async_runner - INFO - Starting initial program evaluation: /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/gen_0/main.py
+2026-10-02 20:28:30 - shinka.launch.local - INFO - Submitted local process with PID: 1842648
+2026-10-02 20:28:30 - shinka.launch.local - INFO - Launched local command: /home/roland/actir/shinka-continual-reinforcement-learning/.venv/bin/python /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/evaluate.py --program_path /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/gen_0/main.py --results_dir /home/roland/actir/shinka-continual-reinforcement-learning/results/search-20261002/shinka/gen_0/results
