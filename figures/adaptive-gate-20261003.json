@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "kind": "observed_adaptive_adapter_gate",
+  "input_sha256": {
+    "checksums.json": "d3a5c9d90abc2405e780673c9ba1f42ecb14d0f7ef8170f575408c68463a9fac",
+    "summary.json": "47d95f2e90dbb4bebedb4277565de2a6494087480e7ad553ab656ef80b9ed84e",
+    "raw/plan.json": "cd732712945373c68cb99a2e21e718db84e3a90e441eca6fca978286d84ce270",
+    "raw/identity_switching/training/adapter-trace/manifest.json": "190e19f508c28ac60404b4ddfaa20e1fbb9036f689aabc992e4b32153d48e844",
+    "raw/halving_switching/training/adapter-trace/manifest.json": "fddb42fad083a9ce3352e999e483bde6fdf7998be5628a1146349c2064170798",
+    "raw/arithmetic_switching/training/adapter-trace/manifest.json": "ff39a4c90704f982fc4941670b93e3c9b2d99a79b5517e745e5ba045cc36d8c3"
+  },
+  "plot_script_sha256": "cc5597d410987fd7610937b3a05c23f41e3b0175df036eb258979c77555889da",
+  "seed": 3001,
+  "task_switch_generation": 3,
+  "series": {
+    "identity": {
+      "generations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sigma_used": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "sigma_next": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "completed_generations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "memory": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "halving": {
+      "generations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sigma_used": [
+        0.5,
+        0.25,
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625
+      ],
+      "sigma_next": [
+        0.25,
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625,
+        0.0078125
+      ],
+      "completed_generations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "memory": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          2.0,
+          2.0,
+          2.0,
+          2.0
+        ],
+        [
+          3.0,
+          3.0,
+          3.0,
+          3.0
+        ],
+        [
+          4.0,
+          4.0,
+          4.0,
+          4.0
+        ],
+        [
+          5.0,
+          5.0,
+          5.0,
+          5.0
+        ],
+        [
+          6.0,
+          6.0,
+          6.0,
+          6.0
+        ]
+      ]
+    },
+    "arithmetic": {
+      "generations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sigma_used": [
+        0.5,
+        0.4876549541950226,
+        0.5,
+        0.4876549541950226,
+        0.46970653533935547,
+        0.45810943841934204
+      ],
+      "sigma_next": [
+        0.4876549541950226,
+        0.5,
+        0.4876549541950226,
+        0.46970653533935547,
+        0.45810943841934204,
+        0.4467986822128296
+      ],
+      "completed_generations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "memory": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ]
+    }
+  },
+  "output_sha256": {
+    "adaptive-gate-20261003.svg": "2a5e979dea247a6670fc60117e91ebba73d6a4b0a0d7387703ae25794aa9ed95",
+    "adaptive-gate-20261003.pdf": "af755d03f1cf73c9e33136e4bbc1194b70cdda282d2dd96745c943ead3f10942"
+  }
+}

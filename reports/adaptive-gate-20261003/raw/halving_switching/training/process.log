@@ -1,0 +1,18 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 3002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 2
+  schedule       : switch, 2 sub-tasks
+  matched budget : 3.072e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  ne overrides   : ['population_snapshot_interval=1', 'snapshot_members=0'] []
+  seed           : 3001
+  boundary info  : none
+  output         : $RUN/halving_switching/training
+======================================================================
+  gen     0 task= 0 train=   16.4 t0=  113.5 t1=   61.8 gen'ist=   61.8
+  gen     5 task= 1 train=   49.6 t0=   63.9 t1=   59.3 gen'ist=   59.3
+  wrote $RUN/halving_switching/training
+
+Done. $RUN/halving_switching/training

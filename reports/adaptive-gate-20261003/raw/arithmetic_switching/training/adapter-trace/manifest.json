@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "algorithm_variant": "ga_adaptive",
+  "program": {
+    "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+    "canonical_ast_sha256": "d5971d9f394f0df46346e414e90557f96998a8ee6a1315982fb49b5c8481fcf4",
+    "ast_nodes": 29,
+    "grammar_version": "adaptive-width-v1"
+  },
+  "native_args": [
+    "--suite",
+    "gymnax",
+    "--env",
+    "CartPole-v1_sigma0.5",
+    "--method",
+    "ga",
+    "--seed",
+    "3001",
+    "--trial",
+    "3002",
+    "--output_dir",
+    "$RUN/arithmetic_switching/training",
+    "--num_phases",
+    "2",
+    "--num_tasks",
+    "2",
+    "--task_type",
+    "noise",
+    "--eval_episodes",
+    "10",
+    "--episode_length",
+    "500",
+    "--num_generations",
+    "6",
+    "--task_interval",
+    "3",
+    "--pop_size",
+    "16",
+    "--num_evals",
+    "3",
+    "--ne_override",
+    "population_snapshot_interval=1",
+    "snapshot_members=0"
+  ],
+  "source_sha256": {
+    "scripts/adaptive_entrypoint.py": "1c42a5a6200df772fe9a1ec6374f68521576bfaf9f93a593158e92dcdfbcfdb8",
+    "src/shinka_crl/adaptive.py": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c",
+    "src/shinka_crl/experiment.py": "46370f85e364f4e285d7444f24d777ceedcdf20ff6e703158a3190f9b05f9eaa",
+    "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43"
+  },
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "thread_environment": {
+    "JAX_PLATFORMS": "cpu",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "MKL_DYNAMIC": "FALSE",
+    "NUMEXPR_NUM_THREADS": "1",
+    "NUMEXPR_MAX_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "GOTO_NUM_THREADS": "1"
+  },
+  "jax_backend": "cpu",
+  "states": [
+    {
+      "completed_generations": 0,
+      "file": "state_0000.npz",
+      "sigma_next": 0.5,
+      "memory": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array_shapes": {
+        "archive": [
+          8,
+          386
+        ],
+        "fitness": [
+          8
+        ],
+        "sigma": [],
+        "generation": [],
+        "memory": [
+          4
+        ],
+        "invalid_update": [],
+        "init_key": [
+          2
+        ],
+        "initial_mean": [
+          386
+        ]
+      }
+    },
+    {
+      "completed_generations": 1,
+      "file": "state_0001.npz",
+      "sigma_next": 0.4876549541950226,
+      "memory": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array_shapes": {
+        "archive": [
+          8,
+          386
+        ],
+        "fitness": [
+          8
+        ],
+        "sigma": [],
+        "generation": [],
+        "memory": [
+          4
+        ],
+        "invalid_update": []
+      }
+    },
+    {
+      "completed_generations": 2,
+      "file": "state_0002.npz",
+      "sigma_next": 0.5,
+      "memory": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array_shapes": {
+        "archive": [
+          8,
+          386
+        ],
+        "fitness": [
+          8
+        ],
+        "sigma": [],
+        "generation": [],
+        "memory": [
+          4
+        ],
+        "invalid_update": []
+      }
+    },
+    {
+      "completed_generations": 3,
+      "file": "state_0003.npz",
+      "sigma_next": 0.4876549541950226,
+      "memory": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array_shapes": {
+        "archive": [
+          8,
+          386
+        ],
+        "fitness": [
+          8
+        ],
+        "sigma": [],
+        "generation": [],
+        "memory": [
+          4
+        ],
+        "invalid_update": []
+      }
+    },
+    {
+      "completed_generations": 4,
+      "file": "state_0004.npz",
+      "sigma_next": 0.46970653533935547,
+      "memory": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array_shapes": {
+        "archive": [
+          8,
+          386
+        ],
+        "fitness": [
+          8
+        ],
+        "sigma": [],
+        "generation": [],
+        "memory": [
+          4
+        ],
+        "invalid_update": []
+      }
+    },
+    {
+      "completed_generations": 5,
+      "file": "state_0005.npz",
+      "sigma_next": 0.45810943841934204,
+      "memory": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array_shapes": {
+        "archive": [
+          8,
+          386
+        ],
+        "fitness": [
+          8
+        ],
+        "sigma": [],
+        "generation": [],
+        "memory": [
+          4
+        ],
+        "invalid_update": []
+      }
+    },
+    {
+      "completed_generations": 6,
+      "file": "state_0006.npz",
+      "sigma_next": 0.4467986822128296,
+      "memory": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "array_shapes": {
+        "archive": [
+          8,
+          386
+        ],
+        "fitness": [
+          8
+        ],
+        "sigma": [],
+        "generation": [],
+        "memory": [
+          4
+        ],
+        "invalid_update": []
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "state_0000.npz": "7356be202049c98e42f30d4e7e102c541d7c19dfa9cfac07b237f4d982a9dae4",
+    "state_0001.npz": "823bdf8282891ab28befbfd02672efb7907fab826ae848fba4d0ae6c9e60d04f",
+    "state_0002.npz": "7e33eaa8c39a4a68ec5605f16cc2f36411ee31b4f05cd7fa0bcd51bea86ad88a",
+    "state_0003.npz": "15076cd047b5be9447b2c0f9baab2407fb18ceb626694d7e8fdae0809f1aece7",
+    "state_0004.npz": "8ac223f0bf14fb4570c05dca1c4cb4405b6c3497415fbce1414b34aa2a829083",
+    "state_0005.npz": "80fde9031e5ab8e824f74d72ad39d5aba2f8a96ef5abc0079cd6d1c12ddccb92",
+    "state_0006.npz": "29e221a0459b7b3aea553fa7e8f0984c5c6625aa7f68cce0863837a90a5e29cc"
+  }
+}

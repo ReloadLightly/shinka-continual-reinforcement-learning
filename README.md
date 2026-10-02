@@ -14,7 +14,7 @@
 
 ## Abstract
 
-This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. These results establish an executable research pipeline and static baselines; they do not establish search-method superiority or a full-paper reproduction. The main extension remains executable adaptive mutation rules.
+This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter now passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. These results establish an executable research pipeline, static baselines, and a verified adaptive interface; they do not establish search-method superiority or a full-paper reproduction. Adaptive Shinka proposal search remains pending.
 
 > **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Finalist validation complete · Adaptive rules and full reproduction pending.
 
@@ -117,7 +117,7 @@ flowchart LR
     F --> A
 ```
 
-The planned first search has one initial candidate and **24 proposal slots**, compared with a matched random-search control. Shinka's total generation targets are **5 → 13 → 25**; each completed block can be resumed from the same result directory. These are targets for attempts, not guarantees of distinct valid programs. A higher active-task score alone is not evidence of reduced forgetting.
+The completed first search had one initial candidate and **24 proposal slots**, compared with a matched random-search control. Shinka's total generation targets were **5 → 13 → 25**; each completed block resumed from the same result directory. These counted attempts, not distinct valid programs. A higher active-task score alone is not evidence of reduced forgetting.
 
 The implemented adaptive interface, `update_sigma(sigma, stats, memory)`,
 executes after each GA update and controls the next generation's mutation width.
@@ -383,6 +383,48 @@ analysis and verification. The [first five trials](reports/validation-stage5-202
 the remaining block resumed. Incomplete training attempts: **0**.
 Reporting seeds 42–51 and task trials 1–10 remain untouched.
 
+### Executable adaptive-rule verification
+
+The adaptive mutation adapter passed **seven real training trials and 19
+independent numerical checks**. Identity programs match plain GA exactly under
+both stationary and switching conditions. The halving rule changes offspring
+while preserving the next re-scored archive; its four memory values increment
+through the task switch. The fixed arithmetic rule and native FocusGA transfer
+also execute under the prescribed budgets. These are fixed diagnostic controls,
+not Shinka-discovered programs or evidence of better retention.
+
+![Adaptive mutation width and persistent memory](figures/adaptive-gate-20261003.svg)
+
+<sub>Figure 5. Actual widths used to generate each population and the halving
+program's diagnostic memory. The task changes at generation 3. Raw native width
+logs describe the next generation, so panel A applies the documented one-step
+shift. All four memory values coincide. [PDF](figures/adaptive-gate-20261003.pdf)
+· [Exact values and provenance](figures/adaptive-gate-20261003.json).</sub>
+
+| Check | Training trials | Observed evidence | Outcome |
+| :--- | ---: | :--- | :--- |
+| Stationary identity | 2 | Exact metrics, states, populations, checkpoints, fresh returns | Pass |
+| Switching identity | 2 | Same exact comparisons across the task switch | Pass |
+| Halving and memory | 1 | Used width 0.5 → 0.015625; memory 0 → 6 without reset | Pass |
+| Fixed arithmetic rule | 1 | Finite bounded updates driven by training feedback | Pass |
+| Native FocusGA | 1 | True method identity; 8 archive + 7 offspring + 1 centroid | Pass |
+
+<sub>Table 12. Adapter diagnostics, not a method ranking. Every trial uses six
+generations, population 16, three training episodes per member, a 500-step cap,
+and two phases. Total: 1.008 million nominal training steps and 840 fresh post-hoc
+evaluation episodes across the native checkpoint sources.
+[Verified checks, costs, and array hashes](reports/adaptive-gate-20261003/summary.json)
+· [Complete text-artifact receipts](reports/adaptive-gate-20261003/checksums.json).</sub>
+
+The suite completed in **238.58 seconds (3.98 minutes)** on two logical CPUs,
+including startup, compilation, diagnostics, analysis, and verification.
+Regression tests overlapped the early trials; these timings are observed costs,
+not isolated method-speed measurements. There were **no failed attempts**.
+Diagnostic seed 3001 / task trial 3002 and evaluation seed 903001 remain separate
+from future adaptive search, static validation, and final reporting partitions.
+The [source snapshot](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/e28db07)
+preserves the exact execution contract. No model or paid API calls were used.
+
 ### Remaining scientific evaluation
 
 One full-budget development GA trial is complete; no full-budget comparison has been completed. The table below tracks the evidence needed to answer the research questions.
@@ -393,6 +435,7 @@ One full-budget development GA trial is complete; no full-budget comparison has 
 | Stationary control | Matched task and learner settings without switching | Development control complete |
 | Shinka-selected GA | Frozen candidate evaluated on reporting trials | Static winner frozen after validation; reporting pending |
 | Random-search control | Matched search budget and reporting protocol | Static winner frozen after validation; reporting pending |
+| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | Adapter verified; adaptive search pending |
 
 ## 5. Reproducibility
 
@@ -526,6 +569,12 @@ verified result cache, using the [implemented adapter](docs/adaptive-programs.md
 and controls in Section 3. Freeze the separate objective, seed allocation,
 grammar, and duplicate-proposal policy before proposing adaptive code. The completed
 baseline pilot does not need another large preparatory repeat.
+
+The concrete sequence is to validate the combined active/previous-task score,
+freeze fresh search and validation partitions, and verify a cache hit against its
+original evidence. Then evaluate the fixed controls under that protocol and
+begin a small resumable Shinka proposal block. The two static winners remain
+comparison baselines throughout.
 
 The [experimental roadmap](docs/experimental-roadmap.md) specifies staged budgets,
 the full-budget timing trial, adaptive interface, upstream adaptive control, and

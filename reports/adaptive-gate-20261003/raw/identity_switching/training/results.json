@@ -1,0 +1,97 @@
+{
+  "config": {
+    "env": "CartPole-v1",
+    "method": "ga",
+    "schedule": "switch",
+    "num_generations": 6,
+    "task_interval": 3,
+    "task_warmup": 0,
+    "pop_size": 16,
+    "sigma": 0.5,
+    "learning_rate": 0.05,
+    "optimizer": "sgd",
+    "shaping": "zscore",
+    "sigma_lr": 0.0,
+    "num_evals": 3,
+    "noise_range": 0.5,
+    "num_tasks": 2,
+    "first_task_clean": true,
+    "pool_size": null,
+    "pair_repeats": 5,
+    "expand_every": 25,
+    "searcher_kwargs": {
+      "elite_ratio": 0.5,
+      "init_around_mean": false
+    },
+    "searcher_resolved": {
+      "refresh": true,
+      "num_elites": 8,
+      "num_offspring": 8,
+      "variation": "gaussian",
+      "sigma": 0.5,
+      "cross_over_rate": 0.0
+    },
+    "objective": "mean",
+    "worst_k": 1,
+    "tasks_per_batch": null,
+    "track_population": false,
+    "population_interval": 20,
+    "descriptor": null,
+    "traj_steps": 50,
+    "aurora": null,
+    "task_sequence": [
+      0,
+      1
+    ],
+    "eval_episodes": 10,
+    "seed": 3001,
+    "trial": 3002,
+    "track_members": false,
+    "population_snapshot_interval": 1,
+    "snapshot_members": 0,
+    "hidden_dims": [
+      16,
+      16
+    ],
+    "episode_length": 500,
+    "obs_norm": false,
+    "checkpoint_every": null,
+    "track_plasticity": true,
+    "track_diversity": true,
+    "elite_convention": "best_member",
+    "plasticity_interval": 10,
+    "num_params": 386,
+    "solved_threshold": 475.0,
+    "column_naming": "gymnax_aliases_v1"
+  },
+  "noise_vectors": [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -0.3776637017726898,
+      0.4316159188747406,
+      0.5519073009490967,
+      -0.6458026170730591
+    ]
+  ],
+  "elapsed_seconds": 17.533024549484253,
+  "final": {
+    "centroid_task0": 17.600000381469727,
+    "centroid_task1": 21.899999618530273,
+    "centroid_generalist": 17.600000381469727,
+    "centroid_mean_over_tasks": 19.75
+  },
+  "best_generalist": {
+    "generation": 5,
+    "score": 17.600000381469727,
+    "task0": 17.600000381469727,
+    "task1": 21.899999618530273
+  },
+  "final_solves_all_tasks": false,
+  "env_steps": 144000,
+  "env_steps_per_generation": 24000
+}

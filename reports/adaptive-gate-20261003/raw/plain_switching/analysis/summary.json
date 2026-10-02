@@ -1,0 +1,61 @@
+{
+  "analysis_version": 1,
+  "method": "ga",
+  "profile": "adaptive-gate-switching",
+  "condition": "switching",
+  "seed": 3001,
+  "trial": 3002,
+  "agent_source": "centroid",
+  "episodes": 10,
+  "eval_seed": 903001,
+  "num_phases": 2,
+  "phase_sequence": [
+    0,
+    1
+  ],
+  "nominal_training_steps": 144000,
+  "steps_per_update": 24000,
+  "metrics": {
+    "learning_accuracy": 93.6,
+    "forgetting": 153.1,
+    "zero_shot_transfer": 9.8,
+    "learning_minus_forgetting": -59.5,
+    "cumulative_reward_steps": 5487600.025177002,
+    "cumulative_reward_generation_equivalents": 228.65000104904175,
+    "cumulative_reward_steps_exact": 5487600.025177002,
+    "normalized_curve_average": 0.07621666701634724
+  },
+  "phase_returns": [
+    {
+      "phase": 0,
+      "task": 0,
+      "checkpoint_completed_steps": 72000,
+      "own_mean": 167.1,
+      "previous_mean": null,
+      "next_mean": 9.8
+    },
+    {
+      "phase": 1,
+      "task": 1,
+      "checkpoint_completed_steps": 144000,
+      "own_mean": 20.1,
+      "previous_mean": 14.0,
+      "next_mean": null
+    }
+  ],
+  "phase_training_returns": [
+    57.26666673024496,
+    21.066666920979817
+  ],
+  "clock": {
+    "record_timing": "after_update",
+    "raw_generation_labels": "zero_based",
+    "completed_steps": "(generation + 1) * steps_per_update",
+    "integration": "pinned_unit_NE_generation_grid_trapezoid",
+    "reference_steps_per_generation": 24000,
+    "integration_grid_points": 7,
+    "edge_values": "constant_first_and_last_logged_return",
+    "initial_untrained_policy_evaluated": false
+  },
+  "transfer_interpretation": "consecutive_switches_including_both_directions"
+}

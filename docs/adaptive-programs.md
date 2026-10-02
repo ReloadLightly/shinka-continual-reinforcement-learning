@@ -227,3 +227,47 @@ exported. The main implementation risks are patching the wrong factory binding,
 using stored losses instead of current fitness, confusing next width with used
 width, hiding invalid outputs through clipping, or merging distinct algorithms
 under the same upstream method label.
+
+## 8. Diagnostic protocol and next handoff
+
+The seven-trial gate uses two phases of three generations, population 16, three
+training episodes per member, and a 500-step episode cap. Each trial therefore
+allocates 144,000 nominal training steps; the suite allocates 1,008,000. Saved
+phase policies receive ten fresh episodes for each native evaluation target,
+accounted separately from training. Execution uses two logical CPUs and the
+existing frozen numerical thread environment.
+
+| Condition | Programs or methods |
+| :--- | :--- |
+| Stationary | Plain GA; identity adapter |
+| Switching | Plain GA; identity; halving with memory counter; arithmetic rule; native FocusGA |
+
+The six GA-wrapper runs save every generation's full evaluated population using
+the native diagnostic snapshot option. It reconstructs `ask` with the same
+pre-update state and key, without additional environment evaluation. Host traces
+save initialization and every completed native state. The independent NumPy
+verifier compares numerical values, shapes, and dtypes, and publishes semantic
+array hashes. Large binary arrays remain local. FocusGA runs directly through
+the unchanged native entry point; its centroid accounting is checked against
+resolved settings and pinned source rather than a population snapshot.
+
+The source snapshot is
+[`e28db07`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/e28db07).
+Replay instructions are in the [task runbook](../tasks/cartpole_adaptive/README.md).
+Use fresh output directories; source and artifact guards prevent silently
+reinterpreting earlier evidence under changed code.
+
+After this implementation gate, the next handoff is a frozen adaptive selection
+evaluator: compute both objective terms from verified training and fresh
+checkpoint evidence, allocate new search and validation partitions, and include
+those identities in the canonical-AST cache key. Exercise the fixed controls and
+one verified cache hit before starting the staged adaptive Shinka archive.
+The identity gate establishes implementation correctness, not a performance
+ranking or a discovered learning rule.
+
+**Observed gate outcome:** all seven trials and 19 independent numerical checks
+passed in 238.58 seconds. Both identity conditions match exactly; the halving
+rule changes the next offspring, and its memory survives the task switch.
+The arithmetic rule and native FocusGA completed with their declared settings.
+See [raw evidence and receipts](../reports/adaptive-gate-20261003/summary.json)
+and [Table 12 / Figure 5](../README.md#executable-adaptive-rule-verification).

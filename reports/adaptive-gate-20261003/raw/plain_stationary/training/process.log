@@ -1,0 +1,16 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1 | noncontinual | trial 3002
+  environment    : CartPole-v1
+  schedule       : task0, 1 sub-tasks
+  matched budget : 4.608e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  ne overrides   : ['population_snapshot_interval=1', 'snapshot_members=0'] []
+  seed           : 3001
+  boundary info  : none
+  output         : $RUN/plain_stationary/training
+======================================================================
+  gen     0 task= 0 train=   16.4 t0=  113.5 gen'ist=  113.5
+  gen     5 task= 0 train=   31.4 t0=  119.1 gen'ist=  119.1
+  wrote $RUN/plain_stationary/training
+
+Done. $RUN/plain_stationary/training

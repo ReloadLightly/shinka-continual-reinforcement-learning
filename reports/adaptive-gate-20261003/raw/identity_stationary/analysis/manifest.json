@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "episodes": 10,
+  "eval_seed": 903001,
+  "command": [
+    "$REPO_ROOT/.upstream/continual_neuroevolution/.venv/bin/python",
+    "$REPO_ROOT/.upstream/continual_neuroevolution/scripts/analysis/evaluate_continual.py",
+    "--root",
+    "$RUN/identity_stationary/analysis/evaluation-input",
+    "--episodes",
+    "10",
+    "--seed",
+    "903001"
+  ],
+  "training_run": "$RUN/identity_stationary/training",
+  "input_sha256": {
+    "manifest.json": "b9389aa99db89326cdd18b031bc167621df06a773957379b4db31801fb87644e",
+    "results.json": "432ea5c529a1de258887c7abe3352410560d2116f46f7425831c9f4b493a4561",
+    "config.json": "889f72732017d2c96c6c238250b1492799cd59676ac5c94604239ba32c5e26c4",
+    "training_metrics.json": "a4528c4c7e7fb5151ad9d3a1a6f7e0b4c66ca9147bc87cbe8f02eb0693559151",
+    "checkpoints.npz": "1aef6ac818f85c39ffc73c05a4a392e87015654d9e03d5b493beacdabd54bdc8"
+  },
+  "analysis_source_sha256": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+  "upstream_source_sha256": {
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b"
+  },
+  "jax_platforms": "cpu",
+  "python_version": "Python 3.11.15",
+  "output_sha256": {
+    "evaluation.json": "b29bbbe8130b53b088a6011b218e06d93b52ab3ada21f54bc7e58ed4a5b4e0bd",
+    "checkpoint-metadata.json": "88c252400d8aaef5bba3ab3dfdec17cd4d6a2e6793cfe22c3e59a4b70d8a92fa",
+    "summary.json": "a21b6d12d365be848d988fc1679b43884578e2ce0fcd43ad7642bdcf3141b1fc",
+    "process.log": "5805c5332a078f627c0f40e67b89d285b65548855806c793df28dcdd37c8b00e",
+    "evaluation-input/results.json": "432ea5c529a1de258887c7abe3352410560d2116f46f7425831c9f4b493a4561",
+    "evaluation-input/checkpoints.npz": "1aef6ac818f85c39ffc73c05a4a392e87015654d9e03d5b493beacdabd54bdc8"
+  },
+  "wall_seconds": 8.55889170896262
+}

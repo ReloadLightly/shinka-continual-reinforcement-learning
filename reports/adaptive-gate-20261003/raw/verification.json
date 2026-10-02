@@ -1,0 +1,2401 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "suite_projection_sha256": "6082b4c120947f6754f185a4e9bf0146ae2c0a7fd10c1222eb42abcaf28041c7",
+  "suite_projection_excluded_fields": [
+    "verification",
+    "finished_at",
+    "wall_seconds"
+  ],
+  "checker_sha256": "a054fc66e6c3d75fd307043c9648d5ca4f464c1a516ab4dc509198f79026fc87",
+  "support_source_sha256": {
+    "src/shinka_crl/adaptive.py": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c",
+    "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d"
+  },
+  "comparison": "exact shape/dtype/numerical equality; no compressed-file equality claim",
+  "array_hash": "SHA256(canonical JSON shape/dtype + newline + C-order value bytes)",
+  "checks": [
+    {
+      "name": "plain_stationary: native states, source identity, next-width logging",
+      "passed": true
+    },
+    {
+      "name": "plain_stationary: budget, task schedule, saved arrays, and fresh evaluation",
+      "passed": true,
+      "nominal_training_steps": 144000,
+      "posthoc_evaluation_episodes": 120
+    },
+    {
+      "name": "identity_stationary: native states, source identity, next-width logging",
+      "passed": true
+    },
+    {
+      "name": "identity_stationary: budget, task schedule, saved arrays, and fresh evaluation",
+      "passed": true,
+      "nominal_training_steps": 144000,
+      "posthoc_evaluation_episodes": 120
+    },
+    {
+      "name": "plain_switching: native states, source identity, next-width logging",
+      "passed": true
+    },
+    {
+      "name": "plain_switching: budget, task schedule, saved arrays, and fresh evaluation",
+      "passed": true,
+      "nominal_training_steps": 144000,
+      "posthoc_evaluation_episodes": 120
+    },
+    {
+      "name": "identity_switching: native states, source identity, next-width logging",
+      "passed": true
+    },
+    {
+      "name": "identity_switching: budget, task schedule, saved arrays, and fresh evaluation",
+      "passed": true,
+      "nominal_training_steps": 144000,
+      "posthoc_evaluation_episodes": 120
+    },
+    {
+      "name": "halving_switching: native states, source identity, next-width logging",
+      "passed": true
+    },
+    {
+      "name": "halving_switching: budget, task schedule, saved arrays, and fresh evaluation",
+      "passed": true,
+      "nominal_training_steps": 144000,
+      "posthoc_evaluation_episodes": 120
+    },
+    {
+      "name": "arithmetic_switching: native states, source identity, next-width logging",
+      "passed": true
+    },
+    {
+      "name": "arithmetic_switching: budget, task schedule, saved arrays, and fresh evaluation",
+      "passed": true,
+      "nominal_training_steps": 144000,
+      "posthoc_evaluation_episodes": 120
+    },
+    {
+      "name": "focus_switching: budget, task schedule, saved arrays, and fresh evaluation",
+      "passed": true,
+      "nominal_training_steps": 144000,
+      "posthoc_evaluation_episodes": 120
+    },
+    {
+      "name": "identity_stationary: exact native initialization, six updates, populations, checkpoints, complete raw metrics, and fresh episode returns",
+      "passed": true,
+      "states_compared": 7,
+      "snapshot_arrays_compared": 6,
+      "checkpoint_arrays_compared": 4
+    },
+    {
+      "name": "identity_switching: exact native initialization, six updates, populations, checkpoints, complete raw metrics, and fresh episode returns",
+      "passed": true,
+      "states_compared": 7,
+      "snapshot_arrays_compared": 6,
+      "checkpoint_arrays_compared": 4
+    },
+    {
+      "name": "halving: memory persists across switch and width changes the next population",
+      "passed": true,
+      "sigma_used": [
+        0.5,
+        0.25,
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625
+      ],
+      "sigma_next": [
+        0.25,
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625,
+        0.0078125
+      ],
+      "parent_reconstruction_max_absolute_error": 1.1920928955078125e-07,
+      "parent_reconstruction_tolerance": 2e-06
+    },
+    {
+      "name": "arithmetic: finite bounded executable updates and unchanged memory",
+      "passed": true,
+      "sigma_used": [
+        0.5,
+        0.4876549541950226,
+        0.5,
+        0.4876549541950226,
+        0.46970653533935547,
+        0.45810943841934204
+      ],
+      "sigma_next": [
+        0.4876549541950226,
+        0.5,
+        0.4876549541950226,
+        0.46970653533935547,
+        0.45810943841934204,
+        0.4467986822128296
+      ]
+    },
+    {
+      "name": "FocusGA: true method identity, explicit settings, and fixed budget",
+      "passed": true,
+      "offspring": 7,
+      "rescored_archive": 8,
+      "training_centroid": 1,
+      "population": 16,
+      "centroid_accounting": "Native source and resolved configuration; no Focus population snapshot"
+    },
+    {
+      "name": "all switching controls share task draws and nominal training budget",
+      "passed": true
+    }
+  ],
+  "trials": [
+    {
+      "id": "plain_stationary",
+      "input_sha256": {
+        "training/manifest.json": "d833b5792115263ddfbe581cd42de07d57ebe717682037636de9c7c25e993cac",
+        "training/results.json": "2d2dbfea11c11c68c7d89a3be006917d7af332ad3e30f57371955b205f3d0661",
+        "training/config.json": "889f72732017d2c96c6c238250b1492799cd59676ac5c94604239ba32c5e26c4",
+        "training/training_metrics.json": "a4528c4c7e7fb5151ad9d3a1a6f7e0b4c66ca9147bc87cbe8f02eb0693559151",
+        "training/trajectory.npz": "f0c5353a21d4ac127377ee2fdbf3f3e986e58b67eeb9c967cd614b09edac578b",
+        "training/checkpoints.npz": "1aef6ac818f85c39ffc73c05a4a392e87015654d9e03d5b493beacdabd54bdc8",
+        "analysis/manifest.json": "ad405e52d24025547de3c2ddd0c13c4ad0e5c9de7b54fa77e04b80fc3c11812a",
+        "analysis/evaluation.json": "b29bbbe8130b53b088a6011b218e06d93b52ab3ada21f54bc7e58ed4a5b4e0bd",
+        "analysis/checkpoint-metadata.json": "88c252400d8aaef5bba3ab3dfdec17cd4d6a2e6793cfe22c3e59a4b70d8a92fa",
+        "analysis/summary.json": "a21b6d12d365be848d988fc1679b43884578e2ce0fcd43ad7642bdcf3141b1fc",
+        "training/adapter-trace/manifest.json": "253a089a16302258f1645d44cf4b6564e8f91c89e18c7a179e250c3d7051e2f6"
+      },
+      "array_receipts": {
+        "trajectory": {
+          "centroids": {
+            "shape": [
+              6,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "bce8ce5e599a797522ebdc6611053ad734a0cb1589fbb9f478a57a57da7dc029"
+          },
+          "generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "noise_vectors": {
+            "shape": [
+              1,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "e8a72b1d25403e1a908da55a45b8154f520eeb21e277d77d7df5d5f86c94a7ba"
+          },
+          "population_generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "population_tasks": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "2fd6694a24c3bb69070546357487badffc6040417042dc58a959756f28686cbc"
+          },
+          "populations": {
+            "shape": [
+              6,
+              16,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "bdaef6b008510808a29b2693339c73fd530c3c39fa71773afaa1e64a6340bd9d"
+          }
+        },
+        "checkpoints": {
+          "centroid": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "d9e1651f38fec4d260ca45197133ff9bfdb7a9ad2e8df3e4466d0379f8232f43"
+          },
+          "finalgen": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "4ebe2691e60c0838c9ee461695845f11c35124f0e18a1449231bd062302e5b26"
+          },
+          "incumbent": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "4ebe2691e60c0838c9ee461695845f11c35124f0e18a1449231bd062302e5b26"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "4aa22be58169db305136220c332eef2dce904c767a7aa8fa34a59f0108c66a3a"
+          }
+        },
+        "states": {
+          "state_0000.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8e0c1fa8b47569ce080d64c769a9d3124b1b45a7544025612202782521b4c7bd"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "a7a21c69e654b96f993179c019737b8b64190533f9ae6f10f94c98610c9a5a6d"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "83261e0da7cb3f596dd065100faab5e1194491b7c9847e862aee59ab6fa32b72"
+            },
+            "init_key": {
+              "shape": [
+                2
+              ],
+              "dtype": "<u4",
+              "semantic_sha256": "57d8ecde71c42400ac5842ae890e729f360eeb16140de947e8f9d8d894145040"
+            },
+            "initial_mean": {
+              "shape": [
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "7ac6d9e46655406b8eafb549e34eafc4108db5beba705d33a99857856cab39fb"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0001.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "5dbe9d469b4ff399057eb0f276dcca2b0b4d4fa851a359a9cd462d694d77ae0b"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "2707fa2a1d5b0056f060591d1481b3d23e617ee375fa07b48e34d3b9da8fa825"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "65da6b4702f5e6ee9ea0b07bc26d44b173735e66d70c370884e1302b44449406"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0002.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8976a559d661e2ba5635dfb99f35b4f3fb745553f0c0f17873d10b727deb2aa1"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e544f1a5831909dd62e6137d47fa7b9abf33d97138c37e5d39acc52cf2fac9bf"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "48b2aa6e19f2bdfefba507751893e54a84538ac33986ed1fb5e34c739d196e50"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0003.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e852a4dd07df4a8d6f26730cd4fdaa7ac68aba694607eed6a37eb8da1ee8eda7"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "b76aa2db9bc53345be4e354458cad811e3048fbd245082d92827e3760033e3d7"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "1a9967794a0f51ee0844afe769d531f8acb08900c48761a95200ddb7c5fac7b6"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0004.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "79cac815c684665cde120ec681c464210d7820099961c98958a07da9460f3a9e"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "fb36aaf3bf97793e5e1c0f8df4ae848d81d8f2ffe4e9d8b26b4cebaf35868831"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "854dac542d0dfaff79a1e643459173e0d7d126faee7e6e0d39ccbdf21cd947c9"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0005.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "2da44391cca57dbe8187bea95b9e33903bc611bcd360ce75d471582ea55faa09"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "d9c33467338d8142abea5f9d0609e7c5bccb2123b33e6e094f2aea72de076de3"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "cecb066a2cacce3af73601a330728fcc4e17eb642e39bb39cfbb5e8546de5d0d"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0006.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "3ac243129d7ac6a68f5e3f3ca39cadcd58d9fddfbb14783b1825fbcbac376d79"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "d6c31d8365a0e14b5743d6af0f802a88fa7bf6cd940bffe616b925a79e8ac35e"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "563beda2af0d29cffca95e0e632c162b4a0bfb392da68b7124d56862b01fa5dd"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "identity_stationary",
+      "input_sha256": {
+        "training/manifest.json": "b9389aa99db89326cdd18b031bc167621df06a773957379b4db31801fb87644e",
+        "training/results.json": "432ea5c529a1de258887c7abe3352410560d2116f46f7425831c9f4b493a4561",
+        "training/config.json": "889f72732017d2c96c6c238250b1492799cd59676ac5c94604239ba32c5e26c4",
+        "training/training_metrics.json": "a4528c4c7e7fb5151ad9d3a1a6f7e0b4c66ca9147bc87cbe8f02eb0693559151",
+        "training/trajectory.npz": "f0c5353a21d4ac127377ee2fdbf3f3e986e58b67eeb9c967cd614b09edac578b",
+        "training/checkpoints.npz": "1aef6ac818f85c39ffc73c05a4a392e87015654d9e03d5b493beacdabd54bdc8",
+        "analysis/manifest.json": "4f5cda97e1d8e203148af2ca1f6bff85d07c22eb448c3a8fec320a79a8b05134",
+        "analysis/evaluation.json": "b29bbbe8130b53b088a6011b218e06d93b52ab3ada21f54bc7e58ed4a5b4e0bd",
+        "analysis/checkpoint-metadata.json": "88c252400d8aaef5bba3ab3dfdec17cd4d6a2e6793cfe22c3e59a4b70d8a92fa",
+        "analysis/summary.json": "a21b6d12d365be848d988fc1679b43884578e2ce0fcd43ad7642bdcf3141b1fc",
+        "training/adapter-trace/manifest.json": "322a3ab63ead13e8da3409db3144f1c762c8f65cf26fe3788d25563ee0f3ad59"
+      },
+      "array_receipts": {
+        "trajectory": {
+          "centroids": {
+            "shape": [
+              6,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "bce8ce5e599a797522ebdc6611053ad734a0cb1589fbb9f478a57a57da7dc029"
+          },
+          "generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "noise_vectors": {
+            "shape": [
+              1,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "e8a72b1d25403e1a908da55a45b8154f520eeb21e277d77d7df5d5f86c94a7ba"
+          },
+          "population_generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "population_tasks": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "2fd6694a24c3bb69070546357487badffc6040417042dc58a959756f28686cbc"
+          },
+          "populations": {
+            "shape": [
+              6,
+              16,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "bdaef6b008510808a29b2693339c73fd530c3c39fa71773afaa1e64a6340bd9d"
+          }
+        },
+        "checkpoints": {
+          "centroid": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "d9e1651f38fec4d260ca45197133ff9bfdb7a9ad2e8df3e4466d0379f8232f43"
+          },
+          "finalgen": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "4ebe2691e60c0838c9ee461695845f11c35124f0e18a1449231bd062302e5b26"
+          },
+          "incumbent": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "4ebe2691e60c0838c9ee461695845f11c35124f0e18a1449231bd062302e5b26"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "4aa22be58169db305136220c332eef2dce904c767a7aa8fa34a59f0108c66a3a"
+          }
+        },
+        "states": {
+          "state_0000.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8e0c1fa8b47569ce080d64c769a9d3124b1b45a7544025612202782521b4c7bd"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "a7a21c69e654b96f993179c019737b8b64190533f9ae6f10f94c98610c9a5a6d"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "83261e0da7cb3f596dd065100faab5e1194491b7c9847e862aee59ab6fa32b72"
+            },
+            "init_key": {
+              "shape": [
+                2
+              ],
+              "dtype": "<u4",
+              "semantic_sha256": "57d8ecde71c42400ac5842ae890e729f360eeb16140de947e8f9d8d894145040"
+            },
+            "initial_mean": {
+              "shape": [
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "7ac6d9e46655406b8eafb549e34eafc4108db5beba705d33a99857856cab39fb"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0001.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "5dbe9d469b4ff399057eb0f276dcca2b0b4d4fa851a359a9cd462d694d77ae0b"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "2707fa2a1d5b0056f060591d1481b3d23e617ee375fa07b48e34d3b9da8fa825"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "65da6b4702f5e6ee9ea0b07bc26d44b173735e66d70c370884e1302b44449406"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0002.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8976a559d661e2ba5635dfb99f35b4f3fb745553f0c0f17873d10b727deb2aa1"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e544f1a5831909dd62e6137d47fa7b9abf33d97138c37e5d39acc52cf2fac9bf"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "48b2aa6e19f2bdfefba507751893e54a84538ac33986ed1fb5e34c739d196e50"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0003.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e852a4dd07df4a8d6f26730cd4fdaa7ac68aba694607eed6a37eb8da1ee8eda7"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "b76aa2db9bc53345be4e354458cad811e3048fbd245082d92827e3760033e3d7"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "1a9967794a0f51ee0844afe769d531f8acb08900c48761a95200ddb7c5fac7b6"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0004.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "79cac815c684665cde120ec681c464210d7820099961c98958a07da9460f3a9e"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "fb36aaf3bf97793e5e1c0f8df4ae848d81d8f2ffe4e9d8b26b4cebaf35868831"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "854dac542d0dfaff79a1e643459173e0d7d126faee7e6e0d39ccbdf21cd947c9"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0005.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "2da44391cca57dbe8187bea95b9e33903bc611bcd360ce75d471582ea55faa09"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "d9c33467338d8142abea5f9d0609e7c5bccb2123b33e6e094f2aea72de076de3"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "cecb066a2cacce3af73601a330728fcc4e17eb642e39bb39cfbb5e8546de5d0d"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0006.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "3ac243129d7ac6a68f5e3f3ca39cadcd58d9fddfbb14783b1825fbcbac376d79"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "d6c31d8365a0e14b5743d6af0f802a88fa7bf6cd940bffe616b925a79e8ac35e"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "563beda2af0d29cffca95e0e632c162b4a0bfb392da68b7124d56862b01fa5dd"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "plain_switching",
+      "input_sha256": {
+        "training/manifest.json": "035cbcfba2dfc83e74fee9aa5ae8397196ffa2870a1ed7874908f63b4b0bab35",
+        "training/results.json": "92f420a3413f08bb059e0d509016a9ee6826b5350f2df1c8db36c527c1987a97",
+        "training/config.json": "88a2ebf9ee5813767b0d9b6ec108ea5f9d65431483e3b7c6286920080c45a5c7",
+        "training/training_metrics.json": "c9162d7af17b3d6b18ab1c2285b3a6dc35598d9dc449f67c12b30c2c9509f67b",
+        "training/trajectory.npz": "0339682159eb50a0748c2a05b93a585b6895012b01c19d6058cd7791ec8f81ee",
+        "training/checkpoints.npz": "1a2b2f599413adaf0a1e1714cff8df8d87a2c7ea4ad4e476a5d0a0c2c29f43ed",
+        "analysis/manifest.json": "d1194efc31c76a4ab19e44cca5d8f98ee9f5c39a1ac9e12ea50546465076c8ea",
+        "analysis/evaluation.json": "38b22785715c15b51b67e10660cd4a740c22085e9e549901a4497b94648214f9",
+        "analysis/checkpoint-metadata.json": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+        "analysis/summary.json": "6d195cf1120d6fb9b182cee6a6142e227aa5472bd905c01187273728aa6448a3",
+        "training/adapter-trace/manifest.json": "f6d47eef59cd9fa7841059b09f9ca484074584497f6a6db8e32900745b19d7d4"
+      },
+      "array_receipts": {
+        "trajectory": {
+          "centroids": {
+            "shape": [
+              6,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "419d09a38d1cc9233fa194a5a4582989acd6fa0424ea48ea186ccfd65f75ee39"
+          },
+          "generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          },
+          "population_generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "population_tasks": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "5aa8d039dc076989de72480a6cae230fcb6fdeccee15e5ef6c5c34ec5dbb13cc"
+          },
+          "populations": {
+            "shape": [
+              6,
+              16,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "a6b874188a517153bc350855e98c02d600e3280f22da886f7b76a356e2b17d8a"
+          }
+        },
+        "checkpoints": {
+          "centroid": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "a7fe1762d0dbe2e9b6d14fd82fa1d0a4f30ad893ebd54259ba39d09f9e7c0f3e"
+          },
+          "finalgen": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "9233b6f0ce1a0dd19604fb8f3fbc4fc09c9c634aea14446f6c01ff77352a6519"
+          },
+          "incumbent": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "9233b6f0ce1a0dd19604fb8f3fbc4fc09c9c634aea14446f6c01ff77352a6519"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          }
+        },
+        "states": {
+          "state_0000.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8e0c1fa8b47569ce080d64c769a9d3124b1b45a7544025612202782521b4c7bd"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "a7a21c69e654b96f993179c019737b8b64190533f9ae6f10f94c98610c9a5a6d"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "83261e0da7cb3f596dd065100faab5e1194491b7c9847e862aee59ab6fa32b72"
+            },
+            "init_key": {
+              "shape": [
+                2
+              ],
+              "dtype": "<u4",
+              "semantic_sha256": "57d8ecde71c42400ac5842ae890e729f360eeb16140de947e8f9d8d894145040"
+            },
+            "initial_mean": {
+              "shape": [
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "7ac6d9e46655406b8eafb549e34eafc4108db5beba705d33a99857856cab39fb"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0001.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "5dbe9d469b4ff399057eb0f276dcca2b0b4d4fa851a359a9cd462d694d77ae0b"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "2707fa2a1d5b0056f060591d1481b3d23e617ee375fa07b48e34d3b9da8fa825"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "65da6b4702f5e6ee9ea0b07bc26d44b173735e66d70c370884e1302b44449406"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0002.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8976a559d661e2ba5635dfb99f35b4f3fb745553f0c0f17873d10b727deb2aa1"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e544f1a5831909dd62e6137d47fa7b9abf33d97138c37e5d39acc52cf2fac9bf"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "48b2aa6e19f2bdfefba507751893e54a84538ac33986ed1fb5e34c739d196e50"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0003.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e852a4dd07df4a8d6f26730cd4fdaa7ac68aba694607eed6a37eb8da1ee8eda7"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "b76aa2db9bc53345be4e354458cad811e3048fbd245082d92827e3760033e3d7"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "1a9967794a0f51ee0844afe769d531f8acb08900c48761a95200ddb7c5fac7b6"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0004.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "da86e0c4c873ccf57bf6d25775c674a8acbbacc3ecdf223b979775864c4748ff"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "27a48807a24911d37e8f2d9b2d42eb7480be2fae737704064f0b1db32357a3aa"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "854dac542d0dfaff79a1e643459173e0d7d126faee7e6e0d39ccbdf21cd947c9"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0005.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "956bafbb444bd917a815cd212a917fe4dea09ba7b4dedc72596ab099ed973c65"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "ea22c3d3cada8104d667aa6f69c980fe4378509fac7eb76d6e312b134dc3dbd0"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "cecb066a2cacce3af73601a330728fcc4e17eb642e39bb39cfbb5e8546de5d0d"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0006.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "70181a7dba3dadd2becdada1141accbca89def137e7c570521ac71add459cf24"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8ced8721f46cc0858afe6b94628fcb465a02400c46afaa160152f426db73a8f3"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "563beda2af0d29cffca95e0e632c162b4a0bfb392da68b7124d56862b01fa5dd"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "identity_switching",
+      "input_sha256": {
+        "training/manifest.json": "7069b62452e2dba4c259ffaba791cca97fc6b2f10e99806841d926899daea1a6",
+        "training/results.json": "305d7d9e8c2666bde4737ede785ab5ef49cd1f28dee4155bdd9f615cb43f8fee",
+        "training/config.json": "88a2ebf9ee5813767b0d9b6ec108ea5f9d65431483e3b7c6286920080c45a5c7",
+        "training/training_metrics.json": "c9162d7af17b3d6b18ab1c2285b3a6dc35598d9dc449f67c12b30c2c9509f67b",
+        "training/trajectory.npz": "0339682159eb50a0748c2a05b93a585b6895012b01c19d6058cd7791ec8f81ee",
+        "training/checkpoints.npz": "1a2b2f599413adaf0a1e1714cff8df8d87a2c7ea4ad4e476a5d0a0c2c29f43ed",
+        "analysis/manifest.json": "f1a2b8d56288c86c4d3366c12d4ec464fb09f9439dfd301d372e6f030aec5757",
+        "analysis/evaluation.json": "38b22785715c15b51b67e10660cd4a740c22085e9e549901a4497b94648214f9",
+        "analysis/checkpoint-metadata.json": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+        "analysis/summary.json": "6d195cf1120d6fb9b182cee6a6142e227aa5472bd905c01187273728aa6448a3",
+        "training/adapter-trace/manifest.json": "4cdf69a8593ce637d5ee927704a6ec2328f954178d5a5053e9df20dab3915b36"
+      },
+      "array_receipts": {
+        "trajectory": {
+          "centroids": {
+            "shape": [
+              6,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "419d09a38d1cc9233fa194a5a4582989acd6fa0424ea48ea186ccfd65f75ee39"
+          },
+          "generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          },
+          "population_generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "population_tasks": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "5aa8d039dc076989de72480a6cae230fcb6fdeccee15e5ef6c5c34ec5dbb13cc"
+          },
+          "populations": {
+            "shape": [
+              6,
+              16,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "a6b874188a517153bc350855e98c02d600e3280f22da886f7b76a356e2b17d8a"
+          }
+        },
+        "checkpoints": {
+          "centroid": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "a7fe1762d0dbe2e9b6d14fd82fa1d0a4f30ad893ebd54259ba39d09f9e7c0f3e"
+          },
+          "finalgen": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "9233b6f0ce1a0dd19604fb8f3fbc4fc09c9c634aea14446f6c01ff77352a6519"
+          },
+          "incumbent": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "9233b6f0ce1a0dd19604fb8f3fbc4fc09c9c634aea14446f6c01ff77352a6519"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          }
+        },
+        "states": {
+          "state_0000.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8e0c1fa8b47569ce080d64c769a9d3124b1b45a7544025612202782521b4c7bd"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "a7a21c69e654b96f993179c019737b8b64190533f9ae6f10f94c98610c9a5a6d"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "83261e0da7cb3f596dd065100faab5e1194491b7c9847e862aee59ab6fa32b72"
+            },
+            "init_key": {
+              "shape": [
+                2
+              ],
+              "dtype": "<u4",
+              "semantic_sha256": "57d8ecde71c42400ac5842ae890e729f360eeb16140de947e8f9d8d894145040"
+            },
+            "initial_mean": {
+              "shape": [
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "7ac6d9e46655406b8eafb549e34eafc4108db5beba705d33a99857856cab39fb"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0001.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "5dbe9d469b4ff399057eb0f276dcca2b0b4d4fa851a359a9cd462d694d77ae0b"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "2707fa2a1d5b0056f060591d1481b3d23e617ee375fa07b48e34d3b9da8fa825"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "65da6b4702f5e6ee9ea0b07bc26d44b173735e66d70c370884e1302b44449406"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0002.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8976a559d661e2ba5635dfb99f35b4f3fb745553f0c0f17873d10b727deb2aa1"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e544f1a5831909dd62e6137d47fa7b9abf33d97138c37e5d39acc52cf2fac9bf"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "48b2aa6e19f2bdfefba507751893e54a84538ac33986ed1fb5e34c739d196e50"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0003.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e852a4dd07df4a8d6f26730cd4fdaa7ac68aba694607eed6a37eb8da1ee8eda7"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "b76aa2db9bc53345be4e354458cad811e3048fbd245082d92827e3760033e3d7"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "1a9967794a0f51ee0844afe769d531f8acb08900c48761a95200ddb7c5fac7b6"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0004.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "da86e0c4c873ccf57bf6d25775c674a8acbbacc3ecdf223b979775864c4748ff"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "27a48807a24911d37e8f2d9b2d42eb7480be2fae737704064f0b1db32357a3aa"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "854dac542d0dfaff79a1e643459173e0d7d126faee7e6e0d39ccbdf21cd947c9"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0005.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "956bafbb444bd917a815cd212a917fe4dea09ba7b4dedc72596ab099ed973c65"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "ea22c3d3cada8104d667aa6f69c980fe4378509fac7eb76d6e312b134dc3dbd0"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "cecb066a2cacce3af73601a330728fcc4e17eb642e39bb39cfbb5e8546de5d0d"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0006.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "70181a7dba3dadd2becdada1141accbca89def137e7c570521ac71add459cf24"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8ced8721f46cc0858afe6b94628fcb465a02400c46afaa160152f426db73a8f3"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "563beda2af0d29cffca95e0e632c162b4a0bfb392da68b7124d56862b01fa5dd"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "halving_switching",
+      "input_sha256": {
+        "training/manifest.json": "d099c455249a38cc5eca01de52b961ea4df311bd24358adfd33ad96309815bc5",
+        "training/results.json": "226ccdf7c046bebad95a9e90d28a620ad6286a0d33ad7bb0d95f8ccd1816e76d",
+        "training/config.json": "88a2ebf9ee5813767b0d9b6ec108ea5f9d65431483e3b7c6286920080c45a5c7",
+        "training/training_metrics.json": "1a1e9f241ba8a7726dadf99c5de6b755af00e18595c86f19d9d0956c3fc5a93d",
+        "training/trajectory.npz": "a50ccddb022d7eb98fa5142b760149a57877d47ade55c1be3e6cd2aec0727d72",
+        "training/checkpoints.npz": "97ffc0ebf3c3bdc64fb6ee1e8e348870de06df840d12eea5dee54904e3aa68d6",
+        "analysis/manifest.json": "a753e7eb3fbfcf85c2e429e382fb089d168cb102285bd9c7ce91c63bebf13139",
+        "analysis/evaluation.json": "026e082866a0a85d79f511cfc9de0f6c12a66d202249ec113eed1b4a2682286f",
+        "analysis/checkpoint-metadata.json": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+        "analysis/summary.json": "b141a7a8114e8bd908f0206ac6d9a46a22d78645cb3b114a276250dc9531e73e",
+        "training/adapter-trace/manifest.json": "8e51a2467311dc8148c1575f0561c0b2c8c49b9e67d051b0f1e4772ca1dea85d"
+      },
+      "array_receipts": {
+        "trajectory": {
+          "centroids": {
+            "shape": [
+              6,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "5b7e482c4e0ee2ec8fc9b1d16812d8099c60bc23b99b4075ecfd69816376492f"
+          },
+          "generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          },
+          "population_generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "population_tasks": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "5aa8d039dc076989de72480a6cae230fcb6fdeccee15e5ef6c5c34ec5dbb13cc"
+          },
+          "populations": {
+            "shape": [
+              6,
+              16,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "f6abe6242aaa24e2fd9c0a48bf3248e7b987d319fe77cb66f7544242abd1171a"
+          }
+        },
+        "checkpoints": {
+          "centroid": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "0ed6703a1cfa482322edca5696a07b059eb1dc93638dca27ffd79c1013eb0019"
+          },
+          "finalgen": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "2e4214c0e665ec29d4eb4384b361a7047b2459d849c20b15e8e2a7c92f1f0dec"
+          },
+          "incumbent": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "2e4214c0e665ec29d4eb4384b361a7047b2459d849c20b15e8e2a7c92f1f0dec"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          }
+        },
+        "states": {
+          "state_0000.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8e0c1fa8b47569ce080d64c769a9d3124b1b45a7544025612202782521b4c7bd"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "a7a21c69e654b96f993179c019737b8b64190533f9ae6f10f94c98610c9a5a6d"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "83261e0da7cb3f596dd065100faab5e1194491b7c9847e862aee59ab6fa32b72"
+            },
+            "init_key": {
+              "shape": [
+                2
+              ],
+              "dtype": "<u4",
+              "semantic_sha256": "57d8ecde71c42400ac5842ae890e729f360eeb16140de947e8f9d8d894145040"
+            },
+            "initial_mean": {
+              "shape": [
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "7ac6d9e46655406b8eafb549e34eafc4108db5beba705d33a99857856cab39fb"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0001.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "5dbe9d469b4ff399057eb0f276dcca2b0b4d4fa851a359a9cd462d694d77ae0b"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "2707fa2a1d5b0056f060591d1481b3d23e617ee375fa07b48e34d3b9da8fa825"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "65da6b4702f5e6ee9ea0b07bc26d44b173735e66d70c370884e1302b44449406"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "35b3a5e943614af18ac0c433dbf00cf56cc55670760cbb7d05319096f6f886fe"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "3591c485adfa2d84ed21afe11b058d906231f78605e64b68fc499bb5421463fa"
+            }
+          },
+          "state_0002.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "003bac1e9f51ad3ffb0ad0e51d0f969252c9bd03f56063067e0189774704b4f8"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "c03a92a79e2c7839daeb87a1060b53b0bd4e594fbd0be031acbe1d6ff94e2562"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "48b2aa6e19f2bdfefba507751893e54a84538ac33986ed1fb5e34c739d196e50"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e82020120fe36ace718c754e06e55d22276e20e0b5d5fd61de359be9f4e14829"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "81aaed0c2b7bd8d71f44aad6c7a8e16edad1614609890f5fc49c4528c351a92e"
+            }
+          },
+          "state_0003.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "5b593dd20d7105456431b98699a3feee00fb1939c11ddb024d978ee8834f1d83"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "b13ac0c8ef6766be775390944e300644a5308c01224291cb603c12d115599fc2"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "1a9967794a0f51ee0844afe769d531f8acb08900c48761a95200ddb7c5fac7b6"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "4765d39f7980afb59673c597f02774d59b1564711a2f3b091f0a3ab8eb173a97"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "7f4b5d889dd6874b474bc6467f6d69bff1ed197424ffe7c983b4cd5e416c473a"
+            }
+          },
+          "state_0004.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "f51b44fceaad20c3405e9964f2b98f68000099fae54299d9bb7563f81cd3da6c"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "47deca4a51685eb40125f833eb63008093a9b175d7c5d5a684d9dc90edc8feaa"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "854dac542d0dfaff79a1e643459173e0d7d126faee7e6e0d39ccbdf21cd947c9"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "377991c4120470e58ac8e999274a9aaa9c41ef887fe37075a3994414c5d23227"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "29c12c4f14fc44d0b89ff499b7eb35e96723eb9c6384fc393cb01f9f2902e14c"
+            }
+          },
+          "state_0005.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "3b1290f2526783aaee71bdccb3d19903d96831682d6821fc708c8f5f207f72fb"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "cae4ada06a887a1090c3230da02de18c52813d8bc163dcaebef00018041d71b5"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "cecb066a2cacce3af73601a330728fcc4e17eb642e39bb39cfbb5e8546de5d0d"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "245a62eaaeccb0766503ccbd2ca22edbb680b8b88fb79e326f17ce4eed4a15b4"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "a2a6c465a623736d3cfea28df4dd98882f0d6482b1cf887ddfc774438716e05a"
+            }
+          },
+          "state_0006.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "745ba19c303ce6f27dbf78ca7eacde8bb4eb9e5d0bf6ef51ee1beaad57ff36e0"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "da649e1982fdf2245d6ffc5d18467060fc1a2c49e5b002839e8082c7f21da42e"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "563beda2af0d29cffca95e0e632c162b4a0bfb392da68b7124d56862b01fa5dd"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "75c7882b31aa4077b0b53fd92517c01127ecbe23c63f418bc074a41bcda8db3c"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "ef6a1ab128007994dff8e6e5d97dd441e38fda9a0b97b954965422582dadf63a"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "arithmetic_switching",
+      "input_sha256": {
+        "training/manifest.json": "cfc3a0b852941eb17bd7997e9c34df617e46896e16dacd5beba35f556866ec15",
+        "training/results.json": "1dbdb8c05fe1f7f28c5844c48374da9131619ea46d9ea25d9ac13a109c0bca8c",
+        "training/config.json": "88a2ebf9ee5813767b0d9b6ec108ea5f9d65431483e3b7c6286920080c45a5c7",
+        "training/training_metrics.json": "5db4f606b6529b9cd6ec5214de59191904688e14d26a09241c9d44995bafe5e1",
+        "training/trajectory.npz": "b9d034f182a38c1e20733c1bb233d2b8f2e398957b7d599e00cf2d020878ce6e",
+        "training/checkpoints.npz": "23894c74b8503175ba4ed0652162555bd1ef66b95910b71c72b832640267813e",
+        "analysis/manifest.json": "bd091cb2cbab8e2ee97e197e41c2a4daab42503c86f4f280b4246f7af7c54345",
+        "analysis/evaluation.json": "892f762bcd048a9f03f990e2227a34c9cc8e47bc4c3bab5ce90b586fb98a90d5",
+        "analysis/checkpoint-metadata.json": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+        "analysis/summary.json": "0ff9df37f2385dccfdb52783a4b1efa705f5c478e6d3a6e657bc124c560fceba",
+        "training/adapter-trace/manifest.json": "d92123cb3f027feb32e7d6aba2cd90ca720054f54cc96df4d797793723630b49"
+      },
+      "array_receipts": {
+        "trajectory": {
+          "centroids": {
+            "shape": [
+              6,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "0b6d42f1a2be382a6fd67a0f24d825ec2353455e11482edcea380b9e5d2caa90"
+          },
+          "generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          },
+          "population_generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "population_tasks": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "5aa8d039dc076989de72480a6cae230fcb6fdeccee15e5ef6c5c34ec5dbb13cc"
+          },
+          "populations": {
+            "shape": [
+              6,
+              16,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "33887dc0be7eee4cbdb374cc483a449687fdf1fb4a38a746632b31d406ab7747"
+          }
+        },
+        "checkpoints": {
+          "centroid": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "aab161c15b79e65d7c647f162e7fda4ebf9a9c017d80436819f1a5714291b49c"
+          },
+          "finalgen": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "5e8b7d0ac305383c2fa007b34524ae6736334eb6b45bc0624d1f6d5864af796a"
+          },
+          "incumbent": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "5e8b7d0ac305383c2fa007b34524ae6736334eb6b45bc0624d1f6d5864af796a"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          }
+        },
+        "states": {
+          "state_0000.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8e0c1fa8b47569ce080d64c769a9d3124b1b45a7544025612202782521b4c7bd"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "a7a21c69e654b96f993179c019737b8b64190533f9ae6f10f94c98610c9a5a6d"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "83261e0da7cb3f596dd065100faab5e1194491b7c9847e862aee59ab6fa32b72"
+            },
+            "init_key": {
+              "shape": [
+                2
+              ],
+              "dtype": "<u4",
+              "semantic_sha256": "57d8ecde71c42400ac5842ae890e729f360eeb16140de947e8f9d8d894145040"
+            },
+            "initial_mean": {
+              "shape": [
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "7ac6d9e46655406b8eafb549e34eafc4108db5beba705d33a99857856cab39fb"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0001.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "5dbe9d469b4ff399057eb0f276dcca2b0b4d4fa851a359a9cd462d694d77ae0b"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "2707fa2a1d5b0056f060591d1481b3d23e617ee375fa07b48e34d3b9da8fa825"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "65da6b4702f5e6ee9ea0b07bc26d44b173735e66d70c370884e1302b44449406"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "ef53c744bdcac2e25f2f7d20b5487d1804d02d828fc4885011065bfbe7aef157"
+            }
+          },
+          "state_0002.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "00c768117d331f215593d2414d7491b88fd7ef492184894bde4b0099b55ec505"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e291fef71d25a67aa82d11509bf909bb310aa9e8418a1425e78c50540d466de3"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "48b2aa6e19f2bdfefba507751893e54a84538ac33986ed1fb5e34c739d196e50"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "f135166027178e88445877709c206d59e0ce110153f4ca30ded58ce0e517ae7c"
+            }
+          },
+          "state_0003.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "8b29475ed7aa6fdb749bd62cd859227db2c89c6a77a39bd6b4e9391917bfdd71"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "539e4573fa484aa102d7f50e274900eed4ebfb33bc60ab1522af792f6d8438ad"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "1a9967794a0f51ee0844afe769d531f8acb08900c48761a95200ddb7c5fac7b6"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "ef53c744bdcac2e25f2f7d20b5487d1804d02d828fc4885011065bfbe7aef157"
+            }
+          },
+          "state_0004.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "5cc1de51d989682da1e74848b472ceb9a8920d89a661b337148c0b70ae7f3e8b"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "d384af02e2a99a09bb7c786e6ebf14cea6735a813673b6412b4fbdfe68ae5a59"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "854dac542d0dfaff79a1e643459173e0d7d126faee7e6e0d39ccbdf21cd947c9"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "28ea040878c74bd59b359738c91e385d512edd6d62b072ae0dc0035b4f56b778"
+            }
+          },
+          "state_0005.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "50cc48f655160691bc351ebf316a325563d72d0a37131dfeb1eb8d8720a58afc"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "ea82de97c453512e72752a43782c7f14849398441bc66bfd765798606612576b"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "cecb066a2cacce3af73601a330728fcc4e17eb642e39bb39cfbb5e8546de5d0d"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "0b9146b0b31ad3ccef52cd3c5da560f2216f0300801e700a3a5bbb7342b7ec9a"
+            }
+          },
+          "state_0006.npz": {
+            "archive": {
+              "shape": [
+                8,
+                386
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "834edaeab2c477f4f403d082931b6754e0616e34960c6cd8365703c6bbb650ec"
+            },
+            "fitness": {
+              "shape": [
+                8
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "f0ec0ca3c6bbb36d3471ea0d62c1f3a452fdb5628936cd663d654820c9d611ec"
+            },
+            "generation": {
+              "shape": [],
+              "dtype": "<i4",
+              "semantic_sha256": "563beda2af0d29cffca95e0e632c162b4a0bfb392da68b7124d56862b01fa5dd"
+            },
+            "invalid_update": {
+              "shape": [],
+              "dtype": "|b1",
+              "semantic_sha256": "a44a8e19624e180681460519dc04b361c1b2a73c052c8ad12ff6d3a01be5f114"
+            },
+            "memory": {
+              "shape": [
+                4
+              ],
+              "dtype": "<f4",
+              "semantic_sha256": "e286f1cf5870c779cbc68906685a2366863c39c83d1c8902b2d10021a667d443"
+            },
+            "sigma": {
+              "shape": [],
+              "dtype": "<f4",
+              "semantic_sha256": "a5642f1e8f08ed3a730a5a63e38ac733e8c13da0eec366dbd7cec7f90adda6ba"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "focus_switching",
+      "input_sha256": {
+        "training/manifest.json": "cde4188eadc3f23c27968fe8b18b59b675452ad2874c8f1aab5d7c89dd91ef2f",
+        "training/results.json": "c3b07dd40f940e5906672f1d58ab2341f694e02eae41f484942eb2eaa19b2a78",
+        "training/config.json": "362faf84f891857dda025c371a1c5d8b5d8f345105693660fdaa11d1de441007",
+        "training/training_metrics.json": "d281904ea0fd748ce1b7d4e0bb5738d85c00678da7ad7908d7d764220b433629",
+        "training/trajectory.npz": "ab3699157cebfc9644adac127faf39a4020b06d8731a2a6aacec5c610cf67489",
+        "training/checkpoints.npz": "34111097c398b9b901d8435c049d9fdac56a48044777fd7a9e629fb4cc11ff80",
+        "analysis/manifest.json": "e1c6118911ea28457b2f394f74bffdb253f964104b0576429b0dc063cf1aa1b5",
+        "analysis/evaluation.json": "114fbfa2f858a702a092771d990a663f5a763a06a50f972cf0dbe4b0dc68c7f8",
+        "analysis/checkpoint-metadata.json": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+        "analysis/summary.json": "25b0ce744f223e92ed0183c542f40f8a39532e1bc0e3a01da616150969f55c24"
+      },
+      "array_receipts": {
+        "trajectory": {
+          "centroids": {
+            "shape": [
+              6,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "c251ae2bece37c165ef2a93e8a7caace51a7deb89913b5a67dd2fca9552524f0"
+          },
+          "generations": {
+            "shape": [
+              6
+            ],
+            "dtype": "<i8",
+            "semantic_sha256": "dc657e4e10d86cfef90d99951895de7017b7f822a1486709484f13b84925cb2c"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          }
+        },
+        "checkpoints": {
+          "centroid": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "799421d4d2a7cf7a554bfd14b8025ae315a49a9c7b8424a5e003b17b9fb0b262"
+          },
+          "finalgen": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "b4fdbed978864f2018e27ebd809e5a955a7ec7865ae4a733086d03ec9a6afb78"
+          },
+          "incumbent": {
+            "shape": [
+              2,
+              386
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "b4fdbed978864f2018e27ebd809e5a955a7ec7865ae4a733086d03ec9a6afb78"
+          },
+          "noise_vectors": {
+            "shape": [
+              2,
+              4
+            ],
+            "dtype": "<f4",
+            "semantic_sha256": "abac5721da5155fbd57978fce6660deb60b0a45d921d32a9cd770050bff3a52d"
+          }
+        }
+      }
+    }
+  ],
+  "nominal_training_steps": 1008000,
+  "posthoc_evaluation_episodes": 840,
+  "interpretation": "Adapter correctness and control execution only; no method-ranking evidence"
+}

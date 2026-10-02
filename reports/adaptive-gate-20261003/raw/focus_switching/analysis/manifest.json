@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "episodes": 10,
+  "eval_seed": 903001,
+  "command": [
+    "$REPO_ROOT/.upstream/continual_neuroevolution/.venv/bin/python",
+    "$REPO_ROOT/.upstream/continual_neuroevolution/scripts/analysis/evaluate_continual.py",
+    "--root",
+    "$RUN/focus_switching/analysis/evaluation-input",
+    "--episodes",
+    "10",
+    "--seed",
+    "903001"
+  ],
+  "training_run": "$RUN/focus_switching/training",
+  "input_sha256": {
+    "manifest.json": "cde4188eadc3f23c27968fe8b18b59b675452ad2874c8f1aab5d7c89dd91ef2f",
+    "results.json": "c3b07dd40f940e5906672f1d58ab2341f694e02eae41f484942eb2eaa19b2a78",
+    "config.json": "362faf84f891857dda025c371a1c5d8b5d8f345105693660fdaa11d1de441007",
+    "training_metrics.json": "d281904ea0fd748ce1b7d4e0bb5738d85c00678da7ad7908d7d764220b433629",
+    "checkpoints.npz": "34111097c398b9b901d8435c049d9fdac56a48044777fd7a9e629fb4cc11ff80"
+  },
+  "analysis_source_sha256": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+  "upstream_source_sha256": {
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b"
+  },
+  "jax_platforms": "cpu",
+  "python_version": "Python 3.11.15",
+  "output_sha256": {
+    "evaluation.json": "114fbfa2f858a702a092771d990a663f5a763a06a50f972cf0dbe4b0dc68c7f8",
+    "checkpoint-metadata.json": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+    "summary.json": "25b0ce744f223e92ed0183c542f40f8a39532e1bc0e3a01da616150969f55c24",
+    "process.log": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "evaluation-input/results.json": "c3b07dd40f940e5906672f1d58ab2341f694e02eae41f484942eb2eaa19b2a78",
+    "evaluation-input/checkpoints.npz": "34111097c398b9b901d8435c049d9fdac56a48044777fd7a9e629fb4cc11ff80"
+  },
+  "wall_seconds": 6.151008044020273
+}

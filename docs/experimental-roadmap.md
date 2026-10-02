@@ -614,11 +614,20 @@ mechanism; a better scalar score alone does not establish better retention.
 | 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | Complete: 25 programs, 24 controls; 17 distinct mutations, seven charged repeats |
 | 6 | One paper-budget default-GA development trial | 20 phases, population 512, seed 1001/trial 1002; measured time and memory; reporting trials untouched | Complete: 30.20 min training, 843.2 MiB peak trainer RSS; all 20 phases |
 | 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Complete: 25 trials, 26.59 min; Shinka 11 and random 24 selected |
-| 8 | Adaptive-program adapter and required controls | Short identity traces, varying-sigma check, explicit upstream adaptive control, frozen objective | Pending |
-| 9 | Shinka search over executable adaptive rules | Separate archive and seed allocation; control comparisons; individual learning and forgetting trajectories | Main extension; pending |
+| 8 | Adaptive-program adapter and native control support | Short identity traces, varying-sigma check, persistent memory, explicit upstream adaptive control | Complete: seven real trials, 19 numerical checks, 3.98 min |
+| 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Next |
+| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Main extension; pending |
 
 <sub>Table 8. Deliverables and observed status. The successful baseline-trial
 resume does not substitute for testing Shinka's separate archive-resume path.</sub>
+
+The [adaptive gate evidence](../reports/adaptive-gate-20261003/summary.json)
+contains seven six-generation trials using diagnostic seed 3001 / task trial
+3002, not future search seeds. Both identity comparisons are numerically exact;
+halving changes the next population and retains memory across the switch.
+The fixed arithmetic rule and native FocusGA run successfully. These tests
+establish implementation behavior, not a performance ranking. No adaptive Shinka
+proposal or paid API call was made in this stage.
 
 After each substantive experiment, update the README as a scientific report:
 state the frozen protocol, link compact raw evidence and hashes, distinguish
