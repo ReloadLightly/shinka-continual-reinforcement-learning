@@ -1,0 +1,18 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 1002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 2
+  schedule       : switch, 2 sub-tasks
+  matched budget : 3.072e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size, num_evals)
+  seed           : 1001
+  boundary info  : none
+  output         : $RUN/training
+======================================================================
+  gen     0 task= 0 train=    9.9 t0=   12.0 t1=   10.0 gen'ist=   10.0
+  checkpoint: generation 2 -> $RUN/training/resume.pkl
+  gen     3 task= 1 train=   11.4 t0=   12.0 t1=   32.0 gen'ist=   12.0
+  wrote $RUN/training
+
+Done. $RUN/training

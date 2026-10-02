@@ -1,0 +1,12 @@
+{
+  "name": "paper-cartpole-timing",
+  "purpose": "One paper-budget default-GA development timing trial; not final reporting",
+  "env": "CartPole-v1_sigma0.5",
+  "num_phases": 20,
+  "num_tasks": 2,
+  "episode_length": 500,
+  "eval_episodes": 10,
+  "seeds": [1001],
+  "ne": {"num_generations": 4000, "task_interval": 200, "pop_size": 512, "num_evals": 3},
+  "ppo": null
+}

@@ -29,8 +29,10 @@ outcome does not establish reproduction of the full paper's findings.
 The numerical budgets below define the protocol; observed results belong in the
 README and linked evidence archives. The constant-configuration evaluator,
 matched pilot profiles, resumable trial runner, checkpoint analysis, evidence
-exporter, figure generator, and finalist freezer are implemented. The adaptive
-program adapter remains the main extension to implement. Source revisions remain fixed by
+exporter, figure generator, finalist freezer, reference timing, and validation
+runners are implemented. Their [execution protocol](finalist-validation.md)
+preserves the separate source contracts. The adaptive program adapter remains
+the main extension to implement. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 

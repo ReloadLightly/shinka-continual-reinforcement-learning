@@ -389,6 +389,18 @@ The search figure is generated from that validated export:
 The command writes SVG, PDF, and a JSON sidecar containing the exact plotted
 values and input/output hashes. It requires a completed matched random prefix.
 
+The [finalist and timing runbook](docs/finalist-validation.md) documents the
+frozen five-candidate handoff, reserved validation, whole-trial resume, and
+paper-budget development reference. Their runners check exact source and runtime
+receipts and preserve incomplete attempts. The phase recorder passed a
+[real smoke trial](reports/reference-timing-smoke-20261002/summary.json); its
+four generations verify instrumentation only.
+
+The completed static archive retains its original source contract. Commit
+[`32fc5e8`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/32fc5e8)
+provides that executable snapshot; subsequent profile registration belongs to
+the separately frozen reference and validation studies.
+
 The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Twenty-four proposals completed through this route. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
 
 Each real trial retains its command, profile, seed, task trial, source revision, interpreter version, device selection, duration, upstream configuration and metrics, training log, and metric-file hash. Modified upstream tracked files and untracked source files are rejected. Source revisions are fixed in [`upstream.lock.json`](upstream.lock.json):

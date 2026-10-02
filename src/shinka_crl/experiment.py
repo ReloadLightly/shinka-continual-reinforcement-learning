@@ -16,7 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 UPSTREAM_COMMIT = "821570eb6a22db0f7aa77111b2ea541fe8fa795b"
 DEFAULT_UPSTREAM = REPO_ROOT / ".upstream" / "continual_neuroevolution"
 DEFAULT_PYTHON = DEFAULT_UPSTREAM / ".venv" / "bin" / "python"
-PROFILE_NAMES = ("smoke", "search", "pilot-stationary", "pilot-switching", "paper-cartpole")
+PROFILE_NAMES = ("smoke", "search", "pilot-stationary", "pilot-switching", "paper-cartpole",
+                 "paper-cartpole-timing", "cartpole-validation")
 
 
 def _positive_integer(value: object, label: str) -> None:
@@ -74,8 +75,8 @@ def validate_profile(profile: dict) -> None:
     for family, fields in expected_keys.items():
         budget = profile[family]
         if family == "ppo" and budget is None:
-            if profile["name"] != "search":
-                raise ValueError("Only the search profile may omit a PPO budget")
+            if profile["name"] not in {"search", "paper-cartpole-timing", "cartpole-validation"}:
+                raise ValueError("Only GA development profiles may omit a PPO budget")
             continue
         if not isinstance(budget, dict) or set(budget) != fields:
             raise ValueError(f"Unexpected {family} budget fields")
