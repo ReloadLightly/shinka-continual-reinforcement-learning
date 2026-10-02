@@ -2,8 +2,12 @@
 
 import importlib.util
 import json
+import os
 from pathlib import Path
+import signal
 import subprocess
+import sys
+import time
 
 import pytest
 
@@ -17,7 +21,8 @@ SPEC.loader.exec_module(ADAPTER)
 
 def headless_args():
     return ["--sandbox", "read-only", "--ask-for-approval", "never", "--search", "exec",
-            "--model", "gpt-example", "-c", 'model_reasoning_effort="medium"',
+            "--model", "gpt-example", "-c", 'service_tier="default"',
+            "-c", 'model_reasoning_effort="medium"',
             "--json", "--skip-git-repo-check", "-"]
 
 
@@ -51,11 +56,17 @@ def test_canonical_invocation_enforces_auth_and_sandbox():
     assert command[command.index("--sandbox") + 1] == "read-only"
     assert "--search" not in command
     assert 'model_reasoning_effort="medium"' in command
+    assert all(flag in command for flag in (
+        "--ignore-user-config", "--ignore-rules", "--ephemeral",
+    ))
+    assert "project_doc_max_bytes=0" in command
+    assert all(f"features.{name}=false" in command for name in ADAPTER.TEXT_ONLY_FEATURES)
 
 
 @pytest.mark.parametrize("escape", [
     ["--profile", "paid"], ["--oss"], ["--dangerously-bypass-approvals-and-sandbox"],
     ["-c", 'model_provider="paid"'], ["-c", 'forced_login_method="api"'],
+    ["-c", 'service_tier="fast"'], ["-c", 'service_tier="priority"'],
 ])
 def test_rejects_route_or_sandbox_override(escape):
     with pytest.raises((SystemExit, ValueError)):
@@ -133,3 +144,85 @@ def test_subscription_config_has_no_auxiliary_model_calls():
     assert all(evo[key] == 1 for key in (
         "max_patch_attempts", "max_patch_resamples", "max_novelty_attempts",
     ))
+
+
+@pytest.mark.parametrize("value", ["nan", "inf", "-1", "0", "89", "invalid"])
+def test_timeout_rejects_unbounded_or_too_short_values(value):
+    with pytest.raises(ValueError):
+        ADAPTER.proposal_timeout({"SHINKA_HEADLESS_TIMEOUT": value})
+
+
+def test_timeout_reserves_cleanup_budget():
+    assert ADAPTER.proposal_timeout({"SHINKA_HEADLESS_TIMEOUT": "600"}) == 540
+
+
+def test_supervisor_times_out_and_reaps_process(monkeypatch):
+    real_popen = subprocess.Popen
+    spawned = []
+
+    def capture(*args, **kwargs):
+        process = real_popen(*args, **kwargs)
+        spawned.append(process)
+        return process
+
+    monkeypatch.setattr(ADAPTER.subprocess, "Popen", capture)
+    command = [sys.executable, "-c", "import time;time.sleep(30)"]
+    started = time.monotonic()
+    assert ADAPTER.run_supervised(command, dict(os.environ), timeout=0.15) == 124
+    assert time.monotonic() - started < 5
+    with pytest.raises(ProcessLookupError):
+        os.kill(spawned[0].pid, 0)
+
+
+def test_supervisor_forwards_sigterm_and_restores_handler(tmp_path):
+    original = signal.getsignal(signal.SIGTERM)
+    command = [sys.executable, "-c", "import os,signal,time;"
+               "os.kill(os.getppid(),signal.SIGTERM);time.sleep(30)"]
+    code = ADAPTER.run_supervised(command, dict(os.environ), timeout=5)
+    assert code in (128 + signal.SIGTERM, -signal.SIGTERM)
+    assert signal.getsignal(signal.SIGTERM) is original
+
+
+def test_native_launch_isolates_work_dir_and_sets_inner_timeout(tmp_path, monkeypatch):
+    prompt = tmp_path / "prompt.md"
+    prompt.write_text("Propose a configuration")
+    monkeypatch.setenv("SHINKA_CODEX_MODEL", "gpt-example")
+    monkeypatch.setenv("SHINKA_HEADLESS_TIMEOUT", "600")
+    monkeypatch.setattr(ADAPTER, "require_tool", lambda name, env: f"/bin/{name}")
+    monkeypatch.setattr(ADAPTER, "require_chatgpt_login", lambda *args: None)
+    monkeypatch.setattr(ADAPTER, "headless_command", lambda env: ["/bin/node", "/pin/cli.js"])
+    calls = []
+
+    def fake_run(command, env, *, timeout):
+        work = Path(command[command.index("--work-dir") + 1])
+        assert work.is_dir() and work != tmp_path
+        assert command[command.index("--timeout") + 1] == "540"
+        assert 540 < timeout <= 555
+        assert env["SHINKA_SUBSCRIPTION_REAL_CODEX"] == "/bin/codex"
+        calls.append(command)
+        return 0
+
+    monkeypatch.setattr(ADAPTER, "run_supervised", fake_run)
+    assert ADAPTER.main(["codex", "--prompt-file", str(prompt), "--work-dir", str(tmp_path),
+                         "--allow", "read-only", "--usage"]) == 0
+    assert len(calls) == 1
+
+
+def test_ledger_records_auth_failure_without_inference_or_secrets(tmp_path, monkeypatch):
+    ledger = tmp_path / "requests.jsonl"
+    monkeypatch.setenv("SHINKA_SUBSCRIPTION_LEDGER", str(ledger))
+    monkeypatch.setenv("SHINKA_CODEX_MODEL", "gpt-example")
+    monkeypatch.setattr(ADAPTER, "require_tool", lambda name, env: f"/bin/{name}")
+    monkeypatch.setattr(ADAPTER, "headless_command", lambda env: ["/bin/node", "/pin/cli.js"])
+
+    def fail(*args):
+        raise ValueError("private error text must not enter ledger")
+
+    monkeypatch.setattr(ADAPTER, "require_chatgpt_login", fail)
+    with pytest.raises(ValueError):
+        ADAPTER.main(["codex"])
+    events = [json.loads(line) for line in ledger.read_text().splitlines()]
+    assert [row["event"] for row in events] == ["started", "finished"]
+    assert events[-1]["outcome"] == "preflight_failure"
+    assert events[0]["request_id"] == events[1]["request_id"]
+    assert "private error" not in ledger.read_text()

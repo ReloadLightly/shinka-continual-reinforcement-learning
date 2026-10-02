@@ -1,9 +1,9 @@
 # Experimental roadmap
 
 This document specifies the next experiments for the CartPole reproduction and
-the ShinkaEvolve extension. The immediate step is an 18-trial baseline pilot with
-matched nominal training budgets and a stationary control. A staged search over
-static GA settings follows only after the pilot validates learning and analysis.
+the ShinkaEvolve extension. The 18-trial baseline pilot with matched nominal
+training budgets and a stationary control is complete. The next experiment is a
+staged search over static GA settings, now that the pilot validates learning and analysis.
 Adaptive mutation programs are a separate subsequent experiment.
 
 **Pilot outcome, 2 October 2026:** all 18 trials completed; the predefined
@@ -257,7 +257,8 @@ these stages.
 are cumulative and include the initial candidate. Proposal slots are an outer
 budget, not a count of successful evaluations or inner GA generations.</sub>
 
-Generate and freeze **24 distinct random configurations** from
+Generate and freeze **24 distinct random configurations**, using random seed
+`20261002`, from
 `log(sigma) ~ Uniform(log(0.001), log(2.0))` and
 `elite_ratio ~ Uniform(0.05, 0.95)` using a recorded random seed. The random-search
 arm shares the initial default candidate, development seeds, training budget,
@@ -271,7 +272,9 @@ upper bound before validation and includes the shared default only once.
 
 Distinguish proposal slots, model requests, valid distinct programs, completed
 seed trials, and elapsed compute. An invalid or duplicate Shinka output consumes
-its slot; identical effective configurations can reuse archived scores. A model
+its slot. The implemented runner currently evaluates duplicates again and charges
+their actual seed work; it does not cache scores. Effective identity uses the
+reference's float32 mutation width and integer archive size. A model
 request can fail before producing a program, and retry/repair requests still
 consume model usage. Set and record finite retry limits before launch. Never
 silently continue until 24 successful improvements have appeared.
@@ -299,10 +302,13 @@ scheduled or launched.
 Pause between completed candidates, preferably at these stage boundaries. Save
 the archive/database, generation counter, candidate hashes, parentage, fixed
 profile, source pins, all metrics, and cost ledger. Treat the content of a partial
-candidate directory as incomplete. A future resume runner must identify completed
-seed trials by their full candidate/profile/source identity and verify artifacts
-before reusing them. The current evaluator creates new output directories and
-does not yet provide arbitrary mid-evaluation resume.
+candidate directory as incomplete. The stage runner freezes source and runtime
+identity, checks artifact hashes and database contents before reuse, and retains
+host Python/NumPy RNG state. It stops on terminal failures instead of silently
+replacing failed slots. The evaluator saves completed seed results and attempt
+receipts progressively, but does not provide arbitrary mid-evaluation resume.
+Restart-time initialization and model responses still prevent a claim of exact
+equivalence with an uninterrupted outer search.
 
 Subscription-backed proposal execution is described in the
 [task runbook](../tasks/cartpole_ga/README.md). The existing API example must not be

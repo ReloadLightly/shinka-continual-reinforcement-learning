@@ -1,6 +1,7 @@
 """Candidate parsing and Shinka artifact contracts, without training or APIs."""
 
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -95,6 +96,50 @@ def test_fixed_seed_aggregation_and_contract(tmp_path, monkeypatch):
         for call in calls
     )
     assert all(call["python"] == "/test/python" and call["timeout"] == 120 for call in calls)
+    assert metrics["private"]["provenance"]["program_sha256"] == hashlib.sha256(
+        (TASK_DIR / "initial.py").read_bytes()
+    ).hexdigest()
+    assert metrics["private"]["provenance"]["profile"] == {"seeds": [1001, 1002]}
+    assert [row["status"] for row in metrics["private"]["seed_attempts"]] == [
+        "complete", "complete"
+    ]
+    assert metrics["private"]["evaluation_wall_seconds"] >= 0
+
+
+def test_later_failure_retains_completed_seed_scores_and_attempt_evidence(tmp_path, monkeypatch):
+    monkeypatch.setenv("SHINKA_CRL_PROFILE", "search")
+    monkeypatch.setattr(task, "load_profile", lambda name: {"seeds": [1001, 1002, 1003]})
+    monkeypatch.setattr(task, "default_paths", lambda: (tmp_path, tmp_path / "python"))
+    output = tmp_path / "result"
+
+    def partial_experiment(**kwargs):
+        kwargs["output_dir"].mkdir()
+        (kwargs["output_dir"] / "process.log").write_text("recorded work\n")
+        if kwargs["seed"] == 1002:
+            # The first seed's evidence must exist before the next trial starts.
+            progress = json.loads((output / "metrics.json").read_text())
+            assert progress["public"]["seeds_completed"] == 1
+            assert progress["private"]["seed_results"][0]["normalized_score"] == 0.4
+            assert progress["combined_score"] == 0.0
+            raise TimeoutError("second trial timed out")
+        assert kwargs["seed"] == 1001
+        return {"normalized_score": 0.4, "mean_return": 200.0}
+
+    monkeypatch.setattr(task, "run_experiment", partial_experiment)
+    assert not task.evaluate_program(TASK_DIR / "initial.py", output)
+    metrics = json.loads((output / "metrics.json").read_text())
+    assert metrics["combined_score"] == 0.0
+    assert metrics["public"]["seeds_completed"] == 1
+    assert metrics["private"]["seed_results"] == [{
+        "seed": 1001, "trial": 1002, "normalized_score": 0.4, "mean_return": 200.0,
+    }]
+    attempts = metrics["private"]["seed_attempts"]
+    assert [row["status"] for row in attempts] == ["complete", "failed"]
+    assert attempts[1]["error"] == "TimeoutError: second trial timed out"
+    assert all(row["wall_seconds"] >= 0 for row in attempts)
+    assert all(row["artifact_sha256"] == {
+        "process.log": hashlib.sha256(b"recorded work\n").hexdigest()
+    } for row in attempts)
 
 
 @pytest.mark.parametrize(

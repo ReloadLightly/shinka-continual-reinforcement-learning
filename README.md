@@ -150,6 +150,14 @@ The unchanged initial candidate also completed the full `search` profile: 80 gen
 
 At this measured rate, 25 candidate evaluations require approximately 48 minutes of local training. Assuming an additional 0.5–2 minutes per Codex proposal, the planned search takes approximately **60–100 minutes** before review, retries, or quota pauses. Proposal latency is an assumption to replace after the first block. The 24-configuration random control adds approximately 46 minutes of evaluation. These projections apply to the current reduced profile; they do not estimate full-paper runtime.
 
+The native Shinka loop also passed an independent execution test with a fixed
+local response and **zero model requests**. It evaluated generations 0 and 1,
+resumed the same SQLite archive, and added generation 2 with verified parentage
+0 → 1 → 2. The initial smoke score remained 0.3125. The repeated fixture candidate
+demonstrated that duplicate evaluations still consume training work. This tests
+transport, evaluation, and resume, rather than proposal quality; all artifacts
+are retained in the [native integration evidence](reports/native-integration-20261002/summary.json).
+
 ### Matched development pilot
 
 The pilot completed GA, ES, and PPO under stationary and alternating conditions

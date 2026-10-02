@@ -1,0 +1,156 @@
+{
+  "purpose": "Native transport/evaluation/archive-resume diagnostic, not a model search or scientific comparison",
+  "profile": "smoke",
+  "generation_targets": [
+    2,
+    3
+  ],
+  "model_requests": 0,
+  "transport": "Fixed local response fixture; no Codex or model service invoked",
+  "patch_types": [
+    "full"
+  ],
+  "parentage_verified": true,
+  "source_evaluator_matches_current": true,
+  "programs": [
+    {
+      "id": "914e306b-19b8-4a80-857e-649c343d42af",
+      "generation": 0,
+      "parent_id": null,
+      "correct": 1,
+      "combined_score": 0.3125
+    },
+    {
+      "id": "9ae46c50-c923-4758-a757-cc8894480f0a",
+      "generation": 1,
+      "parent_id": "914e306b-19b8-4a80-857e-649c343d42af",
+      "correct": 1,
+      "combined_score": 0.3125
+    },
+    {
+      "id": "e9d92bd5-9f10-48d2-b06d-83b89894cbe2",
+      "generation": 2,
+      "parent_id": "9ae46c50-c923-4758-a757-cc8894480f0a",
+      "correct": 1,
+      "combined_score": 0.3125
+    }
+  ],
+  "evaluation_wall_seconds": [
+    112.93908825900871,
+    45.017733289976604,
+    23.83807815797627
+  ],
+  "reused_generations_on_resume": [
+    0,
+    1
+  ],
+  "source_pins": {
+    "paper": {
+      "title": "Continual Reinforcement Learning with Neuroevolution",
+      "authors": [
+        "Eleni Nisioti",
+        "Andrea Cossu",
+        "Kathrin Korte",
+        "Sebastian Risi"
+      ],
+      "url": "https://arxiv.org/abs/2610.01583v1",
+      "submitted": "2026-10-01"
+    },
+    "continual_neuroevolution": {
+      "url": "https://github.com/eleninisioti/continual_neuroevolution.git",
+      "commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b"
+    },
+    "shinka_evolve": {
+      "url": "https://github.com/SakanaAI/ShinkaEvolve.git",
+      "commit": "9912af12d423504b8d580f4179fd15f5f88b8c50"
+    }
+  },
+  "deviations": [
+    "Per-seed timeout increased from120 to240 seconds for the resume diagnostic; training protocol unchanged.",
+    "Generation2 intentionally repeats the fixed candidate, demonstrating that duplicate evaluations still consume work."
+  ],
+  "source_artifact_sha256": {
+    "best/main.py": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "best/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "best/results/job_log.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "best/results/job_log.out": "52ce96c50ac35f69242c834a05de87ad66a6faa09293bc2feef9363baa07cf06",
+    "best/results/metrics.json": "f6ca4a6d95f18399516ffd10ce8647ab6af1d85bf27d00ca0dc336d3d3b22360",
+    "best/results/seed_1001/checkpoints.npz": "5295587129267c96aebc6fc9d43183e6e69657a157393e32aa0e9b40f6cd4b1e",
+    "best/results/seed_1001/config.json": "be2bb837fe4aae42c1838ca7db729154a668f7c99988deb970968c70a30630aa",
+    "best/results/seed_1001/manifest.json": "84d3f614294375d662d2b9d88b96fd0e504ff2cb09623245fa3ca5510665a3f5",
+    "best/results/seed_1001/process.log": "3259d221c6454ac32563e1bbbd47f948e796b87f6ed8aeabd4e7fb1ea1350c4c",
+    "best/results/seed_1001/results.json": "1497c4fe385964de97cf1e4779444f3d01aee09f934c0c3919aa0426bf8b0162",
+    "best/results/seed_1001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "best/results/seed_1001/summary.json": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+    "best/results/seed_1001/train.log": "55f9ebc779dc085caa5ef4a3daa099b6d8c4f78c3eea5dc987a41122ec923dc0",
+    "best/results/seed_1001/training_metrics.json": "13ef814202e4f98edc413af5cb60592fe174400e664bfc203af99894d5e0c747",
+    "best/results/seed_1001/trajectory.npz": "4c31160b5f56d007e99e68f39c7008b3cd6b503df4a2b9531a8275582533b80c",
+    "evaluate.py": "fd65de0024fae19c4c59c52cc4409c966871f201b8bd311596986a7a949586c1",
+    "evolution_run.log": "6a118909f05a6d54437ea52e981db7396e113f44d229174603890bb7c6be45a2",
+    "gen_0/main.py": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "gen_0/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "gen_0/results/job_log.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gen_0/results/job_log.out": "52ce96c50ac35f69242c834a05de87ad66a6faa09293bc2feef9363baa07cf06",
+    "gen_0/results/metrics.json": "f6ca4a6d95f18399516ffd10ce8647ab6af1d85bf27d00ca0dc336d3d3b22360",
+    "gen_0/results/seed_1001/checkpoints.npz": "5295587129267c96aebc6fc9d43183e6e69657a157393e32aa0e9b40f6cd4b1e",
+    "gen_0/results/seed_1001/config.json": "be2bb837fe4aae42c1838ca7db729154a668f7c99988deb970968c70a30630aa",
+    "gen_0/results/seed_1001/manifest.json": "84d3f614294375d662d2b9d88b96fd0e504ff2cb09623245fa3ca5510665a3f5",
+    "gen_0/results/seed_1001/process.log": "3259d221c6454ac32563e1bbbd47f948e796b87f6ed8aeabd4e7fb1ea1350c4c",
+    "gen_0/results/seed_1001/results.json": "1497c4fe385964de97cf1e4779444f3d01aee09f934c0c3919aa0426bf8b0162",
+    "gen_0/results/seed_1001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gen_0/results/seed_1001/summary.json": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+    "gen_0/results/seed_1001/train.log": "55f9ebc779dc085caa5ef4a3daa099b6d8c4f78c3eea5dc987a41122ec923dc0",
+    "gen_0/results/seed_1001/training_metrics.json": "13ef814202e4f98edc413af5cb60592fe174400e664bfc203af99894d5e0c747",
+    "gen_0/results/seed_1001/trajectory.npz": "4c31160b5f56d007e99e68f39c7008b3cd6b503df4a2b9531a8275582533b80c",
+    "gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": "3a176ae334c10462de7029416608a6ee5e026335187472b3ef992fd4ca295d32",
+    "gen_1/attempts/novelty_1/resample_1/patch_1/llm_response.txt": "44cd76b9d1bfef3ffb8c97f0d5bfdc0093b1cbefa7feb0a1b1a5c1e718aa29b2",
+    "gen_1/attempts/novelty_1/resample_1/patch_1/metadata.json": "caad8efbb1673c01f5a9059854baa6353b7bc6ac691dd213c20cfff82e641921",
+    "gen_1/attempts/novelty_1/resample_1/patch_1/patch.txt": "a5ff9dff83e5412796c112b955b4dc2c9da392248645039952074b1e024cf6ec",
+    "gen_1/edit.diff": "a5ff9dff83e5412796c112b955b4dc2c9da392248645039952074b1e024cf6ec",
+    "gen_1/main.py": "1495ae5e94729543ef528bfe4a7f0aee3044c9592e251eb23e237bf8407ecf75",
+    "gen_1/original.py": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "gen_1/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "gen_1/results/job_log.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gen_1/results/job_log.out": "52ce96c50ac35f69242c834a05de87ad66a6faa09293bc2feef9363baa07cf06",
+    "gen_1/results/metrics.json": "895adecaeb41c4f2cee946f6976dc36151bdd26befb42d274e9f1c2fd4f5cf3c",
+    "gen_1/results/seed_1001/checkpoints.npz": "0c9b2795386d634d6bc5a7a72ce0e66ff12d490bd343e27bff5ff76eee7b328e",
+    "gen_1/results/seed_1001/config.json": "34f0be12a4640f30b1fd74b6bd232276f05d4aebb6e77de9c1b69889bcd59545",
+    "gen_1/results/seed_1001/manifest.json": "de31a5941cd8dab66b38411b52e45ea79a2699cbf8404f23e4e7991856bf5ace",
+    "gen_1/results/seed_1001/process.log": "392643e1119f3f3c843f3105ed12dfa8893d605ccf28432e9bcd057ab515d6f6",
+    "gen_1/results/seed_1001/results.json": "a1901a8b17f1449032657589fe76552ef5f3ae4bbf8c8fdfc19cf9dbe93cdb89",
+    "gen_1/results/seed_1001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gen_1/results/seed_1001/summary.json": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+    "gen_1/results/seed_1001/train.log": "1fdbf050b4a10c343156aa192e0d959cb1a3db2b441e5083fa1ad68042db6505",
+    "gen_1/results/seed_1001/training_metrics.json": "e351de98ba335874ef9e9dc8b0f6266503836e42953bbc9a794f1c9987d133fe",
+    "gen_1/results/seed_1001/trajectory.npz": "5debe7d4312107afefe637259e2abbef4dd9ad004b4a62e293a0347c4fb5416b",
+    "gen_1/rewrite.txt": "1155ca232075dc55f2ad0e9726a935c43a128710ca11c009a5d239b2df71ba39",
+    "gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": "f3cb4fe418c11cc495bc75b6c98931c3409bbfcde411bb954d54d9104d1606d0",
+    "gen_2/attempts/novelty_1/resample_1/patch_1/llm_response.txt": "44cd76b9d1bfef3ffb8c97f0d5bfdc0093b1cbefa7feb0a1b1a5c1e718aa29b2",
+    "gen_2/attempts/novelty_1/resample_1/patch_1/metadata.json": "a2a3a42df0c49decf0c39e68febb6809d780e7479ec7e1b02623ce31effb91a0",
+    "gen_2/edit.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gen_2/main.py": "1495ae5e94729543ef528bfe4a7f0aee3044c9592e251eb23e237bf8407ecf75",
+    "gen_2/original.py": "1495ae5e94729543ef528bfe4a7f0aee3044c9592e251eb23e237bf8407ecf75",
+    "gen_2/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "gen_2/results/job_log.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gen_2/results/job_log.out": "52ce96c50ac35f69242c834a05de87ad66a6faa09293bc2feef9363baa07cf06",
+    "gen_2/results/metrics.json": "68c14dba0c92850e37058882104637ad159ad9396d9c10eb4b36ea9d7df80547",
+    "gen_2/results/seed_1001/checkpoints.npz": "0c9b2795386d634d6bc5a7a72ce0e66ff12d490bd343e27bff5ff76eee7b328e",
+    "gen_2/results/seed_1001/config.json": "34f0be12a4640f30b1fd74b6bd232276f05d4aebb6e77de9c1b69889bcd59545",
+    "gen_2/results/seed_1001/manifest.json": "e38ebde60c299fa01e3c900505390bbc0cbc56ffbdcac85807a09fb9662fe897",
+    "gen_2/results/seed_1001/process.log": "c8b7e0eebfccc68d1efa2a60148936b0b284f0876ff018002f18e1b58ee607fb",
+    "gen_2/results/seed_1001/results.json": "6f739513cc47eb70ea7aef949e11d3291e06960f9411b3ca3c2b3b1e2dc61ddc",
+    "gen_2/results/seed_1001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gen_2/results/seed_1001/summary.json": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+    "gen_2/results/seed_1001/train.log": "a3ebce072a6646e9862d295b65b81a94cd8488c09e0b1d377305d2e446fc78b4",
+    "gen_2/results/seed_1001/training_metrics.json": "e351de98ba335874ef9e9dc8b0f6266503836e42953bbc9a794f1c9987d133fe",
+    "gen_2/results/seed_1001/trajectory.npz": "5debe7d4312107afefe637259e2abbef4dd9ad004b4a62e293a0347c4fb5416b",
+    "gen_2/rewrite.txt": "1155ca232075dc55f2ad0e9726a935c43a128710ca11c009a5d239b2df71ba39",
+    "headless_prompts/prompt_9a068e7922974a01b1b4f485a0b60cd0.md": "3a176ae334c10462de7029416608a6ee5e026335187472b3ef992fd4ca295d32",
+    "headless_prompts/prompt_d7a8c5c24dc14bd5a2714f8244ca5622.md": "f3cb4fe418c11cc495bc75b6c98931c3409bbfcde411bb954d54d9104d1606d0",
+    "init_program.py": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "pricing_snapshot.json": "8d77af1f01052696f6b2285d4a2fd4458378ef6adfb48594b65ce583c357ba31",
+    "programs.sqlite": "d31abfbcc7095a4535dca5a84c7b2d2028ccda59dd67c34b794b31faaf3a9839",
+    "programs.sqlite-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "programs.sqlite-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

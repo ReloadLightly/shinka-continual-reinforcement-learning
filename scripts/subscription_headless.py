@@ -10,15 +10,20 @@ This script never opens credential files; Codex manages its own login state.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import json
+import math
 import os
 from pathlib import Path
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
+import time
 import tomllib
+import uuid
 
 HEADLESS_PACKAGE = "@roberttlange/headless@0.6.1"
 AUTH_CONFIG = [
@@ -32,6 +37,14 @@ STRIP_ENV = {
     "OPENAI_BASE_URL", "OPENAI_API_BASE", "CODEX_ACCESS_TOKEN", "CODEX_MODEL",
     "ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_BASE_URL", "CLAUDE_CODE_OAUTH_TOKEN",
 }
+# This is a text proposal, so no local tools or inherited integrations are needed.
+# These feature names are supported by the pinned Codex 0.159.3 executable.
+TEXT_ONLY_FEATURES = (
+    "shell_tool", "shell_snapshot", "apps", "plugins", "hooks", "multi_agent",
+    "browser_use", "browser_use_external", "computer_use", "image_generation",
+    "memories", "skill_search", "skill_mcp_dependency_install", "unbounded_connection_retries",
+)
+MAX_PROMPT_BYTES = 128 * 1024
 
 
 def subscription_env(source: dict[str, str]) -> dict[str, str]:
@@ -125,12 +138,18 @@ def guarded_codex_args(args: list[str]) -> list[str]:
     if not re.fullmatch(r"gpt-[A-Za-z0-9.-]+", parsed.model):
         raise ValueError("Unsupported model name")
     for override in parsed.config:
-        if not re.fullmatch(r'model_reasoning_effort="(low|medium|high|xhigh)"', override):
-            raise ValueError("Only a reasoning-effort override is accepted")
+        if (override != 'service_tier="default"'
+                and not re.fullmatch(r'model_reasoning_effort="(low|medium|high|xhigh)"', override)):
+            raise ValueError("Only default service tier and reasoning-effort overrides are accepted")
     return [
         *AUTH_CONFIG,
         "-c", 'web_search="disabled"',
+        "-c", 'service_tier="default"',
+        "-c", "project_doc_max_bytes=0",
+        "-c", "features.skip_host_skill_discovery=true",
+        *[item for feature in TEXT_ONLY_FEATURES for item in ("-c", f"features.{feature}=false")],
         "--sandbox", "read-only", "--ask-for-approval", "never", "exec",
+        "--ignore-user-config", "--ignore-rules", "--ephemeral",
         "--model", parsed.model,
         *[item for override in parsed.config for item in ("-c", override)],
         "--json", "--skip-git-repo-check", "-",
@@ -142,6 +161,8 @@ def shim_main(args: list[str]) -> int:
     if not real_codex or not Path(real_codex).is_absolute():
         raise ValueError("Missing absolute Codex executable in guarded invocation")
     command = [real_codex, *guarded_codex_args(args)]
+    if "exec" in command:
+        record_event(dict(os.environ), "codex_exec", model=command[command.index("--model") + 1])
     os.execve(real_codex, command, subscription_env(dict(os.environ)))
     return 1  # pragma: no cover
 
@@ -158,11 +179,71 @@ def write_shim(directory: Path) -> Path:
     return shim
 
 
-def main(argv: list[str] | None = None) -> int:
-    argv = list(sys.argv[1:] if argv is None else argv)
-    if argv and argv[0] == "--codex-shim":
-        return shim_main(argv[1:])
-    env = subscription_env(dict(os.environ))
+def proposal_timeout(env: dict[str, str]) -> int:
+    """Leave time for Headless and this bridge to clean up before Shinka kills us."""
+    outer = float(env.get("SHINKA_HEADLESS_TIMEOUT", "600"))
+    if not math.isfinite(outer) or outer < 90:
+        raise ValueError("SHINKA_HEADLESS_TIMEOUT must be finite and at least 90 seconds")
+    return math.floor(outer - 60)
+
+
+def run_supervised(command: list[str], env: dict[str, str], *, timeout: float) -> int:
+    """Forward interrupts and bound cleanup, including native Headless's child group.
+
+    Headless owns a separate Codex process group whenever --timeout is supplied.
+    SIGTERM lets its native handler terminate that group before we reap Headless.
+    Its own shorter deadline also applies if an outer supervisor SIGKILLs us.
+    """
+    process = subprocess.Popen(command, env=env, start_new_session=True)
+    received: list[int] = []
+
+    def forward(signum, _frame):
+        received.append(signum)
+        if process.poll() is None:
+            process.send_signal(signal.SIGTERM)
+
+    original = {sig: signal.signal(sig, forward) for sig in (signal.SIGINT, signal.SIGTERM)}
+    deadline = time.monotonic() + timeout
+    try:
+        while process.poll() is None:
+            if received or time.monotonic() >= deadline:
+                process.send_signal(signal.SIGTERM)
+                try:
+                    process.wait(timeout=10)
+                except subprocess.TimeoutExpired:
+                    os.killpg(process.pid, signal.SIGKILL)
+                    process.wait(timeout=5)
+                return 128 + received[0] if received else 124
+            try:
+                return process.wait(timeout=min(0.25, max(0.001, deadline - time.monotonic())))
+            except subprocess.TimeoutExpired:
+                continue
+        return process.returncode
+    finally:
+        for sig, handler in original.items():
+            signal.signal(sig, handler)
+
+
+def record_event(env: dict[str, str], event: str, **details) -> None:
+    """Append metadata only; a CLI launch is not proof of a backend model request."""
+    raw_path = env.get("SHINKA_SUBSCRIPTION_LEDGER")
+    if not raw_path:
+        return
+    path = Path(raw_path)
+    if not path.is_absolute() or not path.parent.is_dir():
+        raise ValueError("SHINKA_SUBSCRIPTION_LEDGER needs an absolute path with an existing parent")
+    payload = {
+        "request_id": env["SHINKA_SUBSCRIPTION_REQUEST_ID"], "event": event,
+        "time_utc": datetime.now(timezone.utc).isoformat(), **details,
+    }
+    descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_APPEND, 0o600)
+    try:
+        os.write(descriptor, (json.dumps(payload, allow_nan=False) + "\n").encode())
+    finally:
+        os.close(descriptor)
+
+
+def _run(argv: list[str], env: dict[str, str], started: float) -> int:
     codex = require_tool("codex", env)
     headless = headless_command(env)
     model = configured_model(env)
@@ -187,21 +268,50 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     if not args.prompt_file.is_file() or not args.work_dir.is_dir():
         raise ValueError("Prompt file and work directory must exist")
+    if args.prompt_file.stat().st_size > MAX_PROMPT_BYTES:
+        raise ValueError(f"Proposal prompt exceeds {MAX_PROMPT_BYTES} bytes")
+    native_timeout = proposal_timeout(env)
 
     with tempfile.TemporaryDirectory(prefix="shinka-subscription-") as temporary:
         write_shim(Path(temporary))
+        work_dir = Path(temporary) / "proposal"
+        work_dir.mkdir()
         env["SHINKA_SUBSCRIPTION_REAL_CODEX"] = codex
         env["PATH"] = temporary + os.pathsep + env.get("PATH", "")
         command = [
             *headless, "codex", "--prompt-file", str(args.prompt_file.resolve()),
-            "--work-dir", str(args.work_dir.resolve()), "--allow", "read-only", "--usage",
-            "--model", model,
+            "--work-dir", str(work_dir), "--allow", "read-only", "--usage",
+            "--model", model, "--timeout", str(native_timeout),
         ]
         if args.reasoning_effort:
             command += ["--reasoning-effort", args.reasoning_effort]
         # Native model/usage remain on stdout in Shinka's expected format.
         # Do not retry quota/auth/sandbox failures or weaken the read-only sandbox.
-        return subprocess.run(command, env=env, check=False).returncode
+        remaining = max(0.001, native_timeout + 15 - (time.monotonic() - started))
+        return run_supervised(command, env, timeout=remaining)
+
+
+def main(argv: list[str] | None = None) -> int:
+    argv = list(sys.argv[1:] if argv is None else argv)
+    if argv and argv[0] == "--codex-shim":
+        return shim_main(argv[1:])
+    env = subscription_env(dict(os.environ))
+    started = time.monotonic()
+    tracked = argv != ["--check"]
+    env["SHINKA_SUBSCRIPTION_REQUEST_ID"] = uuid.uuid4().hex
+    if tracked:
+        record_event(env, "started")
+    try:
+        code = _run(argv, env, started)
+    except (ValueError, OSError, subprocess.SubprocessError, SystemExit) as error:
+        if tracked:
+            record_event(env, "finished", outcome="preflight_failure", returncode=1,
+                         error_type=type(error).__name__, wall_seconds=time.monotonic() - started)
+        raise
+    if tracked:
+        record_event(env, "finished", outcome="success" if code == 0 else "provider_failure",
+                     returncode=code, wall_seconds=time.monotonic() - started)
+    return code
 
 
 if __name__ == "__main__":

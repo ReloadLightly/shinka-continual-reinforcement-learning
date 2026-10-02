@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "transport_fixture",
+  "patch_description": "Fixed diagnostic mutation; this is not an LLM proposal.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T20:22:11.432826",
+  "llm_cost": 0.0,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "/home/roland/actir/shinka-continual-reinforcement-learning/results/native-fixture-20261002/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

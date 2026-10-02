@@ -68,6 +68,9 @@ Successful and failed evaluations write the Shinka contract:
 `metrics.json` with `combined_score`, `public`, and `private`; and `correct.json`
 with `correct` and `error`. Invalid candidates and failed experiments receive
 `correct: false` and `combined_score: 0.0`, and the evaluator exits nonzero.
+Completed seed scores, attempt durations, and artifact hashes are saved after
+each seed. A later failure therefore retains the work already performed, while
+the incomplete candidate remains excluded from scientific rankings.
 
 ## Evolve programs through local Codex
 
@@ -138,40 +141,48 @@ login; it does not prove model entitlement or remaining quota. Without the
 explicit model override below, the guard uses the local Codex model setting.
 Record the resolved model and keep it fixed across all stages.
 
-From the repository root:
+The repository runner freezes the complete search protocol before a proposal:
+source and package hashes, the model, CPU/thread settings, and 24 random-control
+configurations sampled with seed `20261002`. Effective duplicates use the GA's
+float32 mutation width and integer archive size. Controls are evaluated in their
+frozen order. From the repository root:
 
 ```bash
-export SHINKA_HEADLESS_COMMAND="$PWD/.venv/bin/python $PWD/scripts/subscription_headless.py"
-export SHINKA_CODEX_MODEL=gpt-6.1-sol
-export SHINKA_CRL_PROFILE=search
-export SHINKA_CRL_TIMEOUT=600
-export SHINKA_HEADLESS_TIMEOUT=600
-export SHINKA_LLM_MAX_RETRIES=1
-export SHINKA_PRICING_MODE=offline
-export JAX_PLATFORMS=cpu
-export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+# Freeze protocol, runtime, and random pool; check login without inference.
+.venv/bin/python scripts/run_search.py \
+  --results-dir results/subscription-pilot --prepare-only
 
-# Tooling/authentication only: zero inference calls.
-.venv/bin/python scripts/subscription_headless.py --check
+# Evaluate the initial candidate and one proposal.
+.venv/bin/python scripts/run_search.py \
+  --results-dir results/subscription-pilot --resume --target-generations 2
 
-# Launch only after the matched-pilot gates in the roadmap pass.
-# CPUs 0,1 match this machine's timing calibration; adapt on other hosts.
-taskset -c 0,1 .venv/bin/shinka_run \
-  --task-dir tasks/cartpole_ga \
-  --config-fname shinka-subscription.yaml \
-  --results_dir results/subscription-pilot \
-  --num_generations 5
+# Verify and resume that archive to four cumulative proposals.
+.venv/bin/python scripts/run_search.py \
+  --results-dir results/subscription-pilot --resume --target-generations 5
+
+# Evaluate four frozen random controls if all four proposals are valid/distinct.
+.venv/bin/python scripts/run_search.py \
+  --results-dir results/subscription-pilot --resume --random-count 4
 ```
 
-After reviewing the completed first block and available quota, repeat the same
-command with `--num_generations 13`, then `25`. These are cumulative targets.
+After reviewing the completed first block and available quota, increase
+`--target-generations` to `13`, then `25`. Targets are cumulative. Choose the
+random prefix to match completed distinct Shinka evaluations beyond the shared
+initial candidate; report failures and duplicate training separately. The runner
+currently charges repeated training rather than caching duplicate scores.
 Use a new results directory for a different model, evaluator, protocol, or
-independent search. Keep the directory between stages of this run.
+independent search. Keep the directory between stages of this run. The runner
+checks frozen sources and previous artifacts before resume and stops at terminal
+failures; it does not silently replace failed proposal slots. Host Python/NumPy
+RNG state is retained, but model responses and restart behavior do not guarantee
+the same trajectory as an uninterrupted run.
 
 The guard removes API credentials from the subprocess environment, requires an
 existing ChatGPT login, forces that login method and the built-in provider, and
-preserves Codex's read-only sandbox. It does not alter stored credentials. It is
-an authentication guard, not isolation from every inherited Codex integration.
+preserves Codex's read-only sandbox. It does not alter stored credentials.
+Proposals run in an empty temporary directory, skip user/project instructions,
+disable local tools and integrations, and have a child-process timeout shorter
+than Shinka's outer timeout.
 It also cannot enforce account-side purchased-credit settings or inspect the
 remaining included allowance. Check the usage dashboard before starting each
 block, use Standard speed, and stop if the included allowance is exhausted.
