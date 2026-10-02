@@ -60,6 +60,17 @@ def plot_reference(report_dir: Path, output: Path) -> dict:
     active = values[np.array([r["task"] for r in records]), np.arange(4000)]
     require(abs(float(active.mean() / 500) - summary["active_score"]["normalized_score"]) < 1e-10,
             "Active score differs from trajectory")
+    phases = summary["analysis"]["phase_returns"]
+    require(len(phases) == 20 and all(p["phase"] == i and p["task"] == i % 2
+                                    for i, p in enumerate(phases)),
+            "Unexpected checkpoint phase sequence")
+    switches = [{"from_phase": i, "to_phase": i + 1, "task": phases[i]["task"],
+                 "before": phases[i]["own_mean"], "after": phases[i + 1]["previous_mean"],
+                 "forgetting": phases[i]["own_mean"] - phases[i + 1]["previous_mean"]}
+                for i in range(19)]
+    require(abs(sum(s["forgetting"] for s in switches) / 19
+                - summary["analysis"]["metrics"]["forgetting"]) < 1e-10,
+            "Mean forgetting differs from checkpoint switch differences")
     times = summary["training"]["phase_timings"]
     events = [json.loads(line) for line in
               (report_dir / "raw/training/phase-events.jsonl").read_text().splitlines()]
@@ -122,7 +133,8 @@ def plot_reference(report_dir: Path, output: Path) -> dict:
                           "input_report": report_dir.name,
                           "input_sha256": {**checksums, "checksums.json": digest(report_dir / "checksums.json")},
                           "matplotlib_version": matplotlib.__version__, "numpy_version": np.__version__,
-                          "curves": curves, "phase_timings": times, "smoothing": None,
+                          "curves": curves, "phase_timings": times,
+                          "checkpoint_switches": switches, "smoothing": None,
                           "outputs_sha256": {p.name: digest(p) for p in (svg, pdf)}}
             sidecar.write_text(json.dumps(provenance, indent=2, allow_nan=False) + "\n")
             require(not any(p.exists() for p in outputs), "Refusing to overwrite artifacts")
