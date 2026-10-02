@@ -261,11 +261,12 @@ Replay instructions are in the [task runbook](../tasks/cartpole_adaptive/README.
 Use fresh output directories; source and artifact guards prevent silently
 reinterpreting earlier evidence under changed code.
 
-After this implementation gate, the next handoff is a frozen adaptive selection
-evaluator: compute both objective terms from verified training and fresh
-checkpoint evidence, allocate new search and validation partitions, and include
-those identities in the canonical-AST cache key. Exercise the fixed controls and
-one verified cache hit before starting the staged adaptive Shinka archive.
+The subsequent [adaptive selection stage](adaptive-evaluation.md) is complete:
+both objective terms are computed from verified training and fresh checkpoint
+evidence, new search and validation partitions are allocated, and those
+identities enter the canonical-AST cache key. All 15 fixed-control trials and
+two cache checks passed. The next step is the separate adaptive Shinka archive,
+starting with five total slots and retaining the fixed controls as baselines.
 The identity gate establishes implementation correctness, not a performance
 ranking or a discovered learning rule.
 

@@ -1,0 +1,19 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 4004
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  ne overrides   : ['method=ga_focus', 'sigma=0.5', 'searcher_kwargs.elite_ratio=0.5', 'searcher_kwargs.cross_over_rate=0.0', 'searcher_kwargs.focus_rate=0.3', 'searcher_kwargs.sigma_rate=0.1', 'searcher_kwargs.track_target=0.9', 'searcher_kwargs.sigma_min=1e-05', 'searcher_kwargs.explore_fraction=0.25'] []
+  seed           : 4003
+  boundary info  : none
+  output         : $STUDY/cache/7b55ea9e6f89db9195ac182405f70919c81117eaf0bc63b7c5af2c1c4acd5639/attempt_0001/seed_4003/training
+======================================================================
+  gen     0 task= 0 train=   22.8 t0=  445.3 t1=   10.0 gen'ist=   10.0
+  gen    50 task= 0 train=  442.8 t0=  500.0 t1=   10.3 gen'ist=   10.3
+  gen    79 task= 1 train=  404.0 t0=   13.3 t1=  366.0 gen'ist=   13.3
+  wrote $STUDY/cache/7b55ea9e6f89db9195ac182405f70919c81117eaf0bc63b7c5af2c1c4acd5639/attempt_0001/seed_4003/training
+
+Done. $STUDY/cache/7b55ea9e6f89db9195ac182405f70919c81117eaf0bc63b7c5af2c1c4acd5639/attempt_0001/seed_4003/training

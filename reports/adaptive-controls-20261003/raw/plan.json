@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "protocol_version": "adaptive-cartpole-v1",
+  "profile": {
+    "name": "adaptive-search",
+    "purpose": "Adaptive mutation program development; fresh partition and active/previous-task objective",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 3,
+    "seeds": [
+      4001,
+      4002,
+      4003
+    ],
+    "ne": {
+      "num_generations": 80,
+      "task_interval": 20,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "reserved_validation_profile": {
+    "name": "adaptive-validation",
+    "purpose": "Reserved adaptive finalist validation; different phase interval and untouched partition",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 10,
+    "seeds": [
+      5001,
+      5002,
+      5003,
+      5004,
+      5005
+    ],
+    "ne": {
+      "num_generations": 320,
+      "task_interval": 80,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "trial_offset": 1,
+  "eval_seed_offset": 900000,
+  "posthoc_episodes": 10,
+  "objective_version": "adaptive-active-previous-v1",
+  "objective_weights": {
+    "active": 0.5,
+    "previous": 0.5
+  },
+  "grammar_version": "adaptive-width-v1",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "upstream": "$REPO_ROOT/.upstream/continual_neuroevolution",
+  "python": "$REPO_ROOT/.upstream/continual_neuroevolution/.venv/bin/python",
+  "timeout_seconds": 1800,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "thread_environment": {
+    "JAX_PLATFORMS": "cpu",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "MKL_DYNAMIC": "FALSE",
+    "NUMEXPR_NUM_THREADS": "1",
+    "NUMEXPR_MAX_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "GOTO_NUM_THREADS": "1"
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "jax_backend": "cpu",
+    "jax_devices": [
+      "TFRT_CPU_0"
+    ],
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "thread_environment": {
+      "JAX_PLATFORMS": "cpu",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OMP_THREAD_LIMIT": "1",
+      "OMP_DYNAMIC": "FALSE",
+      "OMP_WAIT_POLICY": "PASSIVE",
+      "MKL_DYNAMIC": "FALSE",
+      "NUMEXPR_NUM_THREADS": "1",
+      "NUMEXPR_MAX_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1",
+      "GOTO_NUM_THREADS": "1"
+    },
+    "packages": {
+      "PyYAML": "6.0.3",
+      "rich": "15.0.0",
+      "six": "1.17.0",
+      "tensorstore": "0.1.84",
+      "fonttools": "4.63.0",
+      "mdurl": "0.1.2",
+      "flax": "0.10.6",
+      "toolz": "1.1.0",
+      "pandas": "3.0.5",
+      "optax": "0.2.6",
+      "jaxlib": "0.5.3",
+      "ml_dtypes": "0.5.4",
+      "chex": "0.1.90",
+      "typing_extensions": "4.16.0",
+      "scipy": "1.17.1",
+      "seaborn": "0.13.2",
+      "humanize": "4.16.0",
+      "markdown-it-py": "4.2.0",
+      "simplejson": "4.1.1",
+      "contourpy": "1.3.3",
+      "pillow": "12.3.0",
+      "opt_einsum": "3.4.0",
+      "zipp": "4.1.0",
+      "aiofiles": "25.1.0",
+      "jax": "0.5.3",
+      "numpy": "1.26.4",
+      "nest-asyncio": "1.6.0",
+      "treescope": "0.1.10",
+      "protobuf": "6.33.6",
+      "Pygments": "2.20.0",
+      "packaging": "26.2",
+      "pyparsing": "3.3.2",
+      "kiwisolver": "1.5.0",
+      "absl-py": "2.5.0",
+      "matplotlib": "3.11.1",
+      "etils": "1.14.0",
+      "cloudpickle": "3.1.2",
+      "Farama-Notifications": "0.0.6",
+      "python-dateutil": "2.9.0.post0",
+      "gymnasium": "1.2.3",
+      "msgpack": "1.2.1",
+      "fsspec": "2026.6.0",
+      "cycler": "0.12.1",
+      "orbax-checkpoint": "0.11.24",
+      "gymnax": "0.0.9"
+    },
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "numerical_environment": {
+      "XLA_FLAGS": null,
+      "JAX_ENABLE_X64": null,
+      "JAX_DEFAULT_MATMUL_PRECISION": null,
+      "JAX_NUM_CPU_DEVICES": null,
+      "PYTHONHASHSEED": null,
+      "PYTHONPATH": null
+    }
+  },
+  "source_sha256": {
+    "src/shinka_crl/adaptive_evaluation.py": "e09ef68b2d35c575a847e0bd924e95973b38156e5384ea0145c47b4702f3ef70",
+    "src/shinka_crl/adaptive_objective.py": "47685df2f6c3597fdf29a4df6fc23bce54b2240b6ec8957178795d5079cd6422",
+    "src/shinka_crl/adaptive.py": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c",
+    "scripts/adaptive_train.py": "de5ddc28ce8c43e25c5bc96bfbec6df7aa945207ee38450422ac5bbedd4d5c8f",
+    "scripts/run_adaptive_controls.py": "048cb02175b555c0ee3dbfd0db5b5e846e20435cadbb47f7d05325373c4c9a2a",
+    "scripts/report_adaptive_controls.py": "c253007d97e4407cb2159c09a3aada68e4d35e70e5b0a779ef8ff6436f7607de",
+    "tasks/cartpole_adaptive/evaluate.py": "4267f8ede0321fcd84ae33caf6bcb75d1ecfb6416fb1444161789ec5f28ff05b",
+    "tasks/cartpole_adaptive/initial.py": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+    "tasks/cartpole_adaptive/arithmetic.py": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+    "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad",
+    "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+    "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+    "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+    "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43",
+    "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+    "src/shinka_crl/profiles/adaptive-search.json": "d575715ba5bb53d20cf0e81982bfd2f5105397d46a9c2e0c6966e78457e8cca4",
+    "src/shinka_crl/profiles/adaptive-validation.json": "8a727f13482140dcb1acd4b5a6d917c347d4bcba89b60b96d51285636fe5d435",
+    "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+    "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267",
+    "docs/adaptive-seed-allocation-20261003.json": "e1fe429c29719a6db59e649d66e679261ed074f9a16bdef021539add79e1405a",
+    "reports/validation-static-20261002/summary.json": "65fd015d023103cd2d0aa2c76466ed73d49d8028687b16a086c17e0216fe81c6"
+  },
+  "controls": [
+    {
+      "id": "identity",
+      "variant": "ga_adaptive",
+      "source": "tasks/cartpole_adaptive/initial.py",
+      "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+      "settings": null
+    },
+    {
+      "id": "arithmetic",
+      "variant": "ga_adaptive",
+      "source": "tasks/cartpole_adaptive/arithmetic.py",
+      "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+      "settings": null
+    },
+    {
+      "id": "focus",
+      "variant": "ga_focus",
+      "source": null,
+      "source_sha256": null,
+      "settings": null
+    },
+    {
+      "id": "static_shinka11",
+      "variant": "ga_static",
+      "source": "reports/finalists-static-20261002/programs/ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501.py",
+      "source_sha256": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+      "settings": {
+        "sigma": 0.065,
+        "elite_ratio": 0.075
+      }
+    },
+    {
+      "id": "static_random24",
+      "variant": "ga_static",
+      "source": "reports/finalists-static-20261002/programs/cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9.py",
+      "source_sha256": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+      "settings": {
+        "sigma": 0.224195451112929,
+        "elite_ratio": 0.0921597481719689
+      }
+    }
+  ],
+  "cache_policy": "Complete verified candidate evaluations only; canonical AST plus full context; duplicate requests consume slots, never extra training; failed attempts retained",
+  "outer_search_policy": "Separate Shinka archive; staged 5/13/25 total slots; each repeated or invalid proposal consumes its slot; no model calls in control study"
+}

@@ -32,8 +32,9 @@ matched pilot profiles, resumable trial runner, checkpoint analysis, evidence
 exporter, figure generator, finalist freezer, reference timing, and validation
 runners are implemented. Their [execution protocol](finalist-validation.md)
 preserves the separate source contracts. The adaptive program adapter and native
-FocusGA support are implemented; the adaptive selection evaluator and Shinka
-search remain pending. Source revisions remain fixed by
+FocusGA support are implemented. The adaptive selection evaluator, verified
+cache, and 15 fixed-control trials are complete; adaptive Shinka search remains
+pending. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 
@@ -57,6 +58,9 @@ experiment. The unchanged GA evolves policy weights inside each evaluation.
 | :--- | :--- | :--- | :--- |
 | Development | 1001–1003 | 1002–1004 | Pilot, candidate feedback, debugging |
 | Validation | 2001–2005 | 2002–2006 | One finalist comparison after search |
+| Adapter diagnostics | 3001 | 3002 | Implementation checks only |
+| Adaptive development | 4001–4003 | 4002–4004 | Fixed controls and adaptive-program feedback |
+| Adaptive validation | 5001–5005 | 5002–5006 | Reserved finalist transfer check; phase interval 80 |
 | Final reporting | 42–51 | 1–10 | Frozen algorithms and paper-scale protocol |
 
 <sub>Table 1. Study seed partitions. The upstream task offset depends on the
@@ -553,13 +557,13 @@ identical policy or rollout draws.
 | :--- | :--- | :--- |
 | Plain GA and identity adapter | Reproduction baseline and adapter parity | Width 0.5, archive fraction 0.5; identity traces agree |
 | Frozen best Shinka and random configurations | Strength of static tuning | Keep both selected configurations; do not retune on adaptive validation |
-| Fixed arithmetic update in the new interface | Benefit of adaptation without program search | Proposed width multiplier `exp(0.1 * (stats[4] - 0.5))`; unchanged memory; same width bounds |
+| Fixed arithmetic update in the new interface | Benefit of adaptation without program search | Frozen width multiplier `exp(0.1 * (stats[4] - 0.5))`; unchanged memory; same width bounds |
 | Upstream `ga_focus` transfer | Existing adaptive mechanism from the paper | Explicit paper settings above; unchanged searcher; same total training evaluations |
 | Shinka-evolved update | Main extension | Same adapter, inputs, width bounds, scorer, and training budget as the arithmetic control |
 
-<sub>Table 7. Required adaptive-study controls. The arithmetic rule is a proposed
-offspring-versus-archive heuristic, not a parent-matched success rule. Freeze its
-formula before evaluating or proposing adaptive candidates. The upstream focus
+<sub>Table 7. Required adaptive-study controls. The arithmetic rule is a frozen
+offspring-versus-archive heuristic, not a parent-matched success rule. Its
+formula was fixed before evaluating adaptive candidates. The upstream focus
 control changes selection, includes a training centroid, and allows a smaller
 width floor than the new interface; it is a whole-method comparison, not an
 isolated test of width adaptation.</sub>
@@ -574,7 +578,7 @@ width, declare that as a new protocol with new matched controls.
 
 Use a separate task directory, archive, protocol version, and seed allocation for
 this experiment; the static evaluator cannot execute the function above. Before
-launch, freeze a retention-sensitive objective. The revised proposed objective is
+launch, freeze a retention-sensitive objective. The frozen objective is
 
 $$
 J_{\mathrm{adaptive}}=\tfrac12 J_{\mathrm{active}}
@@ -591,7 +595,7 @@ holding later previous-task returns fixed increases LA − F by Δ/12. Direct
 previous-task return avoids that incentive. It can still reflect later
 acquisition on a poorly learned task, so it is not a pure measure of retention.
 
-This is a proposed extension objective, not the paper's score normalization.
+This is the frozen extension objective, not the paper's score normalization.
 Static selection and reserved validation keep their original active-return
 objective. The adaptive objective requires post-hoc checkpoint evaluation per candidate. Validate this scorer
 on known traces and publish its cost before starting an adaptive search. Always
@@ -602,6 +606,12 @@ search winners under the same training budget. Preserve individual switch
 differences as specified in Section 3, especially when mean forgetting is
 negative. Any resulting claim should identify the discovered program and its
 mechanism; a better scalar score alone does not establish better retention.
+
+The [adaptive evaluation protocol](adaptive-evaluation.md) now implements the
+objective, fresh partitions, and source-bound canonical-AST cache. Its arithmetic
+control and both static winners remain fixed. The evaluation reports active
+and previous-task terms separately and rederives cached scores from original
+training and checkpoint evidence before reuse.
 
 ## 8. Next implementation deliverables
 
@@ -615,8 +625,8 @@ mechanism; a better scalar score alone does not establish better retention.
 | 6 | One paper-budget default-GA development trial | 20 phases, population 512, seed 1001/trial 1002; measured time and memory; reporting trials untouched | Complete: 30.20 min training, 843.2 MiB peak trainer RSS; all 20 phases |
 | 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Complete: 25 trials, 26.59 min; Shinka 11 and random 24 selected |
 | 8 | Adaptive-program adapter and native control support | Short identity traces, varying-sigma check, persistent memory, explicit upstream adaptive control | Complete: seven real trials, 19 numerical checks, 3.98 min |
-| 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Next |
-| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Main extension; pending |
+| 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Complete: 15 trials, two cache checks, 15.21 min; 504 harness tests pass |
+| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Next: five total slots, then resume to 13 and 25 |
 
 <sub>Table 8. Deliverables and observed status. The successful baseline-trial
 resume does not substitute for testing Shinka's separate archive-resume path.</sub>
@@ -628,6 +638,16 @@ halving changes the next population and retains memory across the switch.
 The fixed arithmetic rule and native FocusGA run successfully. These tests
 establish implementation behavior, not a performance ranking. No adaptive Shinka
 proposal or paid API call was made in this stage.
+
+The subsequent [fixed-control study](../reports/adaptive-controls-20261003/summary.json)
+completed all 15 development trials on seeds 4001–4003 with no failed attempts.
+Seven evaluator requests include two diagnostic cache checks; both reused verified
+evidence without training. Native FocusGA has the highest observed combined
+mean, while the arithmetic rule has the highest previous-task mean. The
+[README](../README.md#adaptive-objective-and-fixed-controls) reports dispersion,
+individual seeds, and the limits of this comparison. Reserved adaptive validation
+seeds 5001–5005 remain unused. Proceed to the first adaptive proposal block under
+the frozen objective; the controls are baselines, not Shinka discoveries.
 
 After each substantive experiment, update the README as a scientific report:
 state the frozen protocol, link compact raw evidence and hashes, distinguish

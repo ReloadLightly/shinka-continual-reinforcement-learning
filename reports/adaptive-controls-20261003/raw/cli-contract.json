@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "purpose": "Actual Shinka task CLI result contract using a cached identity control; no model call",
+  "command": [
+    "$REPO_ROOT/.venv/bin/python",
+    "$REPO_ROOT/tasks/cartpole_adaptive/evaluate.py",
+    "--program_path",
+    "$STUDY/programs/identity.py",
+    "--results_dir",
+    "$STUDY/requests/identity_cli_contract"
+  ],
+  "wall_seconds": 0.9275725400075316,
+  "cache_hit": true,
+  "new_training_trials": 0,
+  "combined_score": 0.17063055713706546
+}

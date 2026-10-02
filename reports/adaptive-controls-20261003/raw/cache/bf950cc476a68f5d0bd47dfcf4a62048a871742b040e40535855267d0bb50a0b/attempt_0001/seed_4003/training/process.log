@@ -1,0 +1,18 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 4004
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  seed           : 4003
+  boundary info  : none
+  output         : $STUDY/cache/bf950cc476a68f5d0bd47dfcf4a62048a871742b040e40535855267d0bb50a0b/attempt_0001/seed_4003/training
+======================================================================
+  gen     0 task= 0 train=   16.8 t0=  182.0 t1=   10.7 gen'ist=   10.7
+  gen    50 task= 0 train=   96.0 t0=  485.3 t1=   12.7 gen'ist=   12.7
+  gen    79 task= 1 train=  147.9 t0=   11.0 t1=  500.0 gen'ist=   11.0
+  wrote $STUDY/cache/bf950cc476a68f5d0bd47dfcf4a62048a871742b040e40535855267d0bb50a0b/attempt_0001/seed_4003/training
+
+Done. $STUDY/cache/bf950cc476a68f5d0bd47dfcf4a62048a871742b040e40535855267d0bb50a0b/attempt_0001/seed_4003/training

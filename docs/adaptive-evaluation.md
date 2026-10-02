@@ -80,6 +80,11 @@ of automatic reuse. The static search retains its original retraining policy.
 
 ## Execution and replay
 
+The completed study used source snapshot
+[`fee9baa`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/fee9baa).
+Replay its runners at that revision: later changes to source-hashed files are
+intentionally rejected. Use a separate checkout when preserving newer work.
+
 Freeze the plan and run only the first control:
 
 ```bash
@@ -102,3 +107,26 @@ The Shinka-compatible task evaluator requires `SHINKA_ADAPTIVE_STUDY` to identif
 this frozen study and writes `correct.json` plus `metrics.json` for each request.
 Actual adaptive Shinka proposals remain a separate next stage: a new archive,
 initial identity slot, and resumable targets of 5, 13, and 25 total slots.
+
+## Observed control study
+
+All 15 trials completed without failure: 115.2 million nominal training steps,
+4,500 fresh checkpoint-evaluation episodes, and 15.21 minutes summed evaluation
+time. The identity-only first stage took 2.86 minutes; resuming added the other
+four controls without retraining identity. Seven requests include the five
+controls, a formatting-only duplicate, and an actual command-line evaluator
+check. Both diagnostic requests reused the identity cache with identical scores
+and zero new training, avoiding 46.08 million nominal steps in total.
+
+These are fixed-control development results. No adaptive Shinka proposals or
+model calls occurred. The objective and arithmetic rule were not changed after
+observing outcomes. The next experiment creates a separate Shinka archive with
+five total slots before extending to 13 and 25. The measured controls took
+2.6–3.8 minutes per candidate; four new valid candidates provisionally need
+10–15 minutes of evaluation plus proposal overhead. Reserved validation remains
+unused until a later frozen handoff.
+
+See [Table 13 / Figure 6](../README.md#adaptive-objective-and-fixed-controls),
+the [complete evidence](../reports/adaptive-controls-20261003/summary.json),
+[artifact receipts](../reports/adaptive-controls-20261003/checksums.json), and
+the [first-stage export](../reports/adaptive-controls-stage1-20261003/summary.json).
