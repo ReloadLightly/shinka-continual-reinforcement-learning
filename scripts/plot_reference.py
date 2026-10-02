@@ -43,6 +43,8 @@ def plot_reference(report_dir: Path, output: Path) -> dict:
     require(profile["num_phases"] == 20 and profile["num_tasks"] == 2
             and profile["ne"]["task_interval"] == 200
             and profile["ne"]["num_generations"] == 4000
+            and profile["ne"]["pop_size"] == 512 and profile["ne"]["num_evals"] == 3
+            and profile["episode_length"] == 500 and profile["eval_episodes"] == 10
             and summary["seed"] == 1001 and summary["trial"] == 1002,
             "Unexpected reference protocol")
     records = read(report_dir / "raw/training/training_metrics.json")

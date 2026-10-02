@@ -55,6 +55,8 @@ The `paper-cartpole` profile explicitly requests **20 phases**. The upstream YAM
 | `smoke` | Validate execution and artifacts | 1001 | 2 | 4 generations/updates; episode cap 32 |
 | `search` | Select GA configurations | 1001–1003 | 4 | 80 generations × 64 candidates × 3 episodes |
 | `pilot-stationary` / `pilot-switching` | Matched baseline development comparison | 1001–1003 | 4 | 7.68 × 10⁶ nominal steps per learner and trial |
+| `cartpole-validation` | One frozen finalist comparison | 2001–2005 | 4 | 320 generations × 64 candidates × 3 episodes |
+| `paper-cartpole-timing` | Default-GA development reference | 1001 | 20 | 3.072 × 10⁹ nominal steps; final seeds excluded |
 | `paper-cartpole` | Final reporting | 42–51 | 20 | Full protocol in Table 1 |
 
 <sub>Table 2. Experiment profiles. Smoke budgets are intentionally small and are not compute-matched across methods.</sub>
@@ -128,6 +130,10 @@ parent selection and preserves fixed-width explorers; it is a whole-method
 comparison. It remains separate from the paper's plain-GA CartPole baseline.
 The new interface preserves the baseline's selection, policy, random stream,
 and training budget; it is specified but not yet implemented.
+The [implementation specification](docs/adaptive-programs.md) defines the exact
+trainer hook, executable grammar, memory, width timing, and focused checks.
+Its proposed objective combines active return with performance on the previous
+task after a switch; the paper's learning and forgetting metrics remain separate.
 
 ## 4. Results
 

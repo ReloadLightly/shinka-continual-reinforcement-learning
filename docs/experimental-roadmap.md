@@ -443,6 +443,8 @@ repeated outer searches under independently seeded search trajectories.
 ## 7. Second search space: adaptive mutation programs
 
 Static configuration search supplies a baseline for the main Shinka extension.
+The [implementation specification](adaptive-programs.md) records the exact
+factory interception, executable grammar, state, and two focused checks.
 Actual learning-rule discovery needs code whose behavior depends on the
 learning process. The proposed next interface evolves only mutation-width
 adaptation; selection rules and archive replacement remain fixed:
@@ -510,7 +512,10 @@ switching traces, plus one nonconstant rule. The completed 18-trial baseline
 pilot does not need to be repeated to authorize this extension. Compare sigma
 actually used by `ask` as well as the logged value; the upstream logger normally
 reads a fixed value from `variation_params`, so the adaptive adapter must expose
-`adapts_sigma=True`.
+`adapts_sigma=True`. Native logging occurs after `tell`, so that row's width
+belongs to the next generation. Preserve the raw column and derive
+`sigma_used[0]=0.5`, `sigma_used[g]=sigma_next[g-1]`; a changed log value alone
+does not prove that the intended generation used it.
 
 ### Existing adaptive mechanism and required controls
 
@@ -564,15 +569,26 @@ width, declare that as a new protocol with new matched controls.
 
 Use a separate task directory, archive, protocol version, and seed allocation for
 this experiment; the static evaluator cannot execute the function above. Before
-launch, freeze a retention-sensitive objective. One proposed objective is
+launch, freeze a retention-sensitive objective. The revised proposed objective is
 
 $$
 J_{\mathrm{adaptive}}=\tfrac12 J_{\mathrm{active}}
-+\tfrac12\frac{\mathrm{LA}-\mathrm{F}}{500}.
++\tfrac12 J_{\mathrm{previous}},\qquad
+J_{\mathrm{previous}}=\frac{1}{500(P-1)}
+\sum_{j=0}^{P-2} R_{j,j+1}.
 $$
 
+Here the second term measures centroid return on the previous task after the
+next phase, using the reference evaluator's fresh `prev_returns`. Both terms
+lie in [0, 1]. This replaces the earlier proposed LA − F term before any adaptive
+evaluation: for four phases, lowering an earlier own-task endpoint by Δ while
+holding later previous-task returns fixed increases LA − F by Δ/12. Direct
+previous-task return avoids that incentive. It can still reflect later
+acquisition on a poorly learned task, so it is not a pure measure of retention.
+
 This is a proposed extension objective, not the paper's score normalization.
-It requires post-hoc checkpoint evaluation per candidate. Validate this scorer
+Static selection and reserved validation keep their original active-return
+objective. The adaptive objective requires post-hoc checkpoint evaluation per candidate. Validate this scorer
 on known traces and publish its cost before starting an adaptive search. Always
 report the separate learning, forgetting, and active-return terms so a gain in
 one cannot conceal failure in another. Compare evolved rules with the constant
@@ -589,10 +605,10 @@ mechanism; a better scalar score alone does not establish better retention.
 | 1 | Switching and stationary pilot profiles; resumable trial manifest | Exact budgets, resolved configurations, reduced real runs, six-trial resume | Complete |
 | 2 | Post-hoc evaluation and reporting adapter | Known-trace checks, correct centroid sources, real checkpoint evaluation | Complete |
 | 3 | Eighteen-trial pilot | Raw curves, per-seed metrics, costs, passing adequacy gate | Complete |
-| 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Complete: 12 actual proposals and 2 → 5 → 13 resume |
-| 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | 13 programs and 12 matched controls complete; 25/24 endpoint pending |
-| 6 | One paper-budget default-GA development trial | 20 phases, population 512, seed 1001/trial 1002; measured time and memory; reporting trials untouched | Pending after static endpoint |
-| 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Pending |
+| 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Complete: 24 actual proposals and 2 → 5 → 13 → 25 resume |
+| 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | Complete: 25 programs, 24 controls; 17 distinct mutations, seven charged repeats |
+| 6 | One paper-budget default-GA development trial | 20 phases, population 512, seed 1001/trial 1002; measured time and memory; reporting trials untouched | Runner and real instrumentation check complete; trial running |
+| 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Five finalists frozen; runner implemented; trials pending |
 | 8 | Adaptive-program adapter and required controls | Short identity traces, varying-sigma check, explicit upstream adaptive control, frozen objective | Pending |
 | 9 | Shinka search over executable adaptive rules | Separate archive and seed allocation; control comparisons; individual learning and forgetting trajectories | Main extension; pending |
 
