@@ -1,10 +1,11 @@
-# Planned adaptive mutation programs
+# Adaptive mutation programs
 
 The main ShinkaEvolve extension will evolve an executable mutation-width update
 from training feedback. The completed two-parameter search supplies static
 baselines. This specification details the next search space in the
 [experimental roadmap](experimental-roadmap.md#7-second-search-space-adaptive-mutation-programs);
-the adapter and adaptive search remain unimplemented.
+the restricted adapter is implemented. Adaptive proposal search remains pending
+the separate objective, development partition, and cache protocol.
 
 Keep archive size, survivor selection, policy architecture, task draws, and
 interaction budgets fixed. The first program family changes only the Gaussian
@@ -86,8 +87,14 @@ comparisons, constant-index reads, and a documented JAX operation whitelist:
 `exp`, `log`, `sqrt`, `tanh`, `abs`, `minimum`, `maximum`, `clip`, `where`, and
 `stack`. Reject imports, arbitrary attributes or calls, loops, comprehensions,
 nested functions, recursion, and access to globals or builtins. Bound source
-length, AST size, and expression depth before tracing; freeze those limits with
-the evaluator and include them in the proposer prompt.
+length, AST size, and expression depth before tracing. Grammar version
+`adaptive-width-v1` permits at most 8,192 UTF-8 bytes, 512 AST nodes, 32 local
+assignments, and expression depth 32. Arithmetic is limited to `+`, `-`, `*`,
+and `/`; power and modulo are rejected. Calls use bare operation names (for
+example `exp(...)`), never attributes such as `jnp.exp`. Only scalar or equal
+length vector broadcasting is allowed. `stack` takes exactly four floating-point
+scalars. Numeric literals become float32; constant indices remain integers.
+Freeze these limits with the evaluator and include them in the proposer prompt.
 
 Check scalar/vector shapes with `jax.eval_shape`. Execute the accepted function
 inside the native generation JIT. Check output finiteness **before** clipping;
@@ -122,7 +129,8 @@ hidden schedule to skip it.
    first asked population, complete reward/task records, archive and phase-end
    checkpoint arrays, and fresh centroid evaluations. Compare numerical arrays,
    not compressed-file bytes or timing metadata. Width must remain 0.5.
-2. **Mutation actuation.** Use `return sigma * 0.5, memory`. With fixed state and
+2. **Mutation actuation.** Use `return sigma * 0.5, memory + 1.0`. The memory
+   counter checks persistence across a switch without influencing width. With fixed state and
    ask key, verify that archive members and parent/noise draws are preserved while
    offspring displacement changes with width. The first generation uses 0.5 and
    the second 0.25. Check the derived width log, unchanged batch/task schedule,
@@ -150,11 +158,12 @@ that feedback to track the selected archive. Explorers retain the initial width.
 Its feedback, width range, selection, and random draws differ from the proposed
 interface. Treat it as a whole-method comparison, not an isolated width ablation.
 
-The existing native GA arm can select this implemented comparator through
-`--ne_override method=ga_focus` with all its settings specified. Its raw result
-must retain the true `ga_focus` method. Repository scoring currently accepts
-GA/ES/PPO, so explicit NE-family support is needed before this control runs;
-do not relabel its raw results to pass an existing validator.
+The existing native GA arm selects this comparator through
+`--ne_override method=ga_focus`. All numeric settings are explicit; the pinned
+CartPole arm supplies boolean `init_around_mean=False`. The native override
+parser does not parse booleans: passing `false` would create a truthy string.
+The launcher and analysis validate the resolved boolean and all numeric settings.
+Repository scoring now supports the true `ga_focus` identity throughout.
 
 For wrapped programs, additionally record `algorithm_variant="ga_adaptive"`,
 program and adapter hashes, and the exact launcher invocation. Upstream may
@@ -187,6 +196,8 @@ mean F, LA−F, and ZT alongside it. The objective is a proposed extension metri
 static selection and reference-paper metrics remain fixed.
 
 Adaptive development and validation seed/trial partitions are **unallocated**.
+The adapter gate alone reserves diagnostic seed 3001 / task trial 3002 and
+independent evaluation seed 903001; these are not adaptive search seeds.
 Check local experiment manifests before assigning and freezing them. Do not use
 reserved static validation or final-reporting outcomes to choose this objective,
 grammar, search budget, or program. A single outer search evaluates its resulting

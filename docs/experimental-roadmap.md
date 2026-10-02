@@ -31,8 +31,9 @@ README and linked evidence archives. The constant-configuration evaluator,
 matched pilot profiles, resumable trial runner, checkpoint analysis, evidence
 exporter, figure generator, finalist freezer, reference timing, and validation
 runners are implemented. Their [execution protocol](finalist-validation.md)
-preserves the separate source contracts. The adaptive program adapter remains
-the main extension to implement. Source revisions remain fixed by
+preserves the separate source contracts. The adaptive program adapter and native
+FocusGA support are implemented; the adaptive selection evaluator and Shinka
+search remain pending. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 
@@ -450,7 +451,7 @@ Static configuration search supplies a baseline for the main Shinka extension.
 The [implementation specification](adaptive-programs.md) records the exact
 factory interception, executable grammar, state, and two focused checks.
 Actual learning-rule discovery needs code whose behavior depends on the
-learning process. The proposed next interface evolves only mutation-width
+learning process. The implemented interface permits only mutation-width
 adaptation; selection rules and archive replacement remain fixed:
 
 ```python
@@ -468,7 +469,7 @@ def update_sigma(sigma, stats, memory):
 | Returned width | Finite scalar, bounded by the harness to [0.001, 2.0] |
 | Returned memory | Finite float32 vector with unchanged shape |
 
-<sub>Table 6. Proposed adaptive-program interface; not yet implemented. The
+<sub>Table 6. Implemented adaptive-program interface; proposal search is pending. The
 identity program supplies the neutral baseline.</sub>
 
 The five statistics, in fixed order, are population mean fitness, population

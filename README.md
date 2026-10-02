@@ -119,8 +119,8 @@ flowchart LR
 
 The planned first search has one initial candidate and **24 proposal slots**, compared with a matched random-search control. Shinka's total generation targets are **5 → 13 → 25**; each completed block can be resumed from the same result directory. These are targets for attempts, not guarantees of distinct valid programs. A higher active-task score alone is not evidence of reduced forgetting.
 
-The planned adaptive interface, `update_sigma(sigma, stats, memory)`, will instead
-execute after each GA update and control the next generation's mutation width.
+The implemented adaptive interface, `update_sigma(sigma, stats, memory)`,
+executes after each GA update and controls the next generation's mutation width.
 Its five training-only statistics and four persistent memory values permit
 behavior that changes during learning, without a task-boundary signal. The
 [adaptive protocol](docs/experimental-roadmap.md#7-second-search-space-adaptive-mutation-programs)
@@ -129,7 +129,7 @@ search winners, and the upstream `ga_focus` as controls. The latter also adapts
 parent selection and preserves fixed-width explorers; it is a whole-method
 comparison. It remains separate from the paper's plain-GA CartPole baseline.
 The new interface preserves the baseline's selection, policy, random stream,
-and training budget; it is specified but not yet implemented.
+and training budget. Adaptive Shinka proposal search has not yet run.
 The [implementation specification](docs/adaptive-programs.md) defines the exact
 trainer hook, executable grammar, memory, width timing, and focused checks.
 Its proposed objective combines active return with performance on the previous
@@ -492,8 +492,11 @@ four generations verify instrumentation only.
 
 The completed static archive retains its original source contract. Commit
 [`32fc5e8`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/32fc5e8)
-provides that executable snapshot; subsequent profile registration belongs to
-the separately frozen reference and validation studies.
+provides that executable snapshot. The reference-timing and reserved-validation
+exporters should be replayed at
+[`76bf671`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/76bf671),
+which preserves their exact source receipts. The adaptive stage changes shared
+helpers under a new source contract; historical hash guards remain enforced.
 
 The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Twenty-four proposals completed through this route. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
 
@@ -509,15 +512,19 @@ The [GitHub Actions template](ci/github-actions.yml) runs the harness checks. CI
 
 ## 6. Limitations and next experiment
 
-The current search space contains two static GA settings. It cannot discover adaptive update rules, change policies, or alter experiment budgets. Reduced-budget development scores may not predict performance across the full task sequence. Smoke scores support no ranking of GA, ES, and PPO because they use one seed and unmatched training budgets.
+The completed search covers two static GA settings. The new executable interface
+can adapt mutation width and memory, but it has not yet been searched by Shinka.
+It preserves selection, policy architecture, and experiment budgets.
+Reduced-budget development scores may not predict performance across the full
+task sequence. Smoke scores support no ranking of GA, ES, and PPO because they
+use one seed and unmatched training budgets.
 
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
-The next implementation is the [adaptive mutation adapter](docs/adaptive-programs.md),
-with the controls in Section 3. First verify short identity traces under
-stationary and switching conditions, then verify that a varying width changes
-the generated offspring. Freeze the separate objective, seed allocation, grammar,
-and duplicate-proposal policy before proposing adaptive code. The completed
+The next search-stage implementation is the fixed adaptive evaluator and
+verified result cache, using the [implemented adapter](docs/adaptive-programs.md)
+and controls in Section 3. Freeze the separate objective, seed allocation,
+grammar, and duplicate-proposal policy before proposing adaptive code. The completed
 baseline pilot does not need another large preparatory repeat.
 
 The [experimental roadmap](docs/experimental-roadmap.md) specifies staged budgets,

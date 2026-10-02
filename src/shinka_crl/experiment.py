@@ -12,12 +12,18 @@ import subprocess
 import time
 from importlib.resources import files
 
+from shinka_crl.baseline_contract import (
+    FOCUS_SEARCHER_KWARGS, FOCUS_SIGMA, validate_baseline_config,
+)
+
 REPO_ROOT = Path(__file__).resolve().parents[2]
 UPSTREAM_COMMIT = "821570eb6a22db0f7aa77111b2ea541fe8fa795b"
 DEFAULT_UPSTREAM = REPO_ROOT / ".upstream" / "continual_neuroevolution"
 DEFAULT_PYTHON = DEFAULT_UPSTREAM / ".venv" / "bin" / "python"
 PROFILE_NAMES = ("smoke", "search", "pilot-stationary", "pilot-switching", "paper-cartpole",
-                 "paper-cartpole-timing", "cartpole-validation")
+                 "paper-cartpole-timing", "cartpole-validation",
+                 "adaptive-gate-stationary", "adaptive-gate-switching")
+NE_METHODS = ("ga", "ga_focus", "es")
 
 
 def _positive_integer(value: object, label: str) -> None:
@@ -31,12 +37,12 @@ def nominal_training_steps(profile: dict, method: str) -> int:
     NE counts episode caps, including the masked steps after termination. This
     matches the reference budget convention, not useful transitions or FLOPs.
     """
-    if method in {"ga", "es"}:
+    if method in NE_METHODS:
         ne = profile["ne"]
         return (ne["num_generations"] * ne["pop_size"] * ne["num_evals"]
                 * profile["episode_length"])
     if method != "ppo":
-        raise ValueError("Supported baseline methods: ga, es, ppo")
+        raise ValueError("Supported baseline methods: ga, ga_focus, es, ppo")
     if profile["ppo"] is None:
         raise ValueError("This development profile does not define a PPO comparison")
     ppo = profile["ppo"]
@@ -75,7 +81,8 @@ def validate_profile(profile: dict) -> None:
     for family, fields in expected_keys.items():
         budget = profile[family]
         if family == "ppo" and budget is None:
-            if profile["name"] not in {"search", "paper-cartpole-timing", "cartpole-validation"}:
+            if profile["name"] not in {"search", "paper-cartpole-timing", "cartpole-validation",
+                                       "adaptive-gate-stationary", "adaptive-gate-switching"}:
                 raise ValueError("Only GA development profiles may omit a PPO budget")
             continue
         if not isinstance(budget, dict) or set(budget) != fields:
@@ -147,19 +154,23 @@ def build_command(*, profile: dict, method: str, seed: int, output_dir: Path,
     if type(seed) is not int or not 0 <= seed < 2**32:
         raise ValueError("seed must be a nonnegative 32-bit integer")
     _positive_integer(trial, "trial")
-    if method not in {"ga", "es", "ppo"}:
-        raise ValueError("Supported baseline methods: ga, es, ppo")
+    if method not in {*NE_METHODS, "ppo"}:
+        raise ValueError("Supported baseline methods: ga, ga_focus, es, ppo")
     if ga_settings is not None and method != "ga":
         raise ValueError("GA overrides are valid only for method ga")
+    if method == "ga_focus" and profile["ne"]["pop_size"] < 4:
+        raise ValueError("FocusGA needs room for a centroid and at least one offspring")
+    # Gymnax exposes the GA arm; its NE override selects the native FocusGA.
+    native_arm = "ga" if method == "ga_focus" else method
     command = [str(python), str(upstream.resolve() / "source/run.py"),
-               "--suite", "gymnax", "--env", profile["env"], "--method", method,
+               "--suite", "gymnax", "--env", profile["env"], "--method", native_arm,
                "--seed", str(seed), "--trial", str(trial),
                "--output_dir", str(output_dir.resolve()),
                "--num_phases", str(profile["num_phases"]),
                "--num_tasks", str(profile["num_tasks"]), "--task_type", "noise",
                "--eval_episodes", str(profile["eval_episodes"]),
                "--episode_length", str(profile["episode_length"])]
-    if method in {"ga", "es"}:
+    if method in NE_METHODS:
         for key, value in profile["ne"].items():
             command.extend([f"--{key}", str(value)])
     else:
@@ -177,6 +188,14 @@ def build_command(*, profile: dict, method: str, seed: int, output_dir: Path,
         settings = validate_ga_settings(ga_settings)
         command.extend(["--ne_override", f"sigma={settings['sigma']}",
                         f"searcher_kwargs.elite_ratio={settings['elite_ratio']}"])
+    if method == "ga_focus":
+        command.extend(["--ne_override", "method=ga_focus", f"sigma={FOCUS_SIGMA}"])
+        # Native overrides parse numbers and strings, never booleans. The
+        # string "false" would turn on init_around_mean. Inherit the actual
+        # False from the pinned CartPole GA arm and verify it in the result.
+        command.extend(f"searcher_kwargs.{key}={value}"
+                       for key, value in FOCUS_SEARCHER_KWARGS.items()
+                       if key != "init_around_mean")
     return command
 
 
@@ -247,6 +266,9 @@ def run_experiment(*, profile: dict, method: str, seed: int, output_dir: Path,
             subprocess.run(command, cwd=upstream, stdout=log, stderr=subprocess.STDOUT,
                            timeout=timeout, check=True, env={**os.environ, "PYTHONUNBUFFERED": "1"})
         metric_path = output_dir / "training_metrics.json"
+        if method == "ga_focus":
+            validate_baseline_config(json.loads((output_dir / "results.json").read_text())[
+                "config"], method)
         summary = score_curve(json.loads(metric_path.read_text()), profile=profile, method=method)
         summary.update({"profile": profile["name"], "method": method, "seed": seed,
                         "trial": trial, "upstream_commit": revision})

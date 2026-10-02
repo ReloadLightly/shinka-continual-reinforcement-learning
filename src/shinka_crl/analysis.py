@@ -16,7 +16,10 @@ import shutil
 import subprocess
 import time
 
-from shinka_crl.experiment import DEFAULT_PYTHON, DEFAULT_UPSTREAM, score_curve, verify_upstream
+from shinka_crl.baseline_contract import validate_baseline_config
+from shinka_crl.experiment import (
+    DEFAULT_PYTHON, DEFAULT_UPSTREAM, NE_METHODS, score_curve, verify_upstream,
+)
 
 INPUT_FILES = ("manifest.json", "results.json", "config.json", "training_metrics.json",
                "checkpoints.npz")
@@ -102,10 +105,12 @@ def summarize_trial(*, manifest: dict, results: dict, records: list[dict],
     if manifest.get("status") != "complete":
         raise ValueError("Training must be complete before checkpoint analysis")
     profile, method = manifest["profile"], manifest["method"]
-    if method not in {"ga", "es", "ppo"}:
+    if method not in {*NE_METHODS, "ppo"}:
         raise ValueError("Unsupported analysis method")
     cfg = {**results.get("config", {}),
            **{key: value for key, value in results.items() if key != "config"}}
+    if method == "ga_focus":
+        validate_baseline_config(cfg, method)
     phase_count, cap = profile["num_phases"], profile["episode_length"]
     phase_sequence = [phase % profile["num_tasks"] for phase in range(phase_count)]
     expected_cfg = {"method": method, "seed": manifest["seed"], "trial": manifest["trial"],

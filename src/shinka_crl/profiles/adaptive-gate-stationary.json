@@ -1,0 +1,19 @@
+{
+  "name": "adaptive-gate-stationary",
+  "purpose": "Short adapter identity and actuation check; no method ranking",
+  "env": "CartPole-v1",
+  "num_phases": 2,
+  "num_tasks": 1,
+  "episode_length": 500,
+  "eval_episodes": 10,
+  "seeds": [
+    3001
+  ],
+  "ne": {
+    "num_generations": 6,
+    "task_interval": 3,
+    "pop_size": 16,
+    "num_evals": 3
+  },
+  "ppo": null
+}

@@ -11,6 +11,18 @@ placeholders are deliberately outside this contract.
 
 from __future__ import annotations
 
+FOCUS_SIGMA = 0.5
+FOCUS_SEARCHER_KWARGS = {
+    "elite_ratio": 0.5,
+    "init_around_mean": False,
+    "cross_over_rate": 0.0,
+    "focus_rate": 0.3,
+    "sigma_rate": 0.1,
+    "track_target": 0.9,
+    "sigma_min": 0.00001,
+    "explore_fraction": 0.25,
+}
+
 
 def _expect(actual: object, expected: object, label: str) -> None:
     """Compare JSON values without treating booleans as numbers."""
@@ -29,8 +41,13 @@ def _expect(actual: object, expected: object, label: str) -> None:
 
 
 def validate_baseline_config(config: dict, method: str) -> None:
-    """Reject drift from the default GA, ES, or PPO; not a candidate validator."""
-    if method not in {"ga", "es", "ppo"}:
+    """Reject drift from fixed baseline settings; not a candidate validator.
+
+    ``ga_focus`` is the explicit CartPole transfer of the paper's FocusGA,
+    including CartPole's independent archive initialization. Its centroid
+    occupies one slot inside the population's fixed evaluation budget.
+    """
+    if method not in {"ga", "ga_focus", "es", "ppo"}:
         raise ValueError(f"Unsupported baseline method: {method}")
     if not isinstance(config, dict):
         raise ValueError("Baseline config must be an object")
@@ -38,9 +55,9 @@ def validate_baseline_config(config: dict, method: str) -> None:
         "env": "CartPole-v1", "method": method, "hidden_dims": [16, 16],
         "num_params": 386, "first_task_clean": True, "task_warmup": 0,
     }
-    if method in {"ga", "es"}:
+    if method in {"ga", "ga_focus", "es"}:
         expected.update(objective="mean", obs_norm=False)
-    if method == "ga":
+    if method in {"ga", "ga_focus"}:
         population = config.get("pop_size")
         if type(population) is not int or population < 2 or population % 2:
             raise ValueError("Baseline GA pop_size must be a positive even integer")
@@ -51,6 +68,12 @@ def validate_baseline_config(config: dict, method: str) -> None:
                                "num_offspring": population // 2, "variation": "gaussian",
                                "sigma": 0.5, "cross_over_rate": 0.0},
         )
+        if method == "ga_focus":
+            if population < 4:
+                raise ValueError("FocusGA needs room for a centroid and at least one offspring")
+            expected["sigma"] = FOCUS_SIGMA
+            expected["searcher_kwargs"] = FOCUS_SEARCHER_KWARGS
+            expected["searcher_resolved"]["num_offspring"] -= 1
     elif method == "es":
         expected.update(sigma=0.1, learning_rate=0.05, optimizer="sgd", shaping="zscore",
                         sigma_lr=0.0, searcher_kwargs={}, searcher_resolved={})
