@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "episodes": 10,
+  "eval_seed": 901001,
+  "command": [
+    "$REPO_ROOT/.upstream/continual_neuroevolution/.venv/bin/python",
+    "$REPO_ROOT/.upstream/continual_neuroevolution/scripts/analysis/evaluate_continual.py",
+    "--root",
+    "$RUN/analysis/evaluation-input",
+    "--episodes",
+    "10",
+    "--seed",
+    "901001"
+  ],
+  "training_run": "$RUN/training",
+  "input_sha256": {
+    "manifest.json": "a78cc4bf75e02958207016dca9684c599a2d9b35f35f9551a6d266a24ed05852",
+    "results.json": "be9eb60a045fba520523dd866b9f8813d370d26b3e35c1a3722708d810f16287",
+    "config.json": "a4869653f05b7db50cdaed3982fd0f25a92666ecf5f9e04d162e8c6e2f02fe8f",
+    "training_metrics.json": "772ddce14c713af62308fc9385de154e5d81f715201373a3b6e5e7f8d913a9f5",
+    "checkpoints.npz": "79e8f0c9f205f9563f2f3d212bbe75899136da833ae4e215c9dbeecdfd1a2204"
+  },
+  "analysis_source_sha256": "6ec9691d8cb40415d162fd2483f9ca1765cd03e484279ae465e6154b2bb2f11b",
+  "upstream_source_sha256": {
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b"
+  },
+  "jax_platforms": "cpu",
+  "python_version": "Python 3.11.15",
+  "output_sha256": {
+    "evaluation.json": "42caa0a4cf3bf29a9186ff3de1001e8bba679005ee461a6c6c043344b6e20b9d",
+    "checkpoint-metadata.json": "d2034b6965920dbe6168bc061d4799c18afb23af61d880444faac6cf87beb3fc",
+    "summary.json": "3cfda77148b7f2a40c3fc19ab62d6f0207ba25ec497398e249256f3b80c758a2",
+    "process.log": "1e12901482311cbe1cebd4036209432406a58b537b03dcc49f4c4a40de4a0e20",
+    "evaluation-input/results.json": "be9eb60a045fba520523dd866b9f8813d370d26b3e35c1a3722708d810f16287",
+    "evaluation-input/checkpoints.npz": "79e8f0c9f205f9563f2f3d212bbe75899136da833ae4e215c9dbeecdfd1a2204"
+  },
+  "wall_seconds": 11.549713477026671
+}

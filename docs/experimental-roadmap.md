@@ -430,6 +430,8 @@ and report the completed phases; a segment is only a timing estimate. Use the
 measurement to decide local versus larger-hardware scheduling. It cannot
 establish a method ranking, and GA timing cannot stand in for PPO timing.
 
+The completed [development reference](../reports/reference-timing-20261002/summary.json) took **30.20 minutes of training** and **30.41 minutes including fresh checkpoint analysis**, with **843.2 MiB** peak trainer RSS. All 20 phase timings are preserved. A linear estimate for ten sequential GA trials is about **5.1 hours** at this observed speed; ES and PPO require separate full-budget measurements.
+
 This is a resource measurement and a paper-scale learning reference, not a new
 large preparatory pilot. Finalist validation and the narrow adaptive-adapter
 checks below remain the only additional gates before their respective studies.
@@ -607,8 +609,8 @@ mechanism; a better scalar score alone does not establish better retention.
 | 3 | Eighteen-trial pilot | Raw curves, per-seed metrics, costs, passing adequacy gate | Complete |
 | 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Complete: 24 actual proposals and 2 → 5 → 13 → 25 resume |
 | 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | Complete: 25 programs, 24 controls; 17 distinct mutations, seven charged repeats |
-| 6 | One paper-budget default-GA development trial | 20 phases, population 512, seed 1001/trial 1002; measured time and memory; reporting trials untouched | Runner and real instrumentation check complete; trial running |
-| 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Five finalists frozen; runner implemented; trials pending |
+| 6 | One paper-budget default-GA development trial | 20 phases, population 512, seed 1001/trial 1002; measured time and memory; reporting trials untouched | Complete: 30.20 min training, 843.2 MiB peak trainer RSS; all 20 phases |
+| 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Five finalists frozen; reserved comparison running in whole-trial blocks |
 | 8 | Adaptive-program adapter and required controls | Short identity traces, varying-sigma check, explicit upstream adaptive control, frozen objective | Pending |
 | 9 | Shinka search over executable adaptive rules | Separate archive and seed allocation; control comparisons; individual learning and forgetting trajectories | Main extension; pending |
 

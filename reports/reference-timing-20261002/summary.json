@@ -1,0 +1,535 @@
+{
+  "status": "complete",
+  "started_at_utc": "2026-10-02T20:59:26.320842+00:00",
+  "profile": "paper-cartpole-timing",
+  "seed": 1001,
+  "trial": 1002,
+  "timing_note": "Monotonic parent receipt of flushed native stdout. Intermediate boundaries follow checkpoint serialization; phase 1 includes process startup and JIT compilation. The final boundary is the last-generation log, before final artifact writes. Phase intervals include training, in-loop evaluations/diagnostics and checkpoint I/O. They are observed wall intervals, not isolated training or exact device times.",
+  "planned_training_steps_nominal": 3072000000,
+  "training": {
+    "status": "complete",
+    "returncode": 0,
+    "wall_seconds": 1811.7073076720117,
+    "trainer_cpu_affinity": [
+      0,
+      1
+    ],
+    "maximum_trainer_rss_kib": 863460,
+    "memory_note": "Linux wait4 ru_maxrss for this trainer only; excludes post-hoc analysis",
+    "phase_events": [
+      {
+        "completed_generations": 200,
+        "elapsed_seconds": 120.48335556103848,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 400,
+        "elapsed_seconds": 218.37480906699784,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 600,
+        "elapsed_seconds": 345.1968317569699,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 800,
+        "elapsed_seconds": 429.4531258670613,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 1000,
+        "elapsed_seconds": 513.3186356329825,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 1200,
+        "elapsed_seconds": 615.2661219079746,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 1400,
+        "elapsed_seconds": 729.820194213069,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 1600,
+        "elapsed_seconds": 817.642667484004,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 1800,
+        "elapsed_seconds": 896.7315572310472,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 2000,
+        "elapsed_seconds": 975.6858753060224,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 2200,
+        "elapsed_seconds": 1054.0322444350459,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 2400,
+        "elapsed_seconds": 1126.5102218090324,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 2600,
+        "elapsed_seconds": 1211.4855507139582,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 2800,
+        "elapsed_seconds": 1310.6446409999626,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 3000,
+        "elapsed_seconds": 1389.1462245220318,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 3200,
+        "elapsed_seconds": 1475.3482630520593,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 3400,
+        "elapsed_seconds": 1560.649745497969,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 3600,
+        "elapsed_seconds": 1638.2613550029928,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 3800,
+        "elapsed_seconds": 1728.9304519749712,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_generations": 4000,
+        "elapsed_seconds": 1796.0988466510316,
+        "kind": "last_generation_logged"
+      }
+    ],
+    "phase_timings": [
+      {
+        "phase": 0,
+        "task": 0,
+        "completed_generations": 200,
+        "observed_wall_seconds": 120.48335556103848,
+        "boundary_elapsed_seconds": 120.48335556103848,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 1,
+        "task": 1,
+        "completed_generations": 400,
+        "observed_wall_seconds": 97.89145350595936,
+        "boundary_elapsed_seconds": 218.37480906699784,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 2,
+        "task": 0,
+        "completed_generations": 600,
+        "observed_wall_seconds": 126.82202268997207,
+        "boundary_elapsed_seconds": 345.1968317569699,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 3,
+        "task": 1,
+        "completed_generations": 800,
+        "observed_wall_seconds": 84.2562941100914,
+        "boundary_elapsed_seconds": 429.4531258670613,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 4,
+        "task": 0,
+        "completed_generations": 1000,
+        "observed_wall_seconds": 83.86550976592116,
+        "boundary_elapsed_seconds": 513.3186356329825,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 5,
+        "task": 1,
+        "completed_generations": 1200,
+        "observed_wall_seconds": 101.94748627499212,
+        "boundary_elapsed_seconds": 615.2661219079746,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 6,
+        "task": 0,
+        "completed_generations": 1400,
+        "observed_wall_seconds": 114.55407230509445,
+        "boundary_elapsed_seconds": 729.820194213069,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 7,
+        "task": 1,
+        "completed_generations": 1600,
+        "observed_wall_seconds": 87.822473270935,
+        "boundary_elapsed_seconds": 817.642667484004,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 8,
+        "task": 0,
+        "completed_generations": 1800,
+        "observed_wall_seconds": 79.08888974704314,
+        "boundary_elapsed_seconds": 896.7315572310472,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 9,
+        "task": 1,
+        "completed_generations": 2000,
+        "observed_wall_seconds": 78.95431807497516,
+        "boundary_elapsed_seconds": 975.6858753060224,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 10,
+        "task": 0,
+        "completed_generations": 2200,
+        "observed_wall_seconds": 78.34636912902351,
+        "boundary_elapsed_seconds": 1054.0322444350459,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 11,
+        "task": 1,
+        "completed_generations": 2400,
+        "observed_wall_seconds": 72.4779773739865,
+        "boundary_elapsed_seconds": 1126.5102218090324,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 12,
+        "task": 0,
+        "completed_generations": 2600,
+        "observed_wall_seconds": 84.97532890492585,
+        "boundary_elapsed_seconds": 1211.4855507139582,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 13,
+        "task": 1,
+        "completed_generations": 2800,
+        "observed_wall_seconds": 99.15909028600436,
+        "boundary_elapsed_seconds": 1310.6446409999626,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 14,
+        "task": 0,
+        "completed_generations": 3000,
+        "observed_wall_seconds": 78.50158352206927,
+        "boundary_elapsed_seconds": 1389.1462245220318,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 15,
+        "task": 1,
+        "completed_generations": 3200,
+        "observed_wall_seconds": 86.2020385300275,
+        "boundary_elapsed_seconds": 1475.3482630520593,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 16,
+        "task": 0,
+        "completed_generations": 3400,
+        "observed_wall_seconds": 85.30148244590964,
+        "boundary_elapsed_seconds": 1560.649745497969,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 17,
+        "task": 1,
+        "completed_generations": 3600,
+        "observed_wall_seconds": 77.61160950502381,
+        "boundary_elapsed_seconds": 1638.2613550029928,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 18,
+        "task": 0,
+        "completed_generations": 3800,
+        "observed_wall_seconds": 90.66909697197843,
+        "boundary_elapsed_seconds": 1728.9304519749712,
+        "boundary_kind": "native_checkpoint_written"
+      },
+      {
+        "phase": 19,
+        "task": 1,
+        "completed_generations": 4000,
+        "observed_wall_seconds": 67.16839467606042,
+        "boundary_elapsed_seconds": 1796.0988466510316,
+        "boundary_kind": "last_generation_logged"
+      }
+    ],
+    "finalization_wall_seconds": 15.60846102098003
+  },
+  "analysis": {
+    "analysis_version": 1,
+    "method": "ga",
+    "profile": "paper-cartpole-timing",
+    "condition": "switching",
+    "seed": 1001,
+    "trial": 1002,
+    "agent_source": "centroid",
+    "episodes": 10,
+    "eval_seed": 901001,
+    "num_phases": 20,
+    "phase_sequence": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "nominal_training_steps": 3072000000,
+    "steps_per_update": 768000,
+    "metrics": {
+      "learning_accuracy": 500.0,
+      "forgetting": 28.394736842105264,
+      "zero_shot_transfer": 463.7684210526315,
+      "learning_minus_forgetting": 471.60526315789474,
+      "cumulative_reward_steps": 1522758259218.75,
+      "cumulative_reward_generation_equivalents": 1982758.150024414,
+      "cumulative_reward_steps_exact": 1522758259218.75,
+      "normalized_curve_average": 0.9913790750122071
+    },
+    "phase_returns": [
+      {
+        "phase": 0,
+        "task": 0,
+        "checkpoint_completed_steps": 153600000,
+        "own_mean": 500.0,
+        "previous_mean": null,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 1,
+        "task": 1,
+        "checkpoint_completed_steps": 307200000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 2,
+        "task": 0,
+        "checkpoint_completed_steps": 460800000,
+        "own_mean": 500.0,
+        "previous_mean": 403.8,
+        "next_mean": 404.0
+      },
+      {
+        "phase": 3,
+        "task": 1,
+        "checkpoint_completed_steps": 614400000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 4,
+        "task": 0,
+        "checkpoint_completed_steps": 768000000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 5,
+        "task": 1,
+        "checkpoint_completed_steps": 921600000,
+        "own_mean": 500.0,
+        "previous_mean": 452.0,
+        "next_mean": 308.4
+      },
+      {
+        "phase": 6,
+        "task": 0,
+        "checkpoint_completed_steps": 1075200000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 7,
+        "task": 1,
+        "checkpoint_completed_steps": 1228800000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 8,
+        "task": 0,
+        "checkpoint_completed_steps": 1382400000,
+        "own_mean": 500.0,
+        "previous_mean": 413.5,
+        "next_mean": 412.6
+      },
+      {
+        "phase": 9,
+        "task": 1,
+        "checkpoint_completed_steps": 1536000000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 10,
+        "task": 0,
+        "checkpoint_completed_steps": 1689600000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 11,
+        "task": 1,
+        "checkpoint_completed_steps": 1843200000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 12,
+        "task": 0,
+        "checkpoint_completed_steps": 1996800000,
+        "own_mean": 500.0,
+        "previous_mean": 402.2,
+        "next_mean": 391.7
+      },
+      {
+        "phase": 13,
+        "task": 1,
+        "checkpoint_completed_steps": 2150400000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 14,
+        "task": 0,
+        "checkpoint_completed_steps": 2304000000,
+        "own_mean": 500.0,
+        "previous_mean": 455.1,
+        "next_mean": 455.1
+      },
+      {
+        "phase": 15,
+        "task": 1,
+        "checkpoint_completed_steps": 2457600000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 16,
+        "task": 0,
+        "checkpoint_completed_steps": 2611200000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 17,
+        "task": 1,
+        "checkpoint_completed_steps": 2764800000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 18,
+        "task": 0,
+        "checkpoint_completed_steps": 2918400000,
+        "own_mean": 500.0,
+        "previous_mean": 333.9,
+        "next_mean": 339.8
+      },
+      {
+        "phase": 19,
+        "task": 1,
+        "checkpoint_completed_steps": 3072000000,
+        "own_mean": 500.0,
+        "previous_mean": 500.0,
+        "next_mean": null
+      }
+    ],
+    "phase_training_returns": [
+      415.4855000305176,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      500.0,
+      499.53150009155274,
+      500.0
+    ],
+    "clock": {
+      "record_timing": "after_update",
+      "raw_generation_labels": "zero_based",
+      "completed_steps": "(generation + 1) * steps_per_update",
+      "integration": "pinned_unit_NE_generation_grid_trapezoid",
+      "reference_steps_per_generation": 768000,
+      "integration_grid_points": 4001,
+      "edge_values": "constant_first_and_last_logged_return",
+      "initial_untrained_policy_evaluated": false
+    },
+    "transfer_interpretation": "consecutive_switches_including_both_directions"
+  },
+  "active_score": {
+    "mean_return": 495.7508500061035,
+    "normalized_score": 0.991501700012207,
+    "metric_rows": 4000
+  },
+  "finished_at_utc": "2026-10-02T21:29:50.899339+00:00",
+  "total_wall_seconds": 1824.5791234300705,
+  "completed_phases_observed": 20,
+  "training_steps_nominal_observed_lower_bound": 3072000000
+}

@@ -1,0 +1,103 @@
+  gen     0 task= 0 train=   12.7 t0=  262.8 t1=    9.6 gen'ist=    9.6
+  gen    50 task= 0 train=  389.4 t0=  432.1 t1=   10.8 gen'ist=   10.8
+  gen   100 task= 0 train=  455.2 t0=  500.0 t1=  271.1 gen'ist=  271.1
+  gen   150 task= 0 train=  475.9 t0=  500.0 t1=   96.1 gen'ist=   96.1
+  checkpoint: generation 200 -> $RUN/training/resume.pkl
+  gen   200 task= 1 train=  241.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   250 task= 1 train=  483.2 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   300 task= 1 train=  485.6 t0=   65.0 t1=  500.0 gen'ist=   65.0
+  gen   350 task= 1 train=  491.5 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 400 -> $RUN/training/resume.pkl
+  gen   400 task= 0 train=  288.9 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   450 task= 0 train=  493.9 t0=  500.0 t1=  375.0 gen'ist=  375.0
+  gen   500 task= 0 train=  496.3 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   550 task= 0 train=  495.8 t0=  500.0 t1=  426.4 gen'ist=  426.4
+  checkpoint: generation 600 -> $RUN/training/resume.pkl
+  gen   600 task= 1 train=  156.5 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   650 task= 1 train=  494.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   700 task= 1 train=  497.5 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   750 task= 1 train=  497.4 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 800 -> $RUN/training/resume.pkl
+  gen   800 task= 0 train=  384.1 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   850 task= 0 train=  498.1 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   900 task= 0 train=  497.9 t0=  500.0 t1=  377.8 gen'ist=  377.8
+  gen   950 task= 0 train=  496.9 t0=  500.0 t1=  363.9 gen'ist=  363.9
+  checkpoint: generation 1000 -> $RUN/training/resume.pkl
+  gen  1000 task= 1 train=  374.2 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1050 task= 1 train=  498.1 t0=  170.4 t1=  500.0 gen'ist=  170.4
+  gen  1100 task= 1 train=  497.1 t0=   21.2 t1=  500.0 gen'ist=   21.2
+  gen  1150 task= 1 train=  497.2 t0=   14.7 t1=  500.0 gen'ist=   14.7
+  checkpoint: generation 1200 -> $RUN/training/resume.pkl
+  gen  1200 task= 0 train=  207.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1250 task= 0 train=  498.8 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1300 task= 0 train=  497.9 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1350 task= 0 train=  497.7 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 1400 -> $RUN/training/resume.pkl
+  gen  1400 task= 1 train=  383.0 t0=  500.0 t1=  414.0 gen'ist=  414.0
+  gen  1450 task= 1 train=  498.6 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1500 task= 1 train=  498.0 t0=   52.6 t1=  500.0 gen'ist=   52.6
+  gen  1550 task= 1 train=  494.8 t0=  366.6 t1=  500.0 gen'ist=  366.6
+  checkpoint: generation 1600 -> $RUN/training/resume.pkl
+  gen  1600 task= 0 train=  419.9 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1650 task= 0 train=  499.6 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1700 task= 0 train=  498.4 t0=  500.0 t1=  168.1 gen'ist=  168.1
+  gen  1750 task= 0 train=  499.6 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 1800 -> $RUN/training/resume.pkl
+  gen  1800 task= 1 train=  263.3 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1850 task= 1 train=  498.4 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1900 task= 1 train=  498.4 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  1950 task= 1 train=  498.9 t0=  352.9 t1=  500.0 gen'ist=  352.9
+  checkpoint: generation 2000 -> $RUN/training/resume.pkl
+  gen  2000 task= 0 train=  333.1 t0=  500.0 t1=  492.4 gen'ist=  492.4
+  gen  2050 task= 0 train=  499.7 t0=  500.0 t1=  478.7 gen'ist=  478.7
+  gen  2100 task= 0 train=  498.0 t0=  500.0 t1=   44.8 gen'ist=   44.8
+  gen  2150 task= 0 train=  499.4 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 2200 -> $RUN/training/resume.pkl
+  gen  2200 task= 1 train=  288.5 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  2250 task= 1 train=  498.7 t0=   28.2 t1=  500.0 gen'ist=   28.2
+  gen  2300 task= 1 train=  498.1 t0=  490.6 t1=  500.0 gen'ist=  490.6
+  gen  2350 task= 1 train=  498.1 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 2400 -> $RUN/training/resume.pkl
+  gen  2400 task= 0 train=  482.2 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  2450 task= 0 train=  499.9 t0=  500.0 t1=  426.4 gen'ist=  426.4
+  gen  2500 task= 0 train=  499.2 t0=  500.0 t1=  480.9 gen'ist=  480.9
+  gen  2550 task= 0 train=  499.7 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 2600 -> $RUN/training/resume.pkl
+  gen  2600 task= 1 train=  380.5 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  2650 task= 1 train=  498.2 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  2700 task= 1 train=  498.2 t0=  305.1 t1=  500.0 gen'ist=  305.1
+  gen  2750 task= 1 train=  499.1 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 2800 -> $RUN/training/resume.pkl
+  gen  2800 task= 0 train=  353.3 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  2850 task= 0 train=  499.8 t0=  500.0 t1=  448.8 gen'ist=  448.8
+  gen  2900 task= 0 train=  499.5 t0=  500.0 t1=  141.7 gen'ist=  141.7
+  gen  2950 task= 0 train=  498.7 t0=  500.0 t1=   10.0 gen'ist=   10.0
+  checkpoint: generation 3000 -> $RUN/training/resume.pkl
+  gen  3000 task= 1 train=  298.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3050 task= 1 train=  498.6 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3100 task= 1 train=  499.8 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3150 task= 1 train=  499.9 t0=  421.6 t1=  500.0 gen'ist=  421.6
+  checkpoint: generation 3200 -> $RUN/training/resume.pkl
+  gen  3200 task= 0 train=  364.8 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3250 task= 0 train=  499.1 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3300 task= 0 train=  499.7 t0=  500.0 t1=  469.3 gen'ist=  469.3
+  gen  3350 task= 0 train=  498.6 t0=  500.0 t1=  482.6 gen'ist=  482.6
+  checkpoint: generation 3400 -> $RUN/training/resume.pkl
+  gen  3400 task= 1 train=  464.7 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3450 task= 1 train=  496.5 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3500 task= 1 train=  498.9 t0=  319.1 t1=  500.0 gen'ist=  319.1
+  gen  3550 task= 1 train=  499.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  checkpoint: generation 3600 -> $RUN/training/resume.pkl
+  gen  3600 task= 0 train=  202.8 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3650 task= 0 train=  499.8 t0=  500.0 t1=  403.9 gen'ist=  403.9
+  gen  3700 task= 0 train=  499.3 t0=  500.0 t1=  471.6 gen'ist=  471.6
+  gen  3750 task= 0 train=  499.7 t0=  500.0 t1=  232.0 gen'ist=  232.0
+  checkpoint: generation 3800 -> $RUN/training/resume.pkl
+  gen  3800 task= 1 train=  293.9 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3850 task= 1 train=  498.9 t0=  108.9 t1=  500.0 gen'ist=  108.9
+  gen  3900 task= 1 train=  498.5 t0=   16.9 t1=  500.0 gen'ist=   16.9
+  gen  3950 task= 1 train=  498.5 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen  3999 task= 1 train=  498.6 t0=   79.3 t1=  500.0 gen'ist=   79.3
+  wrote $RUN/training
+
+Done. $RUN/training

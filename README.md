@@ -16,7 +16,7 @@
 
 This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. The completed static-search pilot evaluated 25 Shinka programs, including the default, and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and 7 repeated evaluations. Best development scores were 0.8721 for Shinka, 0.8857 for the full random pool, and 0.5654 for the default. These selected outcomes from one search per arm do not establish search-method superiority, retention, or generalization. Static tuning supplies the baseline for the main extension, executable adaptive mutation rules.
 
-> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget development timing and finalist validation next · Adaptive rules and full reproduction pending.
+> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Finalist validation running · Adaptive rules and full reproduction pending.
 
 ## 1. Research questions
 
@@ -291,13 +291,47 @@ reconstructed. The [five-program](reports/search-integration-20261002/summary.js
 and [13-program](reports/search-stage13-20261002/summary.json) checkpoints remain
 available.
 
-The static search is closed. The next experiments measure one full-budget
-development reference trial and evaluate the frozen static finalists. Validation
-feedback will not be used for further proposals from this archive.
+The static search is closed. The full-budget development reference is complete,
+and the frozen finalists are undergoing reserved validation. Validation feedback
+will not be used for further proposals from this archive.
+
+### Paper-budget development reference
+
+One unchanged default-GA trial completed all **20 phases and 4,000 generations**
+with population 512: **3.072 billion nominal training steps**. It used development
+seed 1001 / task trial 1002, separate from final reporting. Ten fresh episodes
+per saved phase checkpoint supplied the continual-learning measurements.
+
+![Default GA across the full task schedule and observed phase times](figures/reference-timing-20261002.svg)
+
+<sub>Figure 3. One paper-budget development trial. The centroid is evaluated on both tasks throughout training; A/B labels mark the active task. Curves are unsmoothed. Timing includes in-loop evaluation and checkpoint I/O; phase one additionally includes startup and JIT compilation. [PDF](figures/reference-timing-20261002.pdf) · [Exact curves, all 19 switch differences, and provenance](figures/reference-timing-20261002.json).</sub>
+
+| Measurement | Observed value |
+| :--- | ---: |
+| Training process time | 30.20 min |
+| Total runner time, including fresh checkpoint analysis | 30.41 min |
+| First phase, including startup/JIT | 120.48 s |
+| Later phases, median [minimum, maximum] | 84.98 [67.17, 126.82] s |
+| Peak trainer resident memory | 843.2 MiB |
+| Active-return score, J | 0.9915 |
+| Learning accuracy, LA | 500.00 |
+| Mean signed forgetting, F | 28.39 |
+| LA − F | 471.61 |
+| Zero-shot transfer, ZT | 463.77 |
+
+<sub>Table 9. One development trial on two logical CPUs with the frozen numerical thread settings. Reward metrics use raw CartPole units. Peak RSS belongs to the training process and excludes separate post-hoc analysis. [Complete evidence, phase timings, and checkpoint returns](reports/reference-timing-20261002/summary.json).</sub>
+
+This establishes that a complete paper-budget GA trial fits this machine. It
+does not estimate uncertainty across trials or establish a method ranking.
+A linear scheduling estimate for ten sequential GA trials is
+**5.1 hours** at this observed speed, excluding
+retries, review, and hardware contention. This estimate does not apply to ES or
+PPO; their full-budget runtime still needs measurement. The paper-scale
+comparison and final-reporting trials remain pending.
 
 ### Remaining scientific evaluation
 
-No full-budget comparison has been completed. The table below tracks the evidence needed to answer the research questions.
+One full-budget development GA trial is complete; no full-budget comparison has been completed. The table below tracks the evidence needed to answer the research questions.
 
 | Experiment | Required evidence | Status |
 | :--- | :--- | :--- |
@@ -428,13 +462,9 @@ The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-lea
 The next steps preserve the reproduction as the foundation and make adaptive
 programs the main extension:
 
-1. **Measure one full-budget reference trial:** default GA, 20 phases, population
-   512, and 4,000 generations on development seed 1001 / task trial 1002. Record
-   phase times and peak memory before scheduling the larger study; reporting
-   seeds remain reserved. A partial run supplies timing evidence only.
-2. **Validate static finalists once** on the reserved validation partition,
+1. **Validate static finalists once** on the reserved validation partition,
    reporting learning accuracy, each switch's forgetting, and cumulative return.
-3. **Implement executable adaptive rules** with the controls in Section 3,
+2. **Implement executable adaptive rules** with the controls in Section 3,
    short identity-trace checks under stationary and switching conditions, and one
    varying-width actuation check. Freeze a retention-sensitive objective and a
    separate protocol before proposing adaptive code. The completed baseline pilot
