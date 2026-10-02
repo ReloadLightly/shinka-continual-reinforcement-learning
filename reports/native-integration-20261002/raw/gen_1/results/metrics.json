@@ -1,0 +1,73 @@
+{
+  "combined_score": 0.3125,
+  "public": {
+    "profile": "smoke",
+    "method": "ga",
+    "seeds_completed": 1,
+    "sigma": 0.4,
+    "elite_ratio": 0.5,
+    "smoke_validation_only": true,
+    "mean_return": 10.0
+  },
+  "private": {
+    "seed_results": [
+      {
+        "seed": 1001,
+        "trial": 1002,
+        "normalized_score": 0.3125,
+        "mean_return": 10.0
+      }
+    ],
+    "seed_attempts": [
+      {
+        "seed": 1001,
+        "trial": 1002,
+        "status": "complete",
+        "wall_seconds": 44.894787102006376,
+        "artifact_sha256": {
+          "checkpoints.npz": "0c9b2795386d634d6bc5a7a72ce0e66ff12d490bd343e27bff5ff76eee7b328e",
+          "config.json": "34f0be12a4640f30b1fd74b6bd232276f05d4aebb6e77de9c1b69889bcd59545",
+          "manifest.json": "de31a5941cd8dab66b38411b52e45ea79a2699cbf8404f23e4e7991856bf5ace",
+          "process.log": "392643e1119f3f3c843f3105ed12dfa8893d605ccf28432e9bcd057ab515d6f6",
+          "results.json": "a1901a8b17f1449032657589fe76552ef5f3ae4bbf8c8fdfc19cf9dbe93cdb89",
+          "stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "summary.json": "75311b25aea9d53952a05dc4011fbdf2ddd41a14fe4c730cc41d35677dd8c899",
+          "train.log": "1fdbf050b4a10c343156aa192e0d959cb1a3db2b441e5083fa1ad68042db6505",
+          "training_metrics.json": "e351de98ba335874ef9e9dc8b0f6266503836e42953bbc9a794f1c9987d133fe",
+          "trajectory.npz": "5debe7d4312107afefe637259e2abbef4dd9ad004b4a62e293a0347c4fb5416b"
+        }
+      }
+    ],
+    "provenance": {
+      "program_sha256": "1495ae5e94729543ef528bfe4a7f0aee3044c9592e251eb23e237bf8407ecf75",
+      "evaluator_sha256": "fd65de0024fae19c4c59c52cc4409c966871f201b8bd311596986a7a949586c1",
+      "profile": {
+        "name": "smoke",
+        "purpose": "Pipeline check only; not a reproduction or matched comparison",
+        "env": "CartPole-v1_sigma0.5",
+        "num_phases": 2,
+        "num_tasks": 2,
+        "episode_length": 32,
+        "eval_episodes": 1,
+        "seeds": [
+          1001
+        ],
+        "ne": {
+          "num_generations": 4,
+          "task_interval": 2,
+          "pop_size": 8,
+          "num_evals": 1
+        },
+        "ppo": {
+          "num_updates": 4,
+          "task_interval": 2,
+          "num_envs": 8,
+          "num_steps": 16,
+          "num_minibatches": 2
+        }
+      },
+      "profile_sha256": "e786f4b13140abeff02ee23038e4440fc7f8661c82596ce51c176607a5dc4172"
+    },
+    "evaluation_wall_seconds": 45.017733289976604
+  }
+}
