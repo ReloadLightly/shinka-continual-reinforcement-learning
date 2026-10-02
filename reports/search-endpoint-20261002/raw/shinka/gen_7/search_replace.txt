@@ -1,0 +1,15 @@
+<NAME>
+lower_mutation_stronger_selection
+</NAME>
+<DESCRIPTION>
+The search results improve as sigma and elite_ratio decrease. Propose sigma 0.035 and elite_ratio 0.05 to test whether smaller mutations and stronger selection further improve performance. Smaller mutations may preserve effective policies while still supporting adaptation. This configuration needs evaluation with the search profile; improvement is not yet verified.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.07, "elite_ratio": 0.10}
+=======
+def get_ga_config():
+    return {"sigma": 0.035, "elite_ratio": 0.05}
+>>>>>>> REPLACE
+</DIFF>

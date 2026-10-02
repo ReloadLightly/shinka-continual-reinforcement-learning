@@ -1,0 +1,13 @@
+<NAME>
+refine_mutation_scale
+</NAME>
+<DESCRIPTION>
+Set sigma to 0.078, slightly below the best observed value of 0.08. The search results suggest that moderate mutation performs better than 0.10; this nearby candidate may improve refinement while retaining exploration. Keep elite_ratio at 0.075 to isolate the mutation-scale change. Performance must be verified with the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"sigma": 0.10, "elite_ratio": 0.075}
+=======
+    return {"sigma": 0.078, "elite_ratio": 0.075}
+>>>>>>> REPLACE
+</DIFF>

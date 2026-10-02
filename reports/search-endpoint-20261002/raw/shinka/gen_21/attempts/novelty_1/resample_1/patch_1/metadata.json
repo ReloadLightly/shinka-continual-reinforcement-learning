@@ -1,0 +1,15 @@
+{
+  "generation": 21,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "increase_mutation_exploration",
+  "patch_description": "Increase sigma from 0.08 to 0.09 to test slightly broader exploration, which may help adaptation in continual CartPole. Keep elite_ratio at 0.075 to preserve the selection pressure shared by all observed strong configurations. This is a local search proposal; the search profile must determine whether it improves combined_score.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T22:15:00.237063",
+  "llm_cost": 0.0185668,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_21/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

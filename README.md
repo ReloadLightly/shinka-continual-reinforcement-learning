@@ -14,9 +14,9 @@
 
 ## Abstract
 
-This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned genetic algorithm (GA), evolution strategy (ES), and proximal policy optimization (PPO) implementations, beginning with CartPole under alternating observation offsets. A matched 18-trial CPU pilot completed 138.24 million nominal training steps and passed the predefined stationary-learning gate for all three methods. A staged configuration search has now evaluated 13 Shinka programs, including the default, and 12 preregistered random controls: 75 seed trials and 576 million nominal steps. Best development scores were 0.8721 for Shinka, 0.8857 for random search, and 0.5654 for the default. These selected outcomes from one search per arm do not establish search-method superiority, retention, or held-out improvement. Static tuning supplies a baseline for the main extension, executable adaptive mutation rules; that experiment and the full reproduction remain pending.
+This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. The completed static-search pilot evaluated 25 Shinka programs, including the default, and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and 7 repeated evaluations. Best development scores were 0.8721 for Shinka, 0.8857 for the full random pool, and 0.5654 for the default. These selected outcomes from one search per arm do not establish search-method superiority, retention, or generalization. Static tuning supplies the baseline for the main extension, executable adaptive mutation rules.
 
-> **Study status:** 18-trial baseline pilot complete · 13 Shinka programs + 12 random controls complete · All valid and distinct · Held-out validation and full reproduction pending.
+> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget development timing and finalist validation next · Adaptive rules and full reproduction pending.
 
 ## 1. Research questions
 
@@ -228,60 +228,66 @@ checksums, and the complete gate decision. Binary checkpoints remain local.
 
 ### Subscription-backed configuration search
 
-The second checkpoint completed **13 Shinka programs, including the shared
-default, and 12 random controls** from the pool frozen before search. Every
-configuration used the same three development seeds, four phases, three evaluation
-episodes per checkpoint, and 23.04 million nominal training steps. All 25
-evaluations passed; all 12 Shinka mutations were effectively distinct. The native
-archive resumed through 2 → 5 → 13 programs with the scorer, sources, model,
-runtime settings, and random pool unchanged.
+The declared static-search endpoint completed **25 Shinka programs, including
+the shared default, and 24 random controls**. Every evaluation used three
+development seeds, four phases, and 23.04 million nominal training steps.
+All evaluations passed. The 24 Shinka proposals yielded **17 distinct mutations
+and 7 duplicate evaluations**; repeated training remains charged.
 
-![Observed development search trajectories](figures/search-stage13-20261002.svg)
+![Observed static-search trajectories](figures/search-endpoint-20261002.svg)
 
-<sub>Figure 2. Best observed development score against distinct configurations evaluated after the shared default. Faint markers retain every individual outcome. Both arms have 12 additional evaluations; the initial score is shared without double-counting training. This is one search trajectory per arm, not an uncertainty estimate. [PDF](figures/search-stage13-20261002.pdf) · [Exact plotted values and hashes](figures/search-stage13-20261002.json).</sub>
+<sub>Figure 2. A: the declared primary comparison matches distinct configurations, using the first 17 frozen random controls; it does not equalize actual training work. B: all 24 additional evaluations per arm, including repeated Shinka configurations. Both panels share the default at zero. Steps show the best observed score and faint markers retain individual outcomes. [PDF](figures/search-endpoint-20261002.pdf) · [Exact values and hashes](figures/search-endpoint-20261002.json).</sub>
 
 | Configuration | Mutation width, σ | Archive fraction | Elites / 64 | Development score, J ↑ |
 | :--- | ---: | ---: | ---: | ---: |
 | Shared default | 0.500000 | 0.500000 | 32 | 0.5654 ± 0.1168 |
 | Best Shinka · program 12 | 0.080000 | 0.075000 | 4 | 0.8721 ± 0.0578 |
-| Best random · control 7 | 0.330187 | 0.062208 | 3 | 0.8857 ± 0.0275 |
+| Best random · first 17 controls | 0.330187 | 0.062208 | 3 | 0.8857 ± 0.0275 |
+| Best random · all 24 controls | 0.330187 | 0.062208 | 3 | 0.8857 ± 0.0275 |
 
-<sub>Table 7. Shared baseline and selected maxima at the 13-program checkpoint, 2 October 2026. J is active-task centroid return divided by 500, averaged across 80 checkpoints per seed; entries show mean ± sample standard deviation across three development seeds. This variation is descriptive, not a confidence interval for search performance. Displayed parameters are rounded; [all 25 programs, exact settings, per-seed scores, and provenance](reports/search-stage13-20261002/summary.json) remain available.</sub>
+<sub>Table 7. Selected development maxima, 2 October 2026. J averages active-task centroid return divided by 500 across 80 checkpoints and three seeds; entries show mean ± sample standard deviation across seeds. The first-17 prefix is the declared matched-distinct comparison. All 24 controls form the secondary comparison with equal numbers of additional candidate evaluations, sharing the default. Parameters are rounded; [all 49 evaluations and per-seed results](reports/search-endpoint-20261002/summary.json) retain exact values.</sub>
 
-The selected Shinka configuration has mutation width 0.08 and archive fraction
-0.075. Both search arms improved their observed maximum over the default; random
-search has the higher maximum at this checkpoint. Lower-scoring candidates remain
-in the figure and evidence archive. These are development selections from one
-search per arm; they do not demonstrate improved retention, generalization, or a
-broadly superior search method. Validation seeds 2001–2005 and final seeds 42–51
-remain untouched. The [earlier five-program checkpoint](reports/search-integration-20261002/summary.json)
-is preserved separately.
+Random search has the higher observed maximum in the matched prefix and the
+full control pool. The Shinka incumbent did not improve beyond the
+[13-program checkpoint](reports/search-stage13-20261002/summary.json).
+These are selected development outcomes from one search per arm; they do not
+establish search-method superiority, retention, or held-out improvement.
+Both arms' top two distinct configurations and the default are retained for
+one reserved validation comparison.
+
+Repeated proposals are an observed limitation of this run. For example,
+[program 20's prompt](reports/search-endpoint-20261002/raw/shinka/gen_20/attempts/novelty_1/resample_1/patch_1/headless_prompt.md)
+includes selected high-scoring examples but omits earlier lower-scoring
+evaluations of its repeated setting. Its response extrapolates from those
+examples and proposes the setting again. Incomplete sampled context is a
+plausible mechanism; this inspection does not establish sole causality.
+The frozen proposer and retraining policy were preserved throughout.
 
 | Observed cumulative cost | Shinka, including default | Additional random control | Total |
 | :--- | ---: | ---: | ---: |
-| Configuration evaluations | 13 | 12 | 25 |
-| Completed seed trials | 39 | 36 | 75 |
-| Nominal training steps | 299.52 × 10⁶ | 276.48 × 10⁶ | 576.00 × 10⁶ |
-| Execution time (min) | 27.05 | 20.19 | 47.24 |
-| Successful Codex responses | 12 | 0 | 12 |
+| Configuration evaluations | 25 | 24 | 49 |
+| Completed seed trials | 75 | 72 | 147 |
+| Nominal training steps | 576.00 × 10⁶ | 552.96 × 10⁶ | 1,128.96 × 10⁶ |
+| Execution time (min) | 59.77 | 42.06 | 101.84 |
+| Successful Codex responses | 24 | 0 | 24 |
 
-<sub>Table 8. Measured execution costs through this checkpoint, with the shared default counted once. Wall time sums completed execution sessions, including native startup, proposals, evaluation, and checkpoint handling; it excludes setup, preflight, and review pauses. The separately archived interrupted setup attempt is not included in these totals.</sub>
+<sub>Table 8. Actual execution costs through the declared endpoint, including all duplicate evaluations and counting the shared default once. Wall time sums completed sessions, including startup, proposals, training, evaluation, and checkpoint handling. Setup, preflight, review pauses, and the separately archived interrupted setup attempt are excluded.</sub>
 
-All 12 proposals used GPT-6.1 Sol at medium effort through guarded local ChatGPT
+All 24 proposals used GPT-6.1 Sol at medium effort through guarded local ChatGPT
 authentication, without an API-key route. Response times ranged from
-13.5 to 19.5 seconds. Native usage records report 79,695 uncached input
-tokens and 1,887 output tokens; cached input, reasoning/tool counts, and remaining
+13.5 to 23.1 seconds. Native usage records report 154,065 uncached input
+tokens and 3,967 output tokens; cached input, reasoning/tool counts, and remaining
 subscription allowance are unavailable. Shinka's dollar estimates are API-price
-equivalents, not billing receipts. The [evidence archive](reports/search-stage13-20261002)
-retains programs, prompts, responses, ancestry, raw trajectories, actual runtime
-receipts, usage records, and hashes. All scores were independently reconstructed.
+equivalents, not billing receipts. The [endpoint evidence](reports/search-endpoint-20261002)
+retains prompts, responses, exact programs, ancestry, raw trajectories,
+runtime receipts, usage records, and hashes. All scores were independently
+reconstructed. The [five-program](reports/search-integration-20261002/summary.json)
+and [13-program](reports/search-stage13-20261002/summary.json) checkpoints remain
+available.
 
-The checkpoint satisfies the planned continuation criteria: valid artifacts,
-distinct proposals, no failed evaluations, and scores that distinguish candidates.
-The next block adds 12 Shinka proposals and 12 random controls to reach the
-preregistered **25/24 endpoint**. Allow approximately **45–65 minutes** at the
-observed local speeds, including review. Runtime and subscription availability
-can vary; the archive remains resumable at recorded stage boundaries.
+The static search is closed. The next experiments measure one full-budget
+development reference trial and evaluate the frozen static finalists. Validation
+feedback will not be used for further proposals from this archive.
 
 ### Remaining scientific evaluation
 
@@ -291,8 +297,8 @@ No full-budget comparison has been completed. The table below tracks the evidenc
 | :--- | :--- | :--- |
 | Reference GA / ES / PPO | Ten trials, full task schedule, continual-learning metrics | Pilot complete; full protocol pending |
 | Stationary control | Matched task and learner settings without switching | Development control complete |
-| Shinka-selected GA | Frozen candidate evaluated on reporting trials | 13 programs complete; 25-program endpoint and validation pending |
-| Random-search control | Matched search budget and reporting protocol | 12 matched controls complete; 24-control endpoint and validation pending |
+| Shinka-selected GA | Frozen candidate evaluated on reporting trials | 25-program search complete; validation pending |
+| Random-search control | Matched search budget and reporting protocol | 24-control search complete; validation pending |
 
 ## 5. Reproducibility
 
@@ -383,7 +389,7 @@ The search figure is generated from that validated export:
 The command writes SVG, PDF, and a JSON sidecar containing the exact plotted
 values and input/output hashes. It requires a completed matched random prefix.
 
-The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Twelve proposals completed through this route. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
+The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Twenty-four proposals completed through this route. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
 
 Each real trial retains its command, profile, seed, task trial, source revision, interpreter version, device selection, duration, upstream configuration and metrics, training log, and metric-file hash. Modified upstream tracked files and untracked source files are rejected. Source revisions are fixed in [`upstream.lock.json`](upstream.lock.json):
 
@@ -404,16 +410,13 @@ The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-lea
 The next steps preserve the reproduction as the foundation and make adaptive
 programs the main extension:
 
-1. **Finish the declared static baseline:** resume the completed 13/12 checkpoint
-   to 25 Shinka programs and 24 random controls without changing the scorer,
-   model, sources, or frozen pool.
-2. **Measure one full-budget reference trial:** default GA, 20 phases, population
+1. **Measure one full-budget reference trial:** default GA, 20 phases, population
    512, and 4,000 generations on development seed 1001 / task trial 1002. Record
    phase times and peak memory before scheduling the larger study; reporting
    seeds remain reserved. A partial run supplies timing evidence only.
-3. **Validate static finalists once** on the reserved validation partition,
+2. **Validate static finalists once** on the reserved validation partition,
    reporting learning accuracy, each switch's forgetting, and cumulative return.
-4. **Implement executable adaptive rules** with the controls in Section 3,
+3. **Implement executable adaptive rules** with the controls in Section 3,
    short identity-trace checks under stationary and switching conditions, and one
    varying-width actuation check. Freeze a retention-sensitive objective and a
    separate protocol before proposing adaptive code. The completed baseline pilot

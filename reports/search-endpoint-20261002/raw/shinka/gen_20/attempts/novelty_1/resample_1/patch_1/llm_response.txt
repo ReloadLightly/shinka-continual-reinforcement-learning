@@ -1,0 +1,13 @@
+<NAME>
+increase_mutation_scale
+</NAME>
+<DESCRIPTION>
+Increase sigma to 0.10 while using elite_ratio 0.075. Prior search results improved as sigma rose from 0.065 to 0.08 at this elite ratio. A modest further increase may improve exploration and adaptation in continual CartPole; its benefit remains to be verified with the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"sigma": 0.035, "elite_ratio": 0.05}
+=======
+    return {"sigma": 0.10, "elite_ratio": 0.075}
+>>>>>>> REPLACE
+</DIFF>

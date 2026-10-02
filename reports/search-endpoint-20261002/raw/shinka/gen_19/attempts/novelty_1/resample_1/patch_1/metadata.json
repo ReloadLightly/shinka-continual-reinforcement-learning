@@ -1,0 +1,15 @@
+{
+  "generation": 19,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "broader_mutation_search",
+  "patch_description": "The GA\u2019s configurable parameters are mutation scale (`sigma`) and elite retention (`elite_ratio`). Set sigma to 0.09, slightly above the best reported setting of 0.08, to explore more broadly as CartPole conditions change. Preserve elite_ratio at 0.075 to retain strong candidates. This static configuration is a search proposal; improved performance requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T22:07:24.572697",
+  "llm_cost": 0.007522,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_19/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

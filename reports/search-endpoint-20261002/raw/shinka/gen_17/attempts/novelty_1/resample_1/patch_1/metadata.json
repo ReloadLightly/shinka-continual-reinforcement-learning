@@ -1,0 +1,15 @@
+{
+  "generation": 17,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "broader_mutation",
+  "patch_description": "Preserve the required single-function, literal configuration structure. Increase sigma to 0.10 while retaining elite_ratio at 0.075, extending the improvement trend in the search results. This proposal requires search-profile evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T22:01:17.548976",
+  "llm_cost": 0.006802,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_17/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -107,17 +107,33 @@ def plot_search(report_dir: Path, output: Path) -> dict:
     require([point["index"] for point in arms["random"][:count]] == list(range(1, count + 1)),
             "Random controls are not the preregistered prefix")
     paths = {"shinka": [default, *distinct], "random": [default, *arms["random"][:count]]}
-    curves = {}
-    for arm, points in paths.items():
-        best, incumbent = default["score"], []
-        for point in points:
-            best = max(best, point["score"])
-            incumbent.append(best)
-        curves[arm] = {"x": list(range(count + 1)), "candidate_scores": [p["score"] for p in points],
-                       "incumbent_scores": incumbent, "programs": points}
+    def make_curves(series):
+        result = {}
+        for arm, points in series.items():
+            best, incumbent = default["score"], []
+            for point in points:
+                best = max(best, point["score"])
+                incumbent.append(best)
+            result[arm] = {"x": list(range(len(points))),
+                           "candidate_scores": [p["score"] for p in points],
+                           "incumbent_scores": incumbent, "programs": points}
+        return result
+
+    curves = make_curves(paths)
     require(curves["shinka"]["incumbent_scores"][-1] == comparison["shinka_best_including_default"]
             and curves["random"]["incumbent_scores"][-1]
             == comparison["random_best_matched_including_default"], "Incumbent summary mismatch")
+    evaluation_curves = None
+    if (comparison["shinka_duplicate_completed_evaluations"] > 0
+            and all(row["correct"] for row in summary["rows"])
+            and len(arms["shinka"]) == len(arms["random"])):
+        evaluations = len(arms["shinka"])
+        require(all([p["index"] for p in points] == list(range(1, evaluations + 1))
+                    for points in arms.values()), "Actual evaluation slots are not contiguous")
+        evaluation_curves = make_curves({arm: [default, *points] for arm, points in arms.items()})
+        require(evaluation_curves["random"]["incumbent_scores"][-1]
+                == comparison["random_best_all_completed_including_default"],
+                "Full-pool incumbent summary mismatch")
 
     style = {"font.family": "DejaVu Sans", "font.size": 9, "axes.labelsize": 10,
              "axes.linewidth": 0.65, "axes.edgecolor": "#87909A", "axes.labelcolor": "#25313B",
@@ -126,35 +142,48 @@ def plot_search(report_dir: Path, output: Path) -> dict:
              "svg.fonttype": "none", "svg.hashsalt": "shinka-crl-search-v1", "pdf.fonttype": 42,
              "figure.facecolor": "white", "axes.facecolor": "white"}
     with plt.rc_context(style):
-        fig, ax = plt.subplots(figsize=(9.0, 3.7))
-        fig.subplots_adjust(left=0.085, right=0.98, bottom=0.23, top=0.80)
-        ax.set_axisbelow(True)
-        ax.grid(axis="y")
-        for edge in ("top", "right"):
-            ax.spines[edge].set_visible(False)
-        ax.axhline(default["score"], color="#87909A", linewidth=0.9, linestyle=(0, (3, 3)))
-        for arm, marker in (("shinka", "o"), ("random", "s")):
-            curve = curves[arm]
-            ax.step(curve["x"], curve["incumbent_scores"], where="post", color=COLORS[arm],
-                    linewidth=2.0, zorder=3)
-            ax.scatter(curve["x"][1:], curve["candidate_scores"][1:], color=COLORS[arm],
-                       s=24, alpha=0.38, marker=marker, edgecolors="none", zorder=2)
-            ax.scatter([count], [curve["incumbent_scores"][-1]], color=COLORS[arm],
-                       s=27, marker=marker, edgecolors="white", linewidth=0.5, zorder=4)
-        ax.scatter([0], [default["score"]], color="#55616C", s=20, zorder=5)
-        ax.set(xlim=(-0.15, count + 0.25), ylim=(0, 1.0), ylabel="Development score, J",
-               xlabel="Distinct configurations evaluated after the shared default")
-        tick_step = max(1, math.ceil(count / 12))
-        ax.set_xticks(sorted(set([0, count, *range(0, count + 1, tick_step)])))
-        ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
+        panels = [curves] + ([evaluation_curves] if evaluation_curves else [])
+        fig, axes = plt.subplots(1, len(panels), figsize=(11.4, 4.2) if evaluation_curves
+                                 else (9.0, 3.7), squeeze=False, sharey=True)
+        left = 0.065 if evaluation_curves else 0.085
+        fig.subplots_adjust(left=left, right=0.98, bottom=0.25, top=0.77, wspace=0.18)
+        for panel, (ax, series) in enumerate(zip(axes[0], panels)):
+            end = series["shinka"]["x"][-1]
+            ax.set_axisbelow(True)
+            ax.grid(axis="y")
+            for edge in ("top", "right"):
+                ax.spines[edge].set_visible(False)
+            ax.axhline(default["score"], color="#87909A", linewidth=0.9, linestyle=(0, (3, 3)))
+            for arm, marker in (("shinka", "o"), ("random", "s")):
+                curve = series[arm]
+                ax.step(curve["x"], curve["incumbent_scores"], where="post", color=COLORS[arm],
+                        linewidth=2.0, zorder=3)
+                ax.scatter(curve["x"][1:], curve["candidate_scores"][1:], color=COLORS[arm],
+                           s=24, alpha=0.38, marker=marker, edgecolors="none", zorder=2)
+                ax.scatter([end], [curve["incumbent_scores"][-1]], color=COLORS[arm],
+                           s=27, marker=marker, edgecolors="white", linewidth=0.5, zorder=4)
+            ax.scatter([0], [default["score"]], color="#55616C", s=20, zorder=5)
+            label = ("Additional candidate evaluations" if panel else
+                     "Additional distinct configurations")
+            ax.set(xlim=(-0.2, end + 0.4), ylim=(0, 1.0), xlabel=label)
+            if not panel:
+                ax.set_ylabel("Development score, J")
+            if evaluation_curves:
+                ax.set_title("B  Actual evaluations" if panel else "A  Distinct configurations",
+                             loc="left", fontsize=10, fontweight="semibold", color="#25313B",
+                             pad=12)
+            tick_step = max(1, math.ceil(end / (8 if evaluation_curves else 12)))
+            ax.set_xticks(sorted(set([0, end, *range(0, end + 1, tick_step)])))
+            ax.set_yticks([0, 0.2, 0.4, 0.6, 0.8, 1.0])
         handles = [Line2D([0], [0], color=COLORS[arm], linewidth=2.2, label=label)
                    for arm, label in (("shinka", "ShinkaEvolve"), ("random", "Random search"))]
         handles.append(Line2D([0], [0], color="#87909A", linewidth=1, linestyle="--",
                               label="Shared default"))
         fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.54, 0.98),
                    frameon=False, ncol=3, handlelength=2.2, columnspacing=2.6)
-        fig.text(0.085, 0.042, "Steps: best observed score · faint points: individual configurations · "
-                 "three development seeds · one search per arm", fontsize=7.5, color="#65717D")
+        fig.text(left, 0.055, "Steps: best observed score · faint points: individual outcomes · "
+                 "shared default at zero · three development seeds · one search per arm",
+                 fontsize=7.5, color="#65717D")
         output.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix=".search-figure-", dir=output.parent) as temporary:
             staging = Path(temporary)
@@ -162,18 +191,21 @@ def plot_search(report_dir: Path, output: Path) -> dict:
             fig.savefig(svg, metadata={"Date": None, "Title": "Development configuration search"})
             fig.savefig(pdf, metadata={"CreationDate": None, "ModDate": None,
                                       "Title": "Development configuration search"})
-            provenance = {"schema_version": 1, "kind": "development_search_trajectories",
+            provenance = {"schema_version": 2, "kind": "development_search_trajectories",
                           "plot_script": "scripts/plot_search.py",
                           "plot_script_sha256": digest(Path(__file__)),
                           "input_report": report_dir.name, "input_sha256": inputs,
                           "matplotlib_version": matplotlib.__version__, "curves": curves,
+                          "evaluation_curves": evaluation_curves,
                           "matched_distinct_mutants": count,
                           "duplicate_evaluations_charged_separately":
                               comparison["shinka_duplicate_completed_evaluations"],
                           "random_candidates_not_in_matched_prefix": len(arms["random"]) - count,
                           "interpretation": "Observed development selection paths, no confidence "
-                                            "bands or smoothing. Axis counts distinct configurations; "
-                                            "repeated and failed training work remains in the report.",
+                                            "bands or smoothing. Primary axis counts distinct "
+                                            "configurations; optional secondary axis counts actual "
+                                            "completed evaluations, including duplicates. All work "
+                                            "remains charged in the report.",
                           "outputs_sha256": {svg.name: digest(svg), pdf.name: digest(pdf)}}
             sidecar = staging / output.with_suffix(".json").name
             sidecar.write_text(json.dumps(provenance, indent=2, allow_nan=False) + "\n")

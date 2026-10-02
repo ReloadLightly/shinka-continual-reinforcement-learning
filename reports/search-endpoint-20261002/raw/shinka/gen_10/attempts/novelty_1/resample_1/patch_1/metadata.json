@@ -1,0 +1,15 @@
+{
+  "generation": 10,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "increase_mutation_reduce_elites",
+  "patch_description": "Propose sigma 0.055 and elite_ratio 0.075. Search results favor increasing sigma from 0.045 to 0.05 and reducing elite_ratio from 0.085 to 0.075. This candidate retains the better observed elite ratio while testing a modest further increase in mutation strength to improve exploration. Its performance remains to be measured with the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:26:41.948248",
+  "llm_cost": 0.0180348,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_10/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

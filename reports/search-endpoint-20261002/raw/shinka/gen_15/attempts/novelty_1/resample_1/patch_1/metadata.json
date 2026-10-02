@@ -1,0 +1,15 @@
+{
+  "generation": 15,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "refine_mutation_scale",
+  "patch_description": "Set sigma to 0.078, slightly below the best observed value of 0.08. The search results suggest that moderate mutation performs better than 0.10; this nearby candidate may improve refinement while retaining exploration. Keep elite_ratio at 0.075 to isolate the mutation-scale change. Performance must be verified with the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:56:48.309869",
+  "llm_cost": 0.0182788,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_15/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

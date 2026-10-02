@@ -1,0 +1,15 @@
+<NAME>
+reduce_mutation_and_elite_fraction
+</NAME>
+<DESCRIPTION>
+The search results improve as sigma and elite_ratio decrease. Propose sigma 0.05 and elite_ratio 0.08 to test a modest continuation of this trend: smaller mutations may preserve successful policies, while a smaller elite fraction concentrates selection on stronger candidates. This configuration requires search-profile evaluation to confirm improvement.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.15, "elite_ratio": 0.20}
+=======
+def get_ga_config():
+    return {"sigma": 0.05, "elite_ratio": 0.08}
+>>>>>>> REPLACE
+</DIFF>

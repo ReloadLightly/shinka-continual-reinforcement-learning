@@ -1,0 +1,10 @@
+--- a/original.py
++++ b/original.py
+@@ -1,6 +1,4 @@
+ # EVOLVE-BLOCK-START
+ def get_ga_config():
+-    return {"sigma": 0.07, "elite_ratio": 0.10}
+-
+-
++    return {"sigma": 0.05, "elite_ratio": 0.075}
+ # EVOLVE-BLOCK-END

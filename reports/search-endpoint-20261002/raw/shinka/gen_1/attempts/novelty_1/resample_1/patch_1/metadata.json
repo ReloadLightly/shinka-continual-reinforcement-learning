@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "lower_mutation_stronger_selection",
+  "patch_description": "Reduce sigma to 0.15 to make smaller mutations that may preserve successful CartPole policies. Reduce elite_ratio to 0.20 to concentrate reproduction on higher-performing candidates. This balances local exploration with stronger selection; improvement remains to be measured with the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T20:37:44.996768",
+  "llm_cost": 0.0173528,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

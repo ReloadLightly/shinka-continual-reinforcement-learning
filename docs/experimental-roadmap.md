@@ -3,19 +3,20 @@
 This document specifies the next experiments for the CartPole reproduction and
 the ShinkaEvolve extension. The 18-trial baseline pilot with matched nominal
 training budgets and a stationary control is complete. The staged search over
-static GA settings has reached its second checkpoint.
+static GA settings has completed its declared endpoint.
 This two-parameter search establishes the configuration baseline for the main
 extension: executable adaptive mutation rules evolved by ShinkaEvolve. It is
 not the intended endpoint of the project.
 
-**Search checkpoint, 2 October 2026:** 13 Shinka programs, including the shared
-default, and 12 frozen random controls completed on three development seeds.
-All 12 mutations were valid and distinct; there were no failed evaluations.
-Native resume through 2 → 5 → 13 programs, actual runtime settings, ancestry,
-and matched evaluation budgets passed independent audit. Best development scores
-were 0.8721 for Shinka and 0.8857 for random search. This single-run result is
-retained; it does not change the declared 25/24 endpoint. See the
-[complete evidence](../reports/search-stage13-20261002/summary.json) and
+**Search endpoint, 2 October 2026:** 25 Shinka programs, including the shared
+default, and 24 frozen random controls completed on three development seeds.
+All evaluations passed; the 24 proposals contained 17 distinct mutations and
+seven repeats. Best development scores were 0.8721 for Shinka and 0.8857 for
+random search, unchanged from the 13-program checkpoint. The primary comparison
+uses the first 17 random controls; the full 24-control comparison matches actual
+evaluations, including Shinka's repeated training. Five finalists are
+[frozen before validation](../reports/finalists-static-20261002/manifest.json).
+See the [complete evidence](../reports/search-endpoint-20261002/summary.json) and
 [earlier integration checkpoint](../reports/search-integration-20261002/summary.json).
 
 **Pilot outcome, 2 October 2026:** all 18 trials completed; the predefined
@@ -28,8 +29,8 @@ outcome does not establish reproduction of the full paper's findings.
 The numerical budgets below define the protocol; observed results belong in the
 README and linked evidence archives. The constant-configuration evaluator,
 matched pilot profiles, resumable trial runner, checkpoint analysis, evidence
-exporter, and figure generator are implemented. Finalist validation and the
-adaptive-program adapter still require implementation. Source revisions remain fixed by
+exporter, figure generator, and finalist freezer are implemented. The adaptive
+program adapter remains the main extension to implement. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 
@@ -286,7 +287,7 @@ evaluation episodes, score, and promotion rule. Charge all completed candidate
 training to its arm, including partially completed failures.
 
 At maximum, 24 Shinka candidates + 24 random candidates + one shared default
-produce **49 distinct configuration evaluations**, **147 GA seed trials**, and
+produce **49 configuration evaluations**, **147 GA seed trials**, and
 **1,128,960,000 nominal training steps** at the current search budget. This is an
 upper bound before validation and includes the shared default only once.
 
@@ -299,11 +300,13 @@ request can fail before producing a program, and retry/repair requests still
 consume model usage. Set and record finite retry limits before launch. Never
 silently continue until 24 successful improvements have appeared.
 
-For strict evaluation-budget comparison, compare the Shinka arm to the prefix of
+For the declared distinct-configuration comparison, compare the Shinka arm to the prefix of
 the frozen random pool with the same number of completed distinct candidate
 evaluations, and report actual seed work when a candidate fails partway through.
 If counts differ, the full 24-candidate random pool is a separately labelled
-comparison. Equal proposal slots alone do not establish equal training compute.
+comparison. Matching distinct counts does not equalize actual training work
+when repeats are trained again. Equal proposal slots alone do not establish
+equal training compute.
 
 After slot five, require valid artifact contracts, reproducible source-to-score
 mapping, recorded parentage, and a verified resume. After slot 13, inspect failure
@@ -316,8 +319,9 @@ An optional extension to **49 total Shinka slots** adds 24 further proposals and
 on intact artifacts, at least 80% valid distinct outputs among the first 24
 proposals, and the recorded compute/model-usage envelope permitting the extra
 work. It must also precede validation. If extended, report both the slot-25 and
-slot-49 results; do not hide the original endpoint. The extension is not currently
-scheduled or launched.
+slot-49 results; do not hide the original endpoint. The observed 17/24 distinct
+outputs (70.8%) fail the 80% condition; the static search is closed without this
+extension.
 
 Pause between completed candidates, preferably at these stage boundaries. Save
 the archive/database, generation counter, candidate hashes, parentage, fixed
@@ -369,10 +373,13 @@ eight proposals plus eight controls added **29.09 minutes**, bringing cumulative
 execution to **47.24 minutes** for 13 Shinka programs and 12 controls. These
 measurements exclude setup, preflight, and review pauses; exact per-session times
 are in the [checkpoint evidence](../reports/search-stage13-20261002/summary.json).
-Allow approximately **45–65 minutes**, including review, for the remaining
-12 proposals and 12 controls. The earlier table preserves the initial planning
-assumptions. Neither estimates nor observed response times guarantee future
-latency or remaining subscription allowance.
+The final block added **54.59 minutes**, bringing cumulative execution to
+**101.84 minutes**: 59.77 for Shinka including the default, and 42.06 for the
+24 additional controls. All 147 seed trials and 1,128,960,000 nominal steps are
+charged, including repeated configurations. The [endpoint evidence](../reports/search-endpoint-20261002/summary.json)
+contains exact measurements. The earlier table preserves the initial planning
+assumptions. Observed response times do not guarantee future latency or
+remaining subscription allowance.
 
 ## 6. Promotion and final evaluation
 
@@ -405,9 +412,7 @@ evidence that it fits a short local session.
 
 ### One full-budget development reference
 
-With the 13-program/12-control block complete, finish the existing static pilot at
-25 programs and 24 random controls. Retain this declared endpoint even if the
-intermediate result already favors one search method. Next measure one complete
+With the static search closed at 25 programs and 24 random controls, measure one complete
 default-GA reference trial with the paper's **20 phases, 200 generations per
 phase, population 512, three training episodes, and 500-step cap**: 4,000
 generations and **3,072,000,000 nominal training steps**. Use development seed
@@ -479,6 +484,16 @@ reset by the harness at a boundary. Provide a small documented arithmetic/JAX
 operation set and validate source, shapes, finite values, runtime limits, and
 side effects. Validation must include phase lengths different from search: a
 recurrent program could otherwise learn a fixed schedule indirectly.
+
+Before this separate search, declare how exact repeated programs are handled.
+The static run retains its original retraining policy. For adaptive programs,
+consider a canonical-AST duplicate check and a score cache keyed by program,
+profile, seeds, and harness hashes, together with a compact record of prior
+evaluated proposals in the mutation context. A repeated proposal must still
+consume its slot and model usage; caching must not silently create extra
+proposal opportunities. This check detects identical parsed programs, not
+general behavioral equivalence. Freeze the choice and cost accounting before
+the first adaptive proposal.
 
 Implement a repository-owned `GASearcher` adapter at the pinned runner's
 `build_searcher` boundary, without editing upstream tracked files. The adapter

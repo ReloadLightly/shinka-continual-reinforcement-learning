@@ -1,0 +1,15 @@
+{
+  "generation": 24,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "refined_ga_config",
+  "patch_description": "Preserves the required single-function, literal-dictionary structure. Refines sigma between the strongest prior settings while retaining their elite ratio. Performance improvement requires search-profile evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T22:22:23.242504",
+  "llm_cost": 0.0178248,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_24/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

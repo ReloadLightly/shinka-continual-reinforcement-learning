@@ -1,0 +1,15 @@
+{
+  "generation": 16,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "refine_mutation_scale",
+  "patch_description": "Set sigma to 0.077 while keeping elite_ratio at 0.075. The search results favor sigma near 0.08, with a substantial decline at 0.10. This proposal tests slightly below the best observed value to balance exploration and preservation of successful policies.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:58:54.918423",
+  "llm_cost": 0.0183268,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_16/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

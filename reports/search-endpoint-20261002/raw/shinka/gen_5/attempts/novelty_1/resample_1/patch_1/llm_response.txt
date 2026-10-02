@@ -1,0 +1,13 @@
+<NAME>
+refine_ga_settings
+</NAME>
+<DESCRIPTION>
+The best observed configuration uses sigma 0.07 and elite_ratio 0.10. Propose a nearby setting of 0.075 and 0.11 to modestly increase exploration and elite retention while staying close to that successful region. This is an untested candidate for the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"sigma": 0.10, "elite_ratio": 0.15}
+=======
+    return {"sigma": 0.075, "elite_ratio": 0.11}
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,15 @@
+<NAME>
+increase_mutation_scale
+</NAME>
+<DESCRIPTION>
+Increase sigma to 0.10 while keeping elite_ratio at 0.075. Previous search evaluations improved as sigma increased from 0.045 to 0.065 to 0.08. A modest further increase tests whether broader exploration improves continual CartPole adaptation while retaining the same selection pressure. This proposal requires search-profile evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.045, "elite_ratio": 0.075}
+=======
+def get_ga_config():
+    return {"sigma": 0.10, "elite_ratio": 0.075}
+>>>>>>> REPLACE
+</DIFF>

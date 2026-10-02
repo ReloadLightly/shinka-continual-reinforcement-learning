@@ -1,0 +1,14 @@
+<NAME>
+refined_ga_config
+</NAME>
+<DESCRIPTION>
+Preserves the required single-function, literal-dictionary structure. Refines sigma between the strongest prior settings while retaining their elite ratio. Performance improvement requires search-profile evaluation.
+</DESCRIPTION>
+<CODE>
+```python
+# EVOLVE-BLOCK-START
+def get_ga_config():
+    return {"sigma": 0.0775, "elite_ratio": 0.075}
+# EVOLVE-BLOCK-END
+```
+</CODE>

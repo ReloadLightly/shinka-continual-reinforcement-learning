@@ -1,0 +1,15 @@
+<NAME>
+refine_mutation_scale
+</NAME>
+<DESCRIPTION>
+Set sigma to 0.077 while keeping elite_ratio at 0.075. The search results favor sigma near 0.08, with a substantial decline at 0.10. This proposal tests slightly below the best observed value to balance exploration and preservation of successful policies.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.10, "elite_ratio": 0.075}
+=======
+def get_ga_config():
+    return {"sigma": 0.077, "elite_ratio": 0.075}
+>>>>>>> REPLACE
+</DIFF>

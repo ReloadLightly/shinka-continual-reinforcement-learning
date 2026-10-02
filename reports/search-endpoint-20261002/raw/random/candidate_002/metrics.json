@@ -1,0 +1,136 @@
+{
+  "combined_score": 0.7090277824401856,
+  "public": {
+    "profile": "search",
+    "method": "ga",
+    "seeds_completed": 3,
+    "sigma": 1.0483669904161388,
+    "elite_ratio": 0.3834150319193743,
+    "smoke_validation_only": false,
+    "mean_return": 354.5138912200928
+  },
+  "private": {
+    "seed_results": [
+      {
+        "seed": 1001,
+        "trial": 1002,
+        "normalized_score": 0.6901833368301392,
+        "mean_return": 345.0916684150696
+      },
+      {
+        "seed": 1002,
+        "trial": 1003,
+        "normalized_score": 0.7304500021219253,
+        "mean_return": 365.22500106096265
+      },
+      {
+        "seed": 1003,
+        "trial": 1004,
+        "normalized_score": 0.7064500083684921,
+        "mean_return": 353.2250041842461
+      }
+    ],
+    "seed_attempts": [
+      {
+        "seed": 1001,
+        "trial": 1002,
+        "status": "complete",
+        "wall_seconds": 34.79573701496702,
+        "artifact_sha256": {
+          "checkpoints.npz": "f873b37930d7e4e5d46e94f0819930d83015fcded6ab6c1f14e69585e8b12b99",
+          "config.json": "ecc578213bb8293ea3ea7b01da3087c07d4f29ff12c33e76d3b80dab7235f1fc",
+          "manifest.json": "a911f4bcf5a0c3a28cedfef8802d92e9b85671ea25674371c8452f780c35418c",
+          "process.log": "7f47683a34661fe0b827dc91ef4d2ed3c0791155d3992a0627a1db16869c4cbb",
+          "results.json": "c1a900e0594595e361d1d526d31add7eab86b699d5bf3d7db6c4713cc5374eab",
+          "stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "summary.json": "f21b54c328337cf874168ceeb43e78b5a431bb04ef741386bddf9fb91a695054",
+          "train.log": "774fd82daba33c912e99d8e5185ebeabbe71e71a893344cead44072763e33318",
+          "training_metrics.json": "d753cb5bff9009a647bc7743f68b713f27fe069467e1a67852cd4a91cc223fe6",
+          "trajectory.npz": "0eda02dec764f565429f754a918aaa4da853301983be1065e9750d3e01e61167"
+        }
+      },
+      {
+        "seed": 1002,
+        "trial": 1003,
+        "status": "complete",
+        "wall_seconds": 36.197663050028495,
+        "artifact_sha256": {
+          "checkpoints.npz": "2727e7ce32d6d03a32948bf09eac755a80d77cbf9dbb112d51a7bc3d90b564eb",
+          "config.json": "7db40784b8072571b49e00c10ffe923dbfa20b7967a9fb104eda819f57b3dc78",
+          "manifest.json": "103c68f35953a8c53cf4a7876d9bf0940dde433466c06bcae2887503ff70bc44",
+          "process.log": "3cb5b7d322815f842995e02d466f3d4a32ee76b3fed7d4afefc20c51c7e17f15",
+          "results.json": "4347a4784cd78cbb143aaac8137c7cdb0cc4192e29be389f022057a3a5a46c5a",
+          "stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "summary.json": "6bbf15fa8e11017b177cf74b822c8e52a29d566be9274c83d26f6e88f8e35dc1",
+          "train.log": "462acfd39f3e9a4d72d4802b506f0ba78630f658afe7adbfc548ed24dc79b1d8",
+          "training_metrics.json": "910c94ead05b24e12197465c907a99416505a5c6078c44c08e6ff91bd19e23a8",
+          "trajectory.npz": "72f18346e95c30c5611e195045747ccea36fd87d06470148c8b47bc09966289f"
+        }
+      },
+      {
+        "seed": 1003,
+        "trial": 1004,
+        "status": "complete",
+        "wall_seconds": 34.31714808999095,
+        "artifact_sha256": {
+          "checkpoints.npz": "f9271279dac19dde2247ec671591f1e7c8038b1b44b37337ee61d5cbd07f6b80",
+          "config.json": "677d66384c6742733e942938a21fc31833996b5d4d8a95b1a8cb05f6871bfe90",
+          "manifest.json": "cccd86a20e0a70a60340d4ff71bb95f30c6615a6adaad2593f572f91eae4468d",
+          "process.log": "7d3c5865fbb7db787bbc6ffed924107932a66a3bb045d4fd02b4c85d0da095d3",
+          "results.json": "95e90c1a1847145b3dd8e5928dde94a1ce924f5ad37d99db7966c7293f6b0d84",
+          "stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "summary.json": "32693fb501339550ab1b3f6273d276635a26c8a39938edce7f9dcdad1f7e73e3",
+          "train.log": "eac2ccfa75ceac22a923f54f1dbe5701fe504b6f5a5ee7b1d54cb6e0d1673dfb",
+          "training_metrics.json": "a90a1fd96da748a5cc5c2e76860b17c00e7f0f3db6530e93e9586b153fc0c046",
+          "trajectory.npz": "06c794e683b76e43c9c006661eb1a5c96b35bdf6c43045ecfabfe1cbad406d73"
+        }
+      }
+    ],
+    "provenance": {
+      "program_sha256": "51215337c41b68a9020e4dc80ca0eb9270e050c9f6454ed4767d035b49b4adb0",
+      "evaluator_sha256": "83c87de2d6eadf198cb88b61276708469863eab68df553f24b370703f6d5c2d5",
+      "cpu_affinity": [
+        0,
+        1
+      ],
+      "thread_environment": {
+        "JAX_PLATFORMS": "cpu",
+        "OMP_NUM_THREADS": "1",
+        "OMP_THREAD_LIMIT": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMEXPR_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1",
+        "GOTO_NUM_THREADS": "1",
+        "OMP_DYNAMIC": "FALSE",
+        "MKL_DYNAMIC": "FALSE",
+        "OMP_WAIT_POLICY": "PASSIVE"
+      },
+      "profile": {
+        "name": "search",
+        "purpose": "Reduced GA development budget; disjoint from final reporting seeds",
+        "env": "CartPole-v1_sigma0.5",
+        "num_phases": 4,
+        "num_tasks": 2,
+        "episode_length": 500,
+        "eval_episodes": 3,
+        "seeds": [
+          1001,
+          1002,
+          1003
+        ],
+        "ne": {
+          "num_generations": 80,
+          "task_interval": 20,
+          "pop_size": 64,
+          "num_evals": 3
+        },
+        "ppo": null
+      },
+      "profile_sha256": "68d048be4fa630340ca1b39de40b8d269960f26fc0cf09cd9fdd782b70cb9915"
+    },
+    "evaluation_wall_seconds": 105.37995346600655
+  }
+}

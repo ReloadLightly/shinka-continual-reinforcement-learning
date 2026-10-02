@@ -1,0 +1,15 @@
+<NAME>
+increase_mutation_scale
+</NAME>
+<DESCRIPTION>
+Propose sigma 0.10 while retaining elite_ratio 0.075 from the strongest prior configuration. Increasing sigma from 0.065 to 0.08 improved the search score; a modest further increase may improve exploration and adaptation in continual CartPole. This is an untested proposal for the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.045, "elite_ratio": 0.085}
+=======
+def get_ga_config():
+    return {"sigma": 0.10, "elite_ratio": 0.075}
+>>>>>>> REPLACE
+</DIFF>

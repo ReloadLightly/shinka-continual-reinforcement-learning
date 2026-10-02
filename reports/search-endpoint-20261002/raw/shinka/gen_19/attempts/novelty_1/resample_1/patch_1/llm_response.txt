@@ -1,0 +1,14 @@
+<NAME>
+broader_mutation_search
+</NAME>
+<DESCRIPTION>
+The GA’s configurable parameters are mutation scale (`sigma`) and elite retention (`elite_ratio`). Set sigma to 0.09, slightly above the best reported setting of 0.08, to explore more broadly as CartPole conditions change. Preserve elite_ratio at 0.075 to retain strong candidates. This static configuration is a search proposal; improved performance requires evaluation.
+</DESCRIPTION>
+<CODE>
+```python
+# EVOLVE-BLOCK-START
+def get_ga_config():
+    return {"sigma": 0.09, "elite_ratio": 0.075}
+# EVOLVE-BLOCK-END
+```
+</CODE>

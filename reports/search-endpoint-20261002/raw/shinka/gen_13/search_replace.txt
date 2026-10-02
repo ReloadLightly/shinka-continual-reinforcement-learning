@@ -1,0 +1,15 @@
+<NAME>
+increase_mutation_scale
+</NAME>
+<DESCRIPTION>
+Increase sigma to 0.10 while preserving elite_ratio at 0.075. Search-profile results improved as sigma rose from 0.045 to 0.065 to 0.08, so a modest further increase is a reasonable exploration candidate for continual adaptation. Keeping elite_ratio fixed isolates the mutation-scale effect; improvement remains to be evaluated.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.045, "elite_ratio": 0.075}
+=======
+def get_ga_config():
+    return {"sigma": 0.10, "elite_ratio": 0.075}
+>>>>>>> REPLACE
+</DIFF>

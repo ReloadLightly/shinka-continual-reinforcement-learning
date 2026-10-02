@@ -1,0 +1,15 @@
+{
+  "generation": 5,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "refine_ga_settings",
+  "patch_description": "The best observed configuration uses sigma 0.07 and elite_ratio 0.10. Propose a nearby setting of 0.075 and 0.11 to modestly increase exploration and elite retention while staying close to that successful region. This is an untested candidate for the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:16:09.688325",
+  "llm_cost": 0.0177448,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+<NAME>
+increase_mutation_reduce_elites
+</NAME>
+<DESCRIPTION>
+Propose sigma 0.055 and elite_ratio 0.075. Search results favor increasing sigma from 0.045 to 0.05 and reducing elite_ratio from 0.085 to 0.075. This candidate retains the better observed elite ratio while testing a modest further increase in mutation strength to improve exploration. Its performance remains to be measured with the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.045, "elite_ratio": 0.085}
+=======
+def get_ga_config():
+    return {"sigma": 0.055, "elite_ratio": 0.075}
+>>>>>>> REPLACE
+</DIFF>

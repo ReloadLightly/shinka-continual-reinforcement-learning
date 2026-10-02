@@ -120,11 +120,10 @@ effort are the applicable controls.
 
 Headless's reported dollar cost is an API-price-equivalent estimate, not a
 subscription charge or remaining-quota meter. Public package and pricing metadata
-requests may still occur; they are not paid model inference. The first four
-subscription proposals and the native archive resume have passed their integration
-gate. The [completed evidence](../../reports/search-integration-20261002/summary.json)
-includes a matched four-configuration random control; larger search and held-out
-evaluation remain pending.
+requests may still occur; they are not paid model inference. The completed
+endpoint contains 25 Shinka programs and 24 random controls. The
+[evidence](../../reports/search-endpoint-20261002/summary.json) retains every
+proposal and training result; held-out evaluation remains pending.
 
 ### Preflight and staged launch
 
@@ -191,11 +190,14 @@ block, use Standard speed, and stop if the included allowance is exhausted.
 
 The retry settings permit at most one mutation request per outer proposal slot;
 Codex's own internal tool/service behavior is not a one-token-call guarantee.
-The completed second checkpoint used 12 successful Codex launches, producing
-13 total Shinka programs including the default, alongside 12 random controls.
-No candidate failed or duplicated an effective Shinka configuration. Its next
-cumulative targets are 25 Shinka programs and 24 random controls, using the same
-frozen archive and pool. See the [audited checkpoint](../../reports/search-stage13-20261002/summary.json).
+The completed endpoint used 24 successful Codex launches, producing 25 total
+Shinka programs including the default, alongside 24 random controls. All
+evaluations passed; seven Shinka proposals repeated an effective configuration.
+The primary comparison uses the first 17 controls to match distinct mutations;
+the full 24 controls match actual additional evaluations. Repeated training
+remains charged. See the [audited endpoint](../../reports/search-endpoint-20261002/summary.json)
+and [frozen finalists](../../reports/finalists-static-20261002/manifest.json).
+This archive is closed to further proposals before reserved validation.
 
 The job configuration explicitly sets `numeric_threads_per_job: 1`; the native
 default otherwise overrides outer thread variables. Both arms use identical

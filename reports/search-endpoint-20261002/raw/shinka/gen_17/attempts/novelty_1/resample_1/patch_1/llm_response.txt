@@ -1,0 +1,14 @@
+<NAME>
+broader_mutation
+</NAME>
+<DESCRIPTION>
+Preserve the required single-function, literal configuration structure. Increase sigma to 0.10 while retaining elite_ratio at 0.075, extending the improvement trend in the search results. This proposal requires search-profile evaluation.
+</DESCRIPTION>
+<CODE>
+```python
+# EVOLVE-BLOCK-START
+def get_ga_config():
+    return {"sigma": 0.10, "elite_ratio": 0.075}
+# EVOLVE-BLOCK-END
+```
+</CODE>
