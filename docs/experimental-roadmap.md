@@ -6,6 +6,12 @@ training budgets and a stationary control is complete. The next experiment is a
 staged search over static GA settings, now that the pilot validates learning and analysis.
 Adaptive mutation programs are a separate subsequent experiment.
 
+**Search integration outcome, 2 October 2026:** four valid distinct Shinka proposals
+and four frozen random controls completed on the three development seeds. Native
+archive resume, actual runtime settings, source-to-score ancestry, and matched
+evaluation budgets passed independent audit. The next block is 13 total Shinka
+programs and 12 random controls. See the [complete evidence](../reports/search-integration-20261002/summary.json).
+
 **Pilot outcome, 2 October 2026:** all 18 trials completed; the predefined
 stationary-learning gate passed for GA, ES, and PPO. The frozen protocol is
 therefore retained for the first configuration-search experiment. See the
@@ -344,6 +350,14 @@ Benchmark one promoted-budget trial before scheduling validation, and measure
 the paper-size profile separately; training-step ratios alone do not establish
 wall-time ratios.
 
+The completed five-slot integration gate took **10.61 minutes**, and four matched
+random controls took **7.55 minutes**, for **18.15 minutes** of execution excluding
+setup, preflight, and review pauses. Four actual proposal responses took 14.4–19.4
+seconds each. At the observed evaluation speeds, allow roughly **30–45 minutes**
+for the next eight proposals plus eight controls. The earlier table preserves the
+initial planning assumptions; neither timing range guarantees future latency or
+remaining subscription allowance.
+
 ## 6. Promotion and final evaluation
 
 After search, select the top two valid distinct Shinka configurations and the top
@@ -458,8 +472,8 @@ same training budget.
 | 1 | Switching and stationary pilot profiles; resumable trial manifest | Exact budgets, resolved configurations, reduced real runs, six-trial resume | Complete |
 | 2 | Post-hoc evaluation and reporting adapter | Known-trace checks, correct centroid sources, real checkpoint evaluation | Complete |
 | 3 | Eighteen-trial pilot | Raw curves, per-seed metrics, costs, passing adequacy gate | Complete |
-| 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Authentication preflight complete; first proposals next |
-| 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | Pending |
+| 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Complete: four actual proposals and 2 → 5 resume |
+| 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | Five-slot gate and four matched controls complete; 13/25 pending |
 | 6 | One validation comparison and frozen finalists | Reserved trials used once, candidate hashes, all continual metrics | Pending |
 | 7 | Full CartPole timing and resource plan | Measured representative paper-shape trial or segment before bulk scheduling | Pending |
 | 8 | Adaptive-program adapter and neutral gate | Unchanged baseline trace, varying-sigma test, no task-boundary inputs | Pending |

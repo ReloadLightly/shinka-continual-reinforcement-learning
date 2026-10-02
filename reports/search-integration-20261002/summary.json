@@ -1,0 +1,1058 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "purpose": "development configuration-search integration",
+  "profile": {
+    "name": "search",
+    "purpose": "Reduced GA development budget; disjoint from final reporting seeds",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 3,
+    "seeds": [
+      1001,
+      1002,
+      1003
+    ],
+    "ne": {
+      "num_generations": 80,
+      "task_interval": 20,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "model": "gpt-6.1-sol",
+  "auth": "chatgpt",
+  "rows": [
+    {
+      "arm": "shinka",
+      "index": 0,
+      "program_path": "shinka/gen_0/main.py",
+      "program_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 0.5,
+        "elite_ratio": 0.5
+      },
+      "effective_key": [
+        0.5,
+        32
+      ],
+      "combined_score": 0.5654111158291499,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.5375166688919067,
+          "mean_return": 268.7583344459534,
+          "training_wall_seconds": 31.141897597000934,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.6936333371162415,
+          "mean_return": 346.81666855812074,
+          "training_wall_seconds": 32.236929241917096,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.46508334147930147,
+          "mean_return": 232.54167073965073,
+          "training_wall_seconds": 32.783879435039125,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 96.16270627395716,
+      "evaluation_wall_seconds": 96.29290348698851,
+      "program_id": "1311569a-2580-4b14-83ba-b952685ee398",
+      "parent_id": null,
+      "native_metadata": {
+        "patch_type": "init",
+        "patch_name": "initial_program",
+        "patch_description": "Initial program setup",
+        "sampling_seconds": 0.0,
+        "evaluation_seconds": 96.70475196838379,
+        "pipeline_seconds": 96.82495212554932
+      }
+    },
+    {
+      "arm": "shinka",
+      "index": 1,
+      "program_path": "shinka/gen_1/main.py",
+      "program_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 0.15,
+        "elite_ratio": 0.2
+      },
+      "effective_key": [
+        0.15000000596046448,
+        12
+      ],
+      "combined_score": 0.7466000056823094,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.7064083376407623,
+          "mean_return": 353.20416882038114,
+          "training_wall_seconds": 33.013088528998196,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.8560000042915344,
+          "mean_return": 428.0000021457672,
+          "training_wall_seconds": 33.98637260706164,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.6773916751146316,
+          "mean_return": 338.6958375573158,
+          "training_wall_seconds": 30.341793046100065,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 97.3412541821599,
+      "evaluation_wall_seconds": 97.54052166594192,
+      "program_id": "3383415d-f79c-40e7-b0c5-f803f1774a21",
+      "parent_id": "1311569a-2580-4b14-83ba-b952685ee398",
+      "native_metadata": {
+        "patch_type": "diff",
+        "patch_name": "lower_mutation_stronger_selection",
+        "patch_description": "Reduce sigma to 0.15 to make smaller mutations that may preserve successful CartPole policies. Reduce elite_ratio to 0.20 to concentrate reproduction on higher-performing candidates. This balances local exploration with stronger selection; improvement remains to be measured with the search profile.",
+        "model_name": "headless/codex?effort=medium",
+        "sampling_seconds": 19.535062074661255,
+        "evaluation_seconds": 97.62860870361328,
+        "pipeline_seconds": 117.192711353302
+      }
+    },
+    {
+      "arm": "shinka",
+      "index": 2,
+      "program_path": "shinka/gen_2/main.py",
+      "program_sha256": "c2ad59694b4c4b86a85f18e2d4d0b64593c78b5388a10bb96a9382b7bd6c54f6",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 0.1,
+        "elite_ratio": 0.15
+      },
+      "effective_key": [
+        0.10000000149011612,
+        9
+      ],
+      "combined_score": 0.7841583360354106,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.7589083373069764,
+          "mean_return": 379.4541686534882,
+          "training_wall_seconds": 47.4341748310253,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.8519166694641114,
+          "mean_return": 425.9583347320557,
+          "training_wall_seconds": 43.001977920066565,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.741650001335144,
+          "mean_return": 370.825000667572,
+          "training_wall_seconds": 43.94131644908339,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 134.37746920017526,
+      "evaluation_wall_seconds": 134.54049411800224,
+      "program_id": "31b2a356-fad6-4dbd-a52f-1a3581da5acb",
+      "parent_id": "3383415d-f79c-40e7-b0c5-f803f1774a21",
+      "native_metadata": {
+        "patch_type": "diff",
+        "patch_name": "refine_mutation_and_selection",
+        "patch_description": "Try sigma 0.10 and elite_ratio 0.15. The search results favor smaller mutations and a lower elite ratio than the original configuration. This proposal extends that direction moderately: smaller mutations may preserve successful balancing policies, while fewer elites increase selection pressure. Improvement remains to be verified with the search profile.",
+        "model_name": "headless/codex?effort=medium",
+        "sampling_seconds": 17.42340326309204,
+        "evaluation_seconds": 134.84850525856018,
+        "pipeline_seconds": 152.5261356830597
+      }
+    },
+    {
+      "arm": "shinka",
+      "index": 3,
+      "program_path": "shinka/gen_3/main.py",
+      "program_sha256": "578052260003db157ef687195a24e129b445c2fa90ad6639873c00f89d846c42",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 0.07,
+        "elite_ratio": 0.1
+      },
+      "effective_key": [
+        0.07000000029802322,
+        6
+      ],
+      "combined_score": 0.8071444467147191,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.8253583354473114,
+          "mean_return": 412.6791677236557,
+          "training_wall_seconds": 48.2510307530174,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.8893583346366882,
+          "mean_return": 444.6791673183441,
+          "training_wall_seconds": 38.255942823016085,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.7067166700601577,
+          "mean_return": 353.3583350300789,
+          "training_wall_seconds": 31.144360675942153,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 117.65133425197564,
+      "evaluation_wall_seconds": 117.82726413605269,
+      "program_id": "ed01e57a-c438-4e82-8503-e648c10bfd02",
+      "parent_id": "3383415d-f79c-40e7-b0c5-f803f1774a21",
+      "native_metadata": {
+        "patch_type": "diff",
+        "patch_name": "smaller_mutations_stronger_selection",
+        "patch_description": "Search results favor lower mutation strength and elite ratio. Try sigma 0.07 and elite_ratio 0.10 to refine successful policies with smaller perturbations and concentrate selection on stronger performers. This extrapolates from the best observed configuration; improvement remains to be verified using the search profile.",
+        "model_name": "headless/codex?effort=medium",
+        "sampling_seconds": 17.860076665878296,
+        "evaluation_seconds": 118.02059531211853,
+        "pipeline_seconds": 135.90576815605164
+      }
+    },
+    {
+      "arm": "shinka",
+      "index": 4,
+      "program_path": "shinka/gen_4/main.py",
+      "program_sha256": "0285cbd39c344fa8c472cd760474342896b5354a40fc2d0f6a986b335f0ef8b9",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 0.05,
+        "elite_ratio": 0.08
+      },
+      "effective_key": [
+        0.05000000074505806,
+        5
+      ],
+      "combined_score": 0.7480138914585114,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.7585166689634323,
+          "mean_return": 379.25833448171613,
+          "training_wall_seconds": 30.968445461941883,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.8407750015258789,
+          "mean_return": 420.38750076293945,
+          "training_wall_seconds": 32.63628815696575,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.6447500038862228,
+          "mean_return": 322.37500194311144,
+          "training_wall_seconds": 31.740820106002502,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 95.34555372491013,
+      "evaluation_wall_seconds": 95.47198102809489,
+      "program_id": "96addaa9-d131-4569-95da-862036e073cc",
+      "parent_id": "3383415d-f79c-40e7-b0c5-f803f1774a21",
+      "native_metadata": {
+        "patch_type": "diff",
+        "patch_name": "reduce_mutation_and_elite_fraction",
+        "patch_description": "The search results improve as sigma and elite_ratio decrease. Propose sigma 0.05 and elite_ratio 0.08 to test a modest continuation of this trend: smaller mutations may preserve successful policies, while a smaller elite fraction concentrates selection on stronger candidates. This configuration requires search-profile evaluation to confirm improvement.",
+        "model_name": "headless/codex?effort=medium",
+        "sampling_seconds": 14.534703254699707,
+        "evaluation_seconds": 95.56370806694031,
+        "pipeline_seconds": 110.11567544937134
+      }
+    },
+    {
+      "arm": "random",
+      "index": 1,
+      "program_path": "random_programs/candidate_001.py",
+      "program_sha256": "c95507812b177f517162810418a06c799bd66db1317ab4c319b8cc8cdc7c591c",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 0.003399474261510367,
+        "elite_ratio": 0.17736779880870845
+      },
+      "effective_key": [
+        0.003399474313482642,
+        11
+      ],
+      "combined_score": 0.4198500062863032,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.8449250091314315,
+          "mean_return": 422.4625045657158,
+          "training_wall_seconds": 27.335644667968154,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.3958250090837479,
+          "mean_return": 197.91250454187394,
+          "training_wall_seconds": 33.05771991307847,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.018800000643730164,
+          "mean_return": 9.400000321865082,
+          "training_wall_seconds": 30.94611404405441,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 91.33947862510104,
+      "evaluation_wall_seconds": 91.42047488992102
+    },
+    {
+      "arm": "random",
+      "index": 2,
+      "program_path": "random_programs/candidate_002.py",
+      "program_sha256": "51215337c41b68a9020e4dc80ca0eb9270e050c9f6454ed4767d035b49b4adb0",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 1.0483669904161388,
+        "elite_ratio": 0.3834150319193743
+      },
+      "effective_key": [
+        1.0483670234680176,
+        24
+      ],
+      "combined_score": 0.7090277824401856,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.6901833368301392,
+          "mean_return": 345.0916684150696,
+          "training_wall_seconds": 34.778111321036704,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.7304500021219253,
+          "mean_return": 365.22500106096265,
+          "training_wall_seconds": 36.17595290893223,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.7064500083684921,
+          "mean_return": 353.2250041842461,
+          "training_wall_seconds": 34.29769416397903,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 105.25175839394797,
+      "evaluation_wall_seconds": 105.37995346600655
+    },
+    {
+      "arm": "random",
+      "index": 3,
+      "program_path": "random_programs/candidate_003.py",
+      "program_sha256": "29031b0f582be7f6eeb96dd7261292191b359d9204babcdf84c8df0ad09ffc8a",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 0.20508637078358974,
+        "elite_ratio": 0.8695438555203774
+      },
+      "effective_key": [
+        0.2050863653421402,
+        55
+      ],
+      "combined_score": 0.04086111216545105,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.07087500171661376,
+          "mean_return": 35.43750085830688,
+          "training_wall_seconds": 31.01743951602839,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.018816667318344117,
+          "mean_return": 9.408333659172058,
+          "training_wall_seconds": 39.33706854900811,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.03289166746139526,
+          "mean_return": 16.445833730697633,
+          "training_wall_seconds": 42.20093854202423,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 112.55544660706073,
+      "evaluation_wall_seconds": 112.67803432897199
+    },
+    {
+      "arm": "random",
+      "index": 4,
+      "program_path": "random_programs/candidate_004.py",
+      "program_sha256": "590b23cd3cb18739f1da2aa939ea71fbe0779798b607146e23d4afc66775bc15",
+      "correct": true,
+      "error": null,
+      "settings": {
+        "sigma": 0.1406499551917009,
+        "elite_ratio": 0.49862601373188964
+      },
+      "effective_key": [
+        0.1406499594449997,
+        31
+      ],
+      "combined_score": 0.5315111135482788,
+      "completed_seeds": [
+        {
+          "seed": 1001,
+          "trial": 1002,
+          "normalized_score": 0.6326666700601578,
+          "mean_return": 316.3333350300789,
+          "training_wall_seconds": 46.29128812102135,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              -0.5717431306838989,
+              -0.20802041888237,
+              -0.14799921214580536,
+              0.10802476108074188
+            ]
+          ]
+        },
+        {
+          "seed": 1002,
+          "trial": 1003,
+          "normalized_score": 0.7022500008583069,
+          "mean_return": 351.12500042915343,
+          "training_wall_seconds": 44.796745973057114,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.08047322928905487,
+              -0.6517581939697266,
+              -0.5958025455474854,
+              0.6061372756958008
+            ]
+          ]
+        },
+        {
+          "seed": 1003,
+          "trial": 1004,
+          "normalized_score": 0.25961666972637176,
+          "mean_return": 129.80833486318588,
+          "training_wall_seconds": 50.78575067897327,
+          "training_steps_nominal": 7680000,
+          "noise_vectors": [
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.2679859399795532,
+              1.158277153968811,
+              0.8169869184494019,
+              -0.8507702946662903
+            ]
+          ]
+        }
+      ],
+      "incomplete_seeds": [],
+      "training_steps_nominal_completed": 23040000,
+      "training_steps_nominal_allocated": 23040000,
+      "training_wall_seconds": 141.87378477305174,
+      "evaluation_wall_seconds": 142.0417432039976
+    }
+  ],
+  "failed_proposals": [],
+  "comparison": {
+    "shared_default_score": 0.5654111158291499,
+    "shinka_completed_distinct_mutants": 4,
+    "shinka_duplicate_completed_evaluations": 0,
+    "random_completed_candidates": 4,
+    "matched_random_prefix_available": true,
+    "matched_random_prefix_count": 4,
+    "shinka_best_including_default": 0.8071444467147191,
+    "random_best_matched_including_default": 0.7090277824401856,
+    "random_best_all_completed_including_default": 0.7090277824401856,
+    "interpretation": "Development configuration search only. Repeated duplicate and partial failed evaluations remain charged as actual work. No held-out performance or search-method superiority is established."
+  },
+  "model_usage": {
+    "ledger_available": true,
+    "adapter_attempts": 4,
+    "codex_exec_launches": 4,
+    "successful_adapter_responses": 4,
+    "failed_adapter_attempts": 0,
+    "incomplete_adapter_attempts": 0,
+    "recorded_native_llm_responses": 4,
+    "reported_tokens_for_recorded_responses": {
+      "input_tokens_uncached": 30005,
+      "output_tokens": 608,
+      "thinking_tokens": null,
+      "num_tool_calls": null,
+      "cached_input_tokens": null
+    },
+    "backend_request_count": null,
+    "remaining_subscription_quota": null,
+    "interpretation": "CLI launches and stored response usage are observed. Internal provider requests, quota remaining, and account billing are not observable here. Headless default-zero reasoning/tool fields are treated as unavailable. Headless's Codex input count excludes cached input; Shinka does not retain the cached count, so total prompt tokens are unavailable. Native price estimates are not subscription charges."
+  },
+  "completed_seed_trials": 27,
+  "incomplete_seed_trials": 0,
+  "training_steps_nominal_completed": 207360000,
+  "training_steps_nominal_allocated": 207360000,
+  "sessions": [
+    {
+      "index": 1,
+      "arm": "shinka",
+      "endpoint": 2,
+      "command": [
+        "<repo>/.venv/bin/python",
+        "-m",
+        "shinka_crl.search",
+        "--native",
+        "<runs>/shinka/rng_state.json",
+        "--task-dir",
+        "<repo>/tasks/cartpole_ga",
+        "--config-fname",
+        "shinka-subscription.yaml",
+        "--results_dir",
+        "<runs>/shinka",
+        "--num_generations",
+        "2"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "stop_reason": null,
+      "wall_seconds": 223.8482758180471
+    },
+    {
+      "index": 2,
+      "arm": "shinka",
+      "endpoint": 5,
+      "command": [
+        "<repo>/.venv/bin/python",
+        "-m",
+        "shinka_crl.search",
+        "--native",
+        "<runs>/shinka/rng_state.json",
+        "--task-dir",
+        "<repo>/tasks/cartpole_ga",
+        "--config-fname",
+        "shinka-subscription.yaml",
+        "--results_dir",
+        "<runs>/shinka",
+        "--num_generations",
+        "5"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "stop_reason": null,
+      "wall_seconds": 412.5499099330045
+    },
+    {
+      "index": 3,
+      "arm": "random",
+      "endpoint": 1,
+      "command": [
+        "<repo>/.venv/bin/python",
+        "<repo>/tasks/cartpole_ga/evaluate.py",
+        "--program_path",
+        "<runs>/random_programs/candidate_001.py",
+        "--results_dir",
+        "<runs>/random/candidate_001"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "stop_reason": null,
+      "wall_seconds": 91.63056866195984
+    },
+    {
+      "index": 4,
+      "arm": "random",
+      "endpoint": 2,
+      "command": [
+        "<repo>/.venv/bin/python",
+        "<repo>/tasks/cartpole_ga/evaluate.py",
+        "--program_path",
+        "<runs>/random_programs/candidate_002.py",
+        "--results_dir",
+        "<runs>/random/candidate_002"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "stop_reason": null,
+      "wall_seconds": 105.66001877293456
+    },
+    {
+      "index": 5,
+      "arm": "random",
+      "endpoint": 3,
+      "command": [
+        "<repo>/.venv/bin/python",
+        "<repo>/tasks/cartpole_ga/evaluate.py",
+        "--program_path",
+        "<runs>/random_programs/candidate_003.py",
+        "--results_dir",
+        "<runs>/random/candidate_003"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "stop_reason": null,
+      "wall_seconds": 113.14749374904204
+    },
+    {
+      "index": 6,
+      "arm": "random",
+      "endpoint": 4,
+      "command": [
+        "<repo>/.venv/bin/python",
+        "<repo>/tasks/cartpole_ga/evaluate.py",
+        "--program_path",
+        "<runs>/random_programs/candidate_004.py",
+        "--results_dir",
+        "<runs>/random/candidate_004"
+      ],
+      "status": "complete",
+      "returncode": 0,
+      "stop_reason": null,
+      "wall_seconds": 142.3530862450134
+    }
+  ],
+  "session_wall_seconds": 1089.1893531800015,
+  "validation": {
+    "source_hashes_match": true,
+    "artifact_receipts_match": true,
+    "scores_rederived_from_raw_curves": true,
+    "parentage_checked": true,
+    "task_vectors_match": true
+  },
+  "artifact_policy": "Raw text and a readable SQLite snapshot are exported with local root paths redacted. Binary checkpoints and native SQLite remain local with hashes. Model-equivalent prices are not subscription charges."
+}

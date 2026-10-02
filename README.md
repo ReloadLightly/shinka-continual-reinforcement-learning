@@ -14,9 +14,9 @@
 
 ## Abstract
 
-This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned genetic algorithm (GA), evolution strategy (ES), and proximal policy optimization (PPO) implementations, beginning with CartPole under alternating observation offsets. A matched 18-trial CPU pilot completed 138.24 million nominal training steps and passed the predefined stationary-learning gate for all three methods. Saved-checkpoint analysis measures learning, forgetting, and transfer; the reduced pilot exhibits substantial variability and does not establish the paper's headline ranking. The initial Shinka extension will search two static GA hyperparameters before adaptive learning rules are introduced. Model search and the full ten-trial reproduction remain pending.
+This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned genetic algorithm (GA), evolution strategy (ES), and proximal policy optimization (PPO) implementations, beginning with CartPole under alternating observation offsets. A matched 18-trial CPU pilot completed 138.24 million nominal training steps and passed the predefined stationary-learning gate for all three methods. A subsequent integration experiment evaluated four subscription-backed Shinka proposals and four preregistered random configurations against a shared default GA. Best development scores were 0.8071, 0.7090, and 0.5654, respectively. This short search validates configuration evolution and archive resume; it does not establish search-method superiority, held-out improvement, or the full paper's findings. Adaptive learning rules and the ten-trial reproduction remain pending.
 
-> **Study status:** Matched pilot complete on 2 October 2026 · 18/18 trials validated · Learning gate passed · Shinka proposals and full reproduction pending.
+> **Study status:** Matched pilot and Shinka integration gate complete · Four proposals + four random controls · Archive resume verified · Held-out validation and full reproduction pending.
 
 ## 1. Research questions
 
@@ -206,6 +206,60 @@ The [evidence archive](reports/pilot-20261002) includes resolved configurations,
 raw trajectories and episode returns, source/runtime provenance, artifact
 checksums, and the complete gate decision. Binary checkpoints remain local.
 
+### Subscription-backed configuration search
+
+The first search checkpoint completed one shared default, four Shinka proposals,
+and the first four configurations from a frozen 24-program random pool. Every
+configuration used the same three development seeds, four phases, three evaluation
+episodes per checkpoint, and 23.04 million nominal training steps. All nine evaluations passed; no proposal failed
+or duplicated an effective configuration. Shinka resumed the same archive from
+two to five total programs. Its recorded ancestry was 0 → 1 → {2, 3, 4}.
+
+| Program | Mutation width, σ | Archive fraction | Elites / 64 | Development score, J ↑ |
+| :--- | ---: | ---: | ---: | ---: |
+| Shared default | 0.500000 | 0.500000 | 32 | 0.5654 ± 0.1168 |
+| Shinka 1 | 0.150000 | 0.200000 | 12 | 0.7466 ± 0.0958 |
+| Shinka 2 | 0.100000 | 0.150000 | 9 | 0.7842 ± 0.0593 |
+| **Shinka 3** | **0.070000** | **0.100000** | **6** | **0.8071 ± 0.0927** |
+| Shinka 4 | 0.050000 | 0.080000 | 5 | 0.7480 ± 0.0984 |
+| Random 1 | 0.003399 | 0.177368 | 11 | 0.4199 ± 0.4136 |
+| Random 2 | 1.048367 | 0.383415 | 24 | 0.7090 ± 0.0203 |
+| Random 3 | 0.205086 | 0.869544 | 55 | 0.0409 ± 0.0269 |
+| Random 4 | 0.140650 | 0.498626 | 31 | 0.5315 ± 0.2380 |
+
+<sub>Table 7. All observed configurations at the integration gate, 2 October 2026. J is active-task centroid return divided by 500, averaged across 80 checkpoints per seed; entries show mean ± sample standard deviation across three development seeds. Uncertainty is descriptive, not a confidence interval for search performance. Parameters are rounded for display; [exact source, per-seed scores, and provenance](reports/search-integration-20261002/summary.json) retain full precision. Bold marks the highest observed development score.</sub>
+
+The best observed Shinka setting was `sigma=0.07, elite_ratio=0.10`. The matched
+random control also improved on the default. The decline at Shinka 4 and the poor
+Random 3 result are retained. These are selected development outcomes from one
+short search per arm; they do not demonstrate improved retention, generalization,
+or a broadly superior search method. Validation seeds 2001–2005 and final seeds
+42–51 remain untouched.
+
+| Observed cost | Shinka, including default | Additional random control | Total |
+| :--- | ---: | ---: | ---: |
+| Configuration evaluations | 5 | 4 | 9 |
+| Completed seed trials | 15 | 12 | 27 |
+| Nominal training steps | 115.20 × 10⁶ | 92.16 × 10⁶ | 207.36 × 10⁶ |
+| Execution time (min) | 10.61 | 7.55 | 18.15 |
+| Successful Codex responses | 4 | 0 | 4 |
+
+<sub>Table 8. Measured execution costs with the shared default counted once. Wall time sums completed execution sessions, including native startup, proposals, evaluation, and checkpoint handling; it excludes setup, preflight, and review pauses. The separately archived interrupted setup attempt is not included in these totals.</sub>
+
+All four proposals used GPT-6.1 Sol at medium effort through guarded local
+ChatGPT authentication, without an API-key route. Response times ranged from
+14.4 to 19.4 seconds. Native usage records report 30,005 uncached input tokens
+and 608 output tokens; cached input, reasoning/tool counts, and remaining
+subscription allowance are unavailable. Shinka's dollar estimates are API-price
+equivalents, not billing receipts. The [evidence archive](reports/search-integration-20261002)
+retains programs, prompts, responses, ancestry, raw trajectories, actual runtime
+receipts, usage records, and hashes. All scores were independently reconstructed.
+
+The next block adds eight Shinka proposals and eight random controls. At these
+observed speeds, allow approximately **30–45 minutes**, including review, then
+pause at 13 total Shinka programs and 12 random controls. Runtime and subscription
+availability can vary; the frozen archive supports staged continuation.
+
 ### Remaining scientific evaluation
 
 No full-budget comparison has been completed. The table below tracks the evidence needed to answer the research questions.
@@ -214,8 +268,8 @@ No full-budget comparison has been completed. The table below tracks the evidenc
 | :--- | :--- | :--- |
 | Reference GA / ES / PPO | Ten trials, full task schedule, continual-learning metrics | Pilot complete; full protocol pending |
 | Stationary control | Matched task and learner settings without switching | Development control complete |
-| Shinka-selected GA | Frozen candidate evaluated on reporting trials | Pending |
-| Random-search control | Matched search budget and reporting protocol | Pending |
+| Shinka-selected GA | Frozen candidate evaluated on reporting trials | Four-proposal integration complete; full search and validation pending |
+| Random-search control | Matched search budget and reporting protocol | Four matched controls complete; full search and validation pending |
 
 ## 5. Reproducibility
 
@@ -286,7 +340,17 @@ uv run --frozen python scripts/report_pilot.py \
 
 For full-budget training, set `--timeout` to suit the available hardware; the default is 1,800 seconds per trial. The [task documentation](tasks/cartpole_ga/README.md) covers candidate validation, provider configuration, and explicit Shinka launches. Installing the optional `shinka` extra does not start a model search.
 
-The planned model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing). No model proposals have been run for this study, and a paid API key is not required for the planned pilot.
+The [staged search runner](scripts/run_search.py) freezes source and runtime hashes,
+model settings, and all 24 random-control programs before inference. It verifies
+completed artifacts before archive resume and checks the evaluator's actual CPU
+and thread settings before training. Start with `--prepare-only`, then use
+`--resume --target-generations 2` and `5` to exercise a real archive resume at the
+integration gate. `--random-count` evaluates a cumulative prefix of the frozen
+controls. The [runbook](tasks/cartpole_ga/README.md#preflight-and-staged-launch)
+contains complete commands; [report_search.py](scripts/report_search.py) rederives
+scores from raw curves and exports source, ancestry, usage, and compute evidence.
+
+The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Four proposals completed through this route. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
 
 Each real trial retains its command, profile, seed, task trial, source revision, interpreter version, device selection, duration, upstream configuration and metrics, training log, and metric-file hash. Modified upstream tracked files and untracked source files are rejected. Source revisions are fixed in [`upstream.lock.json`](upstream.lock.json):
 
@@ -304,7 +368,7 @@ The current search space contains two static GA settings. It cannot discover ada
 
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
-The next experiment is the **first four subscription-backed Shinka proposals**, following an initial candidate evaluation. Freeze the random-search pool and protocol first, verify source-to-score ancestry and archive resume at this five-slot integration gate, then extend the same search to 13 and 25 total slots. Compare against the matched random-search control and validate finalists once on reserved trials. Static configuration search is an integration and hypothesis-screening stage; adaptive-program evolution remains a distinct extension requiring a neutral-baseline equivalence check.
+The next experiment is to **resume the frozen search to 13 total Shinka programs and 12 random controls**, then continue to the preregistered 25/24 endpoint if the next gate passes. The first five-slot gate has verified source-to-score ancestry, actual runtime settings, subscription proposals, and native archive resume. Keep the scorer, model, source, and random pool unchanged. Validate finalists once on reserved trials after search. Static configuration search is an integration and hypothesis-screening stage; adaptive-program evolution remains a distinct extension requiring a neutral-baseline equivalence check.
 
 The [experimental roadmap](docs/experimental-roadmap.md) specifies stage gates, random controls, reserved validation seeds, the adaptive-program interface, and the work still needed to execute the pilot. The [reproduction specification](docs/reproduction-plan.md) preserves the full paper protocol. Full-paper reproduction additionally requires other environments, task variations, continual PPO variants, and neighborhood analysis.
 

@@ -1,0 +1,3623 @@
+{
+  "raw/model_requests.jsonl": {
+    "source": "model_requests.jsonl",
+    "original_sha256": "74ff06b2795d27539aff67ebdd5f72448f5add8b67f4255257e593e0e2071347",
+    "original_bytes": 1838,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "74ff06b2795d27539aff67ebdd5f72448f5add8b67f4255257e593e0e2071347",
+    "exported_bytes": 1838
+  },
+  "raw/plan.json": {
+    "source": "plan.json",
+    "original_sha256": "36f1fed21c4b97e1a09259b4c5d68408c163bda14b9662c115fdd538ef1154ec",
+    "original_bytes": 29985,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "767e07f86e4bf25860b13782da88c5df6ab77f7bcb447daadbf92b01933e4e8a",
+    "exported_bytes": 29881
+  },
+  "raw/random/candidate_001/correct.json": {
+    "source": "random/candidate_001/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/random/candidate_001/metrics.json": {
+    "source": "random/candidate_001/metrics.json",
+    "original_sha256": "9d0f51949a658ae4033ec9d28c2576260b0b842eddc508a08ea85e296313b2c6",
+    "original_bytes": 5596,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9d0f51949a658ae4033ec9d28c2576260b0b842eddc508a08ea85e296313b2c6",
+    "exported_bytes": 5596
+  },
+  "raw/random/candidate_001/seed_1001/checkpoints.npz": {
+    "source": "random/candidate_001/seed_1001/checkpoints.npz",
+    "original_sha256": "a68fef3e61960040b8112daa01b9ebfb53154f823eaee87880315b6752ff3409",
+    "original_bytes": 18097,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_001/seed_1001/config.json": {
+    "source": "random/candidate_001/seed_1001/config.json",
+    "original_sha256": "12545fc329c82ba6aa7bba06622deccae6e5d598092f28a26350f25310665218",
+    "original_bytes": 1419,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "12545fc329c82ba6aa7bba06622deccae6e5d598092f28a26350f25310665218",
+    "exported_bytes": 1419
+  },
+  "raw/random/candidate_001/seed_1001/manifest.json": {
+    "source": "random/candidate_001/seed_1001/manifest.json",
+    "original_sha256": "fe797ff17bbb313b5c83f85d89224846f1520b35304385f5d3c4602c21740a22",
+    "original_bytes": 1843,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "ad1f81a4c9f0a84a2de798eb935c3016caac859171b3210a4042a58c850013d9",
+    "exported_bytes": 1660
+  },
+  "raw/random/candidate_001/seed_1001/process.log": {
+    "source": "random/candidate_001/seed_1001/process.log",
+    "original_sha256": "af1a2b1922c623a9c4a4f37b97370cd9548cb3a99e9f633a8b3563c540ab3d75",
+    "original_bytes": 1230,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "49c3dd5b4bd6a5602c8bfb696c02b130aa84e2f4bd14f44819c1c31af636afbc",
+    "exported_bytes": 993
+  },
+  "raw/random/candidate_001/seed_1001/results.json": {
+    "source": "random/candidate_001/seed_1001/results.json",
+    "original_sha256": "4b5d33582b477603f768cf365a3891cc7337879fb19bccc8d6d7af05e1504a7e",
+    "original_bytes": 2160,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4b5d33582b477603f768cf365a3891cc7337879fb19bccc8d6d7af05e1504a7e",
+    "exported_bytes": 2160
+  },
+  "raw/random/candidate_001/seed_1001/stacks.txt": {
+    "source": "random/candidate_001/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_001/seed_1001/summary.json": {
+    "source": "random/candidate_001/seed_1001/summary.json",
+    "original_sha256": "6dd61471ea8f74f0c3a33c6eb481686150f14a3e159c406fe9661ce5ce3cf5ba",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6dd61471ea8f74f0c3a33c6eb481686150f14a3e159c406fe9661ce5ce3cf5ba",
+    "exported_bytes": 241
+  },
+  "raw/random/candidate_001/seed_1001/train.log": {
+    "source": "random/candidate_001/seed_1001/train.log",
+    "original_sha256": "0fc1fbfee4821f33467047b3a3f6a39c260abd0805995ca702b46120cb8d9646",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "e446c0bf9099ceb9d9fe3e8947d3f910371672c7627be486a4a9c7c1803b155d",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_001/seed_1001/training_metrics.json": {
+    "source": "random/candidate_001/seed_1001/training_metrics.json",
+    "original_sha256": "9df1cceeeb8aed8fdc4686adbf53d60a9a734882d35a598469bf31f5cfb9a5e7",
+    "original_bytes": 73284,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9df1cceeeb8aed8fdc4686adbf53d60a9a734882d35a598469bf31f5cfb9a5e7",
+    "exported_bytes": 73284
+  },
+  "raw/random/candidate_001/seed_1001/trajectory.npz": {
+    "source": "random/candidate_001/seed_1001/trajectory.npz",
+    "original_sha256": "5215d8d61ece9ef29bdae8b573a9498fef2e1d648656114a2efff9bb10a31ca5",
+    "original_bytes": 82879,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_001/seed_1002/checkpoints.npz": {
+    "source": "random/candidate_001/seed_1002/checkpoints.npz",
+    "original_sha256": "474843bc72db2b1b0d0a1ba56824dd57b164aeecb669d9d30b921c16e7433081",
+    "original_bytes": 18088,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_001/seed_1002/config.json": {
+    "source": "random/candidate_001/seed_1002/config.json",
+    "original_sha256": "d326cf9cc38eae434fb22c287a0d702c5a26aaddb8711cbf98c3b3581fe404aa",
+    "original_bytes": 1419,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d326cf9cc38eae434fb22c287a0d702c5a26aaddb8711cbf98c3b3581fe404aa",
+    "exported_bytes": 1419
+  },
+  "raw/random/candidate_001/seed_1002/manifest.json": {
+    "source": "random/candidate_001/seed_1002/manifest.json",
+    "original_sha256": "28d519a0ac9418973f27f56c0ec947c49baeab82ef5d395ea1a3a948ed609d6c",
+    "original_bytes": 1842,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "85e20b0e9362882f1216b622b47ee15806f97586328af87ef1e297d407b4fee8",
+    "exported_bytes": 1659
+  },
+  "raw/random/candidate_001/seed_1002/process.log": {
+    "source": "random/candidate_001/seed_1002/process.log",
+    "original_sha256": "ec86b1e420bfcf99212580c203e6f11391b2981ccf18d18b630873a6da3f7a6c",
+    "original_bytes": 1230,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "c9aaedd7d9d56f6540997c1bef2dd0bb88b4908f72691017a7b4f3ba8a06e447",
+    "exported_bytes": 993
+  },
+  "raw/random/candidate_001/seed_1002/results.json": {
+    "source": "random/candidate_001/seed_1002/results.json",
+    "original_sha256": "96771d3c9b975113ac243b9565fd31d54df42c2b93bde59a7aa608dd47eed72c",
+    "original_bytes": 2218,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "96771d3c9b975113ac243b9565fd31d54df42c2b93bde59a7aa608dd47eed72c",
+    "exported_bytes": 2218
+  },
+  "raw/random/candidate_001/seed_1002/stacks.txt": {
+    "source": "random/candidate_001/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_001/seed_1002/summary.json": {
+    "source": "random/candidate_001/seed_1002/summary.json",
+    "original_sha256": "81517303972702a53cab88b984d5ce24594a8e04ffe6ae1d44db685d633ae869",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "81517303972702a53cab88b984d5ce24594a8e04ffe6ae1d44db685d633ae869",
+    "exported_bytes": 242
+  },
+  "raw/random/candidate_001/seed_1002/train.log": {
+    "source": "random/candidate_001/seed_1002/train.log",
+    "original_sha256": "3b69ca7272b012b78db5b8b00fb8d3f843c6ba6da15c44c60437f6e43d12e97b",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f9961e8859d31d1ed363841476dad5293a07a6f39021c6ad97d56dd4e122a54f",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_001/seed_1002/training_metrics.json": {
+    "source": "random/candidate_001/seed_1002/training_metrics.json",
+    "original_sha256": "257c11f7d3607b1c3c3afa0bedd45b07378f61723b1bc1903cca1feb5ccb273b",
+    "original_bytes": 76835,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "257c11f7d3607b1c3c3afa0bedd45b07378f61723b1bc1903cca1feb5ccb273b",
+    "exported_bytes": 76835
+  },
+  "raw/random/candidate_001/seed_1002/trajectory.npz": {
+    "source": "random/candidate_001/seed_1002/trajectory.npz",
+    "original_sha256": "0e373be07e0a2b3af8e35962eb61a96ad9edbad3a6899d6dc444e7d0b4c5d241",
+    "original_bytes": 81535,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_001/seed_1003/checkpoints.npz": {
+    "source": "random/candidate_001/seed_1003/checkpoints.npz",
+    "original_sha256": "5cf8b165fd404d5c1f37d9d95339025a49bc088546dd03b97d2b9beeb6aa52b8",
+    "original_bytes": 18109,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_001/seed_1003/config.json": {
+    "source": "random/candidate_001/seed_1003/config.json",
+    "original_sha256": "c802a0586895481a802139d080056768576d2c64c01aeeb59b13c1f6b829de68",
+    "original_bytes": 1419,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c802a0586895481a802139d080056768576d2c64c01aeeb59b13c1f6b829de68",
+    "exported_bytes": 1419
+  },
+  "raw/random/candidate_001/seed_1003/manifest.json": {
+    "source": "random/candidate_001/seed_1003/manifest.json",
+    "original_sha256": "52a33c4ef5dbda018f5ecbf3943ae7107759740d5a194f9e6a0c73f855da88d9",
+    "original_bytes": 1842,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "84dfe37cdd7187c79016ece0a783d4a3e6f7e16fd34f75d2b8a920075a7767e7",
+    "exported_bytes": 1659
+  },
+  "raw/random/candidate_001/seed_1003/process.log": {
+    "source": "random/candidate_001/seed_1003/process.log",
+    "original_sha256": "e2f9c4db3fc0af8110f4924364af224eb56a0a98da4835a6fe41cdeb2605d14e",
+    "original_bytes": 1230,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "df672dbfdba6c1405cc5ae6321636578c3ea922a3b2667598c7c69ff3cad2976",
+    "exported_bytes": 993
+  },
+  "raw/random/candidate_001/seed_1003/results.json": {
+    "source": "random/candidate_001/seed_1003/results.json",
+    "original_sha256": "064f7565afbba52bbfbe0a0bf9cb51459196231f41e49e6c693b9831dbd3bbde",
+    "original_bytes": 2189,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "064f7565afbba52bbfbe0a0bf9cb51459196231f41e49e6c693b9831dbd3bbde",
+    "exported_bytes": 2189
+  },
+  "raw/random/candidate_001/seed_1003/stacks.txt": {
+    "source": "random/candidate_001/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_001/seed_1003/summary.json": {
+    "source": "random/candidate_001/seed_1003/summary.json",
+    "original_sha256": "7ae4c482f539304dec1c91540180d0cb413aa0ed4cdfd2396d82c0d2fb9d94d6",
+    "original_bytes": 243,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7ae4c482f539304dec1c91540180d0cb413aa0ed4cdfd2396d82c0d2fb9d94d6",
+    "exported_bytes": 243
+  },
+  "raw/random/candidate_001/seed_1003/train.log": {
+    "source": "random/candidate_001/seed_1003/train.log",
+    "original_sha256": "89d08c05cc618323ce6c7d8870387d30d08e0fe99edb04eca73e3ff0aa635090",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "0fb797f805b51fb51652cc5f6f1da50168274c2639519e2a1bf1f207946bfc3b",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_001/seed_1003/training_metrics.json": {
+    "source": "random/candidate_001/seed_1003/training_metrics.json",
+    "original_sha256": "09d5d7b4e2cfdd985dc7cd544c3752257992d3cc8ede9b4e94f3fbcb29e3e3ba",
+    "original_bytes": 75748,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "09d5d7b4e2cfdd985dc7cd544c3752257992d3cc8ede9b4e94f3fbcb29e3e3ba",
+    "exported_bytes": 75748
+  },
+  "raw/random/candidate_001/seed_1003/trajectory.npz": {
+    "source": "random/candidate_001/seed_1003/trajectory.npz",
+    "original_sha256": "a826dee9a1f7508b7449cd083b3a9c32f26a2baed4ead50b50254679e9172563",
+    "original_bytes": 114166,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_002/correct.json": {
+    "source": "random/candidate_002/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/random/candidate_002/metrics.json": {
+    "source": "random/candidate_002/metrics.json",
+    "original_sha256": "25a31e4c2771f532ad4b85e53a2db6e31945c5623927c6d2745d95eefeb6b9f6",
+    "original_bytes": 5593,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "25a31e4c2771f532ad4b85e53a2db6e31945c5623927c6d2745d95eefeb6b9f6",
+    "exported_bytes": 5593
+  },
+  "raw/random/candidate_002/seed_1001/checkpoints.npz": {
+    "source": "random/candidate_002/seed_1001/checkpoints.npz",
+    "original_sha256": "f873b37930d7e4e5d46e94f0819930d83015fcded6ab6c1f14e69585e8b12b99",
+    "original_bytes": 18168,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_002/seed_1001/config.json": {
+    "source": "random/candidate_002/seed_1001/config.json",
+    "original_sha256": "ecc578213bb8293ea3ea7b01da3087c07d4f29ff12c33e76d3b80dab7235f1fc",
+    "original_bytes": 1414,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ecc578213bb8293ea3ea7b01da3087c07d4f29ff12c33e76d3b80dab7235f1fc",
+    "exported_bytes": 1414
+  },
+  "raw/random/candidate_002/seed_1001/manifest.json": {
+    "source": "random/candidate_002/seed_1001/manifest.json",
+    "original_sha256": "a911f4bcf5a0c3a28cedfef8802d92e9b85671ea25674371c8452f780c35418c",
+    "original_bytes": 1837,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "be1d595ced82701164c5633a7b084ccf75ea04e6ceeabfee18a2502228403c7d",
+    "exported_bytes": 1654
+  },
+  "raw/random/candidate_002/seed_1001/process.log": {
+    "source": "random/candidate_002/seed_1001/process.log",
+    "original_sha256": "7f47683a34661fe0b827dc91ef4d2ed3c0791155d3992a0627a1db16869c4cbb",
+    "original_bytes": 1227,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "65864da6a0bf4e210a44e1f0a4e3f9006f17c7f0ee2e21a779f17e0afcab98f5",
+    "exported_bytes": 990
+  },
+  "raw/random/candidate_002/seed_1001/results.json": {
+    "source": "random/candidate_002/seed_1001/results.json",
+    "original_sha256": "c1a900e0594595e361d1d526d31add7eab86b699d5bf3d7db6c4713cc5374eab",
+    "original_bytes": 2154,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c1a900e0594595e361d1d526d31add7eab86b699d5bf3d7db6c4713cc5374eab",
+    "exported_bytes": 2154
+  },
+  "raw/random/candidate_002/seed_1001/stacks.txt": {
+    "source": "random/candidate_002/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_002/seed_1001/summary.json": {
+    "source": "random/candidate_002/seed_1001/summary.json",
+    "original_sha256": "f21b54c328337cf874168ceeb43e78b5a431bb04ef741386bddf9fb91a695054",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f21b54c328337cf874168ceeb43e78b5a431bb04ef741386bddf9fb91a695054",
+    "exported_bytes": 241
+  },
+  "raw/random/candidate_002/seed_1001/train.log": {
+    "source": "random/candidate_002/seed_1001/train.log",
+    "original_sha256": "774fd82daba33c912e99d8e5185ebeabbe71e71a893344cead44072763e33318",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "e3045a6fbd3779178d64c44259ccbfe25888ca324f4379208f4f4f729808a13d",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_002/seed_1001/training_metrics.json": {
+    "source": "random/candidate_002/seed_1001/training_metrics.json",
+    "original_sha256": "d753cb5bff9009a647bc7743f68b713f27fe069467e1a67852cd4a91cc223fe6",
+    "original_bytes": 71537,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d753cb5bff9009a647bc7743f68b713f27fe069467e1a67852cd4a91cc223fe6",
+    "exported_bytes": 71537
+  },
+  "raw/random/candidate_002/seed_1001/trajectory.npz": {
+    "source": "random/candidate_002/seed_1001/trajectory.npz",
+    "original_sha256": "0eda02dec764f565429f754a918aaa4da853301983be1065e9750d3e01e61167",
+    "original_bytes": 97052,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_002/seed_1002/checkpoints.npz": {
+    "source": "random/candidate_002/seed_1002/checkpoints.npz",
+    "original_sha256": "2727e7ce32d6d03a32948bf09eac755a80d77cbf9dbb112d51a7bc3d90b564eb",
+    "original_bytes": 18138,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_002/seed_1002/config.json": {
+    "source": "random/candidate_002/seed_1002/config.json",
+    "original_sha256": "7db40784b8072571b49e00c10ffe923dbfa20b7967a9fb104eda819f57b3dc78",
+    "original_bytes": 1414,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7db40784b8072571b49e00c10ffe923dbfa20b7967a9fb104eda819f57b3dc78",
+    "exported_bytes": 1414
+  },
+  "raw/random/candidate_002/seed_1002/manifest.json": {
+    "source": "random/candidate_002/seed_1002/manifest.json",
+    "original_sha256": "103c68f35953a8c53cf4a7876d9bf0940dde433466c06bcae2887503ff70bc44",
+    "original_bytes": 1836,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "83c0a94919a7d3c2aefa7129b059997522435976628114d07169baa1aaa35ccb",
+    "exported_bytes": 1653
+  },
+  "raw/random/candidate_002/seed_1002/process.log": {
+    "source": "random/candidate_002/seed_1002/process.log",
+    "original_sha256": "3cb5b7d322815f842995e02d466f3d4a32ee76b3fed7d4afefc20c51c7e17f15",
+    "original_bytes": 1227,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8a6576ccacd544ce19e0bb8fc03eeaeb6e3d11a2eb554dddfd848b78682e6882",
+    "exported_bytes": 990
+  },
+  "raw/random/candidate_002/seed_1002/results.json": {
+    "source": "random/candidate_002/seed_1002/results.json",
+    "original_sha256": "4347a4784cd78cbb143aaac8137c7cdb0cc4192e29be389f022057a3a5a46c5a",
+    "original_bytes": 2192,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4347a4784cd78cbb143aaac8137c7cdb0cc4192e29be389f022057a3a5a46c5a",
+    "exported_bytes": 2192
+  },
+  "raw/random/candidate_002/seed_1002/stacks.txt": {
+    "source": "random/candidate_002/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_002/seed_1002/summary.json": {
+    "source": "random/candidate_002/seed_1002/summary.json",
+    "original_sha256": "6bbf15fa8e11017b177cf74b822c8e52a29d566be9274c83d26f6e88f8e35dc1",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6bbf15fa8e11017b177cf74b822c8e52a29d566be9274c83d26f6e88f8e35dc1",
+    "exported_bytes": 242
+  },
+  "raw/random/candidate_002/seed_1002/train.log": {
+    "source": "random/candidate_002/seed_1002/train.log",
+    "original_sha256": "462acfd39f3e9a4d72d4802b506f0ba78630f658afe7adbfc548ed24dc79b1d8",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2d3adf60ff7e4ffd4279f2ee16c7196ceb1c32cc3c9a62a8099bbdbc798baa25",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_002/seed_1002/training_metrics.json": {
+    "source": "random/candidate_002/seed_1002/training_metrics.json",
+    "original_sha256": "910c94ead05b24e12197465c907a99416505a5c6078c44c08e6ff91bd19e23a8",
+    "original_bytes": 71996,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "910c94ead05b24e12197465c907a99416505a5c6078c44c08e6ff91bd19e23a8",
+    "exported_bytes": 71996
+  },
+  "raw/random/candidate_002/seed_1002/trajectory.npz": {
+    "source": "random/candidate_002/seed_1002/trajectory.npz",
+    "original_sha256": "72f18346e95c30c5611e195045747ccea36fd87d06470148c8b47bc09966289f",
+    "original_bytes": 107050,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_002/seed_1003/checkpoints.npz": {
+    "source": "random/candidate_002/seed_1003/checkpoints.npz",
+    "original_sha256": "f9271279dac19dde2247ec671591f1e7c8038b1b44b37337ee61d5cbd07f6b80",
+    "original_bytes": 18123,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_002/seed_1003/config.json": {
+    "source": "random/candidate_002/seed_1003/config.json",
+    "original_sha256": "677d66384c6742733e942938a21fc31833996b5d4d8a95b1a8cb05f6871bfe90",
+    "original_bytes": 1414,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "677d66384c6742733e942938a21fc31833996b5d4d8a95b1a8cb05f6871bfe90",
+    "exported_bytes": 1414
+  },
+  "raw/random/candidate_002/seed_1003/manifest.json": {
+    "source": "random/candidate_002/seed_1003/manifest.json",
+    "original_sha256": "cccd86a20e0a70a60340d4ff71bb95f30c6615a6adaad2593f572f91eae4468d",
+    "original_bytes": 1836,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "d33d8a49fa634442ed19b6ab7dd0961903bd00bc6c4d25a1994d2877f8fc931f",
+    "exported_bytes": 1653
+  },
+  "raw/random/candidate_002/seed_1003/process.log": {
+    "source": "random/candidate_002/seed_1003/process.log",
+    "original_sha256": "7d3c5865fbb7db787bbc6ffed924107932a66a3bb045d4fd02b4c85d0da095d3",
+    "original_bytes": 1227,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "071b04f8d8dfd79bdac352800e9f96565a654d47c79be2baf8d6a0267b768eb2",
+    "exported_bytes": 990
+  },
+  "raw/random/candidate_002/seed_1003/results.json": {
+    "source": "random/candidate_002/seed_1003/results.json",
+    "original_sha256": "95e90c1a1847145b3dd8e5928dde94a1ce924f5ad37d99db7966c7293f6b0d84",
+    "original_bytes": 2191,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "95e90c1a1847145b3dd8e5928dde94a1ce924f5ad37d99db7966c7293f6b0d84",
+    "exported_bytes": 2191
+  },
+  "raw/random/candidate_002/seed_1003/stacks.txt": {
+    "source": "random/candidate_002/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_002/seed_1003/summary.json": {
+    "source": "random/candidate_002/seed_1003/summary.json",
+    "original_sha256": "32693fb501339550ab1b3f6273d276635a26c8a39938edce7f9dcdad1f7e73e3",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "32693fb501339550ab1b3f6273d276635a26c8a39938edce7f9dcdad1f7e73e3",
+    "exported_bytes": 241
+  },
+  "raw/random/candidate_002/seed_1003/train.log": {
+    "source": "random/candidate_002/seed_1003/train.log",
+    "original_sha256": "eac2ccfa75ceac22a923f54f1dbe5701fe504b6f5a5ee7b1d54cb6e0d1673dfb",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "7447adbe9fd0bfc7deb7267992538d057742d3dd2f47d2fdc7cddab1d14115fd",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_002/seed_1003/training_metrics.json": {
+    "source": "random/candidate_002/seed_1003/training_metrics.json",
+    "original_sha256": "a90a1fd96da748a5cc5c2e76860b17c00e7f0f3db6530e93e9586b153fc0c046",
+    "original_bytes": 73766,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a90a1fd96da748a5cc5c2e76860b17c00e7f0f3db6530e93e9586b153fc0c046",
+    "exported_bytes": 73766
+  },
+  "raw/random/candidate_002/seed_1003/trajectory.npz": {
+    "source": "random/candidate_002/seed_1003/trajectory.npz",
+    "original_sha256": "06c794e683b76e43c9c006661eb1a5c96b35bdf6c43045ecfabfe1cbad406d73",
+    "original_bytes": 101295,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_003/correct.json": {
+    "source": "random/candidate_003/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/random/candidate_003/metrics.json": {
+    "source": "random/candidate_003/metrics.json",
+    "original_sha256": "3c868a4c63d0659009b83e315d578c08ba554a8244444dab63ccb5049c140f0b",
+    "original_bytes": 5600,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3c868a4c63d0659009b83e315d578c08ba554a8244444dab63ccb5049c140f0b",
+    "exported_bytes": 5600
+  },
+  "raw/random/candidate_003/seed_1001/checkpoints.npz": {
+    "source": "random/candidate_003/seed_1001/checkpoints.npz",
+    "original_sha256": "cba641f4983dfc4f92037088e749ae7cd5587a25328ea41fdeb4059a95842d04",
+    "original_bytes": 18155,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_003/seed_1001/config.json": {
+    "source": "random/candidate_003/seed_1001/config.json",
+    "original_sha256": "e35c8c99eb28fbe374c05506d6f00fd8e5dca599a6f8bd5c8c390f5f44ce1225",
+    "original_bytes": 1415,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e35c8c99eb28fbe374c05506d6f00fd8e5dca599a6f8bd5c8c390f5f44ce1225",
+    "exported_bytes": 1415
+  },
+  "raw/random/candidate_003/seed_1001/manifest.json": {
+    "source": "random/candidate_003/seed_1001/manifest.json",
+    "original_sha256": "a91b701c8df7ca7e999555ab8ac385974d62963144eccf95df0f7f6d79ed3a38",
+    "original_bytes": 1838,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "b10a5bb16d427b00a9d2f72bb498cdea8a9e92b5bacf2320d487a9b31b5e8f48",
+    "exported_bytes": 1655
+  },
+  "raw/random/candidate_003/seed_1001/process.log": {
+    "source": "random/candidate_003/seed_1001/process.log",
+    "original_sha256": "e09fb3b379720f7867598ed19d3c1c1db6d47a6ce96003c808f3bb23083e65db",
+    "original_bytes": 1228,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "082d5b48560c52898d99eaf842623b15e9fb642e3baec56b584f169bd8200f64",
+    "exported_bytes": 991
+  },
+  "raw/random/candidate_003/seed_1001/results.json": {
+    "source": "random/candidate_003/seed_1001/results.json",
+    "original_sha256": "38d97ca9200ea58bc916745d15e924c6ffe5c6b99be9d713b7893c1ec36e953b",
+    "original_bytes": 2207,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "38d97ca9200ea58bc916745d15e924c6ffe5c6b99be9d713b7893c1ec36e953b",
+    "exported_bytes": 2207
+  },
+  "raw/random/candidate_003/seed_1001/stacks.txt": {
+    "source": "random/candidate_003/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_003/seed_1001/summary.json": {
+    "source": "random/candidate_003/seed_1001/summary.json",
+    "original_sha256": "51de04272ff51ca9b72aa7cff75b1735c9c03818b1f24371886c963f9f4dd54a",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "51de04272ff51ca9b72aa7cff75b1735c9c03818b1f24371886c963f9f4dd54a",
+    "exported_bytes": 242
+  },
+  "raw/random/candidate_003/seed_1001/train.log": {
+    "source": "random/candidate_003/seed_1001/train.log",
+    "original_sha256": "ca14e7726ab33400774c53ad0ddce79e8b4e1f7aeb81d8a03195d6f6ab335b75",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8407a16772bc0c2ec4ced4dfe4878cf10f36f5b188503e3a37b5eb2bb62e4145",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_003/seed_1001/training_metrics.json": {
+    "source": "random/candidate_003/seed_1001/training_metrics.json",
+    "original_sha256": "0831efdf7f457c93e81ce97714bffb38b00067f05699d73628ee4784c7ecdf5d",
+    "original_bytes": 73835,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0831efdf7f457c93e81ce97714bffb38b00067f05699d73628ee4784c7ecdf5d",
+    "exported_bytes": 73835
+  },
+  "raw/random/candidate_003/seed_1001/trajectory.npz": {
+    "source": "random/candidate_003/seed_1001/trajectory.npz",
+    "original_sha256": "427ed8ba3dd1c438c3acb386b879927092cfd02fd9977b2915b9af9e8aa11229",
+    "original_bytes": 24748,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_003/seed_1002/checkpoints.npz": {
+    "source": "random/candidate_003/seed_1002/checkpoints.npz",
+    "original_sha256": "63199247b140dad921afb444fed67f466efc5125203c9e62f19b748924f473bc",
+    "original_bytes": 18196,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_003/seed_1002/config.json": {
+    "source": "random/candidate_003/seed_1002/config.json",
+    "original_sha256": "6c6d062628eca0169be74a73343eeaa9767de7e472a6134a10068684fb726e6b",
+    "original_bytes": 1415,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6c6d062628eca0169be74a73343eeaa9767de7e472a6134a10068684fb726e6b",
+    "exported_bytes": 1415
+  },
+  "raw/random/candidate_003/seed_1002/manifest.json": {
+    "source": "random/candidate_003/seed_1002/manifest.json",
+    "original_sha256": "de9abdb65ab46ff6c5f10037e2818b0f712516767f199c4d9e314da8bda5e333",
+    "original_bytes": 1838,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "a488f924a9cacb67b040f84131c0ce95458fa0e290c8ed15f5a0ebfee73c3011",
+    "exported_bytes": 1655
+  },
+  "raw/random/candidate_003/seed_1002/process.log": {
+    "source": "random/candidate_003/seed_1002/process.log",
+    "original_sha256": "f5de42ffe46299333ed565ae0e6b38ea6d50c00104bf126b97d6aa5a566b3d38",
+    "original_bytes": 1228,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "4bcfd105544c91e5a985d1243133899d2d3af4772a2e490a07bccb85c5b5c5c3",
+    "exported_bytes": 991
+  },
+  "raw/random/candidate_003/seed_1002/results.json": {
+    "source": "random/candidate_003/seed_1002/results.json",
+    "original_sha256": "2faae9abe92a4dd581f3de09f05adecb2ed945c32448ba3be37ff915336c25a9",
+    "original_bytes": 2218,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2faae9abe92a4dd581f3de09f05adecb2ed945c32448ba3be37ff915336c25a9",
+    "exported_bytes": 2218
+  },
+  "raw/random/candidate_003/seed_1002/stacks.txt": {
+    "source": "random/candidate_003/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_003/seed_1002/summary.json": {
+    "source": "random/candidate_003/seed_1002/summary.json",
+    "original_sha256": "27eb52cdf0f4393657b6391a5ec80d44c8df1a5052b2526296a46f46ac11b19c",
+    "original_bytes": 243,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "27eb52cdf0f4393657b6391a5ec80d44c8df1a5052b2526296a46f46ac11b19c",
+    "exported_bytes": 243
+  },
+  "raw/random/candidate_003/seed_1002/train.log": {
+    "source": "random/candidate_003/seed_1002/train.log",
+    "original_sha256": "79b14d63fac7300584479f4f2eb5bfd6b1322c8a01c681e5dfced74d26b035d8",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "22fb401c0f52aa4eff67b881be6498951e262e9f79b2727a93178fdd46685a5b",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_003/seed_1002/training_metrics.json": {
+    "source": "random/candidate_003/seed_1002/training_metrics.json",
+    "original_sha256": "4814130707175771f015558087a2da57217c21fe21ecd92bea28637f359c9eb8",
+    "original_bytes": 75841,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4814130707175771f015558087a2da57217c21fe21ecd92bea28637f359c9eb8",
+    "exported_bytes": 75841
+  },
+  "raw/random/candidate_003/seed_1002/trajectory.npz": {
+    "source": "random/candidate_003/seed_1002/trajectory.npz",
+    "original_sha256": "1b27c3bb67435190444103b06ebdf981fc31cd1fc65ca2219eeddcc99aff7e31",
+    "original_bytes": 23318,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_003/seed_1003/checkpoints.npz": {
+    "source": "random/candidate_003/seed_1003/checkpoints.npz",
+    "original_sha256": "5f1964fbe2faac36ef06b2e2cb8c63f9238082dd47d2805256ef4d835fa9ff8e",
+    "original_bytes": 18166,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_003/seed_1003/config.json": {
+    "source": "random/candidate_003/seed_1003/config.json",
+    "original_sha256": "6c44e37c01124522baec5349688b020114a87d5bd4427802e860fc897ad42537",
+    "original_bytes": 1415,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6c44e37c01124522baec5349688b020114a87d5bd4427802e860fc897ad42537",
+    "exported_bytes": 1415
+  },
+  "raw/random/candidate_003/seed_1003/manifest.json": {
+    "source": "random/candidate_003/seed_1003/manifest.json",
+    "original_sha256": "6d63579d0977e1a7d15573bc796d378b312de47f53bf86cded4eb50dbffdf9cb",
+    "original_bytes": 1838,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "29983c39204f3d8b835a5222182192a0ef81c7275dae4f87dec5afa430b00c8c",
+    "exported_bytes": 1655
+  },
+  "raw/random/candidate_003/seed_1003/process.log": {
+    "source": "random/candidate_003/seed_1003/process.log",
+    "original_sha256": "35db4d246b0503a78cf870de3bcc8a3214907efd574defd609b1eea6607d9ce4",
+    "original_bytes": 1228,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "a28c25f5dcbdbf6875adda4d6f63f2a2f4431ddd5ef2b2a0af07316dfad2750e",
+    "exported_bytes": 991
+  },
+  "raw/random/candidate_003/seed_1003/results.json": {
+    "source": "random/candidate_003/seed_1003/results.json",
+    "original_sha256": "4e4fbe730298b6c8f38d655baad13fff00da2a3a014b33abc4252612ec6ef52f",
+    "original_bytes": 2188,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4e4fbe730298b6c8f38d655baad13fff00da2a3a014b33abc4252612ec6ef52f",
+    "exported_bytes": 2188
+  },
+  "raw/random/candidate_003/seed_1003/stacks.txt": {
+    "source": "random/candidate_003/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_003/seed_1003/summary.json": {
+    "source": "random/candidate_003/seed_1003/summary.json",
+    "original_sha256": "1915831261e8acabc8dbeda947498e6a4156b3d8e045e595d5aca80e2537d89c",
+    "original_bytes": 243,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1915831261e8acabc8dbeda947498e6a4156b3d8e045e595d5aca80e2537d89c",
+    "exported_bytes": 243
+  },
+  "raw/random/candidate_003/seed_1003/train.log": {
+    "source": "random/candidate_003/seed_1003/train.log",
+    "original_sha256": "738e67cb950ad4cc860cbd6a5c09eed84b3b29e3241773fa64e3d7340251aa43",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "4da4acc6e3e0261bb575b54aecfb18745cf89e827b9f4d0406d07f5ce2bd3c93",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_003/seed_1003/training_metrics.json": {
+    "source": "random/candidate_003/seed_1003/training_metrics.json",
+    "original_sha256": "4645843673f39041e7b216dff6b230ccec9fed6775755622d8f8936a06b430a6",
+    "original_bytes": 75435,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4645843673f39041e7b216dff6b230ccec9fed6775755622d8f8936a06b430a6",
+    "exported_bytes": 75435
+  },
+  "raw/random/candidate_003/seed_1003/trajectory.npz": {
+    "source": "random/candidate_003/seed_1003/trajectory.npz",
+    "original_sha256": "23a61401baac5198d142e1805a5be1bb07c396c709d96f836ad03279ea581f6b",
+    "original_bytes": 21881,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_004/correct.json": {
+    "source": "random/candidate_004/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/random/candidate_004/metrics.json": {
+    "source": "random/candidate_004/metrics.json",
+    "original_sha256": "30d52128180a4ecc2cad8c5a3bbb24a0f7e6b326b83b886e74bb6646c0d98a89",
+    "original_bytes": 5594,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "30d52128180a4ecc2cad8c5a3bbb24a0f7e6b326b83b886e74bb6646c0d98a89",
+    "exported_bytes": 5594
+  },
+  "raw/random/candidate_004/seed_1001/checkpoints.npz": {
+    "source": "random/candidate_004/seed_1001/checkpoints.npz",
+    "original_sha256": "f92dbef0c3b9176784422653dceb2ff97db8a50107506d4e7e05359e9741b611",
+    "original_bytes": 18139,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_004/seed_1001/config.json": {
+    "source": "random/candidate_004/seed_1001/config.json",
+    "original_sha256": "3686fd7ac19aa52f4dc83974cccd2f688a8031a94469b69499fb1524a3751839",
+    "original_bytes": 1415,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3686fd7ac19aa52f4dc83974cccd2f688a8031a94469b69499fb1524a3751839",
+    "exported_bytes": 1415
+  },
+  "raw/random/candidate_004/seed_1001/manifest.json": {
+    "source": "random/candidate_004/seed_1001/manifest.json",
+    "original_sha256": "0d31ee4adfddcaad28471b0da7f7f333ce50a0b9506995ca69319972e996a4b8",
+    "original_bytes": 1838,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f0eb3aaf7105ae51279a125cbbd101d52f44408e9d26b850883a90c1ebae3ad5",
+    "exported_bytes": 1655
+  },
+  "raw/random/candidate_004/seed_1001/process.log": {
+    "source": "random/candidate_004/seed_1001/process.log",
+    "original_sha256": "f27340716d7d502a67e67aff720aea9e5a9cfd63a3a32efe0c0ff6bea22588d0",
+    "original_bytes": 1228,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "58a39ed27dd2dc80722a99f685b4639350bbc0c13bfcb7cc4adfd239abfcaded",
+    "exported_bytes": 991
+  },
+  "raw/random/candidate_004/seed_1001/results.json": {
+    "source": "random/candidate_004/seed_1001/results.json",
+    "original_sha256": "c878cadf718a78436784332b2af437ea2d893fa749584dfe553a58b5b0b92bc7",
+    "original_bytes": 2156,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c878cadf718a78436784332b2af437ea2d893fa749584dfe553a58b5b0b92bc7",
+    "exported_bytes": 2156
+  },
+  "raw/random/candidate_004/seed_1001/stacks.txt": {
+    "source": "random/candidate_004/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_004/seed_1001/summary.json": {
+    "source": "random/candidate_004/seed_1001/summary.json",
+    "original_sha256": "7aa79c4c5daa488190f0ab080ebe65bbd0cdd4f1884cb55543ec44d16550a89b",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7aa79c4c5daa488190f0ab080ebe65bbd0cdd4f1884cb55543ec44d16550a89b",
+    "exported_bytes": 241
+  },
+  "raw/random/candidate_004/seed_1001/train.log": {
+    "source": "random/candidate_004/seed_1001/train.log",
+    "original_sha256": "bf0f6f587b85638326dc316298e4d1d845ea1fde5e8d5c02cd3c7347b3359f16",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "836c04519056f06f36f7213e109636b91d0893474b137f89c98dfc500c9f23b1",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_004/seed_1001/training_metrics.json": {
+    "source": "random/candidate_004/seed_1001/training_metrics.json",
+    "original_sha256": "30ca77edc3fff153be02bed9b4772cb1e8c2fdabf23f845aed80b8a278b1a9bf",
+    "original_bytes": 71466,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "30ca77edc3fff153be02bed9b4772cb1e8c2fdabf23f845aed80b8a278b1a9bf",
+    "exported_bytes": 71466
+  },
+  "raw/random/candidate_004/seed_1001/trajectory.npz": {
+    "source": "random/candidate_004/seed_1001/trajectory.npz",
+    "original_sha256": "09db1b21779b1d1843da666b096830e13a3e9d3d97e808d63a116accbc54b80b",
+    "original_bytes": 82885,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_004/seed_1002/checkpoints.npz": {
+    "source": "random/candidate_004/seed_1002/checkpoints.npz",
+    "original_sha256": "ee7c2a545be075e92d42bf6f2128ae8955e902ecc5f4d7d93a493499bdb80376",
+    "original_bytes": 18137,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_004/seed_1002/config.json": {
+    "source": "random/candidate_004/seed_1002/config.json",
+    "original_sha256": "402f54660207e3e5a1daa41ec874d7965a51f3c782e14c067fba1b105f29ff38",
+    "original_bytes": 1415,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "402f54660207e3e5a1daa41ec874d7965a51f3c782e14c067fba1b105f29ff38",
+    "exported_bytes": 1415
+  },
+  "raw/random/candidate_004/seed_1002/manifest.json": {
+    "source": "random/candidate_004/seed_1002/manifest.json",
+    "original_sha256": "4cbd1b51e7877c46f3bf297f5657ffef6877e88f0fb23a6b66689a7e5bdc1b8b",
+    "original_bytes": 1839,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "e616a6dc74b821c4e3907aa2765e73411a815e7e2a7703728228463b443d692d",
+    "exported_bytes": 1656
+  },
+  "raw/random/candidate_004/seed_1002/process.log": {
+    "source": "random/candidate_004/seed_1002/process.log",
+    "original_sha256": "6e42b71db1bd1db2580ac28a564abfcc86c67c576e515346f29e9486b57e3723",
+    "original_bytes": 1228,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "3c6225d253cf45b11bc084408944c2e09bcf05fde75dcc000b310d424dea384f",
+    "exported_bytes": 991
+  },
+  "raw/random/candidate_004/seed_1002/results.json": {
+    "source": "random/candidate_004/seed_1002/results.json",
+    "original_sha256": "81e7dfa1f14b660fba722c5ab297bb6b8ba9aa5cb8da61494190dba8836ffe92",
+    "original_bytes": 2192,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "81e7dfa1f14b660fba722c5ab297bb6b8ba9aa5cb8da61494190dba8836ffe92",
+    "exported_bytes": 2192
+  },
+  "raw/random/candidate_004/seed_1002/stacks.txt": {
+    "source": "random/candidate_004/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_004/seed_1002/summary.json": {
+    "source": "random/candidate_004/seed_1002/summary.json",
+    "original_sha256": "57a258e543e769aca6d6f6cec6c1216b0398f67557cf1550bbfe878881d4dcac",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "57a258e543e769aca6d6f6cec6c1216b0398f67557cf1550bbfe878881d4dcac",
+    "exported_bytes": 242
+  },
+  "raw/random/candidate_004/seed_1002/train.log": {
+    "source": "random/candidate_004/seed_1002/train.log",
+    "original_sha256": "c717783aaf85adb7e4fa9b27df38e9590c5b75d9b96b484f39260f15d1728376",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "59efada49d4ec5b46ffd10b51f86dfcfcc9bc0381bbf1f9e835c44b71178baa4",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_004/seed_1002/training_metrics.json": {
+    "source": "random/candidate_004/seed_1002/training_metrics.json",
+    "original_sha256": "83be92d120ebd348424ce0c6b747bc1ee13711037dad182e891251980c312ddd",
+    "original_bytes": 71723,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "83be92d120ebd348424ce0c6b747bc1ee13711037dad182e891251980c312ddd",
+    "exported_bytes": 71723
+  },
+  "raw/random/candidate_004/seed_1002/trajectory.npz": {
+    "source": "random/candidate_004/seed_1002/trajectory.npz",
+    "original_sha256": "62308b36997f98114f6ed7a90b7709277ee1858689b545fd02fa11b3f94d2215",
+    "original_bytes": 98489,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_004/seed_1003/checkpoints.npz": {
+    "source": "random/candidate_004/seed_1003/checkpoints.npz",
+    "original_sha256": "65ccab9770a5169dead640880929c7f393039471fbf548e0169c2659547938a2",
+    "original_bytes": 18179,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random/candidate_004/seed_1003/config.json": {
+    "source": "random/candidate_004/seed_1003/config.json",
+    "original_sha256": "60e4d3fad8fea6104eaad9cdce218fcb2cadf867b215f6c30794bb456c0971b6",
+    "original_bytes": 1415,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "60e4d3fad8fea6104eaad9cdce218fcb2cadf867b215f6c30794bb456c0971b6",
+    "exported_bytes": 1415
+  },
+  "raw/random/candidate_004/seed_1003/manifest.json": {
+    "source": "random/candidate_004/seed_1003/manifest.json",
+    "original_sha256": "a2a830b933d0a61628e1309a9b4d870d5b31f863233f78b014842d460e49fa5a",
+    "original_bytes": 1838,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "d93676cc8336556a4deb625a863ee47900d6682a89d17cb050f267155b846bb6",
+    "exported_bytes": 1655
+  },
+  "raw/random/candidate_004/seed_1003/process.log": {
+    "source": "random/candidate_004/seed_1003/process.log",
+    "original_sha256": "8e991142e92c55cda1e9f77fdaf92bb07ab61ade1763fa43a449d743a580d8a1",
+    "original_bytes": 1228,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "95faa60880e3a7a7644291b8dcd5d686c2fb2927ac6247f4c0e2578ee9dc0dc7",
+    "exported_bytes": 991
+  },
+  "raw/random/candidate_004/seed_1003/results.json": {
+    "source": "random/candidate_004/seed_1003/results.json",
+    "original_sha256": "cc9f87de3297abf154c18147e46c28570e5fe8bb294f363c22e4311c38863998",
+    "original_bytes": 2190,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cc9f87de3297abf154c18147e46c28570e5fe8bb294f363c22e4311c38863998",
+    "exported_bytes": 2190
+  },
+  "raw/random/candidate_004/seed_1003/stacks.txt": {
+    "source": "random/candidate_004/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/random/candidate_004/seed_1003/summary.json": {
+    "source": "random/candidate_004/seed_1003/summary.json",
+    "original_sha256": "6b1a3a14205d45139105411baf8d75506590639a1555d930bf76e2885a45ba2a",
+    "original_bytes": 243,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6b1a3a14205d45139105411baf8d75506590639a1555d930bf76e2885a45ba2a",
+    "exported_bytes": 243
+  },
+  "raw/random/candidate_004/seed_1003/train.log": {
+    "source": "random/candidate_004/seed_1003/train.log",
+    "original_sha256": "2343e0a813225906ddc862d0799404d7d9785d51150a0f30463d4f8a1c37967a",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5f265183b4ce4a3f3a94cba092f81b5dd3ab4f24a8d239eeed57afd165e083f4",
+    "exported_bytes": 307
+  },
+  "raw/random/candidate_004/seed_1003/training_metrics.json": {
+    "source": "random/candidate_004/seed_1003/training_metrics.json",
+    "original_sha256": "fd98b0098770da2471958b1d7b89f1db56852f49fe9b7a0043315bb9b73c504b",
+    "original_bytes": 73719,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "fd98b0098770da2471958b1d7b89f1db56852f49fe9b7a0043315bb9b73c504b",
+    "exported_bytes": 73719
+  },
+  "raw/random/candidate_004/seed_1003/trajectory.npz": {
+    "source": "random/candidate_004/seed_1003/trajectory.npz",
+    "original_sha256": "629d7bd571f150543a48d0779e5d81f91194ae4679d58a92e784e7025a94752e",
+    "original_bytes": 78769,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/random_pool.json": {
+    "source": "random_pool.json",
+    "original_sha256": "68c14700bbbaed738cac7147830d14b4d3e443ab8427e4d45942ac555c709ddc",
+    "original_bytes": 9000,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "68c14700bbbaed738cac7147830d14b4d3e443ab8427e4d45942ac555c709ddc",
+    "exported_bytes": 9000
+  },
+  "raw/random_programs/candidate_001.py": {
+    "source": "random_programs/candidate_001.py",
+    "original_sha256": "c95507812b177f517162810418a06c799bd66db1317ab4c319b8cc8cdc7c591c",
+    "original_bytes": 140,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c95507812b177f517162810418a06c799bd66db1317ab4c319b8cc8cdc7c591c",
+    "exported_bytes": 140
+  },
+  "raw/random_programs/candidate_002.py": {
+    "source": "random_programs/candidate_002.py",
+    "original_sha256": "51215337c41b68a9020e4dc80ca0eb9270e050c9f6454ed4767d035b49b4adb0",
+    "original_bytes": 137,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "51215337c41b68a9020e4dc80ca0eb9270e050c9f6454ed4767d035b49b4adb0",
+    "exported_bytes": 137
+  },
+  "raw/random_programs/candidate_003.py": {
+    "source": "random_programs/candidate_003.py",
+    "original_sha256": "29031b0f582be7f6eeb96dd7261292191b359d9204babcdf84c8df0ad09ffc8a",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "29031b0f582be7f6eeb96dd7261292191b359d9204babcdf84c8df0ad09ffc8a",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_004.py": {
+    "source": "random_programs/candidate_004.py",
+    "original_sha256": "590b23cd3cb18739f1da2aa939ea71fbe0779798b607146e23d4afc66775bc15",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "590b23cd3cb18739f1da2aa939ea71fbe0779798b607146e23d4afc66775bc15",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_005.py": {
+    "source": "random_programs/candidate_005.py",
+    "original_sha256": "b72aaec0f44fefee64affeb30e23650ce571db32afcddf188779a56e1a307936",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b72aaec0f44fefee64affeb30e23650ce571db32afcddf188779a56e1a307936",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_006.py": {
+    "source": "random_programs/candidate_006.py",
+    "original_sha256": "438e7ad033cd9da0316cec7d0359c6ac2e80e8338a8e9f8e9394dfd633bccbc8",
+    "original_bytes": 137,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "438e7ad033cd9da0316cec7d0359c6ac2e80e8338a8e9f8e9394dfd633bccbc8",
+    "exported_bytes": 137
+  },
+  "raw/random_programs/candidate_007.py": {
+    "source": "random_programs/candidate_007.py",
+    "original_sha256": "ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_008.py": {
+    "source": "random_programs/candidate_008.py",
+    "original_sha256": "ab1db681050bc126f2c8c42b51eb10837060affb9ba72385f08415275a0d4a26",
+    "original_bytes": 137,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ab1db681050bc126f2c8c42b51eb10837060affb9ba72385f08415275a0d4a26",
+    "exported_bytes": 137
+  },
+  "raw/random_programs/candidate_009.py": {
+    "source": "random_programs/candidate_009.py",
+    "original_sha256": "3903bf01044bdc95e5edb47a29cf4f37f95a38ebf8628fbdf2f1badb1bab0ed9",
+    "original_bytes": 140,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3903bf01044bdc95e5edb47a29cf4f37f95a38ebf8628fbdf2f1badb1bab0ed9",
+    "exported_bytes": 140
+  },
+  "raw/random_programs/candidate_010.py": {
+    "source": "random_programs/candidate_010.py",
+    "original_sha256": "467116f8ce600a0e8b984066be305d89f1970d0a2d22fbae58523ed78d8b892d",
+    "original_bytes": 140,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "467116f8ce600a0e8b984066be305d89f1970d0a2d22fbae58523ed78d8b892d",
+    "exported_bytes": 140
+  },
+  "raw/random_programs/candidate_011.py": {
+    "source": "random_programs/candidate_011.py",
+    "original_sha256": "884b173ba1de55c7770cb31628f34846fa9994771a555a50ea7def830903ced2",
+    "original_bytes": 140,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "884b173ba1de55c7770cb31628f34846fa9994771a555a50ea7def830903ced2",
+    "exported_bytes": 140
+  },
+  "raw/random_programs/candidate_012.py": {
+    "source": "random_programs/candidate_012.py",
+    "original_sha256": "3acb510780ba18059a8611d65dd8d56edf52570d7cf6bc6676b82cd50e7510cf",
+    "original_bytes": 140,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3acb510780ba18059a8611d65dd8d56edf52570d7cf6bc6676b82cd50e7510cf",
+    "exported_bytes": 140
+  },
+  "raw/random_programs/candidate_013.py": {
+    "source": "random_programs/candidate_013.py",
+    "original_sha256": "7d1183519bf6871a392e60d14cf689eda5053f13ea4bea724b628272b947a364",
+    "original_bytes": 141,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7d1183519bf6871a392e60d14cf689eda5053f13ea4bea724b628272b947a364",
+    "exported_bytes": 141
+  },
+  "raw/random_programs/candidate_014.py": {
+    "source": "random_programs/candidate_014.py",
+    "original_sha256": "05ab3cad17f6d8ff15ad939d9b3a64fe5e364f15b55547e52f989a4e48dae64c",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "05ab3cad17f6d8ff15ad939d9b3a64fe5e364f15b55547e52f989a4e48dae64c",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_015.py": {
+    "source": "random_programs/candidate_015.py",
+    "original_sha256": "9e064b194de94417798213728e6ead817abfcfa01551acf31f5aeca5a6bfc837",
+    "original_bytes": 141,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9e064b194de94417798213728e6ead817abfcfa01551acf31f5aeca5a6bfc837",
+    "exported_bytes": 141
+  },
+  "raw/random_programs/candidate_016.py": {
+    "source": "random_programs/candidate_016.py",
+    "original_sha256": "22263856b01fc1b1c24560c414b65c88179551e5526878e1c600d8e3c503852f",
+    "original_bytes": 139,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "22263856b01fc1b1c24560c414b65c88179551e5526878e1c600d8e3c503852f",
+    "exported_bytes": 139
+  },
+  "raw/random_programs/candidate_017.py": {
+    "source": "random_programs/candidate_017.py",
+    "original_sha256": "3807e445270aa3350d2c73559780b8726220e655f232cf8c26018c06e09824e1",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3807e445270aa3350d2c73559780b8726220e655f232cf8c26018c06e09824e1",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_018.py": {
+    "source": "random_programs/candidate_018.py",
+    "original_sha256": "fe7ed45144963acec5a321117716f1b855e12eb7fea251370845a8d857adcaf7",
+    "original_bytes": 137,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "fe7ed45144963acec5a321117716f1b855e12eb7fea251370845a8d857adcaf7",
+    "exported_bytes": 137
+  },
+  "raw/random_programs/candidate_019.py": {
+    "source": "random_programs/candidate_019.py",
+    "original_sha256": "6c7426b3816d33770663b424f3c0dfe5419d12fe2b9176fcdd3b4fadae7c8253",
+    "original_bytes": 139,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6c7426b3816d33770663b424f3c0dfe5419d12fe2b9176fcdd3b4fadae7c8253",
+    "exported_bytes": 139
+  },
+  "raw/random_programs/candidate_020.py": {
+    "source": "random_programs/candidate_020.py",
+    "original_sha256": "d977006d745bf5fa281035d24a00245054403b3df1f32285d7ab9246e46ecac9",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d977006d745bf5fa281035d24a00245054403b3df1f32285d7ab9246e46ecac9",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_021.py": {
+    "source": "random_programs/candidate_021.py",
+    "original_sha256": "69142612814b80c273982f4ca66963b1b6becb8269916f0e526c7d3e19589c4f",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "69142612814b80c273982f4ca66963b1b6becb8269916f0e526c7d3e19589c4f",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_022.py": {
+    "source": "random_programs/candidate_022.py",
+    "original_sha256": "85b8f0bba3d999445ed95e81796aa5a356ffe1a2f1e2ad65952497888165729a",
+    "original_bytes": 141,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "85b8f0bba3d999445ed95e81796aa5a356ffe1a2f1e2ad65952497888165729a",
+    "exported_bytes": 141
+  },
+  "raw/random_programs/candidate_023.py": {
+    "source": "random_programs/candidate_023.py",
+    "original_sha256": "4fcf1d88c5f7e1c3446d38b535a7a89015fc0f37a757b9636015749e23a97032",
+    "original_bytes": 138,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4fcf1d88c5f7e1c3446d38b535a7a89015fc0f37a757b9636015749e23a97032",
+    "exported_bytes": 138
+  },
+  "raw/random_programs/candidate_024.py": {
+    "source": "random_programs/candidate_024.py",
+    "original_sha256": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+    "original_bytes": 136,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+    "exported_bytes": 136
+  },
+  "raw/sessions/session_001.log": {
+    "source": "sessions/session_001.log",
+    "original_sha256": "c1bd8bef3c4c3725794bba5eaa5902555daf8ab9b0dee34a29806813e836b261",
+    "original_bytes": 29111,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "0311fec10778340c6a8e1e108807906f16a366c331ef5051a17f799c57c436a7",
+    "exported_bytes": 28273
+  },
+  "raw/sessions/session_002.log": {
+    "source": "sessions/session_002.log",
+    "original_sha256": "cbfb0a73510b0ad130e2126a75c55cd152bbffa7b9082106e311ecaa08b8497a",
+    "original_bytes": 51260,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "203ea13405cd1dd1e3212b3564b79312cf0c1935e5fe40e5d05934c2236d5cf1",
+    "exported_bytes": 50071
+  },
+  "raw/sessions/session_003.log": {
+    "source": "sessions/session_003.log",
+    "original_sha256": "de6725ac10a025356c8821ba0e63f545261d716a5d5affde13e927504f6befe0",
+    "original_bytes": 71,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "de6725ac10a025356c8821ba0e63f545261d716a5d5affde13e927504f6befe0",
+    "exported_bytes": 71
+  },
+  "raw/sessions/session_004.log": {
+    "source": "sessions/session_004.log",
+    "original_sha256": "4b77060d3cdefb5475c0973e2bbd2a0f0d3f48c2a93cb6cf7e0a9fc070908dbd",
+    "original_bytes": 71,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4b77060d3cdefb5475c0973e2bbd2a0f0d3f48c2a93cb6cf7e0a9fc070908dbd",
+    "exported_bytes": 71
+  },
+  "raw/sessions/session_005.log": {
+    "source": "sessions/session_005.log",
+    "original_sha256": "ec1f327df1d8e771d9850191844873a5e68a6c502fb54b3942a2cb5f3de2738c",
+    "original_bytes": 72,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ec1f327df1d8e771d9850191844873a5e68a6c502fb54b3942a2cb5f3de2738c",
+    "exported_bytes": 72
+  },
+  "raw/sessions/session_006.log": {
+    "source": "sessions/session_006.log",
+    "original_sha256": "2acedfe0d40b541b368ed280ab6b9d77afcd9f784fa2db378e1f0c6483a317a4",
+    "original_bytes": 71,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2acedfe0d40b541b368ed280ab6b9d77afcd9f784fa2db378e1f0c6483a317a4",
+    "exported_bytes": 71
+  },
+  "raw/shinka/best/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+    "source": "shinka/best/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+    "original_sha256": "f864d2b01d45b2afce6afc7d7ea84934b7335ba288fd02026ed47078d2f42f69",
+    "original_bytes": 4055,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f864d2b01d45b2afce6afc7d7ea84934b7335ba288fd02026ed47078d2f42f69",
+    "exported_bytes": 4055
+  },
+  "raw/shinka/best/attempts/novelty_1/resample_1/patch_1/llm_response.txt": {
+    "source": "shinka/best/attempts/novelty_1/resample_1/patch_1/llm_response.txt",
+    "original_sha256": "0ebc5c98cd2a29076cbdaa3e319b837b0f5b1c55a85980d0302e3eedf9656acf",
+    "original_bytes": 594,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0ebc5c98cd2a29076cbdaa3e319b837b0f5b1c55a85980d0302e3eedf9656acf",
+    "exported_bytes": 594
+  },
+  "raw/shinka/best/attempts/novelty_1/resample_1/patch_1/metadata.json": {
+    "source": "shinka/best/attempts/novelty_1/resample_1/patch_1/metadata.json",
+    "original_sha256": "ccfd11f9ebe8abee96f8c6e550ee622d9fd9b57c72ed9b50cfe8639f7557dd22",
+    "original_bytes": 858,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2560522eefffcdafbb74e14b06fc0a44795669c84be750856c9bab07b6c22014",
+    "exported_bytes": 779
+  },
+  "raw/shinka/best/attempts/novelty_1/resample_1/patch_1/patch.txt": {
+    "source": "shinka/best/attempts/novelty_1/resample_1/patch_1/patch.txt",
+    "original_sha256": "a0590ff3cf5a4c604091d856a8d5a43f46f95b7fced2961693a4f8478b9c1a99",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a0590ff3cf5a4c604091d856a8d5a43f46f95b7fced2961693a4f8478b9c1a99",
+    "exported_bytes": 217
+  },
+  "raw/shinka/best/edit.diff": {
+    "source": "shinka/best/edit.diff",
+    "original_sha256": "a0590ff3cf5a4c604091d856a8d5a43f46f95b7fced2961693a4f8478b9c1a99",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a0590ff3cf5a4c604091d856a8d5a43f46f95b7fced2961693a4f8478b9c1a99",
+    "exported_bytes": 217
+  },
+  "raw/shinka/best/main.py": {
+    "source": "shinka/best/main.py",
+    "original_sha256": "578052260003db157ef687195a24e129b445c2fa90ad6639873c00f89d846c42",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "578052260003db157ef687195a24e129b445c2fa90ad6639873c00f89d846c42",
+    "exported_bytes": 110
+  },
+  "raw/shinka/best/original.py": {
+    "source": "shinka/best/original.py",
+    "original_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "exported_bytes": 110
+  },
+  "raw/shinka/best/results/correct.json": {
+    "source": "shinka/best/results/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/shinka/best/results/job_log.err": {
+    "source": "shinka/best/results/job_log.err",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/best/results/job_log.out": {
+    "source": "shinka/best/results/job_log.out",
+    "original_sha256": "c8fd2ca6484cdb47a7ea71b37921a957f4179e424cc1d1e3e0e95c63d102bdf3",
+    "original_bytes": 71,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/best/results/metrics.json": {
+    "source": "shinka/best/results/metrics.json",
+    "original_sha256": "48b3a45f6db5750b3b078f11654a0f841e2150ac8e00e403fd8e54c475fea8fb",
+    "original_bytes": 5564,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "48b3a45f6db5750b3b078f11654a0f841e2150ac8e00e403fd8e54c475fea8fb",
+    "exported_bytes": 5564
+  },
+  "raw/shinka/best/results/seed_1001/checkpoints.npz": {
+    "source": "shinka/best/results/seed_1001/checkpoints.npz",
+    "original_sha256": "fd918cccdd27fa352f8be0f27e76e4139eeb35ccdf0e9c27669daefd444583eb",
+    "original_bytes": 18128,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/best/results/seed_1001/config.json": {
+    "source": "shinka/best/results/seed_1001/config.json",
+    "original_sha256": "ec27ef488ae0cf7e84e50d5eb4815d58cc1cba74eae290c75d9c4871843172e3",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ec27ef488ae0cf7e84e50d5eb4815d58cc1cba74eae290c75d9c4871843172e3",
+    "exported_bytes": 1370
+  },
+  "raw/shinka/best/results/seed_1001/manifest.json": {
+    "source": "shinka/best/results/seed_1001/manifest.json",
+    "original_sha256": "f4b2e55b2a97d2af64976626e28e57395e94eba123b4e2d94d4aa628e8951e5f",
+    "original_bytes": 1777,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "1cf9f37f096b7fdd4030275ea0e8193ef45c17a0a43ea8ec2880f5186c8e7f97",
+    "exported_bytes": 1594
+  },
+  "raw/shinka/best/results/seed_1001/process.log": {
+    "source": "shinka/best/results/seed_1001/process.log",
+    "original_sha256": "abaf9bfd7ed12f05fd1766e2f3aa3d797474e4d466aee333fb7e5d8896f0e3a1",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f025047ded81ae660d2810f1b552695f1d285133c0e4b297c9ae71a3d541a53f",
+    "exported_bytes": 961
+  },
+  "raw/shinka/best/results/seed_1001/results.json": {
+    "source": "shinka/best/results/seed_1001/results.json",
+    "original_sha256": "0e7ffc5a103937a63025035d34d7615797b5b385613c1477c7abf8c8d6c1bf71",
+    "original_bytes": 2146,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0e7ffc5a103937a63025035d34d7615797b5b385613c1477c7abf8c8d6c1bf71",
+    "exported_bytes": 2146
+  },
+  "raw/shinka/best/results/seed_1001/stacks.txt": {
+    "source": "shinka/best/results/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/best/results/seed_1001/summary.json": {
+    "source": "shinka/best/results/seed_1001/summary.json",
+    "original_sha256": "85a59eea4e4ddce624ceff18c9f97e27fa6ba77523af5215bc9e91eaf85fd9ca",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "85a59eea4e4ddce624ceff18c9f97e27fa6ba77523af5215bc9e91eaf85fd9ca",
+    "exported_bytes": 241
+  },
+  "raw/shinka/best/results/seed_1001/train.log": {
+    "source": "shinka/best/results/seed_1001/train.log",
+    "original_sha256": "86233f9de1b7d27890161581533445b0a77aff5c98d73a3a3630b8769a768b73",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "de71c6cf5a9c9dfbc5ed2144328aae66cf3d83f1035846d98386ebf17d879a8c",
+    "exported_bytes": 307
+  },
+  "raw/shinka/best/results/seed_1001/training_metrics.json": {
+    "source": "shinka/best/results/seed_1001/training_metrics.json",
+    "original_sha256": "e6ebce86884299c1364108f06e66b10e96f08c741f89fe44b85bf184d4111a3e",
+    "original_bytes": 69620,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e6ebce86884299c1364108f06e66b10e96f08c741f89fe44b85bf184d4111a3e",
+    "exported_bytes": 69620
+  },
+  "raw/shinka/best/results/seed_1001/trajectory.npz": {
+    "source": "shinka/best/results/seed_1001/trajectory.npz",
+    "original_sha256": "a3403e2b7d501b657d424064b94ce2b7289b1fc1121763015b84d28fe58b7922",
+    "original_bytes": 104184,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/best/results/seed_1002/checkpoints.npz": {
+    "source": "shinka/best/results/seed_1002/checkpoints.npz",
+    "original_sha256": "3555eb35250bc579cadde04dd2f53e3096769f6cfb19e5ec7eb5e2b1b199f0b5",
+    "original_bytes": 18150,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/best/results/seed_1002/config.json": {
+    "source": "shinka/best/results/seed_1002/config.json",
+    "original_sha256": "4dfb0e160d3263da26fba15808ec36549fe14ef5bd067014bdd1b6f5ceb4a790",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4dfb0e160d3263da26fba15808ec36549fe14ef5bd067014bdd1b6f5ceb4a790",
+    "exported_bytes": 1370
+  },
+  "raw/shinka/best/results/seed_1002/manifest.json": {
+    "source": "shinka/best/results/seed_1002/manifest.json",
+    "original_sha256": "0b92114643bdbe366f82d24df149021344c0227746577c5de4d68aca7a462cc2",
+    "original_bytes": 1779,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8305af832454dd01738c8f7209e1987590e1692b32c0b21043d288682ce83b49",
+    "exported_bytes": 1596
+  },
+  "raw/shinka/best/results/seed_1002/process.log": {
+    "source": "shinka/best/results/seed_1002/process.log",
+    "original_sha256": "010d0ad0620e563070a5e33b46079da79f5cb277e0f96bbeeaff3b24347a3b24",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "cf2ea16e9259b0f429a1cc0204d2511c00bd60d37b0e5d255a8598272758d147",
+    "exported_bytes": 961
+  },
+  "raw/shinka/best/results/seed_1002/results.json": {
+    "source": "shinka/best/results/seed_1002/results.json",
+    "original_sha256": "d0bb8ce197dabee07fe8b73191b0e6a4344bba6460017e04e73886991972968a",
+    "original_bytes": 2112,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d0bb8ce197dabee07fe8b73191b0e6a4344bba6460017e04e73886991972968a",
+    "exported_bytes": 2112
+  },
+  "raw/shinka/best/results/seed_1002/stacks.txt": {
+    "source": "shinka/best/results/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/best/results/seed_1002/summary.json": {
+    "source": "shinka/best/results/seed_1002/summary.json",
+    "original_sha256": "8346bace4153d632524e39d2aa604905dbb5ccd4424e926a5637b88a92f7396e",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8346bace4153d632524e39d2aa604905dbb5ccd4424e926a5637b88a92f7396e",
+    "exported_bytes": 241
+  },
+  "raw/shinka/best/results/seed_1002/train.log": {
+    "source": "shinka/best/results/seed_1002/train.log",
+    "original_sha256": "0f4671aa2a0e3d6b0a9021283ecf89b6347eda1fca2292125f6e54e76845a625",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "b93145d411fabb8de1eee569625484741847b8a168fdc093280f6ad1a828aad2",
+    "exported_bytes": 307
+  },
+  "raw/shinka/best/results/seed_1002/training_metrics.json": {
+    "source": "shinka/best/results/seed_1002/training_metrics.json",
+    "original_sha256": "3d2a195e671110739c7a8737955e5cf3824cb43d52734e519d648cade29f2079",
+    "original_bytes": 70368,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3d2a195e671110739c7a8737955e5cf3824cb43d52734e519d648cade29f2079",
+    "exported_bytes": 70368
+  },
+  "raw/shinka/best/results/seed_1002/trajectory.npz": {
+    "source": "shinka/best/results/seed_1002/trajectory.npz",
+    "original_sha256": "cdc8ead517922ac646681152dc488d5c58c942a03629fc95aaf4a0d148052f38",
+    "original_bytes": 112652,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/best/results/seed_1003/checkpoints.npz": {
+    "source": "shinka/best/results/seed_1003/checkpoints.npz",
+    "original_sha256": "2a1ef403801415119fb40328b4487a9c78a3d6e88514123d58beee6def488b87",
+    "original_bytes": 18150,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/best/results/seed_1003/config.json": {
+    "source": "shinka/best/results/seed_1003/config.json",
+    "original_sha256": "3b76291ec7a3240a48f860fe0a5cbec9b6a8b4203d0378bf196d7e9d423f0504",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3b76291ec7a3240a48f860fe0a5cbec9b6a8b4203d0378bf196d7e9d423f0504",
+    "exported_bytes": 1370
+  },
+  "raw/shinka/best/results/seed_1003/manifest.json": {
+    "source": "shinka/best/results/seed_1003/manifest.json",
+    "original_sha256": "6b94da17e05f96a65168b96271187d68e580656cadf5162d4ec6d238bce89059",
+    "original_bytes": 1779,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8f11fdb4f5879f1c3a0d1fb2791f5ecd85c5e0f36007df4e6abe9539f453a9e3",
+    "exported_bytes": 1596
+  },
+  "raw/shinka/best/results/seed_1003/process.log": {
+    "source": "shinka/best/results/seed_1003/process.log",
+    "original_sha256": "1eff318b2fa8447bf536e26ee909dea9529a92466341ff17b37c87257b5c1bd2",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "08465326312fd563cddf83b19a029133f84abce5f098bfdbfcdd702a97779e20",
+    "exported_bytes": 961
+  },
+  "raw/shinka/best/results/seed_1003/results.json": {
+    "source": "shinka/best/results/seed_1003/results.json",
+    "original_sha256": "1cff8889216c75d467056093bcab7ab5444b2b5bcb8e638ea0f97041df9ca265",
+    "original_bytes": 2131,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1cff8889216c75d467056093bcab7ab5444b2b5bcb8e638ea0f97041df9ca265",
+    "exported_bytes": 2131
+  },
+  "raw/shinka/best/results/seed_1003/stacks.txt": {
+    "source": "shinka/best/results/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/best/results/seed_1003/summary.json": {
+    "source": "shinka/best/results/seed_1003/summary.json",
+    "original_sha256": "21f73f798bcaff55857091bf0f0834c11d05d23ec2c6be49748cb505970d3a28",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "21f73f798bcaff55857091bf0f0834c11d05d23ec2c6be49748cb505970d3a28",
+    "exported_bytes": 241
+  },
+  "raw/shinka/best/results/seed_1003/train.log": {
+    "source": "shinka/best/results/seed_1003/train.log",
+    "original_sha256": "307a1951d792da76b2a4c01f2cd1cdf0c8f1ee7af997cd1044f4b646970fba76",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5af2b74575e12826059796536497b81f81a91cf6ef12335fd7ce7d530512723c",
+    "exported_bytes": 307
+  },
+  "raw/shinka/best/results/seed_1003/training_metrics.json": {
+    "source": "shinka/best/results/seed_1003/training_metrics.json",
+    "original_sha256": "485e0b0ebc7c9d1d77055ab7753e30495f54b6d44eaeb6bebe9cb7e21ca9ef6e",
+    "original_bytes": 71732,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "485e0b0ebc7c9d1d77055ab7753e30495f54b6d44eaeb6bebe9cb7e21ca9ef6e",
+    "exported_bytes": 71732
+  },
+  "raw/shinka/best/results/seed_1003/trajectory.npz": {
+    "source": "shinka/best/results/seed_1003/trajectory.npz",
+    "original_sha256": "bf81fc388330592286875e4299e377d438351fa0685ad879008d49b4c4a8de66",
+    "original_bytes": 104165,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/best/search_replace.txt": {
+    "source": "shinka/best/search_replace.txt",
+    "original_sha256": "0ebc5c98cd2a29076cbdaa3e319b837b0f5b1c55a85980d0302e3eedf9656acf",
+    "original_bytes": 594,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0ebc5c98cd2a29076cbdaa3e319b837b0f5b1c55a85980d0302e3eedf9656acf",
+    "exported_bytes": 594
+  },
+  "raw/shinka/evaluate.py": {
+    "source": "shinka/evaluate.py",
+    "original_sha256": "83c87de2d6eadf198cb88b61276708469863eab68df553f24b370703f6d5c2d5",
+    "original_bytes": 10674,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "83c87de2d6eadf198cb88b61276708469863eab68df553f24b370703f6d5c2d5",
+    "exported_bytes": 10674
+  },
+  "raw/shinka/evolution_run.log": {
+    "source": "shinka/evolution_run.log",
+    "original_sha256": "9fc16457f0fc212f6de76d24327f5f822362b6585c941d849f1051f2d0197aef",
+    "original_bytes": 77562,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "62566426818778c3b7e2161fd96be768cf59657a98312d52009c4ac4864a3914",
+    "exported_bytes": 74458
+  },
+  "raw/shinka/gen_0/main.py": {
+    "source": "shinka/gen_0/main.py",
+    "original_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "original_bytes": 109,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "exported_bytes": 109
+  },
+  "raw/shinka/gen_0/results/correct.json": {
+    "source": "shinka/gen_0/results/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/shinka/gen_0/results/job_log.err": {
+    "source": "shinka/gen_0/results/job_log.err",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_0/results/job_log.out": {
+    "source": "shinka/gen_0/results/job_log.out",
+    "original_sha256": "b8cceee319e149a99fc4b0bd5c498c116001fbce654a376f7df30c608090bb2e",
+    "original_bytes": 71,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_0/results/metrics.json": {
+    "source": "shinka/gen_0/results/metrics.json",
+    "original_sha256": "6c7b2dc3b695c64c2a4df2009edd2d4354beb866d97bcb0d1105e1448706c85d",
+    "original_bytes": 5564,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6c7b2dc3b695c64c2a4df2009edd2d4354beb866d97bcb0d1105e1448706c85d",
+    "exported_bytes": 5564
+  },
+  "raw/shinka/gen_0/results/seed_1001/checkpoints.npz": {
+    "source": "shinka/gen_0/results/seed_1001/checkpoints.npz",
+    "original_sha256": "ea598f28c83b1c615c953261fc693ec9a3641d98e6e0131138c91d905dc63d17",
+    "original_bytes": 18151,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_0/results/seed_1001/config.json": {
+    "source": "shinka/gen_0/results/seed_1001/config.json",
+    "original_sha256": "9851395faa3ed9252453ed575a0cf94d772ec62064bbb8aca79b1a0d4e65fa58",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9851395faa3ed9252453ed575a0cf94d772ec62064bbb8aca79b1a0d4e65fa58",
+    "exported_bytes": 1369
+  },
+  "raw/shinka/gen_0/results/seed_1001/manifest.json": {
+    "source": "shinka/gen_0/results/seed_1001/manifest.json",
+    "original_sha256": "7c86ccd8139647cb22284783f57cefe4405e0161e0ff879d1be230b6c578d294",
+    "original_bytes": 1777,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "634b6e6df79c5658a2c64919a96f6eb870f6e1683adb062d52d8a30b033857f7",
+    "exported_bytes": 1594
+  },
+  "raw/shinka/gen_0/results/seed_1001/process.log": {
+    "source": "shinka/gen_0/results/seed_1001/process.log",
+    "original_sha256": "fec63d558a88573fe97478c5fe95ad34bad7f39e4b0c70fdd014cd83b595792e",
+    "original_bytes": 1197,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "08ccb50f65c8bd73b7a5c3bc2d30ba4a3d98f4f65668a297b82492f0daa770da",
+    "exported_bytes": 960
+  },
+  "raw/shinka/gen_0/results/seed_1001/results.json": {
+    "source": "shinka/gen_0/results/seed_1001/results.json",
+    "original_sha256": "8ad17fb987e6ee0fdd5cd91510235951082c6c85bb48058f6cd3951976762d5b",
+    "original_bytes": 2109,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8ad17fb987e6ee0fdd5cd91510235951082c6c85bb48058f6cd3951976762d5b",
+    "exported_bytes": 2109
+  },
+  "raw/shinka/gen_0/results/seed_1001/stacks.txt": {
+    "source": "shinka/gen_0/results/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_0/results/seed_1001/summary.json": {
+    "source": "shinka/gen_0/results/seed_1001/summary.json",
+    "original_sha256": "308e076a50e5b92d7eca9a80047243355afbdeea2267f1cb976c09620b96a696",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "308e076a50e5b92d7eca9a80047243355afbdeea2267f1cb976c09620b96a696",
+    "exported_bytes": 241
+  },
+  "raw/shinka/gen_0/results/seed_1001/train.log": {
+    "source": "shinka/gen_0/results/seed_1001/train.log",
+    "original_sha256": "6f6fe9ada5f8ced2f7ceb2916c65ab338fc425051eb5d7abbe3352d0f8ae5b9b",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "0ad557b1cdb79b969ddbe469571c7cda5281041d9e9bd3a73a9fa8120e125329",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_0/results/seed_1001/training_metrics.json": {
+    "source": "shinka/gen_0/results/seed_1001/training_metrics.json",
+    "original_sha256": "57f61b2950ba61bde4ba1404d5fede5ca8ae509443dc7c13464216b7224c479f",
+    "original_bytes": 71406,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "57f61b2950ba61bde4ba1404d5fede5ca8ae509443dc7c13464216b7224c479f",
+    "exported_bytes": 71406
+  },
+  "raw/shinka/gen_0/results/seed_1001/trajectory.npz": {
+    "source": "shinka/gen_0/results/seed_1001/trajectory.npz",
+    "original_sha256": "c817ba512a503c48279175ceda98f4fe3977f79a568587097150834711a6558d",
+    "original_bytes": 87174,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_0/results/seed_1002/checkpoints.npz": {
+    "source": "shinka/gen_0/results/seed_1002/checkpoints.npz",
+    "original_sha256": "b89c7810825e713405ed4015805438e7f5fb49a5929102e9106523f9ae47aa87",
+    "original_bytes": 18113,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_0/results/seed_1002/config.json": {
+    "source": "shinka/gen_0/results/seed_1002/config.json",
+    "original_sha256": "842ca041ca975f3ea1349d73066819ec361ebb0304aced31cd2e8c1a06b96bbf",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "842ca041ca975f3ea1349d73066819ec361ebb0304aced31cd2e8c1a06b96bbf",
+    "exported_bytes": 1369
+  },
+  "raw/shinka/gen_0/results/seed_1002/manifest.json": {
+    "source": "shinka/gen_0/results/seed_1002/manifest.json",
+    "original_sha256": "361231fd02385c209dcf19c5985ee161b1b2e01148cf2ef3376b93632f7ace50",
+    "original_bytes": 1777,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "1bf281409ee5b9eb6f90136f43bfa7f407320c85f0f9fecff427ddc9f709a6c1",
+    "exported_bytes": 1594
+  },
+  "raw/shinka/gen_0/results/seed_1002/process.log": {
+    "source": "shinka/gen_0/results/seed_1002/process.log",
+    "original_sha256": "0398ed6677ace2b7f82a0b8cb43597de0a0c348ccf7f6bbc15767a1bb668383a",
+    "original_bytes": 1197,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "b435d512026e5199d05482859ee45b7def62bc448f88c69a27b2eec9c64a59db",
+    "exported_bytes": 960
+  },
+  "raw/shinka/gen_0/results/seed_1002/results.json": {
+    "source": "shinka/gen_0/results/seed_1002/results.json",
+    "original_sha256": "33834bf9ea85fa77237bd0ee454a42e239172467c5436b09847cb719222541f9",
+    "original_bytes": 2111,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "33834bf9ea85fa77237bd0ee454a42e239172467c5436b09847cb719222541f9",
+    "exported_bytes": 2111
+  },
+  "raw/shinka/gen_0/results/seed_1002/stacks.txt": {
+    "source": "shinka/gen_0/results/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_0/results/seed_1002/summary.json": {
+    "source": "shinka/gen_0/results/seed_1002/summary.json",
+    "original_sha256": "e5fcf3d6c3a71c46eb02731037254ec87a2643a1d14b8e9f0b9172110922d4b7",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e5fcf3d6c3a71c46eb02731037254ec87a2643a1d14b8e9f0b9172110922d4b7",
+    "exported_bytes": 242
+  },
+  "raw/shinka/gen_0/results/seed_1002/train.log": {
+    "source": "shinka/gen_0/results/seed_1002/train.log",
+    "original_sha256": "7d1a32ec249ef5444d8bdace42dc2b32d93aa55ec45fae3d9a81fc59c56c9e07",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "1fefcd0bd522e6894eeb8307cbb63d298005fb5ae61c06761c59ce575ad2ac42",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_0/results/seed_1002/training_metrics.json": {
+    "source": "shinka/gen_0/results/seed_1002/training_metrics.json",
+    "original_sha256": "5dba76b245eb152536fa3e9bc85bfe7cb948d20d91025edf6bb5deedf2a7981b",
+    "original_bytes": 71342,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5dba76b245eb152536fa3e9bc85bfe7cb948d20d91025edf6bb5deedf2a7981b",
+    "exported_bytes": 71342
+  },
+  "raw/shinka/gen_0/results/seed_1002/trajectory.npz": {
+    "source": "shinka/gen_0/results/seed_1002/trajectory.npz",
+    "original_sha256": "0c6cdbabb3758ba42799adfc9dee9c79e10c1e9fb039063eb8c4544560dc6f04",
+    "original_bytes": 88594,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_0/results/seed_1003/checkpoints.npz": {
+    "source": "shinka/gen_0/results/seed_1003/checkpoints.npz",
+    "original_sha256": "a1e442ce44e455477f207cd1c9891d3f23a95d74e26ed0f12855734b5c38c752",
+    "original_bytes": 18170,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_0/results/seed_1003/config.json": {
+    "source": "shinka/gen_0/results/seed_1003/config.json",
+    "original_sha256": "3df96c243c044d1340fe144174db0af897e60be7073d0df8e4059237992a62f6",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3df96c243c044d1340fe144174db0af897e60be7073d0df8e4059237992a62f6",
+    "exported_bytes": 1369
+  },
+  "raw/shinka/gen_0/results/seed_1003/manifest.json": {
+    "source": "shinka/gen_0/results/seed_1003/manifest.json",
+    "original_sha256": "53c1bc6defaaa4246448cbe750c5d12b92fc17818b391cd511f2ff1fc9dfd4af",
+    "original_bytes": 1777,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "612bdd152d5edf5b48adefd4df01b885cc6e23b0ea4f6654b406c4e69a1fe5e5",
+    "exported_bytes": 1594
+  },
+  "raw/shinka/gen_0/results/seed_1003/process.log": {
+    "source": "shinka/gen_0/results/seed_1003/process.log",
+    "original_sha256": "44792a4981f99d6c299d9b1d9d89549d24e9de11183b0ccb34fe2e44389bee26",
+    "original_bytes": 1197,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "b17b4e5b4832a35033026d083a5a6cb467266f0b4986a03314e98729ab9776bc",
+    "exported_bytes": 960
+  },
+  "raw/shinka/gen_0/results/seed_1003/results.json": {
+    "source": "shinka/gen_0/results/seed_1003/results.json",
+    "original_sha256": "623efd1711d3cea3ee5e009dad017892b0f216dc20af8932b0bca6864a234175",
+    "original_bytes": 2158,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "623efd1711d3cea3ee5e009dad017892b0f216dc20af8932b0bca6864a234175",
+    "exported_bytes": 2158
+  },
+  "raw/shinka/gen_0/results/seed_1003/stacks.txt": {
+    "source": "shinka/gen_0/results/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_0/results/seed_1003/summary.json": {
+    "source": "shinka/gen_0/results/seed_1003/summary.json",
+    "original_sha256": "6f0c7553668861aa9fc32091867ca5c1c92e377f12653fb5d7cd66ca68b06e37",
+    "original_bytes": 243,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6f0c7553668861aa9fc32091867ca5c1c92e377f12653fb5d7cd66ca68b06e37",
+    "exported_bytes": 243
+  },
+  "raw/shinka/gen_0/results/seed_1003/train.log": {
+    "source": "shinka/gen_0/results/seed_1003/train.log",
+    "original_sha256": "132e0932a587001fe6c264fc9ee00464ce497bebf291278dd99881f8ef761de0",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "75fa45c0175fa303a9bf1ea834160452aa25c741dc7b3aa8c1c6f5e1724567a8",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_0/results/seed_1003/training_metrics.json": {
+    "source": "shinka/gen_0/results/seed_1003/training_metrics.json",
+    "original_sha256": "c10328e02c4f3332e76ba9fd173a4435611e5c3af61bbddfbc6cda6124619f8c",
+    "original_bytes": 73568,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c10328e02c4f3332e76ba9fd173a4435611e5c3af61bbddfbc6cda6124619f8c",
+    "exported_bytes": 73568
+  },
+  "raw/shinka/gen_0/results/seed_1003/trajectory.npz": {
+    "source": "shinka/gen_0/results/seed_1003/trajectory.npz",
+    "original_sha256": "1438113131d392421d10d71a172e8fb7ba7094648fb4d6c57ef1ded0b82421b5",
+    "original_bytes": 68795,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+    "source": "shinka/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+    "original_sha256": "a280283620b9366c464a784039a680e85b068cd2829f6abb93a85309d27d43bc",
+    "original_bytes": 3334,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a280283620b9366c464a784039a680e85b068cd2829f6abb93a85309d27d43bc",
+    "exported_bytes": 3334
+  },
+  "raw/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/llm_response.txt": {
+    "source": "shinka/gen_1/attempts/novelty_1/resample_1/patch_1/llm_response.txt",
+    "original_sha256": "d6740dee6c845f2b566ecad973b274838aba540f44e929bab7294185493a7540",
+    "original_bytes": 567,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d6740dee6c845f2b566ecad973b274838aba540f44e929bab7294185493a7540",
+    "exported_bytes": 567
+  },
+  "raw/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/metadata.json": {
+    "source": "shinka/gen_1/attempts/novelty_1/resample_1/patch_1/metadata.json",
+    "original_sha256": "bdb099469c656c50e9804beebc61bcdc83eb3cf35dc2422e06e36cb4cf6285aa",
+    "original_bytes": 833,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f65b655ec000bda2db4ca6f57da7ea7fad4a55c218fb5265e05c124ca5d5446b",
+    "exported_bytes": 754
+  },
+  "raw/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/patch.txt": {
+    "source": "shinka/gen_1/attempts/novelty_1/resample_1/patch_1/patch.txt",
+    "original_sha256": "b865d46d08bed9341f025963657975980946f64fbc8292e8a569d333225edb72",
+    "original_bytes": 215,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b865d46d08bed9341f025963657975980946f64fbc8292e8a569d333225edb72",
+    "exported_bytes": 215
+  },
+  "raw/shinka/gen_1/edit.diff": {
+    "source": "shinka/gen_1/edit.diff",
+    "original_sha256": "b865d46d08bed9341f025963657975980946f64fbc8292e8a569d333225edb72",
+    "original_bytes": 215,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "b865d46d08bed9341f025963657975980946f64fbc8292e8a569d333225edb72",
+    "exported_bytes": 215
+  },
+  "raw/shinka/gen_1/main.py": {
+    "source": "shinka/gen_1/main.py",
+    "original_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "exported_bytes": 110
+  },
+  "raw/shinka/gen_1/original.py": {
+    "source": "shinka/gen_1/original.py",
+    "original_sha256": "c6144ce6477b68321d07c9299a9dcd22248546af0912685a02f45d059d2d0689",
+    "original_bytes": 108,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c6144ce6477b68321d07c9299a9dcd22248546af0912685a02f45d059d2d0689",
+    "exported_bytes": 108
+  },
+  "raw/shinka/gen_1/results/correct.json": {
+    "source": "shinka/gen_1/results/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/shinka/gen_1/results/job_log.err": {
+    "source": "shinka/gen_1/results/job_log.err",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/results/job_log.out": {
+    "source": "shinka/gen_1/results/job_log.out",
+    "original_sha256": "ad76d7d42956ebe1ecf6722fc5c3d6d42a960d7376e83563f163a0104fc4177b",
+    "original_bytes": 71,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/results/metrics.json": {
+    "source": "shinka/gen_1/results/metrics.json",
+    "original_sha256": "4a01379ef4790f2aaf8ece09e6b0a9f78bf2e8538b2e6f1d7f64fcfd15de2c2c",
+    "original_bytes": 5564,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4a01379ef4790f2aaf8ece09e6b0a9f78bf2e8538b2e6f1d7f64fcfd15de2c2c",
+    "exported_bytes": 5564
+  },
+  "raw/shinka/gen_1/results/seed_1001/checkpoints.npz": {
+    "source": "shinka/gen_1/results/seed_1001/checkpoints.npz",
+    "original_sha256": "2917384e1b194fc38ad2e787957785471df996bb56f879a85873fc35bbb7cba0",
+    "original_bytes": 18161,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/results/seed_1001/config.json": {
+    "source": "shinka/gen_1/results/seed_1001/config.json",
+    "original_sha256": "0c0a6b70c62c6e24a3703c1a8c43e7555337e32b073b12aa349e6c59437fe38c",
+    "original_bytes": 1371,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0c0a6b70c62c6e24a3703c1a8c43e7555337e32b073b12aa349e6c59437fe38c",
+    "exported_bytes": 1371
+  },
+  "raw/shinka/gen_1/results/seed_1001/manifest.json": {
+    "source": "shinka/gen_1/results/seed_1001/manifest.json",
+    "original_sha256": "5597af87dacd58613381d630ebc7c5574e671d7236e8a75b2be41b0b6a6c7f7e",
+    "original_bytes": 1779,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "9b7c8a7a2d57dcc871ef1ccdaca092f20f616d77592e1ab1708deccca01390d0",
+    "exported_bytes": 1596
+  },
+  "raw/shinka/gen_1/results/seed_1001/process.log": {
+    "source": "shinka/gen_1/results/seed_1001/process.log",
+    "original_sha256": "11707df8265a06eeca1e3af6002dd17f694d00bdbca9545a0761bb2c8bbcc3f9",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "bbe6e716e32fff4d62fd946873bd1ac06cfe5549edc58c679e7dc2b0f8a8249a",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_1/results/seed_1001/results.json": {
+    "source": "shinka/gen_1/results/seed_1001/results.json",
+    "original_sha256": "2fa335f2b89465ab5202942a85f891579afb02f963f928f6d972477a5ecc3c64",
+    "original_bytes": 2112,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2fa335f2b89465ab5202942a85f891579afb02f963f928f6d972477a5ecc3c64",
+    "exported_bytes": 2112
+  },
+  "raw/shinka/gen_1/results/seed_1001/stacks.txt": {
+    "source": "shinka/gen_1/results/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_1/results/seed_1001/summary.json": {
+    "source": "shinka/gen_1/results/seed_1001/summary.json",
+    "original_sha256": "d4364fcc2500cbb1d1f7606e881544c48198a4c4fea4d9b08f6e622223ae16ce",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d4364fcc2500cbb1d1f7606e881544c48198a4c4fea4d9b08f6e622223ae16ce",
+    "exported_bytes": 242
+  },
+  "raw/shinka/gen_1/results/seed_1001/train.log": {
+    "source": "shinka/gen_1/results/seed_1001/train.log",
+    "original_sha256": "60c485c9b43d3f2ec63bc322f976a3b8b1cb2835c9c0a52155f69162230e2f2c",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "c1e36cc18c989081e81819747b934d8a4d4bb8572b66b908d6a074b82010b1c2",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_1/results/seed_1001/training_metrics.json": {
+    "source": "shinka/gen_1/results/seed_1001/training_metrics.json",
+    "original_sha256": "074ea38527bbd97315bbbab5fa542c8e276db79a1bfc742cc3e5ffec7a953f48",
+    "original_bytes": 70846,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "074ea38527bbd97315bbbab5fa542c8e276db79a1bfc742cc3e5ffec7a953f48",
+    "exported_bytes": 70846
+  },
+  "raw/shinka/gen_1/results/seed_1001/trajectory.npz": {
+    "source": "shinka/gen_1/results/seed_1001/trajectory.npz",
+    "original_sha256": "6465a6e56ff1b52921ba6f893fdf4cd313b69f20924d91852abc904a567c2058",
+    "original_bytes": 95580,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/results/seed_1002/checkpoints.npz": {
+    "source": "shinka/gen_1/results/seed_1002/checkpoints.npz",
+    "original_sha256": "88af4d842115b87cbccb82f9ab83a92bd5d954ca56aaa2045802ae06f6c09d30",
+    "original_bytes": 18154,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/results/seed_1002/config.json": {
+    "source": "shinka/gen_1/results/seed_1002/config.json",
+    "original_sha256": "1ad31ba92d1b4255880785dd1b784160d9c2b5d45d37638dd8b6f8690834f828",
+    "original_bytes": 1371,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1ad31ba92d1b4255880785dd1b784160d9c2b5d45d37638dd8b6f8690834f828",
+    "exported_bytes": 1371
+  },
+  "raw/shinka/gen_1/results/seed_1002/manifest.json": {
+    "source": "shinka/gen_1/results/seed_1002/manifest.json",
+    "original_sha256": "159eb0474eb3288839b7f8f0e1400ffcdf50756041649ebf3f54025072ae7d2d",
+    "original_bytes": 1778,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5a1e874eb81f42de6f940735bda5a35c3adfc8b7ab4ab81c9b1a1fc1099c3fcf",
+    "exported_bytes": 1595
+  },
+  "raw/shinka/gen_1/results/seed_1002/process.log": {
+    "source": "shinka/gen_1/results/seed_1002/process.log",
+    "original_sha256": "0065de00a5b47c62fd6e722dae02b6b5682aac56898e2285c10a46ee179963f6",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "3a3a2579fc9dfbb7da3463386a51ccf23ea85e15c8500ffd818a2dbc23346b70",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_1/results/seed_1002/results.json": {
+    "source": "shinka/gen_1/results/seed_1002/results.json",
+    "original_sha256": "c1b1e323180b0a6eef4b0d6ef0e69f0ee03992d22ef334ddbb42851671280993",
+    "original_bytes": 2148,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c1b1e323180b0a6eef4b0d6ef0e69f0ee03992d22ef334ddbb42851671280993",
+    "exported_bytes": 2148
+  },
+  "raw/shinka/gen_1/results/seed_1002/stacks.txt": {
+    "source": "shinka/gen_1/results/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_1/results/seed_1002/summary.json": {
+    "source": "shinka/gen_1/results/seed_1002/summary.json",
+    "original_sha256": "955dcdba0c2ab0f5b9ad9c77d51ed5af0a57cfe336e271b7c9757ae0ec0b369c",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "955dcdba0c2ab0f5b9ad9c77d51ed5af0a57cfe336e271b7c9757ae0ec0b369c",
+    "exported_bytes": 241
+  },
+  "raw/shinka/gen_1/results/seed_1002/train.log": {
+    "source": "shinka/gen_1/results/seed_1002/train.log",
+    "original_sha256": "d71ae1afb017dcb8afc9c3932f2e35278427af0053a497d841759b71764d1e6d",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8309438b23ad90568cf1cdef1bd2ebe25378497bdee730c69e898589aa1ffb2a",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_1/results/seed_1002/training_metrics.json": {
+    "source": "shinka/gen_1/results/seed_1002/training_metrics.json",
+    "original_sha256": "6dd6dbb442ef6f696de8c86ef7d428a470ad72cb954764f84196aa8c3f21ea20",
+    "original_bytes": 71341,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "6dd6dbb442ef6f696de8c86ef7d428a470ad72cb954764f84196aa8c3f21ea20",
+    "exported_bytes": 71341
+  },
+  "raw/shinka/gen_1/results/seed_1002/trajectory.npz": {
+    "source": "shinka/gen_1/results/seed_1002/trajectory.npz",
+    "original_sha256": "12e0306c34f68367794ec94fb58dda5682c11eab228140a30fd41ae759b1cf3d",
+    "original_bytes": 109860,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/results/seed_1003/checkpoints.npz": {
+    "source": "shinka/gen_1/results/seed_1003/checkpoints.npz",
+    "original_sha256": "e465fe923ca7f63f39e88555777540b7e0ceef307401460e0b98611aa68da029",
+    "original_bytes": 18140,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/results/seed_1003/config.json": {
+    "source": "shinka/gen_1/results/seed_1003/config.json",
+    "original_sha256": "2a053a0cb008f530be09830d25885e227d3de5ef03ead029d5018e5d4d977f8e",
+    "original_bytes": 1371,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2a053a0cb008f530be09830d25885e227d3de5ef03ead029d5018e5d4d977f8e",
+    "exported_bytes": 1371
+  },
+  "raw/shinka/gen_1/results/seed_1003/manifest.json": {
+    "source": "shinka/gen_1/results/seed_1003/manifest.json",
+    "original_sha256": "318323a0751f62d9a87fb38de9118aff0b54d7597393f72f18a050435032bed0",
+    "original_bytes": 1779,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "08e5371df2dffea92916f7fa9958b2d9da8ffc00a88171dc9ba7e887807f35f6",
+    "exported_bytes": 1596
+  },
+  "raw/shinka/gen_1/results/seed_1003/process.log": {
+    "source": "shinka/gen_1/results/seed_1003/process.log",
+    "original_sha256": "cd736bdd81e5ffa4d5278b08fd6d9a460c80394b32323860be8f07699d5fe4d7",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "742f1c4ac6fb940734b9ae2abebf597b2cb10927d83919320be522a3eb9d906b",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_1/results/seed_1003/results.json": {
+    "source": "shinka/gen_1/results/seed_1003/results.json",
+    "original_sha256": "45897469a710a597ba5c2dccaaa0e2a9dfd180564a68a2f5c0ed11891cba52d4",
+    "original_bytes": 2201,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "45897469a710a597ba5c2dccaaa0e2a9dfd180564a68a2f5c0ed11891cba52d4",
+    "exported_bytes": 2201
+  },
+  "raw/shinka/gen_1/results/seed_1003/stacks.txt": {
+    "source": "shinka/gen_1/results/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_1/results/seed_1003/summary.json": {
+    "source": "shinka/gen_1/results/seed_1003/summary.json",
+    "original_sha256": "47078b547776ea4ce3851a3f92599b0cee24fc0406d0f710af14e44812767c7a",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "47078b547776ea4ce3851a3f92599b0cee24fc0406d0f710af14e44812767c7a",
+    "exported_bytes": 241
+  },
+  "raw/shinka/gen_1/results/seed_1003/train.log": {
+    "source": "shinka/gen_1/results/seed_1003/train.log",
+    "original_sha256": "fc0a95a3898c4f5ca925de78a8106ba892846750c267c858b0ba3a864cbec4fa",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5bc9e44ae73e01e3695094d1adb30cc4c816295a78d4f4d0db72c7c015fec221",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_1/results/seed_1003/training_metrics.json": {
+    "source": "shinka/gen_1/results/seed_1003/training_metrics.json",
+    "original_sha256": "83ce53ed82ca2fb52b1711314a5ab79ffa63263d3f135089f243d3bea15a3587",
+    "original_bytes": 71805,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "83ce53ed82ca2fb52b1711314a5ab79ffa63263d3f135089f243d3bea15a3587",
+    "exported_bytes": 71805
+  },
+  "raw/shinka/gen_1/results/seed_1003/trajectory.npz": {
+    "source": "shinka/gen_1/results/seed_1003/trajectory.npz",
+    "original_sha256": "eea1ccfd925a2bf43787d3022b2de5a7c5af5382454b487bb53fef9831a02184",
+    "original_bytes": 98469,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_1/search_replace.txt": {
+    "source": "shinka/gen_1/search_replace.txt",
+    "original_sha256": "d6740dee6c845f2b566ecad973b274838aba540f44e929bab7294185493a7540",
+    "original_bytes": 567,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d6740dee6c845f2b566ecad973b274838aba540f44e929bab7294185493a7540",
+    "exported_bytes": 567
+  },
+  "raw/shinka/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+    "source": "shinka/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+    "original_sha256": "60baf735c22f2eb58d29f50d82b0c72a219d360852f8c67c676c0da96b2129ee",
+    "original_bytes": 3743,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "60baf735c22f2eb58d29f50d82b0c72a219d360852f8c67c676c0da96b2129ee",
+    "exported_bytes": 3743
+  },
+  "raw/shinka/gen_2/attempts/novelty_1/resample_1/patch_1/llm_response.txt": {
+    "source": "shinka/gen_2/attempts/novelty_1/resample_1/patch_1/llm_response.txt",
+    "original_sha256": "75f8c603f9cc1c0d2de800681682b988a357f59b48b9e8426b8b937db46c4a66",
+    "original_bytes": 621,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "75f8c603f9cc1c0d2de800681682b988a357f59b48b9e8426b8b937db46c4a66",
+    "exported_bytes": 621
+  },
+  "raw/shinka/gen_2/attempts/novelty_1/resample_1/patch_1/metadata.json": {
+    "source": "shinka/gen_2/attempts/novelty_1/resample_1/patch_1/metadata.json",
+    "original_sha256": "c47bbc11621bb7eecb472dfa978529ab49215241bc062fad8e6c670d704c51ed",
+    "original_bytes": 885,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "56dc3288c650ac48023718fe8d58e1ce0c08ad88d287e7b2a56da5d8f550eb35",
+    "exported_bytes": 806
+  },
+  "raw/shinka/gen_2/attempts/novelty_1/resample_1/patch_1/patch.txt": {
+    "source": "shinka/gen_2/attempts/novelty_1/resample_1/patch_1/patch.txt",
+    "original_sha256": "5eaa3c7d9372a8a696b3104448482bf6a66e32d161c4456bf3bef51ab508d3d2",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5eaa3c7d9372a8a696b3104448482bf6a66e32d161c4456bf3bef51ab508d3d2",
+    "exported_bytes": 217
+  },
+  "raw/shinka/gen_2/edit.diff": {
+    "source": "shinka/gen_2/edit.diff",
+    "original_sha256": "5eaa3c7d9372a8a696b3104448482bf6a66e32d161c4456bf3bef51ab508d3d2",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5eaa3c7d9372a8a696b3104448482bf6a66e32d161c4456bf3bef51ab508d3d2",
+    "exported_bytes": 217
+  },
+  "raw/shinka/gen_2/main.py": {
+    "source": "shinka/gen_2/main.py",
+    "original_sha256": "c2ad59694b4c4b86a85f18e2d4d0b64593c78b5388a10bb96a9382b7bd6c54f6",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c2ad59694b4c4b86a85f18e2d4d0b64593c78b5388a10bb96a9382b7bd6c54f6",
+    "exported_bytes": 110
+  },
+  "raw/shinka/gen_2/original.py": {
+    "source": "shinka/gen_2/original.py",
+    "original_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "exported_bytes": 110
+  },
+  "raw/shinka/gen_2/results/correct.json": {
+    "source": "shinka/gen_2/results/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/shinka/gen_2/results/job_log.err": {
+    "source": "shinka/gen_2/results/job_log.err",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_2/results/job_log.out": {
+    "source": "shinka/gen_2/results/job_log.out",
+    "original_sha256": "e52667ec7cd896a856a4605ab8e114272dfc8690dadd543492782286c67be017",
+    "original_bytes": 71,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_2/results/metrics.json": {
+    "source": "shinka/gen_2/results/metrics.json",
+    "original_sha256": "5431a481fe1fe17b3014ccfc4f3ad021d2d759d0631b097a83899123fee297ab",
+    "original_bytes": 5559,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "5431a481fe1fe17b3014ccfc4f3ad021d2d759d0631b097a83899123fee297ab",
+    "exported_bytes": 5559
+  },
+  "raw/shinka/gen_2/results/seed_1001/checkpoints.npz": {
+    "source": "shinka/gen_2/results/seed_1001/checkpoints.npz",
+    "original_sha256": "ed8be8f3163bcb1f13d22dbc065e8a91d2a8c80e433060615bc812513f44aad6",
+    "original_bytes": 18153,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_2/results/seed_1001/config.json": {
+    "source": "shinka/gen_2/results/seed_1001/config.json",
+    "original_sha256": "1305a3aa0d543736e7e3b2e60a8b3d5813e2ea296f3725633c477c91aae6726e",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1305a3aa0d543736e7e3b2e60a8b3d5813e2ea296f3725633c477c91aae6726e",
+    "exported_bytes": 1369
+  },
+  "raw/shinka/gen_2/results/seed_1001/manifest.json": {
+    "source": "shinka/gen_2/results/seed_1001/manifest.json",
+    "original_sha256": "09045de1be91dddaf4856b0c1869dee6bddf75c6ce3880a2cdc996a75ba01485",
+    "original_bytes": 1777,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "d5d9f004794a94bbaaa3e8db9e773184d7e92141dd3e6570b918762c898c2110",
+    "exported_bytes": 1594
+  },
+  "raw/shinka/gen_2/results/seed_1001/process.log": {
+    "source": "shinka/gen_2/results/seed_1001/process.log",
+    "original_sha256": "caf0ff7c91b3c9791dc5eaa2740bfade545383e26a32a5f0fd97dd7b873eb895",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5b0d32ee8d1577e3dec10e150f055b20b75b54937a5106839a9c6b84864ee810",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_2/results/seed_1001/results.json": {
+    "source": "shinka/gen_2/results/seed_1001/results.json",
+    "original_sha256": "88a6806ee8278869d66490bfb87cb660f02bb414b65d098c11d4387b43be966c",
+    "original_bytes": 2147,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "88a6806ee8278869d66490bfb87cb660f02bb414b65d098c11d4387b43be966c",
+    "exported_bytes": 2147
+  },
+  "raw/shinka/gen_2/results/seed_1001/stacks.txt": {
+    "source": "shinka/gen_2/results/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_2/results/seed_1001/summary.json": {
+    "source": "shinka/gen_2/results/seed_1001/summary.json",
+    "original_sha256": "0896d69dc4c9520ebaf0d5eef1c60b42174ba10d5c3ccebeb13149c3e85ded0d",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0896d69dc4c9520ebaf0d5eef1c60b42174ba10d5c3ccebeb13149c3e85ded0d",
+    "exported_bytes": 241
+  },
+  "raw/shinka/gen_2/results/seed_1001/train.log": {
+    "source": "shinka/gen_2/results/seed_1001/train.log",
+    "original_sha256": "3cb557144908e48857f2680013cc5fb685d33486d0a4820e92905156250f00c0",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "08dbf40c00f142b7290b2eab96a10c53eaf7e6607bde37c0156a7ef670fff8dd",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_2/results/seed_1001/training_metrics.json": {
+    "source": "shinka/gen_2/results/seed_1001/training_metrics.json",
+    "original_sha256": "ee70a089f4ba0c7cb2434c1dfcf9dddf64dd9455fe6f99454a279b4ed1425f95",
+    "original_bytes": 69976,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ee70a089f4ba0c7cb2434c1dfcf9dddf64dd9455fe6f99454a279b4ed1425f95",
+    "exported_bytes": 69976
+  },
+  "raw/shinka/gen_2/results/seed_1001/trajectory.npz": {
+    "source": "shinka/gen_2/results/seed_1001/trajectory.npz",
+    "original_sha256": "54ae0a2d9b553306e06822ee4629ebbc115beec1e42b2834dddd71499791e38d",
+    "original_bytes": 104024,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_2/results/seed_1002/checkpoints.npz": {
+    "source": "shinka/gen_2/results/seed_1002/checkpoints.npz",
+    "original_sha256": "c4f6e23ec26c6025c9c0d38c293e2a20f533486dcf4a435f51d16fd5d4990969",
+    "original_bytes": 18138,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_2/results/seed_1002/config.json": {
+    "source": "shinka/gen_2/results/seed_1002/config.json",
+    "original_sha256": "24cb17b33274c581077a6194577ab2b688b91bca0e2646efcf3531ba8405301b",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "24cb17b33274c581077a6194577ab2b688b91bca0e2646efcf3531ba8405301b",
+    "exported_bytes": 1369
+  },
+  "raw/shinka/gen_2/results/seed_1002/manifest.json": {
+    "source": "shinka/gen_2/results/seed_1002/manifest.json",
+    "original_sha256": "f4cc1ce799672cc00f5a188e395a6287270c815cfc10fa5fb624b2bad40ea093",
+    "original_bytes": 1779,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "be57073efa39fe9248bc45f8abd4605cf169595218deab204a5b5a5c41f4ef3b",
+    "exported_bytes": 1596
+  },
+  "raw/shinka/gen_2/results/seed_1002/process.log": {
+    "source": "shinka/gen_2/results/seed_1002/process.log",
+    "original_sha256": "1f924b93db00ad0793557cc9b68967582954131191bf54e2819e33ed03e8335d",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "49de9b6a80295247720f54bb30b3c722f893db7dd00c8a0c374f98b76a751fec",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_2/results/seed_1002/results.json": {
+    "source": "shinka/gen_2/results/seed_1002/results.json",
+    "original_sha256": "2f79f0657928ef09a729bfa41550b9a95e1f9178c00075f6733bf37b420deef8",
+    "original_bytes": 2148,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "2f79f0657928ef09a729bfa41550b9a95e1f9178c00075f6733bf37b420deef8",
+    "exported_bytes": 2148
+  },
+  "raw/shinka/gen_2/results/seed_1002/stacks.txt": {
+    "source": "shinka/gen_2/results/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_2/results/seed_1002/summary.json": {
+    "source": "shinka/gen_2/results/seed_1002/summary.json",
+    "original_sha256": "ccbad06519f93964790234cd8e3ddacedd82fdd093993a26686be08af2c57c2e",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ccbad06519f93964790234cd8e3ddacedd82fdd093993a26686be08af2c57c2e",
+    "exported_bytes": 241
+  },
+  "raw/shinka/gen_2/results/seed_1002/train.log": {
+    "source": "shinka/gen_2/results/seed_1002/train.log",
+    "original_sha256": "5649d1695183fddc86094e8c45662bf0593a36e9b1968e3dc9be373c8fb5dff9",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "980a0b42c84289fd4ccf7c3d22b0c7bb145975664dd6a2d0c33c881182ba912d",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_2/results/seed_1002/training_metrics.json": {
+    "source": "shinka/gen_2/results/seed_1002/training_metrics.json",
+    "original_sha256": "173a394e538a0c5da1b35d029c605b72bb39e91874be7cfb3c70a1e71915f5d9",
+    "original_bytes": 71033,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "173a394e538a0c5da1b35d029c605b72bb39e91874be7cfb3c70a1e71915f5d9",
+    "exported_bytes": 71033
+  },
+  "raw/shinka/gen_2/results/seed_1002/trajectory.npz": {
+    "source": "shinka/gen_2/results/seed_1002/trajectory.npz",
+    "original_sha256": "87226469bc1131af36f6255f8df4c522da4e059c7daf20de23064e89a9201d6f",
+    "original_bytes": 111186,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_2/results/seed_1003/checkpoints.npz": {
+    "source": "shinka/gen_2/results/seed_1003/checkpoints.npz",
+    "original_sha256": "613258e5306e25a58028c5fe685552dffbdf4e29e9c8e313060dc0475c9c89da",
+    "original_bytes": 18126,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_2/results/seed_1003/config.json": {
+    "source": "shinka/gen_2/results/seed_1003/config.json",
+    "original_sha256": "45d491d0d9b287dc1a8acd3ec94a8aaf6d85602ca9b8725b4602fe3c50c5e924",
+    "original_bytes": 1369,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "45d491d0d9b287dc1a8acd3ec94a8aaf6d85602ca9b8725b4602fe3c50c5e924",
+    "exported_bytes": 1369
+  },
+  "raw/shinka/gen_2/results/seed_1003/manifest.json": {
+    "source": "shinka/gen_2/results/seed_1003/manifest.json",
+    "original_sha256": "106e313b43bae397ed7c429c167fafa48a46d2d95c991ce1fdbd51ec20ddf059",
+    "original_bytes": 1778,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "caacd9490480ec316f1551eeac898e35fba34f1fdf3844cd63db3faa734cd450",
+    "exported_bytes": 1595
+  },
+  "raw/shinka/gen_2/results/seed_1003/process.log": {
+    "source": "shinka/gen_2/results/seed_1003/process.log",
+    "original_sha256": "baf6d168ca20184065c1225534baab6dc003642c410eb00e756dcc4960cb7568",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2c9b704ce3591c5ba6c4cb03f36f18fb34a95bb6026a640b72dd5f88b8b4c9ac",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_2/results/seed_1003/results.json": {
+    "source": "shinka/gen_2/results/seed_1003/results.json",
+    "original_sha256": "ad7c13cad40fd80322c84b54f3d78a6032b4f14373c5fc13c90ab28d6f57ea84",
+    "original_bytes": 2143,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ad7c13cad40fd80322c84b54f3d78a6032b4f14373c5fc13c90ab28d6f57ea84",
+    "exported_bytes": 2143
+  },
+  "raw/shinka/gen_2/results/seed_1003/stacks.txt": {
+    "source": "shinka/gen_2/results/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_2/results/seed_1003/summary.json": {
+    "source": "shinka/gen_2/results/seed_1003/summary.json",
+    "original_sha256": "f7e50b75c7473fd21c783164b6d7c9ce85a8040f6d72091312846b2869a0236f",
+    "original_bytes": 239,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f7e50b75c7473fd21c783164b6d7c9ce85a8040f6d72091312846b2869a0236f",
+    "exported_bytes": 239
+  },
+  "raw/shinka/gen_2/results/seed_1003/train.log": {
+    "source": "shinka/gen_2/results/seed_1003/train.log",
+    "original_sha256": "8b084b76bb4dd2b0e52f650bc7b80c403830a2627a5cb08a2780cd2ade4bcbb1",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "66a3f06a04873bf90fe26f818e2eae803a9f6fca915f53b6bdc75b5dc684f56c",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_2/results/seed_1003/training_metrics.json": {
+    "source": "shinka/gen_2/results/seed_1003/training_metrics.json",
+    "original_sha256": "de13b379ee00c05ce9cee533a031fc76c791296f5075e5bd040ad41e00dda22d",
+    "original_bytes": 71602,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "de13b379ee00c05ce9cee533a031fc76c791296f5075e5bd040ad41e00dda22d",
+    "exported_bytes": 71602
+  },
+  "raw/shinka/gen_2/results/seed_1003/trajectory.npz": {
+    "source": "shinka/gen_2/results/seed_1003/trajectory.npz",
+    "original_sha256": "90a315672cec001e0ce77e44e5b89bf02642bf03afd2bfd3ecee39b0be8a78ee",
+    "original_bytes": 105508,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_2/search_replace.txt": {
+    "source": "shinka/gen_2/search_replace.txt",
+    "original_sha256": "75f8c603f9cc1c0d2de800681682b988a357f59b48b9e8426b8b937db46c4a66",
+    "original_bytes": 621,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "75f8c603f9cc1c0d2de800681682b988a357f59b48b9e8426b8b937db46c4a66",
+    "exported_bytes": 621
+  },
+  "raw/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+    "source": "shinka/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+    "original_sha256": "f864d2b01d45b2afce6afc7d7ea84934b7335ba288fd02026ed47078d2f42f69",
+    "original_bytes": 4055,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f864d2b01d45b2afce6afc7d7ea84934b7335ba288fd02026ed47078d2f42f69",
+    "exported_bytes": 4055
+  },
+  "raw/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/llm_response.txt": {
+    "source": "shinka/gen_3/attempts/novelty_1/resample_1/patch_1/llm_response.txt",
+    "original_sha256": "0ebc5c98cd2a29076cbdaa3e319b837b0f5b1c55a85980d0302e3eedf9656acf",
+    "original_bytes": 594,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0ebc5c98cd2a29076cbdaa3e319b837b0f5b1c55a85980d0302e3eedf9656acf",
+    "exported_bytes": 594
+  },
+  "raw/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/metadata.json": {
+    "source": "shinka/gen_3/attempts/novelty_1/resample_1/patch_1/metadata.json",
+    "original_sha256": "ccfd11f9ebe8abee96f8c6e550ee622d9fd9b57c72ed9b50cfe8639f7557dd22",
+    "original_bytes": 858,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2560522eefffcdafbb74e14b06fc0a44795669c84be750856c9bab07b6c22014",
+    "exported_bytes": 779
+  },
+  "raw/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/patch.txt": {
+    "source": "shinka/gen_3/attempts/novelty_1/resample_1/patch_1/patch.txt",
+    "original_sha256": "a0590ff3cf5a4c604091d856a8d5a43f46f95b7fced2961693a4f8478b9c1a99",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a0590ff3cf5a4c604091d856a8d5a43f46f95b7fced2961693a4f8478b9c1a99",
+    "exported_bytes": 217
+  },
+  "raw/shinka/gen_3/edit.diff": {
+    "source": "shinka/gen_3/edit.diff",
+    "original_sha256": "a0590ff3cf5a4c604091d856a8d5a43f46f95b7fced2961693a4f8478b9c1a99",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a0590ff3cf5a4c604091d856a8d5a43f46f95b7fced2961693a4f8478b9c1a99",
+    "exported_bytes": 217
+  },
+  "raw/shinka/gen_3/main.py": {
+    "source": "shinka/gen_3/main.py",
+    "original_sha256": "578052260003db157ef687195a24e129b445c2fa90ad6639873c00f89d846c42",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "578052260003db157ef687195a24e129b445c2fa90ad6639873c00f89d846c42",
+    "exported_bytes": 110
+  },
+  "raw/shinka/gen_3/original.py": {
+    "source": "shinka/gen_3/original.py",
+    "original_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "exported_bytes": 110
+  },
+  "raw/shinka/gen_3/results/correct.json": {
+    "source": "shinka/gen_3/results/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/shinka/gen_3/results/job_log.err": {
+    "source": "shinka/gen_3/results/job_log.err",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_3/results/job_log.out": {
+    "source": "shinka/gen_3/results/job_log.out",
+    "original_sha256": "c8fd2ca6484cdb47a7ea71b37921a957f4179e424cc1d1e3e0e95c63d102bdf3",
+    "original_bytes": 71,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_3/results/metrics.json": {
+    "source": "shinka/gen_3/results/metrics.json",
+    "original_sha256": "48b3a45f6db5750b3b078f11654a0f841e2150ac8e00e403fd8e54c475fea8fb",
+    "original_bytes": 5564,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "48b3a45f6db5750b3b078f11654a0f841e2150ac8e00e403fd8e54c475fea8fb",
+    "exported_bytes": 5564
+  },
+  "raw/shinka/gen_3/results/seed_1001/checkpoints.npz": {
+    "source": "shinka/gen_3/results/seed_1001/checkpoints.npz",
+    "original_sha256": "fd918cccdd27fa352f8be0f27e76e4139eeb35ccdf0e9c27669daefd444583eb",
+    "original_bytes": 18128,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_3/results/seed_1001/config.json": {
+    "source": "shinka/gen_3/results/seed_1001/config.json",
+    "original_sha256": "ec27ef488ae0cf7e84e50d5eb4815d58cc1cba74eae290c75d9c4871843172e3",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ec27ef488ae0cf7e84e50d5eb4815d58cc1cba74eae290c75d9c4871843172e3",
+    "exported_bytes": 1370
+  },
+  "raw/shinka/gen_3/results/seed_1001/manifest.json": {
+    "source": "shinka/gen_3/results/seed_1001/manifest.json",
+    "original_sha256": "f4b2e55b2a97d2af64976626e28e57395e94eba123b4e2d94d4aa628e8951e5f",
+    "original_bytes": 1777,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "1cf9f37f096b7fdd4030275ea0e8193ef45c17a0a43ea8ec2880f5186c8e7f97",
+    "exported_bytes": 1594
+  },
+  "raw/shinka/gen_3/results/seed_1001/process.log": {
+    "source": "shinka/gen_3/results/seed_1001/process.log",
+    "original_sha256": "abaf9bfd7ed12f05fd1766e2f3aa3d797474e4d466aee333fb7e5d8896f0e3a1",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f025047ded81ae660d2810f1b552695f1d285133c0e4b297c9ae71a3d541a53f",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_3/results/seed_1001/results.json": {
+    "source": "shinka/gen_3/results/seed_1001/results.json",
+    "original_sha256": "0e7ffc5a103937a63025035d34d7615797b5b385613c1477c7abf8c8d6c1bf71",
+    "original_bytes": 2146,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0e7ffc5a103937a63025035d34d7615797b5b385613c1477c7abf8c8d6c1bf71",
+    "exported_bytes": 2146
+  },
+  "raw/shinka/gen_3/results/seed_1001/stacks.txt": {
+    "source": "shinka/gen_3/results/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_3/results/seed_1001/summary.json": {
+    "source": "shinka/gen_3/results/seed_1001/summary.json",
+    "original_sha256": "85a59eea4e4ddce624ceff18c9f97e27fa6ba77523af5215bc9e91eaf85fd9ca",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "85a59eea4e4ddce624ceff18c9f97e27fa6ba77523af5215bc9e91eaf85fd9ca",
+    "exported_bytes": 241
+  },
+  "raw/shinka/gen_3/results/seed_1001/train.log": {
+    "source": "shinka/gen_3/results/seed_1001/train.log",
+    "original_sha256": "86233f9de1b7d27890161581533445b0a77aff5c98d73a3a3630b8769a768b73",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "de71c6cf5a9c9dfbc5ed2144328aae66cf3d83f1035846d98386ebf17d879a8c",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_3/results/seed_1001/training_metrics.json": {
+    "source": "shinka/gen_3/results/seed_1001/training_metrics.json",
+    "original_sha256": "e6ebce86884299c1364108f06e66b10e96f08c741f89fe44b85bf184d4111a3e",
+    "original_bytes": 69620,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e6ebce86884299c1364108f06e66b10e96f08c741f89fe44b85bf184d4111a3e",
+    "exported_bytes": 69620
+  },
+  "raw/shinka/gen_3/results/seed_1001/trajectory.npz": {
+    "source": "shinka/gen_3/results/seed_1001/trajectory.npz",
+    "original_sha256": "a3403e2b7d501b657d424064b94ce2b7289b1fc1121763015b84d28fe58b7922",
+    "original_bytes": 104184,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_3/results/seed_1002/checkpoints.npz": {
+    "source": "shinka/gen_3/results/seed_1002/checkpoints.npz",
+    "original_sha256": "3555eb35250bc579cadde04dd2f53e3096769f6cfb19e5ec7eb5e2b1b199f0b5",
+    "original_bytes": 18150,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_3/results/seed_1002/config.json": {
+    "source": "shinka/gen_3/results/seed_1002/config.json",
+    "original_sha256": "4dfb0e160d3263da26fba15808ec36549fe14ef5bd067014bdd1b6f5ceb4a790",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4dfb0e160d3263da26fba15808ec36549fe14ef5bd067014bdd1b6f5ceb4a790",
+    "exported_bytes": 1370
+  },
+  "raw/shinka/gen_3/results/seed_1002/manifest.json": {
+    "source": "shinka/gen_3/results/seed_1002/manifest.json",
+    "original_sha256": "0b92114643bdbe366f82d24df149021344c0227746577c5de4d68aca7a462cc2",
+    "original_bytes": 1779,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8305af832454dd01738c8f7209e1987590e1692b32c0b21043d288682ce83b49",
+    "exported_bytes": 1596
+  },
+  "raw/shinka/gen_3/results/seed_1002/process.log": {
+    "source": "shinka/gen_3/results/seed_1002/process.log",
+    "original_sha256": "010d0ad0620e563070a5e33b46079da79f5cb277e0f96bbeeaff3b24347a3b24",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "cf2ea16e9259b0f429a1cc0204d2511c00bd60d37b0e5d255a8598272758d147",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_3/results/seed_1002/results.json": {
+    "source": "shinka/gen_3/results/seed_1002/results.json",
+    "original_sha256": "d0bb8ce197dabee07fe8b73191b0e6a4344bba6460017e04e73886991972968a",
+    "original_bytes": 2112,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d0bb8ce197dabee07fe8b73191b0e6a4344bba6460017e04e73886991972968a",
+    "exported_bytes": 2112
+  },
+  "raw/shinka/gen_3/results/seed_1002/stacks.txt": {
+    "source": "shinka/gen_3/results/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_3/results/seed_1002/summary.json": {
+    "source": "shinka/gen_3/results/seed_1002/summary.json",
+    "original_sha256": "8346bace4153d632524e39d2aa604905dbb5ccd4424e926a5637b88a92f7396e",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8346bace4153d632524e39d2aa604905dbb5ccd4424e926a5637b88a92f7396e",
+    "exported_bytes": 241
+  },
+  "raw/shinka/gen_3/results/seed_1002/train.log": {
+    "source": "shinka/gen_3/results/seed_1002/train.log",
+    "original_sha256": "0f4671aa2a0e3d6b0a9021283ecf89b6347eda1fca2292125f6e54e76845a625",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "b93145d411fabb8de1eee569625484741847b8a168fdc093280f6ad1a828aad2",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_3/results/seed_1002/training_metrics.json": {
+    "source": "shinka/gen_3/results/seed_1002/training_metrics.json",
+    "original_sha256": "3d2a195e671110739c7a8737955e5cf3824cb43d52734e519d648cade29f2079",
+    "original_bytes": 70368,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3d2a195e671110739c7a8737955e5cf3824cb43d52734e519d648cade29f2079",
+    "exported_bytes": 70368
+  },
+  "raw/shinka/gen_3/results/seed_1002/trajectory.npz": {
+    "source": "shinka/gen_3/results/seed_1002/trajectory.npz",
+    "original_sha256": "cdc8ead517922ac646681152dc488d5c58c942a03629fc95aaf4a0d148052f38",
+    "original_bytes": 112652,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_3/results/seed_1003/checkpoints.npz": {
+    "source": "shinka/gen_3/results/seed_1003/checkpoints.npz",
+    "original_sha256": "2a1ef403801415119fb40328b4487a9c78a3d6e88514123d58beee6def488b87",
+    "original_bytes": 18150,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_3/results/seed_1003/config.json": {
+    "source": "shinka/gen_3/results/seed_1003/config.json",
+    "original_sha256": "3b76291ec7a3240a48f860fe0a5cbec9b6a8b4203d0378bf196d7e9d423f0504",
+    "original_bytes": 1370,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "3b76291ec7a3240a48f860fe0a5cbec9b6a8b4203d0378bf196d7e9d423f0504",
+    "exported_bytes": 1370
+  },
+  "raw/shinka/gen_3/results/seed_1003/manifest.json": {
+    "source": "shinka/gen_3/results/seed_1003/manifest.json",
+    "original_sha256": "6b94da17e05f96a65168b96271187d68e580656cadf5162d4ec6d238bce89059",
+    "original_bytes": 1779,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "8f11fdb4f5879f1c3a0d1fb2791f5ecd85c5e0f36007df4e6abe9539f453a9e3",
+    "exported_bytes": 1596
+  },
+  "raw/shinka/gen_3/results/seed_1003/process.log": {
+    "source": "shinka/gen_3/results/seed_1003/process.log",
+    "original_sha256": "1eff318b2fa8447bf536e26ee909dea9529a92466341ff17b37c87257b5c1bd2",
+    "original_bytes": 1198,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "08465326312fd563cddf83b19a029133f84abce5f098bfdbfcdd702a97779e20",
+    "exported_bytes": 961
+  },
+  "raw/shinka/gen_3/results/seed_1003/results.json": {
+    "source": "shinka/gen_3/results/seed_1003/results.json",
+    "original_sha256": "1cff8889216c75d467056093bcab7ab5444b2b5bcb8e638ea0f97041df9ca265",
+    "original_bytes": 2131,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "1cff8889216c75d467056093bcab7ab5444b2b5bcb8e638ea0f97041df9ca265",
+    "exported_bytes": 2131
+  },
+  "raw/shinka/gen_3/results/seed_1003/stacks.txt": {
+    "source": "shinka/gen_3/results/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_3/results/seed_1003/summary.json": {
+    "source": "shinka/gen_3/results/seed_1003/summary.json",
+    "original_sha256": "21f73f798bcaff55857091bf0f0834c11d05d23ec2c6be49748cb505970d3a28",
+    "original_bytes": 241,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "21f73f798bcaff55857091bf0f0834c11d05d23ec2c6be49748cb505970d3a28",
+    "exported_bytes": 241
+  },
+  "raw/shinka/gen_3/results/seed_1003/train.log": {
+    "source": "shinka/gen_3/results/seed_1003/train.log",
+    "original_sha256": "307a1951d792da76b2a4c01f2cd1cdf0c8f1ee7af997cd1044f4b646970fba76",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "5af2b74575e12826059796536497b81f81a91cf6ef12335fd7ce7d530512723c",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_3/results/seed_1003/training_metrics.json": {
+    "source": "shinka/gen_3/results/seed_1003/training_metrics.json",
+    "original_sha256": "485e0b0ebc7c9d1d77055ab7753e30495f54b6d44eaeb6bebe9cb7e21ca9ef6e",
+    "original_bytes": 71732,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "485e0b0ebc7c9d1d77055ab7753e30495f54b6d44eaeb6bebe9cb7e21ca9ef6e",
+    "exported_bytes": 71732
+  },
+  "raw/shinka/gen_3/results/seed_1003/trajectory.npz": {
+    "source": "shinka/gen_3/results/seed_1003/trajectory.npz",
+    "original_sha256": "bf81fc388330592286875e4299e377d438351fa0685ad879008d49b4c4a8de66",
+    "original_bytes": 104165,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_3/search_replace.txt": {
+    "source": "shinka/gen_3/search_replace.txt",
+    "original_sha256": "0ebc5c98cd2a29076cbdaa3e319b837b0f5b1c55a85980d0302e3eedf9656acf",
+    "original_bytes": 594,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0ebc5c98cd2a29076cbdaa3e319b837b0f5b1c55a85980d0302e3eedf9656acf",
+    "exported_bytes": 594
+  },
+  "raw/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md": {
+    "source": "shinka/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md",
+    "original_sha256": "60f6337c5b4509be674982b9a8ad8046a57c3a0e19bf5d2aa8a611172588b249",
+    "original_bytes": 4056,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "60f6337c5b4509be674982b9a8ad8046a57c3a0e19bf5d2aa8a611172588b249",
+    "exported_bytes": 4056
+  },
+  "raw/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/llm_response.txt": {
+    "source": "shinka/gen_4/attempts/novelty_1/resample_1/patch_1/llm_response.txt",
+    "original_sha256": "d35191d7d8b799be6141ef92cba4827d14e793e7edc29ff87eab0e367701839c",
+    "original_bytes": 625,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d35191d7d8b799be6141ef92cba4827d14e793e7edc29ff87eab0e367701839c",
+    "exported_bytes": 625
+  },
+  "raw/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/metadata.json": {
+    "source": "shinka/gen_4/attempts/novelty_1/resample_1/patch_1/metadata.json",
+    "original_sha256": "fdf5403c6bae85b72cff819446091482029313120dd771f1e968141d459acd7f",
+    "original_bytes": 889,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "c26ff70cd7a97992bca779761cda7e79d0f0ef9cce9228afaf550c99993562f0",
+    "exported_bytes": 810
+  },
+  "raw/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/patch.txt": {
+    "source": "shinka/gen_4/attempts/novelty_1/resample_1/patch_1/patch.txt",
+    "original_sha256": "eb4829f25d5bd00ba295e1b89460432d5b690e6cd915ba3e6c778e0ed378c399",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "eb4829f25d5bd00ba295e1b89460432d5b690e6cd915ba3e6c778e0ed378c399",
+    "exported_bytes": 217
+  },
+  "raw/shinka/gen_4/edit.diff": {
+    "source": "shinka/gen_4/edit.diff",
+    "original_sha256": "eb4829f25d5bd00ba295e1b89460432d5b690e6cd915ba3e6c778e0ed378c399",
+    "original_bytes": 217,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "eb4829f25d5bd00ba295e1b89460432d5b690e6cd915ba3e6c778e0ed378c399",
+    "exported_bytes": 217
+  },
+  "raw/shinka/gen_4/main.py": {
+    "source": "shinka/gen_4/main.py",
+    "original_sha256": "0285cbd39c344fa8c472cd760474342896b5354a40fc2d0f6a986b335f0ef8b9",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "0285cbd39c344fa8c472cd760474342896b5354a40fc2d0f6a986b335f0ef8b9",
+    "exported_bytes": 110
+  },
+  "raw/shinka/gen_4/original.py": {
+    "source": "shinka/gen_4/original.py",
+    "original_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "original_bytes": 110,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "exported_bytes": 110
+  },
+  "raw/shinka/gen_4/results/correct.json": {
+    "source": "shinka/gen_4/results/correct.json",
+    "original_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "original_bytes": 39,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "exported_bytes": 39
+  },
+  "raw/shinka/gen_4/results/job_log.err": {
+    "source": "shinka/gen_4/results/job_log.err",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_4/results/job_log.out": {
+    "source": "shinka/gen_4/results/job_log.out",
+    "original_sha256": "bef89f1d314522417a049798829cd5779b70bdd036c3d2168faea9c59abc31ce",
+    "original_bytes": 71,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_4/results/metrics.json": {
+    "source": "shinka/gen_4/results/metrics.json",
+    "original_sha256": "a0094e8e31f3f3bbcc37f1b1c4e06aa795adb356cf7941633214e7fe8fe4447f",
+    "original_bytes": 5566,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a0094e8e31f3f3bbcc37f1b1c4e06aa795adb356cf7941633214e7fe8fe4447f",
+    "exported_bytes": 5566
+  },
+  "raw/shinka/gen_4/results/seed_1001/checkpoints.npz": {
+    "source": "shinka/gen_4/results/seed_1001/checkpoints.npz",
+    "original_sha256": "e27de3a4882afa41c03e93a003eccb1210443299227c57cc41351d1c0b638534",
+    "original_bytes": 18163,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_4/results/seed_1001/config.json": {
+    "source": "shinka/gen_4/results/seed_1001/config.json",
+    "original_sha256": "ba9032c70620bd307aca892a3bdc77eba54d02b1a6a40af0469f734f9762b63e",
+    "original_bytes": 1371,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ba9032c70620bd307aca892a3bdc77eba54d02b1a6a40af0469f734f9762b63e",
+    "exported_bytes": 1371
+  },
+  "raw/shinka/gen_4/results/seed_1001/manifest.json": {
+    "source": "shinka/gen_4/results/seed_1001/manifest.json",
+    "original_sha256": "8b147e6ea5cd2db5dbdfcf7b070dfedf8995f97b212ce2895a825b3037a14434",
+    "original_bytes": 1781,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "43c9ca5382a69d0502f1b8734d15d84b7a7a1e8eb46019c0e80b6f8a9f30cd96",
+    "exported_bytes": 1598
+  },
+  "raw/shinka/gen_4/results/seed_1001/process.log": {
+    "source": "shinka/gen_4/results/seed_1001/process.log",
+    "original_sha256": "f8a689b8f09dcab5900b5a54811a96cd3b9b9344420efbee9cbdb919d0ccae5c",
+    "original_bytes": 1199,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "3959e4b1131e26906c8180fdb4e2bc47862cf16b327d21d71706b6689158cb53",
+    "exported_bytes": 962
+  },
+  "raw/shinka/gen_4/results/seed_1001/results.json": {
+    "source": "shinka/gen_4/results/seed_1001/results.json",
+    "original_sha256": "ff3b596de74d08ddb529644c972f18ded3d605ae1fc06f3a9ec071c1a688d38a",
+    "original_bytes": 2111,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "ff3b596de74d08ddb529644c972f18ded3d605ae1fc06f3a9ec071c1a688d38a",
+    "exported_bytes": 2111
+  },
+  "raw/shinka/gen_4/results/seed_1001/stacks.txt": {
+    "source": "shinka/gen_4/results/seed_1001/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_4/results/seed_1001/summary.json": {
+    "source": "shinka/gen_4/results/seed_1001/summary.json",
+    "original_sha256": "4417640f8992af535a5d73f038c71e3be2e76482314aac6d983f53558f701a4e",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "4417640f8992af535a5d73f038c71e3be2e76482314aac6d983f53558f701a4e",
+    "exported_bytes": 242
+  },
+  "raw/shinka/gen_4/results/seed_1001/train.log": {
+    "source": "shinka/gen_4/results/seed_1001/train.log",
+    "original_sha256": "8600cece727acdf275fb923186914f05fa8e9b014f2d0e25f456e19de0cf7904",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "df68b20d94377cfd3158501bdd5b2de959a255d6fb8263e2b06ae6f9becf2d05",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_4/results/seed_1001/training_metrics.json": {
+    "source": "shinka/gen_4/results/seed_1001/training_metrics.json",
+    "original_sha256": "450cb46003ce03b478f25563401a35d6f9dc5f792fb22663313c77b777f3d704",
+    "original_bytes": 70133,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "450cb46003ce03b478f25563401a35d6f9dc5f792fb22663313c77b777f3d704",
+    "exported_bytes": 70133
+  },
+  "raw/shinka/gen_4/results/seed_1001/trajectory.npz": {
+    "source": "shinka/gen_4/results/seed_1001/trajectory.npz",
+    "original_sha256": "1e70e275301b5f2e8be8f1571b46c7643fa4e40b57bd44e75b46251db5c65040",
+    "original_bytes": 99853,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_4/results/seed_1002/checkpoints.npz": {
+    "source": "shinka/gen_4/results/seed_1002/checkpoints.npz",
+    "original_sha256": "94fb39ee3cb897ffe6a3b9a21eba65190aa2f43fd90b4f355682cc8861fe270e",
+    "original_bytes": 18137,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_4/results/seed_1002/config.json": {
+    "source": "shinka/gen_4/results/seed_1002/config.json",
+    "original_sha256": "7493be827a22909d6832a0b57f2f4d151a221cb5a9d6696dab71bd5587e0572d",
+    "original_bytes": 1371,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7493be827a22909d6832a0b57f2f4d151a221cb5a9d6696dab71bd5587e0572d",
+    "exported_bytes": 1371
+  },
+  "raw/shinka/gen_4/results/seed_1002/manifest.json": {
+    "source": "shinka/gen_4/results/seed_1002/manifest.json",
+    "original_sha256": "bacec3f7caeb788f1ffbf8bacd24c345d98fba9eab90e96b2494fa0a11dc025a",
+    "original_bytes": 1780,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "55691c28b306b8459df89764a63a5f86ceb7c032c0d9b05ccad3c81cd50dbe99",
+    "exported_bytes": 1597
+  },
+  "raw/shinka/gen_4/results/seed_1002/process.log": {
+    "source": "shinka/gen_4/results/seed_1002/process.log",
+    "original_sha256": "24f62a038edbb3422df1a00c941aab31149898c95df0e241cc29dc0f92b00e62",
+    "original_bytes": 1199,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "f277c65645d2027c2036c7963ffdf80646509cda0371d555f125d24666cbef47",
+    "exported_bytes": 962
+  },
+  "raw/shinka/gen_4/results/seed_1002/results.json": {
+    "source": "shinka/gen_4/results/seed_1002/results.json",
+    "original_sha256": "d77b48e07e3079121948e672b118829e23709c66207835d2b36754088cd62113",
+    "original_bytes": 2112,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d77b48e07e3079121948e672b118829e23709c66207835d2b36754088cd62113",
+    "exported_bytes": 2112
+  },
+  "raw/shinka/gen_4/results/seed_1002/stacks.txt": {
+    "source": "shinka/gen_4/results/seed_1002/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_4/results/seed_1002/summary.json": {
+    "source": "shinka/gen_4/results/seed_1002/summary.json",
+    "original_sha256": "80ddeb59df242cf7050df7cc78b95cdb5174a813dc2013c250ddb005cba318f8",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "80ddeb59df242cf7050df7cc78b95cdb5174a813dc2013c250ddb005cba318f8",
+    "exported_bytes": 242
+  },
+  "raw/shinka/gen_4/results/seed_1002/train.log": {
+    "source": "shinka/gen_4/results/seed_1002/train.log",
+    "original_sha256": "730af3e6f62965f1b42a96f51a2c3606ac69bf4ded9a4fb91a034975e7006fab",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "c3fa53ce4c4f5b51dd58daf9914d460ee18fa7b493b2cb24cd7b61b0e41bf81f",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_4/results/seed_1002/training_metrics.json": {
+    "source": "shinka/gen_4/results/seed_1002/training_metrics.json",
+    "original_sha256": "aa38a58d06e8fb47755d19f7094feebaeeb94ed99f58009bec7a7887bcf4f4c6",
+    "original_bytes": 71194,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "aa38a58d06e8fb47755d19f7094feebaeeb94ed99f58009bec7a7887bcf4f4c6",
+    "exported_bytes": 71194
+  },
+  "raw/shinka/gen_4/results/seed_1002/trajectory.npz": {
+    "source": "shinka/gen_4/results/seed_1002/trajectory.npz",
+    "original_sha256": "bf91016be121362fc4921d7aef9decde5fc6a47ad1a800f000e87db79b784211",
+    "original_bytes": 106934,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_4/results/seed_1003/checkpoints.npz": {
+    "source": "shinka/gen_4/results/seed_1003/checkpoints.npz",
+    "original_sha256": "25fa626a61fe7588b61ada34b68ae80c6269c3552cb27c4d65d2e263d6442d48",
+    "original_bytes": 18118,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_4/results/seed_1003/config.json": {
+    "source": "shinka/gen_4/results/seed_1003/config.json",
+    "original_sha256": "9d50419c1386ca50bca0c85cb3d351c8ddf9164f768b0c1f6123784123c6f0cd",
+    "original_bytes": 1371,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "9d50419c1386ca50bca0c85cb3d351c8ddf9164f768b0c1f6123784123c6f0cd",
+    "exported_bytes": 1371
+  },
+  "raw/shinka/gen_4/results/seed_1003/manifest.json": {
+    "source": "shinka/gen_4/results/seed_1003/manifest.json",
+    "original_sha256": "2c0bfb1f721bead1985843b4b204b0fc47ce7fe8874f1a9eb7a434497092e974",
+    "original_bytes": 1781,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "83113762562a44cdc71c2991e25b6244e7e57a790ee90519cf5f5b692ba61c37",
+    "exported_bytes": 1598
+  },
+  "raw/shinka/gen_4/results/seed_1003/process.log": {
+    "source": "shinka/gen_4/results/seed_1003/process.log",
+    "original_sha256": "510b438aca9994445771be78c580588853f7f9195ba508f904f4f677f6e88806",
+    "original_bytes": 1199,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "80acedd964c055f89963ebb082cdfd483665a7668f5846f730ec72be1af914f4",
+    "exported_bytes": 962
+  },
+  "raw/shinka/gen_4/results/seed_1003/results.json": {
+    "source": "shinka/gen_4/results/seed_1003/results.json",
+    "original_sha256": "697cfd089e83b9441cd39ce92e2a227cc39dd41af739da058616af9e254b36b8",
+    "original_bytes": 2146,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "697cfd089e83b9441cd39ce92e2a227cc39dd41af739da058616af9e254b36b8",
+    "exported_bytes": 2146
+  },
+  "raw/shinka/gen_4/results/seed_1003/stacks.txt": {
+    "source": "shinka/gen_4/results/seed_1003/stacks.txt",
+    "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original_bytes": 0,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exported_bytes": 0
+  },
+  "raw/shinka/gen_4/results/seed_1003/summary.json": {
+    "source": "shinka/gen_4/results/seed_1003/summary.json",
+    "original_sha256": "7fabf80c9f1d237fcf1c98bc970772c4838e7babd00873e3b9010cb9dbe363ab",
+    "original_bytes": 242,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "7fabf80c9f1d237fcf1c98bc970772c4838e7babd00873e3b9010cb9dbe363ab",
+    "exported_bytes": 242
+  },
+  "raw/shinka/gen_4/results/seed_1003/train.log": {
+    "source": "shinka/gen_4/results/seed_1003/train.log",
+    "original_sha256": "3f68a1a52bf15eab2c27137d0bb1273e3fc0e307d220c644cf5d895686e2667d",
+    "original_bytes": 465,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "2c8cca0f0853340beed9116862bd5c69f565b3dc609370f344465176022a9a07",
+    "exported_bytes": 307
+  },
+  "raw/shinka/gen_4/results/seed_1003/training_metrics.json": {
+    "source": "shinka/gen_4/results/seed_1003/training_metrics.json",
+    "original_sha256": "02007798be3b0ba47807eef1fef9b6813e151113cc0cee33718bbf42e079b148",
+    "original_bytes": 72072,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "02007798be3b0ba47807eef1fef9b6813e151113cc0cee33718bbf42e079b148",
+    "exported_bytes": 72072
+  },
+  "raw/shinka/gen_4/results/seed_1003/trajectory.npz": {
+    "source": "shinka/gen_4/results/seed_1003/trajectory.npz",
+    "original_sha256": "297901593f15538554948a26e8fe2b17970e9224d32ebd31458f4c18fcf33dfe",
+    "original_bytes": 109775,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/gen_4/search_replace.txt": {
+    "source": "shinka/gen_4/search_replace.txt",
+    "original_sha256": "d35191d7d8b799be6141ef92cba4827d14e793e7edc29ff87eab0e367701839c",
+    "original_bytes": 625,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "d35191d7d8b799be6141ef92cba4827d14e793e7edc29ff87eab0e367701839c",
+    "exported_bytes": 625
+  },
+  "raw/shinka/headless_prompts/prompt_33bdd7f4ad2544508458dbed0279b48e.md": {
+    "source": "shinka/headless_prompts/prompt_33bdd7f4ad2544508458dbed0279b48e.md",
+    "original_sha256": "f864d2b01d45b2afce6afc7d7ea84934b7335ba288fd02026ed47078d2f42f69",
+    "original_bytes": 4055,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "f864d2b01d45b2afce6afc7d7ea84934b7335ba288fd02026ed47078d2f42f69",
+    "exported_bytes": 4055
+  },
+  "raw/shinka/headless_prompts/prompt_8e4c6e510a1043898f4a54f1fbe0a240.md": {
+    "source": "shinka/headless_prompts/prompt_8e4c6e510a1043898f4a54f1fbe0a240.md",
+    "original_sha256": "60f6337c5b4509be674982b9a8ad8046a57c3a0e19bf5d2aa8a611172588b249",
+    "original_bytes": 4056,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "60f6337c5b4509be674982b9a8ad8046a57c3a0e19bf5d2aa8a611172588b249",
+    "exported_bytes": 4056
+  },
+  "raw/shinka/headless_prompts/prompt_996f1e3d370443d5afc66ae14c872cf5.md": {
+    "source": "shinka/headless_prompts/prompt_996f1e3d370443d5afc66ae14c872cf5.md",
+    "original_sha256": "a280283620b9366c464a784039a680e85b068cd2829f6abb93a85309d27d43bc",
+    "original_bytes": 3334,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a280283620b9366c464a784039a680e85b068cd2829f6abb93a85309d27d43bc",
+    "exported_bytes": 3334
+  },
+  "raw/shinka/headless_prompts/prompt_9bc069731f3e46eeb8375825b300d111.md": {
+    "source": "shinka/headless_prompts/prompt_9bc069731f3e46eeb8375825b300d111.md",
+    "original_sha256": "60baf735c22f2eb58d29f50d82b0c72a219d360852f8c67c676c0da96b2129ee",
+    "original_bytes": 3743,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "60baf735c22f2eb58d29f50d82b0c72a219d360852f8c67c676c0da96b2129ee",
+    "exported_bytes": 3743
+  },
+  "raw/shinka/init_program.py": {
+    "source": "shinka/init_program.py",
+    "original_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "original_bytes": 109,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "exported_bytes": 109
+  },
+  "raw/shinka/pricing_snapshot.json": {
+    "source": "shinka/pricing_snapshot.json",
+    "original_sha256": "8d77af1f01052696f6b2285d4a2fd4458378ef6adfb48594b65ce583c357ba31",
+    "original_bytes": 248329,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "8d77af1f01052696f6b2285d4a2fd4458378ef6adfb48594b65ce583c357ba31",
+    "exported_bytes": 248329
+  },
+  "raw/shinka/programs.sqlite": {
+    "source": "shinka/programs.sqlite",
+    "original_sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+    "original_bytes": 4096,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/programs.sqlite-shm": {
+    "source": "shinka/programs.sqlite-shm",
+    "original_sha256": "06f114d63d24eab63711bb0ade67c837ef495bcfe378e9725428adeafd2baab6",
+    "original_bytes": 32768,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/programs.sqlite-wal": {
+    "source": "shinka/programs.sqlite-wal",
+    "original_sha256": "82adc3fee9cba5346b0c263632d6f2e97edbd06d5a37e328eae189ef55b4c111",
+    "original_bytes": 1141272,
+    "exported": false,
+    "reason": "Binary/native artifact retained locally"
+  },
+  "raw/shinka/rng_state.json": {
+    "source": "shinka/rng_state.json",
+    "original_sha256": "a14f7a98a42b1252bb30c519d091686d2a2e7cbb3f49dcd9b1bec55289fbba6b",
+    "original_bytes": 22259,
+    "exported": true,
+    "redacted": false,
+    "exported_sha256": "a14f7a98a42b1252bb30c519d091686d2a2e7cbb3f49dcd9b1bec55289fbba6b",
+    "exported_bytes": 22259
+  },
+  "raw/state.json": {
+    "source": "state.json",
+    "original_sha256": "5e952f3cc6206d576ce14cc072b4a804150043af1dc1cc92efd69dec08d8947b",
+    "original_bytes": 69898,
+    "exported": true,
+    "redacted": true,
+    "exported_sha256": "c20b7b8591a6655eafbd9be6dca4491ce9808b014bcfe442b46add8aa0cc2e2d",
+    "exported_bytes": 68326
+  }
+}

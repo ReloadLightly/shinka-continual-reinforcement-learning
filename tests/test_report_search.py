@@ -186,6 +186,13 @@ def test_usage_counts_launches_without_inventing_backend_requests(tmp_path):
     assert actual["backend_request_count"] is None
     assert actual["remaining_subscription_quota"] is None
     assert actual["reported_tokens_for_recorded_responses"]["output_tokens"] == 120
+    archive["programs"][0]["metadata"]["llm_result"].update(
+        model_name="headless/codex?effort=medium", thinking_tokens=0, num_tool_calls=0)
+    actual = report.summarize_usage(archive, ledger)
+    assert actual["reported_tokens_for_recorded_responses"]["input_tokens_uncached"] == 500
+    assert actual["reported_tokens_for_recorded_responses"]["cached_input_tokens"] is None
+    assert actual["reported_tokens_for_recorded_responses"]["thinking_tokens"] is None
+    assert actual["reported_tokens_for_recorded_responses"]["num_tool_calls"] is None
 
 
 def test_export_checks_native_ancestry_and_keeps_binary_hashes(tmp_path):

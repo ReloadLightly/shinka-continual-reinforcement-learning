@@ -120,9 +120,11 @@ effort are the applicable controls.
 
 Headless's reported dollar cost is an API-price-equivalent estimate, not a
 subscription charge or remaining-quota meter. Public package and pricing metadata
-requests may still occur; they are not paid model inference. Native support and
-authentication preflight are verified, but the first actual proposal and archive
-resume remain experimental acceptance gates.
+requests may still occur; they are not paid model inference. The first four
+subscription proposals and the native archive resume have passed their integration
+gate. The [completed evidence](../../reports/search-integration-20261002/summary.json)
+includes a matched four-configuration random control; larger search and held-out
+evaluation remain pending.
 
 ### Preflight and staged launch
 
@@ -189,8 +191,28 @@ block, use Standard speed, and stop if the included allowance is exhausted.
 
 The retry settings permit at most one mutation request per outer proposal slot;
 Codex's own internal tool/service behavior is not a one-token-call guarantee.
-Neither a subscription-backed proposal nor an archive resume has been launched
-yet. The first four proposals are the explicit integration gate.
+The completed integration run used four successful Codex launches, with no failed
+or duplicate candidates. Its next cumulative targets are 13 Shinka programs and
+12 random controls, using the same frozen archive and pool.
+
+The job configuration explicitly sets `numeric_threads_per_job: 1`; the native
+default otherwise overrides outer thread variables. Both arms use identical
+numerical thread settings, and the evaluator records and checks actual affinity
+and thread values before training. The initial mismatched setup attempt was
+preserved and stopped before any model proposal.
+
+After a completed block, validate and export its evidence to a fresh path:
+
+```bash
+.venv/bin/python scripts/report_search.py \
+  --results-dir results/subscription-pilot \
+  --output reports/subscription-pilot-stage5
+```
+
+The exporter reconstructs scores from raw curves and checks source, actual runtime,
+task offsets, candidate ancestry, and artifact hashes. Usage records distinguish
+CLI launches from unobserved backend requests. Native input-token counts exclude
+cached input; default-zero reasoning and tool fields are reported as unavailable.
 
 ## Separate API example
 

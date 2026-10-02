@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "smaller_mutations_stronger_selection",
+  "patch_description": "Search results favor lower mutation strength and elite ratio. Try sigma 0.07 and elite_ratio 0.10 to refine successful policies with smaller perturbations and concentrate selection on stronger performers. This extrapolates from the best observed configuration; improvement remains to be verified using the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T20:44:18.785121",
+  "llm_cost": 0.0178508,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

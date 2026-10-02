@@ -1,0 +1,15 @@
+<NAME>
+smaller_mutations_stronger_selection
+</NAME>
+<DESCRIPTION>
+Search results favor lower mutation strength and elite ratio. Try sigma 0.07 and elite_ratio 0.10 to refine successful policies with smaller perturbations and concentrate selection on stronger performers. This extrapolates from the best observed configuration; improvement remains to be verified using the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.15, "elite_ratio": 0.20}
+=======
+def get_ga_config():
+    return {"sigma": 0.07, "elite_ratio": 0.10}
+>>>>>>> REPLACE
+</DIFF>

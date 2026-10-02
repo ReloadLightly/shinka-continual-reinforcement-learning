@@ -228,10 +228,19 @@ def summarize_usage(archive: dict, ledger: Path) -> dict:
     responses = [row for row in responses if row]
     tokens = {}
     for key in ("input_tokens", "output_tokens", "thinking_tokens", "num_tool_calls"):
+        # Headless does not forward a tool trace into QueryResult; its default zero
+        # is not an observed count. Missing reasoning usage also becomes zero.
+        if any(str(row.get("model_name", "")).startswith("headless/")
+               and (key == "num_tool_calls" or key == "thinking_tokens" and not row.get(key))
+               for row in responses):
+            tokens[key] = None
+            continue
         values = [row[key] for row in responses if row.get(key) is not None]
         require(all(type(value) is int and value >= 0 for value in values),
                 f"Invalid native usage field: {key}")
-        tokens[key] = sum(values) if len(values) == len(responses) and responses else None
+        label = "input_tokens_uncached" if key == "input_tokens" else key
+        tokens[label] = sum(values) if len(values) == len(responses) and responses else None
+    tokens["cached_input_tokens"] = None
     return {"ledger_available": ledger.exists(), "adapter_attempts": len(requests),
             "codex_exec_launches": sum("codex_exec" in row for row in requests.values()),
             "successful_adapter_responses": sum(row.get("finished", {}).get("outcome")
@@ -244,7 +253,10 @@ def summarize_usage(archive: dict, ledger: Path) -> dict:
             "backend_request_count": None, "remaining_subscription_quota": None,
             "interpretation": "CLI launches and stored response usage are observed. Internal "
                               "provider requests, quota remaining, and account billing are not "
-                              "observable here. Native price estimates are not subscription charges."}
+                              "observable here. Headless default-zero reasoning/tool fields are "
+                              "treated as unavailable. Headless's Codex input count excludes cached "
+                              "input; Shinka does not retain the cached count, so total prompt tokens "
+                              "are unavailable. Native price estimates are not subscription charges."}
 
 
 def export_search(runs_root: Path, output: Path) -> dict:
