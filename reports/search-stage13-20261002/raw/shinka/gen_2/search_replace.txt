@@ -1,0 +1,15 @@
+<NAME>
+refine_mutation_and_selection
+</NAME>
+<DESCRIPTION>
+Try sigma 0.10 and elite_ratio 0.15. The search results favor smaller mutations and a lower elite ratio than the original configuration. This proposal extends that direction moderately: smaller mutations may preserve successful balancing policies, while fewer elites increase selection pressure. Improvement remains to be verified with the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.15, "elite_ratio": 0.20}
+=======
+def get_ga_config():
+    return {"sigma": 0.10, "elite_ratio": 0.15}
+>>>>>>> REPLACE
+</DIFF>

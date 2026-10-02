@@ -1,0 +1,15 @@
+{
+  "generation": 6,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "focused_refinement",
+  "patch_description": "The search results favor smaller mutations and stronger selection. This proposal extends that trend with sigma 0.05 and elite_ratio 0.075, aiming for finer policy refinement while retaining mutation-driven exploration. It changes only the static configuration; improved performance remains to be verified with the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:18:34.137876",
+  "llm_cost": 0.0175788,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

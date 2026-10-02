@@ -2,15 +2,21 @@
 
 This document specifies the next experiments for the CartPole reproduction and
 the ShinkaEvolve extension. The 18-trial baseline pilot with matched nominal
-training budgets and a stationary control is complete. The next experiment is a
-staged search over static GA settings, now that the pilot validates learning and analysis.
-Adaptive mutation programs are a separate subsequent experiment.
+training budgets and a stationary control is complete. The staged search over
+static GA settings has reached its second checkpoint.
+This two-parameter search establishes the configuration baseline for the main
+extension: executable adaptive mutation rules evolved by ShinkaEvolve. It is
+not the intended endpoint of the project.
 
-**Search integration outcome, 2 October 2026:** four valid distinct Shinka proposals
-and four frozen random controls completed on the three development seeds. Native
-archive resume, actual runtime settings, source-to-score ancestry, and matched
-evaluation budgets passed independent audit. The next block is 13 total Shinka
-programs and 12 random controls. See the [complete evidence](../reports/search-integration-20261002/summary.json).
+**Search checkpoint, 2 October 2026:** 13 Shinka programs, including the shared
+default, and 12 frozen random controls completed on three development seeds.
+All 12 mutations were valid and distinct; there were no failed evaluations.
+Native resume through 2 → 5 → 13 programs, actual runtime settings, ancestry,
+and matched evaluation budgets passed independent audit. Best development scores
+were 0.8721 for Shinka and 0.8857 for random search. This single-run result is
+retained; it does not change the declared 25/24 endpoint. See the
+[complete evidence](../reports/search-stage13-20261002/summary.json) and
+[earlier integration checkpoint](../reports/search-integration-20261002/summary.json).
 
 **Pilot outcome, 2 October 2026:** all 18 trials completed; the predefined
 stationary-learning gate passed for GA, ES, and PPO. The frozen protocol is
@@ -30,10 +36,12 @@ the [reproduction plan](reproduction-plan.md).
 ## 1. Questions and experimental separation
 
 The reproduction asks whether the pinned GA, ES, and PPO reproduce the reference
-paper's behavior under repeated CartPole task changes. The extension asks whether
-LLM-guided program search selects a better GA configuration than the default and
-an equally budgeted random search. Discovering a new adaptive learning rule is a
-later question and needs a larger program interface.
+paper's behavior under repeated CartPole task changes. The first extension
+experiment asks whether LLM-guided search selects a better fixed GA configuration
+than the default and an equally budgeted random search. The main extension then
+asks whether executable, training-dependent mutation rules improve learning and
+retention relative to these static baselines and existing adaptive mechanisms.
+The current two-number interface cannot answer that second question.
 
 Keep the following levels distinct: an **outer proposal** is a candidate Python
 program; a **candidate evaluation** runs that program's settings on several
@@ -124,6 +132,12 @@ phase `i`'s task. Learning accuracy averages `R_i,i`; zero-shot transfer average
 consecutive switches. This includes both switching directions and allows negative
 forgetting. The paper defines these quantities in
 [Appendix A.3](https://arxiv.org/html/2610.01583v1#A3).
+
+Report the individual switch differences alongside their average and the
+corresponding own-task returns before and after each switch. A negative mean can
+combine improvement on an initially poorly learned task with losses at later
+switches; it does not establish the absence of forgetting. This reporting
+requirement leaves the reference metric and frozen static-search score intact.
 
 Implement these definitions explicitly in the analysis adapter:
 
@@ -350,13 +364,15 @@ Benchmark one promoted-budget trial before scheduling validation, and measure
 the paper-size profile separately; training-step ratios alone do not establish
 wall-time ratios.
 
-The completed five-slot integration gate took **10.61 minutes**, and four matched
-random controls took **7.55 minutes**, for **18.15 minutes** of execution excluding
-setup, preflight, and review pauses. Four actual proposal responses took 14.4–19.4
-seconds each. At the observed evaluation speeds, allow roughly **30–45 minutes**
-for the next eight proposals plus eight controls. The earlier table preserves the
-initial planning assumptions; neither timing range guarantees future latency or
-remaining subscription allowance.
+The five-slot integration gate and four controls took **18.15 minutes**. The next
+eight proposals plus eight controls added **29.09 minutes**, bringing cumulative
+execution to **47.24 minutes** for 13 Shinka programs and 12 controls. These
+measurements exclude setup, preflight, and review pauses; exact per-session times
+are in the [checkpoint evidence](../reports/search-stage13-20261002/summary.json).
+Allow approximately **45–65 minutes**, including review, for the remaining
+12 proposals and 12 controls. The earlier table preserves the initial planning
+assumptions. Neither estimates nor observed response times guarantee future
+latency or remaining subscription allowance.
 
 ## 6. Promotion and final evaluation
 
@@ -387,6 +403,30 @@ and the paper's reporting metrics. Fifty continual trials would require
 stage needs separate timing and hardware planning; the development pilot is not
 evidence that it fits a short local session.
 
+### One full-budget development reference
+
+With the 13-program/12-control block complete, finish the existing static pilot at
+25 programs and 24 random controls. Retain this declared endpoint even if the
+intermediate result already favors one search method. Next measure one complete
+default-GA reference trial with the paper's **20 phases, 200 generations per
+phase, population 512, three training episodes, and 500-step cap**: 4,000
+generations and **3,072,000,000 nominal training steps**. Use development seed
+1001 and task trial 1002, with ten evaluation episodes and the unchanged
+baseline parameters. Add a separately named development timing profile; do not
+execute the final-reporting seed list in `paper-cartpole` for this measurement.
+
+Record per-phase wall time, total wall time, peak resident memory, resolved
+configuration, checkpoint metrics, and source hashes. Plan this as one complete
+training trial, with an explicit runtime allowance and no assumed mid-trial
+resume. If resource limits prevent completion, preserve the partial evidence
+and report the completed phases; a segment is only a timing estimate. Use the
+measurement to decide local versus larger-hardware scheduling. It cannot
+establish a method ranking, and GA timing cannot stand in for PPO timing.
+
+This is a resource measurement and a paper-scale learning reference, not a new
+large preparatory pilot. Finalist validation and the narrow adaptive-adapter
+checks below remain the only additional gates before their respective studies.
+
 Report every trial, mean performance, and uncertainty resampled over trials,
 not over individual correlated checkpoints. Keep search cost separate from the
 per-learner training budget. A single run of each search strategy supports a
@@ -395,10 +435,10 @@ repeated outer searches under independently seeded search trajectories.
 
 ## 7. Second search space: adaptive mutation programs
 
-Static configuration search is a useful executable-system test and a necessary
-baseline. Actual learning-rule discovery needs code whose behavior depends on
-the learning process. The proposed next interface evolves only mutation-width
-adaptation:
+Static configuration search supplies a baseline for the main Shinka extension.
+Actual learning-rule discovery needs code whose behavior depends on the
+learning process. The proposed next interface evolves only mutation-width
+adaptation; selection rules and archive replacement remain fixed:
 
 ```python
 # EVOLVE-BLOCK-START
@@ -448,6 +488,63 @@ training and evaluation traces under both stationary and switching conditions.
 An adaptive test program must demonstrably change logged sigma while preserving
 the training budget and task schedule.
 
+These are focused checks on the new adapter: use short, seeded stationary and
+switching traces, plus one nonconstant rule. The completed 18-trial baseline
+pilot does not need to be repeated to authorize this extension. Compare sigma
+actually used by `ask` as well as the logged value; the upstream logger normally
+reads a fixed value from `variation_params`, so the adaptive adapter must expose
+`adapts_sigma=True`.
+
+### Existing adaptive mechanism and required controls
+
+The reference already introduces a centroid-tracking GA on MountainCar and
+Kinetix. Its `FocusGASearcher` adjusts both mutation width and the fraction of
+archive members eligible as parents; explorers continue at the initial width.
+The authors describe this heuristic in
+[Appendix A.2.1](https://arxiv.org/html/2610.01583v1).
+CartPole uses the plain GA in the pinned
+[gymnax configuration](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/source/configs/gymnax.yaml#L61).
+Keep that faithful CartPole baseline and add the existing adaptive method as a
+separate transfer control.
+
+The pinned
+[implementation](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/source/algorithms/ne/ga.py#L137)
+spends one of the population's evaluations on the old archive centroid and
+reduces offspring by one. After survivor selection, it measures the fraction
+`p` of retained genomes whose fitness the centroid matches or exceeds. Width
+and parent-pool focus are multiplied by `exp(rate * (p - target))` and clipped.
+The paper's explicit settings use initial width 0.5, target 0.9, width rate 0.1,
+focus rate 0.3, width floor 0.00001, and explorer fraction 0.25. Class defaults
+have different target, floor, and exploration settings; instantiate every
+setting explicitly. For transfer to CartPole, preserve its archive fraction
+0.5, crossover rate 0, and `init_around_mean=False`, and document this
+initialization choice.
+The searcher draws keys differently from plain GA, so matched seeds do not mean
+identical policy or rollout draws.
+
+| Control | Scientific role | Fixed comparison contract |
+| :--- | :--- | :--- |
+| Plain GA and identity adapter | Reproduction baseline and adapter parity | Width 0.5, archive fraction 0.5; identity traces agree |
+| Frozen best Shinka and random configurations | Strength of static tuning | Keep both selected configurations; do not retune on adaptive validation |
+| Fixed arithmetic update in the new interface | Benefit of adaptation without program search | Proposed width multiplier `exp(0.1 * (stats[4] - 0.5))`; unchanged memory; same width bounds |
+| Upstream `ga_focus` transfer | Existing adaptive mechanism from the paper | Explicit paper settings above; unchanged searcher; same total training evaluations |
+| Shinka-evolved update | Main extension | Same adapter, inputs, width bounds, scorer, and training budget as the arithmetic control |
+
+<sub>Table 7. Required adaptive-study controls. The arithmetic rule is a proposed
+offspring-versus-archive heuristic, not a parent-matched success rule. Freeze its
+formula before evaluating or proposing adaptive candidates. The upstream focus
+control changes selection, includes a training centroid, and allows a smaller
+width floor than the new interface; it is a whole-method comparison, not an
+isolated test of width adaptation.</sub>
+
+Hold population size, generations, task sequence, training episodes, checkpoint
+episodes, and nominal training steps equal across these controls. Count the
+focus control's centroid inside its population budget and keep reporting
+evaluation costs separate. The new update receives only its five declared
+statistics; it must not borrow the focus control's extra centroid feedback.
+If a later study expands the program's inputs or adapts selection as well as
+width, declare that as a new protocol with new matched controls.
+
 Use a separate task directory, archive, protocol version, and seed allocation for
 this experiment; the static evaluator cannot execute the function above. Before
 launch, freeze a retention-sensitive objective. One proposed objective is
@@ -462,8 +559,11 @@ It requires post-hoc checkpoint evaluation per candidate. Validate this scorer
 on known traces and publish its cost before starting an adaptive search. Always
 report the separate learning, forgetting, and active-return terms so a gain in
 one cannot conceal failure in another. Compare evolved rules with the constant
-rule, a frozen hand-designed rule, and the best static configuration under the
-same training budget.
+rule, the frozen arithmetic rule, the upstream adaptive control, and both static
+search winners under the same training budget. Preserve individual switch
+differences as specified in Section 3, especially when mean forgetting is
+negative. Any resulting claim should identify the discovered program and its
+mechanism; a better scalar score alone does not establish better retention.
 
 ## 8. Next implementation deliverables
 
@@ -472,13 +572,14 @@ same training budget.
 | 1 | Switching and stationary pilot profiles; resumable trial manifest | Exact budgets, resolved configurations, reduced real runs, six-trial resume | Complete |
 | 2 | Post-hoc evaluation and reporting adapter | Known-trace checks, correct centroid sources, real checkpoint evaluation | Complete |
 | 3 | Eighteen-trial pilot | Raw curves, per-seed metrics, costs, passing adequacy gate | Complete |
-| 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Complete: four actual proposals and 2 → 5 resume |
-| 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | Five-slot gate and four matched controls complete; 13/25 pending |
-| 6 | One validation comparison and frozen finalists | Reserved trials used once, candidate hashes, all continual metrics | Pending |
-| 7 | Full CartPole timing and resource plan | Measured representative paper-shape trial or segment before bulk scheduling | Pending |
-| 8 | Adaptive-program adapter and neutral gate | Unchanged baseline trace, varying-sigma test, no task-boundary inputs | Pending |
+| 4 | Subscription-compatible proposer route and staged archive | ChatGPT authentication, candidate ancestry, validity contracts, tested Shinka resume | Complete: 12 actual proposals and 2 → 5 → 13 resume |
+| 5 | Frozen random pool and 5 → 13 → 25 search | Distinct proposal/evaluation counts, cost ledger, default and random comparison | 13 programs and 12 matched controls complete; 25/24 endpoint pending |
+| 6 | One paper-budget default-GA development trial | 20 phases, population 512, seed 1001/trial 1002; measured time and memory; reporting trials untouched | Pending after static endpoint |
+| 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Pending |
+| 8 | Adaptive-program adapter and required controls | Short identity traces, varying-sigma check, explicit upstream adaptive control, frozen objective | Pending |
+| 9 | Shinka search over executable adaptive rules | Separate archive and seed allocation; control comparisons; individual learning and forgetting trajectories | Main extension; pending |
 
-<sub>Table 7. Deliverables and observed status. The successful baseline-trial
+<sub>Table 8. Deliverables and observed status. The successful baseline-trial
 resume does not substitute for testing Shinka's separate archive-resume path.</sub>
 
 After each substantive experiment, update the README as a scientific report:

@@ -1,0 +1,14 @@
+<NAME>
+focused_refinement
+</NAME>
+<DESCRIPTION>
+The search results favor smaller mutations and stronger selection. This proposal extends that trend with sigma 0.05 and elite_ratio 0.075, aiming for finer policy refinement while retaining mutation-driven exploration. It changes only the static configuration; improved performance remains to be verified with the search profile.
+</DESCRIPTION>
+<CODE>
+```python
+# EVOLVE-BLOCK-START
+def get_ga_config():
+    return {"sigma": 0.05, "elite_ratio": 0.075}
+# EVOLVE-BLOCK-END
+```
+</CODE>

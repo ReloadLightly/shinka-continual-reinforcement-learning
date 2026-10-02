@@ -1,0 +1,15 @@
+<NAME>
+lower_mutation_stronger_selection
+</NAME>
+<DESCRIPTION>
+Reduce sigma to 0.15 to make smaller mutations that may preserve successful CartPole policies. Reduce elite_ratio to 0.20 to concentrate reproduction on higher-performing candidates. This balances local exploration with stronger selection; improvement remains to be measured with the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def get_ga_config():
+    return {"sigma": 0.5, "elite_ratio": 0.5}
+=======
+def get_ga_config():
+    return {"sigma": 0.15, "elite_ratio": 0.20}
+>>>>>>> REPLACE
+</DIFF>

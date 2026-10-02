@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "reduce_mutation_and_elite_fraction",
+  "patch_description": "The search results improve as sigma and elite_ratio decrease. Propose sigma 0.05 and elite_ratio 0.08 to test a modest continuation of this trend: smaller mutations may preserve successful policies, while a smaller elite fraction concentrates selection on stronger candidates. This configuration requires search-profile evaluation to confirm improvement.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T20:46:31.428646",
+  "llm_cost": 0.0178908,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

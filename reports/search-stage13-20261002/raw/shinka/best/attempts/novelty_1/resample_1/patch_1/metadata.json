@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "increase_mutation_sigma",
+  "patch_description": "Increase sigma to 0.08 while keeping elite_ratio at 0.075. The search results favor 0.065 over 0.05 and 0.055, suggesting that stronger mutation may improve exploration as CartPole conditions change. This proposal tests a modest further increase while isolating its effect; improved performance remains to be verified with the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:30:28.206269",
+  "llm_cost": 0.0085148,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

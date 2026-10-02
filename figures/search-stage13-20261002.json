@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "kind": "development_search_trajectories",
+  "plot_script": "scripts/plot_search.py",
+  "plot_script_sha256": "31f665afc83224cb6995a3514d9edacac38a036bb72a2bfa66b73d60347d37e2",
+  "input_report": "search-stage13-20261002",
+  "input_sha256": {
+    "summary.json": "a0d3c28e1aa0241e9352ada4f416003b69ae9a20897bb19503db3f50e5a3e3c7",
+    "checksums.json": "eb092fd95f169204ecf2ed0b069805ee6f4e421862f46f07365e3aee7447fe43",
+    "raw/plan.json": "767e07f86e4bf25860b13782da88c5df6ab77f7bcb447daadbf92b01933e4e8a",
+    "raw/random_programs/candidate_001.py": "c95507812b177f517162810418a06c799bd66db1317ab4c319b8cc8cdc7c591c",
+    "raw/random/candidate_001/metrics.json": "9d0f51949a658ae4033ec9d28c2576260b0b842eddc508a08ea85e296313b2c6",
+    "raw/random/candidate_001/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_002.py": "51215337c41b68a9020e4dc80ca0eb9270e050c9f6454ed4767d035b49b4adb0",
+    "raw/random/candidate_002/metrics.json": "25a31e4c2771f532ad4b85e53a2db6e31945c5623927c6d2745d95eefeb6b9f6",
+    "raw/random/candidate_002/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_003.py": "29031b0f582be7f6eeb96dd7261292191b359d9204babcdf84c8df0ad09ffc8a",
+    "raw/random/candidate_003/metrics.json": "3c868a4c63d0659009b83e315d578c08ba554a8244444dab63ccb5049c140f0b",
+    "raw/random/candidate_003/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_004.py": "590b23cd3cb18739f1da2aa939ea71fbe0779798b607146e23d4afc66775bc15",
+    "raw/random/candidate_004/metrics.json": "30d52128180a4ecc2cad8c5a3bbb24a0f7e6b326b83b886e74bb6646c0d98a89",
+    "raw/random/candidate_004/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_005.py": "b72aaec0f44fefee64affeb30e23650ce571db32afcddf188779a56e1a307936",
+    "raw/random/candidate_005/metrics.json": "6a18081950ee8965a32e345725093d8be05dddb783420ca8c9761dc70b9683b7",
+    "raw/random/candidate_005/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_006.py": "438e7ad033cd9da0316cec7d0359c6ac2e80e8338a8e9f8e9394dfd633bccbc8",
+    "raw/random/candidate_006/metrics.json": "22c7de9f910594a489d02812e61f44249d800bd358eb09771fc9a12a398e913f",
+    "raw/random/candidate_006/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_007.py": "ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e",
+    "raw/random/candidate_007/metrics.json": "e8ba54170e46b68e6d9cf8eb3577541b013ea86c693012de7fd91eb62c87580c",
+    "raw/random/candidate_007/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_008.py": "ab1db681050bc126f2c8c42b51eb10837060affb9ba72385f08415275a0d4a26",
+    "raw/random/candidate_008/metrics.json": "cf255d16dfabc210bf1741db37c3fe9be9624b5668124fb49b59a43c114f60d7",
+    "raw/random/candidate_008/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_009.py": "3903bf01044bdc95e5edb47a29cf4f37f95a38ebf8628fbdf2f1badb1bab0ed9",
+    "raw/random/candidate_009/metrics.json": "37a133a330fe54baa75711cdd1e4a580b43ef9077cf4105fe8c416c6121dc582",
+    "raw/random/candidate_009/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_010.py": "467116f8ce600a0e8b984066be305d89f1970d0a2d22fbae58523ed78d8b892d",
+    "raw/random/candidate_010/metrics.json": "7056e439544a03d801a1d30d9307287e177397a30c2be774c70a601dd41ac342",
+    "raw/random/candidate_010/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_011.py": "884b173ba1de55c7770cb31628f34846fa9994771a555a50ea7def830903ced2",
+    "raw/random/candidate_011/metrics.json": "dc1a15f5f1a3c3179c730bbb8af66ae53d226ba22adb1eb83bde6b2e410cc60a",
+    "raw/random/candidate_011/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/random_programs/candidate_012.py": "3acb510780ba18059a8611d65dd8d56edf52570d7cf6bc6676b82cd50e7510cf",
+    "raw/random/candidate_012/metrics.json": "fc20b3fdec35e994e22cb9fdf4b95163ccf94d1a435f061150c1fbf695886c29",
+    "raw/random/candidate_012/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_0/main.py": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183",
+    "raw/shinka/gen_0/results/metrics.json": "6c7b2dc3b695c64c2a4df2009edd2d4354beb866d97bcb0d1105e1448706c85d",
+    "raw/shinka/gen_0/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_1/main.py": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10",
+    "raw/shinka/gen_1/results/metrics.json": "4a01379ef4790f2aaf8ece09e6b0a9f78bf2e8538b2e6f1d7f64fcfd15de2c2c",
+    "raw/shinka/gen_1/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_2/main.py": "c2ad59694b4c4b86a85f18e2d4d0b64593c78b5388a10bb96a9382b7bd6c54f6",
+    "raw/shinka/gen_2/results/metrics.json": "5431a481fe1fe17b3014ccfc4f3ad021d2d759d0631b097a83899123fee297ab",
+    "raw/shinka/gen_2/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_3/main.py": "578052260003db157ef687195a24e129b445c2fa90ad6639873c00f89d846c42",
+    "raw/shinka/gen_3/results/metrics.json": "48b3a45f6db5750b3b078f11654a0f841e2150ac8e00e403fd8e54c475fea8fb",
+    "raw/shinka/gen_3/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_4/main.py": "0285cbd39c344fa8c472cd760474342896b5354a40fc2d0f6a986b335f0ef8b9",
+    "raw/shinka/gen_4/results/metrics.json": "a0094e8e31f3f3bbcc37f1b1c4e06aa795adb356cf7941633214e7fe8fe4447f",
+    "raw/shinka/gen_4/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_5/main.py": "41120825128a814dee390a01da4b5ddfce7da6fc4d95a8798bdfc0dc5a997f7b",
+    "raw/shinka/gen_5/results/metrics.json": "7ace3b32f75a406850eaf0114132454611dd58ca72cd573beef428d48a2c7e95",
+    "raw/shinka/gen_5/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_6/main.py": "0188b0c2310f14bde0ee049d2c325a59ee5e99bddb468ffac17e2ebda1807aa6",
+    "raw/shinka/gen_6/results/metrics.json": "56b2ffb017aaf89c0b3f18490acd86e22e63084830b9819b8c7f1a2199f883a2",
+    "raw/shinka/gen_6/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_7/main.py": "3c8f6119dca761745a5f3e8c02c38a6a3e5078142457730fa650e3a8ba2bae89",
+    "raw/shinka/gen_7/results/metrics.json": "0c3595f1736e9e7e5b46b7a56c9a4bf8acc570bc0771fcb9c8f1a651b09f9ce4",
+    "raw/shinka/gen_7/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_8/main.py": "97ac7c23a6a9467eb0c48f6e0700824b589bb219ac87b60b5f6e6053bd303659",
+    "raw/shinka/gen_8/results/metrics.json": "4bc55c472567f61b2971baa8fac3200a9e70662467f90b715384ce55d0606446",
+    "raw/shinka/gen_8/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_9/main.py": "9d01eb95da6d11189a3e0b9b099fed6355ade6e0d352143d768744b2c319a9d0",
+    "raw/shinka/gen_9/results/metrics.json": "6c0fc94878997785c5c090f34d722a2fc076ae035a856e536cbfd229065da8e1",
+    "raw/shinka/gen_9/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_10/main.py": "5220a87115905f272c7e00059940ef68ea785f26397869e9fa680b55e0814b58",
+    "raw/shinka/gen_10/results/metrics.json": "10684ea80bd4496fcbf670ecf953b128232fa5d18c8eb509d3b2984730e2cc30",
+    "raw/shinka/gen_10/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_11/main.py": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+    "raw/shinka/gen_11/results/metrics.json": "c2bddf7e5bb8a301dea8710d66870ac225d511699d212b61878e5f90fe50d53c",
+    "raw/shinka/gen_11/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b",
+    "raw/shinka/gen_12/main.py": "c3aa3bf759e623757a67918344c2a706315628264634a70b49eec58e893e9d4e",
+    "raw/shinka/gen_12/results/metrics.json": "cefa2aacb194f2afd531a74ed7fd2bf26d321d3a384ee6fc5c34b10f6d8a2ccf",
+    "raw/shinka/gen_12/results/correct.json": "8d7ddd5825df9b351cb248205036e4745754ebc9919377c90b3d16952d79e36b"
+  },
+  "matplotlib_version": "3.11.1",
+  "curves": {
+    "shinka": {
+      "x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "candidate_scores": [
+        0.5654111158291499,
+        0.7466000056823094,
+        0.7841583360354106,
+        0.8071444467147191,
+        0.7480138914585114,
+        0.7761361139218013,
+        0.8448500030914943,
+        0.81700833735466,
+        0.802891668454806,
+        0.8257861133257548,
+        0.8449583350976309,
+        0.858391668899854,
+        0.8720944463888805
+      ],
+      "incumbent_scores": [
+        0.5654111158291499,
+        0.7466000056823094,
+        0.7841583360354106,
+        0.8071444467147191,
+        0.8071444467147191,
+        0.8071444467147191,
+        0.8448500030914943,
+        0.8448500030914943,
+        0.8448500030914943,
+        0.8448500030914943,
+        0.8449583350976309,
+        0.858391668899854,
+        0.8720944463888805
+      ],
+      "programs": [
+        {
+          "index": 0,
+          "score": 0.5654111158291499,
+          "effective_key": [
+            0.5,
+            32
+          ],
+          "program_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183"
+        },
+        {
+          "index": 1,
+          "score": 0.7466000056823094,
+          "effective_key": [
+            0.15000000596046448,
+            12
+          ],
+          "program_sha256": "f7d3f226b6712a6c94b7bb0d44589749c7376cda2653f3fca6ac14efb9493c10"
+        },
+        {
+          "index": 2,
+          "score": 0.7841583360354106,
+          "effective_key": [
+            0.10000000149011612,
+            9
+          ],
+          "program_sha256": "c2ad59694b4c4b86a85f18e2d4d0b64593c78b5388a10bb96a9382b7bd6c54f6"
+        },
+        {
+          "index": 3,
+          "score": 0.8071444467147191,
+          "effective_key": [
+            0.07000000029802322,
+            6
+          ],
+          "program_sha256": "578052260003db157ef687195a24e129b445c2fa90ad6639873c00f89d846c42"
+        },
+        {
+          "index": 4,
+          "score": 0.7480138914585114,
+          "effective_key": [
+            0.05000000074505806,
+            5
+          ],
+          "program_sha256": "0285cbd39c344fa8c472cd760474342896b5354a40fc2d0f6a986b335f0ef8b9"
+        },
+        {
+          "index": 5,
+          "score": 0.7761361139218013,
+          "effective_key": [
+            0.07500000298023224,
+            7
+          ],
+          "program_sha256": "41120825128a814dee390a01da4b5ddfce7da6fc4d95a8798bdfc0dc5a997f7b"
+        },
+        {
+          "index": 6,
+          "score": 0.8448500030914943,
+          "effective_key": [
+            0.05000000074505806,
+            4
+          ],
+          "program_sha256": "0188b0c2310f14bde0ee049d2c325a59ee5e99bddb468ffac17e2ebda1807aa6"
+        },
+        {
+          "index": 7,
+          "score": 0.81700833735466,
+          "effective_key": [
+            0.03500000014901161,
+            3
+          ],
+          "program_sha256": "3c8f6119dca761745a5f3e8c02c38a6a3e5078142457730fa650e3a8ba2bae89"
+        },
+        {
+          "index": 8,
+          "score": 0.802891668454806,
+          "effective_key": [
+            0.04500000178813934,
+            5
+          ],
+          "program_sha256": "97ac7c23a6a9467eb0c48f6e0700824b589bb219ac87b60b5f6e6053bd303659"
+        },
+        {
+          "index": 9,
+          "score": 0.8257861133257548,
+          "effective_key": [
+            0.04500000178813934,
+            4
+          ],
+          "program_sha256": "9d01eb95da6d11189a3e0b9b099fed6355ade6e0d352143d768744b2c319a9d0"
+        },
+        {
+          "index": 10,
+          "score": 0.8449583350976309,
+          "effective_key": [
+            0.054999999701976776,
+            4
+          ],
+          "program_sha256": "5220a87115905f272c7e00059940ef68ea785f26397869e9fa680b55e0814b58"
+        },
+        {
+          "index": 11,
+          "score": 0.858391668899854,
+          "effective_key": [
+            0.06499999761581421,
+            4
+          ],
+          "program_sha256": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501"
+        },
+        {
+          "index": 12,
+          "score": 0.8720944463888805,
+          "effective_key": [
+            0.07999999821186066,
+            4
+          ],
+          "program_sha256": "c3aa3bf759e623757a67918344c2a706315628264634a70b49eec58e893e9d4e"
+        }
+      ]
+    },
+    "random": {
+      "x": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "candidate_scores": [
+        0.5654111158291499,
+        0.4198500062863032,
+        0.7090277824401856,
+        0.04086111216545105,
+        0.5315111135482788,
+        0.1711083389520645,
+        0.10808333644866944,
+        0.8857000019709269,
+        0.5229583374341329,
+        0.3715027843872706,
+        0.298330562655131,
+        0.3303527875264486,
+        0.1280055593331655
+      ],
+      "incumbent_scores": [
+        0.5654111158291499,
+        0.5654111158291499,
+        0.7090277824401856,
+        0.7090277824401856,
+        0.7090277824401856,
+        0.7090277824401856,
+        0.7090277824401856,
+        0.8857000019709269,
+        0.8857000019709269,
+        0.8857000019709269,
+        0.8857000019709269,
+        0.8857000019709269,
+        0.8857000019709269
+      ],
+      "programs": [
+        {
+          "index": 0,
+          "score": 0.5654111158291499,
+          "effective_key": [
+            0.5,
+            32
+          ],
+          "program_sha256": "c5bd97cb7ed0bb7fbcf3ed4fb692cab1d9a58d7dd49c3d7268dffae5363dc183"
+        },
+        {
+          "index": 1,
+          "score": 0.4198500062863032,
+          "effective_key": [
+            0.003399474313482642,
+            11
+          ],
+          "program_sha256": "c95507812b177f517162810418a06c799bd66db1317ab4c319b8cc8cdc7c591c"
+        },
+        {
+          "index": 2,
+          "score": 0.7090277824401856,
+          "effective_key": [
+            1.0483670234680176,
+            24
+          ],
+          "program_sha256": "51215337c41b68a9020e4dc80ca0eb9270e050c9f6454ed4767d035b49b4adb0"
+        },
+        {
+          "index": 3,
+          "score": 0.04086111216545105,
+          "effective_key": [
+            0.2050863653421402,
+            55
+          ],
+          "program_sha256": "29031b0f582be7f6eeb96dd7261292191b359d9204babcdf84c8df0ad09ffc8a"
+        },
+        {
+          "index": 4,
+          "score": 0.5315111135482788,
+          "effective_key": [
+            0.1406499594449997,
+            31
+          ],
+          "program_sha256": "590b23cd3cb18739f1da2aa939ea71fbe0779798b607146e23d4afc66775bc15"
+        },
+        {
+          "index": 5,
+          "score": 0.1711083389520645,
+          "effective_key": [
+            0.007908675819635391,
+            38
+          ],
+          "program_sha256": "b72aaec0f44fefee64affeb30e23650ce571db32afcddf188779a56e1a307936"
+        },
+        {
+          "index": 6,
+          "score": 0.10808333644866944,
+          "effective_key": [
+            0.7111908793449402,
+            54
+          ],
+          "program_sha256": "438e7ad033cd9da0316cec7d0359c6ac2e80e8338a8e9f8e9394dfd633bccbc8"
+        },
+        {
+          "index": 7,
+          "score": 0.8857000019709269,
+          "effective_key": [
+            0.3301865756511688,
+            3
+          ],
+          "program_sha256": "ee73f51f4073a1b49e30ce38f39534ebb4eb6f81ca9b5ba93b3edca66217c28e"
+        },
+        {
+          "index": 8,
+          "score": 0.5229583374341329,
+          "effective_key": [
+            0.7899123430252075,
+            29
+          ],
+          "program_sha256": "ab1db681050bc126f2c8c42b51eb10837060affb9ba72385f08415275a0d4a26"
+        },
+        {
+          "index": 9,
+          "score": 0.3715027843872706,
+          "effective_key": [
+            0.004863153211772442,
+            24
+          ],
+          "program_sha256": "3903bf01044bdc95e5edb47a29cf4f37f95a38ebf8628fbdf2f1badb1bab0ed9"
+        },
+        {
+          "index": 10,
+          "score": 0.298330562655131,
+          "effective_key": [
+            0.0018837711540982127,
+            39
+          ],
+          "program_sha256": "467116f8ce600a0e8b984066be305d89f1970d0a2d22fbae58523ed78d8b892d"
+        },
+        {
+          "index": 11,
+          "score": 0.3303527875264486,
+          "effective_key": [
+            0.0011297313030809164,
+            15
+          ],
+          "program_sha256": "884b173ba1de55c7770cb31628f34846fa9994771a555a50ea7def830903ced2"
+        },
+        {
+          "index": 12,
+          "score": 0.1280055593331655,
+          "effective_key": [
+            0.0022980552166700363,
+            54
+          ],
+          "program_sha256": "3acb510780ba18059a8611d65dd8d56edf52570d7cf6bc6676b82cd50e7510cf"
+        }
+      ]
+    }
+  },
+  "matched_distinct_mutants": 12,
+  "duplicate_evaluations_charged_separately": 0,
+  "random_candidates_not_in_matched_prefix": 0,
+  "interpretation": "Observed development selection paths, no confidence bands or smoothing. Axis counts distinct configurations; repeated and failed training work remains in the report.",
+  "outputs_sha256": {
+    "search-stage13-20261002.svg": "6dd90500adea9767bd0c354d76a34e546ebd09cfe1f902683013d799740177f2",
+    "search-stage13-20261002.pdf": "4656dadca7462ca2be6f27e92cd7e70eb66b2721c03e9545b985053147725220"
+  }
+}

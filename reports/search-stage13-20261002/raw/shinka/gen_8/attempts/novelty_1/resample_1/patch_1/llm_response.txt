@@ -1,0 +1,14 @@
+<NAME>
+balanced_elite_search
+</NAME>
+<DESCRIPTION>
+The GA’s tunable parameters are mutation scale (`sigma`) and elite selection fraction (`elite_ratio`). The best observed configuration used 0.05 and 0.075. This proposal tests a nearby setting: slightly smaller mutations for finer refinement and slightly more elites to preserve successful policies during continual learning. Improvement requires validation with the search profile.
+</DESCRIPTION>
+<CODE>
+```python
+# EVOLVE-BLOCK-START
+def get_ga_config():
+    return {"sigma": 0.045, "elite_ratio": 0.085}
+# EVOLVE-BLOCK-END
+```
+</CODE>

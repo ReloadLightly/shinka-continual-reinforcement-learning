@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "balanced_elite_search",
+  "patch_description": "The GA\u2019s tunable parameters are mutation scale (`sigma`) and elite selection fraction (`elite_ratio`). The best observed configuration used 0.05 and 0.075. This proposal tests a nearby setting: slightly smaller mutations for finer refinement and slightly more elites to preserve successful policies during continual learning. Improvement requires validation with the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:22:55.709199",
+  "llm_cost": 0.0179868,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

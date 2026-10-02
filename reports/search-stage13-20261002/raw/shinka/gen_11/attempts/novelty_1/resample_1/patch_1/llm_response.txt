@@ -1,0 +1,13 @@
+<NAME>
+increase_mutation_scale
+</NAME>
+<DESCRIPTION>
+Test sigma 0.065 with elite_ratio 0.075. Both prior configurations improved on the current settings, and 0.055 marginally outperformed 0.05. A modest further increase in mutation scale may improve exploration during continual adaptation while retaining the better-performing elite ratio. This is an untested proposal for the search profile.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    return {"sigma": 0.035, "elite_ratio": 0.05}
+=======
+    return {"sigma": 0.065, "elite_ratio": 0.075}
+>>>>>>> REPLACE
+</DIFF>

@@ -1,0 +1,15 @@
+{
+  "generation": 11,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "increase_mutation_scale",
+  "patch_description": "Test sigma 0.065 with elite_ratio 0.075. Both prior configurations improved on the current settings, and 0.055 marginally outperformed 0.05. A modest further increase in mutation scale may improve exploration during continual adaptation while retaining the better-performing elite ratio. This is an untested proposal for the search profile.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:28:38.630986",
+  "llm_cost": 0.007134,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_11/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

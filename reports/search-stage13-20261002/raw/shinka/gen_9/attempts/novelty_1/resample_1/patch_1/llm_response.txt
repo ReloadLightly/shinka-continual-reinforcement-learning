@@ -1,0 +1,14 @@
+<NAME>
+fine_step_ga
+</NAME>
+<DESCRIPTION>
+Keep the fixed GA and its best observed elite ratio, while reducing sigma to 0.045 for finer policy adjustments. This configuration may improve refinement while retaining exploration; improved performance requires search-profile evaluation.
+</DESCRIPTION>
+<CODE>
+```python
+# EVOLVE-BLOCK-START
+def get_ga_config():
+    return {"sigma": 0.045, "elite_ratio": 0.075}
+# EVOLVE-BLOCK-END
+```
+</CODE>

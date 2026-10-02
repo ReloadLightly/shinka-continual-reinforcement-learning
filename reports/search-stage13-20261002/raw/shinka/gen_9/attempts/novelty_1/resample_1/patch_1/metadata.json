@@ -1,0 +1,15 @@
+{
+  "generation": 9,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "fine_step_ga",
+  "patch_description": "Keep the fixed GA and its best observed elite ratio, while reducing sigma to 0.045 for finer policy adjustments. This configuration may improve refinement while retaining exploration; improved performance requires search-profile evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-02T21:24:55.738449",
+  "llm_cost": 0.0176828,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "<runs>/shinka/gen_9/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

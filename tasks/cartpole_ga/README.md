@@ -191,9 +191,11 @@ block, use Standard speed, and stop if the included allowance is exhausted.
 
 The retry settings permit at most one mutation request per outer proposal slot;
 Codex's own internal tool/service behavior is not a one-token-call guarantee.
-The completed integration run used four successful Codex launches, with no failed
-or duplicate candidates. Its next cumulative targets are 13 Shinka programs and
-12 random controls, using the same frozen archive and pool.
+The completed second checkpoint used 12 successful Codex launches, producing
+13 total Shinka programs including the default, alongside 12 random controls.
+No candidate failed or duplicated an effective Shinka configuration. Its next
+cumulative targets are 25 Shinka programs and 24 random controls, using the same
+frozen archive and pool. See the [audited checkpoint](../../reports/search-stage13-20261002/summary.json).
 
 The job configuration explicitly sets `numeric_threads_per_job: 1`; the native
 default otherwise overrides outer thread variables. Both arms use identical
