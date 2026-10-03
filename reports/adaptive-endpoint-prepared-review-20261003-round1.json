@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "status": "passed_prepared_endpoint_review",
+  "reviewed_at_utc": "2026-10-03T09:49:21.086172+00:00",
+  "implementation_revision": "141e4f8966ee2b24e08eaabce4b0741da9af71fb",
+  "protocol": "adaptive-shinka-reviewed-endpoint-v3",
+  "methods": "Independent standard-library SHA256, SQLite read-only SQL dumps/queries, Git committed-file reads, and exact freeze/export comparisons. No model requests, training, or repository validation functions invoked.",
+  "audit_script_sha256": "1f00a96e21ae741ad57dea359f1e0b3a1bfabddcf34bc773f1ebd99a8703245f",
+  "source_hashes_verified": {
+    "src/shinka_crl/adaptive_recovery.py": "4714cdef7a7e2582323fb67909615dfaaf3abc07e72191986e2a0f794963adf3",
+    "src/shinka_crl/adaptive_recovery_native.py": "64b62b7c9b40996518168e5e31e86a880b8c302141e3619562553c1a13051dc2",
+    "src/shinka_crl/recovery_process.py": "877d8146e2b891fc1349b83cc79e8086dc7e9e2140107fb3caa56e39ed0d8b52",
+    "scripts/run_adaptive_recovery.py": "010b534f789e25644f7c8cc0a16f792ccb1050c7b4adf48119057e745b561726",
+    "scripts/report_adaptive_recovery.py": "a30d7ae5316339335f66a04bdda7dbaf055f7fc75a7281921feee68a2198b3ad",
+    "scripts/recovery_headless.py": "febb3b224a3bae5715d09571816e30a1a7d9d1d5b1806e59c6c7a72449aba375",
+    "src/shinka_crl/adaptive_continuation.py": "a5bbbbbfb488d1b8a3bcff52b689dc9b3c2aa6bb9455ffaea46d4dfac41a5017",
+    "scripts/run_adaptive_continuation.py": "9c52268410ee4e6a12eaeeecc4bf79ae6c2446afb558c6816c6c9b5ebd58e040",
+    "scripts/report_adaptive_continuation.py": "9089180019d99453245b994d8d00ad35659066b49690ceb7f51bbfd7b9852c16",
+    "scripts/continuation_headless.py": "236de116d84320f5bc36edb0714caafde69c04ed5775ada4817da6a9f6664c98",
+    "src/shinka_crl/adaptive_endpoint.py": "593de505e61b990bed83726854fcb11026c6633f4b739a1c52b7a68487b7bca2",
+    "scripts/run_adaptive_endpoint.py": "10b334f06d1f7468245effcd6484ecfdfa660dc20be85119988ef819a1a7dc03",
+    "scripts/report_adaptive_endpoint.py": "fa90f8a28122713ca9e52188f8915ce1fafd45c17276270da8385812bcd4a451",
+    "scripts/endpoint_headless.py": "95a21151492738014ac02aac7cc38d96f804434fe0cd851e225787562b3498e7"
+  },
+  "evidence_sha256": {
+    "results/adaptive-shinka-endpoint-20261003-round1/plan.json": "334f273f5138376d5a115f3c2240c668db6c089755473bdb1e8bb8847bd8bfd5",
+    "results/adaptive-shinka-endpoint-20261003-round1/state.json": "977e75c530eb607e0616f107364ba053711d5f95173c21db85d8ff4c6366c5e0",
+    "reports/adaptive-endpoint-preflight-20261003-round1/endpoint-plan.json": "d681c26cda8285dcedcec802124cb838ff4ee853900533bb39a2800b478f250a",
+    "reports/adaptive-endpoint-preflight-20261003-round1/summary.json": "49037f3d65d0598a44129a2c15112e1593809409026fa4e2b5dc33a8551a8e6e",
+    "reports/adaptive-endpoint-preflight-20261003-round1/checksums.json": "dc07b44064c4453f380f7c9797beae14da2e02a002509872de3a8332b6c212d8",
+    "reports/adaptive-endpoint-input-review-20261003.json": "0b98b7375237547d2438d8ee5448e938c50be476b96a738ea57e48383850b5ef"
+  },
+  "copy_integrity": {
+    "source_inventory_files": 421,
+    "prepared_archive_files": 398,
+    "historical_files": 22,
+    "nested_prior_history_files": 10,
+    "source_and_copied_database_sql_dumps_equal": true,
+    "source_database_logical_sha256": "d5403de7704f76cfd5989f42b1ee99e9ccccedf02a4aef13cb02fa81094a292c",
+    "source_hashes_match_committed_revision": true,
+    "published_artifacts_verified": 5
+  },
+  "allocation": {
+    "status": "prepared",
+    "start_generation": 21,
+    "target_slots": 25,
+    "allowed_generations": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "inherited_consumed_slots": 21,
+    "inherited_rows": 20,
+    "inherited_valid_programs": 17,
+    "inherited_invalid_generations": [
+      14,
+      17,
+      20
+    ],
+    "inherited_no_row_generations": [
+      15
+    ],
+    "inherited_guarded_requests": 20,
+    "new_reserved_generations": [],
+    "new_requested_generations": [],
+    "additional_training_trials_limit": 12,
+    "additional_nominal_training_steps_limit": 92160000,
+    "session_timeout_seconds": 14400,
+    "terminal_finalization_grace_seconds": 10,
+    "added_compute_at_preflight": {
+      "new_training_trials": 0,
+      "new_training_trials_allocated": 0,
+      "new_nominal_training_steps": 0,
+      "new_nominal_training_steps_allocated": 0,
+      "new_scored_training_trials": 0,
+      "training_wall_seconds": 0.0,
+      "evaluation_wall_seconds": 0.0
+    }
+  },
+  "rng_input_sha256": "054c2a6c3021866e5c5787b6cef7b6861c663e9139bee626d494fe65e676b489",
+  "model_requests_sha256": "3a6f29a6789596ad190b25a1975f02caca4d05ea3fcde6db6a139128dad1fc46",
+  "wrapper_preflight": {
+    "auth": "chatgpt",
+    "model": "gpt-6.1-sol",
+    "headless": "@roberttlange/headless@0.6.1",
+    "inference_calls": 0
+  },
+  "source_review": [
+    "Cycle-checked recursive ancestry with strictly decreasing endpoint starts.",
+    "Every continuation source requires a fully sealed grammar-only graceful stop and fresh native RNG receipt.",
+    "Only the top-level archive is excluded while copying controller history; earlier nested archive records are retained.",
+    "One request for each sequential first-unused slot; earlier new results must have completed before the next request.",
+    "Frozen trainer, evaluator, native adapter, provider and previous controllers remain unchanged.",
+    "Allocation exhaustion is distinct from successful execution; every endpoint still needs explicit closure review before reserved validation."
+  ],
+  "execution_prerequisite": "Commit and push this review and the exact prepared report before any generation-21 proposal; only the prepared controller state may execute."
+}
