@@ -33,8 +33,8 @@ exporter, figure generator, finalist freezer, reference timing, and validation
 runners are implemented. Their [execution protocol](finalist-validation.md)
 preserves the separate source contracts. The adaptive program adapter and native
 FocusGA support are implemented. The adaptive selection evaluator, verified
-cache, and 15 fixed-control trials are complete. The first five-slot adaptive
-Shinka block is complete; the next cumulative target is 13. Source revisions remain fixed by
+cache, and 15 fixed-control trials are complete. The thirteen-slot adaptive
+Shinka checkpoint is complete; the next cumulative target is 25. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 
@@ -473,7 +473,7 @@ def update_sigma(sigma, stats, memory):
 | Returned width | Finite scalar, bounded by the harness to [0.001, 2.0] |
 | Returned memory | Finite float32 vector with unchanged shape |
 
-<sub>Table 6. Implemented adaptive-program interface; the first five-slot search is complete. The
+<sub>Table 6. Implemented adaptive-program interface; thirteen search slots are complete. The
 identity program supplies the neutral baseline.</sub>
 
 The five statistics, in fixed order, are population mean fitness, population
@@ -626,7 +626,7 @@ training and checkpoint evidence before reuse.
 | 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Complete: 25 trials, 26.59 min; Shinka 11 and random 24 selected |
 | 8 | Adaptive-program adapter and native control support | Short identity traces, varying-sigma check, persistent memory, explicit upstream adaptive control | Complete: seven real trials, 19 numerical checks, 3.98 min |
 | 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Complete: 15 trials, two cache checks, 15.21 min; 504 harness tests pass |
-| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Five slots complete: four valid proposals, 12 new trials; next resume to 13 and 25 |
+| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Thirteen slots complete: twelve valid proposals, 36 new trials; next resume to 25 |
 
 <sub>Table 8. Deliverables and observed status. The successful baseline-trial
 resume does not substitute for testing Shinka's separate archive-resume path.</sub>
@@ -655,8 +655,19 @@ below native FocusGA (0.5006). Native search took 28.08 minutes; start-to-finish
 elapsed time was 28.78 minutes with preflight and final checks. The first trial
 was much slower than later trials. Source, ancestry, usage, and RNG checkpoint receipts
 were verified after the original controller completed. The [README analysis](../README.md#first-adaptive-shinka-search)
-reports all candidate means and dispersion. Continue the existing archive to
-13 slots with the frozen objective, grammar, controls, and seed partition.
+reports all candidate means and dispersion.
+
+The [thirteen-slot continuation](../reports/adaptive-shinka-stage13-20261003/summary.json)
+added eight valid, distinct proposals and 24 training trials without failures.
+Generation 5 leads at 0.4871; native FocusGA remains higher at 0.5006. New
+evaluations took 19.98 minutes, native search 25.21 minutes, and session
+timestamps span 25.85 minutes including final checks. The original five programs
+and their scores are unchanged, and native archive resume is now exercised on
+the adaptive study. Continue to the declared endpoint of 25 slots under the
+same objective, grammar, controls, runtime, and development partition. At the
+observed mean evaluation time, twelve more proposals would need about 30 minutes
+of evaluation plus proposal and archive overhead. Reserved validation remains
+unopened until a frozen finalist handoff.
 
 After each substantive experiment, update the README as a scientific report:
 state the frozen protocol, link compact raw evidence and hashes, distinguish

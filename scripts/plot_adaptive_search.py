@@ -110,6 +110,22 @@ def score_candidate(evidence: Evidence, base: Path, request: dict, profile: dict
             "records": traces}
 
 
+def completed_stage(summary: dict, plan: dict) -> int:
+    """Bind the plotted archive to a complete target declared before the search."""
+    target = summary["programs_evaluated"]
+    require(type(target) is int and target in (5, 13, 25) and target in plan["stages"],
+            "Figure requires a declared 5-, 13-, or 25-slot stage")
+    require(summary["status"] == "complete" and summary["slots_consumed"] == target,
+            "Figure requires a complete search stage")
+    sessions = summary["sessions"]
+    require(bool(sessions) and all(session["status"] == "complete" for session in sessions)
+            and sessions[-1]["target"] == target,
+            "Completed search session does not match the plotted stage")
+    require([row["generation"] for row in summary["programs"]] == list(range(target)),
+            "Native generation sequence is incomplete")
+    return target
+
+
 def plot_search(report_dir: Path, controls_dir: Path, output: Path) -> dict:
     output = output.resolve()
     require(output.suffix == ".svg", "Output must be an SVG filename")
@@ -118,10 +134,7 @@ def plot_search(report_dir: Path, controls_dir: Path, output: Path) -> dict:
     evidence, controls = Evidence(report_dir), Evidence(controls_dir)
     summary = evidence.read("summary.json")
     profile = evidence.read("raw/evaluation/plan.json")["profile"]
-    require(summary["status"] == "complete" and summary["programs_evaluated"] == 5,
-            "Figure requires the complete five-slot integration stage")
-    require([row["generation"] for row in summary["programs"]] == list(range(5)),
-            "Native generation sequence is incomplete")
+    target = completed_stage(summary, evidence.read("raw/search/plan.json"))
     rows = []
     for program in summary["programs"]:
         request = program["request"]
@@ -161,16 +174,20 @@ def plot_search(report_dir: Path, controls_dir: Path, output: Path) -> dict:
              "axes.labelcolor": "#25313B", "xtick.color": "#55616C", "ytick.color": "#55616C",
              "xtick.labelsize": 8, "ytick.labelsize": 8, "grid.color": "#E1E5E8",
              "grid.linewidth": 0.55, "svg.fonttype": "none", "pdf.fonttype": 42,
-             "svg.hashsalt": "shinka-adaptive-stage5-v1", "figure.facecolor": "white"}
+             "svg.hashsalt": f"shinka-adaptive-stage{target}-v1", "figure.facecolor": "white"}
+    # Preserve room for the width traces as the cumulative archive grows.
+    figure_width, score_width = {5: (10.2, 1), 13: (12.2, 1.4), 25: (15.2, 2)}[target]
     with plt.rc_context(style):
-        fig, (left, right) = plt.subplots(1, 2, figsize=(10.2, 3.65))
+        fig, (left, right) = plt.subplots(1, 2, figsize=(figure_width, 3.65),
+                                         gridspec_kw={"width_ratios": [score_width, 1]})
         fig.subplots_adjust(left=0.07, right=0.98, bottom=0.20, top=0.80, wspace=0.30)
         for ax in (left, right):
             ax.set_axisbelow(True)
             ax.grid(axis="y")
             ax.spines["top"].set_visible(False)
             ax.spines["right"].set_visible(False)
-        left.set_title("(a)  Five evaluated programs", loc="left", pad=20)
+        stage_label = {5: "Five", 13: "Thirteen", 25: "Twenty-five"}[target]
+        left.set_title(f"(a)  {stage_label} evaluated programs", loc="left", pad=20)
         x = [row["generation"] for row in rows]
         means = [row["mean"] for row in rows]
         deviations = [row["sample_sd"] for row in rows]
@@ -182,15 +199,19 @@ def plot_search(report_dir: Path, controls_dir: Path, output: Path) -> dict:
         left.scatter([best["generation"]], [best["mean"]], facecolors="none", edgecolors="#188577",
                      linewidths=1.3, s=112, zorder=4)
         left.axhline(focus["mean"], color="#636F79", linestyle=(0, (4, 3)), linewidth=1)
-        left.set(xlim=(-0.45, 4.45), xticks=x, xticklabels=["0\nidentity", "1", "2", "3", "4"],
+        left.set(xlim=(-0.45, target - 0.55), xticks=x,
+                 xticklabels=["0\nidentity", *[str(generation) for generation in x[1:]]],
                  xlabel="Outer program generation", ylabel="Combined development score")
         left.set_ylim(min(0, min(m - s for m, s in zip(means, deviations)) - 0.035),
                       max(1, max(m + s for m, s in zip(means, deviations)) + 0.035))
+        legend_layout = ({"ncol": 2, "bbox_to_anchor": (0, 1.10), "borderaxespad": 0}
+                         if target > 5 else {})
         left.legend(handles=[Line2D([0], [0], marker="o", linestyle="none", color="#2263A5",
                                     markersize=4, label="Mean ± sample SD (3 seeds)"),
                              Line2D([0], [0], color="#636F79", linestyle=(0, (4, 3)),
                                     label="Native FocusGA control mean")],
-                    loc="upper left", frameon=False, fontsize=7.4, handlelength=2.3)
+                    loc="upper left", frameon=False, fontsize=7.4, handlelength=2.3,
+                    **legend_layout)
         right.set_title(f"(b)  Applied widths · selected generation {best['generation']}",
                         loc="left", pad=20)
         for phase in range(4):
@@ -215,11 +236,13 @@ def plot_search(report_dir: Path, controls_dir: Path, output: Path) -> dict:
         output.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix=".adaptive-figure-", dir=output.parent) as temporary:
             staged = [Path(temporary) / path.name for path in destinations]
-            fig.savefig(staged[0], metadata={"Date": None, "Title": "Adaptive program search pilot"})
+            title = f"Adaptive program search: {target}-slot development stage"
+            fig.savefig(staged[0], metadata={"Date": None, "Title": title})
             fig.savefig(staged[1], metadata={"CreationDate": None, "ModDate": None,
-                                            "Title": "Adaptive program search pilot"})
+                                            "Title": title})
             provenance = {
                 "schema_version": 1, "kind": "adaptive_development_search",
+                "stage_target": target,
                 "plot_script": "scripts/plot_adaptive_search.py", "plot_script_sha256": sha256(Path(__file__)),
                 "inputs": {evidence.root.name: evidence.inputs, controls.root.name: controls.inputs},
                 "matplotlib_version": matplotlib.__version__, "numpy_version": np.__version__,

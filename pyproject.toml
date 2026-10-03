@@ -35,10 +35,12 @@ extend-exclude = [".upstream"]
 select = ["E4", "E7", "E9", "F"]
 
 # Immutable adaptive-program evidence uses names supplied by the restricted
-# compiler (clip, exp, stack, ...). Its grammar and receipts are checked by the
-# evaluator/exporter; preserve the evaluated source without adding noqa lines.
+# compiler (clip, exp, stack, ...), and may retain unused local values. Its
+# grammar and receipts are checked by the evaluator/exporter; preserve the
+# evaluated source without rewriting it or adding noqa lines.
 [tool.ruff.lint.per-file-ignores]
-"reports/adaptive-shinka-*/raw/evaluation/cache/*/attempt_*/program.py" = ["F821"]
-"reports/adaptive-shinka-*/raw/search/shinka/gen_*/main.py" = ["F821"]
-"reports/adaptive-shinka-*/raw/search/shinka/gen_*/original.py" = ["F821"]
-"reports/adaptive-shinka-*/raw/search/shinka/best/main.py" = ["F821"]
+"reports/adaptive-shinka-*/raw/evaluation/cache/*/attempt_*/program.py" = ["F821", "F841"]
+"reports/adaptive-shinka-*/raw/search/shinka/gen_*/main.py" = ["F821", "F841"]
+"reports/adaptive-shinka-*/raw/search/shinka/gen_*/original.py" = ["F821", "F841"]
+"reports/adaptive-shinka-*/raw/search/shinka/best/main.py" = ["F821", "F841"]
+"reports/adaptive-shinka-*/raw/search/shinka/best/original.py" = ["F821", "F841"]

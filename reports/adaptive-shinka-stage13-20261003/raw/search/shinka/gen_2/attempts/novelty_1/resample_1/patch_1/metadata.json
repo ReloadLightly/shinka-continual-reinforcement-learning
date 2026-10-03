@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 3,
+  "patch_name": "archive_drop_feedback",
+  "patch_description": "Detect fitness drops using the archive\u2019s own smoothed history instead of the whole-population mean. This makes exploration pulses respond more directly to deterioration in previously selected policies. A faster archive-history update shortens pulses once fitness stabilizes, allowing fine-grained search to resume. This is a feedback-based hypothesis; improvement requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T02:22:07.804009",
+  "llm_cost": 0.0242628,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

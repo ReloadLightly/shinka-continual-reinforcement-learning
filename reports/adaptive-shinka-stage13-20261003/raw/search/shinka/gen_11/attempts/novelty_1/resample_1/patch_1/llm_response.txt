@@ -1,0 +1,15 @@
+<NAME>
+centroid_gap_exploration
+</NAME>
+<DESCRIPTION>
+A high maximum return can drive mutation width toward its minimum while most of the population remains weak. Add a modest exploration floor proportional to the squared best-to-mean gap, strengthened by stagnation. This preserves the existing recovery mechanism while preventing an isolated elite from prematurely shutting down exploration. The floor vanishes as population performance approaches the best return; its effect on combined_score requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    target = 0.008 + exploration * exp(-3.0 * archive_advantage) + 0.20 * shock
+=======
+    centroid_gap = clip(best - mean, 0.0, 1.0)
+    gap_exploration = 0.035 * centroid_gap * centroid_gap * (0.25 + 0.75 * stagnation)
+    target = 0.008 + exploration * exp(-3.0 * archive_advantage) + gap_exploration + 0.20 * shock
+>>>>>>> REPLACE
+</DIFF>

@@ -105,7 +105,7 @@ Omitting `--execute` freezes the plan without training. Existing study and repor
 directories are never replaced. Complete controls are verified when resuming.
 The Shinka-compatible task evaluator requires `SHINKA_ADAPTIVE_STUDY` to identify
 this frozen study and writes `correct.json` plus `metrics.json` for each request.
-Actual adaptive Shinka proposals remain a separate next stage: a new archive,
+Adaptive Shinka proposals use a separate stage: their own archive,
 initial identity slot, and resumable targets of 5, 13, and 25 total slots.
 
 ## Observed control study
@@ -119,12 +119,13 @@ check. Both diagnostic requests reused the identity cache with identical scores
 and zero new training, avoiding 46.08 million nominal steps in total.
 
 These are fixed-control development results. No adaptive Shinka proposals or
-model calls occurred. The objective and arithmetic rule were not changed after
-observing outcomes. The next experiment creates a separate Shinka archive with
-five total slots before extending to 13 and 25. The measured controls took
-2.5–3.8 minutes per candidate; four new valid candidates provisionally need
-10–15 minutes of evaluation plus proposal overhead. Reserved validation remains
-unused until a later frozen handoff.
+model calls occurred in this control study. The objective and arithmetic rule
+were not changed after observing outcomes. The subsequent proposal experiment
+uses a separate Shinka archive with cumulative targets of 5, 13, and 25 slots.
+The measured controls took 2.5–3.8 minutes per candidate. The
+[thirteen-slot proposal checkpoint](../README.md#adaptive-continuation-to-thirteen-slots)
+now reports actual search outcomes and costs under the same frozen evaluator.
+Reserved validation remains unused until a later frozen handoff.
 
 See [Table 13 / Figure 6](../README.md#adaptive-objective-and-fixed-controls),
 the [complete evidence](../reports/adaptive-controls-20261003/summary.json),

@@ -76,27 +76,59 @@ and [README analysis](../README.md#first-adaptive-shinka-search) retain every
 program, score, receipt, and cost. Generation 1 leads the proposals at 0.4361;
 native FocusGA's fixed-control mean remains higher at 0.5006.
 
-The next cumulative target is 13, with the same frozen study and existing
-archive. The five-slot plot is deliberately specific to this first block;
-do not overwrite its report or figure when exporting later stages.
+The subsequent cumulative targets are 13 and 25, with the same frozen study
+and existing archive. The plotting script accepts these completed declared
+stages and verifies their scores independently from raw evidence. Export each
+stage to a fresh report and figure; preserve the five-slot snapshot.
+
+## Runtime version and continuation
 
 During checkpoint recovery, the default CLI had updated from the recorded
 Codex 0.159.3 to 0.160.0. The launcher correctly rejected the runtime mismatch
 before a proposal or training launch. Selecting the existing 0.159.3 binary
 restored exact plan equality and passed `--prepare-only` with all five saved
 programs. The frozen plan was not edited, and no additional proposals ran.
-On the current WSL machine, repeat that read-only continuation check with:
+The thirteen-slot continuation is now complete. On the current WSL machine,
+check compatibility for the next declared target without launching proposals:
 
 ```bash
 PATH="$HOME/.codex/packages/app-server-daemon/releases/0.159.3-x86_64-unknown-linux-musl/bin:$PATH" \
   .venv/bin/python scripts/run_adaptive_search.py \
   --study-dir results/adaptive-controls-20261003 \
   --results-dir results/adaptive-shinka-20261003 \
-  --resume --target-generations 13 --prepare-only
+  --resume --target-generations 25 --prepare-only
 ```
 
 For the next actual stage, use the same command without `--prepare-only`.
 Other machines must provide the recorded CLI version on `PATH`; do not relax
 the runtime receipt to accommodate a different version. This preflight verifies
-checkpoint compatibility; actual adaptive archive continuation remains the
-next experiment.
+checkpoint compatibility without consuming a proposal slot.
+
+## Completed thirteen-slot continuation
+
+The existing archive completed generations 5–12 at repository snapshot
+`0efb43d`, preserving the frozen evaluator/search sources and the original five
+programs. The eight new proposals were distinct and valid, adding 24 trials,
+184.32 million nominal training steps, and 7,200 fresh checkpoint-evaluation
+episodes. No proposal, training, or evaluation failed; no new candidate reused
+the cache. Native search took 25.21 minutes; session timestamps span 25.85
+minutes including final verification. The [published snapshot](../reports/adaptive-shinka-stage13-20261003/summary.json)
+records cumulative work from both sessions and links every evaluated source.
+Subtract the [five-slot snapshot](../reports/adaptive-shinka-stage5-20261003/summary.json)
+when reporting the continuation's added cost.
+
+Generation 5 leads at 0.4871, below native FocusGA's 0.5006 and with substantial
+seed dispersion. The [README analysis](../README.md#adaptive-continuation-to-thirteen-slots)
+reports every new program, component scores, and individual leader outcomes.
+Source, ancestry, unchanged earlier evidence, proposal usage, and RNG receipts
+were independently verified. Reserved validation and final reporting remain
+untouched. The 25-slot stage has not been launched.
+
+Recreate the cumulative figure from its immutable evidence using a new filename:
+
+```bash
+.upstream/continual_neuroevolution/.venv/bin/python scripts/plot_adaptive_search.py \
+  --report-dir reports/adaptive-shinka-stage13-20261003 \
+  --controls-report reports/adaptive-controls-20261003 \
+  --output figures/adaptive-shinka-stage13-replay.svg
+```

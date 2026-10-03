@@ -6,8 +6,8 @@ baselines. This specification details the next search space in the
 [experimental roadmap](experimental-roadmap.md#7-second-search-space-adaptive-mutation-programs);
 the restricted adapter, fixed objective, development partition, and verified
 cache are implemented. See the [evaluation protocol](adaptive-evaluation.md).
-The [first five-slot adaptive Shinka search](../README.md#first-adaptive-shinka-search)
-is complete; larger stages and reserved validation remain pending.
+The [thirteen-slot adaptive Shinka checkpoint](../README.md#adaptive-continuation-to-thirteen-slots)
+is complete; the 25-slot endpoint and reserved validation remain pending.
 
 Keep archive size, survivor selection, policy architecture, task draws, and
 interaction budgets fixed. The first program family changes only the Gaussian
