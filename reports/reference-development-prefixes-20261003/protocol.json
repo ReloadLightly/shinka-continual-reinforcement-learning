@@ -26,18 +26,24 @@
   "normalization": "Divide cumulative reward-steps by 614400000 and the 500-step episode cap; distinct from the paper's reference-dependent rescaling.",
   "compute_accounting": "No new training or evaluation. Prefix runtime is the original parent-observed monotonic elapsed time at the fourth phase checkpoint; the full original training, analysis, and suite costs remain incurred and are reported separately, not charged again. Prefix peak RSS was not measured separately. Derivation performs file verification and arithmetic only; its duration is not measured.",
   "uncertainty": "One development trajectory per method; no estimate of between-trial variation and no final reporting or full-budget three-method ranking.",
-  "verification": "Verify every published source hash, archive source identities against current files or the recorded historical harness commit, baseline configuration, native evaluator hashes, full twenty-phase metrics, matched task vectors, and selected phase boundaries before deriving the prefix.",
+  "verification": "Verify every published source hash and every frozen harness file against the declared immutable Git source archive, then baseline configuration, native evaluator hashes, full twenty-phase metrics, matched task vectors, and selected phase boundaries. Archive identity does not depend on current worktree bytes. The separately recorded calculation implementation remains part of this derivation's provenance.",
   "reproduce": ".venv/bin/python reports/reference-development-prefixes-20261003/derivation.py --check",
   "sources": {
     "ga": {
       "report": "../reference-timing-20261002",
       "checksums_sha256": "039f1485803e86b3ac1299328f65eea0b1e2fe46e699436ad220274d7ca004f1",
+      "source_archive_commit": "343fa1178f183c1d53cb2f37625023d045cffd4e",
+      "source_archive_basis": "Recorded clean runtime harness commit; all twelve frozen source hashes verified against this archive",
+      "archive_is_recorded_runtime_commit": true,
       "training": "raw/training",
       "analysis": "raw/analysis"
     },
     "es": {
       "report": "../reference-development-es-20261003",
       "checksums_sha256": "9609bb375416b0e38b56cd902ce44fec6b80f9d5cdf9c19b93d245189b64e830",
+      "source_archive_commit": "1c8abcb8dba903223687fab5afb0122c5ee44550",
+      "source_archive_basis": "Content-equivalent source archive verified against all twelve frozen hashes; the original runtime HEAD was not recorded and is not asserted here",
+      "archive_is_recorded_runtime_commit": false,
       "training": "raw/trials/es/seed_1001/training/attempt_001",
       "analysis": "raw/trials/es/seed_1001/analysis/attempt_001"
     }

@@ -49,22 +49,29 @@ def verify_sources(report, specification, protocol):
     require(actual == set(published) | {"checksums.json"}, "Unreceipted published files")
     plan, environment = read(report / "raw/plan.json"), read(report / "raw/environment.json")
     require(plan["upstream_commit"] == protocol["upstream_commit"], "Upstream identity changed")
-    historical = {}
+    commit = specification["source_archive_commit"]
+    require(len(commit) == 40 and all(character in "0123456789abcdef" for character in commit),
+            "Source archive must name an exact Git commit")
+    if specification["archive_is_recorded_runtime_commit"]:
+        require(environment.get("harness_commit") == commit
+                and environment.get("harness_dirty") is False,
+                "Archive differs from the recorded clean runtime commit")
     for name, expected in plan["source_sha256"].items():
-        if sha256(ROOT / name) == expected:
-            continue
-        commit = environment.get("harness_commit")
-        require(commit and environment.get("harness_dirty") is False,
-                f"No clean historical source identity for {name}")
-        recorded = subprocess.check_output(["git", "show", f"{commit}:{name}"], cwd=ROOT)
-        require(hashlib.sha256(recorded).hexdigest() == expected, f"Historical source changed: {name}")
-        historical[name] = {"commit": commit, "sha256": expected}
-    return published, plan, environment, historical
+        try:
+            recorded = subprocess.check_output(["git", "show", f"{commit}:{name}"],
+                                               cwd=ROOT, stderr=subprocess.PIPE)
+        except subprocess.CalledProcessError as exc:
+            raise ValueError(f"Archived source unavailable: {name}") from exc
+        require(hashlib.sha256(recorded).hexdigest() == expected, f"Archived source differs: {name}")
+    archive = {"commit": commit, "basis": specification["source_archive_basis"],
+               "is_recorded_runtime_commit": specification["archive_is_recorded_runtime_commit"],
+               "source_sha256": plan["source_sha256"]}
+    return published, plan, environment, archive
 
 
 def derive_method(method, specification, protocol):
     report = (HERE / specification["report"]).resolve()
-    published, plan, environment, historical = verify_sources(report, specification, protocol)
+    published, plan, environment, archive = verify_sources(report, specification, protocol)
     training, analysis = report / specification["training"], report / specification["analysis"]
     manifest, results = read(training / "manifest.json"), read(training / "results.json")
     records, evaluation = read(training / "training_metrics.json"), read(analysis / "evaluation.json")
@@ -170,7 +177,7 @@ def derive_method(method, specification, protocol):
             "original_plan": specification["report"] + "/raw/plan.json",
             "verified_published_file_count": len(published),
             "verified_archived_source_count": len(plan["source_sha256"]),
-            "historical_source_resolution": historical,
+            "source_archive": archive,
             "source_checkpoints_sha256": analysis_manifest["input_sha256"]["checkpoints.npz"],
             "checkpoint_note": "Recorded native checkpoint hash; binary was not reloaded for this arithmetic derivation",
         },

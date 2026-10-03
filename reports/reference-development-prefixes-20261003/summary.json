@@ -4,11 +4,11 @@
   "kind": "derived_development_prefix_analysis",
   "protocol": {
     "path": "protocol.json",
-    "sha256": "7b13cccf34c6fbbf4e6e029867cf38f96c8d16a6e6f02c66051fc1fb4d48e4cb"
+    "sha256": "55477b9d7879e1edd4ff280e6088c3630785f9ae034fc3a3816e40b4004386ff"
   },
   "derivation": {
     "path": "derivation.py",
-    "sha256": "c31750a83b2c37fba79218e3af98cbf911009fd7418b8d1bae8efdeaee13c0da",
+    "sha256": "5fd2a413882ceb060e1adc018bd989daede755c4a367999b4ba8d569a5e235ed",
     "reused_analysis_sha256": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d"
   },
   "scope": "Matched four-phase development prefixes; no new trials or PPO results",
@@ -161,18 +161,23 @@
         "original_plan": "../reference-timing-20261002/raw/plan.json",
         "verified_published_file_count": 20,
         "verified_archived_source_count": 12,
-        "historical_source_resolution": {
-          "src/shinka_crl/experiment.py": {
-            "commit": "343fa1178f183c1d53cb2f37625023d045cffd4e",
-            "sha256": "088ac1e844e4254e81cca1b72bbbbf9f28c69e6c415fdc02883320eca83181b0"
-          },
-          "src/shinka_crl/analysis.py": {
-            "commit": "343fa1178f183c1d53cb2f37625023d045cffd4e",
-            "sha256": "6ec9691d8cb40415d162fd2483f9ca1765cd03e484279ae465e6154b2bb2f11b"
-          },
-          "src/shinka_crl/baseline_contract.py": {
-            "commit": "343fa1178f183c1d53cb2f37625023d045cffd4e",
-            "sha256": "d778e09868f23a19f4828e15ca4eea8dc7899f6d24098a29cc5876a928461a8d"
+        "source_archive": {
+          "commit": "343fa1178f183c1d53cb2f37625023d045cffd4e",
+          "basis": "Recorded clean runtime harness commit; all twelve frozen source hashes verified against this archive",
+          "is_recorded_runtime_commit": true,
+          "source_sha256": {
+            "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+            "scripts/run_reference_timing.py": "1c41207e80e19385c2902e4a2663661f51604e542c87db756de78f25c393b85b",
+            "scripts/report_reference_timing.py": "ff9ad9b00cfd6c10e4563aec447427c45bcbfb6bff033d281d122a5580e44a25",
+            "src/shinka_crl/experiment.py": "088ac1e844e4254e81cca1b72bbbbf9f28c69e6c415fdc02883320eca83181b0",
+            "src/shinka_crl/analysis.py": "6ec9691d8cb40415d162fd2483f9ca1765cd03e484279ae465e6154b2bb2f11b",
+            "src/shinka_crl/baseline_contract.py": "d778e09868f23a19f4828e15ca4eea8dc7899f6d24098a29cc5876a928461a8d",
+            "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+            "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43",
+            "src/shinka_crl/profiles/paper-cartpole-timing.json": "be3a9d9579734e4494516e995195ef338b98762a3d7ac38adb26f19731212c8e",
+            "src/shinka_crl/profiles/smoke.json": "a440537e8fde5e07332a75d30205bfb257570616725ba3ee70dc6ab0f9913660",
+            "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+            "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267"
           }
         },
         "source_checkpoints_sha256": "79e8f0c9f205f9563f2f3d212bbe75899136da833ae4e215c9dbeecdfd1a2204",
@@ -324,7 +329,25 @@
         "original_plan": "../reference-development-es-20261003/raw/plan.json",
         "verified_published_file_count": 22,
         "verified_archived_source_count": 12,
-        "historical_source_resolution": {},
+        "source_archive": {
+          "commit": "1c8abcb8dba903223687fab5afb0122c5ee44550",
+          "basis": "Content-equivalent source archive verified against all twelve frozen hashes; the original runtime HEAD was not recorded and is not asserted here",
+          "is_recorded_runtime_commit": false,
+          "source_sha256": {
+            "src/shinka_crl/reference_comparison.py": "74126c9600e5546e653378f1dd46234f7be2aaed9ce098ab18627f525d4bffcd",
+            "scripts/run_reference_comparison.py": "e791b67d94027a1388a2ef3af1b6499a875caffe0b17c3bf072c170dd552bf49",
+            "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+            "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad",
+            "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+            "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+            "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+            "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43",
+            "src/shinka_crl/profiles/paper-cartpole.json": "75af8ca9f667733c10278c52d5d88705a5762b1272387b56b3c9a984b7e654d0",
+            "src/shinka_crl/profiles/smoke.json": "a440537e8fde5e07332a75d30205bfb257570616725ba3ee70dc6ab0f9913660",
+            "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+            "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267"
+          }
+        },
         "source_checkpoints_sha256": "4446cfd6241a1995c265219ac8528d6a889852a51364c1818e121569f676bfbe",
         "checkpoint_note": "Recorded native checkpoint hash; binary was not reloaded for this arithmetic derivation"
       }
