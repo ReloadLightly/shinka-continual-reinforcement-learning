@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "mode": "development",
+  "status": "complete",
+  "experiment_kind": "resource_limited_development_prefix",
+  "completed_trials": 1,
+  "planned_trials": 1,
+  "completed_reporting_trials": 0,
+  "completed_full_budget_trials": 0,
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "profiles": {
+    "paper-cartpole": {
+      "name": "paper-cartpole",
+      "purpose": "Resource-limited completed prefix of development training; not the full-budget reference comparison or reporting trials",
+      "env": "CartPole-v1_sigma0.5",
+      "num_phases": 4,
+      "num_tasks": 2,
+      "episode_length": 500,
+      "eval_episodes": 10,
+      "seeds": [
+        1001
+      ],
+      "ne": {
+        "num_generations": 800,
+        "task_interval": 200,
+        "pop_size": 512,
+        "num_evals": 3
+      },
+      "ppo": {
+        "num_updates": 6000,
+        "task_interval": 1500,
+        "num_envs": 2048,
+        "num_steps": 50,
+        "num_minibatches": 32
+      }
+    }
+  },
+  "rows": [
+    {
+      "profile": "paper-cartpole",
+      "method": "ppo",
+      "seed": 1001,
+      "trial": 1002,
+      "eval_seed": 901001,
+      "metrics": {
+        "learning_accuracy": 500.0,
+        "forgetting": 159.66666666666666,
+        "learning_minus_forgetting": 340.33333333333337,
+        "zero_shot_transfer": 217.4333333333333,
+        "cumulative_reward_steps": 302032205126.9531,
+        "cumulative_reward_generation_equivalents": 393271.1004257202,
+        "cumulative_reward_steps_exact": 301503984914.0625,
+        "normalized_curve_average": 0.9831777510643005
+      },
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 133.1
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 21.0,
+          "next_mean": 19.2
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": null
+        }
+      ],
+      "phase_training_returns": [
+        492.08000076293945,
+        494.7490670013428,
+        487.6156002705892,
+        488.5759337463379
+      ],
+      "training_env_steps_nominal": 614400000,
+      "training_wall_seconds": 22197.261648973003,
+      "analysis_wall_seconds": 6.248830896998697,
+      "maximum_trainer_rss_kib": 595340,
+      "fresh_evaluation_episodes": 100,
+      "training_path": "training",
+      "analysis_path": "analysis",
+      "noise_vectors": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.5717431306838989,
+          -0.20802041888237,
+          -0.14799921214580536,
+          0.10802476108074188
+        ]
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "method": "ppo",
+      "n": 1,
+      "seeds": [
+        1001
+      ],
+      "metrics": {
+        "learning_accuracy": {
+          "n": 1,
+          "mean": 500.0,
+          "sample_sd": null,
+          "values": [
+            500.0
+          ]
+        },
+        "forgetting": {
+          "n": 1,
+          "mean": 159.66666666666666,
+          "sample_sd": null,
+          "values": [
+            159.66666666666666
+          ]
+        },
+        "learning_minus_forgetting": {
+          "n": 1,
+          "mean": 340.33333333333337,
+          "sample_sd": null,
+          "values": [
+            340.33333333333337
+          ]
+        },
+        "zero_shot_transfer": {
+          "n": 1,
+          "mean": 217.4333333333333,
+          "sample_sd": null,
+          "values": [
+            217.4333333333333
+          ]
+        },
+        "cumulative_reward_steps": {
+          "n": 1,
+          "mean": 302032205126.9531,
+          "sample_sd": null,
+          "values": [
+            302032205126.9531
+          ]
+        },
+        "cumulative_reward_generation_equivalents": {
+          "n": 1,
+          "mean": 393271.1004257202,
+          "sample_sd": null,
+          "values": [
+            393271.1004257202
+          ]
+        },
+        "cumulative_reward_steps_exact": {
+          "n": 1,
+          "mean": 301503984914.0625,
+          "sample_sd": null,
+          "values": [
+            301503984914.0625
+          ]
+        },
+        "normalized_curve_average": {
+          "n": 1,
+          "mean": 0.9831777510643005,
+          "sample_sd": null,
+          "values": [
+            0.9831777510643005
+          ]
+        }
+      },
+      "training_wall_seconds": {
+        "n": 1,
+        "mean": 22197.261648973003,
+        "sample_sd": null,
+        "values": [
+          22197.261648973003
+        ]
+      },
+      "analysis_wall_seconds": {
+        "n": 1,
+        "mean": 6.248830896998697,
+        "sample_sd": null,
+        "values": [
+          6.248830896998697
+        ]
+      },
+      "maximum_trainer_rss_kib": {
+        "n": 1,
+        "mean": 595340,
+        "sample_sd": null,
+        "values": [
+          595340
+        ]
+      }
+    }
+  ],
+  "original_target": {
+    "phases": 20,
+    "ppo_updates": 30000,
+    "reporting_trials_per_method": 10
+  },
+  "caption": "One development trajectory, truncated to 4 complete phases (6000 PPO updates) with unchanged per-phase budgets and baseline settings. This is not the full-budget or reporting comparison. No estimate of between-trial variation. Signed forgetting and transfer cover the retained consecutive switches. Cumulative return uses the pinned NE-generation integration grid and episode-cap normalization.",
+  "compute": {
+    "original_attempt_total_wall_seconds": 22197.261648973003,
+    "prior_auxiliary_seconds": 107.35772089600272,
+    "finalizer_wall_seconds": 13.926590285002021,
+    "finalizer_maximum_rss_kib": 423364,
+    "analysis_wall_seconds": 6.248830896998697,
+    "original_training_maximum_rss_kib": 595340,
+    "adapter_wall_seconds": 35.40431974300009,
+    "total_accounted_wall_seconds": 22340.023689612004,
+    "allocation_seconds": 28800,
+    "retained_training_steps_nominal": 614400000,
+    "additional_training_updates": 0,
+    "scored_fresh_evaluation_episodes": 100,
+    "original_attempts": [
+      {
+        "attempt": "trials/ppo/seed_1001/training/attempt_001",
+        "status": "failed",
+        "returncode": -15,
+        "wall_seconds": 22197.261648973003,
+        "maximum_trainer_rss_kib": 595340,
+        "user_cpu_seconds": 42015.653112,
+        "system_cpu_seconds": 697.711101,
+        "trainer_cpu_affinity": [
+          0,
+          1
+        ],
+        "start_update": 0,
+        "phase_events": [
+          {
+            "completed_updates": 1500,
+            "elapsed_seconds": 5529.674542334,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_updates": 3000,
+            "elapsed_seconds": 11146.831315858999,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_updates": 4500,
+            "elapsed_seconds": 17069.293157522003,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_updates": 6000,
+            "elapsed_seconds": 22196.146503423002,
+            "kind": "native_checkpoint_written"
+          }
+        ],
+        "timing_note": "Parent-observed flushed native boundaries include JIT, evaluation, diagnostics and checkpoint I/O; RSS is this trainer's Linux wait4 peak"
+      }
+    ],
+    "prefix_checkpoint_elapsed_seconds_in_last_attempt": 22196.146503423002,
+    "timing_basis": "Measured monotonic durations; entire original attempts are charged, including discarded beyond-checkpoint work. Adapter includes finalizer, evaluation, probes and validation. Previously incurred verification is charged separately."
+  },
+  "auxiliary_evidence": {
+    "report": "reports/reference-ppo-budget-20261003",
+    "protocol_sha256": "64af3ca79af1eb4738badefe54015122f6e1033424779c9efbab1626e0653c9c",
+    "verification_sha256": "fd7a4e0721c1ad28ab06d58d5d39cd94e9f600d4c88dbb992adda9034e55b763",
+    "prior_auxiliary_seconds": 107.35772089600272,
+    "allocation_seconds": 28800
+  },
+  "validation": {
+    "original_attempt_receipts_verified": true,
+    "frozen_sources_match": true,
+    "zero_additional_training_updates": true,
+    "policies_and_history_preserved": true,
+    "posthoc_metrics_recomputed": true,
+    "eight_hour_allocation_verified": true,
+    "all_full_budget_reporting_trials": false
+  },
+  "publication_provenance": {
+    "repository_revision": "7268d850914941d45c3e20709960da2c4aa83f20",
+    "source_sha256": {
+      "src/shinka_crl/reference_prefix_report.py": "d724ddfb6abb37a16945218d9abe6888bb5e288f8c4c834c855cf7f274ec4b34",
+      "scripts/report_reference_prefix.py": "fed50a2558f668e5394c441247befa48547262a5c9a0d22c99317a21673d0e2f",
+      "src/shinka_crl/reference_prefix.py": "873940ad71b49b904e79a53fca2181f65fe5cb3a554fa692e4046300ae73f109",
+      "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+      "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+      "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad"
+    },
+    "verification_note": "The raw original plan records execution source hashes. This revision and the exporter/helper hashes identify publication. Published artifacts remain verifiable by their own checksums after later protocol changes; current full-budget validators are not substituted for this archived development protocol."
+  }
+}

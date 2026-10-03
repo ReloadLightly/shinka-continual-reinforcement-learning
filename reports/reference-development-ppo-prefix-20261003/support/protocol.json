@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "decision_date": "2026-10-03",
+  "status": "declared; training and final checkpoint evaluation pending",
+  "authorization": "User requested continuing PPO with a reduced run and a maximum allocation of approximately eight hours.",
+  "allocation_interpretation": "Eight hours total active PPO computation for the current reference experiment, including already incurred development training, verification, native artifact finalization, and fresh evaluation; no additional PPO reporting trials.",
+  "total_active_seconds_limit": 28800,
+  "native_training_seconds_limit": 27000,
+  "auxiliary_seconds_reserved": 1800,
+  "time_basis": "Monotonic active elapsed durations; original trainer launch is the training origin.",
+  "source_suite": "results/reference-development-ppo-20261003",
+  "source_plan_sha256": "852413a2df565b276fe95e80f3f11d52c00a951587ecca40cf2b3329f91105ec",
+  "source_manifest_sha256_at_amendment": "a87154d767483d52abde8858c771afb130c39ddc4ba8ffe839d747310be9a533",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "method": "ppo",
+  "partition": "development",
+  "seed": 1001,
+  "task_trial": 1002,
+  "evaluation_seed": 901001,
+  "original_target": {
+    "updates": 30000,
+    "phases": 20,
+    "updates_per_phase": 1500
+  },
+  "amended_target": {
+    "updates": 6000,
+    "phases": 4,
+    "updates_per_phase": 1500,
+    "task_order": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "num_envs": 2048,
+    "num_steps": 50,
+    "nominal_training_steps": 614400000
+  },
+  "unchanged": "Pinned trainer, baseline optimizer and architectures, rollout, phase interval, task draws, training seed, and fresh-evaluation protocol.",
+  "termination": "Preserve native complete-cycle checkpoint and terminate the exact identified trainer process group when the target is reached, or at the training time limit if earlier.",
+  "fallback": "Use the latest preserved verified checkpoint containing complete two-task cycles; report actual horizon and charge every attempted update.",
+  "evaluation": {
+    "episodes_per_native_target": 10,
+    "metrics": [
+      "learning_accuracy",
+      "signed_forgetting",
+      "learning_accuracy_minus_forgetting",
+      "zero_shot_transfer",
+      "cumulative_performance"
+    ],
+    "original_run_preserved": true,
+    "derived_artifacts_in_new_directory": true
+  },
+  "claim_limits": [
+    "One development trial, not a reporting trial",
+    "Only retained phases and early switches are observed",
+    "Full twenty-phase PPO and ten-trial variation remain unresolved",
+    "Any GA/ES prefix comparison requires matched horizons and recomputed metrics"
+  ],
+  "remaining_reporting": "GA and ES retain twenty phases and ten reporting trials each; full-budget PPO reporting is deferred.",
+  "guard_source_sha256": "225427bb005f285c6aed7dc9edd1eaaa4cd31d26faa65afb4e23f31d4f54c92e",
+  "guard_started_at_utc": "2026-10-03T18:33:54.498891+00:00"
+}

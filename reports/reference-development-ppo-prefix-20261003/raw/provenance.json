@@ -1,0 +1,113 @@
+{
+  "kind": "resource_limited_development_prefix",
+  "status": "complete",
+  "original_suite": "<original-run>",
+  "original_attempt": "trials/ppo/seed_1001/training/attempt_001",
+  "original_plan_sha256": "852413a2df565b276fe95e80f3f11d52c00a951587ecca40cf2b3329f91105ec",
+  "original_attempt_receipts": {
+    "trials/ppo/seed_1001/training/attempt_001": {
+      "manifest.json": "2fc160333c781ebcd4f98bad4b18320ac49653487e62d44da8d45cd4b01c829f",
+      "phase-events.jsonl": "103c18fbe9a1da840645f7848461abdff9eef70603f7046280c6627e387c01e7",
+      "process-measurement.json": "a12a85353eed7ddff6e07a5e8f8213876a68eedd77dea419a27a3ac72019fad4",
+      "process.log": "757d9095ea3c8a6057f7136b7457f653c4b1f5afa38cb247aa5b962b706ee7bd",
+      "resume.pkl": "e016f70fab0fee4aabb22e110b138f63a0deedfa49fecbbac0e95e51fe2c43a1",
+      "stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "train.log": "330522e764d9d09492862f74893683cceb7562201a8aaf02a6af4a3485c98267"
+    }
+  },
+  "source_checkpoint_sha256": "e016f70fab0fee4aabb22e110b138f63a0deedfa49fecbbac0e95e51fe2c43a1",
+  "profile": {
+    "name": "paper-cartpole",
+    "purpose": "Resource-limited completed prefix of development training; not the full-budget reference comparison or reporting trials",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 10,
+    "seeds": [
+      1001
+    ],
+    "ne": {
+      "num_generations": 800,
+      "task_interval": 200,
+      "pop_size": 512,
+      "num_evals": 3
+    },
+    "ppo": {
+      "num_updates": 6000,
+      "task_interval": 1500,
+      "num_envs": 2048,
+      "num_steps": 50,
+      "num_minibatches": 32
+    }
+  },
+  "job": {
+    "profile": "paper-cartpole",
+    "method": "ppo",
+    "seed": 1001,
+    "trial": 1002,
+    "eval_seed": 901001
+  },
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "source_sha256": {
+    "src/shinka_crl/reference_comparison.py": "74126c9600e5546e653378f1dd46234f7be2aaed9ce098ab18627f525d4bffcd",
+    "scripts/run_reference_comparison.py": "e791b67d94027a1388a2ef3af1b6499a875caffe0b17c3bf072c170dd552bf49",
+    "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+    "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad",
+    "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+    "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+    "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+    "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43",
+    "src/shinka_crl/profiles/paper-cartpole.json": "75af8ca9f667733c10278c52d5d88705a5762b1272387b56b3c9a984b7e654d0",
+    "src/shinka_crl/profiles/smoke.json": "a440537e8fde5e07332a75d30205bfb257570616725ba3ee70dc6ab0f9913660",
+    "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+    "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267"
+  },
+  "adapter_sha256": "873940ad71b49b904e79a53fca2181f65fe5cb3a554fa692e4046300ae73f109",
+  "allocation_seconds": 28800,
+  "original_attempt_costs": [
+    {
+      "attempt": "trials/ppo/seed_1001/training/attempt_001",
+      "status": "failed",
+      "returncode": -15,
+      "wall_seconds": 22197.261648973003,
+      "maximum_trainer_rss_kib": 595340,
+      "user_cpu_seconds": 42015.653112,
+      "system_cpu_seconds": 697.711101,
+      "trainer_cpu_affinity": [
+        0,
+        1
+      ],
+      "start_update": 0,
+      "phase_events": [
+        {
+          "completed_updates": 1500,
+          "elapsed_seconds": 5529.674542334,
+          "kind": "native_checkpoint_written"
+        },
+        {
+          "completed_updates": 3000,
+          "elapsed_seconds": 11146.831315858999,
+          "kind": "native_checkpoint_written"
+        },
+        {
+          "completed_updates": 4500,
+          "elapsed_seconds": 17069.293157522003,
+          "kind": "native_checkpoint_written"
+        },
+        {
+          "completed_updates": 6000,
+          "elapsed_seconds": 22196.146503423002,
+          "kind": "native_checkpoint_written"
+        }
+      ],
+      "timing_note": "Parent-observed flushed native boundaries include JIT, evaluation, diagnostics and checkpoint I/O; RSS is this trainer's Linux wait4 peak"
+    }
+  ],
+  "original_attempt_total_wall_seconds": 22197.261648973003,
+  "prior_auxiliary_seconds": 107.35772089600272,
+  "training_budget_deviation": "4 complete phases retained from the declared twenty-phase development trial; unchanged per-phase budget and baseline settings. Not a completed full-budget or reporting comparison.",
+  "started_at_utc": "2026-10-03T22:41:44.175269+00:00",
+  "finished_at_utc": "2026-10-03T22:42:22.908187+00:00",
+  "adapter_wall_seconds": 35.40431974300009
+}

@@ -1,0 +1,76 @@
+======================================================================
+gymnax | ppo (rl) | CartPole-v1_sigma0.5 | continual | trial 1002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 20
+  schedule       : switch, 2 sub-tasks
+  matched budget : 3.072e+09 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_updates)
+  seed           : 1001
+  boundary info  : none
+  output         : <repo>/results/reference-development-ppo-20261003/trials/ppo/seed_1001/training/attempt_001
+======================================================================
+  update     0 task= 0 H=0.675 t0=  187.9 t1=   24.4 gen'ist=   24.4
+  update   100 task= 0 H=0.551 t0=  500.0 t1=  111.6 gen'ist=  111.6
+  update   200 task= 0 H=0.516 t0=  463.1 t1=  114.3 gen'ist=  114.3
+  update   300 task= 0 H=0.506 t0=  331.2 t1=   45.0 gen'ist=   45.0
+  update   400 task= 0 H=0.514 t0=  500.0 t1=   78.9 gen'ist=   78.9
+  update   500 task= 0 H=0.471 t0=  500.0 t1=  144.1 gen'ist=  144.1
+  update   600 task= 0 H=0.543 t0=  500.0 t1=  161.4 gen'ist=  161.4
+  update   700 task= 0 H=0.552 t0=  497.4 t1=  196.4 gen'ist=  196.4
+  update   800 task= 0 H=0.491 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update   900 task= 0 H=0.502 t0=  500.0 t1=   46.0 gen'ist=   46.0
+  update  1000 task= 0 H=0.529 t0=  500.0 t1=  110.6 gen'ist=  110.6
+  update  1100 task= 0 H=0.542 t0=  500.0 t1=   98.3 gen'ist=   98.3
+  update  1200 task= 0 H=0.503 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  1300 task= 0 H=0.520 t0=  500.0 t1=  108.0 gen'ist=  108.0
+  update  1400 task= 0 H=0.505 t0=  500.0 t1=   12.6 gen'ist=   12.6
+  checkpoint: update 1500 -> <repo>/results/reference-development-ppo-20261003/trials/ppo/seed_1001/training/attempt_001/resume.pkl
+  update  1500 task= 1 H=0.553 t0=  500.0 t1=  172.6 gen'ist=  172.6
+  update  1600 task= 1 H=0.522 t0=  205.0 t1=  500.0 gen'ist=  205.0
+  update  1700 task= 1 H=0.567 t0=  120.1 t1=  500.0 gen'ist=  120.1
+  update  1800 task= 1 H=0.534 t0=  474.1 t1=  500.0 gen'ist=  474.1
+  update  1900 task= 1 H=0.556 t0=  152.8 t1=  500.0 gen'ist=  152.8
+  update  2000 task= 1 H=0.559 t0=   27.4 t1=  500.0 gen'ist=   27.4
+  update  2100 task= 1 H=0.528 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  2200 task= 1 H=0.516 t0=  150.4 t1=  500.0 gen'ist=  150.4
+  update  2300 task= 1 H=0.439 t0=  443.5 t1=  500.0 gen'ist=  443.5
+  update  2400 task= 1 H=0.486 t0=   17.5 t1=  500.0 gen'ist=   17.5
+  update  2500 task= 1 H=0.531 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  2600 task= 1 H=0.522 t0=   44.1 t1=  500.0 gen'ist=   44.1
+  update  2700 task= 1 H=0.516 t0=  108.1 t1=  500.0 gen'ist=  108.1
+  update  2800 task= 1 H=0.542 t0=  111.4 t1=  500.0 gen'ist=  111.4
+  update  2900 task= 1 H=0.577 t0=  124.6 t1=  500.0 gen'ist=  124.6
+  checkpoint: update 3000 -> <repo>/results/reference-development-ppo-20261003/trials/ppo/seed_1001/training/attempt_001/resume.pkl
+  update  3000 task= 0 H=0.554 t0=   96.2 t1=  500.0 gen'ist=   96.2
+  update  3100 task= 0 H=0.506 t0=  500.0 t1=   15.0 gen'ist=   15.0
+  update  3200 task= 0 H=0.460 t0=  500.0 t1=   10.3 gen'ist=   10.3
+  update  3300 task= 0 H=0.403 t0=  500.0 t1=   10.4 gen'ist=   10.4
+  update  3400 task= 0 H=0.550 t0=  500.0 t1=   13.2 gen'ist=   13.2
+  update  3500 task= 0 H=0.497 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  3600 task= 0 H=0.512 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  3700 task= 0 H=0.514 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  3800 task= 0 H=0.491 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  3900 task= 0 H=0.501 t0=  500.0 t1=   22.8 gen'ist=   22.8
+  update  4000 task= 0 H=0.523 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  4100 task= 0 H=0.565 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  4200 task= 0 H=0.534 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  4300 task= 0 H=0.523 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  4400 task= 0 H=0.588 t0=  500.0 t1=  344.1 gen'ist=  344.1
+  checkpoint: update 4500 -> <repo>/results/reference-development-ppo-20261003/trials/ppo/seed_1001/training/attempt_001/resume.pkl
+  update  4500 task= 1 H=0.491 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  4600 task= 1 H=0.483 t0=   11.2 t1=  500.0 gen'ist=   11.2
+  update  4700 task= 1 H=0.520 t0=   29.3 t1=  500.0 gen'ist=   29.3
+  update  4800 task= 1 H=0.531 t0=  109.9 t1=  500.0 gen'ist=  109.9
+  update  4900 task= 1 H=0.559 t0=  132.9 t1=  500.0 gen'ist=  132.9
+  update  5000 task= 1 H=0.535 t0=  220.2 t1=  500.0 gen'ist=  220.2
+  update  5100 task= 1 H=0.542 t0=  176.4 t1=  500.0 gen'ist=  176.4
+  update  5200 task= 1 H=0.560 t0=   21.7 t1=  500.0 gen'ist=   21.7
+  update  5300 task= 1 H=0.515 t0=   21.4 t1=  500.0 gen'ist=   21.4
+  update  5400 task= 1 H=0.508 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  update  5500 task= 1 H=0.538 t0=   10.2 t1=  500.0 gen'ist=   10.2
+  update  5600 task= 1 H=0.512 t0=    9.8 t1=  500.0 gen'ist=    9.8
+  update  5700 task= 1 H=0.492 t0=    9.9 t1=  500.0 gen'ist=    9.9
+  update  5800 task= 1 H=0.478 t0=  378.2 t1=  500.0 gen'ist=  378.2
+  update  5900 task= 1 H=0.562 t0=   11.9 t1=  500.0 gen'ist=   11.9
+  checkpoint: update 6000 -> <repo>/results/reference-development-ppo-20261003/trials/ppo/seed_1001/training/attempt_001/resume.pkl

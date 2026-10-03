@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "mode": "development",
+  "label": "Four-phase development comparison \u00b7 n = 1 per method",
+  "n_per_method": 1,
+  "completed_reporting_trials": 0,
+  "ne_report": "reference-development-prefixes-20261003",
+  "ppo_report": "reference-development-ppo-prefix-20261003",
+  "input_sha256": {
+    "ne/summary.json": "6aa1c9dcfec00e53c053536aff9cc2e6df03647c78bea68ffede06a0dd36d6fc",
+    "ne/protocol.json": "55477b9d7879e1edd4ff280e6088c3630785f9ae034fc3a3816e40b4004386ff",
+    "ne/derivation.py": "5fd2a413882ceb060e1adc018bd989daede755c4a367999b4ba8d569a5e235ed",
+    "ne-source/ga/raw/analysis/checkpoint-metadata.json": "d2034b6965920dbe6168bc061d4799c18afb23af61d880444faac6cf87beb3fc",
+    "ne-source/ga/raw/analysis/evaluation-input/evaluation.json": "42caa0a4cf3bf29a9186ff3de1001e8bba679005ee461a6c6c043344b6e20b9d",
+    "ne-source/ga/raw/analysis/evaluation-input/results.json": "be9eb60a045fba520523dd866b9f8813d370d26b3e35c1a3722708d810f16287",
+    "ne-source/ga/raw/analysis/evaluation.json": "42caa0a4cf3bf29a9186ff3de1001e8bba679005ee461a6c6c043344b6e20b9d",
+    "ne-source/ga/raw/analysis/manifest.json": "a74d9344192c98eb3d586a7dda5cfd7fadc587334b79c7e09fb58e7fb3f4099d",
+    "ne-source/ga/raw/analysis/process.log": "1e12901482311cbe1cebd4036209432406a58b537b03dcc49f4c4a40de4a0e20",
+    "ne-source/ga/raw/analysis/summary.json": "3cfda77148b7f2a40c3fc19ab62d6f0207ba25ec497398e249256f3b80c758a2",
+    "ne-source/ga/raw/environment.json": "c83fd8d1acc330365be2d6c6adf22e8805727d31102a96ba95614340e57bc2ef",
+    "ne-source/ga/raw/plan.json": "95c9da35a4e771696becbb262272fe120b8c8259353e2b599fa919593bcc41c4",
+    "ne-source/ga/raw/receipt.json": "79d92a7f3c09f5c9afd5d85652dae3dae50a0cf870215e0e98781a4b72cee3c1",
+    "ne-source/ga/raw/summary.json": "09770781e242c922ce325b818bcf060babaa078a761f4c69109fdef12fe299c9",
+    "ne-source/ga/raw/training/config.json": "a4869653f05b7db50cdaed3982fd0f25a92666ecf5f9e04d162e8c6e2f02fe8f",
+    "ne-source/ga/raw/training/manifest.json": "f3bec208121e813cdd61968bcf22c85854b07d777adc35bc98988da51d11add6",
+    "ne-source/ga/raw/training/phase-events.jsonl": "b716326dc6e0c87575b7316242961ba4d418da9ad0ad99a4f393faf3328a38b0",
+    "ne-source/ga/raw/training/process.log": "842fa7b17b9116af29bf35574b59d7041fa3859e373fbfa43adfd2f1cb1a3b60",
+    "ne-source/ga/raw/training/results.json": "be9eb60a045fba520523dd866b9f8813d370d26b3e35c1a3722708d810f16287",
+    "ne-source/ga/raw/training/summary.json": "029c12a33e9ebf4be9029f2f2341598442b0f1572101b6d495f4b33f9faf17b6",
+    "ne-source/ga/raw/training/train.log": "fb83f233b2f14c16dd3e2cb065706b571daf7d76bc5bc526441d81a449b58202",
+    "ne-source/ga/raw/training/training_metrics.json": "772ddce14c713af62308fc9385de154e5d81f715201373a3b6e5e7f8d913a9f5",
+    "ne-source/ga/summary.json": "09770781e242c922ce325b818bcf060babaa078a761f4c69109fdef12fe299c9",
+    "ne-source/ga/checksums.json": "039f1485803e86b3ac1299328f65eea0b1e2fe46e699436ad220274d7ca004f1",
+    "ne-source/es/raw/environment.json": "2089848fc3ab53065ded8febf1f4e9db3d845051a09f55e84b472bb85a7013a1",
+    "ne-source/es/raw/plan.json": "672513594d770a9ed992bfbca2f056ad983800fe95d99e20693ced488d88f9d6",
+    "ne-source/es/raw/suite.json": "b8243f6e8c10c82925bf73d4dee35d718bf7468facbe38c66d9c5a9ce3b3e337",
+    "ne-source/es/raw/trials/es/seed_1001/analysis/attempt_001/checkpoint-metadata.json": "d2034b6965920dbe6168bc061d4799c18afb23af61d880444faac6cf87beb3fc",
+    "ne-source/es/raw/trials/es/seed_1001/analysis/attempt_001/evaluation-input/evaluation.json": "b418ea806a374d7b6388c612d6b696d69f0917f0549b13fd6aca5718aebb529a",
+    "ne-source/es/raw/trials/es/seed_1001/analysis/attempt_001/evaluation-input/results.json": "6ac07ed257540f631b03595f2b646b78382a3233d449b5b7dc785f89b5fdf0df",
+    "ne-source/es/raw/trials/es/seed_1001/analysis/attempt_001/evaluation.json": "b418ea806a374d7b6388c612d6b696d69f0917f0549b13fd6aca5718aebb529a",
+    "ne-source/es/raw/trials/es/seed_1001/analysis/attempt_001/manifest.json": "3f80b12e584e6ffd2853eb7bd83025591100cbac653e9b0005c020580aff3e54",
+    "ne-source/es/raw/trials/es/seed_1001/analysis/attempt_001/process.log": "6f2f9e959fdbc61ca1a9ae9a1278bfdb74ef195dafc184084215e0140470017c",
+    "ne-source/es/raw/trials/es/seed_1001/analysis/attempt_001/summary.json": "634c5231b38b0af70296d7a14a76b78ff6782a8a9bf8b382b69b16e735b8e0e6",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/config.json": "72b4c98e5eb323058d4f4baf913f2ad7bf43b453fe8f0fae8040cb31251a5776",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/manifest.json": "b11b168ee5d59a744e11d9b824ed836bcd6c2396278bba25b7f95b7a39bf0b81",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/phase-events.jsonl": "7ba69ce547ead99be4fbe67ed75cc6fe3c9b135f2cfb5ad0c5d02d53ff4c509f",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/process-measurement.json": "0830061a3aa812f500dbc26f38f2b9ce32b329c488671af6ad616d3d143a8b71",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/process.log": "88346f16c3c004600f4077fc57b7a22f169e3f04149fd250e5febdc3810fba60",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/receipt.json": "c5587aac8d2976d6bbbe4f7f314d23555a4e0134491d9f47a9cbfed41db997c4",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/results.json": "6ac07ed257540f631b03595f2b646b78382a3233d449b5b7dc785f89b5fdf0df",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/summary.json": "638d760dfef0efe05de031bb14b327cffd2aae50deb60fe17fa3a6fd5b7ab751",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/train.log": "f6bb84a8162c31526d062e0f4a7bec0cea7eee7ff119ae8b8d38b94a1fec7f05",
+    "ne-source/es/raw/trials/es/seed_1001/training/attempt_001/training_metrics.json": "3310a1326f8bf3b665f5c1e9423ff854a08ff000dc0112d5dda1f440d44a2dc4",
+    "ne-source/es/summary.json": "8e02d12ff30402f3f8057c43384787a628032684408377065b2f3daefca73317",
+    "ne-source/es/checksums.json": "9609bb375416b0e38b56cd902ce44fec6b80f9d5cdf9c19b93d245189b64e830",
+    "ppo/raw/analysis/checkpoint-metadata.json": "834ebdf20d4561c8a75f80448f78bfd5b1c8b21a0887dd9b12f7fd040be3cd9a",
+    "ppo/raw/analysis/evaluation-input/evaluation.json": "fe635912f73e4055a892e5ab7558ce19045ce0cc5bee7634f089676fcfe30c8c",
+    "ppo/raw/analysis/evaluation-input/results.json": "eddd5854c5951869275de00f8926ffb51cc5b2d70847b36c0af76bd2ae5fa426",
+    "ppo/raw/analysis/evaluation.json": "fe635912f73e4055a892e5ab7558ce19045ce0cc5bee7634f089676fcfe30c8c",
+    "ppo/raw/analysis/manifest.json": "7917b7d300d9c932c78995e7aa1238c0506cfefb821d7206823256e8b17aadeb",
+    "ppo/raw/analysis/process.log": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "ppo/raw/analysis/summary.json": "09bafbb7330ebd171205ae00fb28876eec6954430b84a9e581f1cdcada0a6edf",
+    "ppo/raw/environment.json": "2089848fc3ab53065ded8febf1f4e9db3d845051a09f55e84b472bb85a7013a1",
+    "ppo/raw/provenance.json": "1ddc7cd9a85a62ae41b9ee219c8d0cf3ccf4c3609fde7708dba38f7f8061b40d",
+    "ppo/raw/receipt.json": "184e51cf6fcbf60d92115f3651172ac73b7dbb262d247bc2cffe8019412421b8",
+    "ppo/raw/summary.json": "5c2b7782c8341e250e511ca5d11b570ee6ecc6fa8a3f33579ab75dc4bbc13b9e",
+    "ppo/raw/training/checkpoint-probe.json": "03c270205c504872b3ccb80ac7491cf720139e164bc56369279706547d6b0061",
+    "ppo/raw/training/config.json": "7ff40c9fe2db44b95d77df39104562f897c1810f7c64f81999008f511c401f62",
+    "ppo/raw/training/manifest.json": "b460f38b2ad4dea435e233fb7d2449aa8ed169888ad5ac06a77b6cc73a212d51",
+    "ppo/raw/training/phase-events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ppo/raw/training/process-measurement.json": "f305bc56b88673eb4b98c2d9962881fd5c6bcbffc5ae8323d711ac5c3b5e7c65",
+    "ppo/raw/training/process.log": "e6311ee2aeacc1665944d36fcf04d16a788512ecbf634d90cad3621fccd509e2",
+    "ppo/raw/training/receipt.json": "1cfb022a7ae8b33906ab4e42038e09758f83dbc26a3771cec23cdcfeacc7a00d",
+    "ppo/raw/training/results.json": "eddd5854c5951869275de00f8926ffb51cc5b2d70847b36c0af76bd2ae5fa426",
+    "ppo/raw/training/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ppo/raw/training/summary.json": "1dc2ec9f8a93bfb69e0ce69401b7abdcdf8df2fc12de8ba6fbadbb272c504c4f",
+    "ppo/raw/training/train.log": "c6a44cc1050493aca7d177bfb8c4cd79b656b24b6dded94eaafa89435ea83496",
+    "ppo/raw/training/training_metrics.json": "23ee1d52172eb78b8e7e54e88f7d5699949b83be46244631be99ed80fe9525e9",
+    "ppo/source-raw/environment.json": "2089848fc3ab53065ded8febf1f4e9db3d845051a09f55e84b472bb85a7013a1",
+    "ppo/source-raw/plan.json": "403c6ba5ed3b9dd7743f41a3e43728f47dd44c15160c17754dca9f0e73528c16",
+    "ppo/source-raw/suite.json": "eed397f37d39b933a3ce6f9b1e5e3944b01f8bb0fae7df4fd9ab6e26502e0499",
+    "ppo/source-raw/trials/ppo/seed_1001/training/attempt_001/manifest.json": "8fcdf770a62b574c37b4f73278f18f5857a191959e85c11657d929aa7eea8c46",
+    "ppo/source-raw/trials/ppo/seed_1001/training/attempt_001/phase-events.jsonl": "103c18fbe9a1da840645f7848461abdff9eef70603f7046280c6627e387c01e7",
+    "ppo/source-raw/trials/ppo/seed_1001/training/attempt_001/process-measurement.json": "a12a85353eed7ddff6e07a5e8f8213876a68eedd77dea419a27a3ac72019fad4",
+    "ppo/source-raw/trials/ppo/seed_1001/training/attempt_001/process.log": "f4a6230b0e54f1d4f277f1bfea8b5f325c73e0091c7c4509d60b3eb7a3df59fb",
+    "ppo/source-raw/trials/ppo/seed_1001/training/attempt_001/receipt.json": "2036f967282425c7e131fb478cfba0fda736eac6834fb908069ed02cc29b6d2e",
+    "ppo/source-raw/trials/ppo/seed_1001/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ppo/source-raw/trials/ppo/seed_1001/training/attempt_001/train.log": "7365cfab3f6fcdf32ce35ff746d94ae7f6067e8b338bc45767e590a57d65d9c4",
+    "ppo/support/protocol.json": "64af3ca79af1eb4738badefe54015122f6e1033424779c9efbab1626e0653c9c",
+    "ppo/support/verification.json": "fd7a4e0721c1ad28ab06d58d5d39cd94e9f600d4c88dbb992adda9034e55b763",
+    "ppo/summary.json": "e17b9813c66368fda2887c723d4d4e0ab511b4565a78b6d72e190be9968bc942",
+    "ppo/validation/artifacts-probe.json": "d00d71ac00e24df5b3a7d777f8ff4a60205ac45ba6f296ca8466290b6b7f65dc",
+    "ppo/checksums.json": "f2c84c1eb885699ee3014db3877ce2c438704df6f73b2998d24c63534d3dd028"
+  },
+  "plot_script_sha256": "5b453961ccf82db2b3a552d6d638cf43e662e981494359d5e7ce8755aeb77895",
+  "matplotlib_version": "3.11.2",
+  "numpy_version": "2.4.6",
+  "smoothing": null,
+  "dispersion": null,
+  "curve_rendering": "Unsmoothed native samples rasterized at 300 dpi; axes remain vector",
+  "curve_clock": "(zero-based update + 1) \u00d7 nominal steps per update; no cross-method interpolation",
+  "native_clocks": {
+    "ga": {
+      "samples": 800,
+      "first_step": 768000,
+      "final_step": 614400000
+    },
+    "es": {
+      "samples": 800,
+      "first_step": 768000,
+      "final_step": 614400000
+    },
+    "ppo": {
+      "samples": 6000,
+      "first_step": 102400,
+      "final_step": 614400000
+    }
+  },
+  "measurements": {
+    "ga": {
+      "analysis_version": 1,
+      "method": "ga",
+      "condition": "switching",
+      "seed": 1001,
+      "trial": 1002,
+      "agent_source": "centroid",
+      "episodes": 10,
+      "eval_seed": 901001,
+      "num_phases": 4,
+      "phase_sequence": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "nominal_training_steps": 614400000,
+      "steps_per_update": 768000,
+      "metrics": {
+        "learning_accuracy": 500.0,
+        "forgetting": 32.06666666666666,
+        "zero_shot_transfer": 468.0,
+        "learning_minus_forgetting": 467.93333333333334,
+        "cumulative_reward_steps": 294030220804.6875,
+        "cumulative_reward_generation_equivalents": 382851.8500061035,
+        "cumulative_reward_steps_exact": 294030220804.6875,
+        "normalized_curve_average": 0.9571296250152588
+      },
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 403.8,
+          "next_mean": 404.0
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": null
+        }
+      ],
+      "phase_training_returns": [
+        415.4855000305176,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "clock": {
+        "record_timing": "after_update",
+        "raw_generation_labels": "zero_based",
+        "completed_steps": "(generation + 1) * steps_per_update",
+        "integration": "pinned_unit_NE_generation_grid_trapezoid",
+        "reference_steps_per_generation": 768000,
+        "integration_grid_points": 801,
+        "edge_values": "constant_first_and_last_logged_return",
+        "initial_untrained_policy_evaluated": false
+      },
+      "transfer_interpretation": "consecutive_switches_including_both_directions",
+      "source_profile": "paper-cartpole-timing"
+    },
+    "es": {
+      "analysis_version": 1,
+      "method": "es",
+      "condition": "switching",
+      "seed": 1001,
+      "trial": 1002,
+      "agent_source": "centroid",
+      "episodes": 10,
+      "eval_seed": 901001,
+      "num_phases": 4,
+      "phase_sequence": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "nominal_training_steps": 614400000,
+      "steps_per_update": 768000,
+      "metrics": {
+        "learning_accuracy": 500.0,
+        "forgetting": 0.0,
+        "zero_shot_transfer": 500.0,
+        "learning_minus_forgetting": 500.0,
+        "cumulative_reward_steps": 297890035218.0176,
+        "cumulative_reward_generation_equivalents": 387877.6500234604,
+        "cumulative_reward_steps_exact": 297890035218.0176,
+        "normalized_curve_average": 0.969694125058651
+      },
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": null
+        }
+      ],
+      "phase_training_returns": [
+        440.5900001144409,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "clock": {
+        "record_timing": "after_update",
+        "raw_generation_labels": "zero_based",
+        "completed_steps": "(generation + 1) * steps_per_update",
+        "integration": "pinned_unit_NE_generation_grid_trapezoid",
+        "reference_steps_per_generation": 768000,
+        "integration_grid_points": 801,
+        "edge_values": "constant_first_and_last_logged_return",
+        "initial_untrained_policy_evaluated": false
+      },
+      "transfer_interpretation": "consecutive_switches_including_both_directions",
+      "source_profile": "paper-cartpole"
+    },
+    "ppo": {
+      "analysis_version": 1,
+      "method": "ppo",
+      "profile": "paper-cartpole",
+      "condition": "switching",
+      "seed": 1001,
+      "trial": 1002,
+      "agent_source": "final",
+      "episodes": 10,
+      "eval_seed": 901001,
+      "num_phases": 4,
+      "phase_sequence": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "nominal_training_steps": 614400000,
+      "steps_per_update": 102400,
+      "metrics": {
+        "learning_accuracy": 500.0,
+        "forgetting": 159.66666666666666,
+        "zero_shot_transfer": 217.4333333333333,
+        "learning_minus_forgetting": 340.33333333333337,
+        "cumulative_reward_steps": 302032205126.9531,
+        "cumulative_reward_generation_equivalents": 393271.1004257202,
+        "cumulative_reward_steps_exact": 301503984914.0625,
+        "normalized_curve_average": 0.9831777510643005
+      },
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 133.1
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 21.0,
+          "next_mean": 19.2
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": null
+        }
+      ],
+      "phase_training_returns": [
+        492.08000076293945,
+        494.7490670013428,
+        487.6156002705892,
+        488.5759337463379
+      ],
+      "clock": {
+        "record_timing": "after_update",
+        "raw_generation_labels": "zero_based",
+        "completed_steps": "(generation + 1) * steps_per_update",
+        "integration": "pinned_unit_NE_generation_grid_trapezoid",
+        "reference_steps_per_generation": 768000,
+        "integration_grid_points": 801,
+        "edge_values": "constant_first_and_last_logged_return",
+        "initial_untrained_policy_evaluated": false
+      },
+      "transfer_interpretation": "consecutive_switches_including_both_directions"
+    }
+  },
+  "outputs_sha256": {
+    "reference-development-prefixes-20261003.svg": "85164cea06b65a1da5b6901ecc256adc2430c5324872b7b61971eb8951a4c7c7",
+    "reference-development-prefixes-20261003.pdf": "9b99bfdd49d767751590183507545c2a0d0adf5e2442e62790876567c91333f5",
+    "reference-development-prefixes-20261003-metrics.svg": "74083c257a870c3703b9607c1e328760c6984ff8de41e7049c287d7a00e834b6",
+    "reference-development-prefixes-20261003-metrics.pdf": "b5fffa6ba3b4c228a742290684f6f9939597648b84537c34ede7681f46ffd31e"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "status": "termination_requested",
+  "guard_pid": 238349,
+  "started_at_utc": "2026-10-03T18:33:54.498891+00:00",
+  "source": "<repo>/results/reference-development-ppo-20261003",
+  "trainer_pid": 178307,
+  "trainer_start_ticks": "2308949",
+  "target_updates": 6000,
+  "target_complete_phases": 4,
+  "training_limit_seconds": 27000,
+  "total_ppo_limit_seconds": 28800,
+  "time_basis": "Monotonic process duration since original trainer launch; includes existing training",
+  "reserved_seconds_for_verification_and_evaluation": 1800,
+  "reason": "User requested PPO results within approximately eight hours; full 20-phase PPO trial deferred",
+  "checkpoint_copies": [
+    {
+      "completed_updates": 3000,
+      "file": "resume-update-3000.pkl",
+      "sha256": "799360a610824ffba77f89305ad524df3c4c6a620dad57d7a1ca86cc02d0e719",
+      "phase_event": {
+        "completed_updates": 3000,
+        "elapsed_seconds": 11146.831315858999,
+        "kind": "native_checkpoint_written"
+      },
+      "copied_at_utc": "2026-10-03T19:17:44.621528+00:00"
+    },
+    {
+      "completed_updates": 6000,
+      "file": "resume-update-6000.pkl",
+      "sha256": "e016f70fab0fee4aabb22e110b138f63a0deedfa49fecbbac0e95e51fe2c43a1",
+      "phase_event": {
+        "completed_updates": 6000,
+        "elapsed_seconds": 22196.146503423002,
+        "kind": "native_checkpoint_written"
+      },
+      "copied_at_utc": "2026-10-03T22:40:40.585946+00:00"
+    }
+  ],
+  "stop_reason": "target_complete_phases_reached",
+  "measured_training_seconds_at_stop": 22197.174398674997,
+  "latest_checkpoint_updates": 6000,
+  "finished_at_utc": "2026-10-03T22:40:40.612675+00:00"
+}

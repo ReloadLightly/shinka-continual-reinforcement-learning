@@ -1,0 +1,70 @@
+{
+  "status": "failed",
+  "profile": {
+    "name": "paper-cartpole",
+    "purpose": "Full-budget development runtime calibration; not reporting",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 20,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 10,
+    "seeds": [
+      1001
+    ],
+    "ne": {
+      "num_generations": 4000,
+      "task_interval": 200,
+      "pop_size": 512,
+      "num_evals": 3
+    },
+    "ppo": {
+      "num_updates": 30000,
+      "task_interval": 1500,
+      "num_envs": 2048,
+      "num_steps": 50,
+      "num_minibatches": 32
+    }
+  },
+  "method": "ppo",
+  "seed": 1001,
+  "trial": 1002,
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "ga_settings": null,
+  "command": [
+    "<repo>/.upstream/continual_neuroevolution/.venv/bin/python",
+    "<repo>/.upstream/continual_neuroevolution/source/run.py",
+    "--suite",
+    "gymnax",
+    "--env",
+    "CartPole-v1_sigma0.5",
+    "--method",
+    "ppo",
+    "--seed",
+    "1001",
+    "--trial",
+    "1002",
+    "--output_dir",
+    "<repo>/results/reference-development-ppo-20261003/trials/ppo/seed_1001/training/attempt_001",
+    "--num_phases",
+    "20",
+    "--num_tasks",
+    "2",
+    "--task_type",
+    "noise",
+    "--eval_episodes",
+    "10",
+    "--episode_length",
+    "500",
+    "--num_updates",
+    "30000",
+    "--task_interval",
+    "1500",
+    "--checkpoint_every",
+    "1500"
+  ],
+  "started_at_utc": "2026-10-03T13:14:09.676274+00:00",
+  "resume_from": null,
+  "wall_seconds": 22197.261648973003,
+  "error": "ValueError: Native trainer failed",
+  "finished_at_utc": "2026-10-03T22:40:40.767574+00:00"
+}

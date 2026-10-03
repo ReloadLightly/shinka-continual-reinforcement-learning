@@ -36,8 +36,8 @@ trial 1002, and evaluation seed 901001. The completed
 is reused after verification of its original and published evidence. The
 [ES development measurement](../reports/reference-development-es-20261003/summary.json)
 is also complete at the full budget. PPO began with the same declared budget
-and original baseline settings; its continuation now follows the resource
-amendment below. These measurements are development evidence and cannot replace
+and original baseline settings; its [completed four-phase prefix](../reports/reference-development-ppo-prefix-20261003/summary.json)
+implements the resource amendment below. These measurements are development evidence and cannot replace
 reporting trials.
 The [separate reduced diagnostic](../reports/reference-comparison-diagnostic-20261003/summary.json)
 checks native GA/ES/PPO execution and analysis before full runs; it is not
@@ -71,7 +71,17 @@ two-task cycles. Record the actual retained phase count and updates, and
 account for all PPO compute, including work after a retained checkpoint.
 Preserve the original attempt and checkpoint under their original protocol.
 Write the derived prefix, its exact protocol and provenance, and its analysis
-to new paths. Prefix evaluation and compact evidence publication are pending.
+to new paths. The target was reached: the [published PPO prefix](../reports/reference-development-ppo-prefix-20261003/summary.json)
+contains 6,000 updates and four phases, followed by 100 fresh evaluation
+episodes. Its [exact provenance](../reports/reference-development-ppo-prefix-20261003/raw/provenance.json)
+records zero additional training updates during finalization. Total accounted
+PPO compute is 22,340.0237 s (6.205562 h), within the 28,800 s allocation;
+all original training and previous verification costs are retained.
+The [execution record](../reports/reference-ppo-budget-20261003/execution.json)
+links the preserved checkpoint to the intentional stop after update 6,000.
+The original suite retains its unsuccessful full-budget status because its
+30,000-update target was not completed; this does not denote a training-algorithm
+failure. Original records and the separately evaluated prefix remain distinct.
 The [native finalization verification](../reports/reference-ppo-budget-20261003/verification.json)
 confirms that the adapter can retain checkpoint policies and recorded history
 without further training, then apply the existing fresh evaluator. Its measured
@@ -93,7 +103,7 @@ policy. Report every trial and its learning curve, learning accuracy (LA),
 signed forgetting (F), LA−F, zero-shot transfer, and cumulative return.
 For the full twenty-phase trials, forgetting averages all 19 consecutive
 switches, including both directions; negative differences are retained. For
-the proposed four-phase PPO prefix, compute the same definitions over its
+the completed four-phase PPO prefix, compute the same definitions over its
 three observed switches and report each phase separately. Use the actual
 retained phase count if the fallback is needed. Transfer on recurring tasks
 is interpreted in the context of prior task exposure.
@@ -113,7 +123,7 @@ and ES development trials after verifying matching task draws and recomputing
 all metrics over the same phase count and nominal budget. The
 [derived GA/ES prefix analysis](../reports/reference-development-prefixes-20261003/summary.json)
 reuses the existing raw episode returns and training curves without new trials.
-At the four-phase target, this means 800 GA/ES generations and 6,000 PPO updates. Keep those
+At the completed four-phase horizon, this means 800 GA/ES generations and 6,000 PPO updates. Keep those
 prefix comparisons separate from full twenty-phase method rankings.
 
 Assess each relevant paper finding as reproduced, discrepant, or unresolved
@@ -121,6 +131,58 @@ within the observed scope. The PPO prefix can address initial acquisition and
 early switches; sustained behavior across twenty phases and repeated PPO
 trials remain unresolved. Do not infer reproduction of other environments or
 methods from this comparison.
+
+## Completed four-phase development comparison
+
+The [GA/ES prefix derivation](../reports/reference-development-prefixes-20261003/protocol.json)
+and [PPO prefix provenance](../reports/reference-development-ppo-prefix-20261003/raw/provenance.json)
+define matched 614,400,000-step trajectories at seed 1001, task trial 1002, and
+evaluation seed 901001. GA/ES statistics reuse the first four phases and their
+existing fresh centroid evaluations; PPO uses its saved policies and 100 new
+fresh evaluation episodes. There is one trajectory per method.
+
+| Method | LA (return) | Signed F (return) | LA − F (return) | ZT (return) | Cum. / (steps × 500) |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| GA | 500.00 | 32.07 | 467.93 | 468.00 | 0.9571 |
+| ES | 500.00 | 0.00 | 500.00 | 500.00 | 0.9697 |
+| PPO | 500.00 | 159.67 | 340.33 | 217.43 | 0.9832 |
+
+These values derive from the [GA/ES evidence](../reports/reference-development-prefixes-20261003/summary.json)
+and [PPO evidence](../reports/reference-development-ppo-prefix-20261003/summary.json).
+All four own-task means are 500 for each method. The
+[PPO raw episodes](../reports/reference-development-ppo-prefix-20261003/raw/analysis/evaluation.json)
+give previous-task means of 21, 500, and 500 after the three switches, so
+the first switch contributes a 479-unit loss and later endpoint losses are
+zero. GA's corresponding losses are 0, 96.2, and 0; ES's are all zero.
+PPO's transfer means are 133.1, 19.2, and 500. Transfer on later phases includes
+previously encountered tasks and should not be interpreted as wholly unseen-task
+generalization.
+
+The [learning and retention figure](../reports/figures/reference-development-prefixes-20261003.svg)
+shows unsmoothed native samples; its [metric companion](../reports/figures/reference-development-prefixes-20261003-metrics.svg)
+and [provenance](../reports/figures/reference-development-prefixes-20261003.json)
+retain the numerical inputs. PPO has the highest normalized cumulative
+active-task return in this seed, while its first-switch retention is poorer.
+This descriptive ordering provides no estimate of between-trial variation and
+does not establish algorithmic superiority or the full twenty-phase ranking.
+
+The cumulative metric follows the declared reference integration grid. For
+PPO, its reward-step area is 302,032,205,126.9531; integration of every dense
+PPO sample instead gives 301,503,984,914.0625. The [summary](../reports/reference-development-ppo-prefix-20261003/summary.json)
+retains both quantities, and the table uses the declared reference grid.
+
+Measured elapsed training through the fourth checkpoint was 429.4531 s for GA,
+277.8433 s for ES, and 22,196.1465 s for PPO. These are observed checkpoint
+boundaries, including native overhead. GA/ES source-run costs remain fully
+charged in their [derived evidence](../reports/reference-development-prefixes-20261003/summary.json).
+For PPO, the complete original training cost is 22,197.2616 s; finalization
+took 13.9266 s and fresh evaluation 6.2488 s. The [complete cost accounting](../reports/reference-development-ppo-prefix-20261003/summary.json)
+also includes 107.3577 s of prior verification and the remaining analysis
+overhead, for 22,340.0237 s total.
+
+The next scientific stage is the unchanged twenty-phase GA/ES reporting
+comparison, ten trials per method. The full-budget PPO arm remains deferred;
+the completed development prefix does not consume any reporting trial.
 
 ## Reference findings to assess
 
@@ -168,6 +230,35 @@ Completed training and analysis are verified before reuse; an analysis failure
 does not require retraining a valid completed agent. Preserve unsuccessful
 attempts and their compute separately. Allow only one controller for an output
 directory, and use new paths for distinct experiments and exports.
+
+## Next reporting execution
+
+Run the amended GA/ES subset with the existing harness, retaining all ten
+reporting seeds, twenty phases, and the full training budget per method.
+The first invocation below completes the first seed's GA/ES pair within the
+twenty-trial plan:
+
+```bash
+.venv/bin/python scripts/run_reference_comparison.py \
+  --mode reporting --methods ga es \
+  --results-dir results/reference-reporting-ga-es-20261004 \
+  --cpus 8 --timeout 21600 --analysis-timeout 1800 \
+  --max-trials 2 --execute
+```
+
+Continue subsequent pairs with the same arguments and `--resume`. The harness
+verifies completed trials before reuse; `--max-trials 2` bounds each invocation,
+not the declared number of reporting trials. Preview the frozen plan by omitting
+`--execute` before the first launch.
+
+This reporting allocation exposes eight logical CPUs, compared with two for
+the development measurements. Record the actual affinity, elapsed training
+and evaluation costs, and peak trainer memory for the reporting trials;
+development durations do not estimate this allocation's speedup. Scientific
+settings, task draws, and nominal training budgets remain fixed. Completion
+of all twenty GA/ES trials supplies their full-budget reporting comparison;
+the original three-method comparison remains incomplete while full-budget
+PPO reporting is deferred.
 
 The scientific report summarizes experimental findings and material protocol
 deviations. Detailed commands, source revisions, runtime identities, raw curves,

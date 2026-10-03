@@ -1,0 +1,252 @@
+{
+  "original_artifacts": {
+    "raw/analysis/checkpoint-metadata.json": {
+      "sha256": "834ebdf20d4561c8a75f80448f78bfd5b1c8b21a0887dd9b12f7fd040be3cd9a",
+      "bytes": 456,
+      "exported": true
+    },
+    "raw/analysis/evaluation-input/checkpoints.npz": {
+      "sha256": "6919047c9b3a15a9422ace48aaa7a1f07d22e70cfe29f908c8137612fd904ea8",
+      "bytes": 6086,
+      "exported": false
+    },
+    "raw/analysis/evaluation-input/evaluation.json": {
+      "sha256": "fe635912f73e4055a892e5ab7558ce19045ce0cc5bee7634f089676fcfe30c8c",
+      "bytes": 1181,
+      "exported": true
+    },
+    "raw/analysis/evaluation-input/results.json": {
+      "sha256": "eddd5854c5951869275de00f8926ffb51cc5b2d70847b36c0af76bd2ae5fa426",
+      "bytes": 1765,
+      "exported": true
+    },
+    "raw/analysis/evaluation.json": {
+      "sha256": "fe635912f73e4055a892e5ab7558ce19045ce0cc5bee7634f089676fcfe30c8c",
+      "bytes": 1181,
+      "exported": true
+    },
+    "raw/analysis/manifest.json": {
+      "sha256": "174e804dc47e5f44bf24160debfb5ef0121b664b1eadb010adebfd04db40a5f0",
+      "bytes": 2297,
+      "exported": true
+    },
+    "raw/analysis/process.log": {
+      "sha256": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+      "bytes": 82,
+      "exported": true
+    },
+    "raw/analysis/summary.json": {
+      "sha256": "09bafbb7330ebd171205ae00fb28876eec6954430b84a9e581f1cdcada0a6edf",
+      "bytes": 2101,
+      "exported": true
+    },
+    "raw/environment.json": {
+      "sha256": "2089848fc3ab53065ded8febf1f4e9db3d845051a09f55e84b472bb85a7013a1",
+      "bytes": 3093,
+      "exported": true
+    },
+    "raw/provenance.json": {
+      "sha256": "89fb7ab2f5c6c31edeefe508893e163f7fec760135074407c844af09e3f6e67a",
+      "bytes": 5119,
+      "exported": true
+    },
+    "raw/receipt.json": {
+      "sha256": "184e51cf6fcbf60d92115f3651172ac73b7dbb262d247bc2cffe8019412421b8",
+      "bytes": 2465,
+      "exported": true
+    },
+    "raw/summary.json": {
+      "sha256": "5c2b7782c8341e250e511ca5d11b570ee6ecc6fa8a3f33579ab75dc4bbc13b9e",
+      "bytes": 3106,
+      "exported": true
+    },
+    "raw/training/checkpoint-probe.json": {
+      "sha256": "03c270205c504872b3ccb80ac7491cf720139e164bc56369279706547d6b0061",
+      "bytes": 1135,
+      "exported": true
+    },
+    "raw/training/checkpoints.npz": {
+      "sha256": "6919047c9b3a15a9422ace48aaa7a1f07d22e70cfe29f908c8137612fd904ea8",
+      "bytes": 6086,
+      "exported": false
+    },
+    "raw/training/config.json": {
+      "sha256": "7ff40c9fe2db44b95d77df39104562f897c1810f7c64f81999008f511c401f62",
+      "bytes": 1076,
+      "exported": true
+    },
+    "raw/training/manifest.json": {
+      "sha256": "730ec1a8cf910861348999a623f7f0d2a71db367910a4ae9941b69a5bd43decc",
+      "bytes": 2077,
+      "exported": true
+    },
+    "raw/training/phase-events.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exported": true
+    },
+    "raw/training/process-measurement.json": {
+      "sha256": "f305bc56b88673eb4b98c2d9962881fd5c6bcbffc5ae8323d711ac5c3b5e7c65",
+      "bytes": 438,
+      "exported": true
+    },
+    "raw/training/process.log": {
+      "sha256": "086d25496c3aa3f7bb5a02a504226cda92575efe08a455f23604f5fe787a4b09",
+      "bytes": 1096,
+      "exported": true
+    },
+    "raw/training/receipt.json": {
+      "sha256": "1cfb022a7ae8b33906ab4e42038e09758f83dbc26a3771cec23cdcfeacc7a00d",
+      "bytes": 1156,
+      "exported": true
+    },
+    "raw/training/results.json": {
+      "sha256": "eddd5854c5951869275de00f8926ffb51cc5b2d70847b36c0af76bd2ae5fa426",
+      "bytes": 1765,
+      "exported": true
+    },
+    "raw/training/stacks.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exported": true
+    },
+    "raw/training/summary.json": {
+      "sha256": "1dc2ec9f8a93bfb69e0ce69401b7abdcdf8df2fc12de8ba6fbadbb272c504c4f",
+      "bytes": 104,
+      "exported": true
+    },
+    "raw/training/train.log": {
+      "sha256": "cbbf0e59238cb7e078ef13eab00c5f273ade9f5029a18b0de5a7dfdb433fae44",
+      "bytes": 447,
+      "exported": true
+    },
+    "raw/training/training_metrics.json": {
+      "sha256": "23ee1d52172eb78b8e7e54e88f7d5699949b83be46244631be99ed80fe9525e9",
+      "bytes": 2350843,
+      "exported": true
+    },
+    "raw/training/trajectory.npz": {
+      "sha256": "0ba98a1288e585d3130b4dacd8a373a96a617b9bc9140d66a1ea4fa692f9bc26",
+      "bytes": 1389382,
+      "exported": false
+    },
+    "source-raw/environment.json": {
+      "sha256": "2089848fc3ab53065ded8febf1f4e9db3d845051a09f55e84b472bb85a7013a1",
+      "bytes": 3093,
+      "exported": true
+    },
+    "source-raw/plan.json": {
+      "sha256": "852413a2df565b276fe95e80f3f11d52c00a951587ecca40cf2b3329f91105ec",
+      "bytes": 3308,
+      "exported": true
+    },
+    "source-raw/suite.json": {
+      "sha256": "eed397f37d39b933a3ce6f9b1e5e3944b01f8bb0fae7df4fd9ab6e26502e0499",
+      "bytes": 437,
+      "exported": true
+    },
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/manifest.json": {
+      "sha256": "2fc160333c781ebcd4f98bad4b18320ac49653487e62d44da8d45cd4b01c829f",
+      "bytes": 1787,
+      "exported": true
+    },
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/phase-events.jsonl": {
+      "sha256": "103c18fbe9a1da840645f7848461abdff9eef70603f7046280c6627e387c01e7",
+      "bytes": 412,
+      "exported": true
+    },
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/process-measurement.json": {
+      "sha256": "a12a85353eed7ddff6e07a5e8f8213876a68eedd77dea419a27a3ac72019fad4",
+      "bytes": 970,
+      "exported": true
+    },
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/process.log": {
+      "sha256": "757d9095ea3c8a6057f7136b7457f653c4b1f5afa38cb247aa5b962b706ee7bd",
+      "bytes": 5552,
+      "exported": true
+    },
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/receipt.json": {
+      "sha256": "2036f967282425c7e131fb478cfba0fda736eac6834fb908069ed02cc29b6d2e",
+      "bytes": 616,
+      "exported": true
+    },
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/resume.pkl": {
+      "sha256": "e016f70fab0fee4aabb22e110b138f63a0deedfa49fecbbac0e95e51fe2c43a1",
+      "bytes": 3663699,
+      "exported": false
+    },
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/stacks.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exported": true
+    },
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/train.log": {
+      "sha256": "330522e764d9d09492862f74893683cceb7562201a8aaf02a6af4a3485c98267",
+      "bytes": 4876,
+      "exported": true
+    },
+    "support/protocol.json": {
+      "sha256": "64af3ca79af1eb4738badefe54015122f6e1033424779c9efbab1626e0653c9c",
+      "bytes": 2930,
+      "exported": true
+    },
+    "support/verification.json": {
+      "sha256": "fd7a4e0721c1ad28ab06d58d5d39cd94e9f600d4c88dbb992adda9034e55b763",
+      "bytes": 9452,
+      "exported": true
+    }
+  },
+  "published_sha256": {
+    "raw/analysis/checkpoint-metadata.json": "834ebdf20d4561c8a75f80448f78bfd5b1c8b21a0887dd9b12f7fd040be3cd9a",
+    "raw/analysis/evaluation-input/evaluation.json": "fe635912f73e4055a892e5ab7558ce19045ce0cc5bee7634f089676fcfe30c8c",
+    "raw/analysis/evaluation-input/results.json": "eddd5854c5951869275de00f8926ffb51cc5b2d70847b36c0af76bd2ae5fa426",
+    "raw/analysis/evaluation.json": "fe635912f73e4055a892e5ab7558ce19045ce0cc5bee7634f089676fcfe30c8c",
+    "raw/analysis/manifest.json": "7917b7d300d9c932c78995e7aa1238c0506cfefb821d7206823256e8b17aadeb",
+    "raw/analysis/process.log": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "raw/analysis/summary.json": "09bafbb7330ebd171205ae00fb28876eec6954430b84a9e581f1cdcada0a6edf",
+    "raw/environment.json": "2089848fc3ab53065ded8febf1f4e9db3d845051a09f55e84b472bb85a7013a1",
+    "raw/provenance.json": "1ddc7cd9a85a62ae41b9ee219c8d0cf3ccf4c3609fde7708dba38f7f8061b40d",
+    "raw/receipt.json": "184e51cf6fcbf60d92115f3651172ac73b7dbb262d247bc2cffe8019412421b8",
+    "raw/summary.json": "5c2b7782c8341e250e511ca5d11b570ee6ecc6fa8a3f33579ab75dc4bbc13b9e",
+    "raw/training/checkpoint-probe.json": "03c270205c504872b3ccb80ac7491cf720139e164bc56369279706547d6b0061",
+    "raw/training/config.json": "7ff40c9fe2db44b95d77df39104562f897c1810f7c64f81999008f511c401f62",
+    "raw/training/manifest.json": "b460f38b2ad4dea435e233fb7d2449aa8ed169888ad5ac06a77b6cc73a212d51",
+    "raw/training/phase-events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/training/process-measurement.json": "f305bc56b88673eb4b98c2d9962881fd5c6bcbffc5ae8323d711ac5c3b5e7c65",
+    "raw/training/process.log": "e6311ee2aeacc1665944d36fcf04d16a788512ecbf634d90cad3621fccd509e2",
+    "raw/training/receipt.json": "1cfb022a7ae8b33906ab4e42038e09758f83dbc26a3771cec23cdcfeacc7a00d",
+    "raw/training/results.json": "eddd5854c5951869275de00f8926ffb51cc5b2d70847b36c0af76bd2ae5fa426",
+    "raw/training/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/training/summary.json": "1dc2ec9f8a93bfb69e0ce69401b7abdcdf8df2fc12de8ba6fbadbb272c504c4f",
+    "raw/training/train.log": "c6a44cc1050493aca7d177bfb8c4cd79b656b24b6dded94eaafa89435ea83496",
+    "raw/training/training_metrics.json": "23ee1d52172eb78b8e7e54e88f7d5699949b83be46244631be99ed80fe9525e9",
+    "source-raw/environment.json": "2089848fc3ab53065ded8febf1f4e9db3d845051a09f55e84b472bb85a7013a1",
+    "source-raw/plan.json": "403c6ba5ed3b9dd7743f41a3e43728f47dd44c15160c17754dca9f0e73528c16",
+    "source-raw/suite.json": "eed397f37d39b933a3ce6f9b1e5e3944b01f8bb0fae7df4fd9ab6e26502e0499",
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/manifest.json": "8fcdf770a62b574c37b4f73278f18f5857a191959e85c11657d929aa7eea8c46",
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/phase-events.jsonl": "103c18fbe9a1da840645f7848461abdff9eef70603f7046280c6627e387c01e7",
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/process-measurement.json": "a12a85353eed7ddff6e07a5e8f8213876a68eedd77dea419a27a3ac72019fad4",
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/process.log": "f4a6230b0e54f1d4f277f1bfea8b5f325c73e0091c7c4509d60b3eb7a3df59fb",
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/receipt.json": "2036f967282425c7e131fb478cfba0fda736eac6834fb908069ed02cc29b6d2e",
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source-raw/trials/ppo/seed_1001/training/attempt_001/train.log": "7365cfab3f6fcdf32ce35ff746d94ae7f6067e8b338bc45767e590a57d65d9c4",
+    "support/protocol.json": "64af3ca79af1eb4738badefe54015122f6e1033424779c9efbab1626e0653c9c",
+    "support/verification.json": "fd7a4e0721c1ad28ab06d58d5d39cd94e9f600d4c88dbb992adda9034e55b763",
+    "summary.json": "e17b9813c66368fda2887c723d4d4e0ab511b4565a78b6d72e190be9968bc942",
+    "validation/artifacts-probe.json": "d00d71ac00e24df5b3a7d777f8ff4a60205ac45ba6f296ca8466290b6b7f65dc"
+  },
+  "exporter_sha256": "d724ddfb6abb37a16945218d9abe6888bb5e288f8c4c834c855cf7f274ec4b34",
+  "publication_provenance": {
+    "repository_revision": "7268d850914941d45c3e20709960da2c4aa83f20",
+    "source_sha256": {
+      "src/shinka_crl/reference_prefix_report.py": "d724ddfb6abb37a16945218d9abe6888bb5e288f8c4c834c855cf7f274ec4b34",
+      "scripts/report_reference_prefix.py": "fed50a2558f668e5394c441247befa48547262a5c9a0d22c99317a21673d0e2f",
+      "src/shinka_crl/reference_prefix.py": "873940ad71b49b904e79a53fca2181f65fe5cb3a554fa692e4046300ae73f109",
+      "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+      "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+      "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad"
+    },
+    "verification_note": "The raw original plan records execution source hashes. This revision and the exporter/helper hashes identify publication. Published artifacts remain verifiable by their own checksums after later protocol changes; current full-budget validators are not substituted for this archived development protocol."
+  },
+  "artifact_policy": "Original and derived evidence retained. All files hashed; text published with local paths redacted, binary checkpoints retained outside Git. Support files describe already-published execution verification, not scientific results."
+}

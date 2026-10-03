@@ -1,0 +1,16 @@
+======================================================================
+gymnax | ppo (rl) | CartPole-v1_sigma0.5 | continual | trial 1002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_updates)
+  seed           : 1001
+  boundary info  : none
+  output         : <prefix>/training
+======================================================================
+  RESUMED from <prefix>/training/resume.pkl at update 6000 (6000 records, 9.44 h already spent)
+  wrote <prefix>/training
+
+Done. <prefix>/training

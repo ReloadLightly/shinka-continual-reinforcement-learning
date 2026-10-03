@@ -8,8 +8,12 @@ and evaluating ShinkaEvolve as an extension of its genetic algorithm (GA).
 Using the pinned reference implementation, we conduct a CartPole development
 comparison of GA, evolution strategies (ES), and proximal policy optimization
 (PPO), followed by searches over static GA settings and adaptive mutation rules.
-The development comparison shows a learning–retention trade-off: PPO achieves
-higher learning accuracy but greater measured forgetting than GA. Static tuning
+The reduced-budget pilot shows a learning–retention trade-off: PPO achieves
+higher learning accuracy but greater measured forgetting than GA. A subsequent
+four-phase comparison at the reference per-phase budgets gives maximal
+phase-end learning accuracy for all three methods. PPO has the largest mean
+forgetting and highest cumulative active-task performance in that single
+development trial. Static tuning
 improves observed active-task return while also increasing mean forgetting.
 For the adaptive extension, one rule is selected on development trials and
 compared with five fixed controls on a reserved five-seed partition. Its mean
@@ -18,8 +22,8 @@ the paired difference is −0.0631 ± 0.0632 (mean ± sample standard deviation)
 This comparison does not support an advantage for the selected rule. The study
 provides controlled development evidence for the reproduction and extension;
 full-budget GA and ES development trials attain maximal phase-end learning
-accuracy. Their ten-trial reporting comparison remains pending, while PPO is
-limited to a shorter development horizon by the available compute allocation.
+accuracy. Their ten-trial reporting comparison remains pending; the PPO
+development comparison is complete over its shorter, resource-limited horizon.
 
 ## 1. Introduction
 
@@ -72,9 +76,10 @@ of 10 phases is insufficient for this experiment.*
 
 An [amended PPO allocation](docs/reference-comparison.md#ppo-resource-amendment--october-3-2026)
 limits its current development experiment to eight hours of active computation,
-including evaluation. The target is the first four complete phases (6,000
-updates) of the existing trajectory, retaining the original phase duration and
-baseline settings. This shorter horizon supports early acquisition and retention
+including evaluation. The [completed prefix](reports/reference-development-ppo-prefix-20261003/summary.json)
+contains the first four complete phases (6,000 updates) of the existing
+trajectory, retaining the original phase duration and baseline settings.
+This shorter horizon supports early acquisition and retention
 analysis; twenty-phase PPO behavior and its ten-trial reporting distribution
 remain unresolved. GA and ES retain the full reporting protocol in Table 1.
 
@@ -94,13 +99,16 @@ steps per update. These are explicit reductions from Table 1.
 | Adaptive controls / search | 4001–4003 | 4002–4004 | 7.68 × 10⁶ | Development |
 | Adaptive finalist validation | 5001–5005 | 5002–5006 | 30.72 × 10⁶ | Evaluate a previously selected rule |
 | Full-budget GA/ES development | 1001 | 1002 | 3.072 × 10⁹ | Measure native learning and compute |
-| PPO development prefix (target) | 1001 | 1002 | 614.4 × 10⁶ | Early acquisition and retention |
+| Matched GA/ES/PPO development prefixes | 1001 | 1002 | 614.4 × 10⁶ | Early acquisition and retention; GA/ES reused |
 | Final paper reporting | 42–51 | 1–10 | 3.072 × 10⁹ | Untouched; GA/ES planned, PPO deferred |
 
 *Table 2. Scientific data partitions. Search uses 20 generations per phase;
 both validation studies use 80. Validation therefore changes task draws and
 adaptation interval together. Full-budget reference development uses Table 1
-and the [reference comparison protocol](docs/reference-comparison.md).
+and the [reference comparison protocol](docs/reference-comparison.md). The
+[GA/ES prefix protocol](reports/reference-development-prefixes-20261003/protocol.json)
+and [PPO prefix provenance](reports/reference-development-ppo-prefix-20261003/raw/provenance.json)
+define the matched shorter horizon.
 Implementation diagnostics use separate reduced
 budgets and are excluded from method comparisons. Exact allocations:
 [pilot and static search](docs/experimental-roadmap.md),
@@ -264,12 +272,70 @@ resident memory of 843.2 and 806.4 MiB, respectively, on the two-CPU allocation.
 These measured durations include compilation, in-loop evaluation, and checkpoint
 writes; post-hoc evaluation is additional work. The linked trial records retain
 all phase returns, training curves, compute measurements, and checkpoint hashes.
-Evaluation of the shorter PPO development prefix remains pending. Comparisons
-with that prefix use [matched four-phase GA/ES analyses](reports/reference-development-prefixes-20261003/summary.json),
-derived from the existing trials under an [explicit prefix protocol](reports/reference-development-prefixes-20261003/protocol.json).
 These development observations cannot establish a method ranking or substitute
 for repeated reporting trials, and their longer budgets preclude a direct
 comparison with Table 3.
+
+### Four-phase comparison with reference per-phase budgets
+
+The completed PPO development trajectory covers four alternating phases at
+the reference per-phase budget. We compare it with the first four phases of
+the completed GA and ES trials, reusing their existing training curves and
+fresh checkpoint evaluations. Each method therefore contributes one matched
+trajectory with the same task draw and 614.4 million nominal training steps.
+PPO's saved policies were evaluated in 100 fresh episodes, with no additional
+training during finalization. The [PPO evidence](reports/reference-development-ppo-prefix-20261003/summary.json)
+and [GA/ES derivation](reports/reference-development-prefixes-20261003/summary.json)
+record those identities and budgets.
+
+![Learning and retention over four matched development phases](reports/figures/reference-development-prefixes-20261003.svg)
+
+*Figure 2. Unsmoothed active-task returns on native update clocks (top) and
+fresh own-task and previous-task checkpoint returns (bottom). Each method has
+one development trajectory. The matched horizon preserves the original phase
+duration; it does not represent the full twenty-phase comparison.
+[PDF](reports/figures/reference-development-prefixes-20261003.pdf) ·
+[Metric figure](reports/figures/reference-development-prefixes-20261003-metrics.svg) ·
+[Exact inputs and values](reports/figures/reference-development-prefixes-20261003.json).*
+
+| Method | LA ↑ | F ↓ | LA − F ↑ | ZT ↑ | Cum. / (steps × 500) ↑ |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| GA | 500.00 | 32.07 | 467.93 | 468.00 | 0.9571 |
+| ES | 500.00 | 0.00 | 500.00 | 500.00 | 0.9697 |
+| PPO | 500.00 | 159.67 | 340.33 | 217.43 | 0.9832 |
+
+*Table 5. Matched four-phase development results, one trial per method.
+LA, F, LA − F, and ZT are in CartPole return units; normalized cumulative
+return is dimensionless. Forgetting and transfer average three switches.
+There is no estimate of between-trial dispersion.
+[Exact prefix protocol](reports/reference-development-prefixes-20261003/protocol.json) ·
+[PPO protocol and provenance](reports/reference-development-ppo-prefix-20261003/raw/provenance.json) ·
+[GA/ES evidence](reports/reference-development-prefixes-20261003/summary.json) ·
+[PPO evidence](reports/reference-development-ppo-prefix-20261003/summary.json).*
+
+All three methods reach return 500 on their active task at every phase end.
+PPO's previous-task return after the first switch is 21, a loss of 479 return
+units; at the next two phase endpoints, both its own-task and previous-task
+returns are 500. Its mean forgetting is therefore dominated by the first
+switch. The [dense PPO curve](reports/reference-development-ppo-prefix-20261003/raw/training/training_metrics.json)
+also contains transient retention losses within phases. GA loses 96.2 return
+units at one of the three switches; ES has no
+measured phase-end loss. These are observations from the
+[fresh PPO episodes](reports/reference-development-ppo-prefix-20261003/raw/analysis/evaluation.json)
+and [GA/ES phase evaluations](reports/reference-development-prefixes-20261003/summary.json).
+
+PPO has the highest cumulative active-task performance in this seed despite
+its greater mean forgetting. Thus high integrated performance on the current
+task can coexist with a substantial loss on the previous task. The result
+does not establish algorithmic superiority. It also differs from the reduced
+pilot's learning-accuracy ordering: at the reference per-phase budgets,
+phase-end learning accuracy is tied (Tables 3 and 5).
+
+The [accounted PPO cost](reports/reference-development-ppo-prefix-20261003/summary.json)
+is 22,340.0 s (6.206 h), including training, verification, and fresh evaluation,
+within the eight-hour allocation. Native training accounts for 22,197.3 s.
+GA and ES prefix analysis reused existing evidence; their complete source-run
+costs remain recorded above and in Table 11.
 
 ### Static configuration search
 
@@ -279,7 +345,7 @@ default, and 24 additional random evaluations. The Shinka proposals comprise
 
 ![Static-search development trajectories](figures/search-endpoint-20261002.svg)
 
-*Figure 2. Best observed development score versus distinct configurations (A)
+*Figure 3. Best observed development score versus distinct configurations (A)
 and candidate evaluations (B). Both arms share the default. The first 17 random
 configurations define the primary matched-distinct comparison; all 24 define
 the secondary matched-evaluation comparison.
@@ -293,7 +359,7 @@ the secondary matched-evaluation comparison.
 | Best random: first 17 controls | 0.330187 | 0.062208 | 0.8857 ± 0.0275 |
 | Best random: all 24 controls | 0.330187 | 0.062208 | 0.8857 ± 0.0275 |
 
-*Table 5. Selected development maxima, mean ± sample SD across three seeds.
+*Table 6. Selected development maxima, mean ± sample SD across three seeds.
 Parameters are rounded. These are search-selection outcomes.
 [Protocol](docs/experimental-roadmap.md) ·
 [All candidates and exact settings](reports/search-endpoint-20261002/summary.json).*
@@ -310,7 +376,7 @@ These trials use new task draws and longer phases than search.
 
 ![Static finalist learning and forgetting on reserved seeds](figures/validation-static-20261002.svg)
 
-*Figure 3. Individual reserved outcomes and signed switch differences.
+*Figure 4. Individual reserved outcomes and signed switch differences.
 Positive forgetting denotes lost return; negative values denote improvement.
 [PDF](figures/validation-static-20261002.pdf) ·
 [Values and provenance](figures/validation-static-20261002.json).*
@@ -323,7 +389,7 @@ Positive forgetting denotes lost return; negative values denote improvement.
 | Random 7 | 0.8751 ± 0.1914 | 457.1 ± 95.8 | 340.3 ± 108.8 | 116.9 ± 134.2 | 118.6 ± 120.2 |
 | Random 24 | 0.9306 ± 0.0716 | 496.2 ± 8.6 | 441.9 ± 65.4 | 54.3 ± 67.6 | 62.6 ± 74.5 |
 
-*Table 6. Mean ± sample SD across five seeds. Active score is normalized by
+*Table 7. Mean ± sample SD across five seeds. Active score is normalized by
 500; other columns use return units. The active score alone selects the
 winner within each search arm.
 [Protocol](docs/finalist-validation.md) ·
@@ -355,7 +421,7 @@ retains every proposal and outcome.
 | Static Shinka 11 | 0.4566 ± 0.1457 | 0.7540 | 0.1592 | 493.4 | 411.6 |
 | Static random 24 | 0.3643 ± 0.1009 | 0.6540 | 0.0745 | 457.3 | 442.6 |
 
-*Table 7. Adaptive development means across seeds 4001–4003; combined score
+*Table 8. Adaptive development means across seeds 4001–4003; combined score
 also shows sample SD. Active, previous, and combined scores are normalized
 by 500; LA and F use return units. The selected row is the maximum over valid
 search programs, while control recipes were fixed beforehand.
@@ -388,7 +454,7 @@ reserved outcomes.
 
 ![Reserved adaptive results and paired differences against FocusGA](figures/adaptive-validation-20261003.svg)
 
-*Figure 4. Five outcomes per condition and the primary paired
+*Figure 5. Five outcomes per condition and the primary paired
 selected-minus-FocusGA comparison. Error bars show sample SD, not confidence
 intervals. Matching task draws does not imply identical internal random draws
 across methods.
@@ -404,8 +470,8 @@ across methods.
 | Static Shinka 11 | 0.7576 ± 0.1781 | 0.9564 | 0.5588 | 500.0 | 220.6 |
 | Static random 24 | 0.7877 ± 0.1564 | 0.9700 | 0.6054 | 500.0 | 197.3 |
 
-*Table 8. Reserved five-seed means; combined score also shows sample SD.
-Units follow Table 7. Full per-seed components, continual-learning metrics,
+*Table 9. Reserved five-seed means; combined score also shows sample SD.
+Units follow Table 8. Full per-seed components, continual-learning metrics,
 and raw episode returns are retained in the
 [complete evidence](reports/adaptive-validation-complete-20261003/summary.json).
 [Exact frozen protocol](reports/adaptive-validation-freeze-20261003/protocol.md).*
@@ -418,7 +484,7 @@ and raw episode returns are retained in the
 | 5004 | 0.928069 | 0.984939 | −0.056871 |
 | 5005 | 0.980390 | 0.984140 | −0.003750 |
 
-*Table 9. Primary paired differences in normalized combined-score units.
+*Table 10. Primary paired differences in normalized combined-score units.
 Mean ± sample SD: −0.0631 ± 0.0632. No significance test or promotion
 threshold was prespecified.
 [Protocol](reports/adaptive-validation-freeze-20261003/protocol.md) ·
@@ -446,14 +512,17 @@ to final reporting.
 | Static search, both arms | 147 | 1,128.96 × 10⁶ |
 | Static finalist validation | 25 | 768.00 × 10⁶ |
 | Full-budget GA/ES development reference | 2 | 6,144.00 × 10⁶ |
+| Four-phase PPO development prefix | 1 | 614.40 × 10⁶ |
 | Adaptive fixed controls | 15 | 115.20 × 10⁶ |
 | Adaptive program search | 60 | 460.80 × 10⁶ |
 | Adaptive finalist validation | 30 | 921.60 × 10⁶ |
 
-*Table 10. Training allocation consumed by the scientific experiments.
+*Table 11. Training allocation consumed by the scientific experiments.
 GA/ES counts use the episode cap and are nominal, not realized episode lengths.
 In-loop and post-hoc evaluation are additional work. Repeated static evaluations
 are charged; adaptive identity reuse is counted once in the fixed controls.
+The PPO row records the retained trajectory; its full elapsed training cost is
+preserved in the evidence. GA/ES prefix reuse adds no training trials or steps.
 These rows exclude implementation diagnostics and incomplete setup work, whose
 costs remain in the supplementary evidence. Sources and exact protocols:
 [pilot](reports/pilot-20261002/summary.json),
@@ -461,6 +530,7 @@ costs remain in the supplementary evidence. Sources and exact protocols:
 [static validation](reports/validation-static-20261002/summary.json),
 [GA reference](reports/reference-timing-20261002/summary.json),
 [ES reference](reports/reference-development-es-20261003/summary.json),
+[PPO prefix](reports/reference-development-ppo-prefix-20261003/summary.json),
 [adaptive controls](reports/adaptive-controls-20261003/summary.json),
 [adaptive search](reports/adaptive-endpoint-complete-20261003/summary.json),
 [adaptive validation](reports/adaptive-validation-complete-20261003/summary.json).*
@@ -484,6 +554,16 @@ objective explicitly includes previous-task performance, yet its
 development-selected rule does not outperform FocusGA in the reserved
 comparison. These negative and mixed outcomes constrain the extension's claims.
 
+At the reference per-phase budgets, all methods achieve maximal endpoint
+learning accuracy in the matched four-phase development comparison. ES has
+less measured forgetting than GA or PPO, consistent with the direction of the
+[pre-specified reference comparison](docs/reference-comparison.md#reference-findings-to-assess).
+PPO loses previous-task performance after the first switch but retains both
+tasks at the last two phase endpoints. Its higher cumulative active-task
+return in this seed therefore does not imply better retention. These
+observations support an early learning–retention comparison; repeated-trial
+method ordering and twenty-phase PPO behavior remain unresolved.
+
 The experiments use one outer search per search arm and small seed sets.
 Selected development maxima are subject to selection bias; static finalist
 validation also participates in selection. The adaptive reserved comparison
@@ -505,7 +585,7 @@ reduced populations and shorter task sequences; the reported normalization
 differs from the paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 The [reference comparison](docs/reference-comparison.md) uses unchanged baseline
 settings. Full-budget GA/ES development observations are available, and their
-reporting trials remain planned. The reduced PPO allocation permits only an
+reporting trials remain planned. The completed PPO prefix supplies an
 early-phase development analysis, leaving the full three-method reproduction
 incomplete.
 Broader reproduction also requires the other environments, task variations,
@@ -525,7 +605,7 @@ interfaces, analysis, and experiment runners live in this repository.
 | ShinkaEvolve | [9912af12d423](https://github.com/SakanaAI/ShinkaEvolve/tree/9912af12d423504b8d580f4179fd15f5f88b8c50) |
 | Reference paper | [arXiv:2610.01583v1](https://arxiv.org/abs/2610.01583v1) |
 
-*Table 11. Pinned reference sources. Full revisions and dependency declarations
+*Table 12. Pinned reference sources. Full revisions and dependency declarations
 are retained in the [source lock](upstream.lock.json).*
 
 The [source lock](upstream.lock.json) and per-experiment manifests record exact

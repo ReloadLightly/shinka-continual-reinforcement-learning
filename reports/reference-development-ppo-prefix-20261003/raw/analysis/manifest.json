@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "episodes": 10,
+  "eval_seed": 901001,
+  "command": [
+    "<repo>/.upstream/continual_neuroevolution/.venv/bin/python",
+    "<repo>/.upstream/continual_neuroevolution/scripts/analysis/evaluate_continual.py",
+    "--root",
+    "<prefix>/analysis/evaluation-input",
+    "--episodes",
+    "10",
+    "--seed",
+    "901001"
+  ],
+  "training_run": "<prefix>/training",
+  "input_sha256": {
+    "manifest.json": "730ec1a8cf910861348999a623f7f0d2a71db367910a4ae9941b69a5bd43decc",
+    "results.json": "eddd5854c5951869275de00f8926ffb51cc5b2d70847b36c0af76bd2ae5fa426",
+    "config.json": "7ff40c9fe2db44b95d77df39104562f897c1810f7c64f81999008f511c401f62",
+    "training_metrics.json": "23ee1d52172eb78b8e7e54e88f7d5699949b83be46244631be99ed80fe9525e9",
+    "checkpoints.npz": "6919047c9b3a15a9422ace48aaa7a1f07d22e70cfe29f908c8137612fd904ea8"
+  },
+  "analysis_source_sha256": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+  "upstream_source_sha256": {
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b"
+  },
+  "jax_platforms": "cpu",
+  "python_version": "Python 3.11.15",
+  "output_sha256": {
+    "evaluation.json": "fe635912f73e4055a892e5ab7558ce19045ce0cc5bee7634f089676fcfe30c8c",
+    "checkpoint-metadata.json": "834ebdf20d4561c8a75f80448f78bfd5b1c8b21a0887dd9b12f7fd040be3cd9a",
+    "summary.json": "09bafbb7330ebd171205ae00fb28876eec6954430b84a9e581f1cdcada0a6edf",
+    "process.log": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "evaluation-input/results.json": "eddd5854c5951869275de00f8926ffb51cc5b2d70847b36c0af76bd2ae5fa426",
+    "evaluation-input/checkpoints.npz": "6919047c9b3a15a9422ace48aaa7a1f07d22e70cfe29f908c8137612fd904ea8"
+  },
+  "wall_seconds": 6.248830896998697
+}
