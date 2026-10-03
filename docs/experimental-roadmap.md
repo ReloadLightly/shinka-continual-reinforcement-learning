@@ -33,8 +33,8 @@ exporter, figure generator, finalist freezer, reference timing, and validation
 runners are implemented. Their [execution protocol](finalist-validation.md)
 preserves the separate source contracts. The adaptive program adapter and native
 FocusGA support are implemented. The adaptive selection evaluator, verified
-cache, and 15 fixed-control trials are complete; adaptive Shinka search remains
-pending. Source revisions remain fixed by
+cache, and 15 fixed-control trials are complete. The first five-slot adaptive
+Shinka block is complete; the next cumulative target is 13. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 
@@ -473,7 +473,7 @@ def update_sigma(sigma, stats, memory):
 | Returned width | Finite scalar, bounded by the harness to [0.001, 2.0] |
 | Returned memory | Finite float32 vector with unchanged shape |
 
-<sub>Table 6. Implemented adaptive-program interface; proposal search is pending. The
+<sub>Table 6. Implemented adaptive-program interface; the first five-slot search is complete. The
 identity program supplies the neutral baseline.</sub>
 
 The five statistics, in fixed order, are population mean fitness, population
@@ -626,7 +626,7 @@ training and checkpoint evidence before reuse.
 | 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Complete: 25 trials, 26.59 min; Shinka 11 and random 24 selected |
 | 8 | Adaptive-program adapter and native control support | Short identity traces, varying-sigma check, persistent memory, explicit upstream adaptive control | Complete: seven real trials, 19 numerical checks, 3.98 min |
 | 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Complete: 15 trials, two cache checks, 15.21 min; 504 harness tests pass |
-| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Next: five total slots, then resume to 13 and 25 |
+| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Five slots complete: four valid proposals, 12 new trials; next resume to 13 and 25 |
 
 <sub>Table 8. Deliverables and observed status. The successful baseline-trial
 resume does not substitute for testing Shinka's separate archive-resume path.</sub>
@@ -646,8 +646,17 @@ evidence without training. Native FocusGA has the highest observed combined
 mean, while the arithmetic rule has the highest previous-task mean. The
 [README](../README.md#adaptive-objective-and-fixed-controls) reports dispersion,
 individual seeds, and the limits of this comparison. Reserved adaptive validation
-seeds 5001–5005 remain unused. Proceed to the first adaptive proposal block under
-the frozen objective; the controls are baselines, not Shinka discoveries.
+seeds 5001–5005 remain unused. The controls are baselines, not Shinka discoveries.
+
+The [first adaptive proposal block](../reports/adaptive-shinka-stage5-20261003/summary.json)
+completed five slots: cached identity and four distinct proposals, with 12 new
+trials and no failures. Generation 1 has the highest proposal score (0.4361),
+below native FocusGA (0.5006). Native search took 28.08 minutes; start-to-finish
+elapsed time was 28.78 minutes with preflight and final checks. The first trial
+was much slower than later trials. Source, ancestry, usage, and RNG checkpoint receipts
+were verified after the original controller completed. The [README analysis](../README.md#first-adaptive-shinka-search)
+reports all candidate means and dispersion. Continue the existing archive to
+13 slots with the frozen objective, grammar, controls, and seed partition.
 
 After each substantive experiment, update the README as a scientific report:
 state the frozen protocol, link compact raw evidence and hashes, distinguish

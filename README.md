@@ -14,9 +14,9 @@
 
 ## Abstract
 
-This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. Its frozen active/previous-task evaluator has now completed 15 fixed-control trials on fresh development seeds and two verified cache checks. These results establish an executable research pipeline, static baselines, and a verified adaptive interface; they do not establish search-method superiority or a full-paper reproduction. Adaptive Shinka proposal search remains pending.
+This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. Its frozen active/previous-task evaluator completed 15 fixed-control trials on fresh development seeds. The first five-slot adaptive Shinka search is now complete: the best proposed rule scores 0.4361, above identity GA's 0.1706 but below native FocusGA's 0.5006, with substantial seed variation. These development results establish an executable research pipeline, static baselines, and an initial adaptive search; they do not establish search-method superiority or a full-paper reproduction.
 
-> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Finalist validation complete · Adaptive controls complete · Adaptive Shinka search and full reproduction pending.
+> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Static finalist validation complete · Adaptive controls and five-slot Shinka search complete · Adaptive validation and full reproduction pending.
 
 ## 1. Research questions
 
@@ -482,6 +482,67 @@ independently; the harness passes **504 tests**. No model or paid API calls were
 made. Reserved adaptive validation seeds 5001–5005 and final reporting trials
 remain untouched.
 
+### First adaptive Shinka search
+
+The separate adaptive archive completed **five program slots**: verified cached
+identity followed by four distinct, valid model proposals. Each proposed rule
+trained three fresh populations on development seeds 4001–4003 using the same
+frozen objective and budgets as Table 13. All four proposals used the guarded
+subscription route. No proposal, evaluation, or training attempt failed.
+
+![Adaptive program scores and selected mutation-width trajectories](figures/adaptive-shinka-stage5-20261003.svg)
+
+<sub>Figure 7. Combined development score for every program and applied mutation
+widths for the selected rule. Faint points are individual seeds; error bars show
+sample SD. Task phases are shown for interpretation and are not program inputs.
+Width traces use the verified one-generation shift from the native logger.
+[PDF](figures/adaptive-shinka-stage5-20261003.pdf)
+· [Exact values and provenance](figures/adaptive-shinka-stage5-20261003.json).</sub>
+
+| Program | Combined J ↑ | Active ↑ | Previous ↑ | LA ↑ | F ↓ |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| 0 · Identity (cached) | 0.1706 ± 0.1503 | 0.1490 | 0.1922 | 135.0 | 32.1 |
+| 1 · Feedback width target | 0.4361 ± 0.3800 | 0.5553 | 0.3169 | 428.0 | 273.2 |
+| 2 · Archive-drop feedback | 0.4031 ± 0.3892 | 0.5057 | 0.3006 | 368.5 | 226.8 |
+| 3 · Elite progress and diversity | 0.3784 ± 0.3443 | 0.4726 | 0.2842 | 466.3 | 313.0 |
+| 4 · Centroid stagnation | 0.4158 ± 0.4150 | 0.5146 | 0.3169 | 376.0 | 176.2 |
+
+<sub>Table 14. Three-seed means under the [frozen adaptive protocol](docs/adaptive-evaluation.md);
+combined J also shows sample SD. LA and signed forgetting F use return units.
+Program names are proposal labels, not verified causal explanations.
+[Scores, ancestry, requests, and costs](reports/adaptive-shinka-stage5-20261003/summary.json)
+· [Complete artifact receipts](reports/adaptive-shinka-stage5-20261003/checksums.json).</sub>
+
+[Program 1](reports/adaptive-shinka-stage5-20261003/raw/search/shinka/gen_1/main.py)
+has the highest combined development mean. It smooths a target width using
+current fitness, offspring success, and persistent summaries of progress.
+Its score is above identity GA but below both native FocusGA (**0.5006**) and
+the frozen static Shinka 11 control (**0.4566**). Its previous-task mean exceeds
+FocusGA's, while its active-task mean is lower. It also has higher signed
+forgetting than identity GA. These components and the large seed dispersion
+preclude interpreting the combined-score gain as demonstrated retention or
+generalization. No reserved validation was used to select this rule.
+
+The block added **12 training trials**, **92.16 million nominal training steps**,
+and **3,600 fresh checkpoint-evaluation episodes**. Identity reuse avoided
+another 23.04 million nominal training steps. Evaluation took **24.86 minutes**;
+the native search took **28.08 minutes**, including proposal and archive overhead.
+Recorded start-to-finish time was **28.78 minutes** with preflight and final
+verification. The first proposal's first training trial took 750.64 seconds;
+the other new training trials took 37.89–63.03 seconds each. Memory pressure was
+observed on WSL during checkpoint recovery, but the artifacts do not establish
+the cause of this outlier.
+These are observed execution costs, not isolated speed measurements. The
+original controller survived the interrupted interactive session and completed
+its last slot without a duplicate launch. Source, receipt, parentage, usage,
+and native RNG checkpoint checks passed. The ledger records four successful
+Codex launches and **zero paid API calls**. Adaptive validation seeds 5001–5005
+and final reporting seeds 42–51 remain untouched. Lint and **550 regression
+tests** pass. A continuation preflight passes with the recorded Codex 0.159.3
+binary; the [runbook](docs/adaptive-search.md#completed-first-block) records how
+to select it after the environment's default CLI update. The 13-slot stage has
+not been launched.
+
 ### Remaining scientific evaluation
 
 One full-budget development GA trial is complete; no full-budget comparison has been completed. The table below tracks the evidence needed to answer the research questions.
@@ -492,7 +553,7 @@ One full-budget development GA trial is complete; no full-budget comparison has 
 | Stationary control | Matched task and learner settings without switching | Development control complete |
 | Shinka-selected GA | Frozen candidate evaluated on reporting trials | Static winner frozen after validation; reporting pending |
 | Random-search control | Matched search budget and reporting protocol | Static winner frozen after validation; reporting pending |
-| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | Evaluator, cache, and 15 control trials complete; adaptive search pending |
+| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | Five-slot search and 15 fixed-control trials complete; expansion and reserved validation pending |
 
 ## 5. Reproducibility
 
@@ -602,7 +663,31 @@ The adaptive controls were executed at
 Their [runbook](docs/adaptive-evaluation.md#execution-and-replay) documents staged
 execution and replay under that exact contract.
 
-The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Twenty-four proposals completed through this route. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
+The [adaptive proposal runbook](docs/adaptive-search.md) describes the separate
+Shinka archive, scheduler adapter, staged resume, and failure accounting. The
+[local web UI](docs/shinka-webui.md) displays program ancestry, source, and metrics:
+
+```bash
+.venv/bin/python scripts/run_shinka_webui.py --port 8000
+```
+
+Open [localhost:8000](http://localhost:8000) while that server is running. Native
+cost columns show token-price estimates, not subscription charges.
+
+The first adaptive proposal block ran at
+[`b2a9b01`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/b2a9b01).
+Its [published evidence](reports/adaptive-shinka-stage5-20261003/summary.json)
+preserves all five programs and the completed native RNG checkpoint. Recreate
+Figure 7 from the immutable report snapshots with a fresh output filename:
+
+```bash
+.upstream/continual_neuroevolution/.venv/bin/python scripts/plot_adaptive_search.py \
+  --report-dir reports/adaptive-shinka-stage5-20261003 \
+  --controls-report reports/adaptive-controls-20261003 \
+  --output figures/adaptive-shinka-stage5-replay.svg
+```
+
+The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Twenty-four static and four adaptive proposals completed through this route. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
 
 Each real trial retains its command, profile, seed, task trial, source revision, interpreter version, device selection, duration, upstream configuration and metrics, training log, and metric-file hash. Modified upstream tracked files and untracked source files are rejected. Source revisions are fixed in [`upstream.lock.json`](upstream.lock.json):
 
@@ -616,26 +701,27 @@ The [GitHub Actions template](ci/github-actions.yml) runs the harness checks. CI
 
 ## 6. Limitations and next experiment
 
-The completed search covers two static GA settings. The new executable interface
-can adapt mutation width and memory, but it has not yet been searched by Shinka.
-It preserves selection, policy architecture, and experiment budgets.
+The completed static search covers two GA settings. The first adaptive search
+adds four executable mutation-width proposals with persistent memory while
+preserving selection, policy architecture, and experiment budgets. None exceeds
+native FocusGA's observed combined development mean in this small block.
 Reduced-budget development scores may not predict performance across the full
 task sequence. Smoke scores support no ranking of GA, ES, and PPO because they
 use one seed and unmatched training budgets.
 
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
-The next step is a separate adaptive Shinka archive using the
-[frozen evaluator](docs/adaptive-evaluation.md): first **five total slots**
-(one cached identity and four proposals), then resumable targets of 13 and 25.
-The proposer will use the previously verified subscription route. Invalid and
+The next step is to resume the completed five-slot adaptive archive to **13 total
+slots** (eight additional proposals), then to the declared endpoint of 25 using
+the [frozen evaluator](docs/adaptive-evaluation.md). The proposer uses the
+verified subscription route. Invalid and
 duplicate proposals consume slots; verified duplicates reuse training evidence.
 The fixed controls and both static winners remain comparison baselines.
 
-The measured controls cost 2.5–3.8 minutes per three-seed evaluation. Four new
-valid programs would therefore provisionally require about 10–15 minutes of
-evaluation, plus model proposal and archive overhead; new rules can change
-episode lengths and runtime. Inspect the first block before extending it.
+The three later proposals took 2.90–3.13 minutes each for evaluation. Eight more
+at that observed rate would need about 23–25 minutes of evaluation, plus model
+and archive overhead. This is a conditional estimate: the first proposal took
+15.82 minutes, and new rules or host resource contention can change runtime.
 The frozen objective, grammar, and partitions remain unchanged. No further
 large preparatory pilot is required before this proposal experiment.
 

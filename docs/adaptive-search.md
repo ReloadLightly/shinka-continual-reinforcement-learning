@@ -62,3 +62,41 @@ The [local web UI](shinka-webui.md) displays the native archive and recorded
 programs. Its dollar columns are token-price estimates, not subscription charges.
 Selection scores remain development feedback; choosing a rule on these seeds
 does not establish performance on unseen tasks or search-method superiority.
+
+## Completed first block
+
+`results/adaptive-shinka-20261003` completed all five slots at source revision
+`b2a9b01`: cached identity plus four distinct proposals, with 12 new training
+trials and no failures. The original controller remained alive across the
+interactive-session interruption and sealed its state and native RNG checkpoint
+without a duplicate launch. Native search took 28.08 minutes;
+recorded start-to-finish time was 28.78 minutes with preflight and
+final checks. The [published snapshot](../reports/adaptive-shinka-stage5-20261003/summary.json)
+and [README analysis](../README.md#first-adaptive-shinka-search) retain every
+program, score, receipt, and cost. Generation 1 leads the proposals at 0.4361;
+native FocusGA's fixed-control mean remains higher at 0.5006.
+
+The next cumulative target is 13, with the same frozen study and existing
+archive. The five-slot plot is deliberately specific to this first block;
+do not overwrite its report or figure when exporting later stages.
+
+During checkpoint recovery, the default CLI had updated from the recorded
+Codex 0.159.3 to 0.160.0. The launcher correctly rejected the runtime mismatch
+before a proposal or training launch. Selecting the existing 0.159.3 binary
+restored exact plan equality and passed `--prepare-only` with all five saved
+programs. The frozen plan was not edited, and no additional proposals ran.
+On the current WSL machine, repeat that read-only continuation check with:
+
+```bash
+PATH="$HOME/.codex/packages/app-server-daemon/releases/0.159.3-x86_64-unknown-linux-musl/bin:$PATH" \
+  .venv/bin/python scripts/run_adaptive_search.py \
+  --study-dir results/adaptive-controls-20261003 \
+  --results-dir results/adaptive-shinka-20261003 \
+  --resume --target-generations 13 --prepare-only
+```
+
+For the next actual stage, use the same command without `--prepare-only`.
+Other machines must provide the recorded CLI version on `PATH`; do not relax
+the runtime receipt to accommodate a different version. This preflight verifies
+checkpoint compatibility; actual adaptive archive continuation remains the
+next experiment.

@@ -1,7 +1,9 @@
 # Adaptive mutation-width programs
 
 This task contains the implemented program interface, fixed diagnostic rules,
-and a Shinka-compatible selection evaluator. Adaptive proposal search is pending.
+and a Shinka-compatible selection evaluator. The
+[adaptive search launcher](../../docs/adaptive-search.md) runs a separate native
+archive with cumulative targets of 5, 13, and 25 slots.
 See the [protocol](../../docs/adaptive-programs.md) for the full scientific contract.
 
 ```python
@@ -45,3 +47,11 @@ controls, and verified result cache. `evaluate.py` requires
 `SHINKA_ADAPTIVE_STUDY` and writes Shinka's `correct.json` / `metrics.json`
 contract. It accepts only the frozen development study; reserved validation
 and final reporting trials are separate.
+
+`shinka_evaluate.py` adapts the native scheduler's directory layout: job logs stay
+outside the signed `results/evaluation` directory, and native result files mirror
+the frozen evaluator's contract. `shinka-subscription.yaml` supplies the restricted
+grammar and training statistics to the proposer while disabling auxiliary models.
+
+The [local web UI](../../docs/shinka-webui.md) shows the adaptive and completed
+static archives. Its generations count outer program slots, not inner GA steps.

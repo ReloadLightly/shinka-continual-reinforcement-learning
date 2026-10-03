@@ -1,0 +1,18 @@
+<NAME>
+elite_progress_diversity
+</NAME>
+<DESCRIPTION>
+Use both mean and best-fitness progress to detect stagnation, so improving elites delay exploration increases. Reduce routine mutation width when strong individuals already exist, while increasing exploration more strongly during stagnation with low population fitness dispersion. Preserve the existing response to archive deterioration. This aims to balance acquisition and refinement; its effect on combined_score requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    stalled = exp(-40.0 * abs(progress))
+=======
+    stalled = exp(-40.0 * maximum(abs(progress), abs(best - old_best)))
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    target = 0.015 + 0.10 * difficulty * difficulty + 0.08 * stagnation * (1.0 - best) + 0.35 * shock
+=======
+    target = 0.015 + 0.10 * difficulty * difficulty * (1.0 - 0.7 * best) + 0.14 * stagnation * (1.0 - best) * exp(-6.0 * clip(stats[1], 0.0, 1.0)) + 0.35 * shock
+>>>>>>> REPLACE
+</DIFF>
