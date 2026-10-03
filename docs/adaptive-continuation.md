@@ -161,7 +161,7 @@ development trials. Their combined means were **0.3943111130701171** and
 **0.3980375016848246**. Generation 20 contained **536 nodes** and was rejected
 under the unchanged 512-node limit before training. The completion barrier
 prevented a generation-21 directory, slot reservation, or request. See
-[Table 18 in the README](../README.md#stopped-generation-18-continuation), the
+[completed-search synthesis](../README.md#adaptive-search-and-fixed-controls), the
 [raw export](../reports/adaptive-continuation-stopped-20261003/summary.json), and
 the [independent outcome review](../reports/adaptive-continuation-outcome-review-20261003.json).
 

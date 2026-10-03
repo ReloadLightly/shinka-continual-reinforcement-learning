@@ -72,8 +72,9 @@ interactive-session interruption and sealed its state and native RNG checkpoint
 without a duplicate launch. Native search took 28.08 minutes;
 recorded start-to-finish time was 28.78 minutes with preflight and
 final checks. The [published snapshot](../reports/adaptive-shinka-stage5-20261003/summary.json)
-and [README analysis](../README.md#first-adaptive-shinka-search) retain every
-program, score, receipt, and cost. Generation 1 leads the proposals at 0.4361;
+retains every program, score, receipt, and cost. The
+[scientific report](../README.md#adaptive-search-and-fixed-controls) synthesizes
+the completed search. Generation 1 leads this initial block at 0.4361;
 native FocusGA's fixed-control mean remains higher at 0.5006.
 
 The subsequent cumulative targets are 13 and 25, with the same frozen study
@@ -119,8 +120,10 @@ Subtract the [five-slot snapshot](../reports/adaptive-shinka-stage5-20261003/sum
 when reporting the continuation's added cost.
 
 Generation 5 leads at 0.4871, below native FocusGA's 0.5006 and with substantial
-seed dispersion. The [README analysis](../README.md#adaptive-continuation-to-thirteen-slots)
-reports every new program, component scores, and individual leader outcomes.
+seed dispersion. The [checkpoint evidence](../reports/adaptive-shinka-stage13-20261003/summary.json)
+retains every new program, component scores, and individual leader outcomes;
+the [scientific report](../README.md#adaptive-search-and-fixed-controls)
+summarizes the completed comparison.
 Source, ancestry, unchanged earlier evidence, proposal usage, and RNG receipts
 were independently verified. Reserved validation and final reporting remain
 untouched at this checkpoint. The target-25 session below preserves this snapshot.

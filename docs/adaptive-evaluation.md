@@ -129,7 +129,7 @@ costs under the same frozen evaluator. After explicit endpoint closure, the
 froze the finalist and controls; that comparison is now complete. The control
 study itself used no reserved outcomes.
 
-See [Table 13 / Figure 6](../README.md#adaptive-objective-and-fixed-controls),
+See the [adaptive search and control results](../README.md#adaptive-search-and-fixed-controls),
 the [complete evidence](../reports/adaptive-controls-20261003/summary.json),
 [artifact receipts](../reports/adaptive-controls-20261003/checksums.json), and
 the [first-stage export](../reports/adaptive-controls-stage1-20261003/summary.json).

@@ -91,8 +91,10 @@ raw scores and costs, and the exact selection score of every valid candidate.
 Generation 5 remains the development leader. The
 [explicit closure](../reports/adaptive-endpoint-closure-20261003.json)
 closes proposal feedback before reserved validation. The
-[README](../README.md#complete-adaptive-search-endpoint) reports all new outcomes
-and cumulative costs, including concurrent CPU use during this attempt.
+[scientific report](../README.md#adaptive-search-and-fixed-controls) synthesizes
+the search outcomes; the [endpoint evidence](../reports/adaptive-endpoint-complete-20261003/summary.json)
+retains every candidate and cumulative cost, including concurrent CPU use during
+this attempt.
 
 The working archive is `results/adaptive-shinka-endpoint-20261003-round1`.
 Its sealed state cannot execute again. To reproduce the text export, choose a

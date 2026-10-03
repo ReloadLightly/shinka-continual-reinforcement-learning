@@ -279,4 +279,4 @@ passed in 238.58 seconds. Both identity conditions match exactly; the halving
 rule changes the next offspring, and its memory survives the task switch.
 The arithmetic rule and native FocusGA completed with their declared settings.
 See [raw evidence and receipts](../reports/adaptive-gate-20261003/summary.json)
-and [Table 12 / Figure 5](../README.md#executable-adaptive-rule-verification).
+and the [reproducibility summary](../README.md#5-reproducibility).

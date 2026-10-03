@@ -13,6 +13,15 @@ units and captions, observed results, limitations, and reproducibility details.
 Update it after each substantive experiment. Use aligned numeric columns and
 plain scientific language; avoid promotional badges or unsupported claims.
 
+Organize the README by research question and completed experiment, not by
+execution session or recovery checkpoint. Keep infrastructure incidents,
+controller implementation details, local resource diagnostics, and test-run
+chronology in supporting documentation and evidence archives. In the README,
+summarize unsuccessful proposals, compute costs, and protocol deviations only
+to the extent needed to interpret the scientific results. Preserve negative
+findings and links to the complete record; do not append operational logs to
+the manuscript after each run.
+
 Every reported numerical result must link to checked-in evidence and its exact
 protocol. Distinguish smoke validation, development experiments, and final
 reporting. A single-seed smoke run cannot establish algorithmic superiority or a
