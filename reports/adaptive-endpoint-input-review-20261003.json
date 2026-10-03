@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-03T09:37:48.420148+00:00",
+  "status": "passed_input_checkpoint_review",
+  "input_revision": "fe485e69f321d867bb0fb307f4712ed6ed73bf6d",
+  "scope": "Independent standard-library audit of current stopped continuation and frozen inputs; no model proposals or training launched. The endpoint controller implementation and its preflight receive separate source and regression reviews.",
+  "script_sha256": "1c3f07901b922e82ee310a67f2b4bb1f4e8043e5fbeb5ae49a6c4c8b6026078c",
+  "initial_working_tree_clean": true,
+  "published_git_blobs_verified": 1290,
+  "frozen_sources_verified": {
+    "src/shinka_crl/adaptive_recovery.py": "4714cdef7a7e2582323fb67909615dfaaf3abc07e72191986e2a0f794963adf3",
+    "src/shinka_crl/adaptive_recovery_native.py": "64b62b7c9b40996518168e5e31e86a880b8c302141e3619562553c1a13051dc2",
+    "src/shinka_crl/recovery_process.py": "877d8146e2b891fc1349b83cc79e8086dc7e9e2140107fb3caa56e39ed0d8b52",
+    "scripts/run_adaptive_recovery.py": "010b534f789e25644f7c8cc0a16f792ccb1050c7b4adf48119057e745b561726",
+    "scripts/report_adaptive_recovery.py": "a30d7ae5316339335f66a04bdda7dbaf055f7fc75a7281921feee68a2198b3ad",
+    "scripts/recovery_headless.py": "febb3b224a3bae5715d09571816e30a1a7d9d1d5b1806e59c6c7a72449aba375",
+    "src/shinka_crl/adaptive_continuation.py": "a5bbbbbfb488d1b8a3bcff52b689dc9b3c2aa6bb9455ffaea46d4dfac41a5017",
+    "scripts/run_adaptive_continuation.py": "9c52268410ee4e6a12eaeeecc4bf79ae6c2446afb558c6816c6c9b5ebd58e040",
+    "scripts/report_adaptive_continuation.py": "9089180019d99453245b994d8d00ad35659066b49690ceb7f51bbfd7b9852c16",
+    "scripts/continuation_headless.py": "236de116d84320f5bc36edb0714caafde69c04ed5775ada4817da6a9f6664c98",
+    "src/shinka_crl/adaptive_search.py": "707a9ab2b6211c32ae8b400af8f56b1e5ab3b9e89f33cbf05dd3403c5101755d",
+    "scripts/run_adaptive_search.py": "949d2a0e2013040d1232560a7cf7d3f2cf70beb157d3e281760e5899c7ce66be",
+    "scripts/report_adaptive_search.py": "785e6999938ec91f800d2bfd8dee8a1043b100493ddde8f30288a531324182ad",
+    "scripts/subscription_headless.py": "e528653c8945438d1cff90801532e7ec9d48cf554c2d72f4088a86d8b05d65b7",
+    "tasks/cartpole_adaptive/initial.py": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+    "tasks/cartpole_adaptive/shinka_evaluate.py": "89bf5dcd97d7f38716509c9efc543ce4a26713d520a4e6e9669f5343791f696a",
+    "tasks/cartpole_adaptive/shinka-subscription.yaml": "54b45685abd03706ba77032a0017f706ac9daeb0f504abc6ba727aa4256b4620",
+    "src/shinka_crl/adaptive_evaluation.py": "e09ef68b2d35c575a847e0bd924e95973b38156e5384ea0145c47b4702f3ef70",
+    "src/shinka_crl/adaptive_objective.py": "47685df2f6c3597fdf29a4df6fc23bce54b2240b6ec8957178795d5079cd6422",
+    "src/shinka_crl/adaptive.py": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c",
+    "scripts/adaptive_train.py": "de5ddc28ce8c43e25c5bc96bfbec6df7aa945207ee38450422ac5bbedd4d5c8f",
+    "scripts/run_adaptive_controls.py": "048cb02175b555c0ee3dbfd0db5b5e846e20435cadbb47f7d05325373c4c9a2a",
+    "scripts/report_adaptive_controls.py": "c253007d97e4407cb2159c09a3aada68e4d35e70e5b0a779ef8ff6436f7607de",
+    "tasks/cartpole_adaptive/evaluate.py": "4267f8ede0321fcd84ae33caf6bcb75d1ecfb6416fb1444161789ec5f28ff05b",
+    "tasks/cartpole_adaptive/arithmetic.py": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+    "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad",
+    "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+    "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+    "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+    "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43",
+    "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+    "src/shinka_crl/profiles/adaptive-search.json": "d575715ba5bb53d20cf0e81982bfd2f5105397d46a9c2e0c6966e78457e8cca4",
+    "src/shinka_crl/profiles/adaptive-validation.json": "8a727f13482140dcb1acd4b5a6d917c347d4bcba89b60b96d51285636fe5d435",
+    "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+    "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267",
+    "docs/adaptive-seed-allocation-20261003.json": "e1fe429c29719a6db59e649d66e679261ed074f9a16bdef021539add79e1405a",
+    "reports/validation-static-20261002/summary.json": "65fd015d023103cd2d0aa2c76466ed73d49d8028687b16a086c17e0216fe81c6"
+  },
+  "current_plan_sha256": "a79c80434407cf223ec00aa69e0f53cd117461eac0b7111cd43d0001282eae66",
+  "published_checksums_sha256": "57f3af3f19f348742cc8ab7a1f54af50b7108297a64452a8c7da2f985af862c1",
+  "source_inventory_files_verified": 355,
+  "history_inventory_files_verified": 10,
+  "sealed_generation_artifact_hashes_verified": 334,
+  "checkpoint": {
+    "consumed_slots": 21,
+    "persisted_rows": 20,
+    "valid_programs": 17,
+    "failed_grammar_slots": [
+      {
+        "generation": 14,
+        "ast_nodes": 539
+      },
+      {
+        "generation": 17,
+        "ast_nodes": 515
+      },
+      {
+        "generation": 20,
+        "ast_nodes": 536
+      }
+    ],
+    "no_row_consumed_slots": [
+      15
+    ],
+    "new_reserved_generations": [
+      18,
+      19,
+      20
+    ],
+    "new_requested_generations": [
+      18,
+      19,
+      20
+    ],
+    "remaining_generations": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "guarded_requests": 20,
+    "codex_cli_launches": 19,
+    "new_training_trials": 48,
+    "nominal_training_steps": 368640000,
+    "incomplete_training_attempts": 0,
+    "initial_rng_sha256": "8d8fa2a390807c55874f9d17177971731f07b8ecf29329c20d722e8e0e02c20a",
+    "final_rng_sha256": "054c2a6c3021866e5c5787b6cef7b6861c663e9139bee626d494fe65e676b489",
+    "graceful_return": true,
+    "cleanup_complete": true
+  },
+  "reserved_outcome_scan": {
+    "scope": "All manifest.json execution records with status and seed/trial, plus evaluation.json with per_task and eval_seed, recursively under results/ and reports/; planned allocations excluded. Duplicated publications included.",
+    "records_scanned": 1606,
+    "observed": {
+      "seed": [
+        1001,
+        1002,
+        1003,
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        3001,
+        4001,
+        4002,
+        4003
+      ],
+      "trial": [
+        1002,
+        1003,
+        1004,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        3002,
+        4002,
+        4003,
+        4004
+      ],
+      "eval_seed": [
+        901001,
+        901002,
+        901003,
+        902001,
+        902002,
+        902003,
+        902004,
+        902005,
+        903001,
+        904001,
+        904002,
+        904003
+      ]
+    },
+    "reserved_hits": []
+  },
+  "runtime": {
+    "cli_path": "results/continuation-tools/codex-0.159.3/package/vendor/x86_64-unknown-linux-musl/bin/codex",
+    "codex_version": "codex-cli 0.159.3",
+    "codex_executable_sha256": "8bf204b36a2f6dd0dab73aa2f639892e67ef9ac8befccb4a05b1496ebf25c479",
+    "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+    "upstream_clean": true,
+    "shinka_evolve_commit": "9912af12d423504b8d580f4179fd15f5f88b8c50",
+    "shinka_evolve_source_hashes_verified": 115
+  },
+  "next_step": "Separately freeze, review and publish a four-slot continuation bound to this checkpoint before generation21. Reserved validation requires a resolved endpoint and frozen handoff."
+}
