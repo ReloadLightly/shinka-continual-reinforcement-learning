@@ -777,6 +777,11 @@ execute again. A further continuation needs a separate reviewed and published
 plan bound to this checkpoint. Reserved validation and final reporting remain
 unexecuted. The [pre-execution verification](reports/adaptive-continuation-verification-20261003.json)
 records all **637 passing tests** and repository lint.
+The [publication check](reports/adaptive-continuation-publication-review-20261003.json)
+also verifies the exported hashes against committed Git blobs. The runtime
+ignore rule is anchored at the repository root so nested report receipts are
+included; immutable candidate sources retain their restricted-language lint
+exclusions.
 
 ### Remaining scientific evaluation
 

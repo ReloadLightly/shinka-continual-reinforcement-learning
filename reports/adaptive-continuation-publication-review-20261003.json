@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-03T08:05:53.141512+00:00",
+  "status": "passed",
+  "report": "reports/adaptive-continuation-stopped-20261003",
+  "evidence_commit": "cf6b0720867101752620843beaec22b731a526eb",
+  "publication_issue": {
+    "initial_commit": "85aa6b6",
+    "omitted_text_artifacts": 198,
+    "cause": "The unanchored results/ ignore rule also matched nested exported result receipts.",
+    "correction": "Anchor /results/ at repository root and commit all omitted text artifacts; existing published bytes remain unchanged."
+  },
+  "git_blob_verification": {
+    "method": "Read every published_sha256 entry from HEAD using git cat-file --batch and compare SHA-256.",
+    "verified": 1289,
+    "untracked_files_under_reports": 0,
+    "checksums_sha256": "57f3af3f19f348742cc8ab7a1f54af50b7108297a64452a8c7da2f985af862c1"
+  },
+  "lint": {
+    "initial_after_ignore_fix": "1484 F821/F841 findings in immutable restricted-program evidence, newly visible to Ruff after ignore-rule correction.",
+    "correction": "Extend existing injected-name/unused-local exclusions only to reports/adaptive-*/raw/**/results/evaluation/program.py; preserve all evaluated program bytes.",
+    "command": ".venv/bin/ruff check . --output-format concise",
+    "result": "All checks passed",
+    "pyproject_sha256": "5f589979c71653dbdc91b016b1d151c1eef2f14eacb706327eaba3e5830d9041"
+  },
+  "scientific_effect": "No trainer, evaluator, candidate, protocol, score, or archived receipt changed."
+}
