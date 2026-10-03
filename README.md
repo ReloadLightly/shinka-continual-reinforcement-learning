@@ -465,8 +465,9 @@ remained fixed, and consumed slots were not replaced.
 The reproduction remains incomplete. Reduced populations, shorter task
 sequences, and the reported normalization differ from the full reference
 comparison. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
-The next experiment is a separately specified full-budget GA/ES/PPO reference
-comparison, preceded by ES/PPO development runtime calibration.
+The next experiment is the declared
+[full-budget GA/ES/PPO reference comparison](docs/reference-comparison.md),
+preceded by ES/PPO development runtime calibration.
 Broader reproduction also requires the other environments, task variations,
 continual PPO variants, and neighborhood analysis in the
 [reproduction plan](docs/reproduction-plan.md).

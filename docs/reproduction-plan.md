@@ -8,6 +8,12 @@ The reference implementation is pinned to [`821570eb6a22db0f7aa77111b2ea541fe8fa
 
 ## First experiment
 
+The active [full-budget reference comparison](reference-comparison.md) includes
+GA, ES, and PPO only: ten reporting trials per method under the protocol below.
+It first reuses the verified GA development reference and measures missing ES/PPO
+development costs. The completed ShinkaEvolve searches and reserved validations
+remain separate studies; no selected candidate changes this reference comparison.
+
 Use the upstream gymnax cell `CartPole-v1_sigma0.5`, alternating between the original environment and a fixed observation offset. Preserve the upstream policy, environment dynamics, task construction, and centroid evaluation. The trainer receives no explicit task-switch signal. See the paper's [experimental setup and Appendix A](https://arxiv.org/html/2610.01583v1).
 
 The pinned [gymnax configuration](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/source/configs/gymnax.yaml) and [configuration resolver](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/source/utils/config.py) specify:
