@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "status": "prepared_frozen_not_executed",
+  "recorded_at": "2026-10-03T02:29:13.777821+00:00",
+  "implementation_revision": "dbdf37eaf98c51e7e617d0cdc064312f272041a9",
+  "full_regression_suite": {
+    "implementation_revision": "3e0b2990d2ddfe9bbc78b69eaa00350d0bf99e28",
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 613,
+    "wall_seconds": 90.75
+  },
+  "final_preparation_fix_check": {
+    "implementation_revision": "dbdf37eaf98c51e7e617d0cdc064312f272041a9",
+    "command": ".venv/bin/python -m pytest -q tests/test_adaptive_recovery.py",
+    "passed": 23,
+    "wall_seconds": 65.75,
+    "scope": "Accept native slot15 empty results directory while rejecting program/evaluation evidence; fixture matches actual topology."
+  },
+  "lint": {
+    "command": ".venv/bin/ruff check .",
+    "result": "All checks passed"
+  },
+  "native_integration": {
+    "tests_passed": 7,
+    "scope": "Real pinned runner, database, patcher and scheduler with synthetic provider/evaluator boundaries; no model or RL training calls",
+    "success_expected_consumed_slots": 25,
+    "success_expected_database_rows": 24,
+    "success_expected_valid_programs": 23,
+    "first_allowed_generation": 16,
+    "last_allowed_generation": 24,
+    "new_failure_prevents_following_generation": true
+  },
+  "process_supervision": {
+    "tests_passed": 19,
+    "scope": "Actual local process trees, including setsid, adopted descendants, signals, timeout, shutdown forks, final ledger writes and cleanup failure"
+  },
+  "preparation_attempts": [
+    {
+      "implementation_revision": "3e0b2990d2ddfe9bbc78b69eaa00350d0bf99e28",
+      "status": "rejected_before_output_creation",
+      "error": "Interrupted slot 15 has unexpected artifacts",
+      "diagnosis": "Empty native results directory was missing from the test fixture; original archive untouched",
+      "new_slots": 0,
+      "new_guarded_proposal_requests": 0,
+      "new_training_trials": 0
+    },
+    {
+      "implementation_revision": "dbdf37eaf98c51e7e617d0cdc064312f272041a9",
+      "status": "prepared",
+      "wrapper_preflight": {
+        "auth": "chatgpt",
+        "model": "gpt-6.1-sol",
+        "headless": "@roberttlange/headless@0.6.1",
+        "inference_calls": 0
+      },
+      "new_slots": 0,
+      "new_guarded_proposal_requests": 0,
+      "new_training_trials": 0
+    }
+  ],
+  "prepared_checkpoint": {
+    "consumed_slots": 16,
+    "valid_scored_programs": 14,
+    "database_rows": 15,
+    "remaining_generations": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "new_work": {
+      "new_training_trials": 0,
+      "new_training_trials_allocated": 0,
+      "new_nominal_training_steps": 0,
+      "new_nominal_training_steps_allocated": 0,
+      "new_scored_training_trials": 0,
+      "training_wall_seconds": 0.0,
+      "evaluation_wall_seconds": 0.0
+    },
+    "native_execution_sessions": 0
+  },
+  "original_inventory_hashes_verified": 308,
+  "prepared_copy_hashes_verified": 308,
+  "source_database_logical_sha256": "67ff74a0a2a63a2876e946bec16b2eda4078afb18c784c33f87ce8d0882606f5",
+  "recovery_database_logical_sha256": "67ff74a0a2a63a2876e946bec16b2eda4078afb18c784c33f87ce8d0882606f5",
+  "rng_input_sha256": "eac320783b44307157cee89b99f529c4817995a6c1beaf766713600fede29d83",
+  "rng_policy": "restore-sealed-stale-stage13-RNG-once-before-native-initialization",
+  "evidence_sha256": {
+    "reports/adaptive-recovery-preflight-20261003/checksums.json": "8f4df6f797bd0fbf25d450967f6c2259aeffce967e8d0cb36f8b7e97fb06a9a3",
+    "reports/adaptive-recovery-preflight-20261003/summary.json": "8ddeb513175be2a5a593308e8de737f25877c1d3ca6cfa68dc685efbe48d74dc",
+    "reports/adaptive-recovery-preflight-20261003/recovery-plan.json": "387fd3fe567818bd7adc3683cc4a45788d15424bf1c3be1b52ab4b3017f3c651",
+    "reports/adaptive-shinka-stage25-stopped-20261003/checksums.json": "0bbe509485449922e62d40c5c8ce9b1245223ff75b992b3c23a341ea5e97dbb8"
+  },
+  "source_sha256": {
+    "src/shinka_crl/adaptive_recovery.py": "4714cdef7a7e2582323fb67909615dfaaf3abc07e72191986e2a0f794963adf3",
+    "src/shinka_crl/adaptive_recovery_native.py": "64b62b7c9b40996518168e5e31e86a880b8c302141e3619562553c1a13051dc2",
+    "src/shinka_crl/recovery_process.py": "877d8146e2b891fc1349b83cc79e8086dc7e9e2140107fb3caa56e39ed0d8b52",
+    "scripts/run_adaptive_recovery.py": "010b534f789e25644f7c8cc0a16f792ccb1050c7b4adf48119057e745b561726",
+    "scripts/report_adaptive_recovery.py": "a30d7ae5316339335f66a04bdda7dbaf055f7fc75a7281921feee68a2198b3ad",
+    "scripts/recovery_headless.py": "febb3b224a3bae5715d09571816e30a1a7d9d1d5b1806e59c6c7a72449aba375"
+  },
+  "reserved_validation_and_final_reporting": "Not executed; source/evaluation contracts retain the development partition.",
+  "independent_prepared_audit": {
+    "status": "passed",
+    "original_inventory_bindings": 308,
+    "copy_inventory_bindings": 308,
+    "published_hashes_verified_across_prior_and_prepared_reports": 2343,
+    "stopped_report_original_bindings_verified": 1152,
+    "sqlite_logical_copy_equal": true,
+    "unchanged_original_search_source_hashes": 7,
+    "unchanged_evaluator_source_hashes": 21,
+    "new_recovery_source_hashes": 6,
+    "only_training_seed_directories": [
+      4001,
+      4002,
+      4003
+    ],
+    "new_sessions": 0,
+    "new_slot_reservations": 0,
+    "new_provider_reservations": 0
+  }
+}

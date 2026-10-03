@@ -667,6 +667,14 @@ tests verify cleanup across separate provider sessions and orphaned children.
 These are orchestration checks with synthetic evaluations, not additional
 learning results. The original archive, frozen evaluator and all scientific
 scores remain unchanged; recovery proposals and training have not started.
+The [prepared plan](reports/adaptive-recovery-preflight-20261003/recovery-plan.json)
+binds the committed implementation and original evidence, with zero new work in
+its [accounting summary](reports/adaptive-recovery-preflight-20261003/summary.json).
+The full regression suite passed 613 tests; after correcting the preparation
+fixture to include native slot 15's empty results directory, all 23 controller
+tests and the real runtime preflight passed. The
+[verification record](reports/adaptive-recovery-verification-20261003.json)
+retains both preparation attempts and their source revisions.
 
 ### Remaining scientific evaluation
 
@@ -850,8 +858,8 @@ use one seed and unmatched training budgets.
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
 The next experimental step is execution of the tested
-[recovery controller](docs/adaptive-recovery.md), after its separate plan and
-source bindings are frozen and published. Nine unconsumed slots remain,
+[recovery controller](docs/adaptive-recovery.md) using the separately published
+preparation freeze. Nine unconsumed slots remain,
 generations 16–24.
 The failure record, consumed slots, objective, grammar, development partition,
 and fixed controls survive in a separate working copy. The controller declares

@@ -1,7 +1,10 @@
 # Reviewed adaptive-search recovery
 
-**Status: implementation under verification; recovery plan not yet frozen or
-executed.** The controller implements the
+**Status: implemented, verified, and prepared; recovery execution has not
+started.** The [public preparation freeze](../reports/adaptive-recovery-preflight-20261003/recovery-plan.json)
+and [verification record](../reports/adaptive-recovery-verification-20261003.json)
+bind the implementation, original archive, RNG decision, and zero added work.
+The controller implements the
 [reviewed recovery requirements](adaptive-search.md#reviewed-recovery-work)
 for the [stopped target-25 archive](../reports/adaptive-shinka-stage25-stopped-20261003/summary.json).
 It does not establish a completed endpoint or authorize reserved validation.
@@ -12,8 +15,8 @@ The original [search protocol](adaptive-search.md) and
 
 The recovery protocol is `adaptive-shinka-reviewed-recovery-v1`. It accepts the
 reviewed source archive at `results/adaptive-shinka-20261003` and creates an
-independent working copy. The planned recovery directory is
-`results/adaptive-shinka-recovery-20261003`; the planned public freeze is
+independent working copy. The prepared recovery directory is
+`results/adaptive-shinka-recovery-20261003`; the public freeze is
 `reports/adaptive-recovery-preflight-20261003`.
 
 | Generations | Recorded state | Recovery treatment |
@@ -172,6 +175,14 @@ descendant cleanup without model or RL-training calls:
   tests/test_recovery_process.py
 ```
 
-Final test counts and the public preparation receipt must be recorded before
-execution. The [reserved validation handoff](adaptive-validation.md) remains a
+The full regression suite passed 613 tests. The real preparation then exposed
+an empty native `results/` directory omitted by the slot-15 fixture; preparation
+stopped before creating output. The validator and fixture were corrected, and
+all 23 controller tests passed again. The recorded-runtime preparation and
+wrapper availability check then passed at implementation revision
+[`dbdf37e`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/commit/dbdf37eaf98c51e7e617d0cdc064312f272041a9).
+The [verification record](../reports/adaptive-recovery-verification-20261003.json)
+retains both preparation attempts, exact commands, revisions, and checksums.
+The prepared state has no recovery sessions, reservations, proposals, or training.
+The [reserved validation handoff](adaptive-validation.md) remains a
 separate proposed protocol until the search endpoint has been explicitly resolved.
