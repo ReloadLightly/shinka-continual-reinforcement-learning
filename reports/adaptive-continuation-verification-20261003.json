@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-03T07:43:51.739593+00:00",
+  "status": "prepared_verified_not_executed",
+  "source_sha256": {
+    "src/shinka_crl/adaptive_recovery.py": "4714cdef7a7e2582323fb67909615dfaaf3abc07e72191986e2a0f794963adf3",
+    "src/shinka_crl/adaptive_recovery_native.py": "64b62b7c9b40996518168e5e31e86a880b8c302141e3619562553c1a13051dc2",
+    "src/shinka_crl/recovery_process.py": "877d8146e2b891fc1349b83cc79e8086dc7e9e2140107fb3caa56e39ed0d8b52",
+    "scripts/run_adaptive_recovery.py": "010b534f789e25644f7c8cc0a16f792ccb1050c7b4adf48119057e745b561726",
+    "scripts/report_adaptive_recovery.py": "a30d7ae5316339335f66a04bdda7dbaf055f7fc75a7281921feee68a2198b3ad",
+    "scripts/recovery_headless.py": "febb3b224a3bae5715d09571816e30a1a7d9d1d5b1806e59c6c7a72449aba375",
+    "src/shinka_crl/adaptive_continuation.py": "a5bbbbbfb488d1b8a3bcff52b689dc9b3c2aa6bb9455ffaea46d4dfac41a5017",
+    "scripts/run_adaptive_continuation.py": "9c52268410ee4e6a12eaeeecc4bf79ae6c2446afb558c6816c6c9b5ebd58e040",
+    "scripts/report_adaptive_continuation.py": "9089180019d99453245b994d8d00ad35659066b49690ceb7f51bbfd7b9852c16",
+    "scripts/continuation_headless.py": "236de116d84320f5bc36edb0714caafde69c04ed5775ada4817da6a9f6664c98"
+  },
+  "repository_audit": "reports/repository-audit-20261003.json",
+  "runtime_preflight": {
+    "initial": "rejected before preparation: frozen Codex version 0.159.3 differs from system 0.160.0",
+    "restoration": {
+      "package": "@openai/codex@0.159.3-linux-x64",
+      "url": "https://registry.npmjs.org/@openai/codex/-/codex-0.159.3-linux-x64.tgz",
+      "integrity": "sha512-xlHydfOksnNt/qz4BEVFvjMWunweaVSNtha/DkVUwWZnVZxbqiJwsXSl2iZDk04b6k/g0OI7jU06XqzHB2s5og==",
+      "tarball_sha256": "0719027cfe326e248971a2dff0a391c3532a3d838b4e3cc660bf93b2a606d2ce",
+      "executable_sha256": "8bf204b36a2f6dd0dab73aa2f639892e67ef9ac8befccb4a05b1496ebf25c479"
+    },
+    "final": "passed unchanged original runtime identity and continuation wrapper --check",
+    "wrapper": {
+      "auth": "chatgpt",
+      "model": "gpt-6.1-sol",
+      "headless": "@roberttlange/headless@0.6.1",
+      "inference_calls": 0
+    }
+  },
+  "check_attempts": [
+    {
+      "scope": "initial baseline native tests within execution sandbox",
+      "status": "interrupted_after_hang",
+      "diagnosis": "Sandbox socketpair.send raises EPERM; asyncio thread wakeup fails. Minimal asyncio.to_thread reproducer also hangs."
+    },
+    {
+      "scope": "nonnative suite while continuation implementation/tests were being edited",
+      "passed": 615,
+      "failed": 4,
+      "wall_seconds": 268.68,
+      "diagnosis": "Four new continuation tests used stale helper/summary names; corrected to final controller interface."
+    },
+    {
+      "scope": "tests/test_adaptive_recovery_native.py tests/test_adaptive_continuation_native.py",
+      "command": ".venv/bin/python -m pytest -q tests/test_adaptive_recovery_native.py tests/test_adaptive_continuation_native.py",
+      "passed": 13,
+      "wall_seconds": 78.28,
+      "execution": "outside sandbox; stubbed proposals and evaluations, real native orchestration"
+    },
+    {
+      "scope": "tests/test_adaptive_continuation.py",
+      "command": ".venv/bin/python -m pytest -q tests/test_adaptive_continuation.py --maxfail=1",
+      "passed": 18,
+      "wall_seconds": 102.67
+    }
+  ],
+  "full_regression_suite": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 637,
+    "wall_seconds": 232.39,
+    "execution": "outside sandbox; local socket communication permitted",
+    "evidence": "reports/adaptive-continuation-checks-20261003/full-pytest.log",
+    "sha256": "9bbce469ca42a7faba2e08552a9c8be9c0c4844d9ece657740d876a6a366da94"
+  },
+  "scientific_scope": "No new model proposals or RL training; native integration tests use synthetic evaluations. Frozen trainer/evaluator/upstream files unchanged.",
+  "implementation_revision": "b5a3cf1d4d2df5b8caeadc81d78c9ce5a74184e0",
+  "preparation": {
+    "status": "prepared",
+    "source": "results/adaptive-shinka-recovery-20261003",
+    "output": "results/adaptive-shinka-continuation-20261003",
+    "report": "reports/adaptive-continuation-preflight-20261003",
+    "new_guarded_requests": 0,
+    "new_training_trials": 0,
+    "remaining_generations": [
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ]
+  },
+  "lint": {
+    "command": ".venv/bin/ruff check .",
+    "result": "All checks passed",
+    "evidence": "reports/adaptive-continuation-checks-20261003/ruff.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  },
+  "evidence_sha256": {
+    "reports/adaptive-continuation-preflight-20261003/checksums.json": "e37ce6b99525db3e3ba555537a89e737dd32c96c2dc28738391274f9e3987ad9",
+    "reports/adaptive-continuation-preflight-20261003/continuation-plan.json": "2df48167546fec6d49f40bb7e9ad2284cc7d33954aac4c725ac943768bd6aef4",
+    "reports/adaptive-continuation-preflight-20261003/summary.json": "ae8351ed23446f999c6374311e8f5da93250ff401c3bb3d9a4092cd6bb26a94d"
+  }
+}

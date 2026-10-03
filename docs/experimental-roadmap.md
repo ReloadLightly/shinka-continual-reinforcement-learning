@@ -44,6 +44,11 @@ Its [stopped checkpoint](../reports/adaptive-recovery-stopped-20261003/summary.j
 adds valid generation 16 and grammar-rejected generation 17: 18 consumed slots,
 15 valid programs, and seven unused slots remain. The barrier prevented another
 proposal and native saved fresh RNG before its graceful failure return. The
+[separate continuation](adaptive-continuation.md) is implemented and has a
+[prepared input freeze](../reports/adaptive-continuation-preflight-20261003/continuation-plan.json)
+for generations 18–24. Its
+[verification](../reports/adaptive-continuation-verification-20261003.json)
+retains the full regression results and restored proposal runtime. The
 [reserved validation proposal](adaptive-validation.md) remains unexecuted pending
 an explicitly resolved search endpoint. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in

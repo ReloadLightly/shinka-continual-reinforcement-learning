@@ -922,8 +922,11 @@ The next execution step is a reviewed continuation from the
 Seven unconsumed slots remain, generations 18–24. A separate
 [continuation controller and runbook](docs/adaptive-continuation.md) now bind
 this archive and its fresh RNG receipt while retaining the original controller
-and both stopped histories. The implementation requires its own committed source
-and published input freeze before execution. The objective, grammar, development
+and both stopped histories. Its
+[prepared input freeze](reports/adaptive-continuation-preflight-20261003/continuation-plan.json)
+binds committed source before execution; the
+[verification record](reports/adaptive-continuation-verification-20261003.json)
+retains the checks. The objective, grammar, development
 partition, controls, and 25-slot budget remain fixed.
 
 The [repository audit](reports/repository-audit-20261003.json) verifies published

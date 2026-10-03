@@ -6,6 +6,15 @@ working copy, and pre-execution freeze. The earlier search and recovery records
 remain immutable. This is development search; adaptive validation and final
 reporting remain separate work.
 
+The [prepared freeze](../reports/adaptive-continuation-preflight-20261003/continuation-plan.json)
+binds implementation revision `b5a3cf1` and the original input evidence. Its
+[accounting summary](../reports/adaptive-continuation-preflight-20261003/summary.json)
+records zero new work. The
+[verification record](../reports/adaptive-continuation-verification-20261003.json)
+retains the runtime restoration and check attempts.
+The [independent prepared review](../reports/adaptive-continuation-prepared-review-20261003.json)
+verifies copied evidence, source bindings, unused slots, and zero added work.
+
 ## Input and fixed bounds
 
 The source is `results/adaptive-shinka-recovery-20261003`, independently checked

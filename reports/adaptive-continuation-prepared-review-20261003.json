@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "status": "prepared_continuation_independently_reviewed_zero_new_work",
+  "created_at": "2026-10-03T07:46:07.794919+00:00",
+  "implementation_repository_revision": "b5a3cf1d4d2df5b8caeadc81d78c9ce5a74184e0",
+  "protocol": "adaptive-shinka-reviewed-continuation-v2",
+  "evidence_sha256": {
+    "results/adaptive-shinka-continuation-20261003/plan.json": "a79c80434407cf223ec00aa69e0f53cd117461eac0b7111cd43d0001282eae66",
+    "results/adaptive-shinka-continuation-20261003/plan-receipt.json": "a29fc0b3cc86ea71316376666c2f20c62e2056fa49070dbf5fe9271e66268353",
+    "results/adaptive-shinka-continuation-20261003/state.json": "db031e16eb20b741142691954cadf3423b419709a117d11831876281f864b79e",
+    "results/adaptive-shinka-recovery-20261003/plan.json": "7bf206ce71653d5f63c2cd7e8778f610a7aea5b7c9b9257311ebb9ce5f658470",
+    "results/adaptive-shinka-recovery-20261003/state.json": "c168ec3283119ebb1a01b22edb4185053c3d4b46ea1696383c480eb0fa16c217",
+    "results/adaptive-shinka-recovery-20261003/summary.json": "966b6aadd1977ba9fe28be12867ea3217955193f4f1c5c396287b41afab1722b",
+    "results/adaptive-shinka-recovery-20261003/archive/native-recovery.json": "8aa1ebb00b9a4e48245eb62992dace2a23c06fb2da19e78fec72aee75c060338",
+    "results/adaptive-controls-20261003/plan.json": "73103a518838b780a097dabe2d0e17ff2669360b7d40e22aa66150b6c2302d24",
+    "reports/adaptive-continuation-preflight-20261003/continuation-plan.json": "2df48167546fec6d49f40bb7e9ad2284cc7d33954aac4c725ac943768bd6aef4",
+    "reports/adaptive-continuation-preflight-20261003/checksums.json": "e37ce6b99525db3e3ba555537a89e737dd32c96c2dc28738391274f9e3987ad9",
+    "reports/adaptive-continuation-preflight-20261003/summary.json": "ae8351ed23446f999c6374311e8f5da93250ff401c3bb3d9a4092cd6bb26a94d",
+    "reports/adaptive-recovery-stopped-review-20261003.json": "51c150ff7f8189ec95c946f9c9cbaa0c7dfd5c35f2773ee34cf2df6c93d25be9"
+  },
+  "methods": {
+    "command": ".venv/bin/python /tmp/audit_prepared_continuation_20261003.py",
+    "audit_script_sha256": "0db4a946d87cebfe1def7aa4aec58a2b3262936d4447108a22f7c73c27adb38c",
+    "independence": "Standard-library file hashing, complete inventories, SQLite read-only queries/dumps, canonical JSON digests and Git committed-file reads; does not call the continuation controller or its verification functions.",
+    "source_review": "Read final committed controller, wrapper and exporter together with unchanged v1 native adapter and summarizer. Confirmed original-ancestor overlap rejection and exact historical generation inventories added after the initial review.",
+    "publication_scope": "The preflight export exists locally and its hashes pass. This review does not itself establish commit/push of the pre-execution freeze."
+  },
+  "verified_counts": {
+    "source_recovery_files": 355,
+    "original_stopped_archive_files": 308,
+    "prepared_archive_files": 344,
+    "history_files": 10,
+    "independently_copied_archive_files_without_source_hardlinks": 344,
+    "independently_copied_history_files_without_source_hardlinks": 10,
+    "implementation_files_matching_commit": 10,
+    "unchanged_previous_controller_files": 6,
+    "unchanged_original_search_files": 7,
+    "unchanged_evaluator_contract_files": 21,
+    "published_preflight_hashes": 5,
+    "original_preflight_hashes": 3,
+    "retained_complete_training_manifests": 42
+  },
+  "source_database_logical_sha256": "3b76f0271b73b525ca904bb9ccb76e421f646280690b298779f6a956dd88c261",
+  "prepared_database_matches_source_logically": true,
+  "historical_generation_inventory_counts": {
+    "0": 10,
+    "1": 17,
+    "2": 17,
+    "3": 17,
+    "4": 17,
+    "5": 17,
+    "6": 17,
+    "7": 17,
+    "8": 17,
+    "9": 17,
+    "10": 17,
+    "11": 17,
+    "12": 17,
+    "13": 17,
+    "14": 17,
+    "15": 1,
+    "16": 17,
+    "17": 17
+  },
+  "historical_copy_bindings": {
+    "archive/native-recovery.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/archive/native-recovery.json",
+      "sha256": "8aa1ebb00b9a4e48245eb62992dace2a23c06fb2da19e78fec72aee75c060338"
+    },
+    "archive/recovery_requests/gen_16.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/archive/recovery_requests/gen_16.json",
+      "sha256": "f96087cd1bb2527b793e279e86db777a33fbd0b40310c6d2d5352b2388393ae6"
+    },
+    "archive/recovery_requests/gen_17.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/archive/recovery_requests/gen_17.json",
+      "sha256": "876942f4ce4a89dc44540e395e2f5df4362ba5ae7294a2aea61d5cb6b232955f"
+    },
+    "archive/recovery_slots/gen_16.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/archive/recovery_slots/gen_16.json",
+      "sha256": "ef08dc18dc3a0f169eb04f30cf0c0e2cf40027f6720a11f1eb99209b9c7af142"
+    },
+    "archive/recovery_slots/gen_17.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/archive/recovery_slots/gen_17.json",
+      "sha256": "2649e4231b0bf88b6a0eb764cb8398e5e2c0d920308806b2a1e22693752f96fa"
+    },
+    "controller/plan-receipt.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/plan-receipt.json",
+      "sha256": "2ce9be5f0802da600f9462ff01415aaa82f4ff2416a7940e1d112478e3debcd5"
+    },
+    "controller/plan.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/plan.json",
+      "sha256": "7bf206ce71653d5f63c2cd7e8778f610a7aea5b7c9b9257311ebb9ce5f658470"
+    },
+    "controller/session_001.log": {
+      "source": "results/adaptive-shinka-recovery-20261003/session_001.log",
+      "sha256": "854bf6724b095c7b710e0bf253174a549f4ce471d749660af9e816e2a6c376a3"
+    },
+    "controller/state.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/state.json",
+      "sha256": "c168ec3283119ebb1a01b22edb4185053c3d4b46ea1696383c480eb0fa16c217"
+    },
+    "controller/summary.json": {
+      "source": "results/adaptive-shinka-recovery-20261003/summary.json",
+      "sha256": "966b6aadd1977ba9fe28be12867ea3217955193f4f1c5c396287b41afab1722b"
+    }
+  },
+  "checkpoint": {
+    "consumed_generations": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "persisted_generations": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17
+    ],
+    "valid_generations": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      16
+    ],
+    "retained_invalid_generations": [
+      14,
+      17
+    ],
+    "retained_consumed_generation_without_row_or_program": 15,
+    "allowed_new_generations": [
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "slots_consumed": 18,
+    "persisted_rows": 17,
+    "valid_programs": 15,
+    "guarded_requests": 17,
+    "recorded_codex_launches": 16,
+    "rng_sha256": "8d8fa2a390807c55874f9d17177971731f07b8ecf29329c20d722e8e0e02c20a",
+    "rng_matches_graceful_generation17_receipt": true,
+    "rng_restoration_policy": "restore-gracefully-saved-recovery-RNG-once-before-native-initialization",
+    "rng_deviation": "Restore the graceful generation-17 recovery checkpoint once before native initialization; initialization may consume RNG draws. The inherited stage-13 RNG rollback remains a deviation from uninterrupted sampling."
+  },
+  "preparation_accounting": {
+    "status": "prepared",
+    "new_sessions": 0,
+    "new_slot_reservations": 0,
+    "new_request_reservations": 0,
+    "new_native_receipt": false,
+    "new_generation_directories": 0,
+    "continuation_added": {
+      "new_training_trials": 0,
+      "new_training_trials_allocated": 0,
+      "new_nominal_training_steps": 0,
+      "new_nominal_training_steps_allocated": 0,
+      "new_scored_training_trials": 0,
+      "training_wall_seconds": 0.0,
+      "evaluation_wall_seconds": 0.0
+    },
+    "inherited_sessions_counted_once": 4,
+    "inherited_training_trials": 42,
+    "inherited_nominal_training_steps": 322560000,
+    "wrapper_preflight": {
+      "auth": "chatgpt",
+      "model": "gpt-6.1-sol",
+      "headless": "@roberttlange/headless@0.6.1",
+      "inference_calls": 0
+    }
+  },
+  "unchanged_evaluator": {
+    "context_sha256": "58b409f6946d9c9a3fcd77b1f66dbfc37feb35c772e25d41e217236abf63f0a7",
+    "objective_version": "adaptive-active-previous-v1",
+    "objective_weights": {
+      "active": 0.5,
+      "previous": 0.5
+    },
+    "grammar_version": "adaptive-width-v1",
+    "development_seeds": [
+      4001,
+      4002,
+      4003
+    ],
+    "task_trials": [
+      4002,
+      4003,
+      4004
+    ],
+    "fresh_evaluation_seeds": [
+      904001,
+      904002,
+      904003
+    ],
+    "observed_shared_cache_seeds": [
+      4001,
+      4002,
+      4003
+    ],
+    "reserved_validation_seeds": [
+      5001,
+      5002,
+      5003,
+      5004,
+      5005
+    ],
+    "controls": [
+      "identity",
+      "arithmetic",
+      "focus",
+      "static_shinka11",
+      "static_random24"
+    ],
+    "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+    "nominal_training_steps_per_trial": 7680000
+  },
+  "execution_bounds": {
+    "target_slots": 25,
+    "max_model_requests_per_slot": 1,
+    "max_additional_training_trials": 21,
+    "max_additional_nominal_training_steps": 161280000,
+    "session_timeout_seconds": 14400,
+    "terminal_finalization_grace_seconds": 10,
+    "failure_policy": "Stop on any new terminal failure; never retry or backfill consumed slots",
+    "execution_policy": "One execution from prepared state; failed/running states require a new review"
+  },
+  "code_review_conclusions": [
+    "Separate v2 controller and wrapper preserve v1 implementation hashes and previous archives; preparation/export reject overlap with current recovery, original source archive and evaluator study.",
+    "Copied historical rows and all generation0-17 file inventories, original task, preflight, ledger prefix and retained history remain guarded; consumed slot15 is never backfilled.",
+    "Native start18 and target25 use the unchanged serial adapter; new terminal failures stop further proposals while inherited failures14/17 do not stop initialization.",
+    "One exclusive durable slot reservation and provider reservation per new generation; failed/running states reject reexecution.",
+    "Cumulative scores and training costs derive from the inherited search evidence; v2 deltas subtract the complete v1 summary and append session time once.",
+    "Complete endpoint requires25 consumed slots,24 persisted rows and22 valid programs if every new proposal succeeds; invalid placeholders remain excluded from scientific scores."
+  ],
+  "limitations": [
+    "Prepared state only: this audit does not verify future execution, proposal validity or search completion.",
+    "Focused controller/native regression results were reported separately by the implementation workflow; this audit does not rerun or independently certify them.",
+    "Historical candidate scores were not all independently recomputed in this preparation audit; original receipts, complete archive inventories and previously reviewed evidence remain bound.",
+    "Reserved-seed absence was checked in the shared adaptive cache; no reserved outcomes were opened and no new training or model request was made.",
+    "Fresh RNG restoration retains the declared initial stage13 rollback deviation and may include new native initialization draws."
+  ]
+}
