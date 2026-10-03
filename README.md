@@ -651,10 +651,22 @@ the earlier completed summary; the linked report was freshly derived from the
 failed state and signed evidence. Ordinary resume is rejected by the frozen
 launcher. A reviewed continuation needs separate failure-aware orchestration,
 permanent accounting for slots 14 and 15, and an explicit RNG recovery decision;
-it cannot claim an uninterrupted trajectory. No source or limit was changed,
+it cannot claim an uninterrupted trajectory. No frozen source or limit was changed,
 no consumed slot was retried, and reserved validation and final reporting seeds
 remain unused. The [recovery work](docs/adaptive-search.md#reviewed-recovery-work)
 precedes the [proposed reserved comparison](docs/adaptive-validation.md).
+
+The separate [recovery controller](docs/adaptive-recovery.md) is now implemented.
+It copies the stopped archive, permanently excludes slot 15 from new proposals,
+counts consumed slots separately from persisted programs, and rejects repeated
+provider invocations for a slot. A serial completion check prevents a new
+proposal from starting after a terminal failure. Native integration with local
+fixtures completed slots 16–24 and stopped at the correct 25-slot budget;
+failure fixtures prevented slot 17 after slot 16 failed. Linux process-tree
+tests verify cleanup across separate provider sessions and orphaned children.
+These are orchestration checks with synthetic evaluations, not additional
+learning results. The original archive, frozen evaluator and all scientific
+scores remain unchanged; recovery proposals and training have not started.
 
 ### Remaining scientific evaluation
 
@@ -666,7 +678,7 @@ One full-budget development GA trial is complete; no full-budget comparison has 
 | Stationary control | Matched task and learner settings without switching | Development control complete |
 | Shinka-selected GA | Frozen candidate evaluated on reporting trials | Static winner frozen after validation; reporting pending |
 | Random-search control | Matched search budget and reporting protocol | Static winner frozen after validation; reporting pending |
-| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | 14 valid search programs; target-25 continuation stopped with 16 consumed slots; recovery and reserved validation pending |
+| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | 14 valid search programs; target-25 continuation stopped with 16 consumed slots; recovery controller implemented, execution and reserved validation pending |
 
 ## 5. Reproducibility
 
@@ -837,12 +849,16 @@ use one seed and unmatched training budgets.
 
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
-The next step is to implement and verify the
-[reviewed recovery path](docs/adaptive-search.md#reviewed-recovery-work) for the
-stopped target-25 session. Nine unconsumed slots remain, generations 16–24.
+The next experimental step is execution of the tested
+[recovery controller](docs/adaptive-recovery.md), after its separate plan and
+source bindings are frozen and published. Nine unconsumed slots remain,
+generations 16–24.
 The failure record, consumed slots, objective, grammar, development partition,
-and fixed controls must survive recovery. A separate controller plan must record
-the stale RNG checkpoint and be frozen before further model calls. The existing
+and fixed controls survive in a separate working copy. The controller declares
+restoration of the sealed stage-13 RNG before native initialization, without
+claiming an uninterrupted trajectory. Its execution limit is four hours, with
+at most 27 additional training trials and 207.36 million nominal steps.
+The existing
 failed state must not be relabeled as complete or overwritten.
 
 The [reserved validation proposal](docs/adaptive-validation.md) describes one

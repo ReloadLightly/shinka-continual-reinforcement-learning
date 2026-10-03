@@ -174,22 +174,27 @@ Reserved adaptive validation and final reporting seeds remain unused.
 
 ## Reviewed recovery work
 
-**Proposed; not implemented, frozen, or executed.** The ordinary launcher rejects
+**Implemented separately; recovery execution has not started.** The
+[recovery controller and runbook](adaptive-recovery.md) implement the reviewed
+path without modifying the frozen search or evaluator. The ordinary launcher rejects
 failed sessions, its monitor stops on any incorrect database row, and its
 completion verifier requires every row to be valid. Native resume also derives
 its next generation from persisted rows, so it could reuse interrupted slot 15.
 Editing a status, a cursor, or a receipt cannot resolve these constraints.
 
-1. Preserve the stopped archive and its published report. Create a separate
+The implementation follows these requirements:
+
+1. Preserve the stopped archive and its published report. Prepare a separate
    recovery controller and plan, referencing the exact old source and evidence
    hashes; leave the frozen search/evaluator contracts and original state intact.
 2. Keep generations 14 and 15 permanently consumed. Permit only the nine unused
    slots 16–24, with the same grammar, objective, development seeds, controls,
    proposer configuration, and one-request limit. Account for consumed slots
    separately from successful programs and database rows.
-3. Declare how the stale host RNG is recovered before execution. Any restoration
-   from the earlier checkpoint is a documented deviation; the uninterrupted
-   native trajectory cannot be reconstructed from the saved RNG alone.
+3. Restore the sealed stage-13 Python/NumPy RNG once before native initialization.
+   This is an explicit recovery deviation; the uninterrupted native trajectory
+   cannot be reconstructed from the saved RNG alone. A graceful return saves a
+   new RNG receipt; abrupt termination remains a failed checkpoint for review.
 4. Test old-failure handling, immutable receipts, request accounting, cancellation,
    remaining budgets, and failure-aware completion. An isolated native integration
    must prove that retained failures do not immediately stop the new controller,
@@ -199,6 +204,14 @@ Editing a status, a cursor, or a receipt cannot resolve these constraints.
    model calls. Retain any subsequent failures and all costs in the same scientific
    accounting, with a fresh recovery evidence path. Do not enlarge the 25-slot
    budget or relax the grammar in response to the failed proposal.
+
+Native integration uses deterministic local proposal and evaluation fixtures,
+with no model calls or policy training. It exercises the actual runner,
+database, patcher and scheduler: nine successful fixture proposals finish at
+25 consumed slots with 24 database rows, and new failures stop before another
+slot starts. Separate process-tree tests cover providers that start new sessions
+and descendants that survive their original parent. These checks validate
+orchestration; their synthetic scores are not experimental results.
 
 The [proposed validation handoff](adaptive-validation.md) follows an explicitly
 resolved search endpoint. It must not use the partial archive as though the
