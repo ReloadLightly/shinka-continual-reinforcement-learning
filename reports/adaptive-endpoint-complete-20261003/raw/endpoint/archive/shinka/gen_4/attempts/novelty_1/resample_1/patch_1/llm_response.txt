@@ -1,0 +1,14 @@
+<NAME>
+centroid_stagnation
+</NAME>
+<DESCRIPTION>
+A high best fitness can hide a stalled population mean, yet the objective evaluates the centroid. Make stagnation-driven exploration depend on mean fitness so one successful elite cannot suppress it. Dampen this exploration when population dispersion is already high, and slightly reduce the background width to support refinement. This feedback rule uses no switch schedule; its performance remains to be evaluated.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    target = 0.015 + 0.10 * difficulty * difficulty + 0.08 * stagnation * (1.0 - best) + 0.35 * shock
+=======
+    spread = clip(stats[1], 0.0, 1.0)
+    target = 0.012 + 0.08 * difficulty * difficulty + 0.16 * stagnation * difficulty * exp(-6.0 * spread) + 0.35 * shock
+>>>>>>> REPLACE
+</DIFF>

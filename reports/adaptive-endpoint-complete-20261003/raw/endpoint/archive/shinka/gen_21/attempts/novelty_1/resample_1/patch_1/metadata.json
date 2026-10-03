@@ -1,0 +1,15 @@
+{
+  "generation": 21,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 3,
+  "patch_name": "archive_aligned_recovery",
+  "patch_description": "Track archive fitness in memory so recovery responds to an actual archive decline. Blend best and mean fitness to reduce mutation width when strong policies emerge, and suppress exploration when the archive outperforms the population or mean fitness is improving. Retain stagnation-driven exploration for difficult, collapsed populations. This may balance acquisition and preservation better; improvement requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T11:50:54.571387",
+  "llm_cost": 0.0277508,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$CONTINUATION_ARCHIVE/shinka/gen_21/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

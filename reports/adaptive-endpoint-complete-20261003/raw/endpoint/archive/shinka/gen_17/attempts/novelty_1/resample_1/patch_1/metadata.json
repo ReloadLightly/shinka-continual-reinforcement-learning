@@ -1,0 +1,15 @@
+{
+  "generation": 17,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 3,
+  "patch_name": "centroid_sensitive_search",
+  "patch_description": "Use centroid fitness more strongly so an exceptional individual cannot prematurely suppress exploration. Gate exploration by archive-relative offspring competitiveness, while retaining the archive-loss response. Contract faster when the archive substantially outperforms the population, indicating disruptive mutations. These feedback rules aim to improve acquisition and centroid quality without relying on task timing; their benefit requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T08:00:22.401983",
+  "llm_cost": 0.0286668,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$REPO_ROOT/results/adaptive-shinka-recovery-20261003/archive/shinka/gen_17/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

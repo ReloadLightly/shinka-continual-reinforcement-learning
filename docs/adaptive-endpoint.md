@@ -73,3 +73,36 @@ The new controller also tests source and plan tampering, exact remaining
 budgets, recursive history preservation, independently prepared later attempts,
 no automatic retries, and truthful endpoint accounting. Existing controllers
 and the pinned upstream remain unchanged.
+
+## Observed endpoint and closure
+
+The first endpoint attempt completed generations 21–24 after publication at
+[`e1bc425`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/e1bc425).
+The [result export](../reports/adaptive-endpoint-complete-20261003/summary.json)
+contains the complete 25-slot allocation: 21 distinct valid programs including
+identity, grammar rejections at 14, 17, and 20, and the interrupted no-row slot
+15. All four new requests completed without a failure or retry. The original
+two-CPU numerical settings and evaluator were unchanged.
+
+The [independent review](../reports/adaptive-endpoint-outcome-review-20261003.json)
+checks all source and history bindings, the ledger, cleanup, fresh RNG, new
+raw scores and costs, and the exact selection score of every valid candidate.
+Generation 5 remains the development leader. The
+[explicit closure](../reports/adaptive-endpoint-closure-20261003.json)
+closes proposal feedback before reserved validation. The
+[README](../README.md#complete-adaptive-search-endpoint) reports all new outcomes
+and cumulative costs, including concurrent CPU use during this attempt.
+
+The working archive is `results/adaptive-shinka-endpoint-20261003-round1`.
+Its sealed state cannot execute again. To reproduce the text export, choose a
+new destination and run:
+
+```bash
+.venv/bin/python scripts/report_adaptive_endpoint.py \
+  --results-dir results/adaptive-shinka-endpoint-20261003-round1 \
+  --report-dir reports/adaptive-endpoint-reexport-NEW
+```
+
+The next experiment follows the [reserved comparison protocol](adaptive-validation.md).
+It starts fresh populations on the reserved partition; no development policy
+or score is reused as a validation outcome.

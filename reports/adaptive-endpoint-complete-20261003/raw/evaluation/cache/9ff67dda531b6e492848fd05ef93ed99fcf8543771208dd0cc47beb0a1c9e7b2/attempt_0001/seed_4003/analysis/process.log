@@ -1,0 +1,18 @@
+Evaluating 1 run(s) at 10 episodes (0 already current)
+2026-10-03 07:59:34.774415: E external/xla/xla/service/slow_operation_alarm.cc:73] Constant folding an instruction is taking > 1s:
+
+  %bitcast-convert.297 = s32[] bitcast-convert(%constant.6), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="$REPO_ROOT/.upstream/continual_neuroevolution/.venv/lib/python3.11/site-packages/flax/core/scope.py" source_line=968}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+2026-10-03 07:59:34.775785: E external/xla/xla/service/slow_operation_alarm.cc:140] The operation took 2.04114873s
+Constant folding an instruction is taking > 1s:
+
+  %bitcast-convert.297 = s32[] bitcast-convert(%constant.6), metadata={op_name="jit(_truncated_normal)/jit(main)/nextafter" source_file="$REPO_ROOT/.upstream/continual_neuroevolution/.venv/lib/python3.11/site-packages/flax/core/scope.py" source_line=968}
+
+This isn't necessarily a bug; constant-folding is inherently a trade-off between compilation time and speed at runtime. XLA has some guards that attempt to keep constant folding from taking too long, but fundamentally you'll always be able to come up with an input program that takes a long time.
+
+If you'd like to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+  [1/1] 8s
+Done in 0.1 min

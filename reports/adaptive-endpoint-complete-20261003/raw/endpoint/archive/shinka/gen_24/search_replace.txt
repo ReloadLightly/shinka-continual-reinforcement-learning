@@ -1,0 +1,33 @@
+<NAME>
+stagnation_target_control
+</NAME>
+<DESCRIPTION>
+Replace the alternating-probe gradient estimate with a smoothed stagnation signal. Generation-to-generation fitness changes also reflect selection and population noise, so attributing them to probe direction can mislead width adaptation. Instead, pull mutation width toward a bounded target that increases when quality is low and progress stalls, while reducing exploration when the archive outperforms the population. Preserve decline-triggered recovery and reduce probe amplitude to limit disruption. This rule uses only observed feedback and persistent memory; its effect on combined_score requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    response = clip((quality - previous_quality) / (0.025 + 0.15 * spread), -1.0, 1.0)
+    estimate = response * previous_direction
+    gradient = clip(0.80 * memory[1] + 0.20 * estimate, -1.0, 1.0)
+=======
+    response = clip((quality - previous_quality) / (0.025 + 0.15 * spread), -1.0, 1.0)
+    estimate = exp(-5.0 * abs(response))
+    gradient = clip(0.85 * memory[1] + 0.15 * estimate, 0.0, 1.0)
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    adaptation = 0.16 * gradient + 0.025 * competitiveness * (1.0 - quality)
+    contraction = 0.06 * quality * quality
+=======
+    difficulty = 1.0 - quality
+    advantage = clip(archive - mean - 0.05, 0.0, 1.0)
+    exploration = 0.14 * difficulty * difficulty + 0.16 * gradient * difficulty * exp(-5.0 * spread)
+    target = clip(0.012 + exploration * exp(-3.0 * advantage - 1.0 * maximum(response, 0.0)), 0.006, 0.35)
+    adaptation = 0.30 * (log(target) - center) + 0.025 * competitiveness * difficulty
+    contraction = 0.02 * quality * quality
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    probe = 0.18 + 0.18 * (1.0 - quality)
+=======
+    probe = 0.04 + 0.04 * (1.0 - quality)
+>>>>>>> REPLACE
+</DIFF>

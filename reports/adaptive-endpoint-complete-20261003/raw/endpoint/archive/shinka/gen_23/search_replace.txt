@@ -1,0 +1,24 @@
+<NAME>
+elite_sensitive_exploration
+</NAME>
+<DESCRIPTION>
+The current rule keeps mutations relatively large when the population mean trails a strong elite. The better prior result suggests using elite fitness to reduce disruption. This proposal lowers the mutation floor near successful solutions, suppresses exploration while fitness improves or the archive leads, and increases exploration during low-diversity stagnation. Archive fitness drops still trigger recovery, moderated when strong individuals survive. These are feedback-based hypotheses; improved combined_score requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    difficulty = 1.0 - mean
+    target = 0.015 + 0.10 * difficulty * difficulty + 0.08 * stagnation * (1.0 - best) + 0.35 * shock
+    success = tanh(4.0 * (stats[4] - 0.5))
+    log_width = 0.75 * log(clip(sigma, 0.001, 2.0)) + 0.25 * log(target) + 0.06 * success * difficulty
+=======
+    spread = clip(stats[1], 0.0, 1.0)
+    difficulty = 1.0 - 0.75 * best - 0.25 * mean
+    advantage = clip(stats[3] - mean - 0.04, 0.0, 1.0)
+    improving = clip(progress / (0.03 + spread), 0.0, 1.0)
+    exploration = 0.075 * difficulty * difficulty + 0.18 * stagnation * difficulty * exp(-5.0 * spread)
+    target = 0.005 + exploration * exp(-2.5 * advantage - 1.5 * improving) + 0.22 * shock * (0.3 + 0.7 * difficulty)
+    success = tanh(4.0 * (stats[4] - 0.5))
+    rate = where(target > clip(sigma, 0.001, 2.0), 0.35, 0.30)
+    log_width = (1.0 - rate) * log(clip(sigma, 0.001, 2.0)) + rate * log(target) + 0.04 * success * difficulty
+>>>>>>> REPLACE
+</DIFF>

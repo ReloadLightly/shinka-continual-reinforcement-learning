@@ -1,12 +1,11 @@
 # Reserved adaptive validation protocol
 
-**Status: implementation verified on development diagnostics; reserved handoff
-awaits endpoint closure.** This protocol specifies the comparison after the
-declared 25-slot adaptive search endpoint. The finalist and exact allocation
-must be frozen and published before reserved outcomes. The search objective
-and its source contracts remain unchanged.
+**Status: complete search endpoint explicitly closed; protocol fixed before
+reserved outcomes.** The finalist and exact allocation must be frozen and
+published before execution. The search objective and its source contracts
+remain unchanged.
 
-The declared endpoint has **not been reached**. The
+The declared endpoint has been reached through separately reviewed attempts. The
 [attempted 25-slot continuation](../reports/adaptive-shinka-stage25-stopped-20261003/summary.json)
 stopped after generation 13 completed and generation 14 exceeded the frozen
 512-node AST limit. Generation 15 began during shutdown; its guarded request
@@ -17,11 +16,14 @@ then completed generation 16 and rejected generation 17 at 515 AST nodes,
 stopping cleanly before generation 18. The separately frozen
 [next continuation](../reports/adaptive-continuation-stopped-20261003/summary.json)
 completed generations 18 and 19, then rejected generation 20 at 536 AST nodes
-and stopped before generation 21. The current checkpoint has 21 consumed slots
-and 17 valid programs; four slots remain unused. This proposed validation handoff
-is not eligible for execution until the incomplete endpoint has an explicit
-documented resolution; it does not authorize using the partial archive as a
-substitute endpoint.
+and stopped before generation 21. The final
+[endpoint continuation](../reports/adaptive-endpoint-complete-20261003/summary.json)
+completed generations 21–24. The allocation now contains 25 consumed slots and
+21 valid programs, with every earlier failure retained. The
+[independent review](../reports/adaptive-endpoint-outcome-review-20261003.json)
+rederived the complete candidate ranking, and the
+[explicit closure](../reports/adaptive-endpoint-closure-20261003.json)
+closes proposal feedback before the reserved handoff.
 
 The purpose is to assess transfer of one development-selected adaptive rule to
 new task draws and a longer adaptation interval. It is a single comparison of
@@ -194,7 +196,7 @@ not across correlated generation checkpoints.
 
 The development leader was selected on three seeds; validation uses five new
 seeds and a different phase length. Their mean-score difference is not a
-matched estimate of improvement across datasets. This proposal makes no
+matched estimate of improvement across datasets. This protocol makes no
 significance claim and defines no threshold that automatically promotes the
 rule to final reporting. If inferential intervals or tests are desired, specify
 their method and treatment of secondary comparisons before the first reserved
@@ -204,5 +206,5 @@ search-method superiority.
 
 Retain a negative or mixed result without reopening the adaptive search using
 validation feedback. A later final-reporting handoff and any promotion rule
-require a separate declared protocol; this proposed comparison does not supply
+require a separate declared protocol; this comparison does not supply
 one implicitly.

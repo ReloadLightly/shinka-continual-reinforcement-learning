@@ -1,0 +1,15 @@
+{
+  "generation": 22,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "elite_aware_recovery",
+  "patch_description": "The current controller uses archive/mean difficulty weights of 0.65/0.35, stagnation smoothing of 0.18, a 0.012 width floor, and expansion/contraction rates of 0.45/0.20. This proposal incorporates best fitness, lowers the floor to 0.003, and accelerates contraction to 0.35 to support precise refinement. Exploration increases when positive progress stalls and population diversity falls; archive deterioration triggers feedback-driven recovery. Archive-relative success provides a modest adjustment. These changes target stronger acquisition and previous-task performance, but require evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T11:53:36.579061",
+  "llm_cost": 0.0208368,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$CONTINUATION_ARCHIVE/shinka/gen_22/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

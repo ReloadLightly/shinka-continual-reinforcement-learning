@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "closed",
+  "closed_at": "2026-10-03T10:05:23.164338+00:00",
+  "target_slots": 25,
+  "slots_consumed": 25,
+  "remaining_generations": [],
+  "endpoint_work": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive",
+  "endpoint_report": "reports/adaptive-endpoint-complete-20261003",
+  "endpoint_summary_sha256": "15cfdb6a8039ee1470023e2f9d49cf14f5166d5afeb21903dd4b2afc3c5f0700",
+  "endpoint_checksums_sha256": "d07a738e37e8ebcd8634b1a588e8c8955958e93a84660c82bfbb9004baecfa4b",
+  "independent_review": "reports/adaptive-endpoint-outcome-review-20261003.json",
+  "independent_review_sha256": "36d0bd8af166519f10cada656305b50c61dd96155e5f2dc5d523010b1c502d8e",
+  "native_status": "complete",
+  "valid_programs": 21,
+  "grammar_rejected_generations": [
+    14,
+    17,
+    20
+  ],
+  "interrupted_no_row_generations": [
+    15
+  ],
+  "preexecution_publication": "e1bc425e8adc4a322eac5e0f73ac3521988fb9cd",
+  "resolution": "The complete declared 25-slot development allocation is closed after independent verification. Generations 21–24 completed under the published endpoint freeze, all earlier failures and the interrupted slot remain consumed, native RNG was saved and cleanup completed, and no incomplete or unpersisted evaluation remains. Proposal feedback is closed; only the predeclared exact-score finalist handoff and five fixed controls may proceed to reserved validation. No failed slot is retried, repaired, replaced, or backfilled.",
+  "selection_rule": "Rank all valid programs including identity by exact unrounded combined development mean; earlier generation breaks an exact tie.",
+  "paper_reporting_partition": "Seeds 42–51 and task trials 1–10 remain untouched."
+}

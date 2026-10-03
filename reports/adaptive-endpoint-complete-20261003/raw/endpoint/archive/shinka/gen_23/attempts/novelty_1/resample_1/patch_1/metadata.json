@@ -1,0 +1,15 @@
+{
+  "generation": 23,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "elite_sensitive_exploration",
+  "patch_description": "The current rule keeps mutations relatively large when the population mean trails a strong elite. The better prior result suggests using elite fitness to reduce disruption. This proposal lowers the mutation floor near successful solutions, suppresses exploration while fitness improves or the archive leads, and increases exploration during low-diversity stagnation. Archive fitness drops still trigger recovery, moderated when strong individuals survive. These are feedback-based hypotheses; improved combined_score requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T11:57:20.669251",
+  "llm_cost": 0.0276248,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$CONTINUATION_ARCHIVE/shinka/gen_23/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,43 @@
+<NAME>
+elite_aware_recovery
+</NAME>
+<DESCRIPTION>
+The current controller uses archive/mean difficulty weights of 0.65/0.35, stagnation smoothing of 0.18, a 0.012 width floor, and expansion/contraction rates of 0.45/0.20. This proposal incorporates best fitness, lowers the floor to 0.003, and accelerates contraction to 0.35 to support precise refinement. Exploration increases when positive progress stalls and population diversity falls; archive deterioration triggers feedback-driven recovery. Archive-relative success provides a modest adjustment. These changes target stronger acquisition and previous-task performance, but require evaluation.
+</DESCRIPTION>
+<CODE>
+```python
+# EVOLVE-BLOCK-START
+def update_sigma(sigma, stats, memory):
+    mean = clip(stats[0], 0.0, 1.0)
+    spread = clip(stats[1], 0.0, 1.0)
+    best = clip(stats[2], 0.0, 1.0)
+    archive = clip(stats[3], 0.0, 1.0)
+    success = clip(stats[4], 0.0, 1.0)
+    ready = clip(memory[3], 0.0, 1.0)
+    old_mean = where(ready > 0.5, memory[0], mean)
+    old_archive = where(ready > 0.5, memory[1], archive)
+    progress = mean - old_mean
+    stalled = exp(-36.0 * maximum(progress, 0.0))
+    stagnation = clip(0.88 * memory[2] + 0.12 * stalled, 0.0, 1.0)
+    quality = clip(0.45 * best + 0.40 * archive + 0.15 * mean, 0.0, 1.0)
+    difficulty = 1.0 - quality
+    collapse = exp(-7.0 * spread)
+    advantage = maximum(archive - mean - 0.03, 0.0)
+    loss = ready * clip(old_archive - archive - 0.04, 0.0, 1.0)
+    improving = clip(progress / (0.035 + spread), 0.0, 1.0)
+    exploration = 0.045 * difficulty * difficulty + 0.09 * stagnation * difficulty * collapse
+    recovery = 0.14 * loss * (0.25 + 0.75 * difficulty)
+    target = 0.003 + exploration * exp(-2.0 * advantage - 1.5 * improving) + recovery
+    competitiveness = tanh(3.0 * (success - 0.40))
+    adjusted_target = clip(target * exp(0.22 * competitiveness * difficulty), 0.003, 0.25)
+    width = clip(sigma, 0.001, 2.0)
+    rate = where(adjusted_target > width, 0.55, 0.35)
+    log_width = (1.0 - rate) * log(width) + rate * log(adjusted_target)
+    next_sigma = clip(exp(clip(log_width, -6.9, 0.69)), 0.001, 2.0)
+    next_mean = 0.65 * old_mean + 0.35 * mean
+    next_archive = 0.55 * old_archive + 0.45 * archive
+    next_memory = stack([next_mean, next_archive, stagnation, 1.0])
+    return next_sigma, next_memory
+# EVOLVE-BLOCK-END
+```
+</CODE>

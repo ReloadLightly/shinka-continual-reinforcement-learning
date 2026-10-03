@@ -1,0 +1,15 @@
+{
+  "generation": 24,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 3,
+  "patch_name": "stagnation_target_control",
+  "patch_description": "Replace the alternating-probe gradient estimate with a smoothed stagnation signal. Generation-to-generation fitness changes also reflect selection and population noise, so attributing them to probe direction can mislead width adaptation. Instead, pull mutation width toward a bounded target that increases when quality is low and progress stalls, while reducing exploration when the archive outperforms the population. Preserve decline-triggered recovery and reduce probe amplitude to limit disruption. This rule uses only observed feedback and persistent memory; its effect on combined_score requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T12:00:36.610957",
+  "llm_cost": 0.0280488,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$CONTINUATION_ARCHIVE/shinka/gen_24/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

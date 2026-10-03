@@ -1,0 +1,26 @@
+<NAME>
+centroid_sensitive_search
+</NAME>
+<DESCRIPTION>
+Use centroid fitness more strongly so an exceptional individual cannot prematurely suppress exploration. Gate exploration by archive-relative offspring competitiveness, while retaining the archive-loss response. Contract faster when the archive substantially outperforms the population, indicating disruptive mutations. These feedback rules aim to improve acquisition and centroid quality without relying on task timing; their benefit requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    difficulty = clip(1.0 - 0.60 * best - 0.40 * archive, 0.0, 1.0)
+=======
+    difficulty = clip(1.0 - 0.45 * mean - 0.35 * archive - 0.20 * best, 0.0, 1.0)
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    exploration = 0.085 * difficulty * difficulty + 0.11 * stagnation * difficulty * collapse
+    target = 0.006 + exploration * exp(-2.5 * advantage - 1.2 * improving) + 0.22 * loss
+=======
+    exploration = (0.085 * difficulty * difficulty + 0.11 * stagnation * difficulty * collapse) * (0.50 + 0.50 * success)
+    target = 0.010 + exploration * exp(-2.5 * advantage - 1.2 * improving) + 0.22 * loss
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    rate = where(adjusted_target > width, 0.45, 0.20)
+=======
+    contraction = where(advantage > 0.05 + spread, 0.50, 0.25)
+    rate = where(adjusted_target > width, 0.45, contraction)
+>>>>>>> REPLACE
+</DIFF>

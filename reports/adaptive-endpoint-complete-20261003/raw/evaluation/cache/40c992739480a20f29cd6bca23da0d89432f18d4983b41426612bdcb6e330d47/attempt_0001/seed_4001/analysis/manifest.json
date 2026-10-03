@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "episodes": 10,
+  "eval_seed": 904001,
+  "command": [
+    "$REPO_ROOT/.upstream/continual_neuroevolution/.venv/bin/python",
+    "$REPO_ROOT/.upstream/continual_neuroevolution/scripts/analysis/evaluate_continual.py",
+    "--root",
+    "$EVALUATION_STUDY/cache/40c992739480a20f29cd6bca23da0d89432f18d4983b41426612bdcb6e330d47/attempt_0001/seed_4001/analysis/evaluation-input",
+    "--episodes",
+    "10",
+    "--seed",
+    "904001"
+  ],
+  "training_run": "$EVALUATION_STUDY/cache/40c992739480a20f29cd6bca23da0d89432f18d4983b41426612bdcb6e330d47/attempt_0001/seed_4001/training",
+  "input_sha256": {
+    "manifest.json": "a8282b13c09f366bbe3f8def1be7a45b8796baa2f9ea008e07f4796b79a9cdb9",
+    "results.json": "9bf38f58bd2cf674edd5e42f64af92b01b8bfc960b263c76a8cb4a03835f2b78",
+    "config.json": "3770d36c383ca5bf406fbfcdc1e89c90545bfdce69f026ea24d7b431462cd7c6",
+    "training_metrics.json": "df1a58f721beeebda45fdcde98e7f4c99ca1783962a792bdcce9efdf09d66d81",
+    "checkpoints.npz": "ca30c20b0741286c52ea3f5685081de4786c7a6a37d158e8a2de85c01c969f0e"
+  },
+  "analysis_source_sha256": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+  "upstream_source_sha256": {
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b"
+  },
+  "jax_platforms": "cpu",
+  "python_version": "Python 3.11.15",
+  "output_sha256": {
+    "evaluation.json": "1afaf25553087dee86a19e36c9b6d2403cf17381e9e78e70ebd57d15f504aed3",
+    "checkpoint-metadata.json": "596594cba22e7a6a53bf5e86a3923f76144ccd76dfc731a6b5aacfd73c6073c8",
+    "summary.json": "0479df714ebfbc6dbda8ae33c5771b1500a93b807e8cfc9b241099fc3ddcd471",
+    "process.log": "b2226f821bb0c38c940e753288fd26b43cc6ea7971bcdd86ca1829b83ea86d7a",
+    "evaluation-input/results.json": "9bf38f58bd2cf674edd5e42f64af92b01b8bfc960b263c76a8cb4a03835f2b78",
+    "evaluation-input/checkpoints.npz": "ca30c20b0741286c52ea3f5685081de4786c7a6a37d158e8a2de85c01c969f0e"
+  },
+  "wall_seconds": 6.129280840001229
+}

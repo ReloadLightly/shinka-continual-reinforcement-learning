@@ -1,0 +1,15 @@
+{
+  "generation": 5,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "elite_guided_plateau_search",
+  "patch_description": "Use both elite and mean fitness to estimate remaining difficulty, reducing pressure to increase mutation merely because offspring lower the batch mean. Concentrate plateau exploration where fitness spread is narrow, and damp it when the re-scored archive substantially outperforms the population. Keep a smaller archive-drop response for recovery. This aims to balance acquisition and centroid stability; improvement requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T02:49:19.943874",
+  "llm_cost": 0.0260628,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$REPO_ROOT/results/adaptive-shinka-20261003/shinka/gen_5/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

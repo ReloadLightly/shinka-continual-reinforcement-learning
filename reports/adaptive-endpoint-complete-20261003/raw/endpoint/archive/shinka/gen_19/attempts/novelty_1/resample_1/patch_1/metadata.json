@@ -1,0 +1,15 @@
+{
+  "generation": 19,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "elite_sensitive_refinement",
+  "patch_description": "Use a lower mutation floor when the best individual performs well, allowing finer centroid refinement while preserving exploration on difficult populations. Contract width faster when the archive outperforms the whole batch: this gap indicates that the current mutation scale may be damaging good policies. Expansion remains responsive to the existing stagnation and loss signals. These feedback rules require no switch schedule; their effect on combined_score remains to be evaluated.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T09:51:32.237924",
+  "llm_cost": 0.0178668,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SOURCE_RECOVERY/archive/shinka/gen_19/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

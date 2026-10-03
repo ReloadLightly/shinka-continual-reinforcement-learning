@@ -1,0 +1,1290 @@
+{
+  "schema_version": 1,
+  "status": "passed_prepared_review",
+  "reviewed_at_utc": "2026-10-03T10:14:17.325591+00:00",
+  "freeze": "reports/adaptive-validation-freeze-20261003",
+  "closure": "reports/adaptive-endpoint-closure-20261003.json",
+  "implementation_revision": "e693ed4a648385e36b4ce7fa547a1e20abc088bb",
+  "methods": {
+    "independence": "Standard-library hashes, JSON, AST, SQLite read-only queries, Git source reads, direct arithmetic, and statistics.mean; no repository scoring, selection, or recipe functions invoked.",
+    "script": "reports/adaptive-validation-prepared-checks-20261003/audit.py",
+    "script_sha256": "3fa8c6efb2ca80892e18d87721cb9060915d72382381bfdc1a6ae4dbdf2c2e74",
+    "score_comparisons": "Exact floating-point equality using the frozen summation order; ranking uses unrounded means and earlier generation for exact ties."
+  },
+  "bindings": {
+    "plan_sha256": "673c60b76783256dec1af5a7fb079452068acfe670673a31b223aa1ebc73156f",
+    "freeze_receipt_sha256": "25f10c34b55d5eaa176a5142e82e614fbfc158cbbb3d699fcb3715661ed7d309",
+    "protocol_sha256": "bbe1527af022406402808483ef73a3f43d87347ae7e5609bd9ab95966883789f",
+    "closure_sha256": "e33057601ed67fc21365202ade7240c3a63dab875893e1f7a8a5d7f25e51d909",
+    "endpoint_summary_sha256": "15cfdb6a8039ee1470023e2f9d49cf14f5166d5afeb21903dd4b2afc3c5f0700",
+    "endpoint_checksums_sha256": "d07a738e37e8ebcd8634b1a588e8c8955958e93a84660c82bfbb9004baecfa4b"
+  },
+  "verification": {
+    "frozen_files": 7,
+    "committed_repository_source_files": 24,
+    "committed_native_source_files": 96,
+    "endpoint_published_hashes": 1579,
+    "ranked_candidates": 21,
+    "recomputed_development_seed_trials": 63,
+    "cache_receipts_verified": 21,
+    "identity_included": true,
+    "full_recipe_identities_rederived": true,
+    "control_memberships_and_settings_unchanged": true,
+    "partition_and_trial_order_rederived": true,
+    "budget_rederived": true,
+    "failures": []
+  },
+  "selected": {
+    "generation": 5,
+    "native_id": "a91bcbdb-5453-4cd8-b20c-ab502f5243c3",
+    "development_mean": 0.48714444582727223,
+    "source_sha256": "24531430a4881bde90eb285b0aebe6044bd9e393aee830a634b88af05f06e0a4",
+    "canonical_ast_sha256": "f6a74339f820d1b8b10cd78d58a958d3c0ca7d76255bba4f46a8f2fb93199f4c"
+  },
+  "ranked_candidates": [
+    {
+      "generation": 5,
+      "native_id": "a91bcbdb-5453-4cd8-b20c-ab502f5243c3",
+      "development_score": 0.48714444582727223,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_5/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "24531430a4881bde90eb285b0aebe6044bd9e393aee830a634b88af05f06e0a4",
+        "canonical_ast_sha256": "f6a74339f820d1b8b10cd78d58a958d3c0ca7d76255bba4f46a8f2fb93199f4c",
+        "ast_nodes": 404,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "7c5d8856bda40379fdb4f36b35970ea2ae9f60535fd409bbe47558d7209e3f03",
+      "cache_receipt_sha256": "26170ab2249ff5ed16cb2142dc290460fe1246041138263eec2cc0f07caecb43",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.9529833335638047,
+          "active_score": 0.9059666671276093,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.22216250237226487,
+          "active_score": 0.42172500474452973,
+          "previous_score": 0.022600000000000006
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.2862875015457471,
+          "active_score": 0.5453083364248276,
+          "previous_score": 0.027266666666666665
+        }
+      ]
+    },
+    {
+      "generation": 12,
+      "native_id": "aa6d8f2b-a37e-4ebe-af00-6e542c82971d",
+      "development_score": 0.4548708347611957,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_12/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "06b1e460d4b729c9a6e8356881a7f61caae730d6951a16df9f70b61901426ce3",
+        "canonical_ast_sha256": "55fdfd6ae89a96e5ac7cb54402d7ae2b8c38e5d8997fa26a4eabf3b536b83e0d",
+        "ast_nodes": 480,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "7dfc03635239345a69b0271180e40931493376f5fc410c156375bc54964e8eb4",
+      "cache_receipt_sha256": "2acbc7afbd8c8928b84537a0d7d2523adc6666658abab0d823a33efb21196801",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.9420416673779488,
+          "active_score": 0.8840833347558976,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.1618875028848648,
+          "active_score": 0.3037750057697296,
+          "previous_score": 0.02
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.2606833340207736,
+          "active_score": 0.5002333347082139,
+          "previous_score": 0.021133333333333334
+        }
+      ]
+    },
+    {
+      "generation": 16,
+      "native_id": "27f5510c-a6df-48aa-97fe-85a3f8e470e9",
+      "development_score": 0.44738472377061844,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_16/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "084fb149cead4f66e2d6b2e23459d13363fc071be224d5815444f28f7f255723",
+        "canonical_ast_sha256": "9ca31b4c2672d2a66f137a6e6d4078d535c1d8b99d17213e21b534139e3fdcbc",
+        "ast_nodes": 484,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "c650066487326c5835e282ffaf20e94a5665a181ff93173e83428d426c77e768",
+      "cache_receipt_sha256": "ff228e40356bd79d9200ecb0c2824e22b11c2fe14207f3f34363a973f1cfbe89",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.9438083339810371,
+          "active_score": 0.8876166679620743,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.158525002292792,
+          "active_score": 0.2945166712522507,
+          "previous_score": 0.022533333333333332
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.23982083503802618,
+          "active_score": 0.4513750034093857,
+          "previous_score": 0.02826666666666667
+        }
+      ]
+    },
+    {
+      "generation": 9,
+      "native_id": "77893de1-0961-4b52-aea2-6ff455823dac",
+      "development_score": 0.4443722246487935,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_9/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "a64bb49124b55e89db9c51c6db0495df96d525aedeb3a0b718af36f42b45ddfe",
+        "canonical_ast_sha256": "a529165cb7162cf44ab4a4014508565a2f5987d7253f84826759d6cb152405a3",
+        "ast_nodes": 379,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "f0c784bf6e99c548ca848d26efe54b724bde57d6b0feeca6ba8d8e821626bde4",
+      "cache_receipt_sha256": "f751400da11509db7d28cd68aa77338eb362acc31f1ae8c1f938061618478220",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.8639791680335999,
+          "active_score": 0.7279583360671997,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.16931250400543213,
+          "active_score": 0.31902500801086425,
+          "previous_score": 0.019600000000000003
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.29982500190734857,
+          "active_score": 0.5800500038146972,
+          "previous_score": 0.0196
+        }
+      ]
+    },
+    {
+      "generation": 1,
+      "native_id": "802cc4f6-ae2d-492d-a8fb-c76fc9572dd6",
+      "development_score": 0.43610000106891,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_1/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "6cfac9d95cf0110db9cd52694043295016af881820a7b282a708c9bdcf457c10",
+        "canonical_ast_sha256": "85017d8e62afaf8ec2e2ac1cbed9162035783b05d5639791e80cdd261a3fa75e",
+        "ast_nodes": 319,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "98d008377ec168382cadf44dc7b57af75249bb8f286b2c8cb3839040fb0807df",
+      "cache_receipt_sha256": "b68c5dca53021ec7d7972ac0324023a4db44930d48fc16157e6fa9113e455b0e",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.8685666672190031,
+          "active_score": 0.8312666677713394,
+          "previous_score": 0.9058666666666667
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.1553416686455409,
+          "active_score": 0.2887500039577484,
+          "previous_score": 0.021933333333333336
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.284391667342186,
+          "active_score": 0.545783334684372,
+          "previous_score": 0.023
+        }
+      ]
+    },
+    {
+      "generation": 6,
+      "native_id": "c7ef761f-2de7-404d-bd3f-a409fa88ad6a",
+      "development_score": 0.4246055572165383,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_6/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "5361f0b43ad74fd151fa453cc675acc13b26290a86e21ac431d8d98555c0f9c5",
+        "canonical_ast_sha256": "dfd82dbbd18920197516f7c79e03102866a566137835775281c67af9ba7b192c",
+        "ast_nodes": 471,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "4575cd771a1a651f4287af553f708e09a64619955102200cd0c214a7f58b5282",
+      "cache_receipt_sha256": "ea3bdafa934b813f5aa807972d832b75b8f12f1476c8148e4ec464886f8e464f",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.674516668887933,
+          "active_score": 0.5473666711091995,
+          "previous_score": 0.8016666666666666
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.3915708348790805,
+          "active_score": 0.31820833642482754,
+          "previous_score": 0.4649333333333334
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.20772916788260143,
+          "active_score": 0.3021250024318695,
+          "previous_score": 0.11333333333333333
+        }
+      ]
+    },
+    {
+      "generation": 4,
+      "native_id": "29d2769e-f9ef-43e9-bd67-6e81f4f865e0",
+      "development_score": 0.4157583345519172,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_4/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "76156813cc02213205532537f3e719a299c8210f5a8c5aeda2de2b377d18b00a",
+        "canonical_ast_sha256": "460f5a9939923203e45a9d422d527fd7e5aa723ca7cf3a64834415b2b462deb6",
+        "ast_nodes": 341,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "ec8a18627ff230b32f38d2aeb4bbe137d49edd76ba977c06596c24ca74aa01b8",
+      "cache_receipt_sha256": "9b4c5bf38c48ec3dcaf4d898ea54672ca154c6b0f186f85cc4bc25f1320707c4",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.8936583334048589,
+          "active_score": 0.8932500001430511,
+          "previous_score": 0.8940666666666666
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.14605416847864786,
+          "active_score": 0.26797500362396237,
+          "previous_score": 0.024133333333333336
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.20756250177224478,
+          "active_score": 0.38265833687782286,
+          "previous_score": 0.03246666666666667
+        }
+      ]
+    },
+    {
+      "generation": 8,
+      "native_id": "f8d952b0-3694-4e6c-aa39-30c2f43fe34e",
+      "development_score": 0.41053055810928346,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_8/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "c7d98f26e953944a5891e6f59949bbda68ad5d9b21de8b4cf63b0bd45783d903",
+        "canonical_ast_sha256": "7415803dcbdee7a6251016657ac9d0ecdd8fa3ef9f5df13993171ec9e1d696db",
+        "ast_nodes": 480,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "f4f581a176bf3113e73fe26295ee6678bfd9d0910a46f5f5dcf8d3dca5abec9a",
+      "cache_receipt_sha256": "e6c9a82a7edaa3e88473db9b67477e197c5017336122e2caec13757e102e029e",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.9147583344101906,
+          "active_score": 0.8295166688203811,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.13910000277757645,
+          "active_score": 0.2580000055551529,
+          "previous_score": 0.0202
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.17773333714008333,
+          "active_score": 0.32686667428016664,
+          "previous_score": 0.028599999999999997
+        }
+      ]
+    },
+    {
+      "generation": 2,
+      "native_id": "b00f66fa-8742-403b-bcef-e186b1e177ec",
+      "development_score": 0.4031319455636872,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_2/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "2bcba9794febdcf98aaae844cbf3143621b6d8e26a613cf771c88e753be34733",
+        "canonical_ast_sha256": "08eb1c1de8938cc752c4a43ce5c0c7e6b2e2259a022516cce876619e3a28328d",
+        "ast_nodes": 335,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "9211e85b0d8cd49ce8641dd6599ce049dac9b04171377048fad5b57873b215a9",
+      "cache_receipt_sha256": "49f67b5ab018522d987d1b4aea7f41f5dac7199f266e769af62178584e1d249b",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.843866667219003,
+          "active_score": 0.8306666677713395,
+          "previous_score": 0.8570666666666666
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.10671666825215022,
+          "active_score": 0.1893000031709671,
+          "previous_score": 0.024133333333333336
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.2588125012199084,
+          "active_score": 0.49709166910648345,
+          "previous_score": 0.020533333333333334
+        }
+      ]
+    },
+    {
+      "generation": 11,
+      "native_id": "2e327748-c2f7-423e-a00c-6bf77680bf45",
+      "development_score": 0.402583334839344,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_11/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "e956d3c3295403d1204735224b75bd006f5ddad2eabae7144ff58581aa2acfb7",
+        "canonical_ast_sha256": "73aa3023576be971cc6a734de54ce3d1fcf63966b9102544e5c96204879e5c0e",
+        "ast_nodes": 444,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "ebdd26b7b85d833d7465c11bf7174739c8c24b0a684640ca886f2e63df2166a2",
+      "cache_receipt_sha256": "81ca1bd7953f3f9f2e60f931706cf3fd438b521869db716abb52a3665a3e3a61",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.9216291674613952,
+          "active_score": 0.8432583349227905,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.10783333588441214,
+          "active_score": 0.1918000051021576,
+          "previous_score": 0.023866666666666665
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.17828750117222467,
+          "active_score": 0.331241669011116,
+          "previous_score": 0.025333333333333333
+        }
+      ]
+    },
+    {
+      "generation": 19,
+      "native_id": "083e0d7a-d9f9-443d-bbf3-441c8e833193",
+      "development_score": 0.3980375016848246,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_19/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "861162a16e4500e40421cfc6ef4d6c208d944cff06f8dbc498ec5e2a77934690",
+        "canonical_ast_sha256": "8b6f587039172ffcd128f3d46555dbc693c9f15e380588166ed4e9864d5f5b79",
+        "ast_nodes": 505,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "0c849c8cac2ff0ecc98160e184900c07e7bb1dbb7549c534228835e7a73b1b16",
+      "cache_receipt_sha256": "2afba2f2f1050352f89b491d67af72ea85433f7c5d78ad9c659336f88adfe419",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.8808916674017906,
+          "active_score": 0.7617833348035813,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.08602500185966491,
+          "active_score": 0.14685000371932982,
+          "previous_score": 0.0252
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.22719583579301833,
+          "active_score": 0.4243916715860367,
+          "previous_score": 0.03
+        }
+      ]
+    },
+    {
+      "generation": 21,
+      "native_id": "d5741e58-8c9d-433a-aee7-8a7ca5f9437b",
+      "development_score": 0.39555694631073207,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_21/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "ea04027a86476ca107951e29e15be881189ea8e323fb09e36b97cc257a32bd16",
+        "canonical_ast_sha256": "732bf0e67829f369fb847be85cd950bdfc20349e3469f8eda14057efdc0b0c7a",
+        "ast_nodes": 419,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "926d7504d50fb4d07dd083087d741412cd6711ccd9ff625124424a56fb118e0b",
+      "cache_receipt_sha256": "95ef981536b31c0d426e691931167a7b1b82693eb277925a7a1489b8bb3a2f68",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.9133791671395302,
+          "active_score": 0.8895583342790603,
+          "previous_score": 0.9371999999999999
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.1434291692018509,
+          "active_score": 0.2666583384037018,
+          "previous_score": 0.0202
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.12986250259081522,
+          "active_score": 0.23399167184829714,
+          "previous_score": 0.02573333333333333
+        }
+      ]
+    },
+    {
+      "generation": 18,
+      "native_id": "f998f870-bb99-4db1-b0b6-e49fff91769e",
+      "development_score": 0.3943111130701171,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_18/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "3f23a9b733a4f74d7b2f815b14b2195a83819c5ce5c98d9dcf1c44d4572e73a2",
+        "canonical_ast_sha256": "9dd9eb5fca7ad1264bf12dee6e8fddbbbed8555301dd3c85152a5e36fe24103f",
+        "ast_nodes": 505,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "22a3c5f85d0a25ec78f41d7bc99ea040c107cd12073959045da25a52efff90f8",
+      "cache_receipt_sha256": "175e3bfacb2296f7b1457faac5485130ad747c9d45ce2498a5198e1a4fe2d4ce",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.7275458351731301,
+          "active_score": 0.64429167034626,
+          "previous_score": 0.8108000000000001
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.14138333538770678,
+          "active_score": 0.25716667077541355,
+          "previous_score": 0.025599999999999998
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.3140041686495145,
+          "active_score": 0.6073416706323623,
+          "previous_score": 0.020666666666666667
+        }
+      ]
+    },
+    {
+      "generation": 10,
+      "native_id": "347013df-92db-4342-b434-67e9a5bfcb8b",
+      "development_score": 0.3929847229295307,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_10/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "7de0fb42917c588199ed64c52e2105d5557eb890730699d7b02a4599647aa703",
+        "canonical_ast_sha256": "92f35e648c968ec465f89af8254d275f6c22bb8cb826ba1172a834073726843e",
+        "ast_nodes": 491,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "9ec8c816c95f0bbe5837ddbb7a08427f151e49a066c28ec84267ba98bdcc016f",
+      "cache_receipt_sha256": "782c3f18082dc60090e576f53c122c339b064c753e555ede4e6584c95cdb2ffe",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.9241541667103768,
+          "active_score": 0.8483083334207534,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.09341250127951305,
+          "active_score": 0.15549166922569277,
+          "previous_score": 0.03133333333333333
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.16138750079870223,
+          "active_score": 0.2887750015974045,
+          "previous_score": 0.034
+        }
+      ]
+    },
+    {
+      "generation": 24,
+      "native_id": "700278a1-b656-4503-82b3-a57a0e980cfb",
+      "development_score": 0.39265416849984064,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_24/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "b8d942df346252fc31ba898be21052afe168688c551d2c1219fe90edd839ba1f",
+        "canonical_ast_sha256": "d66851b67394fe8919e98cced52ad92c631f4a123b9e133fedd05bfc534d60ec",
+        "ast_nodes": 484,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "44062856d2c694a8187ba43ee1114deac65f5055edd99fedf7cf149082fa454b",
+      "cache_receipt_sha256": "d73b857f4a3990bffd73f855150f31ed24e2ceb45ae88fe1166183ef809538dd",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.8140666679620743,
+          "active_score": 0.6281333359241486,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.11944166893959045,
+          "active_score": 0.2148833378791809,
+          "previous_score": 0.024
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.24445416859785715,
+          "active_score": 0.467575003862381,
+          "previous_score": 0.021333333333333333
+        }
+      ]
+    },
+    {
+      "generation": 22,
+      "native_id": "877cf309-dd6f-4111-a23f-b2f70207ab6a",
+      "development_score": 0.38751527998712326,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_22/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "56cc61dcb0db70271d11328b795188c2c1e75eb49936e6fe42115a139c8ed0b9",
+        "canonical_ast_sha256": "24c98da98851b384ed13e9e72627d3b5f63abcfdb42852b542ed92f06937b9b3",
+        "ast_nodes": 507,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "dd0368e6bcba1acd0ffe7232af5dbe4b8322ae0ace2b8522307650c8d64c34d7",
+      "cache_receipt_sha256": "6c904544f70d8c227864026fcad5bb6cff6669158005752ea13eada26d9a3105",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.7394833341836928,
+          "active_score": 0.7655666683673858,
+          "previous_score": 0.7133999999999999
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.13559583679040274,
+          "active_score": 0.2475250069141388,
+          "previous_score": 0.02366666666666667
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.2874666689872742,
+          "active_score": 0.5393333379745484,
+          "previous_score": 0.0356
+        }
+      ]
+    },
+    {
+      "generation": 3,
+      "native_id": "41b23586-7463-46b5-b1bf-7653596253e9",
+      "development_score": 0.3784208348525895,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_3/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "31ba09d2562c90a4a6fb719deec4b2da85d75bec3958dc7f28dbe18bf52774da",
+        "canonical_ast_sha256": "17a869d18745d7182ddf457bb3a1391e6e7433df066724b4e078789b61ac0958",
+        "ast_nodes": 361,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "b95ba955d4f69f7dc69553bd7ea94a2f3fae9a72d721a7a8b74c1c0a411be15a",
+      "cache_receipt_sha256": "6471db9a988f858f3a69a5d1d5ed3ac9ac6f39233d2b329b8803608514fae7e1",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.7746625019749005,
+          "active_score": 0.7384583372831345,
+          "previous_score": 0.8108666666666666
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.15167500124375027,
+          "active_score": 0.2848166691541672,
+          "previous_score": 0.018533333333333332
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.20892500133911768,
+          "active_score": 0.39451666934490204,
+          "previous_score": 0.02333333333333333
+        }
+      ]
+    },
+    {
+      "generation": 23,
+      "native_id": "dc91c9a6-c8bf-4b79-ba89-1058fce0c5da",
+      "development_score": 0.3051986134436395,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_23/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "cd5f731dd5f6d26e4afd32f08c925df3de4667c391640ad47945e33ef662ac70",
+        "canonical_ast_sha256": "4bf4192053a307dfdcab5457967e0c678e3e0f24f88b23e1d5ae29b1b2d3c950",
+        "ast_nodes": 462,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "8628354441dc0a8701e40d4caece42a72c5befe82a7e3d8d6d5d16a736a79a51",
+      "cache_receipt_sha256": "16d4c6731e62e064d46105d9ddda51bf288706cc25308b12820978a73e4bb78e",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.6130625022649765,
+          "active_score": 0.7033250045299531,
+          "previous_score": 0.5228
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.10063750243584314,
+          "active_score": 0.18134167153835296,
+          "previous_score": 0.019933333333333334
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.201895835630099,
+          "active_score": 0.38285833792686463,
+          "previous_score": 0.020933333333333335
+        }
+      ]
+    },
+    {
+      "generation": 7,
+      "native_id": "38f5171f-020c-42f8-980f-c3969f7713de",
+      "development_score": 0.2513166679501534,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_7/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "49556ebbdb7dda30e912fb0ee1dbf8faf3aa8fbbf8e81ba190d272740856a140",
+        "canonical_ast_sha256": "27f3475f5c8c3f318e9de3dc5c0c66a98d46cf3b599ab023ccc611b338e805bd",
+        "ast_nodes": 424,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "9469ed333b210648ab9e4f0a7f4ccd4fc1da90dc08ad84fe3b37f061d5aa7357",
+      "cache_receipt_sha256": "2ec0c17ad3fe63817934159058dda99289f958309c39d753437555a1b8022bd2",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.3607958338300387,
+          "active_score": 0.6492583343267441,
+          "previous_score": 0.07233333333333333
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.16716666911443076,
+          "active_score": 0.31266667156219485,
+          "previous_score": 0.021666666666666667
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.22598750090599062,
+          "active_score": 0.4315750018119812,
+          "previous_score": 0.0204
+        }
+      ]
+    },
+    {
+      "generation": 13,
+      "native_id": "d0bb7dcd-e657-4bdd-838f-c6abc333fbfa",
+      "development_score": 0.22964305667479834,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_13/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "7d0a517d58b5630c7d966d299e6f24a826d7ff1ea33968f919ac2d1904427f97",
+        "canonical_ast_sha256": "5e7ac257ae81363f84133c0910408e8189300222d1fa2750d87c6bd790bc9acb",
+        "ast_nodes": 493,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "8a59fcede6f9ee945b4f015a9931117f3629e18981a46fcd5f583044f7517054",
+      "cache_receipt_sha256": "72ea2bb4ed18e078e04d34e41133feadb9e4603b9bc9c07a97c1a2a8f537205d",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.34063333386182787,
+          "active_score": 0.5998666677236557,
+          "previous_score": 0.0814
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.13295833516518274,
+          "active_score": 0.24478333699703217,
+          "previous_score": 0.021133333333333334
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.21533750099738438,
+          "active_score": 0.3976083353281021,
+          "previous_score": 0.03306666666666667
+        }
+      ]
+    },
+    {
+      "generation": 0,
+      "native_id": "bdb7bc6b-3e9d-4c6d-b3f0-c64f51297c13",
+      "development_score": 0.17063055713706546,
+      "development_seeds": [
+        4001,
+        4002,
+        4003
+      ],
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-shinka-endpoint-20261003-round1/archive/shinka/gen_0/results/evaluation/program.py",
+      "program": {
+        "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+        "canonical_ast_sha256": "17b9aa3eb9b1bd05e7cacaacbc7c4ca17b1d012a475754b9ebbaf8182dd1614c",
+        "ast_nodes": 13,
+        "grammar_version": "adaptive-width-v1"
+      },
+      "request_receipt_sha256": "b39aebf4bc95f1e0f4ed364d816770c7cb548f79337f803e405d7457b88e8f87",
+      "cache_receipt_sha256": "ec15077f235bc3dee63c0fad0026145694faa4d29eba0e0bfb6df59ce2fcbd91",
+      "trials": [
+        {
+          "seed": 4001,
+          "combined_score": 0.3437625011364619,
+          "active_score": 0.21819166893959044,
+          "previous_score": 0.4693333333333333
+        },
+        {
+          "seed": 4002,
+          "combined_score": 0.09507083587646485,
+          "active_score": 0.1649416717529297,
+          "previous_score": 0.0252
+        },
+        {
+          "seed": 4003,
+          "combined_score": 0.07305833439826966,
+          "active_score": 0.0639166687965393,
+          "previous_score": 0.08220000000000001
+        }
+      ]
+    }
+  ],
+  "frozen_program_sha256": {
+    "selected": "24531430a4881bde90eb285b0aebe6044bd9e393aee830a634b88af05f06e0a4",
+    "identity": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+    "arithmetic": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+    "static_shinka11": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+    "static_random24": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9"
+  },
+  "focus_native_source_sha256": {
+    "source/algorithms/ne/ga.py": "597e33255acecd6f4aae9bde28c98a247659fb72b5641b41d31a507124d302bd"
+  },
+  "recipes": [
+    {
+      "recipe_key": "5b762438984c53fe45483086c7f932ee7f9ae8d379f6c730ce47f42644734d19",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "f6a74339f820d1b8b10cd78d58a958d3c0ca7d76255bba4f46a8f2fb93199f4c",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "2002ecb4cf6cb23406c3315b27f5f2624146776c34bdd12f9b52de42df29b9a4"
+      },
+      "candidate": {
+        "id": "selected",
+        "variant": "ga_adaptive",
+        "source": "programs/selected.py",
+        "source_sha256": "24531430a4881bde90eb285b0aebe6044bd9e393aee830a634b88af05f06e0a4",
+        "settings": null,
+        "program": {
+          "source_sha256": "24531430a4881bde90eb285b0aebe6044bd9e393aee830a634b88af05f06e0a4",
+          "canonical_ast_sha256": "f6a74339f820d1b8b10cd78d58a958d3c0ca7d76255bba4f46a8f2fb93199f4c",
+          "ast_nodes": 404,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "selected"
+      ]
+    },
+    {
+      "recipe_key": "fd64482e59118d32cd83bd1257a9f541e53cc1ebf1492f594b68e993c98a46fb",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "17b9aa3eb9b1bd05e7cacaacbc7c4ca17b1d012a475754b9ebbaf8182dd1614c",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "2002ecb4cf6cb23406c3315b27f5f2624146776c34bdd12f9b52de42df29b9a4"
+      },
+      "candidate": {
+        "id": "identity",
+        "variant": "ga_adaptive",
+        "source": "programs/identity.py",
+        "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+        "settings": null,
+        "program": {
+          "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+          "canonical_ast_sha256": "17b9aa3eb9b1bd05e7cacaacbc7c4ca17b1d012a475754b9ebbaf8182dd1614c",
+          "ast_nodes": 13,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "identity"
+      ]
+    },
+    {
+      "recipe_key": "df7461d0936e6b08a9bc92806a47e219d016dd44e423dfa4c7d3cad58ef42117",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "d5971d9f394f0df46346e414e90557f96998a8ee6a1315982fb49b5c8481fcf4",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "2002ecb4cf6cb23406c3315b27f5f2624146776c34bdd12f9b52de42df29b9a4"
+      },
+      "candidate": {
+        "id": "arithmetic",
+        "variant": "ga_adaptive",
+        "source": "programs/arithmetic.py",
+        "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+        "settings": null,
+        "program": {
+          "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+          "canonical_ast_sha256": "d5971d9f394f0df46346e414e90557f96998a8ee6a1315982fb49b5c8481fcf4",
+          "ast_nodes": 29,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "arithmetic"
+      ]
+    },
+    {
+      "recipe_key": "b0f05888553c687a08c4faf290fd877c26bbdf3c45f3b53ed3eed2459f6dc32a",
+      "recipe": {
+        "native_method": "ga_focus",
+        "variant": "ga_focus",
+        "program_identity": null,
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 31,
+        "memory_initial": null,
+        "focus_settings": {
+          "elite_ratio": 0.5,
+          "init_around_mean": false,
+          "cross_over_rate": 0.0,
+          "focus_rate": 0.3,
+          "sigma_rate": 0.1,
+          "track_target": 0.9,
+          "sigma_min": 1e-05,
+          "explore_fraction": 0.25
+        },
+        "centroid_inside_population_budget": true,
+        "adapter": null,
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "2002ecb4cf6cb23406c3315b27f5f2624146776c34bdd12f9b52de42df29b9a4"
+      },
+      "candidate": {
+        "id": "focus",
+        "variant": "ga_focus",
+        "source": null,
+        "source_sha256": null,
+        "settings": null
+      },
+      "memberships": [
+        "focus"
+      ]
+    },
+    {
+      "recipe_key": "863e1c5c17b87466b2a9d9b7f057a843fda397846ad3a03bb46f466c21080576",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_static",
+        "program_identity": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+        "sigma_initial": 0.065,
+        "archive_fraction": 0.075,
+        "archive_size": 4,
+        "offspring_count": 60,
+        "memory_initial": null,
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": null,
+        "settings": {
+          "sigma": 0.065,
+          "elite_ratio": 0.075
+        },
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "2002ecb4cf6cb23406c3315b27f5f2624146776c34bdd12f9b52de42df29b9a4"
+      },
+      "candidate": {
+        "id": "static_shinka11",
+        "variant": "ga_static",
+        "source": "programs/static_shinka11.py",
+        "source_sha256": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+        "settings": {
+          "sigma": 0.065,
+          "elite_ratio": 0.075
+        }
+      },
+      "memberships": [
+        "static_shinka11"
+      ]
+    },
+    {
+      "recipe_key": "d6600ac28410e60603ec948da473b827b5ad1579b0d80cd551d80fc589a9dd63",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_static",
+        "program_identity": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+        "sigma_initial": 0.224195451112929,
+        "archive_fraction": 0.0921597481719689,
+        "archive_size": 5,
+        "offspring_count": 59,
+        "memory_initial": null,
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": null,
+        "settings": {
+          "sigma": 0.224195451112929,
+          "elite_ratio": 0.0921597481719689
+        },
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "2002ecb4cf6cb23406c3315b27f5f2624146776c34bdd12f9b52de42df29b9a4"
+      },
+      "candidate": {
+        "id": "static_random24",
+        "variant": "ga_static",
+        "source": "programs/static_random24.py",
+        "source_sha256": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+        "settings": {
+          "sigma": 0.224195451112929,
+          "elite_ratio": 0.0921597481719689
+        }
+      },
+      "memberships": [
+        "static_random24"
+      ]
+    }
+  ],
+  "protocol_copy": {
+    "frozen_sha256": "bbe1527af022406402808483ef73a3f43d87347ae7e5609bd9ab95966883789f",
+    "current_document_sha256": "974eeaa412f080b7a0876c58d7e70e3c6d0c37ef1ce69aa8e9977dfea128b535",
+    "reviewed_difference": "Only This proposal \u2192 This protocol and this proposed comparison \u2192 this comparison; frozen copy remains authoritative"
+  },
+  "audit_attempts": [
+    {
+      "log": "reports/adaptive-validation-prepared-checks-20261003/audit-attempt001.log",
+      "exit_code": 1,
+      "reason": "Initial audit required byte equality with the live protocol document; its two wording-only corrections after freeze were independently diff-reviewed. Frozen protocol receipt remained correct."
+    },
+    {
+      "log": "reports/adaptive-validation-prepared-checks-20261003/audit-attempt002.log",
+      "exit_code": 1,
+      "reason": "Initial control comparison treated newly derived identity/arithmetic AST metadata as changed control settings. Source, variant, id, and settings are unchanged; added metadata is independently rederived from frozen source."
+    },
+    {
+      "log": "reports/adaptive-validation-prepared-checks-20261003/audit.log",
+      "exit_code": 0
+    }
+  ],
+  "allocation": {
+    "unique_recipes": 6,
+    "trials": 30,
+    "first_block_trials": 6,
+    "nominal_steps_per_trial": 30720000,
+    "nominal_training_steps": 921600000,
+    "fresh_evaluation_episodes": 9000,
+    "validation_seeds": [
+      5001,
+      5002,
+      5003,
+      5004,
+      5005
+    ],
+    "task_trials": [
+      5002,
+      5003,
+      5004,
+      5005,
+      5006
+    ],
+    "evaluation_seeds": [
+      905001,
+      905002,
+      905003,
+      905004,
+      905005
+    ],
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "cumulative_session_seconds": 14400,
+    "per_process_timeout_seconds": 1800
+  },
+  "partition_audit": {
+    "scope": "All local results/config.json recursively at review time",
+    "files_scanned": 308,
+    "reserved_validation_hits": [],
+    "paper_reporting_hits": []
+  },
+  "execution_gate": "Prepared content passes this audit. Exact freeze, closure, review, and completed full-suite/lint evidence must be committed and pushed before the first reserved block; this audit launches no training or model calls.",
+  "limitations": [
+    "One development search and one selected rule; no claim about search-method superiority.",
+    "Five reserved validation seeds and longer phases remain separate from paper reporting.",
+    "Preserve failed search slots and RNG recovery deviations; no validation feedback may reopen proposal search."
+  ]
+}
