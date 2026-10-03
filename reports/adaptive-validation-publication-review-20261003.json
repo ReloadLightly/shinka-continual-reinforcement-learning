@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "reviewed_revision": "7ad1be48d0f38d02646d6aa71f6deb749c3f142e",
+  "started_at_utc": "2026-10-03T10:18:05.300655+00:00",
+  "finished_at_utc": "2026-10-03T10:18:11.524612+00:00",
+  "scope": "All manifest-listed published artifacts and checksum manifests verified from committed Git blobs and working tree; exact frozen handoff, runtime source contracts, closure, reviews and current scientific documents included. No reserved outcome files were read.",
+  "checksum_manifests": 31,
+  "published_digest_references_checked": 10718,
+  "unique_git_paths_checked": 10772,
+  "unique_git_blobs_hashed": 3205,
+  "unpublished_binary_or_private_entries_omitted": 778,
+  "git_witness_inventory_digest": "28fd1bf60c844169db287f5b97aa456d100abfe4714de6342b45c5e33e38d419",
+  "checksum_manifest_details": [
+    {
+      "manifest": "reports/adaptive-continuation-preflight-20261003/checksums.json",
+      "sha256": "e37ce6b99525db3e3ba555537a89e737dd32c96c2dc28738391274f9e3987ad9",
+      "schema": "published_sha256",
+      "published_references": 5
+    },
+    {
+      "manifest": "reports/adaptive-continuation-stopped-20261003/checksums.json",
+      "sha256": "57f3af3f19f348742cc8ab7a1f54af50b7108297a64452a8c7da2f985af862c1",
+      "schema": "published_sha256",
+      "published_references": 1289
+    },
+    {
+      "manifest": "reports/adaptive-controls-20261003/checksums.json",
+      "sha256": "978d66903eae8959f7d346ca2c229279599344f7dc588c8c8cf8661ff7cf4e54",
+      "schema": "published_sha256",
+      "published_references": 274
+    },
+    {
+      "manifest": "reports/adaptive-controls-stage1-20261003/checksums.json",
+      "sha256": "8a06aa73829406719f7c47374ff32e34a09eadfae0fb7474f9d032ac0359deff",
+      "schema": "published_sha256",
+      "published_references": 60
+    },
+    {
+      "manifest": "reports/adaptive-endpoint-complete-20261003/checksums.json",
+      "sha256": "d07a738e37e8ebcd8634b1a588e8c8955958e93a84660c82bfbb9004baecfa4b",
+      "schema": "published_sha256",
+      "published_references": 1579
+    },
+    {
+      "manifest": "reports/adaptive-endpoint-preflight-20261003-round1/checksums.json",
+      "sha256": "dc07b44064c4453f380f7c9797beae14da2e02a002509872de3a8332b6c212d8",
+      "schema": "published_sha256",
+      "published_references": 5
+    },
+    {
+      "manifest": "reports/adaptive-gate-20261003/checksums.json",
+      "sha256": "d3a5c9d90abc2405e780673c9ba1f42ecb14d0f7ef8170f575408c68463a9fac",
+      "schema": "published_sha256",
+      "published_references": 112
+    },
+    {
+      "manifest": "reports/adaptive-recovery-preflight-20261003/checksums.json",
+      "sha256": "8f4df6f797bd0fbf25d450967f6c2259aeffce967e8d0cb36f8b7e97fb06a9a3",
+      "schema": "published_sha256",
+      "published_references": 5
+    },
+    {
+      "manifest": "reports/adaptive-recovery-stopped-20261003/checksums.json",
+      "sha256": "cfbbdf6da4487eb10f04fcc0540d0d52daf1ede46e3740b8c3ce5f9ed4add6db",
+      "schema": "published_sha256",
+      "published_references": 1121
+    },
+    {
+      "manifest": "reports/adaptive-shinka-stage13-20261003/checksums.json",
+      "sha256": "f227a1bf429e5d92783e87937a4997ab2ddf13fbbdadd7bce325302c52f68a1f",
+      "schema": "published_sha256",
+      "published_references": 934
+    },
+    {
+      "manifest": "reports/adaptive-shinka-stage25-stopped-20261003/checksums.json",
+      "sha256": "0bbe509485449922e62d40c5c8ce9b1245223ff75b992b3c23a341ea5e97dbb8",
+      "schema": "published_sha256",
+      "published_references": 1023
+    },
+    {
+      "manifest": "reports/adaptive-shinka-stage5-20261003/checksums.json",
+      "sha256": "9fd20af8f5e378c986f80ce7b63c5ec894742da665d4ca24de9d91c700f176a0",
+      "schema": "published_sha256",
+      "published_references": 381
+    },
+    {
+      "manifest": "reports/adaptive-validation-checks-20261003/checksums.json",
+      "sha256": "b9ca60af003f41df5e9cd7ea2a3699e6abe009f884f8e7db53d7ce61c6f85df2",
+      "schema": "published_sha256",
+      "published_references": 4
+    },
+    {
+      "manifest": "reports/adaptive-validation-checks-20261003-v2/checksums.json",
+      "sha256": "5f0bd5247474f64eb9b97c83800e48c2bd5dbe32a4ca02943552fec7c179079b",
+      "schema": "published_sha256",
+      "published_references": 3
+    },
+    {
+      "manifest": "reports/adaptive-validation-diagnostic-20261003/checksums.json",
+      "sha256": "bb6885b53a8f9694f7afef107896f145c2dcf8a54de31b704acb65feddf4671d",
+      "schema": "published_sha256",
+      "published_references": 63
+    },
+    {
+      "manifest": "reports/adaptive-validation-diagnostic-20261003-v2/checksums.json",
+      "sha256": "021fb4b38021ad889a4ab3a82b9ae005e7f9da5d998a7aaaa6482bc7f99d23c0",
+      "schema": "published_sha256",
+      "published_references": 59
+    },
+    {
+      "manifest": "reports/finalists-static-20261002/checksums.json",
+      "sha256": "5d1091a89bf7a2b1a6d550fb15dd6b16add0ef80feb042f86859f95164b3d4b8",
+      "schema": "legacy-direct",
+      "published_references": 7
+    },
+    {
+      "manifest": "reports/native-integration-20261002/checksums.json",
+      "sha256": "4c4aa57a30e1233ccbaaa7854d2350198f29d387785a945a8f8f50a4a077d7fc",
+      "schema": "legacy-direct",
+      "published_references": 64
+    },
+    {
+      "manifest": "reports/pilot-20261002/checksums.json",
+      "sha256": "031642e49f91fd7cede4ac6cc8ade42a7cefef56172b31bc17e8823d90a636e9",
+      "schema": "legacy-direct",
+      "published_references": 291
+    },
+    {
+      "manifest": "reports/reference-timing-20261002/checksums.json",
+      "sha256": "039f1485803e86b3ac1299328f65eea0b1e2fe46e699436ad220274d7ca004f1",
+      "schema": "published_sha256",
+      "published_references": 20
+    },
+    {
+      "manifest": "reports/reference-timing-smoke-20261002/checksums.json",
+      "sha256": "b798c3b98f4ec9505f47f1e4f5c006f7cb7a6fe90c9954cbe9fbd1364974d5fb",
+      "schema": "published_sha256",
+      "published_references": 20
+    },
+    {
+      "manifest": "reports/search-endpoint-20261002/checksums.json",
+      "sha256": "3d91c418894124d30963bed3d3047a9c56f82c611b5920c4596c9c3bd03fe12a",
+      "schema": "legacy-direct",
+      "published_references": 1586
+    },
+    {
+      "manifest": "reports/search-integration-20261002/checksums.json",
+      "sha256": "03e5b8492c55bc4e2417a0379b86b4bbbaca7ced93e647609baddd6d43fe5d8c",
+      "schema": "legacy-direct",
+      "published_references": 344
+    },
+    {
+      "manifest": "reports/search-setup-interrupted-20261002/checksums.json",
+      "sha256": "21aa5695ce02807875eb6959f3622e6f1c0130352820141e04ff52b20942f980",
+      "schema": "legacy-sha256-relative-to-raw",
+      "published_references": 55
+    },
+    {
+      "manifest": "reports/search-stage13-20261002/checksums.json",
+      "sha256": "eb092fd95f169204ecf2ed0b069805ee6f4e421862f46f07365e3aee7447fe43",
+      "schema": "legacy-direct",
+      "published_references": 841
+    },
+    {
+      "manifest": "reports/search-timing-20261002/checksums.json",
+      "sha256": "9f46da8d882102c96b60afa045f9d7afdf33ca3b6165cc4fbd1dedc266710c74",
+      "schema": "published_sha256",
+      "published_references": 29
+    },
+    {
+      "manifest": "reports/smoke-20261002/checksums.json",
+      "sha256": "1afae705091ab4eee562b32af34f72e2a6c66dd4425483b262dc2ef9f247b090",
+      "schema": "legacy-direct",
+      "published_references": 28
+    },
+    {
+      "manifest": "reports/validation-stage5-20261002/checksums.json",
+      "sha256": "83ab822eda292ab5458073c4bd49d1379c769542351afe8f06a568036b7dbe18",
+      "schema": "legacy-direct",
+      "published_references": 91
+    },
+    {
+      "manifest": "reports/validation-stage5-20261002/raw/finalists/checksums.json",
+      "sha256": "5d1091a89bf7a2b1a6d550fb15dd6b16add0ef80feb042f86859f95164b3d4b8",
+      "schema": "legacy-direct",
+      "published_references": 7
+    },
+    {
+      "manifest": "reports/validation-static-20261002/checksums.json",
+      "sha256": "5ab6f732e9e3d4cb6ba189b7088ab1d055075ed63db29ece76f5238ec0c78051",
+      "schema": "legacy-direct",
+      "published_references": 411
+    },
+    {
+      "manifest": "reports/validation-static-20261002/raw/finalists/checksums.json",
+      "sha256": "5d1091a89bf7a2b1a6d550fb15dd6b16add0ef80feb042f86859f95164b3d4b8",
+      "schema": "legacy-direct",
+      "published_references": 7
+    }
+  ],
+  "frozen_handoff": {
+    "path": "reports/adaptive-validation-freeze-20261003",
+    "files_checked": 8,
+    "plan_sha256": "673c60b76783256dec1af5a7fb079452068acfe670673a31b223aa1ebc73156f",
+    "receipt_sha256": "25f10c34b55d5eaa176a5142e82e614fbfc158cbbb3d699fcb3715661ed7d309",
+    "closure_sha256": "e33057601ed67fc21365202ade7240c3a63dab875893e1f7a8a5d7f25e51d909",
+    "all_exact_committed_blobs": true
+  },
+  "local_remote_tracking_revision": "7ad1be48d0f38d02646d6aa71f6deb749c3f142e",
+  "remote_network_read_performed": false,
+  "excluded_uncommitted_audit": [
+    "reports/adaptive-validation-repository-preflight-20261003.json"
+  ],
+  "working_tree_at_review": [
+    "?? reports/adaptive-validation-repository-preflight-20261003.json"
+  ],
+  "errors": [],
+  "note": "The new repository preflight audit and this publication review are post-publication evidence and may be committed separately without changing the frozen plan."
+}

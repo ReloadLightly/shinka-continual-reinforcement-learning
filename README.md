@@ -855,6 +855,14 @@ sandbox blocked a local socket used by native asyncio. Its
 remain separate from the successful outside-sandbox check. No scientific run
 or source change was needed to resolve that execution restriction.
 
+The [repository preflight](reports/adaptive-validation-repository-preflight-20261003.json)
+checks declared artifact hashes, local documentation links, source contracts,
+and the clean upstream checkout. The
+[publication review](reports/adaptive-validation-publication-review-20261003.json)
+also checks the handoff and reported evidence against the bytes committed and
+published at `7ad1be4`. These checks establish evidence integrity, not learning
+performance.
+
 The [reserved handoff](reports/adaptive-validation-freeze-20261003/plan.json)
 copies generation 5 and all five fixed controls. All six execution recipes are
 distinct: the allocation is **30 fresh trials**, **921.6 million nominal
