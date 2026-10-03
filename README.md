@@ -14,9 +14,9 @@
 
 ## Abstract
 
-This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. Its frozen active/previous-task evaluator completed 15 fixed-control trials on fresh development seeds. Adaptive Shinka search completed its thirteen-slot checkpoint; continuation and a reviewed recovery toward 25 stopped with 18 consumed slots and 15 valid programs, retaining two grammar failures and an interrupted request. The best proposed rule scores 0.4871, above identity GA's 0.1706 but below native FocusGA's 0.5006, with substantial seed variation. These development results establish an executable research pipeline, static baselines, and an initial adaptive search; they do not establish search-method superiority or a full-paper reproduction.
+This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. Its frozen active/previous-task evaluator completed 15 fixed-control trials on fresh development seeds. Adaptive Shinka search completed its thirteen-slot checkpoint; reviewed continuations toward 25 stopped with 21 consumed slots and 17 valid programs, retaining three grammar failures and an interrupted request. The best proposed rule scores 0.4871, above identity GA's 0.1706 but below native FocusGA's 0.5006, with substantial seed variation. These development results establish an executable research pipeline, static baselines, and an initial adaptive search; they do not establish search-method superiority or a full-paper reproduction.
 
-> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Static finalist validation complete · Adaptive controls and thirteen-slot Shinka checkpoint complete · Reviewed recovery stopped at a second grammar failure, with 18 consumed slots and seven unused · Adaptive validation and full reproduction pending.
+> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Static finalist validation complete · Adaptive controls and thirteen-slot Shinka checkpoint complete · Reviewed continuation stopped at a third grammar failure, with 21 consumed slots and four unused · Adaptive validation and full reproduction pending.
 
 ## 1. Research questions
 
@@ -706,7 +706,7 @@ took **3.32 minutes**, supervised native execution **4.96 minutes**, and session
 timestamps span **5.27 minutes** including checks. Both guarded requests produced
 Codex responses; the invalid proposal still consumed its slot and request.
 
-Cumulative search accounting now records **18 consumed slots**, **17 database
+Cumulative search accounting at this checkpoint records **18 consumed slots**, **17 database
 rows**, and **15 valid distinct programs**, including cached identity. Invalid
 generations 14 and 17 and interrupted generation 15 remain in the accounting.
 New training totals **42 trials**, **322.56 million nominal steps**, and
@@ -719,14 +719,64 @@ checkpoint. Process supervision recorded no surviving descendants or forced
 termination signals. The original archive, historical publications, and frozen
 source contracts remain intact. The declared restoration of the older stage-13
 RNG still prevents interpreting recovery as an uninterrupted sampling trajectory.
-The controller correctly rejects re-execution of this failed state. Only
-**generations 18–24** remain unused; their continuation requires a separately
-reviewed plan bound to this checkpoint and its refreshed RNG. Reserved
+The controller correctly rejects re-execution of this failed state. At this
+checkpoint, **generations 18–24** remained unused; the continuation below used
+a separately reviewed plan bound to this checkpoint and its refreshed RNG. Reserved
 validation and final reporting seeds remain unused.
 
 After export, all **49 recovery regression tests** and repository lint passed.
 The audit verified every published evidence hash and rederived generation 16's
 scores from its raw training and checkpoint records.
+
+### Stopped generation-18 continuation
+
+The separately frozen [continuation protocol](docs/adaptive-continuation.md)
+ran after publication at
+[`d8e6cbb`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/d8e6cbb).
+Generations 18 and 19 each passed the grammar with 505 AST nodes and completed
+the unchanged three-seed evaluation. Generation 20 contained **536 nodes** and
+was rejected before training under the 512-node limit. The completion barrier
+prevented any generation-21 reservation or request.
+
+| New slot | Outcome | Combined J ↑ | Active ↑ | Previous ↑ | LA ↑ | F ↓ |
+| :--- | :--- | ---: | ---: | ---: | ---: | ---: |
+| 18 | Complete | 0.3943 ± 0.3012 | 0.5029 | 0.2857 | 432.7 | 279.8 |
+| 19 | Complete | 0.3980 ± 0.4241 | 0.4443 | 0.3517 | 337.1 | 121.7 |
+| 20 | Rejected: AST limit | — | — | — | — | — |
+
+<sub>Table 18. Continuation outcomes, 3 October 2026. Combined J shows the
+three-seed mean ± sample SD; Active and Previous are dimensionless means, and
+LA and F are in reward points. Table 15 and the frozen evaluator define the
+metrics. [Cumulative evidence](reports/adaptive-continuation-stopped-20261003/summary.json)
+· [Artifact receipts](reports/adaptive-continuation-stopped-20261003/checksums.json)
+· [Exact frozen protocol](reports/adaptive-continuation-preflight-20261003/continuation-plan.json).</sub>
+
+Neither valid proposal exceeds generation 5's development mean of **0.4871**
+or FocusGA's **0.5006**. This continuation added **six training trials**,
+**46.08 million nominal steps**, and **1,800 fresh checkpoint-evaluation
+episodes**. Evaluations took **4.31 minutes**, supervised native execution
+**6.33 minutes**, and session timestamps span **6.75 minutes**, including checks.
+All three guarded requests returned proposal responses; the grammar failure
+consumed its slot and request without receiving a scientific score.
+
+Cumulative accounting now records **21 consumed slots**, **20 database rows**,
+and **17 valid distinct programs**, including cached identity. Invalid slots
+14, 17, and 20 and interrupted no-row slot 15 remain retained. New training
+totals **48 trials**, **368.64 million nominal steps**, and **14,400 fresh
+episodes**, excluding reused identity. The ledger records **20 guarded
+requests**, **19 CLI launches and responses**, the earlier interrupted request,
+and zero paid API calls. No training attempt is incomplete.
+
+Native execution returned gracefully with failure and saved fresh RNG state.
+Cleanup recorded no surviving descendants and needed no termination signals.
+The [independent outcome review](reports/adaptive-continuation-outcome-review-20261003.json)
+checks the raw results, source preservation, accounting, and final receipts.
+The earlier RNG rollback remains a deviation from uninterrupted sampling.
+Only **generations 21–24** remain unused; this failed controller state cannot
+execute again. A further continuation needs a separate reviewed and published
+plan bound to this checkpoint. Reserved validation and final reporting remain
+unexecuted. The [pre-execution verification](reports/adaptive-continuation-verification-20261003.json)
+records all **637 passing tests** and repository lint.
 
 ### Remaining scientific evaluation
 
@@ -738,7 +788,7 @@ One full-budget development GA trial is complete; no full-budget comparison has 
 | Stationary control | Matched task and learner settings without switching | Development control complete |
 | Shinka-selected GA | Frozen candidate evaluated on reporting trials | Static winner frozen after validation; reporting pending |
 | Random-search control | Matched search budget and reporting protocol | Static winner frozen after validation; reporting pending |
-| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | 15 valid search programs; reviewed recovery stopped with 18 consumed slots; seven slots and reserved validation pending |
+| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | 17 valid search programs; reviewed continuation stopped with 21 consumed slots; four slots and reserved validation pending |
 
 ## 5. Reproducibility
 
@@ -893,7 +943,7 @@ native failure receipt and refreshed RNG hash. Preserve the preflight report
 and use a fresh export destination when reproducing its report command in the
 [recovery runbook](docs/adaptive-recovery.md#observed-execution-and-next-checkpoint).
 
-The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Twenty-four static and fourteen adaptive proposal responses completed through this route; one further adaptive request was interrupted before CLI launch. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
+The verified model route uses Shinka's native `headless/codex` provider and local ChatGPT authentication. [Codex documentation](https://learn.chatgpt.com/docs/auth) distinguishes subscription login from separately billed API-key usage. The dedicated subscription configuration disables embeddings and auxiliary model calls; its guarded adapter checks ChatGPT login and forces that authentication method. Twenty-four static and nineteen adaptive proposal responses completed through this route; one further adaptive request was interrupted before CLI launch. Included usage remains subject to the account's [current limits](https://learn.chatgpt.com/docs/pricing); the repository cannot inspect the remaining allowance.
 
 Each real trial retains its command, profile, seed, task trial, source revision, interpreter version, device selection, duration, upstream configuration and metrics, training log, and metric-file hash. Modified upstream tracked files and untracked source files are rejected. Source revisions are fixed in [`upstream.lock.json`](upstream.lock.json):
 
@@ -908,7 +958,7 @@ The [GitHub Actions template](ci/github-actions.yml) runs the harness checks. CI
 ## 6. Limitations and next experiment
 
 The completed static search covers two GA settings. The adaptive search
-now contains fourteen valid executable mutation-width proposals with persistent memory while
+now contains sixteen valid executable mutation-width proposals with persistent memory while
 preserving selection, policy architecture, and experiment budgets. None exceeds
 native FocusGA's observed combined development mean in this small block.
 Reduced-budget development scores may not predict performance across the full
@@ -917,17 +967,14 @@ use one seed and unmatched training budgets.
 
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
-The next execution step is a reviewed continuation from the
-[stopped recovery checkpoint](docs/adaptive-recovery.md#observed-execution-and-next-checkpoint).
-Seven unconsumed slots remain, generations 18–24. A separate
-[continuation controller and runbook](docs/adaptive-continuation.md) now bind
-this archive and its fresh RNG receipt while retaining the original controller
-and both stopped histories. Its
-[prepared input freeze](reports/adaptive-continuation-preflight-20261003/continuation-plan.json)
-binds committed source before execution; the
-[verification record](reports/adaptive-continuation-verification-20261003.json)
-retains the checks. The objective, grammar, development
-partition, controls, and 25-slot budget remain fixed.
+The next implementation step is a separately reviewed continuation from the
+[stopped generation-20 checkpoint](docs/adaptive-continuation.md#observed-outcome-and-next-checkpoint).
+Four unconsumed slots remain, generations 21–24. The current controller accepts
+only the earlier eighteen-slot input and cannot re-execute its failed state.
+A new plan must bind the current archive and saved RNG, preserve all three
+grammar failures and the interrupted slot, and test generation 21 as the first
+new request before publication and execution. The objective, grammar,
+development partition, controls, and 25-slot budget remain fixed.
 
 The [repository audit](reports/repository-audit-20261003.json) verifies published
 artifact hashes and local documentation links and independently rederives

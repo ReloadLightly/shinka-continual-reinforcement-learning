@@ -13,8 +13,11 @@ was cancelled before a Codex proposal launch. Both consumed slots and all
 failure evidence remain part of the archive. A separately frozen
 [recovery attempt](../reports/adaptive-recovery-stopped-20261003/summary.json)
 then completed generation 16 and rejected generation 17 at 515 AST nodes,
-stopping cleanly before generation 18. The current checkpoint has 18 consumed
-slots and 15 valid programs; seven slots remain unused. This proposed validation handoff
+stopping cleanly before generation 18. The separately frozen
+[next continuation](../reports/adaptive-continuation-stopped-20261003/summary.json)
+completed generations 18 and 19, then rejected generation 20 at 536 AST nodes
+and stopped before generation 21. The current checkpoint has 21 consumed slots
+and 17 valid programs; four slots remain unused. This proposed validation handoff
 is not eligible for execution until the incomplete endpoint has an explicit
 documented resolution; it does not authorize using the partial archive as a
 substitute endpoint.

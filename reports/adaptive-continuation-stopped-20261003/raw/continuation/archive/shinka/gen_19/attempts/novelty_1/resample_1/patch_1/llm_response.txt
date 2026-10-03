@@ -1,0 +1,18 @@
+<NAME>
+elite_sensitive_refinement
+</NAME>
+<DESCRIPTION>
+Use a lower mutation floor when the best individual performs well, allowing finer centroid refinement while preserving exploration on difficult populations. Contract width faster when the archive outperforms the whole batch: this gap indicates that the current mutation scale may be damaging good policies. Expansion remains responsive to the existing stagnation and loss signals. These feedback rules require no switch schedule; their effect on combined_score remains to be evaluated.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    target = 0.012 + exploration * exp(-2.5 * advantage - 1.2 * improving) + 0.12 * loss
+=======
+    target = 0.004 + 0.008 * (1.0 - best) + exploration * exp(-2.5 * advantage - 1.2 * improving) + 0.12 * loss
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    rate = where(adjusted_target > width, 0.45, 0.20)
+=======
+    rate = where(adjusted_target > width, 0.45, 0.35 + 0.25 * clip(4.0 * advantage, 0.0, 1.0))
+>>>>>>> REPLACE
+</DIFF>

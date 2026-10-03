@@ -1,0 +1,15 @@
+{
+  "generation": 6,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "evidence_hysteresis",
+  "patch_description": "The examples motivate using archive quality and population spread together. This proposal replaces target-width smoothing with a persistent evidence controller: archive improvement and offspring competitiveness support expansion, while population damage supports contraction. Accumulated evidence provides hysteresis, and weak, narrow populations receive exploration pressure. Quality-dependent bounds limit mutation width as performance improves. It uses no switch schedule; performance remains to be evaluated.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T02:52:51.855914",
+  "llm_cost": 0.0199608,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$REPO_ROOT/results/adaptive-shinka-20261003/shinka/gen_6/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

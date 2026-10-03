@@ -1,0 +1,15 @@
+{
+  "generation": 16,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 3,
+  "patch_name": "population_stagnation_rescue",
+  "patch_description": "The current rule can reduce exploration prematurely when a strong individual coexists with a weak population. Base difficulty partly on population mean, and let persistent stagnation restore exploration according to the population\u2019s remaining performance gap. Treat declining mean fitness as lack of progress so deterioration does not suppress this recovery mechanism. The spread-dependent term limits recovery when the population is already diverse. This is a feedback-driven hypothesis requiring evaluation across the development seeds.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T07:56:06.128680",
+  "llm_cost": 0.0153308,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SOURCE_RECOVERY/archive/shinka/gen_16/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,32 @@
+# EVOLVE-BLOCK-START
+def update_sigma(sigma, stats, memory):
+    mean = clip(stats[0], 0.0, 1.0)
+    spread = clip(stats[1], 0.0, 1.0)
+    best = clip(stats[2], 0.0, 1.0)
+    archive = clip(stats[3], 0.0, 1.0)
+    success = clip(stats[4], 0.0, 1.0)
+    ready = clip(memory[3], 0.0, 1.0)
+    old_mean = where(ready > 0.5, memory[0], mean)
+    old_archive = where(ready > 0.5, memory[1], archive)
+    progress = mean - old_mean
+    stalled = exp(-32.0 * abs(progress))
+    stagnation = clip(0.82 * memory[2] + 0.18 * stalled, 0.0, 1.0)
+    difficulty = clip(1.0 - 0.45 * mean - 0.35 * archive - 0.20 * best, 0.0, 1.0)
+    collapse = exp(-8.0 * spread)
+    advantage = clip(archive - mean - 0.04, 0.0, 1.0)
+    loss = ready * clip(old_archive - archive - 0.06, 0.0, 1.0)
+    improving = clip(progress / (0.04 + spread), 0.0, 1.0)
+    exploration = (0.085 * difficulty * difficulty + 0.11 * stagnation * difficulty * collapse) * (0.50 + 0.50 * success)
+    target = 0.010 + exploration * exp(-2.5 * advantage - 1.2 * improving) + 0.22 * loss
+    competitiveness = tanh(4.0 * (success - 0.45))
+    adjusted_target = clip(target * exp(0.18 * competitiveness * difficulty), 0.003, 0.40)
+    width = clip(sigma, 0.001, 2.0)
+    contraction = where(advantage > 0.05 + spread, 0.50, 0.25)
+    rate = where(adjusted_target > width, 0.45, contraction)
+    log_width = (1.0 - rate) * log(width) + rate * log(adjusted_target)
+    next_sigma = clip(exp(clip(log_width, -6.9, 0.69)), 0.001, 2.0)
+    next_mean = 0.75 * old_mean + 0.25 * mean
+    next_archive = 0.40 * old_archive + 0.60 * archive
+    next_memory = stack([next_mean, next_archive, stagnation, 1.0])
+    return next_sigma, next_memory
+# EVOLVE-BLOCK-END

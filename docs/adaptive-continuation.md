@@ -1,5 +1,11 @@
 # Continuation from the eighteen-slot checkpoint
 
+**Status: executed and stopped at generation 20; 21 of 25 slots consumed.**
+The [stopped export](../reports/adaptive-continuation-stopped-20261003/summary.json)
+retains valid generations 18 and 19 and rejected generation 20. Generations
+21–24 remain unused. The prepared freeze below describes the allocation before
+execution and remains immutable.
+
 This protocol continues the [stopped reviewed recovery](adaptive-recovery.md)
 through the seven remaining generations, 18–24. It uses a separate controller,
 working copy, and pre-execution freeze. The earlier search and recovery records
@@ -136,3 +142,63 @@ thread wakeups, causing native integration tests to stall. Those tests require
 an environment permitting local socketpair communication. Preserve failed or
 interrupted check attempts in the verification record; do not change the
 experiment or native implementation to accommodate this sandbox restriction.
+
+## Observed outcome and next checkpoint
+
+The tested implementation was committed at
+[`b5a3cf1`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/b5a3cf1)
+and the reviewed input freeze was published before execution at
+[`d8e6cbb`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/d8e6cbb).
+The full regression suite passed 637 tests; repository lint passed. The
+[verification record](../reports/adaptive-continuation-verification-20261003.json)
+retains successful checks, sandbox interruptions, and the runtime restoration.
+
+Generations 18 and 19 each contained 505 AST nodes and completed three fresh
+development trials. Their combined means were **0.3943111130701171** and
+**0.3980375016848246**. Generation 20 contained **536 nodes** and was rejected
+under the unchanged 512-node limit before training. The completion barrier
+prevented a generation-21 directory, slot reservation, or request. See
+[Table 18 in the README](../README.md#stopped-generation-18-continuation), the
+[raw export](../reports/adaptive-continuation-stopped-20261003/summary.json), and
+the [independent outcome review](../reports/adaptive-continuation-outcome-review-20261003.json).
+
+The attempt added six trials, 46.08 million nominal training steps, 1,800 fresh
+checkpoint-evaluation episodes, and three guarded requests and responses.
+Cumulative accounting records 21 consumed slots, 20 database rows, 17 valid
+distinct programs including identity, 48 new trials, 368.64 million nominal
+steps, and 14,400 fresh episodes. No training attempt is incomplete.
+
+The session ran from **07:47:32.257235 to 07:54:17.264603 UTC** on 3 October
+2026. Supervised native execution took **379.7382 seconds**, returning code 1
+gracefully; cleanup took **0.0647 seconds** with 70 tracked processes, no
+survivors or errors, and no SIGTERM or SIGKILL needed. The native adapter saved
+fresh RNG SHA-256
+`054c2a6c3021866e5c5787b6cef7b6861c663e9139bee626d494fe65e676b489`.
+The input source, copied histories, existing results, frozen evaluator, and
+upstream checkout remain intact.
+
+The evidence was exported with the following command. Replays require a fresh
+destination; preserve both existing preflight and stopped publications:
+
+```bash
+.venv/bin/python scripts/report_adaptive_continuation.py \
+  --results-dir results/adaptive-shinka-continuation-20261003 \
+  --report-dir reports/adaptive-continuation-stopped-20261003
+```
+
+This controller accepts only the earlier eighteen-slot source and cannot
+re-execute the failed state. A further continuation requires a separate reviewed
+source revision, independent working copy, and published plan binding this
+checkpoint and its saved RNG. Only **generations 21–24** may receive new
+requests, at most **12 new trials** and **92.16 million nominal steps**. Retain
+grammar failures 14, 17, and 20, consumed no-row slot 15, both earlier plans,
+this plan, and all outcomes and costs.
+
+Before execution, test that generation 21 is first, old failures do not trigger
+a premature stop, consumed slots cannot be reused, new failures prevent the
+next proposal and save RNG on graceful return, and complete fixtures stop at
+25 consumed slots. Four successful new programs would produce 24 database
+rows and 21 valid programs; distinct canonical programs may be fewer. Preserve
+the fixed grammar, objective, prompt configuration, controls, development
+partition, and overall 25-slot ceiling. Reserved validation and final reporting
+remain untouched while the search endpoint is unresolved.

@@ -1,0 +1,15 @@
+{
+  "generation": 20,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_expert_blend",
+  "patch_description": "Blend refinement and exploration widths using persistent search pressure. Separate archive-loss feedback raises exploration temporarily, while population spread and archive advantage temper it. This redesign aims to improve acquisition and preserve useful policies; its performance requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T09:54:14.227387",
+  "llm_cost": 0.0294528,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$CONTINUATION_ARCHIVE/shinka/gen_20/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -188,6 +188,14 @@ completion verifier requires every row to be valid. Native resume also derives
 its next generation from persisted rows, so it could reuse interrupted slot 15.
 Editing a status, a cursor, or a receipt cannot resolve these constraints.
 
+The separately frozen [following continuation](adaptive-continuation.md)
+subsequently completed generations 18 and 19, rejected generation 20 at 536
+AST nodes, and stopped before generation 21. The
+[latest evidence](../reports/adaptive-continuation-stopped-20261003/summary.json)
+records 21 consumed slots and 17 valid programs. Four slots, generations 21–24,
+remain for a separately reviewed continuation; all prior failures and protocol
+constraints are retained.
+
 The implementation follows these requirements:
 
 1. Preserve the stopped archive and its published report. Prepare a separate

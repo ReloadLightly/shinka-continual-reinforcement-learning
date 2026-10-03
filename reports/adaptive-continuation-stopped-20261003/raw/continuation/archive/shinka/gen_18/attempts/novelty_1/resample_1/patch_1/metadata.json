@@ -1,0 +1,15 @@
+{
+  "generation": 18,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 3,
+  "patch_name": "archive_progress_plateau_escape",
+  "patch_description": "Track progress primarily through the re-scored archive: whole-population mean can fall simply because mutations broaden. Accumulate stagnation only when performance changes little, so abrupt losses do not immediately count as plateaus. Make the exploration boost depend cubically on persistent stagnation and remaining archive improvement, concentrating broader mutations on sustained, low-diversity stalls. Faster contraction toward the target should reduce wasted generations after productive policies emerge. This is an untested feedback-based proposal.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T09:48:24.307293",
+  "llm_cost": 0.0272668,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$CONTINUATION_ARCHIVE/shinka/gen_18/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

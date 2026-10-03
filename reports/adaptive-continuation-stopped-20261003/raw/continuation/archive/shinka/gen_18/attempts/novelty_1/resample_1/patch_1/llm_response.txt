@@ -1,0 +1,25 @@
+<NAME>
+archive_progress_plateau_escape
+</NAME>
+<DESCRIPTION>
+Track progress primarily through the re-scored archive: whole-population mean can fall simply because mutations broaden. Accumulate stagnation only when performance changes little, so abrupt losses do not immediately count as plateaus. Make the exploration boost depend cubically on persistent stagnation and remaining archive improvement, concentrating broader mutations on sustained, low-diversity stalls. Faster contraction toward the target should reduce wasted generations after productive policies emerge. This is an untested feedback-based proposal.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    progress = mean - old_mean
+    stalled = exp(-32.0 * maximum(progress, 0.0))
+=======
+    progress = 0.70 * (archive - old_archive) + 0.30 * (mean - old_mean)
+    stalled = exp(-40.0 * abs(progress))
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    exploration = 0.10 * difficulty * difficulty + 0.14 * stagnation * (1.0 - mean) * collapse
+=======
+    exploration = 0.10 * difficulty * difficulty + 0.24 * stagnation * stagnation * stagnation * (1.0 - archive) * collapse
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    rate = where(adjusted_target > width, 0.45, 0.20)
+=======
+    rate = where(adjusted_target > width, 0.45, 0.35)
+>>>>>>> REPLACE
+</DIFF>

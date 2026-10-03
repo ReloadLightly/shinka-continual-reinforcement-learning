@@ -1,0 +1,18 @@
+<NAME>
+elite_guided_plateau_search
+</NAME>
+<DESCRIPTION>
+Use both elite and mean fitness to estimate remaining difficulty, reducing pressure to increase mutation merely because offspring lower the batch mean. Concentrate plateau exploration where fitness spread is narrow, and damp it when the re-scored archive substantially outperforms the population. Keep a smaller archive-drop response for recovery. This aims to balance acquisition and centroid stability; improvement requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    difficulty = 1.0 - mean
+    target = 0.015 + 0.10 * difficulty * difficulty + 0.08 * stagnation * (1.0 - best) + 0.35 * shock
+=======
+    difficulty = 1.0 - 0.7 * best - 0.3 * mean
+    spread = clip(stats[1], 0.0, 1.0)
+    archive_advantage = clip(stats[3] - mean - 0.05, 0.0, 1.0)
+    exploration = 0.10 * difficulty * difficulty + 0.14 * stagnation * difficulty * exp(-6.0 * spread)
+    target = 0.008 + exploration * exp(-3.0 * archive_advantage) + 0.20 * shock
+>>>>>>> REPLACE
+</DIFF>

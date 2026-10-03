@@ -1,0 +1,793 @@
+{
+  "schema_version": 1,
+  "status": "stopped_continuation_reviewed_endpoint_not_reached",
+  "created_at": "2026-10-03T08:01:13.241650+00:00",
+  "implementation_repository_revision": "b5a3cf1d4d2df5b8caeadc81d78c9ce5a74184e0",
+  "execution_repository_revision": "d8e6cbbf17d07515b270275bd0b1e57505376c91",
+  "preflight_publication_revision": "d8e6cbbf17d07515b270275bd0b1e57505376c91",
+  "protocol": "adaptive-shinka-reviewed-continuation-v2",
+  "target_slots": 25,
+  "methods": {
+    "command": ".venv/bin/python /tmp/audit_continuation_outcome_20261003.py",
+    "audit_script_sha256": "e5754865a7e58935205b11db600016eb231e9ef75ab1b8678cb3c0b3b8aa318f",
+    "independence": "Standard-library SHA256, SQLite read-only queries/dumps, Python AST, arithmetic/statistics and Git committed-file reads. Does not call repository scoring or continuation verification functions.",
+    "metric_formulas": "Active mean over80 active-centroid training returns divided by500; previous mean over3 centroid prev_returns episode means divided by500; combined=(active+previous)/2. LA uses4 own-phase means; F averages3 signed consecutive differences; ZT averages3 next-phase means. Reference integral is y0 plus trapezoids between successive recorded returns, matching constant extension to completed update0; multiply by96000 for step units. Aggregate dispersion uses sample SD over3 seeds.",
+    "comparison_tolerance": "relative1e-12, absolute1e-12"
+  },
+  "evidence_sha256": {
+    "reports/adaptive-continuation-stopped-20261003/checksums.json": "57f3af3f19f348742cc8ab7a1f54af50b7108297a64452a8c7da2f985af862c1",
+    "reports/adaptive-continuation-stopped-20261003/summary.json": "f655548ec1d7f451fe4491ed446c7f06d8124463dd61243a8945b0cf9a541787",
+    "reports/adaptive-continuation-stopped-20261003/continuation-plan.json": "2df48167546fec6d49f40bb7e9ad2284cc7d33954aac4c725ac943768bd6aef4",
+    "reports/adaptive-continuation-preflight-20261003/checksums.json": "e37ce6b99525db3e3ba555537a89e737dd32c96c2dc28738391274f9e3987ad9",
+    "reports/adaptive-continuation-preflight-20261003/summary.json": "ae8351ed23446f999c6374311e8f5da93250ff401c3bb3d9a4092cd6bb26a94d",
+    "reports/adaptive-continuation-prepared-review-20261003.json": "cb4f226dcff64f281bcdf81f2123de547e0562a53d93392ac7cd167ce931f91d",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/native-recovery.json": "9b5383e311f653a83177e09161c1bf50a04550f001ff68b4b4a0849a62f3d859",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/rng_state.json": "054c2a6c3021866e5c5787b6cef7b6861c663e9139bee626d494fe65e676b489",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/model_requests.jsonl": "3a6f29a6789596ad190b25a1975f02caca4d05ea3fcde6db6a139128dad1fc46",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/state.json": "eb9a8b7fb77fed204f9aa75471ce16f2e459cc9e5402bc9646dec65f1d7f6f6c",
+    "results/adaptive-continuation-execution-20261003/launcher.json": "5200fa296907be57dfe5b10bab3adc07dfafa11cbd38923ce071b02018c7d88f",
+    "results/adaptive-continuation-execution-20261003/completion.json": "1cf082c1631651b5de64f1806b3f52a4b6ad6b6a5b906b16c18c789725ce95bd",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_18/main.py": "3f23a9b733a4f74d7b2f815b14b2195a83819c5ce5c98d9dcf1c44d4572e73a2",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_18/results/evaluation/request.json": "54d7a2737e43eef07b3c8d7460392831ceb1cb88d6c743019c44ca84fe24fda4",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_18/results/evaluation/receipt.json": "22a3c5f85d0a25ec78f41d7bc99ea040c107cd12073959045da25a52efff90f8",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_19/main.py": "861162a16e4500e40421cfc6ef4d6c208d944cff06f8dbc498ec5e2a77934690",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_19/results/evaluation/request.json": "1737b4bd1178af6115b3f558159180dba199c74f7adc73f007cb86d3e9ef2eb7",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_19/results/evaluation/receipt.json": "0c849c8cac2ff0ecc98160e184900c07e7bb1dbb7549c534228835e7a73b1b16",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_20/main.py": "dac00452b2bb4a4ada5cd1a972ec0a002b57179da60e7cea9d13137de5860304",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_20/results/evaluation/request.json": "6943287dc9301a2dd43cec2eec593f438502ec04600ccf6d7a4a1d9f55939673",
+    "reports/adaptive-continuation-stopped-20261003/raw/continuation/archive/shinka/gen_20/results/evaluation/receipt.json": "986162457f9d6c61288b4624d26aa16528c76c08ae15b8e346c93780dc7818e1",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4001/training/training_metrics.json": "f781ddc0506241b3a48d4999b515966b93aca86398a4e856e210bef460eabfd1",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4001/training/manifest.json": "8c82b4e9f8d192564847ae839b4a3070bfa057c89291d475d1ec4806c49890da",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4001/analysis/evaluation.json": "0a8a730d3ce68f0e4b8725d97c0c0341126a4334cee96dc1f82bf4fed1eb798f",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4001/analysis/summary.json": "1479b3d58ab3a1d977791085e74d000bb452e38312148a90a5bfbf9be52e6585",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4002/training/training_metrics.json": "62295966e33f68182ea474473baa73be644d0c591abc346cb8d9b9eac7584451",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4002/training/manifest.json": "a71104c2a47b4854171b6dbdaace18d0c77dd4895238c4754ec7372a4396c34d",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4002/analysis/evaluation.json": "da415158e9966d2b6c9cc4bae6e2823c9351bd32a15b655c0cbd2d321f06b426",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4002/analysis/summary.json": "19812060e3e0c1d7a3ebf31ec3ded6a36b3ae92fe73ff41977f29d0cf782657f",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4003/training/training_metrics.json": "4d58c8c7bfa1ab8bd0e84e8d2bd0fea3892e456f51c9f63b7aac0a22cc53159c",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4003/training/manifest.json": "f3716b1ef6eaf72fc42eeaf6320f8c95fb82f034c39df55575bcf9a910e3baee",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4003/analysis/evaluation.json": "2f8f691fd4582d5f34a5b9404b21023de77b4b00f3c45617ed86bcdd1778a2dc",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001/seed_4003/analysis/summary.json": "7769d6d94dde972987c024fbeb5cc14128e9b864a4630ab338af0b1950771812",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4001/training/training_metrics.json": "0f59a45f1f60327ae6ac7c1b48f9354163a2199f7a4a4dabbe29680c32a4e1cc",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4001/training/manifest.json": "e40691746ae8f4d24bd14ab83833105e84688fa2ace5b98cf953d92977dc9013",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4001/analysis/evaluation.json": "bd0b33bf143e41d7e5b23fa65a4d0eada86cc7d39539b9a773624c74bbb7c13b",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4001/analysis/summary.json": "a25f1fc4b82fb2a8a580ad5b079b09e2ca4b514a06d6b72c814cdea3fc6e9156",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4002/training/training_metrics.json": "deeac09bd6f90c09a296935c56555ebaee6d898ce96bf3258719ca2be3e9c369",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4002/training/manifest.json": "68935f7b0ee71224d5817252b09f0cc914b89661508f74167a2e86485d76295c",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4002/analysis/evaluation.json": "b66dd9f3f104e5666a66ba1b67e0b9db4e023f75c2d8ee0a806aa45a6255b254",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4002/analysis/summary.json": "8d1208fc00b9751cd7b17f0fdc2f8c35ab78ccf09c2d11902908a32f8000ffb4",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4003/training/training_metrics.json": "62ef14d12ea977a0e39f60d7507f38a0250234198c1f266dbb6f88f48702fabd",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4003/training/manifest.json": "3ca6194d5a225aec2feda50327a99a2a9e9cc2bd12ee25127040b0526d615f78",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4003/analysis/evaluation.json": "b87312f38e88dd4de41da821297452d37f3b7eda52760c1e1058e68b837a5e08",
+    "reports/adaptive-continuation-stopped-20261003/raw/evaluation/cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001/seed_4003/analysis/summary.json": "70a427ad17aa35d950693455090efd23d141128029a452c80e9423e012adb2c2"
+  },
+  "execution_metadata": {
+    "launcher_path": "results/adaptive-continuation-execution-20261003/launcher.json",
+    "launcher_sha256": "5200fa296907be57dfe5b10bab3adc07dfafa11cbd38923ce071b02018c7d88f",
+    "completion_path": "results/adaptive-continuation-execution-20261003/completion.json",
+    "completion_sha256": "1cf082c1631651b5de64f1806b3f52a4b6ad6b6a5b906b16c18c789725ce95bd",
+    "started_at": "2026-10-03T07:47:24.358792+00:00",
+    "finished_at": "2026-10-03T07:54:24.626877+00:00",
+    "codex_version": "codex-cli 0.159.3",
+    "returncode": 1,
+    "source_hashes_match_implementation_and_execution_revisions": true
+  },
+  "accounting": {
+    "slots_consumed": 21,
+    "proposal_slots_consumed": 20,
+    "programs_evaluated": 17,
+    "distinct_canonical_programs": 17,
+    "cache_hits": 1,
+    "new_training_trials": 48,
+    "new_training_trials_allocated": 48,
+    "new_nominal_training_steps": 368640000,
+    "new_nominal_training_steps_allocated": 368640000,
+    "new_scored_training_trials": 48,
+    "incomplete_training_attempts": 0,
+    "training_wall_seconds": 2879.3787053382957,
+    "evaluation_wall_seconds": 3467.4963536026053,
+    "session_wall_seconds": 4284.549851194929,
+    "proposal_usage": {
+      "guarded_requests": 20,
+      "codex_cli_launches": 19,
+      "successful_requests": 19,
+      "failed_or_incomplete_requests": 1,
+      "backend_model_requests": null,
+      "paid_api_calls": 0,
+      "note": "Guard enforces ChatGPT authentication; launches are not backend request counts or a remaining-subscription-allowance meter"
+    }
+  },
+  "added_since_stopped_source": {
+    "new_training_trials": 6,
+    "new_training_trials_allocated": 6,
+    "new_nominal_training_steps": 46080000,
+    "new_nominal_training_steps_allocated": 46080000,
+    "new_scored_training_trials": 6,
+    "training_wall_seconds": 217.4274808529999,
+    "evaluation_wall_seconds": 258.63142645800053,
+    "slots_consumed": 3,
+    "programs_evaluated": 2,
+    "guarded_requests": 3,
+    "codex_cli_launches": 3,
+    "successful_proposal_responses": 3,
+    "new_cache_hits": 0,
+    "fresh_checkpoint_evaluation_episodes": 1800,
+    "session_wall_seconds": 379.73824514900025,
+    "session_timestamp_span_seconds": 405.007368
+  },
+  "total_fresh_checkpoint_evaluation_episodes": 14400,
+  "episode_accounting_scope": "Fresh post-hoc episode values for48 unique non-cache-hit search training trials; excludes reused identity/control training and in-loop evaluation.",
+  "valid_generations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    16,
+    18,
+    19
+  ],
+  "persisted_generations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "new_valid_programs": [
+    {
+      "generation": 18,
+      "id": "f998f870-bb99-4db1-b0b6-e49fff91769e",
+      "parent_id": "27f5510c-a6df-48aa-97fe-85a3f8e470e9",
+      "ast_nodes": 505,
+      "program_sha256": "3f23a9b733a4f74d7b2f815b14b2195a83819c5ce5c98d9dcf1c44d4572e73a2",
+      "canonical_ast_sha256": "9dd9eb5fca7ad1264bf12dee6e8fddbbbed8555301dd3c85152a5e36fe24103f",
+      "cache_hit": false,
+      "cache_origin": "cache/6f20810434ad2654c8f957073059a475537d0e9c00721bce91d9d4b7a45f364e/attempt_0001",
+      "independently_recomputed_trials": [
+        {
+          "seed": 4001,
+          "task_trial": 4002,
+          "eval_seed": 904001,
+          "scores": {
+            "combined_score": 0.72754583517313,
+            "active_score": 0.64429167034626,
+            "previous_score": 0.8108
+          },
+          "reference_metrics": {
+            "learning_accuracy": 498.15,
+            "forgetting": 92.13333333333334,
+            "learning_minus_forgetting": 406.01666666666665,
+            "zero_shot_transfer": 252.66666666666666,
+            "cumulative_reward_generation_equivalents": 25526.166813850403,
+            "cumulative_reward_steps": 2450512014.1296387,
+            "cumulative_reward_steps_exact": 2450512014.1296387,
+            "normalized_curve_average": 0.6381541703462601
+          },
+          "own_phase_returns": [
+            500.0,
+            492.6,
+            500.0,
+            500.0
+          ],
+          "previous_phase_returns": [
+            439.9,
+            276.3,
+            500.0
+          ],
+          "next_phase_returns": [
+            9.4,
+            485.2,
+            263.4
+          ],
+          "signed_switch_forgetting": [
+            60.10000000000002,
+            216.3,
+            0.0
+          ],
+          "fresh_evaluation_episodes": 300
+        },
+        {
+          "seed": 4002,
+          "task_trial": 4003,
+          "eval_seed": 904002,
+          "scores": {
+            "combined_score": 0.14138333538770678,
+            "active_score": 0.25716667077541355,
+            "previous_score": 0.0256
+          },
+          "reference_metrics": {
+            "learning_accuracy": 306.0,
+            "forgetting": 265.56666666666666,
+            "learning_minus_forgetting": 40.43333333333334,
+            "zero_shot_transfer": 15.466666666666667,
+            "cumulative_reward_generation_equivalents": 10083.00016450882,
+            "cumulative_reward_steps": 967968015.7928467,
+            "cumulative_reward_steps_exact": 967968015.7928467,
+            "normalized_curve_average": 0.2520750041127205
+          },
+          "own_phase_returns": [
+            262.2,
+            72.9,
+            500.0,
+            388.9
+          ],
+          "previous_phase_returns": [
+            18.3,
+            11.0,
+            9.1
+          ],
+          "next_phase_returns": [
+            15.3,
+            20.0,
+            11.1
+          ],
+          "signed_switch_forgetting": [
+            243.89999999999998,
+            61.900000000000006,
+            490.9
+          ],
+          "fresh_evaluation_episodes": 300
+        },
+        {
+          "seed": 4003,
+          "task_trial": 4004,
+          "eval_seed": 904003,
+          "scores": {
+            "combined_score": 0.3140041686495145,
+            "active_score": 0.6073416706323623,
+            "previous_score": 0.020666666666666667
+          },
+          "reference_metrics": {
+            "learning_accuracy": 494.0,
+            "forgetting": 481.6666666666667,
+            "learning_minus_forgetting": 12.333333333333314,
+            "zero_shot_transfer": 10.266666666666666,
+            "cumulative_reward_generation_equivalents": 24048.166825294495,
+            "cumulative_reward_steps": 2308624015.2282715,
+            "cumulative_reward_steps_exact": 2308624015.2282715,
+            "normalized_curve_average": 0.6012041706323623
+          },
+          "own_phase_returns": [
+            476.0,
+            500.0,
+            500.0,
+            500.0
+          ],
+          "previous_phase_returns": [
+            10.5,
+            9.5,
+            11.0
+          ],
+          "next_phase_returns": [
+            11.1,
+            10.0,
+            9.7
+          ],
+          "signed_switch_forgetting": [
+            465.5,
+            490.5,
+            489.0
+          ],
+          "fresh_evaluation_episodes": 300
+        }
+      ],
+      "independently_recomputed_aggregate": {
+        "scores": {
+          "combined_score": {
+            "mean": 0.3943111130701171,
+            "sample_sd": 0.30122005748340264,
+            "n": 3
+          },
+          "active_score": {
+            "mean": 0.5029333372513453,
+            "sample_sd": 0.2136405073546053,
+            "n": 3
+          },
+          "previous_score": {
+            "mean": 0.2856888888888889,
+            "sample_sd": 0.4547662517202697,
+            "n": 3
+          }
+        },
+        "reference_metrics": {
+          "learning_accuracy": {
+            "mean": 432.71666666666664,
+            "sample_sd": 109.7594680805867,
+            "n": 3
+          },
+          "forgetting": {
+            "mean": 279.7888888888889,
+            "sample_sd": 195.1557279409143,
+            "n": 3
+          },
+          "learning_minus_forgetting": {
+            "mean": 152.92777777777778,
+            "sample_sd": 219.63126316455782,
+            "n": 3
+          },
+          "zero_shot_transfer": {
+            "mean": 92.8,
+            "sample_sd": 138.47300579294628,
+            "n": 3
+          },
+          "normalized_curve_average": {
+            "mean": 0.49714444836378097,
+            "sample_sd": 0.2130389635697118,
+            "n": 3
+          }
+        }
+      }
+    },
+    {
+      "generation": 19,
+      "id": "083e0d7a-d9f9-443d-bbf3-441c8e833193",
+      "parent_id": "aa6d8f2b-a37e-4ebe-af00-6e542c82971d",
+      "ast_nodes": 505,
+      "program_sha256": "861162a16e4500e40421cfc6ef4d6c208d944cff06f8dbc498ec5e2a77934690",
+      "canonical_ast_sha256": "8b6f587039172ffcd128f3d46555dbc693c9f15e380588166ed4e9864d5f5b79",
+      "cache_hit": false,
+      "cache_origin": "cache/5791b23694adcaf1565bc6fc5307110719e6711ac43c314a7cda0f90a23a15bf/attempt_0001",
+      "independently_recomputed_trials": [
+        {
+          "seed": 4001,
+          "task_trial": 4002,
+          "eval_seed": 904001,
+          "scores": {
+            "combined_score": 0.8808916674017906,
+            "active_score": 0.7617833348035813,
+            "previous_score": 1.0
+          },
+          "reference_metrics": {
+            "learning_accuracy": 500.0,
+            "forgetting": 0.0,
+            "learning_minus_forgetting": 500.0,
+            "zero_shot_transfer": 343.7,
+            "cumulative_reward_generation_equivalents": 30225.83339214325,
+            "cumulative_reward_steps": 2901680005.645752,
+            "cumulative_reward_steps_exact": 2901680005.645752,
+            "normalized_curve_average": 0.7556458348035813
+          },
+          "own_phase_returns": [
+            500.0,
+            500.0,
+            500.0,
+            500.0
+          ],
+          "previous_phase_returns": [
+            500.0,
+            500.0,
+            500.0
+          ],
+          "next_phase_returns": [
+            31.1,
+            500.0,
+            500.0
+          ],
+          "signed_switch_forgetting": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "fresh_evaluation_episodes": 300
+        },
+        {
+          "seed": 4002,
+          "task_trial": 4003,
+          "eval_seed": 904002,
+          "scores": {
+            "combined_score": 0.08602500185966491,
+            "active_score": 0.14685000371932982,
+            "previous_score": 0.0252
+          },
+          "reference_metrics": {
+            "learning_accuracy": 146.25,
+            "forgetting": 59.86666666666667,
+            "learning_minus_forgetting": 86.38333333333333,
+            "zero_shot_transfer": 13.8,
+            "cumulative_reward_generation_equivalents": 5704.666810512543,
+            "cumulative_reward_steps": 547648013.8092041,
+            "cumulative_reward_steps_exact": 547648013.8092041,
+            "normalized_curve_average": 0.14261667026281358
+          },
+          "own_phase_returns": [
+            55.6,
+            49.3,
+            112.5,
+            367.6
+          ],
+          "previous_phase_returns": [
+            17.5,
+            10.9,
+            9.4
+          ],
+          "next_phase_returns": [
+            11.2,
+            19.3,
+            10.9
+          ],
+          "signed_switch_forgetting": [
+            38.1,
+            38.4,
+            103.1
+          ],
+          "fresh_evaluation_episodes": 300
+        },
+        {
+          "seed": 4003,
+          "task_trial": 4004,
+          "eval_seed": 904003,
+          "scores": {
+            "combined_score": 0.22719583579301833,
+            "active_score": 0.4243916715860367,
+            "previous_score": 0.03
+          },
+          "reference_metrics": {
+            "learning_accuracy": 365.175,
+            "forgetting": 305.23333333333335,
+            "learning_minus_forgetting": 59.94166666666666,
+            "zero_shot_transfer": 12.666666666666666,
+            "cumulative_reward_generation_equivalents": 16730.166863441467,
+            "cumulative_reward_steps": 1606096018.8903809,
+            "cumulative_reward_steps_exact": 1606096018.8903809,
+            "normalized_curve_average": 0.41825417158603667
+          },
+          "own_phase_returns": [
+            16.1,
+            452.0,
+            492.6,
+            500.0
+          ],
+          "previous_phase_returns": [
+            14.9,
+            14.2,
+            15.9
+          ],
+          "next_phase_returns": [
+            9.3,
+            14.5,
+            14.2
+          ],
+          "signed_switch_forgetting": [
+            1.200000000000001,
+            437.8,
+            476.70000000000005
+          ],
+          "fresh_evaluation_episodes": 300
+        }
+      ],
+      "independently_recomputed_aggregate": {
+        "scores": {
+          "combined_score": {
+            "mean": 0.3980375016848246,
+            "sample_sd": 0.42407948559324354,
+            "n": 3
+          },
+          "active_score": {
+            "mean": 0.4443416700363159,
+            "sample_sd": 0.30795170440869135,
+            "n": 3
+          },
+          "previous_score": {
+            "mean": 0.35173333333333334,
+            "sample_sd": 0.5614205316278817,
+            "n": 3
+          }
+        },
+        "reference_metrics": {
+          "learning_accuracy": {
+            "mean": 337.14166666666665,
+            "sample_sd": 178.53337631471976,
+            "n": 3
+          },
+          "forgetting": {
+            "mean": 121.7,
+            "sample_sd": 161.73857850796693,
+            "n": 3
+          },
+          "learning_minus_forgetting": {
+            "mean": 215.44166666666666,
+            "sample_sd": 246.7891290881977,
+            "n": 3
+          },
+          "zero_shot_transfer": {
+            "mean": 123.38888888888889,
+            "sample_sd": 190.7958604644513,
+            "n": 3
+          },
+          "normalized_curve_average": {
+            "mean": 0.4388388922174772,
+            "sample_sd": 0.30703255069616603,
+            "n": 3
+          }
+        }
+      }
+    }
+  ],
+  "invalid_slot": {
+    "generation": 20,
+    "ast_nodes": 536,
+    "program_sha256": "dac00452b2bb4a4ada5cd1a972ec0a002b57179da60e7cea9d13137de5860304",
+    "canonical_ast_sha256": "17b5f86a936cc5184d379dc733f68a2ad4f6f695144ae8f89d27e1c9c6938b6b",
+    "frozen_max_ast_nodes": 512,
+    "error": "ProgramValidationError: AST exceeds 512 nodes",
+    "training_trials": 0,
+    "scientific_score": null,
+    "native_zero_is_placeholder": true,
+    "receipt_verified": true,
+    "cache_attempt_created": false
+  },
+  "best_valid_program": {
+    "generation": 5,
+    "id": "a91bcbdb-5453-4cd8-b20c-ab502f5243c3",
+    "combined_development_mean": 0.48714444582727223,
+    "unchanged_from_prior_archive": true
+  },
+  "barrier": {
+    "reserved_generations": [
+      18,
+      19,
+      20
+    ],
+    "requested_generations": [
+      18,
+      19,
+      20
+    ],
+    "verified_generations": [
+      18,
+      19
+    ],
+    "consumed_generations": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "completed_generations_including_failed_and_no_row_slots": 21,
+    "next_generation_cursor": 21,
+    "absent_new_paths": [
+      "shinka/gen_21",
+      "recovery_slots/gen_21.json",
+      "recovery_requests/gen_21.json",
+      "shinka/gen_22",
+      "recovery_slots/gen_22.json",
+      "recovery_requests/gen_22.json",
+      "shinka/gen_23",
+      "recovery_slots/gen_23.json",
+      "recovery_requests/gen_23.json",
+      "shinka/gen_24",
+      "recovery_slots/gen_24.json",
+      "recovery_requests/gen_24.json"
+    ],
+    "historical_failed_generations_retained": [
+      14,
+      17
+    ],
+    "historical_consumed_no_row_generation_retained": 15,
+    "next_generation_was_not_launched": true
+  },
+  "native_completion": {
+    "status": "failed",
+    "terminal_reason": "Generation 20 completion barrier: ValueError: Generation 20 has no single correct persisted result",
+    "returncode": 1,
+    "graceful_return": true,
+    "rng_saved": true,
+    "external_stop_reason": null,
+    "started_at": "2026-10-03T07:47:32.257235+00:00",
+    "finished_at": "2026-10-03T07:54:17.264603+00:00",
+    "cleanup": {
+      "complete": true,
+      "tracked_processes": 70,
+      "process_groups": [
+        51568,
+        51676,
+        51690,
+        51779,
+        54495,
+        54516,
+        54551,
+        56584,
+        56598,
+        56654
+      ],
+      "term_sent": [],
+      "kill_sent": [],
+      "reaped_pids": [],
+      "survivors": [],
+      "errors": [],
+      "wall_seconds": 0.06470934600019973,
+      "subreaper_enabled": true,
+      "subreaper_restored": true
+    },
+    "recorded_process_groups_remaining_at_audit": []
+  },
+  "rng": {
+    "initial_sha256": "8d8fa2a390807c55874f9d17177971731f07b8ecf29329c20d722e8e0e02c20a",
+    "final_sha256": "054c2a6c3021866e5c5787b6cef7b6861c663e9139bee626d494fe65e676b489",
+    "source_archive_rng_unchanged": true,
+    "new_state_saved_after_consumed_sampling": true,
+    "forced_termination": false,
+    "initial_policy": "restore-gracefully-saved-recovery-RNG-once-before-native-initialization",
+    "inherited_deviation": "Restore the graceful generation-17 recovery checkpoint once before native initialization; initialization may consume RNG draws. The inherited stage-13 RNG rollback remains a deviation from uninterrupted sampling."
+  },
+  "source_invariance": {
+    "source_recovery_files_checked": 355,
+    "original_source_archive_files_checked": 308,
+    "history_files_checked": 10,
+    "source_archives_unchanged": true,
+    "inherited_program_rows_unchanged": true,
+    "inherited_generation0_to17_file_inventories_unchanged": true,
+    "source_database_logical_hashes_unchanged": true,
+    "frozen_implementation_files_checked": 10,
+    "original_frozen_search_files_checked": 7,
+    "original_frozen_evaluation_files_checked": 21,
+    "pre_execution_plan_unchanged": true,
+    "prior_reports": {
+      "adaptive-shinka-stage5-20261003": {
+        "checksums_sha256": "9fd20af8f5e378c986f80ce7b63c5ec894742da665d4ca24de9d91c700f176a0",
+        "summary_sha256": "c0b1c71d770e06fae7ef5f4594fa9ab2716972861a0e1d4a8afec5ae3cfbe8bb",
+        "published_hashes_checked": 381
+      },
+      "adaptive-shinka-stage13-20261003": {
+        "checksums_sha256": "f227a1bf429e5d92783e87937a4997ab2ddf13fbbdadd7bce325302c52f68a1f",
+        "summary_sha256": "96f95e4691c54b411c151d0bc6048eb645263e4644bf754ea390cbfadd1cab1e",
+        "published_hashes_checked": 934
+      },
+      "adaptive-shinka-stage25-stopped-20261003": {
+        "checksums_sha256": "0bbe509485449922e62d40c5c8ce9b1245223ff75b992b3c23a341ea5e97dbb8",
+        "summary_sha256": "dffde97ae152167a037e1b24ca4f257ab00a387fa390f3f42d81db6692a05aea",
+        "published_hashes_checked": 1023
+      },
+      "adaptive-recovery-preflight-20261003": {
+        "checksums_sha256": "8f4df6f797bd0fbf25d450967f6c2259aeffce967e8d0cb36f8b7e97fb06a9a3",
+        "summary_sha256": "8ddeb513175be2a5a593308e8de737f25877c1d3ca6cfa68dc685efbe48d74dc",
+        "published_hashes_checked": 5
+      },
+      "adaptive-recovery-stopped-20261003": {
+        "checksums_sha256": "cfbbdf6da4487eb10f04fcc0540d0d52daf1ede46e3740b8c3ce5f9ed4add6db",
+        "summary_sha256": "be84981116469ccbab3d8bba643a89a562ce421a5e343cf55187415d7dabd2e3",
+        "published_hashes_checked": 1121
+      },
+      "adaptive-continuation-preflight-20261003": {
+        "checksums_sha256": "e37ce6b99525db3e3ba555537a89e737dd32c96c2dc28738391274f9e3987ad9",
+        "summary_sha256": "ae8351ed23446f999c6374311e8f5da93250ff401c3bb3d9a4092cd6bb26a94d",
+        "published_hashes_checked": 5
+      }
+    },
+    "pinned_upstream": {
+      "commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+      "git_status_porcelain": "",
+      "commands": [
+        "git -C .upstream/continual_neuroevolution rev-parse HEAD",
+        "git -C .upstream/continual_neuroevolution status --porcelain"
+      ]
+    }
+  },
+  "partition_status": {
+    "observed_training_seeds": [
+      4001,
+      4002,
+      4003
+    ],
+    "reserved_adaptive_validation_seeds": [
+      5001,
+      5002,
+      5003,
+      5004,
+      5005
+    ],
+    "reserved_adaptive_validation_unused": true,
+    "paper_reporting_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "paper_reporting_trials": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "paper_reporting_remains_unused": true,
+    "verification_scope": "Shared adaptive cache contains only development seeds4001\u20134003; all six new trial manifests use those seeds and task_trial=seed+1. Existing source archives and published snapshots are unchanged."
+  },
+  "remaining_unused_generations": [
+    21,
+    22,
+    23,
+    24
+  ],
+  "continuation_status": "failed and not eligible for reexecution under the frozen controller",
+  "validation_status": "unexecuted; declared25-slot endpoint unresolved",
+  "verification": {
+    "published_hashes_checked": 1289,
+    "original_hashes_checked": 1443,
+    "original_continuation_hashes_checked": 421,
+    "original_evaluation_hashes_checked": 1022,
+    "prior_report_published_hashes_checked": 3469,
+    "independently_recomputed_programs": 2,
+    "independently_recomputed_trials": 6,
+    "cumulative_complete_training_manifests_checked": 48,
+    "new_complete_training_manifests_checked": 6,
+    "new_eval_request_receipts_checked": 3,
+    "new_ast_counts": [
+      505,
+      505,
+      536
+    ],
+    "failures": []
+  },
+  "limitations": [
+    "This review does not resolve the incomplete25-slot endpoint or authorize using the partial archive for reserved validation.",
+    "New-program metric recomputation covers generations18 and19; earlier scientific outcomes remain protected by preserved source/evidence hashes and prior reviews.",
+    "CLI launches and responses are observed; backend model request counts and remaining subscription allowance are not observable.",
+    "The original stage13 RNG rollback remains a declared deviation; a gracefully refreshed checkpoint does not reconstruct uninterrupted search.",
+    "No trainer/evaluator/controller source was changed and no additional model request or training was run by this review."
+  ],
+  "documentation_review": {
+    "README_Table18_and_new_outcome_text_match_raw_evidence": true,
+    "continuation_runbook_new_outcome_text_matches_raw_evidence": true,
+    "legacy_subscription_response_count_correction": {
+      "previous_README_text": 14,
+      "actual_after_previous_recovery": 16,
+      "current_completed_adaptive_proposal_responses": 19,
+      "note": "An older reproducibility sentence had not included the prior recovery responses. Updated text now matches the full proposal ledger; this correction does not change recorded experiment outcomes."
+    },
+    "historical_status_handling": "Historical18-slot checkpoint evidence remains retained; current study status is21 consumed slots and17 valid programs, with four unused slots."
+  }
+}

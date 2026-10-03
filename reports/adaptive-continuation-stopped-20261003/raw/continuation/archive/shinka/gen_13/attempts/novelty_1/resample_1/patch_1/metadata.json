@@ -1,0 +1,15 @@
+{
+  "generation": 13,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "difficulty_anchored_probing",
+  "patch_description": "Anchor the mutation width to task difficulty and stalled progress, while retaining the existing probe feedback as a smaller correction. Best fitness reduces exploration when promising individuals already exist; low diversity and stalled progress increase exploration when performance remains poor. A quality decline temporarily raises the target. Smaller probes should reduce disruptive width oscillations and noisy gradient attribution. This is a proposed improvement, not a verified score gain.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T03:35:08.225936",
+  "llm_cost": 0.0279048,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$REPO_ROOT/results/adaptive-shinka-20261003/shinka/gen_13/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

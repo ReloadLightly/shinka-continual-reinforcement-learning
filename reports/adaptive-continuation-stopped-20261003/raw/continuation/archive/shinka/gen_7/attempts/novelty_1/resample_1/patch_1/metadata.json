@@ -1,0 +1,15 @@
+{
+  "generation": 7,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "archive_quality_exploration",
+  "patch_description": "Base mutation difficulty mainly on the re-scored archive\u2019s mean rather than the population maximum. A single strong individual can currently suppress exploration while the broader archive remains weak. Giving archive quality more weight should sustain exploration until good performance is widespread, then reduce mutation width as the archive improves. This is a feedback-driven hypothesis; its effect on combined_score requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T02:56:14.711622",
+  "llm_cost": 0.0236308,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$REPO_ROOT/results/adaptive-shinka-20261003/shinka/gen_7/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

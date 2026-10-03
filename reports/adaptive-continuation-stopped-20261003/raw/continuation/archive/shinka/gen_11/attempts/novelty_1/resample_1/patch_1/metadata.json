@@ -1,0 +1,15 @@
+{
+  "generation": 11,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "centroid_gap_exploration",
+  "patch_description": "A high maximum return can drive mutation width toward its minimum while most of the population remains weak. Add a modest exploration floor proportional to the squared best-to-mean gap, strengthened by stagnation. This preserves the existing recovery mechanism while preventing an isolated elite from prematurely shutting down exploration. The floor vanishes as population performance approaches the best return; its effect on combined_score requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T03:08:38.775624",
+  "llm_cost": 0.0253868,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$REPO_ROOT/results/adaptive-shinka-20261003/shinka/gen_11/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}
