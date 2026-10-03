@@ -19,6 +19,22 @@ ShinkaEvolve searches and reserved validations remain separate studies,
 including their negative results; their selection decisions remain closed.
 No selected candidate changes this reference comparison.
 
+The active reporting suite uses two logical CPUs under the
+[October 4 scheduling amendment](reference-comparison.md#reporting-cpu-allocation-amendment--october-4-2026).
+The initial eight-CPU GA attempt completed no reporting trial; its
+generation-600 checkpoint and all incurred work remain preserved. The new
+suite keeps the same twenty jobs and scientific settings, with only CPU
+affinity changed. Its existing resume contract requires the fresh suite,
+so no completed trial is discarded and the checkpoint is not imported across
+allocations. The decision is based on measured execution cost rather than
+return-based selection. Exact costs and preservation records accompany the
+[scheduling decision](../reports/reference-reporting-resource-amendment-20261004/decision.json),
+[execution evidence](../reports/reference-reporting-resource-amendment-20261004/execution.json),
+and [original attempt](../reports/reference-reporting-eight-cpu-attempt-20261004/summary.json).
+Use the recorded [two-CPU launch and continuation commands](reference-comparison.md#reporting-execution)
+for `results/reference-reporting-ga-es-two-cpu-20261004`; the eight-CPU suite
+remains closed.
+
 Use the upstream gymnax cell `CartPole-v1_sigma0.5`, alternating between the original environment and a fixed observation offset. Preserve the upstream policy, environment dynamics, task construction, and centroid evaluation. The trainer receives no explicit task-switch signal. See the paper's [experimental setup and Appendix A](https://arxiv.org/html/2610.01583v1).
 
 The pinned [gymnax configuration](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/source/configs/gymnax.yaml) and [configuration resolver](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/source/utils/config.py) specify the original full experiment, retained as the reproduction target:

@@ -231,7 +231,7 @@ does not require retraining a valid completed agent. Preserve unsuccessful
 attempts and their compute separately. Allow only one controller for an output
 directory, and use new paths for distinct experiments and exports.
 
-## Next reporting execution
+## Reporting CPU allocation amendment — October 4, 2026
 
 The first reporting seed pair began on October 4, 2026 (local date), after a
 [separate GA/ES allocation diagnostic](../reports/reference-ga-es-allocation-diagnostic-20261004/summary.json)
@@ -239,29 +239,58 @@ validated training and fresh checkpoint evaluation on the eight-CPU allocation.
 The diagnostic executes only GA and ES from its three-method diagnostic plan;
 its partial status is explicit, and it supplies no scientific reporting trial.
 
-Run the amended GA/ES subset with the existing harness, retaining all ten
-reporting seeds, twenty phases, and the full training budget per method.
-The first invocation below completes the first seed's GA/ES pair within the
-twenty-trial plan:
+In the first GA reporting attempt, the three observed phase durations were
+302.3289, 260.7388, and 277.8400 s. The earlier two-CPU GA development trial had
+a median noninitial phase duration of 84.9753 s. These measurements come from
+different seeds and execution times, so they do not establish a causal CPU
+scaling benchmark. They motivated the [recorded scheduling decision](../reports/reference-reporting-resource-amendment-20261004/decision.json)
+to return to the measured two-CPU allocation while keeping the scientific
+protocol fixed. The phase timings are preserved in the
+[eight-CPU attempt](../reports/reference-reporting-eight-cpu-attempt-20261004/summary.json)
+and [GA development record](../reports/reference-timing-20261002/summary.json).
+
+The eight-CPU attempt was intentionally stopped with its generation-600
+checkpoint and original attempt preserved. It completed no reporting trial
+and no fresh post-hoc evaluation. The [execution record](../reports/reference-reporting-resource-amendment-20261004/execution.json)
+documents the transition. The existing resume contract fixes CPU affinity;
+therefore the checkpoint is retained as evidence, and the identical scientific
+trial starts afresh in a new two-CPU suite. No completed trial is discarded.
+The twenty jobs, baseline settings, seeds, task draws, training budgets,
+evaluation protocol, and frozen source hashes are unchanged; `cpu_affinity`
+is the only differing plan field. The scheduling decision uses measured
+execution costs and does not select seeds or settings using returns.
+
+All work in the [eight-CPU attempt](../reports/reference-reporting-eight-cpu-attempt-20261004/summary.json)
+remains charged: 918.704521254 s of training, 919.669088192 s for the suite,
+and at least 499,968,000 nominal attempted training steps (651 completed
+generations observed). This includes work beyond the retained generation-600
+checkpoint. These costs are additional to the new suite's eventual completed
+trials; they are not removed by the fresh start.
+
+## Reporting execution
+
+The active two-CPU suite uses the existing harness with all ten reporting
+seeds, twenty phases, and the full training budget per method. Its launch
+command completes the first seed's GA/ES pair within the twenty-trial plan:
 
 ```bash
 .venv/bin/python scripts/run_reference_comparison.py \
   --mode reporting --methods ga es \
-  --results-dir results/reference-reporting-ga-es-20261004 \
-  --cpus 8 --timeout 21600 --analysis-timeout 1800 \
+  --results-dir results/reference-reporting-ga-es-two-cpu-20261004 \
+  --cpus 2 --timeout 21600 --analysis-timeout 1800 \
   --max-trials 2 --execute
 ```
 
 Continue subsequent pairs with the same arguments and `--resume`. The harness
 verifies completed trials before reuse; `--max-trials 2` bounds each invocation,
-not the declared number of reporting trials. Preview the frozen plan by omitting
-`--execute` before the first launch.
+not the declared number of reporting trials. Resume only the new two-CPU suite;
+the preserved eight-CPU suite remains closed. The command above records the
+already-started launch and must not start a duplicate controller.
 
-This reporting allocation exposes eight logical CPUs, compared with two for
-the development measurements. Record the actual affinity, elapsed training
-and evaluation costs, and peak trainer memory for the reporting trials;
-development durations do not estimate this allocation's speedup. Scientific
-settings, task draws, and nominal training budgets remain fixed. Completion
+This reporting allocation exposes two logical CPUs, matching the development
+allocation. Record actual affinity, elapsed training and evaluation costs,
+and peak trainer memory for every attempt, including the earlier eight-CPU
+work. Scientific settings, task draws, and nominal training budgets remain fixed. Completion
 of all twenty GA/ES trials supplies their full-budget reporting comparison;
 the original three-method comparison remains incomplete while full-budget
 PPO reporting is deferred.

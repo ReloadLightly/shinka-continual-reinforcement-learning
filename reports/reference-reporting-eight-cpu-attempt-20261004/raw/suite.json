@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "mode": "reporting",
+  "status": "failed",
+  "rows": [],
+  "planned_trials": 20,
+  "completed_trials": 0,
+  "sessions": [
+    {
+      "wall_seconds": 919.6690881920003,
+      "status": "failed",
+      "new_completed_trials": 0,
+      "finished_at_utc": "2026-10-03T23:11:31.365448+00:00"
+    }
+  ],
+  "wall_seconds": 919.6690881920003,
+  "controller_pid": 309148,
+  "error": "ValueError: Native trainer failed"
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "decision_at_utc": "2026-10-03T23:11:30.837629+00:00",
+  "reason": "Measured phase durations on eight logical CPUs are substantially longer than the prior two-CPU development allocation. Preserve this partial attempt and execute the identical twenty reporting jobs on the prior allocation. Decision uses runtime only, not agent returns.",
+  "source_suite": "results/reference-reporting-ga-es-20261004",
+  "replacement_suite": "results/reference-reporting-ga-es-two-cpu-20261004",
+  "source_completed_trials": 0,
+  "source_phase_events": [
+    {
+      "completed_updates": 200,
+      "elapsed_seconds": 302.3288837479995,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 400,
+      "elapsed_seconds": 563.0677304119963,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 600,
+      "elapsed_seconds": 840.9077451859994,
+      "kind": "native_checkpoint_written"
+    }
+  ],
+  "source_steady_phase_seconds": [
+    260.7388466639968,
+    277.84001477400307
+  ],
+  "prior_development_steady_phase_median_seconds": 84.97532890492585,
+  "prior_development_phase_journal": "results/reference-timing-20261002/training/phase-events.jsonl",
+  "changed_plan_fields": [
+    "cpu_affinity"
+  ],
+  "old_cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "new_cpu_affinity": [
+    0,
+    1
+  ],
+  "scientific_jobs_and_settings_unchanged": true,
+  "checkpoint_updates": 600,
+  "checkpoint_bytes": 1636572,
+  "checkpoint_sha256": "df9ea22e181bfc74d2da5befe0144268d53094e8b5ee5645a8a32baf278484f6",
+  "original_plan_sha256": "66d758832760a4f4955532bbb39e512027916103535eec06f8654df08868a220",
+  "replacement_plan_preview_sha256": "71eb4a4c416fbc62ef0c8683c7f796864d71889a7aa1b63c21f1bb36027cdbab",
+  "signal": "SIGTERM to verified native trainer process group",
+  "source_trainer_pid": 309175,
+  "source_trainer_start_ticks": "4603867",
+  "compute_policy": "Charge the entire partial attempt in addition to all replacement reporting work. No completed trial is available to reuse. Preserve the native checkpoint; existing frozen-affinity resume does not permit importing it into the new suite without new provenance machinery. No baseline or evaluation changes."
+}

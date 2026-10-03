@@ -1,0 +1,74 @@
+{
+  "original_artifacts": {
+    "environment.json": {
+      "sha256": "4b63441f7abb6088ee497782372ff70fe2a1321f5af5d2fd2e3be699580ef96b",
+      "bytes": 3135,
+      "exported": true
+    },
+    "plan.json": {
+      "sha256": "66d758832760a4f4955532bbb39e512027916103535eec06f8654df08868a220",
+      "bytes": 5986,
+      "exported": true
+    },
+    "suite.json": {
+      "sha256": "317850cd04d64235dd8983f477091b154462f7de23d3d810a5867bc0f478ce61",
+      "bytes": 440,
+      "exported": true
+    },
+    "trials/ga/seed_42/training/attempt_001/manifest.json": {
+      "sha256": "13cd7b51baeb7fa3fa11e2bc5eae76240eb84070a3aa848c8a9dcaaf5ee6e3c5",
+      "bytes": 1916,
+      "exported": true
+    },
+    "trials/ga/seed_42/training/attempt_001/phase-events.jsonl": {
+      "sha256": "b8858ad5fc2322b2d56757739fcf8ba805f1a775680e82a06a7015a69787a5d6",
+      "bytes": 306,
+      "exported": true
+    },
+    "trials/ga/seed_42/training/attempt_001/process-measurement.json": {
+      "sha256": "9d6e1501d4423f1def5ca37daebe28ee3dd6e2b8374af408fb16210298f6cde4",
+      "bytes": 876,
+      "exported": true
+    },
+    "trials/ga/seed_42/training/attempt_001/process.log": {
+      "sha256": "a4229bca5d4fbecfe96d2429f0ee0129e3f6af59c4a081ad9138e50ae0d789d5",
+      "bytes": 2231,
+      "exported": true
+    },
+    "trials/ga/seed_42/training/attempt_001/receipt.json": {
+      "sha256": "456668aee35309e053c5a1bff0fe403239d7f407fa354d0f2d8de6cdde666252",
+      "bytes": 616,
+      "exported": true
+    },
+    "trials/ga/seed_42/training/attempt_001/resume.pkl": {
+      "sha256": "df9ea22e181bfc74d2da5befe0144268d53094e8b5ee5645a8a32baf278484f6",
+      "bytes": 1636572,
+      "exported": false
+    },
+    "trials/ga/seed_42/training/attempt_001/stacks.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exported": true
+    },
+    "trials/ga/seed_42/training/attempt_001/train.log": {
+      "sha256": "00a88e6a1b53a023217095a1213757869864e04f11afa53f7c38dce0bdeb46b6",
+      "bytes": 1560,
+      "exported": true
+    }
+  },
+  "published_sha256": {
+    "raw/environment.json": "4b63441f7abb6088ee497782372ff70fe2a1321f5af5d2fd2e3be699580ef96b",
+    "raw/plan.json": "3c7f80e18870c0ed8a9e554dfaf9f721f240ce361bae97af94c2eb96f06ec207",
+    "raw/suite.json": "317850cd04d64235dd8983f477091b154462f7de23d3d810a5867bc0f478ce61",
+    "raw/trials/ga/seed_42/training/attempt_001/manifest.json": "483986bea6d567fc9fc722308f6d74a25d3b082cf860416bc713cf171152c790",
+    "raw/trials/ga/seed_42/training/attempt_001/phase-events.jsonl": "b8858ad5fc2322b2d56757739fcf8ba805f1a775680e82a06a7015a69787a5d6",
+    "raw/trials/ga/seed_42/training/attempt_001/process-measurement.json": "9d6e1501d4423f1def5ca37daebe28ee3dd6e2b8374af408fb16210298f6cde4",
+    "raw/trials/ga/seed_42/training/attempt_001/process.log": "86893e5b9706ea259b2ed0f9287c23454cbec83915fe3c0b6e642619cbea554c",
+    "raw/trials/ga/seed_42/training/attempt_001/receipt.json": "456668aee35309e053c5a1bff0fe403239d7f407fa354d0f2d8de6cdde666252",
+    "raw/trials/ga/seed_42/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/ga/seed_42/training/attempt_001/train.log": "d45fd7190c5a98c75b214c0bafac22e2850011748f58dac101f07541eaf11152",
+    "summary.json": "388c38a50e3e372ea40b96fb86ab688a7b6f097ae580afb2453f2508dcfdade6"
+  },
+  "exporter_sha256": "4b4b0896add80fb3fd3df29d6f2c06afc477cb50f9b44d584672df1939d8b291",
+  "artifact_policy": "All original artifacts are hashed; text is copied with local root paths redacted. Binary checkpoints remain outside Git. Every attempt is retained."
+}

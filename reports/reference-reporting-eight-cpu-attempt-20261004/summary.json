@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "mode": "reporting",
+  "status": "failed",
+  "declared_methods": [
+    "ga",
+    "es"
+  ],
+  "original_three_method_target_complete": false,
+  "caption": "GA/ES reporting follows the PPO resource amendment. PPO reporting is deferred; completion of this scope leaves the original three-method target incomplete. Development and diagnostic results remain separate. Dispersion is sample SD across trials, not a confidence interval. Training steps are nominal episode-cap budgets; evaluation is separate. Raw reward units and /500 normalization differ from paper reference-based rescaling.",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "profiles": {
+    "paper-cartpole": {
+      "name": "paper-cartpole",
+      "purpose": "Paper-sized two-task CartPole slice; final reporting only",
+      "env": "CartPole-v1_sigma0.5",
+      "num_phases": 20,
+      "num_tasks": 2,
+      "episode_length": 500,
+      "eval_episodes": 10,
+      "seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "ne": {
+        "num_generations": 4000,
+        "task_interval": 200,
+        "pop_size": 512,
+        "num_evals": 3
+      },
+      "ppo": {
+        "num_updates": 30000,
+        "task_interval": 1500,
+        "num_envs": 2048,
+        "num_steps": 50,
+        "num_minibatches": 32
+      }
+    }
+  },
+  "completed_trials": 0,
+  "planned_trials": 20,
+  "rows": [],
+  "groups": [],
+  "attempts": [
+    {
+      "profile": "paper-cartpole",
+      "method": "ga",
+      "seed": 42,
+      "trial": 1,
+      "eval_seed": 900042,
+      "stage": "training",
+      "path": "trials/ga/seed_42/training/attempt_001",
+      "status": "failed",
+      "wall_seconds": 918.7045212539961,
+      "wall_measurement_available": true,
+      "start_update": 0,
+      "observed_completed_updates": 651,
+      "nominal_training_steps_observed_lower_bound": 499968000,
+      "maximum_trainer_rss_kib": 936648
+    }
+  ],
+  "compute": {
+    "suite_wall_seconds": 919.6690881920003,
+    "planned_training_env_steps_nominal": 61440000000,
+    "completed_trial_training_env_steps_nominal": 0,
+    "attempted_training_env_steps_nominal_observed_lower_bound": 499968000,
+    "training_wall_seconds_all_attempts": 918.7045212539961,
+    "analysis_wall_seconds_all_attempts": 0,
+    "maximum_trainer_rss_kib": 936648,
+    "saved_fresh_evaluation_episodes_all_attempts": 0,
+    "scored_fresh_evaluation_episodes": 0,
+    "unsuccessful_attempts": 1,
+    "note": "Failed/resumed attempt work is counted separately. Unsaved progress and unsaved evaluation episodes are unknown, not zero. Peak RSS covers native trainers only."
+  },
+  "validation": {
+    "frozen_protocol_and_sources_match": true,
+    "training_receipts_verified": true,
+    "posthoc_metrics_recomputed": true,
+    "matched_task_vectors": true,
+    "all_planned_trials": false
+  }
+}

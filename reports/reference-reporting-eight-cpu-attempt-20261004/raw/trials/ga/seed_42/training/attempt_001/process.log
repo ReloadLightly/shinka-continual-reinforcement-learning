@@ -1,0 +1,29 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 1
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 20
+  schedule       : switch, 2 sub-tasks
+  matched budget : 3.072e+09 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations)
+  seed           : 42
+  boundary info  : none
+  output         : <runs>/trials/ga/seed_42/training/attempt_001
+======================================================================
+  gen     0 task= 0 train=   13.1 t0=  352.5 t1=    9.4 gen'ist=    9.4
+  gen    50 task= 0 train=  401.2 t0=  500.0 t1=    9.2 gen'ist=    9.2
+  gen   100 task= 0 train=  458.1 t0=  500.0 t1=   11.4 gen'ist=   11.4
+  gen   150 task= 0 train=  492.3 t0=  500.0 t1=    9.6 gen'ist=    9.6
+  checkpoint: generation 200 -> <runs>/trials/ga/seed_42/training/attempt_001/resume.pkl
+  gen   200 task= 1 train=   10.2 t0=  291.7 t1=   16.3 gen'ist=   16.3
+  gen   250 task= 1 train=  453.1 t0=    9.5 t1=  500.0 gen'ist=    9.5
+  gen   300 task= 1 train=  481.9 t0=    9.9 t1=  500.0 gen'ist=    9.9
+  gen   350 task= 1 train=  484.5 t0=    9.1 t1=  500.0 gen'ist=    9.1
+  checkpoint: generation 400 -> <runs>/trials/ga/seed_42/training/attempt_001/resume.pkl
+  gen   400 task= 0 train=    9.8 t0=   12.1 t1=  500.0 gen'ist=   12.1
+  gen   450 task= 0 train=  492.3 t0=  500.0 t1=    9.9 gen'ist=    9.9
+  gen   500 task= 0 train=  494.4 t0=  500.0 t1=   10.6 gen'ist=   10.6
+  gen   550 task= 0 train=  492.7 t0=  500.0 t1=   11.3 gen'ist=   11.3
+  checkpoint: generation 600 -> <runs>/trials/ga/seed_42/training/attempt_001/resume.pkl
+  gen   600 task= 1 train=    9.8 t0=  419.0 t1=   13.0 gen'ist=   13.0
+  gen   650 task= 1 train=  480.7 t0=    9.5 t1=  500.0 gen'ist=    9.5

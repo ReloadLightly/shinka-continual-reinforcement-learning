@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "status": "scheduling_amendment_executed_original_attempt_sealed",
+  "audited_at_utc": "2026-10-03T23:17:14.197107+00:00",
+  "decision": {
+    "path": "decision.json",
+    "sha256": "b4f114162a1bb68eaa65570ba57ba7f79be9f23bd173741740def9bc98df961c",
+    "copied_verbatim": true
+  },
+  "reason": "The runtime-only decision preserves an incomplete reporting attempt and moves the same declared scientific jobs to a fresh two-logical-CPU suite.",
+  "causal_interpretation": "The scheduling decision used a historical two-CPU calibration with a different seed and time. The subsequently observed same-seed replacement has a shorter first phase and shorter second-phase interval on two logical CPUs. These observations support the practical allocation change but do not establish that affinity alone caused all of the difference; measurements occurred at different times.",
+  "scope": {
+    "methods": [
+      "ga",
+      "es"
+    ],
+    "reporting_trials_per_method": 10,
+    "total_reporting_jobs": 20,
+    "phases_per_trial": 20,
+    "nominal_training_steps_per_trial": 3072000000,
+    "training_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "task_trials": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "original_completed_trials_reused": 0,
+    "reporting_trials_completed_in_abandoned_attempt": 0
+  },
+  "plan_comparison": {
+    "changed_fields": [
+      "cpu_affinity"
+    ],
+    "old_cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "new_cpu_affinity": [
+      0,
+      1
+    ],
+    "scientific_jobs_equal": true,
+    "profiles_equal": true,
+    "evaluation_protocol_equal": true,
+    "runtime_fields_differing": [
+      "cpu_affinity"
+    ],
+    "original_plan_sha256": "66d758832760a4f4955532bbb39e512027916103535eec06f8654df08868a220",
+    "replacement_plan_sha256": "71eb4a4c416fbc62ef0c8683c7f796864d71889a7aa1b63c21f1bb36027cdbab",
+    "replacement_environment_sha256": "ca71b05b1a2caecb2c1a84e486ae4e51519eabc98563f8d9a89af522e9465c58",
+    "frozen_source_files_verified": 12,
+    "frozen_source_sha256": {
+      "src/shinka_crl/reference_comparison.py": "b962fb188806e5519c2908671490488e4963b99366ecc70f68f8b0b42c4ee1d4",
+      "scripts/run_reference_comparison.py": "0fea36f21df8e0a845d0416058b10dab5f8e1994f5acd1569fceb2af232ef72b",
+      "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+      "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad",
+      "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+      "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+      "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+      "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43",
+      "src/shinka_crl/profiles/paper-cartpole.json": "75af8ca9f667733c10278c52d5d88705a5762b1272387b56b3c9a984b7e654d0",
+      "src/shinka_crl/profiles/smoke.json": "a440537e8fde5e07332a75d30205bfb257570616725ba3ee70dc6ab0f9913660",
+      "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+      "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267"
+    }
+  },
+  "terminal_attempt": {
+    "method": "ga",
+    "seed": 42,
+    "task_trial": 1,
+    "signal_recorded_in_decision": "SIGTERM to verified native trainer process group",
+    "native_returncode": -15,
+    "original_manifest_status": "failed",
+    "original_suite_status": "failed",
+    "finished_at_utc": "2026-10-03T23:11:31.235886+00:00",
+    "terminal_interpretation": "Native SIGTERM occurred after the third complete phase checkpoint was preserved. The original full-budget trial remains incomplete and contributes no final reporting result. This is a scheduling amendment, not an algorithmic failure finding.",
+    "phase_events": [
+      {
+        "completed_updates": 200,
+        "elapsed_seconds": 302.3288837479995,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_updates": 400,
+        "elapsed_seconds": 563.0677304119963,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_updates": 600,
+        "elapsed_seconds": 840.9077451859994,
+        "kind": "native_checkpoint_written"
+      }
+    ]
+  },
+  "abandoned_compute_to_charge_once": {
+    "native_training_wall_seconds": 918.7045212539961,
+    "suite_wall_seconds": 919.6690881920003,
+    "suite_overhead_seconds": 0.9645669380042818,
+    "maximum_trainer_rss_kib": 936648,
+    "user_cpu_seconds": 1301.235628,
+    "system_cpu_seconds": 1126.458839,
+    "retained_checkpoint_generations": 600,
+    "retained_checkpoint_nominal_training_steps": 460800000,
+    "observed_completed_generations_lower_bound": 651,
+    "attempted_nominal_training_steps_lower_bound": 499968000,
+    "observed_beyond_checkpoint_nominal_steps_lower_bound": 39168000,
+    "checkpoint_to_termination_wall_seconds_charged": 77.79677606799669,
+    "fresh_posthoc_evaluation_episodes_saved": 0,
+    "accounting": "Add this entire original suite duration and attempted nominal-step lower bound to replacement-suite costs. Native duration is a component of suite duration, not an additional charge. All post-checkpoint work is retained in measured cost; unlogged final generations and in-loop evaluation episode totals remain unknown."
+  },
+  "checkpoint": {
+    "sha256": "df9ea22e181bfc74d2da5befe0144268d53094e8b5ee5645a8a32baf278484f6",
+    "bytes": 1636572,
+    "original_relative_path": "results/reference-reporting-ga-es-20261004/trials/ga/seed_42/training/attempt_001/resume.pkl",
+    "preserved_relative_path": "results/reference-reporting-resource-amendment-20261004/resume-generation-600.pkl",
+    "copies_byte_identical": true,
+    "pickle_loaded": false,
+    "reused_for_replacement_training": false
+  },
+  "supporting_evidence": {
+    "original_attempt_report": "../reference-reporting-eight-cpu-attempt-20261004",
+    "original_summary_sha256": "388c38a50e3e372ea40b96fb86ab688a7b6f097ae580afb2453f2508dcfdade6",
+    "original_checksums_sha256": "a391c3b568de290cdf2e76b17ae6310656836c8fce960673fd8abc8d86021788",
+    "original_report_raw_artifacts_verified": 11,
+    "original_report_published_artifacts_verified": 11,
+    "original_attempt_receipt_sha256": "456668aee35309e053c5a1bff0fe403239d7f407fa354d0f2d8de6cdde666252",
+    "original_attempt_receipt_artifacts_verified": 7,
+    "original_suite": "results/reference-reporting-ga-es-20261004",
+    "replacement_suite": "results/reference-reporting-ga-es-two-cpu-20261004",
+    "repository_revision_at_audit": "afd3302dbfb512c8ebf2f40401da5521d0ea0a78"
+  },
+  "published_sha256": {
+    "decision.json": "b4f114162a1bb68eaa65570ba57ba7f79be9f23bd173741740def9bc98df961c",
+    "replacement-plan.json": "4bdac9e5acf8910b888f234f6ce50f7287cbf368fd3b1c54cc8bd77a9526ef10",
+    "replacement-environment.json": "ca71b05b1a2caecb2c1a84e486ae4e51519eabc98563f8d9a89af522e9465c58",
+    "replacement-first-two-phase-events.jsonl": "c48dd419addf07da7d6bf179d1edcb17885598783e92b99acd901a19037838c7"
+  },
+  "artifact_policy": "Original attempts and binary checkpoints remain untouched. The original compact report retains failed-attempt raw evidence and hashes. The decision is copied verbatim; replacement plan and environment copies redact the local repository path. This record does not alter the reporting seeds, baseline settings, or evaluation protocol.",
+  "replacement_timing_snapshot": {
+    "snapshot_path": "replacement-first-two-phase-events.jsonl",
+    "snapshot_sha256": "c48dd419addf07da7d6bf179d1edcb17885598783e92b99acd901a19037838c7",
+    "source_journal": "results/reference-reporting-ga-es-two-cpu-20261004/trials/ga/seed_42/training/attempt_001/phase-events.jsonl",
+    "source_journal_sha256_at_snapshot": "d5c7b0c8caf324a5748b90bba5e78132e39fcff17bf44d9b35c093a28874f9fa",
+    "source_journal_bytes_at_snapshot": 307,
+    "snapshot_at_utc": "2026-10-03T23:17:14.196999+00:00",
+    "snapshot_scope": "Exact first two complete journal lines only. The replacement trial is still running and the source journal can grow; this is not a final training receipt or a completed trial.",
+    "method": "ga",
+    "seed": 42,
+    "task_trial": 1,
+    "phase_events": [
+      {
+        "completed_updates": 200,
+        "elapsed_seconds": 102.6580463440041,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_updates": 400,
+        "elapsed_seconds": 174.23913410900423,
+        "kind": "native_checkpoint_written"
+      }
+    ],
+    "comparison": {
+      "first_phase_including_startup_and_JIT_seconds": {
+        "eight_cpu": 302.3288837479995,
+        "two_cpu": 102.6580463440041,
+        "eight_over_two_ratio": 2.945009129970234
+      },
+      "second_phase_interval_seconds": {
+        "eight_cpu": 260.7388466639968,
+        "two_cpu": 71.58108776500012,
+        "eight_over_two_ratio": 3.6425661414925603
+      },
+      "comparison_scope": "Same reporting seed, task trial, scientific protocol, pinned code, and package environment; CPU affinity differs. Measurements were taken at different times, so background load and other temporal effects are not experimentally isolated.",
+      "conclusion": "The first replacement phase and subsequent phase interval are both shorter. The second interval excludes initial process startup and JIT, supporting continued execution on the two-CPU allocation."
+    }
+  }
+}
