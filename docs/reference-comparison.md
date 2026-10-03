@@ -30,7 +30,9 @@ trial 1002, and evaluation seed 901001. The completed
 is reused after verification of its original and published evidence. Missing
 ES and PPO measurements use the same full training budgets with their original
 baseline settings. They are development evidence and cannot replace reporting
-trials. Separate reduced diagnostics check runner correctness before full runs.
+trials. The [separate reduced diagnostic](../reports/reference-comparison-diagnostic-20261003/summary.json)
+checks native GA/ES/PPO execution and analysis before full runs; it is not
+comparative learning evidence.
 
 ## Evaluation and interpretation
 

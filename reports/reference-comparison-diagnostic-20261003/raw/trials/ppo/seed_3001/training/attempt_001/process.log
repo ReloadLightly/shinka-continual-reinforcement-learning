@@ -1,0 +1,19 @@
+======================================================================
+gymnax | ppo (rl) | CartPole-v1_sigma0.5 | continual | trial 3002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 2
+  schedule       : switch, 2 sub-tasks
+  matched budget : 3.072e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_updates, num_envs, num_steps)
+  ppo overrides  : {'num_envs': 8, 'num_steps': 16, 'num_minibatches': 2}
+  seed           : 3001
+  boundary info  : none
+  output         : <runs>/trials/ppo/seed_3001/training/attempt_001
+======================================================================
+  update     0 task= 0 H=0.675 t0=    9.0 t1=    9.0 gen'ist=    9.0
+  checkpoint: update 2 -> <runs>/trials/ppo/seed_3001/training/attempt_001/resume.pkl
+  update     3 task= 1 H=0.669 t0=    9.0 t1=   10.0 gen'ist=    9.0
+  wrote <runs>/trials/ppo/seed_3001/training/attempt_001
+
+Done. <runs>/trials/ppo/seed_3001/training/attempt_001

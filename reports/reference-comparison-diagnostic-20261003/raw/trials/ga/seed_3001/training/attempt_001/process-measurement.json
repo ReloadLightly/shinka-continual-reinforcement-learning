@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "returncode": 0,
+  "wall_seconds": 18.1451363160013,
+  "maximum_trainer_rss_kib": 694748,
+  "user_cpu_seconds": 20.491211,
+  "system_cpu_seconds": 2.232643,
+  "trainer_cpu_affinity": [
+    0,
+    1
+  ],
+  "start_update": 0,
+  "phase_events": [
+    {
+      "completed_updates": 2,
+      "elapsed_seconds": 16.933799286998692,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 4,
+      "elapsed_seconds": 17.443352040001628,
+      "kind": "last_update_logged"
+    }
+  ],
+  "timing_note": "Parent-observed flushed native boundaries include JIT, evaluation, diagnostics and checkpoint I/O; RSS is this trainer's Linux wait4 peak"
+}
