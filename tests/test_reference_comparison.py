@@ -23,6 +23,22 @@ def test_reporting_is_exact_declared_thirty_trial_protocol(tmp_path):
         assert command[-2:] == ["--checkpoint_every", "1500" if job["method"] == "ppo" else "200"]
 
 
+def test_amended_reporting_keeps_twenty_full_budget_ga_es_trials(tmp_path):
+    plan = comparison.make_plan(mode="reporting", methods=["ga", "es"], cpus=1)
+    original = comparison.make_plan(mode="reporting", cpus=1)
+    profile = plan["profiles"]["paper-cartpole"]
+    assert profile == load_profile("paper-cartpole")
+    assert plan["methods"] == ["ga", "es"]
+    assert len(plan["jobs"]) == 20
+    assert plan["jobs"] == [job for job in original["jobs"] if job["method"] != "ppo"]
+    assert plan["nominal_training_steps_per_method"] == dict.fromkeys(["ga", "es"], 3072000000)
+    for job in plan["jobs"]:
+        command = comparison.command_for(plan, profile, job, tmp_path)
+        assert command == comparison.command_for(original, profile, job, tmp_path)
+        assert "--ppo_override" not in command and "--ne_override" not in command
+        assert command[-2:] == ["--checkpoint_every", "200"]
+
+
 def test_development_uses_full_budget_and_separate_identity(tmp_path):
     plan = comparison.make_plan(mode="development", cpus=1)
     assert plan["methods"] == ["es", "ppo"]
@@ -33,8 +49,13 @@ def test_development_uses_full_budget_and_separate_identity(tmp_path):
     assert "--ppo_override" not in comparison.command_for(plan, profile, plan["jobs"][1], tmp_path)
 
 
-@pytest.mark.parametrize("mode,methods", [("reporting", ["ga"]), ("diagnostic", ["es"]),
-                                          ("development", ["ga", "ga"])])
+@pytest.mark.parametrize("mode,methods", [
+    ("reporting", ["ga"]), ("reporting", ["es"]), ("reporting", ["ppo"]),
+    ("reporting", ["ga", "ppo"]), ("reporting", ["es", "ppo"]),
+    ("reporting", ["es", "ga"]), ("reporting", ["ppo", "ga", "es"]),
+    ("diagnostic", ["es"]), ("diagnostic", ["ga", "es"]),
+    ("development", ["ga", "ga"]),
+])
 def test_methods_cannot_silently_shrink_reporting(mode, methods):
     with pytest.raises(ValueError):
         comparison.make_plan(mode=mode, methods=methods, cpus=1)

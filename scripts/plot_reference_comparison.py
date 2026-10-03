@@ -79,7 +79,8 @@ def load_data(report_dir, *, allow_development=False, allow_partial=False):
     require(plan["eval_episodes"] == 10 and summary["profiles"] == plan["profiles"], "Evaluation protocol changed")
     methods = plan["methods"]
     require(methods and len(methods) == len(set(methods)) and set(methods) <= set(METHODS), "Unknown reference methods")
-    require(mode != "reporting" or methods == list(METHODS), "Reporting requires GA, ES, PPO")
+    require(mode != "reporting" or methods in (list(METHODS), ["ga", "es"]),
+            "Reporting requires GA, ES, PPO or the amended GA, ES scope")
     jobs = [{"profile": "paper-cartpole", "method": method, "seed": seed,
              "trial": i if mode == "reporting" else seed + 1, "eval_seed": seed + 900000}
             for i, seed in enumerate(profile["seeds"], 1) for method in methods]
@@ -90,7 +91,17 @@ def load_data(report_dir, *, allow_development=False, allow_partial=False):
     complete = len(rows) == len(jobs)
     require(summary["validation"]["all_planned_trials"] == complete, "Completeness claim differs from trials")
     require(status != "complete" or complete, "Incomplete suite marked complete")
-    require(mode != "reporting" or allow_partial or len(rows) == 30, "Final figure requires thirty trials")
+    require(mode != "reporting" or allow_partial or complete, "Final figure requires all declared trials")
+    original_complete = mode == "reporting" and methods == list(METHODS) and complete and status == "complete"
+    if mode == "reporting" and methods == ["ga", "es"]:
+        require(summary.get("declared_methods") == methods
+                and summary.get("original_three_method_target_complete") is False,
+                "Amended reporting must explicitly retain the incomplete original target")
+    if "declared_methods" in summary:
+        require(summary["declared_methods"] == methods, "Reported method scope differs from plan")
+    if "original_three_method_target_complete" in summary:
+        require(summary["original_three_method_target_complete"] is original_complete,
+                "Original target completeness differs from trials")
     require(plan["source_sha256"]["src/shinka_crl/analysis.py"] == digest(analysis.__file__), "Analysis source differs from frozen protocol")
     grouped, noise = {}, {}
     for row in rows:
@@ -138,7 +149,10 @@ def plot_reference_comparison(report_dir, output, *, allow_development=False, al
     require(output.suffix == ".svg" and not any(p.exists() for p in targets), "Choose a fresh .svg output path")
     summary, grouped, inputs = load_data(report_dir, allow_development=allow_development, allow_partial=allow_partial)
     methods = [m for m in METHODS if m in grouped]
+    amended = summary["mode"] == "reporting" and summary.get("declared_methods") == ["ga", "es"]
     label = ("Development (not reporting)" if summary["mode"] == "development" else
+             ("GA/ES reporting; PPO deferred" if summary["status"] == "complete"
+              else "Partial GA/ES reporting; PPO deferred") if amended else
              "Final reporting" if summary["status"] == "complete" else "Partial reporting")
     label += f" · {summary['completed_trials']}/{summary['planned_trials']} trials"
     style = {"font.family": "DejaVu Sans", "font.size": 9, "axes.labelsize": 9,
@@ -216,6 +230,9 @@ def plot_reference_comparison(report_dir, output, *, allow_development=False, al
                 fig.savefig(paths[1], dpi=300, metadata={"CreationDate": None, "ModDate": None, "Title": label})
             provenance = {"schema_version": 1, "mode": summary["mode"], "status": summary["status"],
                 "label": label, "completed_trials": summary["completed_trials"], "input_report": Path(report_dir).name,
+                "declared_methods": summary.get("declared_methods", methods),
+                "original_three_method_target_complete": summary["mode"] == "reporting"
+                    and methods == list(METHODS) and summary["status"] == "complete",
                 "input_sha256": inputs, "plot_script_sha256": digest(__file__),
                 "matplotlib_version": matplotlib.__version__, "numpy_version": np.__version__,
                 "curve_clock": "(zero-based update + 1) * nominal steps per update; no cross-method interpolation",

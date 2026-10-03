@@ -12,7 +12,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--results-dir", type=Path, required=True)
     parser.add_argument("--mode", choices=["development", "diagnostic", "reporting"], required=True)
-    parser.add_argument("--methods", nargs="+", choices=["ga", "es", "ppo"])
+    parser.add_argument("--methods", nargs="+", choices=["ga", "es", "ppo"],
+                        help="Reporting: ga es ppo (default), or ga es under the PPO resource amendment")
     parser.add_argument("--cpus", type=int, default=2)
     parser.add_argument("--timeout", type=int, default=21600)
     parser.add_argument("--analysis-timeout", type=int, default=1800)

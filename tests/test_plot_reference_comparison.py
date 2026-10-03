@@ -60,10 +60,10 @@ def config(method, profile, job):
 
 @pytest.fixture
 def synthetic(tmp_path):
-    def create(mode="development"):
+    def create(mode="development", methods=None, all_trials=False):
         root = tmp_path / mode
         profile = load_profile("paper-cartpole")
-        methods = ["es"] if mode == "development" else list(plotter.METHODS)
+        methods = methods or (["es"] if mode == "development" else list(plotter.METHODS))
         if mode == "development":
             profile["seeds"] = [1001]
             profile["purpose"] = "Synthetic test evidence; never a trained result"
@@ -74,7 +74,7 @@ def synthetic(tmp_path):
                 "jobs": jobs, "eval_episodes": 10,
                 "source_sha256": {"src/shinka_crl/analysis.py": plotter.digest(analysis.__file__)}}
         rows, groups = [], []
-        for job in jobs[:len(methods)]:
+        for job in (jobs if all_trials else jobs[:len(methods)]):
             method = job["method"]
             cfg = config(method, profile, job)
             vectors = [[0., 0., 0., 0.], [.1, .2, .3, .4]]
@@ -98,7 +98,8 @@ def synthetic(tmp_path):
                         "noise_vectors": [vectors[i % 2] for i in range(20)]}
             measured = analysis.summarize_trial(manifest=manifest, results=results, records=records,
                 evaluation=evaluation, checkpoint_metadata=metadata, episodes=10, eval_seed=job["eval_seed"])
-            train, posthoc = f"trials/{method}/training/attempt_0001", f"trials/{method}/analysis/attempt_0001"
+            base = f"trials/{method}" + (f"/seed_{job['seed']}" if all_trials else "")
+            train, posthoc = f"{base}/training/attempt_0001", f"{base}/analysis/attempt_0001"
             for name, value in (("manifest.json", manifest), ("results.json", results),
                                 ("training_metrics.json", records),
                                 ("summary.json", score_curve(records, profile=profile, method=method))):
@@ -110,12 +111,17 @@ def synthetic(tmp_path):
                          "phase_training_returns": measured["phase_training_returns"],
                          "training_env_steps_nominal": measured["nominal_training_steps"],
                          "training_path": train, "analysis_path": posthoc})
-            groups.append({"method": method, "n": 1, "seeds": [job["seed"]],
-                           "metrics": {key: plotter.describe([value]) for key, value in measured["metrics"].items()}})
+        for method in methods:
+            trials = [row for row in rows if row["method"] == method]
+            groups.append({"method": method, "n": len(trials), "seeds": [r["seed"] for r in trials],
+                           "metrics": {key: plotter.describe([r["metrics"][key] for r in trials])
+                                       for key in trials[0]["metrics"]}})
         complete = len(rows) == len(jobs)
         write(root / "raw/plan.json", plan)
         write(root / "summary.json", {"mode": mode, "status": "complete" if complete else "partial",
               "completed_trials": len(rows), "planned_trials": len(jobs), "profiles": plan["profiles"],
+              "declared_methods": methods,
+              "original_three_method_target_complete": mode == "reporting" and complete and methods == list(plotter.METHODS),
               "rows": rows, "groups": groups, "validation": {"all_planned_trials": complete}})
         seal(root)
         return root
@@ -154,6 +160,29 @@ def test_cannot_mark_partial_comparison_as_final(synthetic):
     root = synthetic("reporting")
     alter(root, "summary.json", lambda s: s.update(status="complete"))
     with pytest.raises(ValueError, match="Incomplete suite"):
+        plotter.load_data(root, allow_partial=True)
+
+
+def test_complete_amended_scope_has_twenty_trials_without_claiming_original_target(synthetic, tmp_path):
+    root = synthetic("reporting", methods=["ga", "es"], all_trials=True)
+    summary, groups, _ = plotter.load_data(root)
+    assert summary["completed_trials"] == summary["planned_trials"] == 20
+    assert all(len(trials) == 10 for trials in groups.values())
+    assert not summary["original_three_method_target_complete"]
+    metadata = plotter.plot_reference_comparison(root, tmp_path / "amended.svg")
+    assert metadata["label"] == "GA/ES reporting; PPO deferred · 20/20 trials"
+    assert metadata["declared_methods"] == ["ga", "es"]
+    assert not metadata["original_three_method_target_complete"]
+
+
+def test_amended_scope_requires_complete_trials_and_explicit_original_limitation(synthetic):
+    root = synthetic("reporting", methods=["ga", "es"])
+    with pytest.raises(ValueError, match="allow-partial"):
+        plotter.load_data(root)
+    summary, _, _ = plotter.load_data(root, allow_partial=True)
+    assert summary["completed_trials"] == 2 and summary["planned_trials"] == 20
+    alter(root, "summary.json", lambda s: s.update(original_three_method_target_complete=True))
+    with pytest.raises(ValueError, match="incomplete original target"):
         plotter.load_data(root, allow_partial=True)
 
 

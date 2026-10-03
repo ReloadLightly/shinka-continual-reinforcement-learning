@@ -38,10 +38,10 @@ def evidence(tmp_path, monkeypatch):
     monkeypatch.setattr(runner, "validate_training", validate)
     monkeypatch.setattr(reporter, "validate_analysis", lambda **kwargs: analyses[kwargs["output_dir"]])
 
-    def create(mode="diagnostic"):
+    def create(mode="diagnostic", methods=None):
         root = tmp_path / mode
         root.mkdir()
-        plan = runner.make_plan(mode=mode, cpus=1)
+        plan = runner.make_plan(mode=mode, methods=methods, cpus=1)
         rows = []
         for job in plan["jobs"]:
             profile = plan["profiles"][job["profile"]]
@@ -97,6 +97,8 @@ def test_modes_counts_and_raw_evidence_are_kept_distinct(evidence, mode, count):
     data = evidence(mode)
     report = export(data)
     assert report["mode"] == mode and report["completed_trials"] == count
+    assert report["declared_methods"] == data["plan"]["methods"]
+    assert report["original_three_method_target_complete"] == (mode == "reporting")
     assert len(data["calls"]) == count
     assert report["compute"]["scored_fresh_evaluation_episodes"] == count * 10
     assert report["compute"]["saved_fresh_evaluation_episodes_all_attempts"] == count * 10
@@ -119,18 +121,40 @@ def test_modes_counts_and_raw_evidence_are_kept_distinct(evidence, mode, count):
         assert reporter.digest((data["output"] / path).read_bytes()) == expected
 
 
-def test_partial_reporting_is_explicit_and_never_complete(evidence):
-    data = evidence("reporting")
+def test_amended_reporting_is_complete_only_for_ga_es(evidence):
+    data = evidence("reporting", methods=["ga", "es"])
+    report = export(data)
+    assert report["mode"] == "reporting" and report["status"] == "complete"
+    assert report["declared_methods"] == ["ga", "es"]
+    assert report["planned_trials"] == report["completed_trials"] == 20
+    assert report["validation"]["all_planned_trials"]
+    assert not report["original_three_method_target_complete"]
+    assert "PPO reporting is deferred" in report["caption"]
+    assert "original three-method target incomplete" in report["caption"]
+    assert [group["method"] for group in report["groups"]] == ["ga", "es"]
+    for group in report["groups"]:
+        assert group["n"] == 10 and group["seeds"] == list(range(42, 52))
+        assert group["metrics"]["learning_accuracy"]["n"] == 10
+        assert group["metrics"]["learning_accuracy"]["sample_sd"] > 0
+    assert report["compute"]["planned_training_env_steps_nominal"] == 61440000000
+    assert report["compute"]["completed_trial_training_env_steps_nominal"] == 61440000000
+    assert len(data["calls"]) == 20
+
+
+@pytest.mark.parametrize("methods,count", [(None, 30), (["ga", "es"], 20)])
+def test_partial_reporting_is_explicit_and_never_complete(evidence, methods, count):
+    data = evidence("reporting", methods=methods)
     alter(data["root"] / "suite.json", lambda suite: suite.update(
         status="partial", rows=suite["rows"][:1], completed_trials=1))
     with pytest.raises(ValueError, match="Incomplete comparison"):
         export(data)
     report = export(data, allow_partial=True)
     assert report["status"] == "partial"
-    assert report["planned_trials"] == 30 and report["completed_trials"] == 1
+    assert report["planned_trials"] == count and report["completed_trials"] == 1
     assert not report["validation"]["all_planned_trials"]
+    assert not report["original_three_method_target_complete"]
     # Trained agents not yet registered as completed analyses still incur compute.
-    assert report["compute"]["training_wall_seconds_all_attempts"] == 300.0
+    assert report["compute"]["training_wall_seconds_all_attempts"] == count * 10.0
 
 
 @pytest.mark.parametrize("change", [
@@ -139,8 +163,9 @@ def test_partial_reporting_is_explicit_and_never_complete(evidence):
     lambda p: p["profiles"]["paper-cartpole"]["ne"].update(pop_size=64),
     lambda p: p["source_sha256"].update({"unexpected": "sha"}),
 ])
-def test_reporting_rejects_changed_jobs_budget_or_sources(evidence, change):
-    data = evidence("reporting")
+@pytest.mark.parametrize("methods", [None, ["ga", "es"]])
+def test_reporting_rejects_changed_jobs_budget_or_sources(evidence, change, methods):
+    data = evidence("reporting", methods=methods)
     alter(data["root"] / "plan.json", change)
     with pytest.raises(ValueError, match="Frozen reference plan"):
         export(data, allow_partial=True)

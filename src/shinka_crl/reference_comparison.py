@@ -63,8 +63,10 @@ def make_plan(*, mode: str, cpus: int = 2, timeout: int = 21600,
         ["es", "ppo"] if mode == "development" else list(METHODS))
     require(selected and len(set(selected)) == len(selected)
             and set(selected) <= set(METHODS), "Invalid or duplicate methods")
-    require(mode == "development" or selected == list(METHODS),
-            "Diagnostic and reporting require GA, ES, PPO in the declared order")
+    require(mode != "diagnostic" or selected == list(METHODS),
+            "Diagnostic requires GA, ES, PPO in the declared order")
+    require(mode != "reporting" or selected in (list(METHODS), ["ga", "es"]),
+            "Reporting requires GA, ES, PPO or the amended GA, ES scope in the declared order")
     profile = load_profile("smoke" if mode == "diagnostic" else "paper-cartpole")
     if mode != "reporting":
         profile["seeds"] = [3001 if mode == "diagnostic" else 1001]

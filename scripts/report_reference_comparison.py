@@ -154,7 +154,8 @@ def _validate(root, allow_partial):
     require(suite["status"] != "complete" or complete, "Incomplete suite marked complete")
     require(allow_partial or (complete and suite["status"] == "complete"),
             "Incomplete comparison requires explicit --allow-partial")
-    require(plan["mode"] != "reporting" or len(planned) == 30, "Reporting requires exactly 30 declared trials")
+    require(plan["mode"] != "reporting" or len(planned) == 10 * len(plan["methods"]),
+            "Reporting requires exactly ten declared trials per method")
     wall = finite(suite["wall_seconds"], "suite wall time")
     require(wall >= 0 and wall == sum(finite(s["wall_seconds"], "session wall time") for s in suite["sessions"]),
             "Inconsistent suite timing")
@@ -192,8 +193,17 @@ def _validate(root, allow_partial):
                      "fresh_evaluation_episodes": evaluation_episodes(analysis),
                      "training_path": raw["training_path"], "analysis_path": raw["analysis_path"]})
     attempts = attempt_records(root, plan, validated)
+    scope_caption = (
+        "GA/ES reporting follows the PPO resource amendment. PPO reporting is deferred; "
+        "completion of this scope leaves the original three-method target incomplete. "
+        if plan["mode"] == "reporting" and plan["methods"] == ["ga", "es"] else
+        "Reporting completion refers to the declared methods and trials. ")
     return {"schema_version": 1, "mode": plan["mode"], "status": suite["status"],
-            "caption": "Only reporting mode is the declared final comparison. Development and diagnostic "
+            "declared_methods": plan["methods"],
+            "original_three_method_target_complete": (
+                plan["mode"] == "reporting" and plan["methods"] == list(runner.METHODS)
+                and complete and suite["status"] == "complete"),
+            "caption": scope_caption + "Development and diagnostic "
                        "results remain separate. Dispersion is sample SD across trials, not a confidence interval. "
                        "Training steps are nominal episode-cap budgets; evaluation is separate. "
                        "Raw reward units and /500 normalization differ from paper reference-based rescaling.",
