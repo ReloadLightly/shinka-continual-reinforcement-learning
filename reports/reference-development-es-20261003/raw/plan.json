@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "mode": "development",
+  "profiles": {
+    "paper-cartpole": {
+      "name": "paper-cartpole",
+      "purpose": "Full-budget development runtime calibration; not reporting",
+      "env": "CartPole-v1_sigma0.5",
+      "num_phases": 20,
+      "num_tasks": 2,
+      "episode_length": 500,
+      "eval_episodes": 10,
+      "seeds": [
+        1001
+      ],
+      "ne": {
+        "num_generations": 4000,
+        "task_interval": 200,
+        "pop_size": 512,
+        "num_evals": 3
+      },
+      "ppo": {
+        "num_updates": 30000,
+        "task_interval": 1500,
+        "num_envs": 2048,
+        "num_steps": 50,
+        "num_minibatches": 32
+      }
+    }
+  },
+  "methods": [
+    "es"
+  ],
+  "jobs": [
+    {
+      "profile": "paper-cartpole",
+      "method": "es",
+      "seed": 1001,
+      "trial": 1002,
+      "eval_seed": 901001
+    }
+  ],
+  "eval_episodes": 10,
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "source_sha256": {
+    "src/shinka_crl/reference_comparison.py": "74126c9600e5546e653378f1dd46234f7be2aaed9ce098ab18627f525d4bffcd",
+    "scripts/run_reference_comparison.py": "e791b67d94027a1388a2ef3af1b6499a875caffe0b17c3bf072c170dd552bf49",
+    "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+    "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad",
+    "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+    "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+    "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+    "src/shinka_crl/search.py": "98ae0a6f59f946e0168435e2735085c3305d235f5bf53b6a165d427cdb8b0f43",
+    "src/shinka_crl/profiles/paper-cartpole.json": "75af8ca9f667733c10278c52d5d88705a5762b1272387b56b3c9a984b7e654d0",
+    "src/shinka_crl/profiles/smoke.json": "a440537e8fde5e07332a75d30205bfb257570616725ba3ee70dc6ab0f9913660",
+    "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+    "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267"
+  },
+  "python": "<repo>/.upstream/continual_neuroevolution/.venv/bin/python",
+  "upstream": "<repo>/.upstream/continual_neuroevolution",
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "thread_environment": {
+    "JAX_PLATFORMS": "cpu",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "MKL_DYNAMIC": "FALSE",
+    "NUMEXPR_NUM_THREADS": "1",
+    "NUMEXPR_MAX_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "GOTO_NUM_THREADS": "1"
+  },
+  "timeout_seconds": 172800,
+  "analysis_timeout_seconds": 1800,
+  "checkpoint_policy": "Unchanged native whole-state checkpoint every phase",
+  "resume_policy": "Explicit resume only; verified completed stages are reused; verified native checkpoints are copied into fresh attempts",
+  "nominal_training_steps_per_method": {
+    "es": 3072000000
+  }
+}

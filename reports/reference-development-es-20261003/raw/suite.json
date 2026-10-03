@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "mode": "development",
+  "status": "complete",
+  "rows": [
+    {
+      "profile": "paper-cartpole",
+      "method": "es",
+      "seed": 1001,
+      "trial": 1002,
+      "eval_seed": 901001,
+      "training_path": "trials/es/seed_1001/training/attempt_001",
+      "analysis_path": "trials/es/seed_1001/analysis/attempt_001",
+      "training_wall_seconds": 1375.2467391909995,
+      "analysis_wall_seconds": 13.438530453000567,
+      "maximum_trainer_rss_kib": 825736,
+      "training_attempts": 1,
+      "training_total_wall_seconds": 1375.2467391909995,
+      "analysis_attempts": 1,
+      "analysis_total_wall_seconds": 13.438530453000567,
+      "noise_vectors": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.5717431306838989,
+          -0.20802041888237,
+          -0.14799921214580536,
+          0.10802476108074188
+        ]
+      ],
+      "analysis": {
+        "analysis_version": 1,
+        "method": "es",
+        "profile": "paper-cartpole",
+        "condition": "switching",
+        "seed": 1001,
+        "trial": 1002,
+        "agent_source": "centroid",
+        "episodes": 10,
+        "eval_seed": 901001,
+        "num_phases": 20,
+        "phase_sequence": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "nominal_training_steps": 3072000000,
+        "steps_per_update": 768000,
+        "metrics": {
+          "learning_accuracy": 500.0,
+          "forgetting": 0.0,
+          "zero_shot_transfer": 500.0,
+          "learning_minus_forgetting": 500.0,
+          "cumulative_reward_steps": 1526690035218.0176,
+          "cumulative_reward_generation_equivalents": 1987877.6500234604,
+          "cumulative_reward_steps_exact": 1526690035218.0176,
+          "normalized_curve_average": 0.9939388250117301
+        },
+        "phase_returns": [
+          {
+            "phase": 0,
+            "task": 0,
+            "checkpoint_completed_steps": 153600000,
+            "own_mean": 500.0,
+            "previous_mean": null,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 1,
+            "task": 1,
+            "checkpoint_completed_steps": 307200000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 2,
+            "task": 0,
+            "checkpoint_completed_steps": 460800000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 3,
+            "task": 1,
+            "checkpoint_completed_steps": 614400000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 4,
+            "task": 0,
+            "checkpoint_completed_steps": 768000000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 5,
+            "task": 1,
+            "checkpoint_completed_steps": 921600000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 6,
+            "task": 0,
+            "checkpoint_completed_steps": 1075200000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 7,
+            "task": 1,
+            "checkpoint_completed_steps": 1228800000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 8,
+            "task": 0,
+            "checkpoint_completed_steps": 1382400000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 9,
+            "task": 1,
+            "checkpoint_completed_steps": 1536000000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 10,
+            "task": 0,
+            "checkpoint_completed_steps": 1689600000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 11,
+            "task": 1,
+            "checkpoint_completed_steps": 1843200000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 12,
+            "task": 0,
+            "checkpoint_completed_steps": 1996800000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 13,
+            "task": 1,
+            "checkpoint_completed_steps": 2150400000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 14,
+            "task": 0,
+            "checkpoint_completed_steps": 2304000000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 15,
+            "task": 1,
+            "checkpoint_completed_steps": 2457600000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 16,
+            "task": 0,
+            "checkpoint_completed_steps": 2611200000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 17,
+            "task": 1,
+            "checkpoint_completed_steps": 2764800000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 18,
+            "task": 0,
+            "checkpoint_completed_steps": 2918400000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 19,
+            "task": 1,
+            "checkpoint_completed_steps": 3072000000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": null
+          }
+        ],
+        "phase_training_returns": [
+          440.5900001144409,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "clock": {
+          "record_timing": "after_update",
+          "raw_generation_labels": "zero_based",
+          "completed_steps": "(generation + 1) * steps_per_update",
+          "integration": "pinned_unit_NE_generation_grid_trapezoid",
+          "reference_steps_per_generation": 768000,
+          "integration_grid_points": 4001,
+          "edge_values": "constant_first_and_last_logged_return",
+          "initial_untrained_policy_evaluated": false
+        },
+        "transfer_interpretation": "consecutive_switches_including_both_directions"
+      }
+    }
+  ],
+  "planned_trials": 1,
+  "completed_trials": 1,
+  "sessions": [
+    {
+      "wall_seconds": 1391.4174565450012,
+      "status": "complete",
+      "new_completed_trials": 1,
+      "finished_at_utc": "2026-10-03T13:12:41.385767+00:00"
+    }
+  ],
+  "wall_seconds": 1391.4174565450012,
+  "controller_pid": 165557
+}

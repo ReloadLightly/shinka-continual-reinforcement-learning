@@ -2,7 +2,7 @@
 
 The [experimental roadmap](experimental-roadmap.md) defines the immediate matched pilot, subscription-backed Shinka stages, validation split, and adaptive-rule extension. This document retains the full reproduction specification; completing the reduced search is not completion of the paper reproduction.
 
-This project starts a reproduction of [Continual Reinforcement Learning with Neuroevolution](https://arxiv.org/abs/2610.01583), by Eleni Nisioti, Andrea Cossu, Kathrin Korte, and Sebastian Risi (arXiv:2610.01583v1, October 1, 2026). The initial scope is a CartPole comparison with upstream GA, ES, and PPO, followed by a ShinkaEvolve extension. [CPU smoke validation](../reports/smoke-20261002/summary.json) and one [paper-budget GA development trial](../reports/reference-timing-20261002/summary.json) are complete; full-budget comparative reproduction and final reporting remain pending.
+This project starts a reproduction of [Continual Reinforcement Learning with Neuroevolution](https://arxiv.org/abs/2610.01583), by Eleni Nisioti, Andrea Cossu, Kathrin Korte, and Sebastian Risi (arXiv:2610.01583v1, October 1, 2026). The initial scope is a CartPole comparison with upstream GA, ES, and PPO, followed by a ShinkaEvolve extension. [CPU smoke validation](../reports/smoke-20261002/summary.json), a [paper-budget GA development trial](../reports/reference-timing-20261002/summary.json), and a [paper-budget ES development trial](../reports/reference-development-es-20261003/summary.json) are complete; full-budget comparative reproduction and final reporting remain pending.
 
 The reference implementation is pinned to [`821570eb6a22db0f7aa77111b2ea541fe8fa795b`](https://github.com/eleninisioti/continual_neuroevolution/tree/821570eb6a22db0f7aa77111b2ea541fe8fa795b). Keep it as an external checkout; no top-level license was present at that revision. This repository contains the integration and experiment specification, rather than a vendored copy of that implementation.
 
@@ -10,9 +10,10 @@ The reference implementation is pinned to [`821570eb6a22db0f7aa77111b2ea541fe8fa
 
 The active [full-budget reference comparison](reference-comparison.md) includes
 GA, ES, and PPO only: ten reporting trials per method under the protocol below.
-It first reuses the verified GA development reference and measures missing ES/PPO
-development costs. The completed ShinkaEvolve searches and reserved validations
-remain separate studies; no selected candidate changes this reference comparison.
+It reuses the verified GA development reference. The ES development measurement
+is complete; PPO development measurement remains in progress. The completed
+ShinkaEvolve searches and reserved validations remain separate studies;
+no selected candidate changes this reference comparison.
 
 Use the upstream gymnax cell `CartPole-v1_sigma0.5`, alternating between the original environment and a fixed observation offset. Preserve the upstream policy, environment dynamics, task construction, and centroid evaluation. The trainer receives no explicit task-switch signal. See the paper's [experimental setup and Appendix A](https://arxiv.org/html/2610.01583v1).
 

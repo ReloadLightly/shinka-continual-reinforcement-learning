@@ -17,8 +17,8 @@ combined active/previous-task score is 0.8423, versus 0.9054 for native FocusGA;
 the paired difference is −0.0631 ± 0.0632 (mean ± sample standard deviation).
 This comparison does not support an advantage for the selected rule. The study
 provides controlled development evidence for the reproduction and extension;
-the full-budget comparative reproduction and final reporting trials remain
-pending.
+full-budget GA and ES development trials attain maximal phase-end learning
+accuracy, but the ten-trial reference comparison remains pending.
 
 ## 1. Introduction
 
@@ -72,7 +72,7 @@ of 10 phases is insufficient for this experiment.*
 ### Partitions and development budgets
 
 Development and validation use task trial `seed + 1`, separating both training
-seeds and observation-offset draws from final reporting. All comparative
+seeds and observation-offset draws from final reporting. The reduced comparative
 development trials have four phases and a 500-step episode cap. GA and ES use
 population 64 and three training episodes per member. The matched pilot uses
 80 GA/ES generations or 600 PPO updates, with 256 PPO environments and 50 rollout
@@ -84,11 +84,14 @@ steps per update. These are explicit reductions from Table 1.
 | Static finalist validation | 2001–2005 | 2002–2006 | 30.72 × 10⁶ | Select one finalist per search arm |
 | Adaptive controls / search | 4001–4003 | 4002–4004 | 7.68 × 10⁶ | Development |
 | Adaptive finalist validation | 5001–5005 | 5002–5006 | 30.72 × 10⁶ | Evaluate a previously selected rule |
+| Full-budget reference development | 1001 | 1002 | 3.072 × 10⁹ | Measure native learning and compute |
 | Final paper reporting | 42–51 | 1–10 | 3.072 × 10⁹ | Untouched |
 
 *Table 2. Scientific data partitions. Search uses 20 generations per phase;
 both validation studies use 80. Validation therefore changes task draws and
-adaptation interval together. Implementation diagnostics use separate reduced
+adaptation interval together. Full-budget reference development uses Table 1
+and the [reference comparison protocol](docs/reference-comparison.md).
+Implementation diagnostics use separate reduced
 budgets and are excluded from method comparisons. Exact allocations:
 [pilot and static search](docs/experimental-roadmap.md),
 [static validation](docs/finalist-validation.md),
@@ -227,12 +230,33 @@ learning accuracy, so retention alone does not rank the methods. Negative
 forgetting can result from improvement on a previously weak task; it does not
 imply an absence of later losses.
 
-Separately, one unchanged GA development trial completed the full Table 1
-budget on seed 1001 / task trial 1002. It achieved active score 0.9915,
-LA 500.00, F 28.39, and ZT 463.77
-([protocol and measurements](reports/reference-timing-20261002/summary.json)).
-This single trial supplies no estimate of between-trial uncertainty and is not
-a matched comparator for the reduced-budget experiments.
+### Full-budget reference development
+
+GA and ES each completed the full Table 1 budget on development seed 1001 /
+task trial 1002. Both attained maximal active-task return at every phase
+endpoint. ES also attained return 500 on every fresh previous-task evaluation;
+GA showed losses at several switches despite maximal active-task learning.
+
+| Method | LA ↑ | F ↓ | LA − F ↑ | ZT ↑ | Cum. / (steps × 500) ↑ |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| GA | 500.00 | 28.39 | 471.61 | 463.77 | 0.9914 |
+| ES | 500.00 | 0.00 | 500.00 | 500.00 | 0.9939 |
+
+*Table 4. Full-budget development results, one trial per method. LA, F,
+LA − F, and ZT are in CartPole return units; normalized cumulative return is
+dimensionless. There is no estimate of between-trial dispersion.
+[Exact protocol](docs/reference-comparison.md) ·
+[GA evidence](reports/reference-timing-20261002/summary.json) ·
+[ES evidence](reports/reference-development-es-20261003/summary.json).*
+
+Native training took 1,811.7 s for GA and 1,375.2 s for ES, with trainer peak
+resident memory of 843.2 and 806.4 MiB, respectively, on the two-CPU allocation.
+These measured durations include compilation, in-loop evaluation, and checkpoint
+writes; post-hoc evaluation is additional work. The linked trial records retain
+all phase returns, training curves, compute measurements, and checkpoint hashes.
+PPO development measurement remains in progress. These development observations
+cannot establish a method ranking or substitute for the ten reporting trials
+per method, and their longer budgets preclude a direct comparison with Table 3.
 
 ### Static configuration search
 
@@ -256,7 +280,7 @@ the secondary matched-evaluation comparison.
 | Best random: first 17 controls | 0.330187 | 0.062208 | 0.8857 ± 0.0275 |
 | Best random: all 24 controls | 0.330187 | 0.062208 | 0.8857 ± 0.0275 |
 
-*Table 4. Selected development maxima, mean ± sample SD across three seeds.
+*Table 5. Selected development maxima, mean ± sample SD across three seeds.
 Parameters are rounded. These are search-selection outcomes.
 [Protocol](docs/experimental-roadmap.md) ·
 [All candidates and exact settings](reports/search-endpoint-20261002/summary.json).*
@@ -286,7 +310,7 @@ Positive forgetting denotes lost return; negative values denote improvement.
 | Random 7 | 0.8751 ± 0.1914 | 457.1 ± 95.8 | 340.3 ± 108.8 | 116.9 ± 134.2 | 118.6 ± 120.2 |
 | Random 24 | 0.9306 ± 0.0716 | 496.2 ± 8.6 | 441.9 ± 65.4 | 54.3 ± 67.6 | 62.6 ± 74.5 |
 
-*Table 5. Mean ± sample SD across five seeds. Active score is normalized by
+*Table 6. Mean ± sample SD across five seeds. Active score is normalized by
 500; other columns use return units. The active score alone selects the
 winner within each search arm.
 [Protocol](docs/finalist-validation.md) ·
@@ -318,7 +342,7 @@ retains every proposal and outcome.
 | Static Shinka 11 | 0.4566 ± 0.1457 | 0.7540 | 0.1592 | 493.4 | 411.6 |
 | Static random 24 | 0.3643 ± 0.1009 | 0.6540 | 0.0745 | 457.3 | 442.6 |
 
-*Table 6. Adaptive development means across seeds 4001–4003; combined score
+*Table 7. Adaptive development means across seeds 4001–4003; combined score
 also shows sample SD. Active, previous, and combined scores are normalized
 by 500; LA and F use return units. The selected row is the maximum over valid
 search programs, while control recipes were fixed beforehand.
@@ -367,8 +391,8 @@ across methods.
 | Static Shinka 11 | 0.7576 ± 0.1781 | 0.9564 | 0.5588 | 500.0 | 220.6 |
 | Static random 24 | 0.7877 ± 0.1564 | 0.9700 | 0.6054 | 500.0 | 197.3 |
 
-*Table 7. Reserved five-seed means; combined score also shows sample SD.
-Units follow Table 6. Full per-seed components, continual-learning metrics,
+*Table 8. Reserved five-seed means; combined score also shows sample SD.
+Units follow Table 7. Full per-seed components, continual-learning metrics,
 and raw episode returns are retained in the
 [complete evidence](reports/adaptive-validation-complete-20261003/summary.json).
 [Exact frozen protocol](reports/adaptive-validation-freeze-20261003/protocol.md).*
@@ -381,7 +405,7 @@ and raw episode returns are retained in the
 | 5004 | 0.928069 | 0.984939 | −0.056871 |
 | 5005 | 0.980390 | 0.984140 | −0.003750 |
 
-*Table 8. Primary paired differences in normalized combined-score units.
+*Table 9. Primary paired differences in normalized combined-score units.
 Mean ± sample SD: −0.0631 ± 0.0632. No significance test or promotion
 threshold was prespecified.
 [Protocol](reports/adaptive-validation-freeze-20261003/protocol.md) ·
@@ -408,12 +432,12 @@ to final reporting.
 | Matched baseline pilot | 18 | 138.24 × 10⁶ |
 | Static search, both arms | 147 | 1,128.96 × 10⁶ |
 | Static finalist validation | 25 | 768.00 × 10⁶ |
-| Full-budget GA development reference | 1 | 3,072.00 × 10⁶ |
+| Full-budget GA/ES development reference | 2 | 6,144.00 × 10⁶ |
 | Adaptive fixed controls | 15 | 115.20 × 10⁶ |
 | Adaptive program search | 60 | 460.80 × 10⁶ |
 | Adaptive finalist validation | 30 | 921.60 × 10⁶ |
 
-*Table 9. Training allocation consumed by the scientific experiments.
+*Table 10. Training allocation consumed by the scientific experiments.
 GA/ES counts use the episode cap and are nominal, not realized episode lengths.
 In-loop and post-hoc evaluation are additional work. Repeated static evaluations
 are charged; adaptive identity reuse is counted once in the fixed controls.
@@ -423,6 +447,7 @@ costs remain in the supplementary evidence. Sources and exact protocols:
 [static search](reports/search-endpoint-20261002/summary.json),
 [static validation](reports/validation-static-20261002/summary.json),
 [GA reference](reports/reference-timing-20261002/summary.json),
+[ES reference](reports/reference-development-es-20261003/summary.json),
 [adaptive controls](reports/adaptive-controls-20261003/summary.json),
 [adaptive search](reports/adaptive-endpoint-complete-20261003/summary.json),
 [adaptive validation](reports/adaptive-validation-complete-20261003/summary.json).*
@@ -462,12 +487,13 @@ and [complete endpoint](reports/adaptive-endpoint-complete-20261003/summary.json
 preserve that distinction; the evaluator, grammar, controls, and allocation
 remained fixed, and consumed slots were not replaced.
 
-The reproduction remains incomplete. Reduced populations, shorter task
-sequences, and the reported normalization differ from the full reference
-comparison. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
-The next experiment is the declared
-[full-budget GA/ES/PPO reference comparison](docs/reference-comparison.md),
-preceded by ES/PPO development runtime calibration.
+The reproduction remains incomplete. The pilot and extension studies use
+reduced populations and shorter task sequences; the reported normalization
+differs from the paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
+The declared
+[full-budget GA/ES/PPO reference comparison](docs/reference-comparison.md)
+uses unchanged baseline settings. Full-budget GA/ES development observations
+are available; PPO development measurement precedes the reporting comparison.
 Broader reproduction also requires the other environments, task variations,
 continual PPO variants, and neighborhood analysis in the
 [reproduction plan](docs/reproduction-plan.md).
@@ -485,7 +511,7 @@ interfaces, analysis, and experiment runners live in this repository.
 | ShinkaEvolve | [9912af12d423](https://github.com/SakanaAI/ShinkaEvolve/tree/9912af12d423504b8d580f4179fd15f5f88b8c50) |
 | Reference paper | [arXiv:2610.01583v1](https://arxiv.org/abs/2610.01583v1) |
 
-*Table 10. Pinned reference sources. Full revisions and dependency declarations
+*Table 11. Pinned reference sources. Full revisions and dependency declarations
 are retained in the [source lock](upstream.lock.json).*
 
 The [source lock](upstream.lock.json) and per-experiment manifests record exact

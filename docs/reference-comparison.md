@@ -29,8 +29,10 @@ trial 1002, and evaluation seed 901001. The completed
 [GA development reference](../reports/reference-timing-20261002/summary.json)
 is reused after verification of its original and published evidence. Missing
 ES and PPO measurements use the same full training budgets with their original
-baseline settings. They are development evidence and cannot replace reporting
-trials. The [separate reduced diagnostic](../reports/reference-comparison-diagnostic-20261003/summary.json)
+baseline settings. The [ES development measurement](../reports/reference-development-es-20261003/summary.json)
+is complete; PPO development measurement remains in progress. These measurements
+are development evidence and cannot replace reporting trials.
+The [separate reduced diagnostic](../reports/reference-comparison-diagnostic-20261003/summary.json)
 checks native GA/ES/PPO execution and analysis before full runs; it is not
 comparative learning evidence.
 
