@@ -88,8 +88,11 @@ def validate_source(source: Path, *, runtime: bool = False) -> tuple[dict, dict]
             and not summary["unpersisted_requests"]
             and summary["incomplete_training_attempts"] == 0,
             "Source failure differs from the reviewed grammar rejection")
-    require(sorted(p.name for p in (source / "shinka/gen_15").iterdir())
-            == [".generation_lock"], "Interrupted slot 15 has unexpected artifacts")
+    canceled = source / "shinka/gen_15"
+    require(sorted(str(p.relative_to(canceled)) for p in canceled.rglob("*") if p.is_file())
+            == [".generation_lock"] and (canceled / ".generation_lock").stat().st_size == 0
+            and all(p == canceled / "results" for p in canceled.rglob("*") if p.is_dir()),
+            "Interrupted slot 15 has unexpected artifacts")
     groups = ledger_groups(source / "model_requests.jsonl")
     require(len(groups) == 15 and all([e["event"] for e in g]
             == ["started", "codex_exec", "finished"] and g[-1]["outcome"] == "success"

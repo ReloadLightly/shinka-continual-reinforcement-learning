@@ -35,6 +35,7 @@ def stopped(native, monkeypatch):
         db.execute("UPDATE programs SET correct=0 WHERE generation=14")
     canceled = source / "shinka/gen_15"
     canceled.mkdir()
+    (canceled / "results").mkdir()  # Native creates this empty directory before requesting code.
     (canceled / ".generation_lock").touch()
     with (source / "model_requests.jsonl").open("a") as stream:
         for event in ("started", "finished"):
