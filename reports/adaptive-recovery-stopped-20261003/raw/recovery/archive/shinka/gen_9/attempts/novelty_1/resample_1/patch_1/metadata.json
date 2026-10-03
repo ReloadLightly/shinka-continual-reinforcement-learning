@@ -1,0 +1,15 @@
+{
+  "generation": 9,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "paired_probe_search",
+  "patch_description": "Use alternating mutation-width probes to estimate whether wider or narrower mutations improve a centroid-quality proxy. Persistent memory smooths the measured response and adjusts the search center, while an archive decline temporarily increases exploration. This replaces a prescribed width target with online optimization; improved performance remains to be tested.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T03:03:39.881181",
+  "llm_cost": 0.0308868,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SOURCE_ARCHIVE/shinka/gen_9/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

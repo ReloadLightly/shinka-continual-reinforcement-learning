@@ -1,0 +1,15 @@
+{
+  "generation": 12,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "centroid_driven_exploration",
+  "patch_description": "Use archive and population means to estimate difficulty: a single strong individual can otherwise reduce exploration while the centroid still performs poorly. Increase exploration during persistent stagnation, make its suppression by population spread gentler, and raise the minimum target width to preserve adaptation after convergence. Reduce abrupt loss-driven widening to limit disruption of previously acquired behavior. This is a feedback-based hypothesis; improved combined_score requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T03:11:33.585175",
+  "llm_cost": 0.0259508,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SOURCE_ARCHIVE/shinka/gen_12/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

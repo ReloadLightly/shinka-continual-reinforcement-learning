@@ -1,0 +1,23 @@
+<NAME>
+population_stagnation_rescue
+</NAME>
+<DESCRIPTION>
+The current rule can reduce exploration prematurely when a strong individual coexists with a weak population. Base difficulty partly on population mean, and let persistent stagnation restore exploration according to the population’s remaining performance gap. Treat declining mean fitness as lack of progress so deterioration does not suppress this recovery mechanism. The spread-dependent term limits recovery when the population is already diverse. This is a feedback-driven hypothesis requiring evaluation across the development seeds.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    stalled = exp(-32.0 * abs(progress))
+=======
+    stalled = exp(-32.0 * maximum(progress, 0.0))
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    difficulty = clip(1.0 - 0.60 * best - 0.40 * archive, 0.0, 1.0)
+=======
+    difficulty = clip(1.0 - 0.70 * best - 0.30 * mean, 0.0, 1.0)
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    exploration = 0.085 * difficulty * difficulty + 0.11 * stagnation * difficulty * collapse
+=======
+    exploration = 0.10 * difficulty * difficulty + 0.14 * stagnation * (1.0 - mean) * collapse
+>>>>>>> REPLACE
+</DIFF>

@@ -1,9 +1,13 @@
 # Reviewed adaptive-search recovery
 
-**Status: implemented, verified, and prepared; recovery execution has not
-started.** The [public preparation freeze](../reports/adaptive-recovery-preflight-20261003/recovery-plan.json)
+**Status: executed and stopped at generation 17; 18 of 25 slots consumed.**
+The [stopped export](../reports/adaptive-recovery-stopped-20261003/summary.json)
+and [independent review](../reports/adaptive-recovery-stopped-review-20261003.json)
+retain the valid generation 16 and grammar-rejected generation 17. No slot 18
+started. The [public preparation freeze](../reports/adaptive-recovery-preflight-20261003/recovery-plan.json)
 and [verification record](../reports/adaptive-recovery-verification-20261003.json)
-bind the implementation, original archive, RNG decision, and zero added work.
+bind the implementation, original archive, RNG decision, and zero added work
+at preparation.
 The controller implements the
 [reviewed recovery requirements](adaptive-search.md#reviewed-recovery-work)
 for the [stopped target-25 archive](../reports/adaptive-shinka-stage25-stopped-20261003/summary.json).
@@ -15,18 +19,19 @@ The original [search protocol](adaptive-search.md) and
 
 The recovery protocol is `adaptive-shinka-reviewed-recovery-v1`. It accepts the
 reviewed source archive at `results/adaptive-shinka-20261003` and creates an
-independent working copy. The prepared recovery directory is
+independent working copy. The recovery directory is
 `results/adaptive-shinka-recovery-20261003`; the public freeze is
 `reports/adaptive-recovery-preflight-20261003`.
 
-| Generations | Recorded state | Recovery treatment |
+| Generations | State at preparation | Recovery treatment |
 | :--- | :--- | :--- |
 | 0–13 | Fourteen valid scored programs, including cached identity | Preserve sources, ancestry, scores, and receipts |
 | 14 | Grammar rejection before training | Preserve the incorrect database row and failed request |
 | 15 | Interrupted request before a recorded Codex launch; no program row | Keep the slot consumed without inserting a replacement row |
 | 16–24 | Nine unused slots | Only these generations may receive new proposals |
 
-The original archive, published snapshots, source files, plans, and evaluator
+The table records the pre-execution allocation; the observed outcomes below
+supersede its unused-slot counts. The original archive, published snapshots, source files, plans, and evaluator
 remain unchanged. Files are copied without writable hardlinks; SQLite is copied
 through its backup API and checked for equivalent logical contents. Symlinks
 inside the archive are rejected. The working copy continues to reference the
@@ -111,7 +116,9 @@ starting proposals.
 
 ## Execution and accounting
 
-Execution is a separate operation, permitted once from a prepared state:
+Execution is a separate operation, permitted once from a prepared state.
+The following command has already run for this directory; its failed state
+rejects another execution:
 
 ```bash
 PATH="$HOME/.codex/packages/app-server-daemon/releases/0.159.3-x86_64-unknown-linux-musl/bin:$PATH" \
@@ -154,6 +161,62 @@ The exporter verifies receipts and both inherited and added costs, retains
 failure evidence, redacts local path prefixes, and hashes binary artifacts
 while leaving the binaries local.
 
+## Observed execution and next checkpoint
+
+The public freeze was committed before execution at
+[`62407bc`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/tree/62407bc).
+Generation 16 was valid with 484 AST nodes and completed all three development
+trials, scoring **0.44738472377061844**. Generation 17 had **515 nodes** and
+failed the unchanged 512-node grammar limit before training. Its completion
+barrier stopped native execution before generation 18 had a slot reservation,
+provider request, or directory. The 25-slot endpoint remains incomplete.
+
+The [review](../reports/adaptive-recovery-stopped-review-20261003.json) independently
+rederives generation 16's scores and reference metrics from raw evidence and
+verifies published hashes, preserved source/archive bindings, reservations,
+request accounting, cleanup, and saved RNG state. Recovery added two guarded
+requests and responses, three trials, **23.04 million nominal steps**, and
+**900 fresh checkpoint-evaluation episodes**. Cumulative search has 18 consumed
+slots, 17 database rows, 15 valid programs, 42 new trials, 322.56 million nominal
+steps, and 12,600 fresh episodes. The best valid program remains generation 5.
+
+The recorded session ran from **05:55:14.780203 to 06:00:30.701768 UTC** on
+3 October 2026. Supervised native execution took **297.4673 seconds** and
+returned code 1 gracefully. Cleanup took **0.1475 seconds**, with 53 tracked
+processes, no survivors or errors, and no SIGTERM or SIGKILL needed. Native
+saved refreshed RNG hash
+`8d8fa2a390807c55874f9d17177971731f07b8ecf29329c20d722e8e0e02c20a`.
+This successful finalization does not undo the declared use of stale stage-13
+RNG at the beginning of recovery.
+
+The evidence was exported with the following command. Use another fresh report
+directory for a replay; both the preflight and stopped publications are immutable.
+
+```bash
+.venv/bin/python scripts/report_adaptive_recovery.py \
+  --results-dir results/adaptive-shinka-recovery-20261003 \
+  --report-dir reports/adaptive-recovery-stopped-20261003
+```
+
+The current controller accepts only its original reviewed source shape and
+starts at generation 16. It cannot resume this failed recovery. The next
+implementation must therefore use a separate controller revision, working copy,
+and published plan binding this stopped checkpoint and its fresh RNG receipt.
+Only **generations 18–24** may receive new requests. Retain invalid rows 14 and
+17 and the no-row consumed slot 15, preserve both historical plans and all
+scores, and retain the serial completion barrier and one-request reservations.
+At most seven new uncached valid proposals would add **21 trials** and
+**161.28 million nominal steps** under the same development protocol.
+
+Before execution, integration tests must show that inherited failures do not
+trigger a premature stop, generation 18 is first, no consumed slot is reused,
+new failures save RNG when graceful and prevent the next proposal, and complete
+fixtures finish at 25 consumed slots. Publish the revised source and input
+bindings before any further model request. Preserve the original grammar,
+prompt configuration, objective, controls, and seed partitions. Do not enlarge
+the endpoint or reinterpret this partial archive as complete. Reserved validation
+and final reporting seeds remain untouched.
+
 ## Interfaces and checks
 
 The Python entry points in `shinka_crl.adaptive_recovery` are
@@ -183,6 +246,9 @@ wrapper availability check then passed at implementation revision
 [`dbdf37e`](https://github.com/ReloadLightly/shinka-continual-reinforcement-learning/commit/dbdf37eaf98c51e7e617d0cdc064312f272041a9).
 The [verification record](../reports/adaptive-recovery-verification-20261003.json)
 retains both preparation attempts, exact commands, revisions, and checksums.
-The prepared state has no recovery sessions, reservations, proposals, or training.
+The preserved preflight state has no recovery sessions, reservations, proposals,
+or training; the separate stopped export records the subsequent execution.
+After the real stopped execution, all 49 focused recovery tests and repository
+lint passed again; no trainer, evaluator, or frozen controller source changed.
 The [reserved validation handoff](adaptive-validation.md) remains a
 separate proposed protocol until the search endpoint has been explicitly resolved.

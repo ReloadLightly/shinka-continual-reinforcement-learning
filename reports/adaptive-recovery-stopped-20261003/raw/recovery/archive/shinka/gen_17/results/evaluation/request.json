@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "request_id": "evaluation",
+  "context_sha256": "58b409f6946d9c9a3fcd77b1f66dbfc37feb35c772e25d41e217236abf63f0a7",
+  "cache_hit": false,
+  "slot_consumed": true,
+  "started_at": "2026-10-03T06:00:22.599089+00:00",
+  "evaluator_model_calls": 0,
+  "error": "ProgramValidationError: AST exceeds 512 nodes",
+  "wall_seconds": 0.0018399669788777828,
+  "finished_at": "2026-10-03T06:00:22.600959+00:00"
+}

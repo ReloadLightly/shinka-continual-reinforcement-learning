@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "centroid_stagnation",
+  "patch_description": "A high best fitness can hide a stalled population mean, yet the objective evaluates the centroid. Make stagnation-driven exploration depend on mean fitness so one successful elite cannot suppress it. Dampen this exploration when population dispersion is already high, and slightly reduce the background width to support refinement. This feedback rule uses no switch schedule; its performance remains to be evaluated.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T02:29:24.068356",
+  "llm_cost": 0.0251228,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SOURCE_ARCHIVE/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

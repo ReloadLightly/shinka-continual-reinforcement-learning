@@ -1,0 +1,27 @@
+<NAME>
+difficulty_anchored_probing
+</NAME>
+<DESCRIPTION>
+Anchor the mutation width to task difficulty and stalled progress, while retaining the existing probe feedback as a smaller correction. Best fitness reduces exploration when promising individuals already exist; low diversity and stalled progress increase exploration when performance remains poor. A quality decline temporarily raises the target. Smaller probes should reduce disruptive width oscillations and noisy gradient attribution. This is a proposed improvement, not a verified score gain.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    adaptation = 0.16 * gradient + 0.025 * competitiveness * (1.0 - quality)
+    contraction = 0.06 * quality * quality
+    recovery = 0.75 * decline
+    next_center = clip(center + adaptation - contraction + recovery, -4.83, -1.20)
+=======
+    difficulty = clip(1.0 - 0.70 * clip(stats[2], 0.0, 1.0) - 0.30 * mean, 0.0, 1.0)
+    stalled = exp(-40.0 * abs(quality - previous_quality))
+    advantage = clip(archive - mean - 0.05, 0.0, 1.0)
+    exploration = 0.10 * difficulty * difficulty + 0.14 * stalled * difficulty * exp(-6.0 * spread)
+    target = clip(0.008 + exploration * exp(-3.0 * advantage) + 0.20 * decline, 0.008, 0.30)
+    adaptation = 0.04 * gradient + 0.025 * competitiveness * difficulty
+    next_center = clip(0.75 * center + 0.25 * log(target) + adaptation, -4.83, -1.20)
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    probe = 0.18 + 0.18 * (1.0 - quality)
+=======
+    probe = 0.08 + 0.12 * difficulty
+>>>>>>> REPLACE
+</DIFF>

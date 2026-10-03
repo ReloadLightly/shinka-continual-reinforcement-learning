@@ -1,0 +1,15 @@
+{
+  "generation": 14,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "archive_anchored_width",
+  "patch_description": "Replace cumulative width drift with a smoothed exploration target based on archive and population fitness. A single strong individual no longer prematurely limits exploration. Low diversity and stalled progress raise the target, archive superiority reduces disruptive mutations, and observed archive losses temporarily increase exploration. Faster upward adjustment supports recovery while slower contraction preserves search capacity. This is an untested proposal.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T03:41:18.666530",
+  "llm_cost": 0.0311648,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SOURCE_ARCHIVE/shinka/gen_14/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

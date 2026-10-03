@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "failed",
+  "start": 16,
+  "target": 25,
+  "missing": [
+    15
+  ],
+  "attempted_generations": [
+    16,
+    17
+  ],
+  "persisted_generations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17
+  ],
+  "consumed_generations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "completed_generations": 18,
+  "next_generation_to_submit": 18,
+  "verified_generations": [
+    16
+  ],
+  "terminal_reason": "Generation 17 completion barrier: ValueError: Generation 17 has no single correct persisted result",
+  "graceful_return": true,
+  "rng_saved": true,
+  "initial_rng_sha256": "eac320783b44307157cee89b99f529c4817995a6c1beaf766713600fede29d83",
+  "final_rng_sha256": "8d8fa2a390807c55874f9d17177971731f07b8ecf29329c20d722e8e0e02c20a"
+}

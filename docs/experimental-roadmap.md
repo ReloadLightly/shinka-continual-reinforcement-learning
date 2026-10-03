@@ -38,9 +38,12 @@ Shinka checkpoint completed; its continuation toward 25 stopped after a grammar
 failure, with 16 consumed slots and 14 valid programs. The
 [failure review and recovery work](adaptive-search.md#stopped-target-25-continuation)
 preserve the frozen evaluator and unsuccessful slots. A separate
-[recovery controller](adaptive-recovery.md) is implemented, tested, and prepared
-with a [published freeze](../reports/adaptive-recovery-preflight-20261003/recovery-plan.json); no recovery
-proposals or training have run. The
+[recovery controller](adaptive-recovery.md) ran after its
+[published freeze](../reports/adaptive-recovery-preflight-20261003/recovery-plan.json).
+Its [stopped checkpoint](../reports/adaptive-recovery-stopped-20261003/summary.json)
+adds valid generation 16 and grammar-rejected generation 17: 18 consumed slots,
+15 valid programs, and seven unused slots remain. The barrier prevented another
+proposal and native saved fresh RNG before its graceful failure return. The
 [reserved validation proposal](adaptive-validation.md) remains unexecuted pending
 an explicitly resolved search endpoint. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
@@ -634,7 +637,7 @@ training and checkpoint evidence before reuse.
 | 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Complete: 25 trials, 26.59 min; Shinka 11 and random 24 selected |
 | 8 | Adaptive-program adapter and native control support | Short identity traces, varying-sigma check, persistent memory, explicit upstream adaptive control | Complete: seven real trials, 19 numerical checks, 3.98 min |
 | 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Complete: 15 trials, two cache checks, 15.21 min; 504 harness tests pass |
-| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Target-25 session stopped: 16 consumed slots, 14 valid programs, 39 new trials; recovery controller prepared and frozen, execution pending |
+| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Reviewed recovery stopped: 18 consumed slots, 15 valid programs, 42 new trials; seven unused slots require a new checkpoint-bound continuation |
 | 11 | Reserved adaptive finalist handoff and comparison | Exact recipe freeze, separate runner, untouched five-seed comparison and all fixed controls | Proposed; unresolved search endpoint blocks execution |
 
 <sub>Table 8. Deliverables and observed status. The successful baseline-trial
@@ -676,14 +679,19 @@ the adaptive study.
 
 The subsequent [target-25 session](../reports/adaptive-shinka-stage25-stopped-20261003/summary.json)
 added valid generation 13, rejected generation 14 at the frozen AST limit, and
-interrupted generation 15 before CLI launch. Sixteen slots remain consumed,
+interrupted generation 15 before CLI launch. That checkpoint consumed sixteen slots,
 including both unsuccessful attempts. The best valid score is unchanged. Only
-nine unused slots, generations 16–24, remain within the declared budget.
+nine unused slots, generations 16–24, remained within the declared budget.
 The [recovery controller](adaptive-recovery.md) supplies separate orchestration
 and declares restoration of the saved stage-13 RNG before native initialization.
 Its native integration tests retain both consumed failures and exercise all nine
-remaining fixture slots. Execution requires the published pre-execution freeze;
-the original failed archive cannot use ordinary resume. Keep the
+remaining fixture slots. After the published pre-execution freeze, real recovery
+completed generation 16 but stopped on generation 17's grammar rejection before
+slot 18 started. The [review](../reports/adaptive-recovery-stopped-review-20261003.json)
+verifies the refreshed RNG receipt and complete process cleanup. Seven unused
+slots, generations 18–24, remain; a new controller revision must bind this
+checkpoint, preserve consumed failures, and test continuation before its own
+freeze and execution. Neither failed archive can use ordinary resume. Keep the
 objective, grammar, controls, and development partition fixed. The
 [reserved validation proposal](adaptive-validation.md) remains unexecuted until
 the endpoint is explicitly resolved and a finalist handoff is frozen.

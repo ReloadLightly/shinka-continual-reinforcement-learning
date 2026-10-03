@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "status": "stopped_recovery_reviewed_endpoint_not_reached",
+  "created_at": "2026-10-03T06:12:06.989727+00:00",
+  "implementation_repository_revision": "dbdf37eaf98c51e7e617d0cdc064312f272041a9",
+  "execution_repository_revision": "62407bce90d44ade2fe39299b57d89248597af03",
+  "preflight_publication_revision": "62407bce90d44ade2fe39299b57d89248597af03",
+  "execution_metadata_provenance": {
+    "path": "results/adaptive-recovery-execution-20261003/launcher.json",
+    "sha256": "634da979544028e045aa3576ad008d4e87df9a75513ac2d947364f911e76b17f",
+    "controller_pid": 2165911,
+    "started_at": "2026-10-03T05:55:07.427644+00:00",
+    "codex_version": "0.159.3",
+    "source_hashes_match_implementation_and_execution_revisions": true,
+    "note": "The recovery plan binds the implementation commit; launcher metadata records the later checkout containing the public pre-execution freeze. All six recovery source files are byte-identical in both commits and the audited workspace."
+  },
+  "protocol": "adaptive-shinka-reviewed-recovery-v1",
+  "original_protocol": "adaptive-shinka-v1",
+  "target_slots": 25,
+  "evidence_sha256": {
+    "reports/adaptive-recovery-preflight-20261003/checksums.json": "8f4df6f797bd0fbf25d450967f6c2259aeffce967e8d0cb36f8b7e97fb06a9a3",
+    "reports/adaptive-recovery-preflight-20261003/summary.json": "8ddeb513175be2a5a593308e8de737f25877c1d3ca6cfa68dc685efbe48d74dc",
+    "reports/adaptive-recovery-stopped-20261003/checksums.json": "cfbbdf6da4487eb10f04fcc0540d0d52daf1ede46e3740b8c3ce5f9ed4add6db",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/analysis/evaluation.json": "07ab3fbab46998f361585c97482816b5c2db63dd4900a3515aa4545cfcd082a9",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/analysis/summary.json": "abb902ba2f0db0eec336d4874f66e597f7ed998a6569630710f6def3c9746eb0",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/training/adaptive-manifest.json": "4d2a6c8cb150b7323b40d82d19dee023a6409e5ad01271b388633cfa72a0fc31",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/training/manifest.json": "8267f9766292a83133aa5de5ababc3b553b327c6d83a83299288e33c11d68c08",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/training/training_metrics.json": "94a80a9b38476a265301928339e0c89da0c1031512bfd37fd3c2f7a5f36dcfa5",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/analysis/evaluation.json": "aa9bc16cd689f641ae70ca54ee0482f4948fa5194b4d9c378c3013cdc905b860",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/analysis/summary.json": "235581ce0bca6d19c68370845f6e136fabb42e2dcb81f8ea6ed3c2c65dd9ca3d",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/training/adaptive-manifest.json": "4735fb061cebb2e6c8d19eb5114ff48a51c741f9b855245b12c089ec51a543d1",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/training/manifest.json": "f86fece521e0cccd0476736f91afb463d108eb6bdb6f34cba51909ee3b0a6b46",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/training/training_metrics.json": "b674deddc65d6c4c4cf7085c901b4babbeb39aeed0c9395a461f8c5fd4b3c52b",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/analysis/evaluation.json": "93ddcbfc309c7a2e3777936909ab14e1be902e40fba423a0c4c2ef43ab1c0858",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/analysis/summary.json": "c9a4c4a7c12389686937dbfa13e70a4c161af3ef069f8a8ff52d7653dbbcfdd0",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/training/adaptive-manifest.json": "dee9de81ff57735ece2d81ed8a71c3e806da90b220356ffe0a328b492339e367",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/training/manifest.json": "553ca808183222f74ef925e608f880fee4bd8b62609c817438ab519bdc154676",
+    "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/training/training_metrics.json": "ac4a003a93c2b568cee9f4bd4b63f9e678051dba03515e5a2cdd0d11cd8c0ee5",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/model_requests.jsonl": "51c9d0f507788acac06874923a8f33113d1bc4c8722380afee9e3fbdcea9a65a",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/native-recovery.json": "8aa1ebb00b9a4e48245eb62992dace2a23c06fb2da19e78fec72aee75c060338",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/recovery_requests/gen_16.json": "f96087cd1bb2527b793e279e86db777a33fbd0b40310c6d2d5352b2388393ae6",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/recovery_requests/gen_17.json": "876942f4ce4a89dc44540e395e2f5df4362ba5ae7294a2aea61d5cb6b232955f",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/recovery_slots/gen_16.json": "ef08dc18dc3a0f169eb04f30cf0c0e2cf40027f6720a11f1eb99209b9c7af142",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/recovery_slots/gen_17.json": "2649e4231b0bf88b6a0eb764cb8398e5e2c0d920308806b2a1e22693752f96fa",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/shinka/gen_16/main.py": "084fb149cead4f66e2d6b2e23459d13363fc071be224d5815444f28f7f255723",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/shinka/gen_16/results/evaluation/receipt.json": "c650066487326c5835e282ffaf20e94a5665a181ff93173e83428d426c77e768",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/shinka/gen_16/results/evaluation/request.json": "3f50148db1d528d027400eb5ff5b263f24150e96e371aa42cf856869b9139f89",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/shinka/gen_17/main.py": "53e32f9f63bbf01a9f7a0b0414561366b75a3571bdf9ff8ae654a6b1c86b9960",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/shinka/gen_17/results/evaluation/receipt.json": "b38a05339ce91b7e0c7a6e92d93bb7f204a1cd847b80742fabf8ae8b01ecb43c",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/shinka/gen_17/results/evaluation/request.json": "fc68d6109dfeeed88443d6f0dab9d536dd2ba4df82bc82a3ff8c2681a1daf979",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/archive/shinka/rng_state.json": "8d8fa2a390807c55874f9d17177971731f07b8ecf29329c20d722e8e0e02c20a",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/plan-receipt.json": "2ce9be5f0802da600f9462ff01415aaa82f4ff2416a7940e1d112478e3debcd5",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/plan.json": "387fd3fe567818bd7adc3683cc4a45788d15424bf1c3be1b52ab4b3017f3c651",
+    "reports/adaptive-recovery-stopped-20261003/raw/recovery/state.json": "241a0da5088d0d588967243acb23b0c9b03d788a13c425eec2de7d20ccd2d1c1",
+    "reports/adaptive-recovery-stopped-20261003/recovery-plan.json": "387fd3fe567818bd7adc3683cc4a45788d15424bf1c3be1b52ab4b3017f3c651",
+    "reports/adaptive-recovery-stopped-20261003/summary.json": "be84981116469ccbab3d8bba643a89a562ce421a5e343cf55187415d7dabd2e3",
+    "reports/adaptive-shinka-stage13-20261003/checksums.json": "f227a1bf429e5d92783e87937a4997ab2ddf13fbbdadd7bce325302c52f68a1f",
+    "reports/adaptive-shinka-stage13-20261003/summary.json": "96f95e4691c54b411c151d0bc6048eb645263e4644bf754ea390cbfadd1cab1e",
+    "reports/adaptive-shinka-stage25-stopped-20261003/checksums.json": "0bbe509485449922e62d40c5c8ce9b1245223ff75b992b3c23a341ea5e97dbb8",
+    "reports/adaptive-shinka-stage25-stopped-20261003/summary.json": "dffde97ae152167a037e1b24ca4f257ab00a387fa390f3f42d81db6692a05aea",
+    "reports/adaptive-shinka-stage5-20261003/checksums.json": "9fd20af8f5e378c986f80ce7b63c5ec894742da665d4ca24de9d91c700f176a0",
+    "reports/adaptive-shinka-stage5-20261003/summary.json": "c0b1c71d770e06fae7ef5f4594fa9ab2716972861a0e1d4a8afec5ae3cfbe8bb"
+  },
+  "accounting": {
+    "slots_consumed": 18,
+    "proposal_slots_consumed": 17,
+    "programs_evaluated": 15,
+    "distinct_canonical_programs": 15,
+    "cache_hits": 1,
+    "new_training_trials": 42,
+    "new_training_trials_allocated": 42,
+    "new_nominal_training_steps": 322560000,
+    "new_nominal_training_steps_allocated": 322560000,
+    "new_scored_training_trials": 42,
+    "incomplete_training_attempts": 0,
+    "training_wall_seconds": 2661.951224485296,
+    "evaluation_wall_seconds": 3208.8649271446047,
+    "session_wall_seconds": 3904.811606045929,
+    "proposal_usage": {
+      "guarded_requests": 17,
+      "codex_cli_launches": 16,
+      "successful_requests": 16,
+      "failed_or_incomplete_requests": 1,
+      "backend_model_requests": null,
+      "paid_api_calls": 0,
+      "note": "Guard enforces ChatGPT authentication; launches are not backend request counts or a remaining-subscription-allowance meter"
+    }
+  },
+  "added_since_stopped_source": {
+    "new_training_trials": 3,
+    "new_training_trials_allocated": 3,
+    "new_nominal_training_steps": 23040000,
+    "new_nominal_training_steps_allocated": 23040000,
+    "new_scored_training_trials": 3,
+    "training_wall_seconds": 166.34169557015412,
+    "evaluation_wall_seconds": 199.04788568394724,
+    "slots_consumed": 2,
+    "proposal_slots_consumed": 2,
+    "programs_evaluated": 1,
+    "guarded_requests": 2,
+    "codex_cli_launches": 2,
+    "successful_proposal_responses": 2,
+    "fresh_checkpoint_evaluation_episodes": 900,
+    "session_wall_seconds": 297.46729162696283,
+    "session_timestamp_span_seconds": 315.921565
+  },
+  "total_fresh_checkpoint_evaluation_episodes": 12600,
+  "episode_accounting_scope": "Fresh post-hoc episodes for unique non-cache-hit adaptive search training trials; excludes previously evaluated control trials and in-loop evaluation.",
+  "valid_generations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    16
+  ],
+  "persisted_generations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17
+  ],
+  "new_valid_program": {
+    "generation": 16,
+    "id": "27f5510c-a6df-48aa-97fe-85a3f8e470e9",
+    "parent_id": "f8d952b0-3694-4e6c-aa39-30c2f43fe34e",
+    "program_sha256": "084fb149cead4f66e2d6b2e23459d13363fc071be224d5815444f28f7f255723",
+    "canonical_ast_sha256": "9ca31b4c2672d2a66f137a6e6d4078d535c1d8b99d17213e21b534139e3fdcbc",
+    "request": {
+      "status": "complete",
+      "request_id": "evaluation",
+      "context_sha256": "58b409f6946d9c9a3fcd77b1f66dbfc37feb35c772e25d41e217236abf63f0a7",
+      "cache_hit": false,
+      "slot_consumed": true,
+      "started_at": "2026-10-03T05:56:06.228845+00:00",
+      "evaluator_model_calls": 0,
+      "candidate": {
+        "id": "proposal",
+        "variant": "ga_adaptive",
+        "source": null,
+        "source_sha256": "084fb149cead4f66e2d6b2e23459d13363fc071be224d5815444f28f7f255723",
+        "settings": null,
+        "program": {
+          "source_sha256": "084fb149cead4f66e2d6b2e23459d13363fc071be224d5815444f28f7f255723",
+          "canonical_ast_sha256": "9ca31b4c2672d2a66f137a6e6d4078d535c1d8b99d17213e21b534139e3fdcbc",
+          "ast_nodes": 484,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "cache_key": "9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2",
+      "cache_origin": "cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001",
+      "cache_receipt_sha256": "ff228e40356bd79d9200ecb0c2824e22b11c2fe14207f3f34363a973f1cfbe89",
+      "aggregate": {
+        "scores": {
+          "combined_score": {
+            "mean": 0.44738472377061844,
+            "sample_sd": 0.4318327844040961,
+            "n": 3
+          },
+          "active_score": {
+            "mean": 0.5445027808745702,
+            "sample_sd": 0.3073214745604379,
+            "n": 3
+          },
+          "previous_score": {
+            "mean": 0.35026666666666667,
+            "sample_sd": 0.5626928745871154,
+            "n": 3
+          }
+        },
+        "reference_metrics": {
+          "learning_accuracy": {
+            "mean": 405.28333333333336,
+            "sample_sd": 85.31317429525953,
+            "n": 3
+          },
+          "forgetting": {
+            "mean": 198.57777777777778,
+            "sample_sd": 174.54190943194172,
+            "n": 3
+          },
+          "learning_minus_forgetting": {
+            "mean": 206.70555555555555,
+            "sample_sd": 254.08063739869263,
+            "n": 3
+          },
+          "zero_shot_transfer": {
+            "mean": 174.93333333333334,
+            "sample_sd": 281.5162300432744,
+            "n": 3
+          },
+          "normalized_curve_average": {
+            "mean": 0.5383680586536725,
+            "sample_sd": 0.3073180852643992,
+            "n": 3
+          }
+        }
+      },
+      "evaluated_source_sha256": "084fb149cead4f66e2d6b2e23459d13363fc071be224d5815444f28f7f255723",
+      "new_training_trials": 3,
+      "new_training_steps_nominal": 23040000,
+      "avoided_training_steps_nominal": 0,
+      "wall_seconds": 199.04604571696837,
+      "finished_at": "2026-10-03T05:59:39.696190+00:00"
+    },
+    "ast_nodes": 484,
+    "independently_recomputed_trials": [
+      {
+        "seed": 4001,
+        "trial": 4002,
+        "eval_seed": 904001,
+        "scores": {
+          "combined_score": 0.9438083339810371,
+          "active_score": 0.8876166679620743,
+          "previous_score": 1.0
+        },
+        "phase_own_returns": [
+          500.0,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "phase_previous_returns": [
+          500.0,
+          500.0,
+          500.0
+        ],
+        "phase_next_returns": [
+          500.0,
+          500.0,
+          500.0
+        ],
+        "switch_forgetting": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_metrics": {
+          "learning_accuracy": 500.0,
+          "forgetting": 0.0,
+          "learning_minus_forgetting": 500.0,
+          "zero_shot_transfer": 500.0,
+          "cumulative_reward_generation_equivalents": 35259.16671848297,
+          "cumulative_reward_steps": 3384880004.974365,
+          "cumulative_reward_steps_exact": 3384880004.974365,
+          "normalized_curve_average": 0.8814791679620743
+        },
+        "fresh_evaluation_episodes": 300,
+        "raw_evidence": {
+          "training_curve": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/training/training_metrics.json",
+          "evaluation": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/analysis/evaluation.json",
+          "analysis_summary": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/analysis/summary.json",
+          "training_manifest": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/training/manifest.json",
+          "adaptive_manifest": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4001/training/adaptive-manifest.json"
+        }
+      },
+      {
+        "seed": 4002,
+        "trial": 4003,
+        "eval_seed": 904002,
+        "scores": {
+          "combined_score": 0.158525002292792,
+          "active_score": 0.2945166712522507,
+          "previous_score": 0.022533333333333332
+        },
+        "phase_own_returns": [
+          500.0,
+          299.8,
+          38.1,
+          500.0
+        ],
+        "phase_previous_returns": [
+          9.2,
+          15.4,
+          9.2
+        ],
+        "phase_next_returns": [
+          11.5,
+          9.6,
+          15.0
+        ],
+        "switch_forgetting": [
+          490.8,
+          284.40000000000003,
+          28.900000000000002
+        ],
+        "reference_metrics": {
+          "learning_accuracy": 334.475,
+          "forgetting": 268.03333333333336,
+          "learning_minus_forgetting": 66.44166666666666,
+          "zero_shot_transfer": 12.033333333333333,
+          "cumulative_reward_generation_equivalents": 11535.500183582306,
+          "cumulative_reward_steps": 1107408017.6239014,
+          "cumulative_reward_steps_exact": 1107408017.6239014,
+          "normalized_curve_average": 0.28838750458955764
+        },
+        "fresh_evaluation_episodes": 300,
+        "raw_evidence": {
+          "training_curve": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/training/training_metrics.json",
+          "evaluation": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/analysis/evaluation.json",
+          "analysis_summary": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/analysis/summary.json",
+          "training_manifest": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/training/manifest.json",
+          "adaptive_manifest": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4002/training/adaptive-manifest.json"
+        }
+      },
+      {
+        "seed": 4003,
+        "trial": 4004,
+        "eval_seed": 904003,
+        "scores": {
+          "combined_score": 0.23982083503802618,
+          "active_score": 0.4513750034093857,
+          "previous_score": 0.02826666666666667
+        },
+        "phase_own_returns": [
+          500.0,
+          38.9,
+          486.6,
+          500.0
+        ],
+        "phase_previous_returns": [
+          16.6,
+          11.3,
+          14.5
+        ],
+        "phase_next_returns": [
+          11.3,
+          15.7,
+          11.3
+        ],
+        "switch_forgetting": [
+          483.4,
+          27.599999999999998,
+          472.1
+        ],
+        "reference_metrics": {
+          "learning_accuracy": 381.375,
+          "forgetting": 327.7,
+          "learning_minus_forgetting": 53.67500000000001,
+          "zero_shot_transfer": 12.766666666666667,
+          "cumulative_reward_generation_equivalents": 17809.500136375427,
+          "cumulative_reward_steps": 1709712013.092041,
+          "cumulative_reward_steps_exact": 1709712013.092041,
+          "normalized_curve_average": 0.44523750340938567
+        },
+        "fresh_evaluation_episodes": 300,
+        "raw_evidence": {
+          "training_curve": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/training/training_metrics.json",
+          "evaluation": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/analysis/evaluation.json",
+          "analysis_summary": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/analysis/summary.json",
+          "training_manifest": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/training/manifest.json",
+          "adaptive_manifest": "reports/adaptive-recovery-stopped-20261003/raw/evaluation/cache/9ff67dda531b6e492848fd05ef93ed99fcf8543771208dd0cc47beb0a1c9e7b2/attempt_0001/seed_4003/training/adaptive-manifest.json"
+        }
+      }
+    ]
+  },
+  "invalid_slot": {
+    "generation": 17,
+    "ast_nodes": 515,
+    "frozen_max_ast_nodes": 512,
+    "error": "ProgramValidationError: AST exceeds 512 nodes",
+    "training_trials": 0,
+    "scientific_score": null,
+    "native_zero_is_placeholder": true
+  },
+  "best_valid_program": {
+    "generation": 5,
+    "id": "a91bcbdb-5453-4cd8-b20c-ab502f5243c3",
+    "combined_development_mean": 0.48714444582727223,
+    "unchanged_from_prior_archive": true
+  },
+  "barrier": {
+    "reserved_generations": [
+      16,
+      17
+    ],
+    "requested_generations": [
+      16,
+      17
+    ],
+    "verified_generations": [
+      16
+    ],
+    "completed_generations_including_failed_and_consumed_no_row_slots": 18,
+    "next_generation_cursor": 18,
+    "generation18_directory_present": false,
+    "generation18_slot_reservation_present": false,
+    "generation18_request_reservation_present": false,
+    "next_generation_was_not_launched": true,
+    "historical_no_row_generation15_retained": true,
+    "historical_failed_generation14_retained": true
+  },
+  "native_completion": {
+    "status": "failed",
+    "terminal_reason": "Generation 17 completion barrier: ValueError: Generation 17 has no single correct persisted result",
+    "returncode": 1,
+    "graceful_return": true,
+    "rng_saved": true,
+    "external_stop_reason": null,
+    "started_at": "2026-10-03T05:55:14.780203+00:00",
+    "finished_at": "2026-10-03T06:00:30.701768+00:00",
+    "cleanup": {
+      "complete": true,
+      "tracked_processes": 53,
+      "process_groups": [
+        2166085,
+        2166258,
+        2166271,
+        2166348,
+        2168452,
+        2168459,
+        2168537
+      ],
+      "term_sent": [],
+      "kill_sent": [],
+      "reaped_pids": [],
+      "survivors": [],
+      "errors": [],
+      "wall_seconds": 0.14748776494525373,
+      "subreaper_enabled": true,
+      "subreaper_restored": true
+    },
+    "recorded_process_groups_remaining_at_audit": []
+  },
+  "rng": {
+    "initial_sha256": "eac320783b44307157cee89b99f529c4817995a6c1beaf766713600fede29d83",
+    "final_sha256": "8d8fa2a390807c55874f9d17177971731f07b8ecf29329c20d722e8e0e02c20a",
+    "source_archive_rng_unchanged": true,
+    "new_state_saved_after_consumed_sampling": true,
+    "forced_termination": false,
+    "initial_policy": "restore-sealed-stale-stage13-RNG-once-before-native-initialization",
+    "initial_deviation": "Saved RNG predates generations 13\u201315. Restoring it is a declared recovery deviation, not reconstruction of uninterrupted sampling.",
+    "note": "The refreshed RNG belongs to the stopped recovery; it does not remove the declared stale stage13 RNG deviation at recovery initialization."
+  },
+  "source_invariance": {
+    "source_archive_files_checked": 308,
+    "original_archive_inventory_unchanged": true,
+    "inherited_program_rows_unchanged": true,
+    "inherited_generation_artifacts_unchanged": true,
+    "original_frozen_search_sources_checked": 7,
+    "original_frozen_evaluation_sources_checked": 21,
+    "recovery_sources_checked": 6,
+    "recovery_source_sha256": {
+      "src/shinka_crl/adaptive_recovery.py": "4714cdef7a7e2582323fb67909615dfaaf3abc07e72191986e2a0f794963adf3",
+      "src/shinka_crl/adaptive_recovery_native.py": "64b62b7c9b40996518168e5e31e86a880b8c302141e3619562553c1a13051dc2",
+      "src/shinka_crl/recovery_process.py": "877d8146e2b891fc1349b83cc79e8086dc7e9e2140107fb3caa56e39ed0d8b52",
+      "scripts/run_adaptive_recovery.py": "010b534f789e25644f7c8cc0a16f792ccb1050c7b4adf48119057e745b561726",
+      "scripts/report_adaptive_recovery.py": "a30d7ae5316339335f66a04bdda7dbaf055f7fc75a7281921feee68a2198b3ad",
+      "scripts/recovery_headless.py": "febb3b224a3bae5715d09571816e30a1a7d9d1d5b1806e59c6c7a72449aba375"
+    },
+    "prior_reports": {
+      "adaptive-shinka-stage5-20261003": {
+        "summary_sha256": "c0b1c71d770e06fae7ef5f4594fa9ab2716972861a0e1d4a8afec5ae3cfbe8bb",
+        "checksums_sha256": "9fd20af8f5e378c986f80ce7b63c5ec894742da665d4ca24de9d91c700f176a0",
+        "published_hashes_checked": 381
+      },
+      "adaptive-shinka-stage13-20261003": {
+        "summary_sha256": "96f95e4691c54b411c151d0bc6048eb645263e4644bf754ea390cbfadd1cab1e",
+        "checksums_sha256": "f227a1bf429e5d92783e87937a4997ab2ddf13fbbdadd7bce325302c52f68a1f",
+        "published_hashes_checked": 934
+      },
+      "adaptive-shinka-stage25-stopped-20261003": {
+        "summary_sha256": "dffde97ae152167a037e1b24ca4f257ab00a387fa390f3f42d81db6692a05aea",
+        "checksums_sha256": "0bbe509485449922e62d40c5c8ce9b1245223ff75b992b3c23a341ea5e97dbb8",
+        "published_hashes_checked": 1023
+      },
+      "adaptive-recovery-preflight-20261003": {
+        "summary_sha256": "8ddeb513175be2a5a593308e8de737f25877c1d3ca6cfa68dc685efbe48d74dc",
+        "checksums_sha256": "8f4df6f797bd0fbf25d450967f6c2259aeffce967e8d0cb36f8b7e97fb06a9a3",
+        "published_hashes_checked": 5
+      }
+    }
+  },
+  "observed_training_seeds": [
+    4001,
+    4002,
+    4003
+  ],
+  "partition_status": {
+    "reserved_adaptive_validation_seeds": [
+      5001,
+      5002,
+      5003,
+      5004,
+      5005
+    ],
+    "reserved_adaptive_validation_unused": true,
+    "paper_reporting_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "paper_reporting_trials": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "paper_reporting_remains_unused": true,
+    "verification_scope": "All shared adaptive-cache seed directories remain seed_4001, seed_4002 and seed_4003; both new generation request and training records use the unchanged development context. Prior archives and publications remain hash-identical."
+  },
+  "remaining_unused_generations": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "recovery_status": "The once-only recovery controller remains failed. Slots 16 and 17 are permanently consumed. Slots 18\u201324 are unused but require a new explicit protocol review and separately frozen continuation; this audit authorizes no retry or launch.",
+  "validation_status": "The declared 25-slot endpoint remains incomplete. Reserved adaptive validation remains proposed and unexecuted; no finalist is selected from this partial endpoint.",
+  "verification": {
+    "published_hashes_checked": 1121,
+    "original_hashes_checked": 1257,
+    "original_recovery_hashes_checked": 355,
+    "original_evaluation_hashes_checked": 902,
+    "prior_report_published_hashes_checked": 2343,
+    "independently_recomputed_trials": 3,
+    "trial_scope": "Generation 16 on development seeds 4001\u20134003; inherited outcomes remain sealed by the prior reviewed evidence.",
+    "raw_checks": [
+      "Unrounded active return mean over 80 training generations and normalization by 500",
+      "Previous-task return means rederived from three consecutive-switch centroid episode vectors",
+      "Equal-weight combined score and across-seed sample standard deviations",
+      "Four phase-end own-task returns, LA, three signed forgetting differences, mean F, LA\u2212F and ZT",
+      "Reference cumulative integral with constant first-value extension to update zero",
+      "484/515 AST counts from the exact generated source",
+      "Three new complete training manifests, 23.04M nominal steps and 900 fresh episodes",
+      "42 cumulative complete search training manifests and 12600 fresh episode values",
+      "Historical rows, source files, RNG, ledger prefix and generation artifacts unchanged",
+      "Two new once-only reservations and successful provider ledgers; no generation 18 artifacts",
+      "Graceful native nonzero exit, refreshed RNG seal and no forced process signals"
+    ],
+    "regression_checks": {
+      "pytest_command": ".venv/bin/python -m pytest -q tests/test_adaptive_recovery.py tests/test_adaptive_recovery_native.py tests/test_recovery_process.py",
+      "tests_passed": 49,
+      "pytest_reported_seconds": 36.49,
+      "lint_command": ".venv/bin/python -m ruff check .",
+      "lint_status": "passed",
+      "documentation_local_links": "all resolve in README and four updated protocol documents",
+      "local_archive_viewer": {
+        "http_status": 200,
+        "persisted_program_count": 17
+      },
+      "scope": "Verification after execution and documentation updates; frozen trainer, evaluator, recovery controller and native adapter unchanged."
+    }
+  }
+}

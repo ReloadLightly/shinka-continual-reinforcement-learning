@@ -1,0 +1,15 @@
+{
+  "generation": 8,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "asymmetric_target_search",
+  "patch_description": "The current controller uses a 0.22 pressure learning rate, a 0.40 archive-relative success threshold, and mutation bounds driven by best fitness. Its 0.42 combined score trails the earlier target-width controller\u2019s 0.49. This proposal restores target-width adaptation, blends best and archive fitness to estimate difficulty, and adds exploration when progress and population spread are small. Width moves toward larger targets at rate 0.45 and smaller targets at 0.20. Persistent memory tracks mean fitness, archive fitness, and stagnation; archive deterioration increases exploration without requiring switch information. Performance remains to be evaluated.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T02:59:58.228294",
+  "llm_cost": 0.0295428,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SOURCE_ARCHIVE/shinka/gen_8/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,15 @@
+{
+  "generation": 10,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "quality_anchored_recovery",
+  "patch_description": "A single strong individual can currently force mutation width down while the archive and population remain weak. Base difficulty on their average quality instead, and anchor width to a positive exploration target. Geometric interpolation should prevent persistent contraction from trapping search at the lower bound, while archive-loss feedback increases exploration after observed deterioration. These are feedback-driven changes; their effect on combined_score requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T03:06:13.379175",
+  "llm_cost": 0.0264888,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SOURCE_ARCHIVE/shinka/gen_10/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

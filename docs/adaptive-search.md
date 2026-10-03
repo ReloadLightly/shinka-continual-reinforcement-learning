@@ -174,9 +174,15 @@ Reserved adaptive validation and final reporting seeds remain unused.
 
 ## Reviewed recovery work
 
-**Implemented separately; recovery execution has not started.** The
+**Implemented separately; recovery executed and stopped at generation 17.** The
 [recovery controller and runbook](adaptive-recovery.md) implement the reviewed
-path without modifying the frozen search or evaluator. The ordinary launcher rejects
+path without modifying the frozen search or evaluator. Its
+[stopped report](../reports/adaptive-recovery-stopped-20261003/summary.json)
+records 18 consumed slots and 15 valid programs: generation 16 completed,
+generation 17 failed at 515 AST nodes, and the barrier prevented generation 18.
+Native returned gracefully and saved fresh RNG. The
+[next checkpoint requirements](adaptive-recovery.md#observed-execution-and-next-checkpoint)
+preserve the seven unused slots 18–24 and all inherited failures. The ordinary launcher rejects
 failed sessions, its monitor stops on any incorrect database row, and its
 completion verifier requires every row to be valid. Native resume also derives
 its next generation from persisted rows, so it could reuse interrupted slot 15.

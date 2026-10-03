@@ -10,7 +10,11 @@ The declared endpoint has **not been reached**. The
 stopped after generation 13 completed and generation 14 exceeded the frozen
 512-node AST limit. Generation 15 began during shutdown; its guarded request
 was cancelled before a Codex proposal launch. Both consumed slots and all
-failure evidence remain part of the archive. This proposed validation handoff
+failure evidence remain part of the archive. A separately frozen
+[recovery attempt](../reports/adaptive-recovery-stopped-20261003/summary.json)
+then completed generation 16 and rejected generation 17 at 515 AST nodes,
+stopping cleanly before generation 18. The current checkpoint has 18 consumed
+slots and 15 valid programs; seven slots remain unused. This proposed validation handoff
 is not eligible for execution until the incomplete endpoint has an explicit
 documented resolution; it does not authorize using the partial archive as a
 substitute endpoint.
