@@ -1,6 +1,6 @@
 # Reviewed adaptive-search recovery
 
-**Status: executed and stopped at generation 17; 18 of 25 slots consumed.**
+**Historical attempt: executed and stopped at generation 17; 18 of 25 slots consumed.**
 The [stopped export](../reports/adaptive-recovery-stopped-20261003/summary.json)
 and [independent review](../reports/adaptive-recovery-stopped-review-20261003.json)
 retain the valid generation 16 and grammar-rejected generation 17. No slot 18
@@ -11,7 +11,10 @@ at preparation.
 The controller implements the
 [reviewed recovery requirements](adaptive-search.md#reviewed-recovery-work)
 for the [stopped target-25 archive](../reports/adaptive-shinka-stage25-stopped-20261003/summary.json).
-It does not establish a completed endpoint or authorize reserved validation.
+This recovery alone did not establish a completed endpoint or authorize reserved
+validation. Subsequent controllers completed the
+[25-slot endpoint](adaptive-endpoint.md), which was explicitly closed before the
+[reserved handoff](../reports/adaptive-validation-freeze-20261003/plan.json).
 The original [search protocol](adaptive-search.md) and
 [evaluator contract](adaptive-evaluation.md) remain frozen.
 
@@ -169,7 +172,7 @@ Generation 16 was valid with 484 AST nodes and completed all three development
 trials, scoring **0.44738472377061844**. Generation 17 had **515 nodes** and
 failed the unchanged 512-node grammar limit before training. Its completion
 barrier stopped native execution before generation 18 had a slot reservation,
-provider request, or directory. The 25-slot endpoint remains incomplete.
+provider request, or directory. The 25-slot endpoint was incomplete at this stop.
 
 The [review](../reports/adaptive-recovery-stopped-review-20261003.json) independently
 rederives generation 16's scores and reference metrics from raw evidence and
@@ -198,24 +201,27 @@ directory for a replay; both the preflight and stopped publications are immutabl
   --report-dir reports/adaptive-recovery-stopped-20261003
 ```
 
-The current controller accepts only its original reviewed source shape and
-starts at generation 16. It cannot resume this failed recovery. The next
-implementation must therefore use a separate controller revision, working copy,
-and published plan binding this stopped checkpoint and its fresh RNG receipt.
-Only **generations 18–24** may receive new requests. Retain invalid rows 14 and
-17 and the no-row consumed slot 15, preserve both historical plans and all
-scores, and retain the serial completion barrier and one-request reservations.
+This controller accepts only its original reviewed source shape and starts at
+generation 16. It cannot resume this failed recovery. The following requirements
+were recorded before the subsequent generation-18 continuation. That continuation
+required a separate controller revision, working copy, and published plan binding
+this stopped checkpoint and its fresh RNG receipt. Only **generations 18–24**
+were then available for new requests. The requirements retained invalid rows 14
+and 17, the no-row consumed slot 15, both historical plans, all scores, the serial
+completion barrier, and one-request reservations.
 At most seven new uncached valid proposals would add **21 trials** and
 **161.28 million nominal steps** under the same development protocol.
 
-Before execution, integration tests must show that inherited failures do not
-trigger a premature stop, generation 18 is first, no consumed slot is reused,
-new failures save RNG when graceful and prevent the next proposal, and complete
-fixtures finish at 25 consumed slots. Publish the revised source and input
-bindings before any further model request. Preserve the original grammar,
-prompt configuration, objective, controls, and seed partitions. Do not enlarge
-the endpoint or reinterpret this partial archive as complete. Reserved validation
-and final reporting seeds remain untouched.
+Before that continuation's execution, integration tests had to show that
+inherited failures did not trigger a premature stop, generation 18 was first,
+no consumed slot was reused, new failures saved RNG when graceful and prevented
+the next proposal, and complete fixtures finished at 25 consumed slots. Its
+revised source and input bindings had to be published before further model
+requests. The original grammar, prompt configuration, objective, controls,
+seed partitions, and endpoint allocation were preserved. This partial archive
+could not substitute for a complete endpoint. Reserved validation and final
+reporting seeds were untouched at this checkpoint; final reporting remains
+separate from the later reserved comparison.
 
 ## Interfaces and checks
 
@@ -250,10 +256,11 @@ The preserved preflight state has no recovery sessions, reservations, proposals,
 or training; the separate stopped export records the subsequent execution.
 After the real stopped execution, all 49 focused recovery tests and repository
 lint passed again; no trainer, evaluator, or frozen controller source changed.
-The [reserved validation handoff](adaptive-validation.md) remains a
-separate proposed protocol until the search endpoint has been explicitly resolved.
 
 The separate [generation-18 continuation controller](adaptive-continuation.md)
-implements this next checkpoint without modifying the v1 implementation. It
-preserves this recovery's records in a new working copy and uses its own source
-and input freeze before execution.
+implemented the next checkpoint without modifying the v1 implementation. It
+preserved this recovery's records in a new working copy and used its own source
+and input freeze before execution. The later [endpoint controller](adaptive-endpoint.md)
+completed the allocation. Only after explicit closure did the
+[reserved handoff](../reports/adaptive-validation-freeze-20261003/plan.json)
+freeze the finalist and controls for the separate comparison, now complete.

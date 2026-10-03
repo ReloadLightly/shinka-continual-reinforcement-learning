@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "verified_at_utc": "2026-10-03T10:56:33.107503+00:00",
+  "figure_number": 9,
+  "input_report": "reports/adaptive-validation-complete-20261003",
+  "input_checksums_sha256": "1def1a2da5514da7811af3934eeb3d499ba22cdd3f431e9dfb2bab30fbc5b479",
+  "input_plan_sha256": "673c60b76783256dec1af5a7fb079452068acfe670673a31b223aa1ebc73156f",
+  "plot_script": "scripts/plot_adaptive_validation.py",
+  "plot_script_sha256": "a3067319c594d111f6d40746efcc50f1d8c3fc6621afee7d87697188bfa9f734",
+  "outputs_sha256": {
+    "figures/adaptive-validation-20261003.svg": "c8b8a5001b1ee7d4060b389b9fa12063af9352fe765502bfa9992c313453f118",
+    "figures/adaptive-validation-20261003.pdf": "f935fad4ffff6f140de95cdd5d20e913b657366b02ee40adac7701d13c5b7c26",
+    "figures/adaptive-validation-20261003.json": "35e16169eea4add16d5e0bd7d9d340f6c663ec06b651385f7f8cf72bd3074c2b"
+  },
+  "verification": {
+    "published_input_artifacts_verified": 531,
+    "complete_reserved_trials_rederived": 30,
+    "paired_seeds": 5,
+    "conditions": 6,
+    "trial_and_condition_aggregates_verified": true,
+    "primary_and_secondary_paired_arithmetic_verified": true,
+    "repository_frozen_source_hashes_unchanged": true,
+    "report_hashes_unchanged": true,
+    "final_svg_pdf_byte_identical_to_inspected_preview": true,
+    "source_unchanged_after_initial_implementation": true,
+    "lint_exit_code": 0
+  },
+  "visual_review": {
+    "preview_png": "/tmp/adaptive-validation-figure-review-20261003/preview.png",
+    "preview_png_sha256": "879fe8869208d5690cdb84e1ce8dfbc67d78791b43446b0971edc388fcd60d9a",
+    "method": "PNG saved from the same Matplotlib Figure at SVG-save time; original Figure.savefig restored afterward. No plotting-source edit or image-generation service used.",
+    "reviewers": [
+      "endpoint_controller",
+      "root"
+    ],
+    "observations": [
+      "All six conditions and five seed dots per condition are legible.",
+      "Mean and sample-SD markers and five paired differences are visible; no clipped labels or legends.",
+      "Primary panel uses a symmetric difference scale and a zero reference. Tiny seed5002 positive difference is retained in exact provenance and the numeric results table.",
+      "No confidence intervals or significance marks."
+    ]
+  },
+  "guard_checks": [
+    {
+      "input": "reports/adaptive-validation-first-block-20261003",
+      "status": "rejected_as_required",
+      "reason": "Only a complete reserved comparison may be plotted"
+    },
+    {
+      "input": "reports/adaptive-validation-diagnostic-20261003-v2",
+      "status": "rejected_as_required",
+      "reason": "Only a complete reserved comparison may be plotted"
+    },
+    {
+      "input": "existing final output paths",
+      "status": "rejected_as_required",
+      "reason": "Use fresh SVG, PDF and JSON paths outside the immutable report"
+    }
+  ],
+  "render_command": "MPLCONFIGDIR=/tmp/adaptive-validation-figure-review-20261003/mplconfig .venv/bin/python scripts/plot_adaptive_validation.py --report-dir reports/adaptive-validation-complete-20261003 --output figures/adaptive-validation-20261003.svg",
+  "render_exit_code": 0,
+  "logs_sha256": {
+    "reports/adaptive-validation-figure-checks-20261003/lint.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/adaptive-validation-figure-checks-20261003/preview-png.log": "f434f63a0ca3b54c8e07bd84ba467f3848cc3864aee9fd28588d8b2d8e9618b4",
+    "reports/adaptive-validation-figure-checks-20261003/preview-svg.log": "8725818fd12145b0a429cda8fa5d22c26a6d68554bcfc2af2181d73265a655b6",
+    "reports/adaptive-validation-figure-checks-20261003/render.log": "987479facb0d13ae1758dda1257bea4cf7b3af3f9c35327d140835ff1480f23f"
+  },
+  "limitations": [
+    "Error bars are sample standard deviations across five independent training seeds, without inferential intervals or significance tests.",
+    "This transfer comparison is separate from final paper reporting and does not establish broad superiority of the search method."
+  ]
+}

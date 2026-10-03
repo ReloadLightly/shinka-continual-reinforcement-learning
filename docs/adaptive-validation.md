@@ -1,9 +1,11 @@
 # Reserved adaptive validation protocol
 
-**Status: complete search endpoint explicitly closed; protocol fixed before
-reserved outcomes.** The finalist and exact allocation must be frozen and
-published before execution. The search objective and its source contracts
-remain unchanged.
+**Status: all 30 reserved trials complete and independently verified.** The
+[pre-execution handoff](../reports/adaptive-validation-freeze-20261003/plan.json)
+was published before reserved outcomes. Its
+[immutable protocol snapshot](../reports/adaptive-validation-freeze-20261003/protocol.md)
+preserves the preregistration; the rules below are unchanged, and observed
+results are recorded at the end of this living document.
 
 The declared endpoint has been reached through separately reviewed attempts. The
 [attempted 25-slot continuation](../reports/adaptive-shinka-stage25-stopped-20261003/summary.json)
@@ -208,3 +210,43 @@ Retain a negative or mixed result without reopening the adaptive search using
 validation feedback. A later final-reporting handoff and any promotion rule
 require a separate declared protocol; this comparison does not supply
 one implicitly.
+
+
+## Observed comparison
+
+The [complete export](../reports/adaptive-validation-complete-20261003/summary.json)
+contains all 30 planned trials, with no failed attempts: 921.6 million nominal
+training steps, 9,000 fresh evaluation episodes, and 31.53 minutes of cumulative
+active session time. The first six-trial seed block was independently reviewed
+and published before the remaining fixed allocation resumed. No candidate,
+control setting, objective, or seed allocation changed after reserved outcomes.
+
+The primary selected-minus-FocusGA paired mean was −0.06308083327313264, with
+sample SD 0.06322214703895167. The selected rule's combined mean was
+0.8423170835705598, versus 0.9053979168436925 for FocusGA. Four paired differences
+were negative and one was slightly positive. The comparison does not support
+an advantage over the primary control. All secondary comparisons, components,
+phase returns, signed forgetting differences, raw curves, and applied widths
+are retained irrespective of direction. The
+[README tables and figure](../README.md#reserved-adaptive-finalist-validation)
+report the observations and limits.
+
+The [independent outcome review](../reports/adaptive-validation-outcome-review-20261003.json)
+rederives every trial and comparison, checks first-block preservation and the
+review-bound continuation, reconciles complete costs, and verifies that final
+paper seeds 42–51 and task trials 1–10 remain untouched. The reserved partition
+has now been used. These outcomes do not reopen the closed adaptive search or
+automatically promote its finalist to a paper-reporting comparison.
+
+The figure can be regenerated solely from the compact published export using a
+fresh output name:
+
+```bash
+.venv/bin/python scripts/plot_adaptive_validation.py \
+  --report-dir reports/adaptive-validation-complete-20261003 \
+  --output figures/adaptive-validation-replot-NEW.svg
+```
+
+The plotter verifies the export and rederives the plotted scores and paired
+differences before producing SVG, PDF, and a provenance sidecar. Large binary
+checkpoints remain outside Git, with their hashes preserved in trial receipts.

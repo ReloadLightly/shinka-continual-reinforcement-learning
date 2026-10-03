@@ -1,10 +1,13 @@
 # Continuation from the eighteen-slot checkpoint
 
-**Status: executed and stopped at generation 20; 21 of 25 slots consumed.**
+**Historical attempt: executed and stopped at generation 20; 21 of 25 slots consumed.**
 The [stopped export](../reports/adaptive-continuation-stopped-20261003/summary.json)
 retains valid generations 18 and 19 and rejected generation 20. Generations
-21–24 remain unused. The prepared freeze below describes the allocation before
-execution and remains immutable.
+21–24 were unused at this stop and were subsequently completed by the
+[endpoint controller](adaptive-endpoint.md). The prepared freeze below describes
+this attempt's allocation before execution and remains immutable. The
+[reserved handoff](../reports/adaptive-validation-freeze-20261003/plan.json)
+followed explicit closure of the complete endpoint.
 
 This protocol continues the [stopped reviewed recovery](adaptive-recovery.md)
 through the seven remaining generations, 18–24. It uses a separate controller,
@@ -187,18 +190,21 @@ destination; preserve both existing preflight and stopped publications:
 ```
 
 This controller accepts only the earlier eighteen-slot source and cannot
-re-execute the failed state. A further continuation requires a separate reviewed
-source revision, independent working copy, and published plan binding this
-checkpoint and its saved RNG. Only **generations 21–24** may receive new
-requests, at most **12 new trials** and **92.16 million nominal steps**. Retain
-grammar failures 14, 17, and 20, consumed no-row slot 15, both earlier plans,
-this plan, and all outcomes and costs.
+re-execute the failed state. The following requirements were recorded before the
+subsequent endpoint continuation. It required a separate reviewed source
+revision, independent working copy, and published plan binding this checkpoint
+and its saved RNG. Only **generations 21–24** were then available for new
+requests, at most **12 new trials** and **92.16 million nominal steps**. The
+requirements retained grammar failures 14, 17, and 20, consumed no-row slot 15,
+both earlier plans, this plan, and all outcomes and costs.
 
-Before execution, test that generation 21 is first, old failures do not trigger
-a premature stop, consumed slots cannot be reused, new failures prevent the
-next proposal and save RNG on graceful return, and complete fixtures stop at
-25 consumed slots. Four successful new programs would produce 24 database
-rows and 21 valid programs; distinct canonical programs may be fewer. Preserve
-the fixed grammar, objective, prompt configuration, controls, development
-partition, and overall 25-slot ceiling. Reserved validation and final reporting
-remain untouched while the search endpoint is unresolved.
+Before execution, integration tests had to verify that generation 21 was first,
+old failures did not trigger a premature stop, consumed slots could not be reused,
+new failures prevented the next proposal and saved RNG on graceful return, and
+complete fixtures stopped at 25 consumed slots. Four successful new programs
+would produce 24 database rows and 21 valid programs; distinct canonical programs
+could be fewer. The fixed grammar, objective, prompt configuration, controls,
+development partition, and overall 25-slot ceiling were preserved. Reserved
+validation and final reporting were untouched at this stop. The
+[endpoint continuation](adaptive-endpoint.md) subsequently met these requirements
+and closed the allocation before reserved validation began.

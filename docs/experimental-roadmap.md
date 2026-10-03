@@ -42,13 +42,14 @@ preserve the frozen evaluator and unsuccessful slots. A separate
 [published freeze](../reports/adaptive-recovery-preflight-20261003/recovery-plan.json).
 Its [stopped checkpoint](../reports/adaptive-recovery-stopped-20261003/summary.json)
 adds valid generation 16 and grammar-rejected generation 17: 18 consumed slots,
-15 valid programs, and seven unused slots remain. The barrier prevented another
-proposal and native saved fresh RNG before its graceful failure return. The
+15 valid programs, and seven slots remained unused at that checkpoint. The barrier
+prevented another proposal and native saved fresh RNG before its graceful failure
+return. The
 [separate continuation](adaptive-continuation.md) ran after its
 [prepared input freeze](../reports/adaptive-continuation-preflight-20261003/continuation-plan.json)
 for generations 18–24. Its [stopped result](../reports/adaptive-continuation-stopped-20261003/summary.json)
 adds valid generations 18 and 19 and grammar-rejected generation 20: 21 consumed
-slots, 17 valid programs, and four unused slots remain. The
+slots, 17 valid programs, and four slots remained unused at that checkpoint. The
 [verification](../reports/adaptive-continuation-verification-20261003.json)
 retains the full regression results and restored proposal runtime. The
 [reviewed endpoint](adaptive-endpoint.md) then completed generations 21–24,
@@ -56,7 +57,11 @@ closing all 25 slots with 21 valid programs and preserving every earlier failure
 The [independent review](../reports/adaptive-endpoint-outcome-review-20261003.json)
 rederived the full candidate ranking. The
 [reserved validation protocol](adaptive-validation.md) now has a separate tested
-runner and a frozen generation-5 handoff; execution follows publication of that freeze. Source revisions remain fixed by
+runner and a [frozen generation-5 handoff](../reports/adaptive-validation-freeze-20261003/plan.json).
+The [reserved comparison](../reports/adaptive-validation-complete-20261003/summary.json)
+completed all 30 trials after publication of that freeze; the
+[first block](../reports/adaptive-validation-first-block-20261003/summary.json)
+was independently reviewed before continuation. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 
@@ -68,7 +73,7 @@ experiment asks whether LLM-guided search selects a better fixed GA configuratio
 than the default and an equally budgeted random search. The main extension then
 asks whether executable, training-dependent mutation rules improve learning and
 retention relative to these static baselines and existing adaptive mechanisms.
-The current two-number interface cannot answer that second question.
+The static two-number interface cannot answer that second question.
 
 Keep the following levels distinct: an **outer proposal** is a candidate Python
 program; a **candidate evaluation** runs that program's settings on several
@@ -618,9 +623,10 @@ previous-task return avoids that incentive. It can still reflect later
 acquisition on a poorly learned task, so it is not a pure measure of retention.
 
 This is the frozen extension objective, not the paper's score normalization.
-Static selection and reserved validation keep their original active-return
-objective. The adaptive objective requires post-hoc checkpoint evaluation per candidate. Validate this scorer
-on known traces and publish its cost before starting an adaptive search. Always
+Static selection and the reserved static-finalist comparison keep their original
+active-return objective. The adaptive objective requires post-hoc checkpoint
+evaluation per candidate. Validate this scorer on known traces and publish its
+cost before starting an adaptive search. Always
 report the separate learning, forgetting, and active-return terms so a gain in
 one cannot conceal failure in another. Compare evolved rules with the constant
 rule, the frozen arithmetic rule, the upstream adaptive control, and both static
@@ -649,7 +655,7 @@ training and checkpoint evidence before reuse.
 | 8 | Adaptive-program adapter and native control support | Short identity traces, varying-sigma check, persistent memory, explicit upstream adaptive control | Complete: seven real trials, 19 numerical checks, 3.98 min |
 | 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Complete: 15 trials, two cache checks, 15.21 min; 504 harness tests pass |
 | 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Complete: 25 consumed slots, 21 valid programs, 60 new trials; all historical failures retained and endpoint explicitly closed |
-| 11 | Reserved adaptive finalist handoff and comparison | Exact recipe freeze, separate runner, untouched five-seed comparison and all fixed controls | Frozen and published; first 6 of 30 trials completed and independently reviewed; remaining 24 fixed trials pending |
+| 11 | Reserved adaptive finalist handoff and comparison | Exact recipe freeze, separate runner, previously untouched five-seed partition and all fixed controls | Complete: 30 trials; selected minus FocusGA −0.0631 ± 0.0632 (paired mean ± sample SD); no automatic promotion |
 
 <sub>Table 8. Deliverables and observed status. The successful baseline-trial
 resume does not substitute for testing Shinka's separate archive-resume path.</sub>
@@ -669,7 +675,8 @@ evidence without training. Native FocusGA has the highest observed combined
 mean, while the arithmetic rule has the highest previous-task mean. The
 [README](../README.md#adaptive-objective-and-fixed-controls) reports dispersion,
 individual seeds, and the limits of this comparison. Reserved adaptive validation
-seeds 5001–5005 remain unused. The controls are baselines, not Shinka discoveries.
+seeds 5001–5005 were unused at completion of this fixed-control study. The controls
+are baselines, not Shinka discoveries.
 
 The [first adaptive proposal block](../reports/adaptive-shinka-stage5-20261003/summary.json)
 completed five slots: cached identity and four distinct proposals, with 12 new

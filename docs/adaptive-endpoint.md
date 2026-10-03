@@ -1,11 +1,12 @@
 # Completion of the declared adaptive search allocation
 
 Reserved validation follows resolution of the declared 25-slot development
-search. The input checkpoint has consumed 21 slots and retains 17 valid
-programs, three grammar rejections, and one interrupted request. Its
+search. At preparation, the input checkpoint had consumed 21 slots and retained
+17 valid programs, three grammar rejections, and one interrupted request. Its
 [published evidence](../reports/adaptive-continuation-stopped-20261003/summary.json)
 and [independent review](../reports/adaptive-continuation-outcome-review-20261003.json)
-remain immutable. The four remaining slots are generations 21–24.
+remain immutable. The four slots then remaining were generations 21–24; the
+observed completion and closure are recorded below.
 
 ## Reviewed continuation
 
@@ -103,6 +104,9 @@ new destination and run:
   --report-dir reports/adaptive-endpoint-reexport-NEW
 ```
 
-The next experiment follows the [reserved comparison protocol](adaptive-validation.md).
-It starts fresh populations on the reserved partition; no development policy
-or score is reused as a validation outcome.
+The subsequent reserved comparison completed under the
+[frozen handoff](../reports/adaptive-validation-freeze-20261003/plan.json) and
+[comparison protocol](adaptive-validation.md). It starts fresh populations on
+the reserved partition; no development policy or score is reused as a validation
+outcome. See the [README](../README.md#reserved-adaptive-finalist-validation) for
+the current comparison status.

@@ -25,7 +25,7 @@ evaluation episodes, validation ten; fresh post-hoc evaluation uses ten in both.
 Changing the phase interval in validation tests transfer beyond the training
 schedule. The [allocation audit](adaptive-seed-allocation-20261003.json) checked
 4,071 local and published JSON files without inspecting outcomes to choose seeds.
-Reserved validation and final reporting remain unused in this stage.
+Reserved validation and final reporting were unused during this control stage.
 
 The scorer checks ordered training records, native method identity, phase/task
 mapping, all episode vectors, and agreement with the independently validated
@@ -121,11 +121,13 @@ and zero new training, avoiding 46.08 million nominal steps in total.
 These are fixed-control development results. No adaptive Shinka proposals or
 model calls occurred in this control study. The objective and arithmetic rule
 were not changed after observing outcomes. The subsequent proposal experiment
-uses a separate Shinka archive with cumulative targets of 5, 13, and 25 slots.
+used a separate Shinka archive with cumulative targets of 5, 13, and 25 slots.
 The measured controls took 2.5–3.8 minutes per candidate. The
-[thirteen-slot proposal checkpoint](../README.md#adaptive-continuation-to-thirteen-slots)
-now reports actual search outcomes and costs under the same frozen evaluator.
-Reserved validation remains unused until a later frozen handoff.
+[complete adaptive endpoint](adaptive-endpoint.md) reports search outcomes and
+costs under the same frozen evaluator. After explicit endpoint closure, the
+[reserved handoff](../reports/adaptive-validation-freeze-20261003/plan.json)
+froze the finalist and controls; that comparison is now complete. The control
+study itself used no reserved outcomes.
 
 See [Table 13 / Figure 6](../README.md#adaptive-objective-and-fixed-controls),
 the [complete evidence](../reports/adaptive-controls-20261003/summary.json),

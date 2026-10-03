@@ -1,13 +1,15 @@
 # Adaptive mutation programs
 
-The main ShinkaEvolve extension will evolve an executable mutation-width update
+The main ShinkaEvolve extension evolves an executable mutation-width update
 from training feedback. The completed two-parameter search supplies static
-baselines. This specification details the next search space in the
+baselines. This specification details the adaptive search space in the
 [experimental roadmap](experimental-roadmap.md#7-second-search-space-adaptive-mutation-programs);
 the restricted adapter, fixed objective, development partition, and verified
 cache are implemented. See the [evaluation protocol](adaptive-evaluation.md).
-The [thirteen-slot adaptive Shinka checkpoint](../README.md#adaptive-continuation-to-thirteen-slots)
-is complete; the 25-slot endpoint and reserved validation remain pending.
+The [25-slot adaptive endpoint](adaptive-endpoint.md) is complete and explicitly
+closed. The [frozen reserved comparison](../reports/adaptive-validation-freeze-20261003/plan.json)
+is complete; its results are reported in the
+[README](../README.md#reserved-adaptive-finalist-validation).
 
 Keep archive size, survivor selection, policy architecture, task draws, and
 interaction budgets fixed. The first program family changes only the Gaussian
@@ -266,8 +268,9 @@ The subsequent [adaptive selection stage](adaptive-evaluation.md) is complete:
 both objective terms are computed from verified training and fresh checkpoint
 evidence, new search and validation partitions are allocated, and those
 identities enter the canonical-AST cache key. All 15 fixed-control trials and
-two cache checks passed. The next step is the separate adaptive Shinka archive,
-starting with five total slots and retaining the fixed controls as baselines.
+two cache checks passed. The subsequent separate adaptive Shinka archive began
+with five total slots and reached its [declared endpoint](adaptive-endpoint.md),
+retaining the fixed controls as baselines.
 The identity gate establishes implementation correctness, not a performance
 ranking or a discovered learning rule.
 

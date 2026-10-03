@@ -1,0 +1,110 @@
+{
+  "status": "complete",
+  "context_sha256": "f249c7ffdef11c53347f52e5d87389c192346fde68462f70ed52eaec553ddeb8",
+  "trial": {
+    "index": 23,
+    "recipe_key": "d6600ac28410e60603ec948da473b827b5ad1579b0d80cd551d80fc589a9dd63",
+    "memberships": [
+      "static_random24"
+    ],
+    "seed": 5004,
+    "trial": 5005,
+    "eval_seed": 905004
+  },
+  "started_at": "2026-10-03T10:43:21.843853+00:00",
+  "result": {
+    "index": 23,
+    "recipe_key": "d6600ac28410e60603ec948da473b827b5ad1579b0d80cd551d80fc589a9dd63",
+    "memberships": [
+      "static_random24"
+    ],
+    "seed": 5004,
+    "trial": 5005,
+    "eval_seed": 905004,
+    "score": {
+      "objective_version": "adaptive-active-previous-v1",
+      "combined_score": 0.7612038546005886,
+      "active_score": 0.9632743758678437,
+      "previous_score": 0.5591333333333334,
+      "active_mean_return": 481.63718793392184,
+      "previous_mean_return": 279.56666666666666,
+      "active_checkpoints": 320,
+      "previous_checkpoints": 3,
+      "switches": [
+        {
+          "from_phase": 0,
+          "to_phase": 1,
+          "task": 0,
+          "before": 500.0,
+          "after": 70.3,
+          "forgetting": 429.7
+        },
+        {
+          "from_phase": 1,
+          "to_phase": 2,
+          "task": 1,
+          "before": 500.0,
+          "after": 317.2,
+          "forgetting": 182.8
+        },
+        {
+          "from_phase": 2,
+          "to_phase": 3,
+          "task": 0,
+          "before": 500.0,
+          "after": 451.2,
+          "forgetting": 48.80000000000001
+        }
+      ],
+      "reference_metrics": {
+        "learning_accuracy": 500.0,
+        "forgetting": 220.4333333333333,
+        "zero_shot_transfer": 273.1333333333334,
+        "learning_minus_forgetting": 279.5666666666667,
+        "cumulative_reward_steps": 14772864013.3667,
+        "cumulative_reward_generation_equivalents": 153884.00013923645,
+        "cumulative_reward_steps_exact": 14772864013.3667,
+        "normalized_curve_average": 0.9617750008702278
+      }
+    },
+    "fresh_evaluation_episodes": 300,
+    "phase_returns": [
+      {
+        "phase": 0,
+        "task": 0,
+        "checkpoint_completed_steps": 7680000,
+        "own_mean": 500.0,
+        "previous_mean": null,
+        "next_mean": 500.0
+      },
+      {
+        "phase": 1,
+        "task": 1,
+        "checkpoint_completed_steps": 15360000,
+        "own_mean": 500.0,
+        "previous_mean": 70.3,
+        "next_mean": 70.6
+      },
+      {
+        "phase": 2,
+        "task": 0,
+        "checkpoint_completed_steps": 23040000,
+        "own_mean": 500.0,
+        "previous_mean": 317.2,
+        "next_mean": 248.8
+      },
+      {
+        "phase": 3,
+        "task": 1,
+        "checkpoint_completed_steps": 30720000,
+        "own_mean": 500.0,
+        "previous_mean": 451.2,
+        "next_mean": null
+      }
+    ],
+    "training_wall_seconds": 51.522483773000204,
+    "analysis_wall_seconds": 6.729106363000028
+  },
+  "finished_at": "2026-10-03T10:44:22.220038+00:00",
+  "wall_seconds": 58.39102530799937
+}

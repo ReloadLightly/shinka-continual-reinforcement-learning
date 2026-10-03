@@ -14,9 +14,9 @@
 
 ## Abstract
 
-This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. Its frozen active/previous-task evaluator completed 15 fixed-control trials on fresh development seeds. Adaptive Shinka search completed its declared 25-slot allocation with 21 valid programs, retaining three grammar failures and an interrupted request. The best proposed rule scores 0.4871, above identity GA's 0.1706 but below native FocusGA's 0.5006, with substantial seed variation. These development results establish an executable research pipeline, static baselines, and an initial adaptive search; they do not establish search-method superiority or a full-paper reproduction.
+This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. Its frozen active/previous-task evaluator completed 15 fixed-control trials on fresh development seeds. Adaptive Shinka search completed its declared 25-slot allocation with 21 valid programs, retaining three grammar failures and an interrupted request. The best proposed rule scores 0.4871, above identity GA's 0.1706 but below native FocusGA's 0.5006, with substantial seed variation. In the frozen five-seed adaptive validation, the selected rule scored 0.8423 versus 0.9054 for FocusGA, with paired difference −0.0631 ± 0.0632 (mean ± sample SD). All 30 trials completed; the primary comparison does not support an advantage for the selected rule. These results establish an executable research pipeline and controlled comparisons; they do not establish search-method superiority or a full-paper reproduction.
 
-> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Static finalist validation complete · Adaptive controls and complete 25-slot Shinka endpoint reviewed · 21 valid programs with all failures retained · Reserved adaptive validation: first 6 of 30 trials complete · Full reproduction pending.
+> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Static finalist validation complete · Adaptive controls and complete 25-slot Shinka endpoint reviewed · 21 valid programs with all failures retained · Reserved adaptive validation complete: 30 trials; selected rule below FocusGA · Full reproduction pending.
 
 ## 1. Research questions
 
@@ -478,9 +478,9 @@ Seven evaluator requests include two diagnostic cache checks: a formatting-only
 duplicate and the actual Shinka-compatible command-line entry point. Both
 reused verified identity evidence with zero new training, avoiding a combined
 46.08 million nominal steps. All raw scores and artifact hashes were checked
-independently; the harness passes **504 tests**. No model or paid API calls were
-made. Reserved adaptive validation seeds 5001–5005 and final reporting trials
-remain untouched.
+independently; the harness passed **504 tests** at this stage. No model or paid
+API calls were made. Reserved adaptive validation seeds 5001–5005 and final
+reporting trials were untouched at completion of the fixed-control study.
 
 ### First adaptive Shinka search
 
@@ -537,8 +537,8 @@ original controller survived the interrupted interactive session and completed
 its last slot without a duplicate launch. Source, receipt, parentage, usage,
 and native RNG checkpoint checks passed. The ledger records four successful
 Codex launches and **zero paid API calls**. Adaptive validation seeds 5001–5005
-and final reporting seeds 42–51 remain untouched. Lint and **550 regression
-tests** pass. A continuation preflight passes with the recorded Codex 0.159.3
+and final reporting seeds 42–51 were untouched at this five-slot checkpoint.
+Lint and **550 regression tests** passed. A continuation preflight passes with the recorded Codex 0.159.3
 binary; the [runbook](docs/adaptive-search.md#completed-first-block) records how
 to select it after the environment's default CLI update. This checkpoint was
 subsequently resumed in the continuation below.
@@ -591,7 +591,8 @@ seeds 4001–4003. It exceeds FocusGA on only the first seed. Its previous-task
 scores are **1.0000, 0.0226, and 0.0273**, so the aggregate conceals very weak
 previous-task performance on two trials. These development observations do not
 establish reliable retention, held-out gains, or search-method superiority.
-Finalists have not yet been selected on reserved adaptive validation.
+At this checkpoint, no adaptive finalist had been frozen. The later finalist
+was selected solely from development evidence.
 
 This continuation added **24 training trials**, **184.32 million nominal training
 steps**, and **7,200 fresh checkpoint-evaluation episodes**. New evaluations
@@ -605,7 +606,8 @@ search cache hit remains generation-zero identity.
 
 Source and runtime receipts, native ancestry, the unchanged initial programs,
 and the refreshed RNG checkpoint were verified. Reserved adaptive validation
-seeds 5001–5005 and final reporting seeds 42–51 remain unused. The next declared
+seeds 5001–5005 and final reporting seeds 42–51 were unused at this checkpoint.
+The next declared
 checkpoint was 25 total slots. Lint and **564 regression tests** passed at this
 checkpoint; the attempted continuation is recorded below.
 
@@ -653,8 +655,8 @@ launcher. A reviewed continuation needs separate failure-aware orchestration,
 permanent accounting for slots 14 and 15, and an explicit RNG recovery decision;
 it cannot claim an uninterrupted trajectory. No frozen source or limit was changed,
 no consumed slot was retried, and reserved validation and final reporting seeds
-remain unused. The [recovery work](docs/adaptive-search.md#reviewed-recovery-work)
-precedes the [proposed reserved comparison](docs/adaptive-validation.md).
+were unused at that stop. The [recovery work](docs/adaptive-search.md#reviewed-recovery-work)
+preceded the [predeclared reserved comparison](docs/adaptive-validation.md).
 
 The separate [recovery controller](docs/adaptive-recovery.md) was implemented
 and frozen before execution.
@@ -721,8 +723,8 @@ source contracts remain intact. The declared restoration of the older stage-13
 RNG still prevents interpreting recovery as an uninterrupted sampling trajectory.
 The controller correctly rejects re-execution of this failed state. At this
 checkpoint, **generations 18–24** remained unused; the continuation below used
-a separately reviewed plan bound to this checkpoint and its refreshed RNG. Reserved
-validation and final reporting seeds remain unused.
+a separately reviewed plan bound to this checkpoint and its refreshed RNG.
+Reserved validation and final reporting seeds were unused at this stop.
 
 After export, all **49 recovery regression tests** and repository lint passed.
 The audit verified every published evidence hash and rederived generation 16's
@@ -759,7 +761,7 @@ episodes**. Evaluations took **4.31 minutes**, supervised native execution
 All three guarded requests returned proposal responses; the grammar failure
 consumed its slot and request without receiving a scientific score.
 
-Cumulative accounting now records **21 consumed slots**, **20 database rows**,
+At that stopped checkpoint, cumulative accounting recorded **21 consumed slots**, **20 database rows**,
 and **17 valid distinct programs**, including cached identity. Invalid slots
 14, 17, and 20 and interrupted no-row slot 15 remain retained. New training
 totals **48 trials**, **368.64 million nominal steps**, and **14,400 fresh
@@ -772,10 +774,9 @@ Cleanup recorded no surviving descendants and needed no termination signals.
 The [independent outcome review](reports/adaptive-continuation-outcome-review-20261003.json)
 checks the raw results, source preservation, accounting, and final receipts.
 The earlier RNG rollback remains a deviation from uninterrupted sampling.
-Only **generations 21–24** remain unused; this failed controller state cannot
-execute again. A further continuation needs a separate reviewed and published
-plan bound to this checkpoint. Reserved validation and final reporting remain
-unexecuted. The [pre-execution verification](reports/adaptive-continuation-verification-20261003.json)
+**Generations 21–24** were then unused and required the separately reviewed
+endpoint continuation below. This failed controller state cannot execute again.
+Reserved validation and final reporting had not started at this checkpoint. The [pre-execution verification](reports/adaptive-continuation-verification-20261003.json)
 records all **637 passing tests** and repository lint.
 The [publication check](reports/adaptive-continuation-publication-review-20261003.json)
 also verifies the exported hashes against committed Git blobs. The runtime
@@ -865,25 +866,93 @@ performance.
 
 ### Reserved adaptive finalist validation
 
-The [reserved handoff](reports/adaptive-validation-freeze-20261003/plan.json)
-copies generation 5 and all five fixed controls. All six execution recipes are
-distinct: the allocation is **30 fresh trials**, **921.6 million nominal
-training steps**, and **9,000 fresh evaluation episodes**, under the
-[fixed protocol](docs/adaptive-validation.md). The first seed's six recipes
-form an integrity checkpoint before continuing the remaining fixed allocation.
-The comparison is descriptive and cannot reopen the search or implicitly
-promote a rule to final reporting.
+The frozen generation-5 rule completed its five-seed reserved comparison with
+all five controls. Its combined mean was **0.8423**, compared with **0.9054** for
+native FocusGA. The predeclared primary paired difference, selected minus
+FocusGA, was **−0.0631 ± 0.0632** (mean ± sample SD). The selected rule was lower
+on four of five seeds; its sole positive difference was **0.000058**. This
+comparison does not support an advantage over the primary control.
 
-After publication of the freeze at `7ad1be4`, the
-[first reserved block](reports/adaptive-validation-first-block-20261003/summary.json)
-completed all six recipes on seed 5001 without a failed attempt. It used
-**184.32 million nominal training steps**, **1,800 fresh evaluation episodes**,
-and **357.44 s** of active session time. The
+The [handoff](reports/adaptive-validation-freeze-20261003/plan.json), including
+[the selected source](reports/adaptive-validation-freeze-20261003/programs/selected.py)
+and all control recipes, was published at `7ad1be4` before reserved outcomes.
+All six recipes were distinct. Each trained fresh populations on seeds
+5001–5005, with four phases of 80 generations, population 64, three training
+episodes per member, and a 500-step cap. The equal-weight active/previous-task
+objective, native control settings, trial order, and resource ceiling remained
+fixed throughout the comparison.
+
+![Reserved adaptive comparison and paired differences against FocusGA](figures/adaptive-validation-20261003.svg)
+
+<sub>Figure 9. Five reserved seed outcomes per condition and the predeclared
+paired selected-minus-FocusGA comparison. Markers retain individual seeds;
+error bars show sample SD, not confidence intervals. Zero marks equal combined
+score in the paired panel. Matching task draws does not imply identical
+internal random draws across native methods.
+[PDF](figures/adaptive-validation-20261003.pdf)
+· [Exact plotted values and provenance](figures/adaptive-validation-20261003.json).</sub>
+
+| Condition | Combined J ↑ | Active ↑ | Previous ↑ | LA ↑ | F ↓ |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Selected adaptive 5 | 0.8423 ± 0.2084 | 0.9388 | 0.7459 | 500.0 | 127.1 |
+| Identity GA | 0.8681 ± 0.1166 | 0.8553 | 0.8810 | 500.0 | 59.5 |
+| Arithmetic update | 0.9025 ± 0.1243 | 0.8518 | 0.9531 | 465.7 | −4.1 |
+| Native FocusGA | 0.9054 ± 0.1605 | 0.9498 | 0.8610 | 500.0 | 69.5 |
+| Static Shinka 11 | 0.7576 ± 0.1781 | 0.9564 | 0.5588 | 500.0 | 220.6 |
+| Static random 24 | 0.7877 ± 0.1564 | 0.9700 | 0.6054 | 500.0 | 197.3 |
+
+<sub>Table 20. Five-seed reserved means under the
+[frozen protocol](reports/adaptive-validation-freeze-20261003/protocol.md).
+Combined J also shows sample SD. Active, previous, and combined scores are
+normalized by 500; LA and signed forgetting F use return units. Negative F
+indicates an increase in return across a switch, not proof of a retention
+mechanism. All per-seed components, phase returns, signed switch differences,
+LA−F, ZT, cumulative metrics, raw curves, and applied widths are retained in the
+[complete evidence](reports/adaptive-validation-complete-20261003/summary.json)
+and [artifact receipts](reports/adaptive-validation-complete-20261003/checksums.json).</sub>
+
+| Seed | Selected J | FocusGA J | Selected − FocusGA |
+| ---: | ---: | ---: | ---: |
+| 5001 | 0.482253 | 0.618719 | −0.136466 |
+| 5002 | 0.975437 | 0.975379 | +0.000058 |
+| 5003 | 0.845436 | 0.963812 | −0.118376 |
+| 5004 | 0.928069 | 0.984939 | −0.056871 |
+| 5005 | 0.980390 | 0.984140 | −0.003750 |
+
+<sub>Table 21. The five predeclared primary paired differences in normalized
+combined-score units. Their exact mean is −0.06308083327313264 and sample SD
+is 0.06322214703895167. No significance test or promotion threshold was
+specified. [Verified differences and all secondary comparisons](reports/adaptive-validation-complete-20261003/summary.json).</sub>
+
+The selected rule also had lower combined means than identity and arithmetic:
+paired differences were **−0.0258 ± 0.1096** and **−0.0602 ± 0.0948**. It exceeded
+the two static tuned controls by **0.0847 ± 0.0796** (Shinka 11) and
+**0.0546 ± 0.0959** (random 24). These are the prespecified secondary comparisons,
+reported regardless of direction. Relative to FocusGA, the selected rule had
+both lower active and previous-task means, with greater mean forgetting.
+Its previous-task score ranged from **0.0592** on seed 5001 to **1.0000** on
+seed 5002; strong acquisition did not ensure retention on every task draw.
+
+All **30 trials** completed without a failed attempt, using **921.6 million
+nominal training steps** and **9,000 fresh evaluation episodes**. Active session
+time was **31.53 minutes**, including **28.21 minutes** of training and
+**3.25 minutes** of checkpoint analysis; review pauses are excluded. No new
+model calls were needed. The
+[first six-trial block](reports/adaptive-validation-first-block-20261003/summary.json)
+used 184.32 million nominal steps, 1,800 fresh episodes, and 357.44 s; these are
+included in the complete totals. Its
 [independent review](reports/adaptive-validation-first-block-review-20261003.json)
-verified raw scores, applied widths, task draws, sources, receipts, and costs.
-This is a partial six-of-thirty comparison; one seed does not establish a
-ranking. The remaining 24 trials retain the frozen recipes, order, and resource
-ceiling, irrespective of the first block's scores.
+was published at `d63b930` before the remaining fixed trials resumed. The
+[final audit](reports/adaptive-validation-outcome-review-20261003.json)
+rederives all raw scores and paired comparisons, checks the first block remained
+unchanged, reconciles costs, and verifies that final paper trials remain unused.
+
+This result is retained without reopening the search or changing the finalist.
+Validation changed both task draws and the phase length from development, so
+the larger validation mean is not a matched estimate of improvement over the
+development mean. One outer search and five validation seeds do not establish
+a general search-method ranking, a causal mechanism, or a full-paper
+reproduction. No rule is automatically promoted to final reporting.
 
 ### Remaining scientific evaluation
 
@@ -895,7 +964,7 @@ One full-budget development GA trial is complete; no full-budget comparison has 
 | Stationary control | Matched task and learner settings without switching | Development control complete |
 | Shinka-selected GA | Frozen candidate evaluated on reporting trials | Static winner frozen after validation; reporting pending |
 | Random-search control | Matched search budget and reporting protocol | Static winner frozen after validation; reporting pending |
-| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | 25-slot allocation closed; 21 valid programs; reserved validation: first 6 of 30 trials complete |
+| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | 25-slot allocation closed; 21 valid programs; reserved comparison complete: 30 trials; primary difference −0.0631 ± 0.0632 |
 
 ## 5. Reproducibility
 
@@ -1074,12 +1143,13 @@ use one seed and unmatched training budgets.
 
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
-The next experiment is the [reserved adaptive comparison](docs/adaptive-validation.md).
-The [25-slot endpoint is explicitly closed](reports/adaptive-endpoint-closure-20261003.json),
-and generation 5 remains the development leader. Freeze its exact source and
-all five unchanged controls before opening reserved outcomes. The primary
-descriptive comparison is the paired five-seed combined-score difference
-against native FocusGA; validation feedback cannot reopen this search.
+The [reserved adaptive comparison](docs/adaptive-validation.md) is complete.
+The development-selected rule did not exceed native FocusGA on the primary
+comparison and is not automatically promoted to final reporting. This reserved
+partition is now used; its outcomes cannot reopen the completed search. The
+next scientific work is a separately declared full-budget reference comparison,
+including ES/PPO runtime calibration on development trials before allocating
+the untouched paper-reporting trials.
 
 The [repository audit](reports/repository-audit-20261003.json) verifies published
 artifact hashes and local documentation links and independently rederives

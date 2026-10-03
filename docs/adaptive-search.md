@@ -170,7 +170,7 @@ The native RNG file still hashes identically to the thirteen-slot checkpoint:
 `native_main` persists RNG only after a graceful return. This is a valid hash of
 an old state, not a checkpoint of all consumed proposal sampling. The frozen
 source files, plans, old program rows, and old report snapshots remain intact.
-Reserved adaptive validation and final reporting seeds remain unused.
+Reserved adaptive validation and final reporting seeds were unused at this stop.
 
 ## Reviewed recovery work
 
@@ -181,8 +181,8 @@ path without modifying the frozen search or evaluator. Its
 records 18 consumed slots and 15 valid programs: generation 16 completed,
 generation 17 failed at 515 AST nodes, and the barrier prevented generation 18.
 Native returned gracefully and saved fresh RNG. The
-[next checkpoint requirements](adaptive-recovery.md#observed-execution-and-next-checkpoint)
-preserve the seven unused slots 18–24 and all inherited failures. The ordinary launcher rejects
+[requirements recorded for the next checkpoint](adaptive-recovery.md#observed-execution-and-next-checkpoint)
+preserved the seven then-unused slots 18–24 and all inherited failures. The ordinary launcher rejects
 failed sessions, its monitor stops on any incorrect database row, and its
 completion verifier requires every row to be valid. Native resume also derives
 its next generation from persisted rows, so it could reuse interrupted slot 15.
@@ -191,12 +191,16 @@ Editing a status, a cursor, or a receipt cannot resolve these constraints.
 The separately frozen [following continuation](adaptive-continuation.md)
 subsequently completed generations 18 and 19, rejected generation 20 at 536
 AST nodes, and stopped before generation 21. The
-[latest evidence](../reports/adaptive-continuation-stopped-20261003/summary.json)
+[stopped checkpoint evidence](../reports/adaptive-continuation-stopped-20261003/summary.json)
 records 21 consumed slots and 17 valid programs. Four slots, generations 21–24,
-remain for a separately reviewed continuation; all prior failures and protocol
-constraints are retained.
+remained at that checkpoint. The separately reviewed
+[endpoint continuation](adaptive-endpoint.md) subsequently completed those slots,
+retaining all prior failures and protocol constraints. The
+[explicit closure](../reports/adaptive-endpoint-closure-20261003.json) ended
+proposal feedback before the reserved handoff.
 
-The implementation follows these requirements:
+The original recovery implementation followed these requirements. They describe
+its historical allocation; all 25 search slots have since been consumed:
 
 1. Preserve the stopped archive and its published report. Prepare a separate
    recovery controller and plan, referencing the exact old source and evidence
@@ -227,6 +231,7 @@ slot starts. Separate process-tree tests cover providers that start new sessions
 and descendants that survive their original parent. These checks validate
 orchestration; their synthetic scores are not experimental results.
 
-The [proposed validation handoff](adaptive-validation.md) follows an explicitly
-resolved search endpoint. It must not use the partial archive as though the
-declared endpoint had completed.
+The [frozen reserved handoff](../reports/adaptive-validation-freeze-20261003/plan.json)
+follows the explicitly resolved full endpoint. The
+[validation protocol](adaptive-validation.md) was executed separately;
+none of the partial archives above substitutes for the completed endpoint.

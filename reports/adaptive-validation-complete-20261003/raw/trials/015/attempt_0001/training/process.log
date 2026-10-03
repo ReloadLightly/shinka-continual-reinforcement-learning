@@ -1,0 +1,24 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 5004
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  ne overrides   : ['method=ga_focus', 'sigma=0.5', 'searcher_kwargs.elite_ratio=0.5', 'searcher_kwargs.cross_over_rate=0.0', 'searcher_kwargs.focus_rate=0.3', 'searcher_kwargs.sigma_rate=0.1', 'searcher_kwargs.track_target=0.9', 'searcher_kwargs.sigma_min=1e-05', 'searcher_kwargs.explore_fraction=0.25'] []
+  seed           : 5003
+  boundary info  : none
+  output         : /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-validation-20261003/trials/015/attempt_0001/training
+======================================================================
+  gen     0 task= 0 train=   11.0 t0=   38.6 t1=   17.6 gen'ist=   17.6
+  gen    50 task= 0 train=  465.9 t0=  500.0 t1=  451.0 gen'ist=  451.0
+  gen   100 task= 1 train=  460.7 t0=  167.1 t1=  498.3 gen'ist=  167.1
+  gen   150 task= 1 train=  467.6 t0=   31.2 t1=  500.0 gen'ist=   31.2
+  gen   200 task= 0 train=  402.5 t0=  487.2 t1=   85.1 gen'ist=   85.1
+  gen   250 task= 1 train=  449.8 t0=  477.5 t1=  500.0 gen'ist=  477.5
+  gen   300 task= 1 train=  481.4 t0=  135.7 t1=  493.0 gen'ist=  135.7
+  gen   319 task= 1 train=  489.9 t0=   81.3 t1=  500.0 gen'ist=   81.3
+  wrote /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-validation-20261003/trials/015/attempt_0001/training
+
+Done. /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-validation-20261003/trials/015/attempt_0001/training

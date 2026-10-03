@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "kind": "adaptive_reserved_validation_comparison",
+  "input_report_name": "adaptive-validation-complete-20261003",
+  "input_sha256": {
+    "checksums.json": "1def1a2da5514da7811af3934eeb3d499ba22cdd3f431e9dfb2bab30fbc5b479",
+    "summary.json": "a7c7570f450c73d237752ec4e681caab0cd638a72fcb12468a6df5e78614507b",
+    "frozen/plan.json": "673c60b76783256dec1af5a7fb079452068acfe670673a31b223aa1ebc73156f",
+    "frozen/receipt.json": "25f10c34b55d5eaa176a5142e82e614fbfc158cbbb3d699fcb3715661ed7d309",
+    "raw/state.json": "4446e4ffa989dc65028e03a5ce204308e2503e3e392bb6da3c2e046253cd1760",
+    "raw/state-receipt.json": "bdabc66cf594cee5f9394cad9c527b9320643efa6d95176018d88d3803a83142",
+    "raw/trials/000/attempt_0001/receipt.json": "f6158d79ee138303fd3369d45565703e7c3a84361cd8254c836b8d34f48865a6",
+    "raw/trials/000/attempt_0001/summary.json": "7eda57a522e3a38938c9c18b57b4e89221d194ef986a2a45193fe50e5b4e30b1",
+    "raw/trials/000/attempt_0001/training/training_metrics.json": "c22b4b6954da5aa70ebed3da1e3ffd64b783596b5ab753450c1305bef48d79ca",
+    "raw/trials/000/attempt_0001/analysis/evaluation.json": "a919a58af363c07f167047c08f6b261ee0ec01070311cc9aff14e9ed0db1cadf",
+    "raw/trials/001/attempt_0001/receipt.json": "ed17ccd1a6efe842da94e0384ed44fec22ff724c06de18052fd7e70c1a5920b6",
+    "raw/trials/001/attempt_0001/summary.json": "cd3c440b623792e18322c83a484ad34c0ad8b910ae8faa1b25ca1608da901d3c",
+    "raw/trials/001/attempt_0001/training/training_metrics.json": "b92780f407318418287e6f273e7f980eb7689607b573709c87b3279584ae3867",
+    "raw/trials/001/attempt_0001/analysis/evaluation.json": "8333b5d02d4ad145ebd0d6129f71ba81644fd108e586a26a31515ebc20e1b6c7",
+    "raw/trials/002/attempt_0001/receipt.json": "beb2cbbbb909bffaeba470b54d3c39813da0f900780987dca8ddcbac100ef583",
+    "raw/trials/002/attempt_0001/summary.json": "ef6ded008eda683a46d9f11871c3cb87b047ffc333125696f683722681a41eb0",
+    "raw/trials/002/attempt_0001/training/training_metrics.json": "ecfd487d28ef3137dcca1f5acb34e83d1bf5e45e85ebcd16d5cfa5899a733b06",
+    "raw/trials/002/attempt_0001/analysis/evaluation.json": "567909a1fa971b60d4a0144c9cbb3e85a331fb97b5da68da21e809610ace0716",
+    "raw/trials/003/attempt_0001/receipt.json": "db7f4941227cdabb6a56e11431aa19b8b681403bb67d8200fcf6f8cca31e700b",
+    "raw/trials/003/attempt_0001/summary.json": "6f414ead4bd3a5f8820d8fbfc1803ec1d0170a146141a49c458e704723a087e2",
+    "raw/trials/003/attempt_0001/training/training_metrics.json": "d66485ffe9b30dbea4f454b6b941ae5e5f820d5522588987b1bdd5986eeafc8e",
+    "raw/trials/003/attempt_0001/analysis/evaluation.json": "ec987856d279b05f8e4bb2502c0625dfd8271b521892f81c7ada47c885f38290",
+    "raw/trials/004/attempt_0001/receipt.json": "52696e01952eb736130662d1374e59da89806df076e99599754a060f60b98b70",
+    "raw/trials/004/attempt_0001/summary.json": "5f2932fd23e70058c89efa4defd7515e4b12bbd9dc242f7c7d91365eee9246a7",
+    "raw/trials/004/attempt_0001/training/training_metrics.json": "6715cc0196057acc673b285508cc5e09d30a24f6731150ac496418100f0b8422",
+    "raw/trials/004/attempt_0001/analysis/evaluation.json": "742543ae892cee250a26345ee6bab5a6586a142a1041f9c3b96dbb73bed55d60",
+    "raw/trials/005/attempt_0001/receipt.json": "e8079a5f0ca3aa5876619055d0c5b248c502768834f28a6c1be27169ab2308dd",
+    "raw/trials/005/attempt_0001/summary.json": "1b9ff641ddf5fb51776545aba745531ca7dd8f24226f6d1d4704fed19df5808d",
+    "raw/trials/005/attempt_0001/training/training_metrics.json": "a9ef054eb5d229906f7040b5d0ba3dd7c901e156de578b1609f8236754e83cac",
+    "raw/trials/005/attempt_0001/analysis/evaluation.json": "ffb5bc7a7d9d4c88d56e6cd8db5f98754a77adc8f46292fc385b3a6e9991972c",
+    "raw/trials/006/attempt_0001/receipt.json": "cf4ce3930dd5d6149a689e8d5fdcf46c1e7c5cb13f7e54b0def9d88e3a743f68",
+    "raw/trials/006/attempt_0001/summary.json": "20c11cd4cbc00be8919041511796a2c777304aa3a6ba72545841d3368c43e012",
+    "raw/trials/006/attempt_0001/training/training_metrics.json": "ee768f390cc7ce6e169b7c4e8833defd6bc5c84263611b3a35305b70a8984dd0",
+    "raw/trials/006/attempt_0001/analysis/evaluation.json": "86f1320ad6c59165bd77d6e465d5a304403675a95c07d7b34fc71aebae6dfb86",
+    "raw/trials/007/attempt_0001/receipt.json": "407ce74f41f2fcea0b0b0d2cabd53454acc87b8111168d54456767bafd35753e",
+    "raw/trials/007/attempt_0001/summary.json": "b5749565669b5d84ef9f5be9496237c3fce7a23bfd6ea64b92e6e2070349ca85",
+    "raw/trials/007/attempt_0001/training/training_metrics.json": "5edfab2055577d48c8201ff5d26ab06e7452c3da574860ec5037837762472ab6",
+    "raw/trials/007/attempt_0001/analysis/evaluation.json": "85879e33210decd40db32ba77b2f672e10a2e4a9a42cd94c809a7fc134b65274",
+    "raw/trials/008/attempt_0001/receipt.json": "b9c2a8d778e89fe927d7b835dc052293cd9812c7271ed7a479e9c724bc21dbe9",
+    "raw/trials/008/attempt_0001/summary.json": "79b1d78e2f3e269753f2d6900f2174ae98f92e1d7097a02f8a36f5dc78714ca8",
+    "raw/trials/008/attempt_0001/training/training_metrics.json": "88877b9201d8d1d640d6a2b7f617622e8684bab4527b8897387505c5b6fe6a3a",
+    "raw/trials/008/attempt_0001/analysis/evaluation.json": "ac0e0ab97dc1478d5c431ee94c7c43b2e8dbeeaa9713ddf7311c1c29820766ef",
+    "raw/trials/009/attempt_0001/receipt.json": "65909df22aede1c72f109503be4a45484a6338639ae8b1ea5ae2ad449e759e36",
+    "raw/trials/009/attempt_0001/summary.json": "39a9b3fee5093bed6c6b3302481453ec307f95c6421bf58f6a26487e8fba6375",
+    "raw/trials/009/attempt_0001/training/training_metrics.json": "1f50e08cb4b2a633ed5820bfe3c1a9a655747b85c33d5d5c7a0523c79a070bb7",
+    "raw/trials/009/attempt_0001/analysis/evaluation.json": "6844d92dd8e6a150ed2a52dba037eebdcfee60b3e36ec140dc0b3fee5fc6cbe6",
+    "raw/trials/010/attempt_0001/receipt.json": "05f0b513032c14bf4aab97519c1c216438334b026e18b5ffc103ff2b19d413f9",
+    "raw/trials/010/attempt_0001/summary.json": "ab3e8667a850cc74df1bd3a1cb8c0f8c59675becd99872b0f479ed940702cc30",
+    "raw/trials/010/attempt_0001/training/training_metrics.json": "830fd4db00f4377b450944390ec2f3255e57c0e2808632169de4ec1e073aad5f",
+    "raw/trials/010/attempt_0001/analysis/evaluation.json": "00ec1403af07dbc2cfd95017ac3f1d72349e1c5b8efda70bd0a9b5c7212aaa71",
+    "raw/trials/011/attempt_0001/receipt.json": "1b2480e887a21967ec24644b48a13ac999137c446e8464228aea549825425192",
+    "raw/trials/011/attempt_0001/summary.json": "675760c3fa66383c9f4ca606d1082a97e21545f9b983d1322c93da299306e854",
+    "raw/trials/011/attempt_0001/training/training_metrics.json": "b207ac6b0db38d4e45ee12b8ccec225ff8caaa4c301534b37107b40890ef7434",
+    "raw/trials/011/attempt_0001/analysis/evaluation.json": "38fd1d5e03e819c816a5ee2d4ba63fa062781f0a62e8abf72b2661b3dedb136b",
+    "raw/trials/012/attempt_0001/receipt.json": "cd5a1747d0eefcd932c3528aab5fc38cb424cbdb8dc10a6b65ea82a5c056b314",
+    "raw/trials/012/attempt_0001/summary.json": "55ca6db05335c06930d7a88c7a3f871ff7104a317542a74a20a5f2b888b546b5",
+    "raw/trials/012/attempt_0001/training/training_metrics.json": "9def2499c7fe5f5f5dfdcc38fe14d5fe106c4b81ba070782807e83c43181f370",
+    "raw/trials/012/attempt_0001/analysis/evaluation.json": "cb3c3c4e4631d5884a3306238439f323364e3363661391b5eb81a97b5ff345cd",
+    "raw/trials/013/attempt_0001/receipt.json": "52dae59f815049cdf6ee81293f5e7f9bf2848fe6987d5c214c0ec767a7129145",
+    "raw/trials/013/attempt_0001/summary.json": "e14c5b2ebe0dd4658a4ad05652222ada829a0a6381d1d14074e57685763b3b46",
+    "raw/trials/013/attempt_0001/training/training_metrics.json": "044106eaaf1a79b5d89d1ab500ec661ddb0ed43041aeb78ba633fa0757b67a8e",
+    "raw/trials/013/attempt_0001/analysis/evaluation.json": "ba018a820d118c7960be49ca625e9b7dd39316c79028023585ada3e7d9a42f06",
+    "raw/trials/014/attempt_0001/receipt.json": "55f0b9323c5148b2d12fe32a8e69d91f273e2a1eb13b7640a7360f7ee108ff27",
+    "raw/trials/014/attempt_0001/summary.json": "1327e6eff0f27cd24be85b1de70c173c887a2b18f21bb36d9ab84c6659284d95",
+    "raw/trials/014/attempt_0001/training/training_metrics.json": "2fd2a736c8a35ce3e7bdfe25f7b4571966c1234d04d42ae4ab6bdcf4f13a3930",
+    "raw/trials/014/attempt_0001/analysis/evaluation.json": "b0e77da8d43944b5673d5162adbd1a18a846e7005e8d664fa7957dce57ad48b3",
+    "raw/trials/015/attempt_0001/receipt.json": "e5fff22b0ebcf0e5c70756a0a2baa85866c9be9fddde655eed7cb62e01c06861",
+    "raw/trials/015/attempt_0001/summary.json": "eb8ad2163ae9200fd25ee8ab32a6e208f9614ab9de3a82f3dc3046dc00b0e9b5",
+    "raw/trials/015/attempt_0001/training/training_metrics.json": "fe80a7837f6876faa635ca137b53485ec253a3415a5adef63d2e3816c1c59af7",
+    "raw/trials/015/attempt_0001/analysis/evaluation.json": "a6c8aa26419140a2eb0efccb9d33a8c02c432d00c289366ca66de56b197a3c5e",
+    "raw/trials/016/attempt_0001/receipt.json": "0885581e3ff27a2076ed0ff1f9a4b8e1b6512bb1e980b7d925eddc09935a6fe7",
+    "raw/trials/016/attempt_0001/summary.json": "c42a830fc8c1da95b9b8e7c8663828bedbd5b223afd8212472481ab5e8c1274c",
+    "raw/trials/016/attempt_0001/training/training_metrics.json": "9b226b74ea065bd7ee86810f4e75d4e68b81d511a209995a5c4281014ed4ce83",
+    "raw/trials/016/attempt_0001/analysis/evaluation.json": "d09478b8e3e2601ec91d3cc04bf337cf376bf715f8281d250b9310cc1de0400c",
+    "raw/trials/017/attempt_0001/receipt.json": "9a4000a4d325392f0b28531566afb58c519b50b978686606438115bed6e68358",
+    "raw/trials/017/attempt_0001/summary.json": "f2c49e7554dd0aec78c8b2bb9a867811139d06c8e99fb8e4f14fa125a7f084da",
+    "raw/trials/017/attempt_0001/training/training_metrics.json": "1810e0c390e37e14355bc14089044b77adcde9c6093014d30239ef13e70366be",
+    "raw/trials/017/attempt_0001/analysis/evaluation.json": "1b4f022a2b684366d37aff8f79bfbd5b76c049d4e320612c4691448582047db2",
+    "raw/trials/018/attempt_0001/receipt.json": "545dc4f5bf3d3f01277d5395f073f4310e582d2c6ca295c6673f0e5333562340",
+    "raw/trials/018/attempt_0001/summary.json": "a039ff469767261b50cbe38ac752262fa902272044b3101a7701365e0dd7ae44",
+    "raw/trials/018/attempt_0001/training/training_metrics.json": "99b53285fb0939eba76d8935df76d718f1b2edfeb671a465881d0c4db9f94d7c",
+    "raw/trials/018/attempt_0001/analysis/evaluation.json": "3c8f42bdf5411595334436f6d95b72d69321ec443497d6524bbc37f8eb677bd3",
+    "raw/trials/019/attempt_0001/receipt.json": "2479fb7de42833ca7527826d70466ee0fc690b902253d23bb2b1e557a642450b",
+    "raw/trials/019/attempt_0001/summary.json": "4f609805ed17a147b3a2a68db8f1364928b6af9bd70473563994d08de1bd5428",
+    "raw/trials/019/attempt_0001/training/training_metrics.json": "ef15a48aea200bee2ae779e8661f2f380ae1dd643231ddc9634dd6dbd86e4c36",
+    "raw/trials/019/attempt_0001/analysis/evaluation.json": "1662bea2ae123ec0096ab9f1af591d7d8676a097fa8c2b7d025b03c3218fab91",
+    "raw/trials/020/attempt_0001/receipt.json": "b3b83a7db23ccae869d57116b5b41c4745cc2503929297978e034e5d131140f7",
+    "raw/trials/020/attempt_0001/summary.json": "60f805a3bb395ac77ad03d52e2ff76eb0e723fcdeb0f8979f899c1c5a1fa4bab",
+    "raw/trials/020/attempt_0001/training/training_metrics.json": "fe8579ae40d15ee6ce7b2ec59bfae98addfc2dc5061144336930ef8dc1939d56",
+    "raw/trials/020/attempt_0001/analysis/evaluation.json": "70397e2159741410f80083f1fb159069dad846e15e5a6173a37f9c094d85bf4e",
+    "raw/trials/021/attempt_0001/receipt.json": "c2378a75410268e8b601d6d99c4dbe1957971b3a783c57938ec3d2c3dfb3e17d",
+    "raw/trials/021/attempt_0001/summary.json": "8db927d9162d43410aa97527d7f2d7f4f8cbe386a9529e16d303f9ca08cf9047",
+    "raw/trials/021/attempt_0001/training/training_metrics.json": "8be13f5311552ca13c6392e594459cefdb8660ba51acd34b99adb423a75e3bff",
+    "raw/trials/021/attempt_0001/analysis/evaluation.json": "c75812c11dcdcdccbd54460be76e3a325664265ebacc41937bbae08d6f6df5ab",
+    "raw/trials/022/attempt_0001/receipt.json": "663200009b0b85af4c9704ae62b26a35a66f2977e2e006eea4fc29fd018fc314",
+    "raw/trials/022/attempt_0001/summary.json": "5fb49d18a391d6cc89ee3537b76ac0bf8be191d4792beb5bd56b074b1bf15adf",
+    "raw/trials/022/attempt_0001/training/training_metrics.json": "8dcfdef2ca309c2e3439f609e2f3bab7c814851e6fd086a3a3f79826ec75fd8d",
+    "raw/trials/022/attempt_0001/analysis/evaluation.json": "295a6241bcf3de165d3da2194d3b43708a209867b161ebbc0d0db8f666527f6c",
+    "raw/trials/023/attempt_0001/receipt.json": "f9d9ad98203d3eda1edbc5296eead71d2eb72d063dd6cd11b180da7ea58ce133",
+    "raw/trials/023/attempt_0001/summary.json": "3f6ea0e0eddd4bfb8e86cd256d88cd98777c9fadf801d5fa18480dcac631a389",
+    "raw/trials/023/attempt_0001/training/training_metrics.json": "f55c5cb8fdfe08c5f4b520224ca60b7c3a6c67d70b8875a1ce1a12cc45f1ab16",
+    "raw/trials/023/attempt_0001/analysis/evaluation.json": "ca2fa1583f05d6e30108291e98944bb78dc3ba97745cf916cb60326227250d86",
+    "raw/trials/024/attempt_0001/receipt.json": "48804dcbc0ca239058a5b585821803bc7308b8fbf171d0389b97db0c87884dc3",
+    "raw/trials/024/attempt_0001/summary.json": "797939fb4dc966b6c0ec1ca2beed47b5cc835d69a3b2c66366795ea4f76b1858",
+    "raw/trials/024/attempt_0001/training/training_metrics.json": "43314defba5449a9f32635f3dbb1ae11d6e3c402f832db5e4eaba0c50fc8b5ef",
+    "raw/trials/024/attempt_0001/analysis/evaluation.json": "094b23eb1fafc938e41af801cf492b4e15bc08fe4a1957251bc6e2300aa33940",
+    "raw/trials/025/attempt_0001/receipt.json": "c78d6932adccdcae5a66ecc663a40e4c30e587472c6096a8f12baf9d5cd3a4bf",
+    "raw/trials/025/attempt_0001/summary.json": "5370a13f4199b89b8b296991450986b6c1300e8b3e69851e0e5ecf30a074b8b0",
+    "raw/trials/025/attempt_0001/training/training_metrics.json": "0285f0823b407273c66cd84da49b52fdac76759daa42eeb505aac02e2adfb421",
+    "raw/trials/025/attempt_0001/analysis/evaluation.json": "69791c54944dd09c5d1a4a48ea1bbe72d5a69ad2df8208e7c4c16fe46012c398",
+    "raw/trials/026/attempt_0001/receipt.json": "4b4f8165dcb7a80aa83ecb3c1f28398e09117adf300a1a5f9a8ef2b69bad7236",
+    "raw/trials/026/attempt_0001/summary.json": "5b9e59d2e17505e724969ddd88c9cf174ccbda49d73c0c9ca8907aea2e1f53fd",
+    "raw/trials/026/attempt_0001/training/training_metrics.json": "abb9c7d5f837a251f3b6684b11c34a455cacdc2fa1370068e5d50353cde9f897",
+    "raw/trials/026/attempt_0001/analysis/evaluation.json": "cca79c12de5155c3c2d2a80ed81de2a8d557c15faef7932307a2834dd8341424",
+    "raw/trials/027/attempt_0001/receipt.json": "05774348e399e6275ea400bf70106b328fcbc2922d3263b81b64a852703d7060",
+    "raw/trials/027/attempt_0001/summary.json": "438bc92786efc9af56d5bfc34aaa786cdd57a926753a5abe106c3998ffe506de",
+    "raw/trials/027/attempt_0001/training/training_metrics.json": "dda4f02972706b9694860bf65054ae55a463d33af9431d952d99aa2c0f6b31fc",
+    "raw/trials/027/attempt_0001/analysis/evaluation.json": "f67d5a8bf3fac9419f0551dabf6512bc876281d13e0793165dbb7571fbfd77d1",
+    "raw/trials/028/attempt_0001/receipt.json": "36d9b866ad93fa1931bf1da656b3e3827c5fa27bcfe56b9e3dfd8254a5e09744",
+    "raw/trials/028/attempt_0001/summary.json": "6c0689ce458aa03a37bec373ec70063e48f26dc078db788dbb68005ea70a1726",
+    "raw/trials/028/attempt_0001/training/training_metrics.json": "d54ac14f75486e03d1ae52634f31c7a058b019b3436e03647252f3abdf56dd1d",
+    "raw/trials/028/attempt_0001/analysis/evaluation.json": "a688b0d50be73e4b4cbca64dc883b0d6a9ea7287bea7400503991c2b75e6cd81",
+    "raw/trials/029/attempt_0001/receipt.json": "ee4828917678306e52f99f7363fd3657e1879c4a4c6dd382611b03a0655e048a",
+    "raw/trials/029/attempt_0001/summary.json": "7f2cf49bb70c8246eff9f7993df870311318587dc7fa472ae521a0a93f3eff98",
+    "raw/trials/029/attempt_0001/training/training_metrics.json": "c18282319bec2ed57f45e435abc54e34ed9f8c7f16952a868ad310033d667e54",
+    "raw/trials/029/attempt_0001/analysis/evaluation.json": "9b62d9d02ebef9348ec0873f76cfef387f8f2cafdde97035d0fb268b6327763b"
+  },
+  "plot_script_sha256": "a3067319c594d111f6d40746efcc50f1d8c3fc6621afee7d87697188bfa9f734",
+  "python_version": "3.11.15",
+  "matplotlib_version": "3.11.2",
+  "profile": {
+    "name": "adaptive-validation",
+    "purpose": "Reserved adaptive finalist validation; different phase interval and untouched partition",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 10,
+    "seeds": [
+      5001,
+      5002,
+      5003,
+      5004,
+      5005
+    ],
+    "ne": {
+      "num_generations": 320,
+      "task_interval": 80,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "objective": "adaptive-active-previous-v1",
+  "objective_weights": {
+    "active": 0.5,
+    "previous": 0.5
+  },
+  "selected_generation": 5,
+  "conditions": [
+    {
+      "condition": "selected",
+      "label": "Selected\n(gen. 5)",
+      "scores": {
+        "combined_score": {
+          "mean": 0.8423170835705598,
+          "sample_sd": 0.20844320247143466,
+          "n": 5
+        },
+        "active_score": {
+          "mean": 0.938767500474453,
+          "sample_sd": 0.03073056963294922,
+          "n": 5
+        },
+        "previous_score": {
+          "mean": 0.7458666666666667,
+          "sample_sd": 0.39344836453536763,
+          "n": 5
+        }
+      },
+      "seeds": [
+        {
+          "seed": 5001,
+          "combined_score": 0.4822531251758337,
+          "active_score": 0.9053062503516673,
+          "previous_score": 0.05920000000000001
+        },
+        {
+          "seed": 5002,
+          "combined_score": 0.9754371875792742,
+          "active_score": 0.9508743751585483,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 5003,
+          "combined_score": 0.8454362504959108,
+          "active_score": 0.9082725009918213,
+          "previous_score": 0.7826000000000001
+        },
+        {
+          "seed": 5004,
+          "combined_score": 0.9280685420016448,
+          "active_score": 0.9538037506699563,
+          "previous_score": 0.9023333333333333
+        },
+        {
+          "seed": 5005,
+          "combined_score": 0.9803903126001358,
+          "active_score": 0.9755806252002716,
+          "previous_score": 0.9852
+        }
+      ]
+    },
+    {
+      "condition": "identity",
+      "label": "Identity",
+      "scores": {
+        "combined_score": {
+          "mean": 0.8681230211981138,
+          "sample_sd": 0.11662194367703985,
+          "n": 5
+        },
+        "active_score": {
+          "mean": 0.8552593757295608,
+          "sample_sd": 0.06330916936622263,
+          "n": 5
+        },
+        "previous_score": {
+          "mean": 0.8809866666666667,
+          "sample_sd": 0.22072600108631416,
+          "n": 5
+        }
+      },
+      "seeds": [
+        {
+          "seed": 5001,
+          "combined_score": 0.6643257299850385,
+          "active_score": 0.8367181266367436,
+          "previous_score": 0.49193333333333333
+        },
+        {
+          "seed": 5002,
+          "combined_score": 0.8836306252598762,
+          "active_score": 0.7672612505197525,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 5003,
+          "combined_score": 0.9190193752735853,
+          "active_score": 0.9250387505471706,
+          "previous_score": 0.913
+        },
+        {
+          "seed": 5004,
+          "combined_score": 0.9541400002837181,
+          "active_score": 0.9082800005674362,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 5005,
+          "combined_score": 0.9194993751883507,
+          "active_score": 0.8389987503767014,
+          "previous_score": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "arithmetic",
+      "label": "Arithmetic",
+      "scores": {
+        "combined_score": {
+          "mean": 0.9024670843501886,
+          "sample_sd": 0.12425001652158399,
+          "n": 5
+        },
+        "active_score": {
+          "mean": 0.8518275020337105,
+          "sample_sd": 0.165737454960367,
+          "n": 5
+        },
+        "previous_score": {
+          "mean": 0.9531066666666667,
+          "sample_sd": 0.08546611544284019,
+          "n": 5
+        }
+      },
+      "seeds": [
+        {
+          "seed": 5001,
+          "combined_score": 0.6803596896737815,
+          "active_score": 0.5577193793475629,
+          "previous_score": 0.803
+        },
+        {
+          "seed": 5002,
+          "combined_score": 0.951929375359416,
+          "active_score": 0.9038587507188319,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 5003,
+          "combined_score": 0.9603141684244076,
+          "active_score": 0.9580950035154819,
+          "previous_score": 0.9625333333333334
+        },
+        {
+          "seed": 5004,
+          "combined_score": 0.9554800005823374,
+          "active_score": 0.9109600011646747,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 5005,
+          "combined_score": 0.9642521877110004,
+          "active_score": 0.9285043754220008,
+          "previous_score": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "focus",
+      "label": "FocusGA",
+      "scores": {
+        "combined_score": {
+          "mean": 0.9053979168436925,
+          "sample_sd": 0.1604846958955431,
+          "n": 5
+        },
+        "active_score": {
+          "mean": 0.9497825003540517,
+          "sample_sd": 0.019628326133136767,
+          "n": 5
+        },
+        "previous_score": {
+          "mean": 0.8610133333333333,
+          "sample_sd": 0.31078363463277076,
+          "n": 5
+        }
+      },
+      "seeds": [
+        {
+          "seed": 5001,
+          "combined_score": 0.6187192711671193,
+          "active_score": 0.932371875667572,
+          "previous_score": 0.30506666666666665
+        },
+        {
+          "seed": 5002,
+          "combined_score": 0.9753793752253056,
+          "active_score": 0.9507587504506112,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 5003,
+          "combined_score": 0.9638118752092123,
+          "active_score": 0.9276237504184246,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 5004,
+          "combined_score": 0.9849390625804663,
+          "active_score": 0.9698781251609325,
+          "previous_score": 1.0
+        },
+        {
+          "seed": 5005,
+          "combined_score": 0.9841400000363589,
+          "active_score": 0.9682800000727178,
+          "previous_score": 1.0
+        }
+      ]
+    },
+    {
+      "condition": "static_shinka11",
+      "label": "Static\nShinka 11",
+      "scores": {
+        "combined_score": {
+          "mean": 0.7576142919651667,
+          "sample_sd": 0.1781427674126612,
+          "n": 5
+        },
+        "active_score": {
+          "mean": 0.956415250597,
+          "sample_sd": 0.009625144406453432,
+          "n": 5
+        },
+        "previous_score": {
+          "mean": 0.5588133333333334,
+          "sample_sd": 0.355538844260058,
+          "n": 5
+        }
+      },
+      "seeds": [
+        {
+          "seed": 5001,
+          "combined_score": 0.49754072993199033,
+          "active_score": 0.9491481265306473,
+          "previous_score": 0.04593333333333334
+        },
+        {
+          "seed": 5002,
+          "combined_score": 0.8937061458905537,
+          "active_score": 0.9639456251144408,
+          "previous_score": 0.8234666666666667
+        },
+        {
+          "seed": 5003,
+          "combined_score": 0.6938181252688169,
+          "active_score": 0.9566362505376339,
+          "previous_score": 0.43100000000000005
+        },
+        {
+          "seed": 5004,
+          "combined_score": 0.7538305209626754,
+          "active_score": 0.9675943752586842,
+          "previous_score": 0.5400666666666667
+        },
+        {
+          "seed": 5005,
+          "combined_score": 0.9491759377717972,
+          "active_score": 0.9447518755435943,
+          "previous_score": 0.9536
+        }
+      ]
+    },
+    {
+      "condition": "static_random24",
+      "label": "Static\nRandom 24",
+      "scores": {
+        "combined_score": {
+          "mean": 0.7876772084995111,
+          "sample_sd": 0.1564276154423511,
+          "n": 5
+        },
+        "active_score": {
+          "mean": 0.9699677503323555,
+          "sample_sd": 0.00913239128632142,
+          "n": 5
+        },
+        "previous_score": {
+          "mean": 0.6053866666666666,
+          "sample_sd": 0.3141136786437533,
+          "n": 5
+        }
+      },
+      "seeds": [
+        {
+          "seed": 5001,
+          "combined_score": 0.5535030209859212,
+          "active_score": 0.9803393753051758,
+          "previous_score": 0.12666666666666665
+        },
+        {
+          "seed": 5002,
+          "combined_score": 0.8501144792715708,
+          "active_score": 0.9664956252098084,
+          "previous_score": 0.7337333333333332
+        },
+        {
+          "seed": 5003,
+          "combined_score": 0.789834062626958,
+          "active_score": 0.9606681252539159,
+          "previous_score": 0.619
+        },
+        {
+          "seed": 5004,
+          "combined_score": 0.7612038546005886,
+          "active_score": 0.9632743758678437,
+          "previous_score": 0.5591333333333334
+        },
+        {
+          "seed": 5005,
+          "combined_score": 0.983730625012517,
+          "active_score": 0.979061250025034,
+          "previous_score": 0.9884
+        }
+      ]
+    }
+  ],
+  "primary_comparison": {
+    "paired_differences": [
+      {
+        "seed": 5001,
+        "difference": -0.13646614599128565
+      },
+      {
+        "seed": 5002,
+        "difference": 5.781235396862261e-05
+      },
+      {
+        "seed": 5003,
+        "difference": -0.11837562471330154
+      },
+      {
+        "seed": 5004,
+        "difference": -0.05687052057882147
+      },
+      {
+        "seed": 5005,
+        "difference": -0.0037496874362231702
+      }
+    ],
+    "aggregate": {
+      "mean": -0.06308083327313264,
+      "sample_sd": 0.06322214703895167,
+      "n": 5
+    },
+    "primary": true,
+    "complete_five_seed_comparison": true
+  },
+  "verified_completed_trials": 30,
+  "verified_published_artifacts": 531,
+  "interpretation": "Reserved transfer validation; descriptive paired comparison, separate from paper reporting",
+  "output_sha256": {
+    "adaptive-validation-20261003.svg": "c8b8a5001b1ee7d4060b389b9fa12063af9352fe765502bfa9992c313453f118",
+    "adaptive-validation-20261003.pdf": "f935fad4ffff6f140de95cdd5d20e913b657366b02ee40adac7701d13c5b7c26"
+  }
+}

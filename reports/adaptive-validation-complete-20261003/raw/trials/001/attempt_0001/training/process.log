@@ -1,0 +1,23 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 5002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  seed           : 5001
+  boundary info  : none
+  output         : /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-validation-20261003/trials/001/attempt_0001/training
+======================================================================
+  gen     0 task= 0 train=   12.9 t0=  129.8 t1=    9.9 gen'ist=    9.9
+  gen    50 task= 0 train=  369.1 t0=  500.0 t1=   54.1 gen'ist=   54.1
+  gen   100 task= 1 train=  320.4 t0=  323.3 t1=  500.0 gen'ist=  323.3
+  gen   150 task= 1 train=  460.3 t0=   10.1 t1=  500.0 gen'ist=   10.1
+  gen   200 task= 0 train=  490.5 t0=  500.0 t1=    9.4 gen'ist=    9.4
+  gen   250 task= 1 train=  455.9 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   300 task= 1 train=  485.7 t0=  303.9 t1=  500.0 gen'ist=  303.9
+  gen   319 task= 1 train=  478.7 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  wrote /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-validation-20261003/trials/001/attempt_0001/training
+
+Done. /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-validation-20261003/trials/001/attempt_0001/training
