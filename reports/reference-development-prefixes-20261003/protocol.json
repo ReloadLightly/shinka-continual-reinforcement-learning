@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "experiment_kind": "derived_development_prefix_analysis",
+  "purpose": "Describe matched GA and ES prefixes for comparison with the resource-limited PPO development trajectory; no new trials",
+  "scope": "First four phases of two previously completed full-budget development trials",
+  "amended_protocol": "../../docs/reference-comparison.md#ppo-resource-amendment--october-3-2026",
+  "original_protocol": "../../docs/reproduction-plan.md",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "seed": 1001,
+  "task_trial": 1002,
+  "evaluation_seed": 901001,
+  "episodes_per_target": 10,
+  "phase_count": 4,
+  "phase_sequence": [0, 1, 0, 1],
+  "ne_generations_per_phase": 200,
+  "selected_training_records": 800,
+  "ne_population": 512,
+  "training_episodes_per_member": 3,
+  "episode_cap_steps": 500,
+  "nominal_training_steps_per_prefix": 614400000,
+  "matching_ppo_target_updates": 6000,
+  "agent_source": "centroid",
+  "selection": "Use records [0:800] and centroid checkpoint entries with task_idx 0..3. Remove zero_shot_next_returns from phase 3 because the next phase lies outside this prefix. Preserve original files unchanged.",
+  "metric_definitions": "Reuse shinka_crl.analysis.summarize_trial and its integrate_curve: LA averages four own-task means; signed F averages own[i]-previous[i+1] over three switches; ZT averages next[i] over phases 0..2; LA-F retains the sign of F.",
+  "cumulative_clock": "Completed-generation steps, 768000 nominal steps per generation, pinned unit NE-generation trapezoidal grid with the first logged return extended to time zero; this is not an untrained-agent measurement.",
+  "normalization": "Divide cumulative reward-steps by 614400000 and the 500-step episode cap; distinct from the paper's reference-dependent rescaling.",
+  "compute_accounting": "No new training or evaluation. Prefix runtime is the original parent-observed monotonic elapsed time at the fourth phase checkpoint; the full original training, analysis, and suite costs remain incurred and are reported separately, not charged again. Prefix peak RSS was not measured separately. Derivation performs file verification and arithmetic only; its duration is not measured.",
+  "uncertainty": "One development trajectory per method; no estimate of between-trial variation and no final reporting or full-budget three-method ranking.",
+  "verification": "Verify every published source hash, archive source identities against current files or the recorded historical harness commit, baseline configuration, native evaluator hashes, full twenty-phase metrics, matched task vectors, and selected phase boundaries before deriving the prefix.",
+  "reproduce": ".venv/bin/python reports/reference-development-prefixes-20261003/derivation.py --check",
+  "sources": {
+    "ga": {
+      "report": "../reference-timing-20261002",
+      "checksums_sha256": "039f1485803e86b3ac1299328f65eea0b1e2fe46e699436ad220274d7ca004f1",
+      "training": "raw/training",
+      "analysis": "raw/analysis"
+    },
+    "es": {
+      "report": "../reference-development-es-20261003",
+      "checksums_sha256": "9609bb375416b0e38b56cd902ce44fec6b80f9d5cdf9c19b93d245189b64e830",
+      "training": "raw/trials/es/seed_1001/training/attempt_001",
+      "analysis": "raw/trials/es/seed_1001/analysis/attempt_001"
+    }
+  }
+}

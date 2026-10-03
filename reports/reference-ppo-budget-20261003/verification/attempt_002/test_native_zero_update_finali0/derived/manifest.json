@@ -1,0 +1,79 @@
+{
+  "status": "failed",
+  "profile": {
+    "name": "smoke",
+    "purpose": "Resource-limited completed prefix of development training; not the full-budget reference comparison or reporting trials",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 2,
+    "num_tasks": 2,
+    "episode_length": 32,
+    "eval_episodes": 1,
+    "seeds": [
+      3001
+    ],
+    "ne": {
+      "num_generations": 4,
+      "task_interval": 2,
+      "pop_size": 8,
+      "num_evals": 1
+    },
+    "ppo": {
+      "num_updates": 4,
+      "task_interval": 2,
+      "num_envs": 8,
+      "num_steps": 16,
+      "num_minibatches": 2
+    }
+  },
+  "method": "ppo",
+  "seed": 3001,
+  "trial": 3002,
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "ga_settings": null,
+  "command": [
+    "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution/.venv/bin/python",
+    "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution/source/run.py",
+    "--suite",
+    "gymnax",
+    "--env",
+    "CartPole-v1_sigma0.5",
+    "--method",
+    "ppo",
+    "--seed",
+    "3001",
+    "--trial",
+    "3002",
+    "--output_dir",
+    "/home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/derived",
+    "--num_phases",
+    "2",
+    "--num_tasks",
+    "2",
+    "--task_type",
+    "noise",
+    "--eval_episodes",
+    "1",
+    "--episode_length",
+    "32",
+    "--num_updates",
+    "4",
+    "--task_interval",
+    "2",
+    "--ppo_override",
+    "num_envs=8",
+    "num_steps=16",
+    "num_minibatches=2",
+    "--checkpoint_every",
+    "2"
+  ],
+  "started_at_utc": "2026-10-03T18:38:57.861466+00:00",
+  "derivation": {
+    "kind": "native_checkpoint_completed_prefix",
+    "source_checkpoint_sha256": "efe822dc6f548f02fdbbda0241ebd39d2a7b0b5d8a4102390dcc1a3755ac4f9b",
+    "completed_updates": 4,
+    "additional_training_updates": 0
+  },
+  "error": "ValueError: Finalization changed trained policies or recorded history",
+  "wall_seconds": 12.76922373400157,
+  "finished_at_utc": "2026-10-03T18:39:10.631005+00:00"
+}

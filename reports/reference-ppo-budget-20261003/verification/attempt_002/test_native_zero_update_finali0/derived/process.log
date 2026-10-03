@@ -1,0 +1,19 @@
+======================================================================
+gymnax | ppo (rl) | CartPole-v1_sigma0.5 | continual | trial 3002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 2
+  schedule       : switch, 2 sub-tasks
+  matched budget : 3.072e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_updates, num_envs, num_steps)
+  ppo overrides  : {'num_envs': 8, 'num_steps': 16, 'num_minibatches': 2}
+  seed           : 3001
+  boundary info  : none
+  output         : /home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/derived
+======================================================================
+/home/roland/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-nfaa0goo because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+  RESUMED from /home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/derived/resume.pkl at update 4 (4 records, 0.00 h already spent)
+  wrote /home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/derived
+
+Done. /home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/derived

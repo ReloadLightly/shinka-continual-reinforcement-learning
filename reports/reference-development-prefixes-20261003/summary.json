@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "status": "derived_analysis_complete",
+  "kind": "derived_development_prefix_analysis",
+  "protocol": {
+    "path": "protocol.json",
+    "sha256": "7b13cccf34c6fbbf4e6e029867cf38f96c8d16a6e6f02c66051fc1fb4d48e4cb"
+  },
+  "derivation": {
+    "path": "derivation.py",
+    "sha256": "c31750a83b2c37fba79218e3af98cbf911009fd7418b8d1bae8efdeaee13c0da",
+    "reused_analysis_sha256": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d"
+  },
+  "scope": "Matched four-phase development prefixes; no new trials or PPO results",
+  "n_existing_trials_per_method": 1,
+  "sample_standard_deviation": null,
+  "matched_task_vectors": true,
+  "rows": [
+    {
+      "method": "ga",
+      "kind": "derived_development_prefix",
+      "new_trial": false,
+      "analysis": {
+        "analysis_version": 1,
+        "method": "ga",
+        "condition": "switching",
+        "seed": 1001,
+        "trial": 1002,
+        "agent_source": "centroid",
+        "episodes": 10,
+        "eval_seed": 901001,
+        "num_phases": 4,
+        "phase_sequence": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "nominal_training_steps": 614400000,
+        "steps_per_update": 768000,
+        "metrics": {
+          "learning_accuracy": 500.0,
+          "forgetting": 32.06666666666666,
+          "zero_shot_transfer": 468.0,
+          "learning_minus_forgetting": 467.93333333333334,
+          "cumulative_reward_steps": 294030220804.6875,
+          "cumulative_reward_generation_equivalents": 382851.8500061035,
+          "cumulative_reward_steps_exact": 294030220804.6875,
+          "normalized_curve_average": 0.9571296250152588
+        },
+        "phase_returns": [
+          {
+            "phase": 0,
+            "task": 0,
+            "checkpoint_completed_steps": 153600000,
+            "own_mean": 500.0,
+            "previous_mean": null,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 1,
+            "task": 1,
+            "checkpoint_completed_steps": 307200000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 2,
+            "task": 0,
+            "checkpoint_completed_steps": 460800000,
+            "own_mean": 500.0,
+            "previous_mean": 403.8,
+            "next_mean": 404.0
+          },
+          {
+            "phase": 3,
+            "task": 1,
+            "checkpoint_completed_steps": 614400000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": null
+          }
+        ],
+        "phase_training_returns": [
+          415.4855000305176,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "clock": {
+          "record_timing": "after_update",
+          "raw_generation_labels": "zero_based",
+          "completed_steps": "(generation + 1) * steps_per_update",
+          "integration": "pinned_unit_NE_generation_grid_trapezoid",
+          "reference_steps_per_generation": 768000,
+          "integration_grid_points": 801,
+          "edge_values": "constant_first_and_last_logged_return",
+          "initial_untrained_policy_evaluated": false
+        },
+        "transfer_interpretation": "consecutive_switches_including_both_directions",
+        "source_profile": "paper-cartpole-timing"
+      },
+      "noise_vectors": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.5717431306838989,
+          -0.20802041888237,
+          -0.14799921214580536,
+          0.10802476108074188
+        ]
+      ],
+      "selected_existing_centroid_evaluation_episodes": 100,
+      "compute": {
+        "observed_prefix_checkpoint_elapsed_seconds": 429.4531258670613,
+        "observed_prefix_phase_events": [
+          {
+            "completed_generations": 200,
+            "elapsed_seconds": 120.48335556103848,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_generations": 400,
+            "elapsed_seconds": 218.37480906699784,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_generations": 600,
+            "elapsed_seconds": 345.1968317569699,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_generations": 800,
+            "elapsed_seconds": 429.4531258670613,
+            "kind": "native_checkpoint_written"
+          }
+        ],
+        "prefix_peak_rss_kib": null,
+        "full_source_training_seconds_already_incurred": 1811.7073076720117,
+        "full_source_analysis_seconds_already_incurred": 11.549713477026671,
+        "full_source_suite_seconds_already_incurred": 1824.5791234300705,
+        "full_source_training_steps_already_incurred": 3072000000,
+        "full_source_peak_rss_kib": 863460,
+        "full_source_evaluation_episodes_already_incurred": 1740,
+        "new_training_steps": 0,
+        "new_evaluation_episodes": 0
+      },
+      "evidence": {
+        "report": "../reference-timing-20261002",
+        "checksums": {
+          "path": "../reference-timing-20261002/checksums.json",
+          "sha256": "039f1485803e86b3ac1299328f65eea0b1e2fe46e699436ad220274d7ca004f1"
+        },
+        "training_records": "../reference-timing-20261002/raw/training/training_metrics.json",
+        "evaluation": "../reference-timing-20261002/raw/analysis/evaluation.json",
+        "original_plan": "../reference-timing-20261002/raw/plan.json",
+        "verified_published_file_count": 20,
+        "verified_archived_source_count": 12,
+        "historical_source_resolution": {
+          "src/shinka_crl/experiment.py": {
+            "commit": "343fa1178f183c1d53cb2f37625023d045cffd4e",
+            "sha256": "088ac1e844e4254e81cca1b72bbbbf9f28c69e6c415fdc02883320eca83181b0"
+          },
+          "src/shinka_crl/analysis.py": {
+            "commit": "343fa1178f183c1d53cb2f37625023d045cffd4e",
+            "sha256": "6ec9691d8cb40415d162fd2483f9ca1765cd03e484279ae465e6154b2bb2f11b"
+          },
+          "src/shinka_crl/baseline_contract.py": {
+            "commit": "343fa1178f183c1d53cb2f37625023d045cffd4e",
+            "sha256": "d778e09868f23a19f4828e15ca4eea8dc7899f6d24098a29cc5876a928461a8d"
+          }
+        },
+        "source_checkpoints_sha256": "79e8f0c9f205f9563f2f3d212bbe75899136da833ae4e215c9dbeecdfd1a2204",
+        "checkpoint_note": "Recorded native checkpoint hash; binary was not reloaded for this arithmetic derivation"
+      }
+    },
+    {
+      "method": "es",
+      "kind": "derived_development_prefix",
+      "new_trial": false,
+      "analysis": {
+        "analysis_version": 1,
+        "method": "es",
+        "condition": "switching",
+        "seed": 1001,
+        "trial": 1002,
+        "agent_source": "centroid",
+        "episodes": 10,
+        "eval_seed": 901001,
+        "num_phases": 4,
+        "phase_sequence": [
+          0,
+          1,
+          0,
+          1
+        ],
+        "nominal_training_steps": 614400000,
+        "steps_per_update": 768000,
+        "metrics": {
+          "learning_accuracy": 500.0,
+          "forgetting": 0.0,
+          "zero_shot_transfer": 500.0,
+          "learning_minus_forgetting": 500.0,
+          "cumulative_reward_steps": 297890035218.0176,
+          "cumulative_reward_generation_equivalents": 387877.6500234604,
+          "cumulative_reward_steps_exact": 297890035218.0176,
+          "normalized_curve_average": 0.969694125058651
+        },
+        "phase_returns": [
+          {
+            "phase": 0,
+            "task": 0,
+            "checkpoint_completed_steps": 153600000,
+            "own_mean": 500.0,
+            "previous_mean": null,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 1,
+            "task": 1,
+            "checkpoint_completed_steps": 307200000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 2,
+            "task": 0,
+            "checkpoint_completed_steps": 460800000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": 500.0
+          },
+          {
+            "phase": 3,
+            "task": 1,
+            "checkpoint_completed_steps": 614400000,
+            "own_mean": 500.0,
+            "previous_mean": 500.0,
+            "next_mean": null
+          }
+        ],
+        "phase_training_returns": [
+          440.5900001144409,
+          500.0,
+          500.0,
+          500.0
+        ],
+        "clock": {
+          "record_timing": "after_update",
+          "raw_generation_labels": "zero_based",
+          "completed_steps": "(generation + 1) * steps_per_update",
+          "integration": "pinned_unit_NE_generation_grid_trapezoid",
+          "reference_steps_per_generation": 768000,
+          "integration_grid_points": 801,
+          "edge_values": "constant_first_and_last_logged_return",
+          "initial_untrained_policy_evaluated": false
+        },
+        "transfer_interpretation": "consecutive_switches_including_both_directions",
+        "source_profile": "paper-cartpole"
+      },
+      "noise_vectors": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -0.5717431306838989,
+          -0.20802041888237,
+          -0.14799921214580536,
+          0.10802476108074188
+        ]
+      ],
+      "selected_existing_centroid_evaluation_episodes": 100,
+      "compute": {
+        "observed_prefix_checkpoint_elapsed_seconds": 277.8433216789999,
+        "observed_prefix_phase_events": [
+          {
+            "completed_updates": 200,
+            "elapsed_seconds": 79.05809285500072,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_updates": 400,
+            "elapsed_seconds": 145.91748490700047,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_updates": 600,
+            "elapsed_seconds": 212.3683844449988,
+            "kind": "native_checkpoint_written"
+          },
+          {
+            "completed_updates": 800,
+            "elapsed_seconds": 277.8433216789999,
+            "kind": "native_checkpoint_written"
+          }
+        ],
+        "prefix_peak_rss_kib": null,
+        "full_source_training_seconds_already_incurred": 1375.2467391909995,
+        "full_source_analysis_seconds_already_incurred": 13.438530453000567,
+        "full_source_suite_seconds_already_incurred": 1391.4174565450012,
+        "full_source_training_steps_already_incurred": 3072000000,
+        "full_source_peak_rss_kib": 825736,
+        "full_source_evaluation_episodes_already_incurred": 1740,
+        "new_training_steps": 0,
+        "new_evaluation_episodes": 0
+      },
+      "evidence": {
+        "report": "../reference-development-es-20261003",
+        "checksums": {
+          "path": "../reference-development-es-20261003/checksums.json",
+          "sha256": "9609bb375416b0e38b56cd902ce44fec6b80f9d5cdf9c19b93d245189b64e830"
+        },
+        "training_records": "../reference-development-es-20261003/raw/trials/es/seed_1001/training/attempt_001/training_metrics.json",
+        "evaluation": "../reference-development-es-20261003/raw/trials/es/seed_1001/analysis/attempt_001/evaluation.json",
+        "original_plan": "../reference-development-es-20261003/raw/plan.json",
+        "verified_published_file_count": 22,
+        "verified_archived_source_count": 12,
+        "historical_source_resolution": {},
+        "source_checkpoints_sha256": "4446cfd6241a1995c265219ac8528d6a889852a51364c1818e121569f676bfbe",
+        "checkpoint_note": "Recorded native checkpoint hash; binary was not reloaded for this arithmetic derivation"
+      }
+    }
+  ],
+  "interpretation": "Describe initial acquisition and three switches only. Reused development evidence cannot establish a twenty-phase three-method ranking or reporting-trial variation."
+}

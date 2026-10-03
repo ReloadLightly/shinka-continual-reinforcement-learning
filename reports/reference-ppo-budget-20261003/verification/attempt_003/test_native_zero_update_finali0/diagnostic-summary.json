@@ -1,0 +1,108 @@
+{
+  "training_measurement": {
+    "status": "complete",
+    "returncode": 0,
+    "wall_seconds": 26.547286616998463,
+    "maximum_trainer_rss_kib": 502616,
+    "user_cpu_seconds": 31.972949,
+    "system_cpu_seconds": 3.763663,
+    "trainer_cpu_affinity": [
+      6,
+      7
+    ],
+    "start_update": 0,
+    "phase_events": [
+      {
+        "completed_updates": 2,
+        "elapsed_seconds": 25.327379393998854,
+        "kind": "native_checkpoint_written"
+      },
+      {
+        "completed_updates": 4,
+        "elapsed_seconds": 25.40984012699846,
+        "kind": "native_checkpoint_written"
+      }
+    ],
+    "timing_note": "Parent-observed flushed native boundaries include JIT, evaluation, diagnostics and checkpoint I/O; RSS is this trainer's Linux wait4 peak"
+  },
+  "finalization_measurement": {
+    "status": "complete",
+    "returncode": 0,
+    "wall_seconds": 12.956718356002966,
+    "maximum_trainer_rss_kib": 410784,
+    "user_cpu_seconds": 14.278683000000001,
+    "system_cpu_seconds": 1.258971,
+    "trainer_cpu_affinity": [
+      6,
+      7
+    ],
+    "start_update": 4,
+    "phase_events": [],
+    "timing_note": "Parent-observed flushed native boundaries include JIT, evaluation, diagnostics and checkpoint I/O; RSS is this trainer's Linux wait4 peak"
+  },
+  "source_checkpoint_sha256": "efe822dc6f548f02fdbbda0241ebd39d2a7b0b5d8a4102390dcc1a3755ac4f9b",
+  "analysis": {
+    "analysis_version": 1,
+    "method": "ppo",
+    "profile": "smoke",
+    "condition": "switching",
+    "seed": 3001,
+    "trial": 3002,
+    "agent_source": "final",
+    "episodes": 2,
+    "eval_seed": 903001,
+    "num_phases": 2,
+    "phase_sequence": [
+      0,
+      1
+    ],
+    "nominal_training_steps": 512,
+    "steps_per_update": 128,
+    "metrics": {
+      "learning_accuracy": 9.25,
+      "forgetting": 0.0,
+      "zero_shot_transfer": 10.0,
+      "learning_minus_forgetting": 9.25,
+      "cumulative_reward_steps": 4736.0,
+      "cumulative_reward_generation_equivalents": 18.5,
+      "cumulative_reward_steps_exact": 4928.0,
+      "normalized_curve_average": 0.2890625
+    },
+    "phase_returns": [
+      {
+        "phase": 0,
+        "task": 0,
+        "checkpoint_completed_steps": 256,
+        "own_mean": 9.0,
+        "previous_mean": null,
+        "next_mean": 10.0
+      },
+      {
+        "phase": 1,
+        "task": 1,
+        "checkpoint_completed_steps": 512,
+        "own_mean": 9.5,
+        "previous_mean": 9.0,
+        "next_mean": null
+      }
+    ],
+    "phase_training_returns": [
+      9.0,
+      10.5
+    ],
+    "clock": {
+      "record_timing": "after_update",
+      "raw_generation_labels": "zero_based",
+      "completed_steps": "(generation + 1) * steps_per_update",
+      "integration": "pinned_unit_NE_generation_grid_trapezoid",
+      "reference_steps_per_generation": 256,
+      "integration_grid_points": 3,
+      "edge_values": "constant_first_and_last_logged_return",
+      "initial_untrained_policy_evaluated": false
+    },
+    "transfer_interpretation": "consecutive_switches_including_both_directions"
+  },
+  "reused_training_checkpoint": "/home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/native-segment/resume.pkl",
+  "source_checkpoint_preserved": true,
+  "additional_training_updates": 0
+}

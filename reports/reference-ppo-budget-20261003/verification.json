@@ -1,0 +1,84 @@
+{
+  "purpose": "Verify native checkpoint finalization and fresh evaluation without additional training; execution validation only.",
+  "tests_passed": 18,
+  "source_files": {
+    "src/shinka_crl/reference_prefix.py": "873940ad71b49b904e79a53fca2181f65fe5cb3a554fa692e4046300ae73f109",
+    "scripts/finalize_reference_prefix.py": "9fb421bfa51eba1d5c4794fe6c9dfef1f3e73d04521532c98ab2d0da807c0110",
+    "tests/test_reference_prefix.py": "18b55becd41cee76d70a0bbb032537a2c814e6e6cf9076364897366a864e150a"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "outcome": "Native startup exceeded bounded 30-second diagnostic timeout before its first update. Original diagnostic retained.",
+      "charged_wall_seconds": 30.44,
+      "cost_basis": "Observed pytest elapsed time; native measurement was not persisted before the failed assertion."
+    },
+    {
+      "attempt": 2,
+      "outcome": "Real native checkpoint and zero-update finalization succeeded; integrity check identified native serialization aliases. Fixed by applying the unchanged pinned alias transform before comparison.",
+      "charged_wall_seconds": 46.586188780001976,
+      "cost_basis": "Persisted monotonic diagnostic duration."
+    },
+    {
+      "attempt": 3,
+      "outcome": "Reused the verified attempt-2 checkpoint; zero-update finalization preserved every original record value and phase policy. Existing fresh checkpoint evaluation completed.",
+      "charged_wall_seconds": 30.331532116000744,
+      "cost_basis": "Persisted monotonic diagnostic duration.",
+      "additional_training_updates": 0
+    }
+  ],
+  "prior_auxiliary_seconds_to_charge": 107.35772089600272,
+  "budget_seconds": 28800,
+  "published_sha256": {
+    "verification/attempt_001/test_native_zero_update_finali0/native-segment/phase-events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/attempt_001/test_native_zero_update_finali0/native-segment/process.log": "53b1d93be3323959c0a9e4ff042ba9a6924be15ef86c217d17ea1090ca5f0f3a",
+    "verification/attempt_001/test_native_zero_update_finali0/native-segment/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/attempt_001/test_native_zero_update_finali0/native-segment/train.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/checkpoint-probe.json": "a7843faff2d515e8bb39d52b56ad92c676681be88684bd8e494a4d03721a4244",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/config.json": "3e4b9d79cbc497f917a934060808a6039ba9820a0913ecb12070c443fcc9032f",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/manifest.json": "f99186ee3a9123f2be2a0cca4478ba8821f566990409d6167d6d7a14f9b576ed",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/phase-events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/process-measurement.json": "e4e476621265c9b71820b4398773d41d71e5de7bf1857c055d00e02808ce82a2",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/process.log": "efa55340094f5c320ca7aa35b1172af9fba1c479ab01785465617efe6eb6bac1",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/receipt.json": "bb40b05f6d430336c00c2e517ee663c366f672e8719b554f1febbf56e273d799",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/results.json": "a56d7435d7abee1395684cd33b553c513e1cfacc7a2ec0a8760ec906c8b3dec6",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/train.log": "cc48cec7363af50056d0da91a6d1f66ffffff640c25c42839c72fc755f3f5c6d",
+    "verification/attempt_002/test_native_zero_update_finali0/derived/training_metrics.json": "c219d6864dc917390a8531981d65e900dca7aaf80fd79a8e29ca956fe60d415d",
+    "verification/attempt_002/test_native_zero_update_finali0/diagnostic-cost.json": "88b2aeb45431c48ea51edc10fed761ee3525914f833a12801281edd7ea03c59e",
+    "verification/attempt_002/test_native_zero_update_finali0/native-segment/phase-events.jsonl": "7d1d11f039ca536245234e6fdfc29888e1baa795ae2ea8f641f53a2654449bf1",
+    "verification/attempt_002/test_native_zero_update_finali0/native-segment/process-measurement.json": "99f72e810ec50d3d9a3f9744735c108e8b14842ed6e6fd8cf3975413c2d8f7c3",
+    "verification/attempt_002/test_native_zero_update_finali0/native-segment/process.log": "f27bb754f795ea9c5dc29392aad74e2ffa65dc4e0efb3bf1770d2c4587bb7943",
+    "verification/attempt_002/test_native_zero_update_finali0/native-segment/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/attempt_002/test_native_zero_update_finali0/native-segment/train.log": "5bda833b5c83501c6abae2fa4b17a8b1c0058b24eab38cc62aa11ce8c9d78920",
+    "verification/attempt_003/test_native_zero_update_finali0/analysis/checkpoint-metadata.json": "725a3a0ddcad1b365763d2795c7ada5f8cb1f6217383952c617e56701caa7b43",
+    "verification/attempt_003/test_native_zero_update_finali0/analysis/evaluation-input/evaluation.json": "69a7bd67593697b7f2e5b990b8a62a2aa4c8acf03db84385f911d8627646cb5e",
+    "verification/attempt_003/test_native_zero_update_finali0/analysis/evaluation-input/results.json": "f9045e92e28262bc2f917d2b58ea31c386e624e539fe4ad3055f090d120b7bc5",
+    "verification/attempt_003/test_native_zero_update_finali0/analysis/evaluation.json": "69a7bd67593697b7f2e5b990b8a62a2aa4c8acf03db84385f911d8627646cb5e",
+    "verification/attempt_003/test_native_zero_update_finali0/analysis/manifest.json": "f235b3fd4d810a714988f42f85930117f5a65d3d8ddd7f8b399d83b37d8a9b83",
+    "verification/attempt_003/test_native_zero_update_finali0/analysis/process.log": "c7f85c2470c6331e821adc5cdde1660675197c83452df44b0f670739da6b0edf",
+    "verification/attempt_003/test_native_zero_update_finali0/analysis/summary.json": "8c0e5196f56be35edcf65b4c8f492adf9e5c97cd1dc75f6f2343c88129004f91",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/checkpoint-probe.json": "dd7768d00a077b9742ddcc20384a12af94cb3c5f6024a818b93c6ff8b3042a2f",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/config.json": "3e4b9d79cbc497f917a934060808a6039ba9820a0913ecb12070c443fcc9032f",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/manifest.json": "ce54eb90b9027aba65e7304b05ca11e8dd678961e24c8c76e4f59e4ffd4de972",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/phase-events.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/process-measurement.json": "0a82631dfdc90bc524ef195a7123a757f68b77405499b40935086524cdc7bf22",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/process.log": "e805029ffd91b4d7b1d0d6497ade60b83eb1005dfb0f941cd0540f297c75c7fa",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/receipt.json": "15c6b71d6f846fbeb3f2905e2f0b47f4c7f41fc1c1a2bcac7983e876a9fb3c3e",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/results.json": "f9045e92e28262bc2f917d2b58ea31c386e624e539fe4ad3055f090d120b7bc5",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/summary.json": "d1b4e262dee4e54059b4fef66b434d3678fe306358243d8dfe0fc98d9082fbc6",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/train.log": "183f4a9db05a95efc7adfa027703694a3fd7db18ca74312dd45dfd30b6ebe2e4",
+    "verification/attempt_003/test_native_zero_update_finali0/derived/training_metrics.json": "c219d6864dc917390a8531981d65e900dca7aaf80fd79a8e29ca956fe60d415d",
+    "verification/attempt_003/test_native_zero_update_finali0/diagnostic-cost.json": "e0de709a40f5a60c325982a153824aba781f52f195b70f1902babcfff1aeede6",
+    "verification/attempt_003/test_native_zero_update_finali0/diagnostic-summary.json": "2d11f52c6e128cee5499ace4d91d0c31db34148b7ff0fee78ea4f4f3b004e349"
+  },
+  "retained_binary_sha256": {
+    "results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/derived/checkpoints.npz": "0fec1660d3c671695e16e2302cfd2066c17e3f5e048041d9ee4633853ad043a3",
+    "results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/derived/trajectory.npz": "eede83d0a2bf5b8b349d77edeca409bb9345d2e3707bb0451ab78a5376333a9e",
+    "results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/native-segment/resume.pkl": "efe822dc6f548f02fdbbda0241ebd39d2a7b0b5d8a4102390dcc1a3755ac4f9b",
+    "results/reference-prefix-diagnostic-20261003-v3/test_native_zero_update_finali0/analysis/evaluation-input/checkpoints.npz": "0fec1660d3c671695e16e2302cfd2066c17e3f5e048041d9ee4633853ad043a3",
+    "results/reference-prefix-diagnostic-20261003-v3/test_native_zero_update_finali0/derived/checkpoints.npz": "0fec1660d3c671695e16e2302cfd2066c17e3f5e048041d9ee4633853ad043a3",
+    "results/reference-prefix-diagnostic-20261003-v3/test_native_zero_update_finali0/derived/trajectory.npz": "eede83d0a2bf5b8b349d77edeca409bb9345d2e3707bb0451ab78a5376333a9e"
+  }
+}

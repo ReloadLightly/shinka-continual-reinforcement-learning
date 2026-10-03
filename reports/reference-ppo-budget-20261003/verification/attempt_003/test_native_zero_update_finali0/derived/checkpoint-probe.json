@@ -1,0 +1,29 @@
+{
+  "step": 4,
+  "phase_tasks": [
+    0,
+    1
+  ],
+  "phase_agents": [
+    {
+      "shape": [
+        386
+      ],
+      "dtype": "float32",
+      "sha256": "24d44a8a0b429390b3d4fb8f6fe14291049df917f522aaca4a6637fdbc91d14b",
+      "finite": true
+    },
+    {
+      "shape": [
+        386
+      ],
+      "dtype": "float32",
+      "sha256": "c4b17c2a7a579b2efc9e6df18db1e217b8a89b85fb0c87626b39a99f7ff1e37c",
+      "finite": true
+    }
+  ],
+  "original_records_sha256": "045ed4fbc5bf9e14170dd968a303a49885f229807d5706768da3443556086e59",
+  "record_serialization": "pinned upstream add_figure_columns(is_rl=True); original columns preserved",
+  "record_count": 4,
+  "records_sha256": "ec00dd8bc151fa82e7b2cfd26530e7f46122a5be8212afb1ebe0cb23a122cec1"
+}

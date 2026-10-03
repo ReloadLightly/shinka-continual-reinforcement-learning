@@ -18,7 +18,8 @@ the paired difference is −0.0631 ± 0.0632 (mean ± sample standard deviation)
 This comparison does not support an advantage for the selected rule. The study
 provides controlled development evidence for the reproduction and extension;
 full-budget GA and ES development trials attain maximal phase-end learning
-accuracy, but the ten-trial reference comparison remains pending.
+accuracy. Their ten-trial reporting comparison remains pending, while PPO is
+limited to a shorter development horizon by the available compute allocation.
 
 ## 1. Introduction
 
@@ -61,13 +62,21 @@ PPO through its saved policy.
 | Evaluation episodes per checkpoint | 10 | 10 | 10 |
 | Nominal training steps per trial | 3.072 × 10⁹ | 3.072 × 10⁹ | 3.072 × 10⁹ |
 
-*Table 1. Planned full CartPole comparison. GA retains mutation width 0.5 and
+*Table 1. Original full CartPole reproduction target. GA retains mutation width 0.5 and
 archive fraction 0.5; ES retains mutation width 0.1, learning rate 0.05, SGD,
 and z-score fitness. PPO retains the reference hyperparameters. The
 [reproduction specification](docs/reproduction-plan.md) and
 [paper profile](src/shinka_crl/profiles/paper-cartpole.json) define the exact
 protocol. The profile explicitly requests 20 phases; the upstream YAML default
 of 10 phases is insufficient for this experiment.*
+
+An [amended PPO allocation](docs/reference-comparison.md#ppo-resource-amendment--october-3-2026)
+limits its current development experiment to eight hours of active computation,
+including evaluation. The target is the first four complete phases (6,000
+updates) of the existing trajectory, retaining the original phase duration and
+baseline settings. This shorter horizon supports early acquisition and retention
+analysis; twenty-phase PPO behavior and its ten-trial reporting distribution
+remain unresolved. GA and ES retain the full reporting protocol in Table 1.
 
 ### Partitions and development budgets
 
@@ -84,8 +93,9 @@ steps per update. These are explicit reductions from Table 1.
 | Static finalist validation | 2001–2005 | 2002–2006 | 30.72 × 10⁶ | Select one finalist per search arm |
 | Adaptive controls / search | 4001–4003 | 4002–4004 | 7.68 × 10⁶ | Development |
 | Adaptive finalist validation | 5001–5005 | 5002–5006 | 30.72 × 10⁶ | Evaluate a previously selected rule |
-| Full-budget reference development | 1001 | 1002 | 3.072 × 10⁹ | Measure native learning and compute |
-| Final paper reporting | 42–51 | 1–10 | 3.072 × 10⁹ | Untouched |
+| Full-budget GA/ES development | 1001 | 1002 | 3.072 × 10⁹ | Measure native learning and compute |
+| PPO development prefix (target) | 1001 | 1002 | 614.4 × 10⁶ | Early acquisition and retention |
+| Final paper reporting | 42–51 | 1–10 | 3.072 × 10⁹ | Untouched; GA/ES planned, PPO deferred |
 
 *Table 2. Scientific data partitions. Search uses 20 generations per phase;
 both validation studies use 80. Validation therefore changes task draws and
@@ -254,9 +264,12 @@ resident memory of 843.2 and 806.4 MiB, respectively, on the two-CPU allocation.
 These measured durations include compilation, in-loop evaluation, and checkpoint
 writes; post-hoc evaluation is additional work. The linked trial records retain
 all phase returns, training curves, compute measurements, and checkpoint hashes.
-PPO development measurement remains in progress. These development observations
-cannot establish a method ranking or substitute for the ten reporting trials
-per method, and their longer budgets preclude a direct comparison with Table 3.
+Evaluation of the shorter PPO development prefix remains pending. Comparisons
+with that prefix use [matched four-phase GA/ES analyses](reports/reference-development-prefixes-20261003/summary.json),
+derived from the existing trials under an [explicit prefix protocol](reports/reference-development-prefixes-20261003/protocol.json).
+These development observations cannot establish a method ranking or substitute
+for repeated reporting trials, and their longer budgets preclude a direct
+comparison with Table 3.
 
 ### Static configuration search
 
@@ -490,10 +503,11 @@ remained fixed, and consumed slots were not replaced.
 The reproduction remains incomplete. The pilot and extension studies use
 reduced populations and shorter task sequences; the reported normalization
 differs from the paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
-The declared
-[full-budget GA/ES/PPO reference comparison](docs/reference-comparison.md)
-uses unchanged baseline settings. Full-budget GA/ES development observations
-are available; PPO development measurement precedes the reporting comparison.
+The [reference comparison](docs/reference-comparison.md) uses unchanged baseline
+settings. Full-budget GA/ES development observations are available, and their
+reporting trials remain planned. The reduced PPO allocation permits only an
+early-phase development analysis, leaving the full three-method reproduction
+incomplete.
 Broader reproduction also requires the other environments, task variations,
 continual PPO variants, and neighborhood analysis in the
 [reproduction plan](docs/reproduction-plan.md).

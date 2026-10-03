@@ -1,0 +1,20 @@
+======================================================================
+gymnax | ppo (rl) | CartPole-v1_sigma0.5 | continual | trial 3002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_updates, num_envs, num_steps)
+  ppo overrides  : {'num_envs': 8, 'num_steps': 16, 'num_minibatches': 2}
+  seed           : 3001
+  boundary info  : none
+  output         : /home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/native-segment
+======================================================================
+/home/roland/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-jp_2mnw1 because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+  update     0 task= 0 H=0.675 t0=    9.0 t1=    9.0 gen'ist=    9.0
+  checkpoint: update 2 -> /home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/native-segment/resume.pkl
+  checkpoint: update 4 -> /home/roland/actir/shinka-continual-reinforcement-learning/results/reference-prefix-diagnostic-20261003-v2/test_native_zero_update_finali0/native-segment/resume.pkl
+  SEGMENT DONE: 4 updates this run, stopping at update 4; resume.pkl left for the next one
+segment finished cleanly at 4; resume.pkl left for the next one
