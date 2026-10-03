@@ -917,15 +917,21 @@ use one seed and unmatched training budgets.
 
 The 18-trial pilot passed task-transition, checkpoint-metric, and stationary-learning checks. Its four phases and reduced population/rollout sizes remain development deviations from the full paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
 
-The next implementation step is a reviewed continuation from the
+The next execution step is a reviewed continuation from the
 [stopped recovery checkpoint](docs/adaptive-recovery.md#observed-execution-and-next-checkpoint).
-Seven unconsumed slots remain, generations 18–24. The current controller was
-frozen for the earlier source archive and cannot execute this failed state again.
-A separate plan must bind the current archive and fresh RNG receipt, preserve
-all consumed slots and failures, and test continuation from generation 18 before
-publication and execution. The objective, grammar, development partition,
-controls, and 25-slot budget remain fixed. Existing failed states and source
-receipts must remain intact.
+Seven unconsumed slots remain, generations 18–24. A separate
+[continuation controller and runbook](docs/adaptive-continuation.md) now bind
+this archive and its fresh RNG receipt while retaining the original controller
+and both stopped histories. The implementation requires its own committed source
+and published input freeze before execution. The objective, grammar, development
+partition, controls, and 25-slot budget remain fixed.
+
+The [repository audit](reports/repository-audit-20261003.json) verifies published
+artifact hashes and local documentation links and independently rederives
+generation 16's reported scores. The frozen proposal CLI was restored in an
+isolated local directory after a system update; the original runtime identity
+check then passed. Verification and execution evidence are recorded separately
+from scientific results.
 
 The [reserved validation proposal](docs/adaptive-validation.md) describes one
 development-selected finalist and all five controls, exact recipe deduplication,

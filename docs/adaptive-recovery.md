@@ -252,3 +252,8 @@ After the real stopped execution, all 49 focused recovery tests and repository
 lint passed again; no trainer, evaluator, or frozen controller source changed.
 The [reserved validation handoff](adaptive-validation.md) remains a
 separate proposed protocol until the search endpoint has been explicitly resolved.
+
+The separate [generation-18 continuation controller](adaptive-continuation.md)
+implements this next checkpoint without modifying the v1 implementation. It
+preserves this recovery's records in a new working copy and uses its own source
+and input freeze before execution.
