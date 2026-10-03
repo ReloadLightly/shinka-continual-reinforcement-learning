@@ -16,7 +16,7 @@
 
 This project pursues a controlled reproduction of *Continual Reinforcement Learning with Neuroevolution* by Nisioti, Cossu, Korte, and Risi (2026), with ShinkaEvolve as a separately evaluated extension. We preserve the pinned GA, ES, and PPO implementations, beginning with CartPole under alternating observation offsets. An 18-trial CPU pilot passed the predefined stationary-learning gate for all three methods. Static search evaluated 25 Shinka programs and 24 random controls: 147 seed trials and 1.129 billion nominal training steps. Shinka produced 17 distinct mutations and seven repeated evaluations. A reserved five-seed comparison selected Shinka program 11 and random control 24, with active-return scores of 0.9268 and 0.9306 versus 0.7720 for the default. Their mean forgetting was higher than the default's, so better active return did not establish better retention. One paper-budget GA development trial completed all 20 phases in 30.4 minutes including analysis. A restricted adaptive mutation adapter passes seven real diagnostic trials, including exact identity with native GA across a task switch and persistent program memory. Its frozen active/previous-task evaluator completed 15 fixed-control trials on fresh development seeds. Adaptive Shinka search completed its declared 25-slot allocation with 21 valid programs, retaining three grammar failures and an interrupted request. The best proposed rule scores 0.4871, above identity GA's 0.1706 but below native FocusGA's 0.5006, with substantial seed variation. These development results establish an executable research pipeline, static baselines, and an initial adaptive search; they do not establish search-method superiority or a full-paper reproduction.
 
-> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Static finalist validation complete · Adaptive controls and complete 25-slot Shinka endpoint reviewed · 21 valid programs with all failures retained · Reserved adaptive validation handoff in preparation · Full reproduction pending.
+> **Study status:** Baseline pilot and 25/24 static-search endpoint complete · Full-budget GA development reference complete · Static finalist validation complete · Adaptive controls and complete 25-slot Shinka endpoint reviewed · 21 valid programs with all failures retained · Reserved adaptive validation: first 6 of 30 trials complete · Full reproduction pending.
 
 ## 1. Research questions
 
@@ -863,6 +863,8 @@ also checks the handoff and reported evidence against the bytes committed and
 published at `7ad1be4`. These checks establish evidence integrity, not learning
 performance.
 
+### Reserved adaptive finalist validation
+
 The [reserved handoff](reports/adaptive-validation-freeze-20261003/plan.json)
 copies generation 5 and all five fixed controls. All six execution recipes are
 distinct: the allocation is **30 fresh trials**, **921.6 million nominal
@@ -871,6 +873,17 @@ training steps**, and **9,000 fresh evaluation episodes**, under the
 form an integrity checkpoint before continuing the remaining fixed allocation.
 The comparison is descriptive and cannot reopen the search or implicitly
 promote a rule to final reporting.
+
+After publication of the freeze at `7ad1be4`, the
+[first reserved block](reports/adaptive-validation-first-block-20261003/summary.json)
+completed all six recipes on seed 5001 without a failed attempt. It used
+**184.32 million nominal training steps**, **1,800 fresh evaluation episodes**,
+and **357.44 s** of active session time. The
+[independent review](reports/adaptive-validation-first-block-review-20261003.json)
+verified raw scores, applied widths, task draws, sources, receipts, and costs.
+This is a partial six-of-thirty comparison; one seed does not establish a
+ranking. The remaining 24 trials retain the frozen recipes, order, and resource
+ceiling, irrespective of the first block's scores.
 
 ### Remaining scientific evaluation
 
@@ -882,7 +895,7 @@ One full-budget development GA trial is complete; no full-budget comparison has 
 | Stationary control | Matched task and learner settings without switching | Development control complete |
 | Shinka-selected GA | Frozen candidate evaluated on reporting trials | Static winner frozen after validation; reporting pending |
 | Random-search control | Matched search budget and reporting protocol | Static winner frozen after validation; reporting pending |
-| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | 25-slot allocation closed; 21 valid programs; reserved validation handoff in preparation |
+| Executable adaptive rules | Frozen evaluator, new development partition, Shinka proposals and controls | 25-slot allocation closed; 21 valid programs; reserved validation: first 6 of 30 trials complete |
 
 ## 5. Reproducibility
 

@@ -649,7 +649,7 @@ training and checkpoint evidence before reuse.
 | 8 | Adaptive-program adapter and native control support | Short identity traces, varying-sigma check, persistent memory, explicit upstream adaptive control | Complete: seven real trials, 19 numerical checks, 3.98 min |
 | 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Complete: 15 trials, two cache checks, 15.21 min; 504 harness tests pass |
 | 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Complete: 25 consumed slots, 21 valid programs, 60 new trials; all historical failures retained and endpoint explicitly closed |
-| 11 | Reserved adaptive finalist handoff and comparison | Exact recipe freeze, separate runner, untouched five-seed comparison and all fixed controls | Runner verified; generation 5 and five controls frozen for 30 fresh trials; publication and first block pending |
+| 11 | Reserved adaptive finalist handoff and comparison | Exact recipe freeze, separate runner, untouched five-seed comparison and all fixed controls | Frozen and published; first 6 of 30 trials completed and independently reviewed; remaining 24 fixed trials pending |
 
 <sub>Table 8. Deliverables and observed status. The successful baseline-trial
 resume does not substitute for testing Shinka's separate archive-resume path.</sub>
