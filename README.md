@@ -783,6 +783,29 @@ ignore rule is anchored at the repository root so nested report receipts are
 included; immutable candidate sources retain their restricted-language lint
 exclusions.
 
+### Validation-runner diagnostics
+
+A separate [adaptive validation runner](src/shinka_crl/adaptive_validation.py)
+preserves the search evaluator and static validation contracts. Two
+development-only checks each completed the arithmetic adaptive rule, native
+FocusGA, and static Shinka 11 on seed 3001: four phases of two generations,
+population 8, one training episode per member, and a 500-step cap. Each check
+used **96,000 nominal training steps** and **900 fresh evaluation episodes**.
+These are execution diagnostics, not comparisons of learning performance.
+
+The [initial diagnostic](reports/adaptive-validation-diagnostic-20261003/summary.json)
+preceded review fixes to endpoint eligibility, export isolation, accounting of
+failed evaluation attempts, and the cumulative trial deadline. Its exact
+implementation snapshot and the original report's incorrect reserved-comparison
+label are retained in the [review](reports/adaptive-validation-diagnostic-review-20261003.json).
+The [final diagnostic](reports/adaptive-validation-diagnostic-20261003-v2/summary.json)
+exercised the corrected implementation with fresh outputs. Their active session
+times were **112.01 s** and **167.02 s**, respectively. The second shared the
+frozen CPU affinity with the endpoint search; these durations are observed costs
+and do not support a speed comparison. Exact profiles, sources, trial mappings,
+raw curves, checkpoint evaluations, and hashes are retained in each export.
+Neither check used a reserved validation seed or a final reporting trial.
+
 ### Remaining scientific evaluation
 
 One full-budget development GA trial is complete; no full-budget comparison has been completed. The table below tracks the evidence needed to answer the research questions.

@@ -1,0 +1,110 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-03T09:57:36.399012+00:00",
+  "kind": "reduced_implementation_diagnostic",
+  "frozen": "reports/adaptive-validation-diagnostic-freeze-20261003-v2",
+  "output": "results/adaptive-validation-diagnostic-20261003-v2",
+  "report": "reports/adaptive-validation-diagnostic-20261003-v2",
+  "plan_sha256": "f45750be14daffb17ea96b568c1ba462f295e82d4bdf6cc237d71bf7e583d1dd",
+  "state_sha256": "4f6f8c75c7643f45007e719883fb2e68950b0d42a7a675fb476bb3aa1d6bd1ea",
+  "published_checksums_sha256": "021fb4b38021ad889a4ab3a82b9ae005e7f9da5d998a7aaaa6482bc7f99d23c0",
+  "checks": {
+    "frozen_receipt": true,
+    "state_receipt": true,
+    "all_trial_receipts": true,
+    "all_scores_rederived_with_unchanged_evaluator": true,
+    "all_published_checksums": true,
+    "all_original_artifact_hashes": true
+  },
+  "trials": [
+    {
+      "index": 0,
+      "memberships": [
+        "arithmetic"
+      ],
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "score_rederived": true,
+      "receipt_verified": true,
+      "fresh_evaluation_episodes": 300
+    },
+    {
+      "index": 1,
+      "memberships": [
+        "focus"
+      ],
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "score_rederived": true,
+      "receipt_verified": true,
+      "fresh_evaluation_episodes": 300
+    },
+    {
+      "index": 2,
+      "memberships": [
+        "static_shinka11"
+      ],
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "score_rederived": true,
+      "receipt_verified": true,
+      "fresh_evaluation_episodes": 300
+    }
+  ],
+  "completed_trials": 3,
+  "nominal_training_steps": 96000,
+  "fresh_evaluation_episodes": 900,
+  "reserved_audit": {
+    "scope": "All config.json files under local results/ at review time; inspect seed5001..5005 and trial5002..5006",
+    "files_scanned": 302,
+    "hits": []
+  },
+  "limitations": [
+    "One diagnostic seed3001 and reduced profile; no reserved or paper reporting trials.",
+    "This diagnostic overlapped the endpoint search on the same frozen CPU affinity [0,1]; observed wall times do not support speed comparisons."
+  ],
+  "source_snapshot": {
+    "path": "reports/adaptive-validation-diagnostic-checks-20261003-v2/implementation",
+    "receipt_sha256": "3121401d43a254c23cc1db74223be21bc84d65c18e504bc6271cc5f829698b14",
+    "verified": true
+  },
+  "final_source_contract_reverified": true,
+  "initial_diagnostic_score_matches": {
+    "arithmetic": true,
+    "focus": true,
+    "static_shinka11": true
+  },
+  "concurrency": {
+    "endpoint_output": "results/adaptive-shinka-endpoint-20261003-round1",
+    "endpoint_session_started_at": "2026-10-03T09:49:59.646318+00:00",
+    "diagnostic_started_at": "2026-10-03T09:52:59.084714+00:00",
+    "diagnostic_finished_at": "2026-10-03T09:56:01.270173+00:00",
+    "shared_cpu_affinity": [
+      0,
+      1
+    ],
+    "interpretation": "Observed wall times include concurrent search workload; do not use for speed comparisons"
+  },
+  "command_logs": {
+    "reports/adaptive-validation-diagnostic-checks-20261003-v2/run.log": "979e3558dd25628475fb85a936dcf1321a665a8cb2f8c5ad0ed95528704e46ce",
+    "reports/adaptive-validation-diagnostic-checks-20261003-v2/export.log": "979e3558dd25628475fb85a936dcf1321a665a8cb2f8c5ad0ed95528704e46ce"
+  },
+  "commands": [
+    {
+      "command": ".venv/bin/python scripts/run_adaptive_validation.py --frozen reports/adaptive-validation-diagnostic-freeze-20261003-v2 --diagnostic-study results/adaptive-controls-20261003 --output results/adaptive-validation-diagnostic-20261003-v2 --execute",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python scripts/report_adaptive_validation.py --frozen reports/adaptive-validation-diagnostic-freeze-20261003-v2 --output results/adaptive-validation-diagnostic-20261003-v2 --report reports/adaptive-validation-diagnostic-20261003-v2",
+      "exit_code": 0
+    }
+  ],
+  "protocol_snapshot_sha256": "ce2f0552f3015612fef8cb3e43be6ccf6e439dced4d03b883520e12642ae4c5f",
+  "observed_active_session_wall_seconds": 167.0160859769985,
+  "audit_notes": [
+    "The initial supplementary audit expected implementation/receipt.json inside the exported report and failed with FileNotFoundError; export does not emit implementation snapshots. The unchanged source was then captured separately under the checks directory and verified against the frozen plan. This was an audit-path error; no training or export was retried."
+  ]
+}

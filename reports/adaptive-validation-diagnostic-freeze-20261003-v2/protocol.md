@@ -1,10 +1,9 @@
-# Reserved adaptive validation protocol
+# Proposed reserved adaptive validation
 
-**Status: implementation verified on development diagnostics; reserved handoff
-awaits endpoint closure.** This protocol specifies the comparison after the
-declared 25-slot adaptive search endpoint. The finalist and exact allocation
-must be frozen and published before reserved outcomes. The search objective
-and its source contracts remain unchanged.
+**Status: proposed, not frozen or executed.** This document proposes the
+comparison after the declared 25-slot adaptive search endpoint. It does not
+select a particular program, open reserved outcomes, or authorize new trials.
+The search objective and its source contracts remain unchanged.
 
 The declared endpoint has **not been reached**. The
 [attempted 25-slot continuation](../reports/adaptive-shinka-stage25-stopped-20261003/summary.json)
@@ -32,7 +31,7 @@ The [adaptive evaluation protocol](adaptive-evaluation.md),
 [reserved profile](../src/shinka_crl/profiles/adaptive-validation.json) provide
 the existing scientific and numerical contract.
 
-## Candidate handoff
+## Proposed candidate handoff
 
 Close proposal feedback at the complete 25-slot endpoint before freezing the
 handoff. Verify its published hashes, all consumed slots and failure records,
@@ -62,7 +61,7 @@ and [the control-study plan](../reports/adaptive-controls-20261003/raw/plan.json
 | Static Shinka 11 | Frozen static source; sigma 0.065 and archive fraction 0.075 |
 | Static random 24 | Frozen static source; sigma 0.224195451112929 and archive fraction 0.0921597481719689 |
 
-<sub>Table 1. Comparison conditions. Controls are retained without
+<sub>Table 1. Proposed comparison conditions. Controls are retained without
 retuning. FocusGA changes more than mutation width, so its comparison is between
 methods rather than an isolated test of width adaptation.</sub>
 
@@ -99,7 +98,7 @@ different candidate because of its validation performance.
 | Maximum unique recipes / trials | 6 / 30 |
 | Maximum nominal training steps | 921,600,000 |
 
-<sub>Table 2. Maximum allocation: one finalist plus five controls,
+<sub>Table 2. Proposed maximum allocation: one finalist plus five controls,
 each on the same five reserved seed/task pairs. Exact recipe deduplication can
 reduce the allocation. Nominal training excludes in-loop and fresh post-hoc
 evaluation work.</sub>
@@ -120,18 +119,21 @@ No new model calls are needed. Final reporting seeds 42–51 and task trials
 
 ## Freeze and implementation before execution
 
-The separate [adaptive freezer and runner](../src/shinka_crl/adaptive_validation.py)
-and its [command-line entry point](../scripts/run_adaptive_validation.py)
-implement this handoff. The existing static comparison and adaptive search
-contracts remain unchanged. In particular, the adaptive search
-[`read_plan`](../src/shinka_crl/adaptive_evaluation.py) still requires the search
-profile and rejects a substituted validation profile. The validation plan binds the
+The current tools do not implement this handoff.
+[`freeze_finalists.py`](../scripts/freeze_finalists.py) and
+[the validation runner](../src/shinka_crl/validation.py) implement the completed
+static comparison. Their active-return ranking and static configuration
+identity do not define adaptive selection. The current adaptive
+[`read_plan`](../src/shinka_crl/adaptive_evaluation.py) deliberately requires
+the search profile and cannot accept a substituted validation profile.
+
+Implement a separate adaptive freezer and runner without weakening these
+contracts or editing a sealed search/control plan. The new plan must bind the
 endpoint receipts, copied candidate sources, complete control recipes, reserved
 profile, objective, upstream revision, interpreter and packages, numerical
 environment, CPU affinity, time limits, trial order, and reporting criterion.
-The runner reuses verified low-level training and scoring components within
-a distinct validation context and fresh output paths. It retains a copy of
-this protocol, all condition sources, and native implementation hashes.
+Reusing verified low-level training and scoring components is appropriate;
+validation must have a distinct study/cache context and fresh output paths.
 
 Before any reserved trial, freeze the handoff, its manifest and checksums,
 the implementation revision, planned budget, and this protocol with its
@@ -147,20 +149,19 @@ use a separate development-only run, such as the existing diagnostic seed
 3001, with a documented reduced budget. Do not debug implementation or choose
 settings on reserved seeds. Retain the pinned upstream unchanged.
 
-## Execution and stopping limits
+## Proposed execution and stopping limits
 
 Run sequentially on the same two logical CPUs and frozen numerical thread
-environment. Use a fixed seed-major order, with each seed evaluating the
+environment. Propose a fixed seed-major order, with each seed evaluating the
 unique recipes in the Table 1 order. The first execution block ends after the
 first seed's recipes, at most six trials, for an integrity and accounting check.
 The scientific candidate set, objective, and remaining seed allocation cannot
 change in response to that block's scores.
 
 Retain the existing 1,800-second limit separately for each training process and
-each fresh analysis process. As a fixed operational ceiling, allow four
+each fresh analysis process. As a proposed operational ceiling, allow four
 hours of cumulative active validation-session time, excluding review pauses,
-with a finite deadline covering the whole trial, including metadata probes.
-This is a resource limit, not a runtime
+with a finite deadline for each launch. This is a resource limit, not a runtime
 prediction or a score-dependent stopping rule. Freeze the exact limits before
 execution and monitor actual elapsed time and completed work. If the ceiling
 is reached, preserve and report the partial comparison; any extension requires
@@ -174,7 +175,7 @@ analysis failure still counts as training spent. Record allocated, completed,
 and scored work separately. No automatic candidate repair, replacement,
 additional seed allocation, or proposal search is part of this comparison.
 
-## Reporting criterion
+## Proposed reporting criterion
 
 Preregister the **paired five-seed mean difference in combined score between
 the frozen adaptive finalist and native FocusGA** as the primary descriptive

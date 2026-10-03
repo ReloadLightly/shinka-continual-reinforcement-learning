@@ -1,0 +1,69 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-03T09:50:28.001111+00:00",
+  "kind": "reduced_implementation_diagnostic",
+  "frozen": "reports/adaptive-validation-diagnostic-freeze-20261003",
+  "output": "results/adaptive-validation-diagnostic-20261003",
+  "report": "reports/adaptive-validation-diagnostic-20261003",
+  "plan_sha256": "ce23bba8ab006b56bc7f9229d070f0d51f34f21f0d6dbd292bfaf5cd18abbf34",
+  "state_sha256": "21d770e650b896467c815a8ed6fe073a7a7a32cf7b33fbcad89ab4223e9c1a93",
+  "published_checksums_sha256": "bb6885b53a8f9694f7afef107896f145c2dcf8a54de31b704acb65feddf4671d",
+  "checks": {
+    "frozen_receipt": true,
+    "state_receipt": true,
+    "all_trial_receipts": true,
+    "all_scores_rederived_with_unchanged_evaluator": true,
+    "all_published_checksums": true,
+    "all_original_artifact_hashes": true
+  },
+  "trials": [
+    {
+      "index": 0,
+      "memberships": [
+        "arithmetic"
+      ],
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "score_rederived": true,
+      "receipt_verified": true,
+      "fresh_evaluation_episodes": 300
+    },
+    {
+      "index": 1,
+      "memberships": [
+        "focus"
+      ],
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "score_rederived": true,
+      "receipt_verified": true,
+      "fresh_evaluation_episodes": 300
+    },
+    {
+      "index": 2,
+      "memberships": [
+        "static_shinka11"
+      ],
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "score_rederived": true,
+      "receipt_verified": true,
+      "fresh_evaluation_episodes": 300
+    }
+  ],
+  "completed_trials": 3,
+  "nominal_training_steps": 96000,
+  "fresh_evaluation_episodes": 900,
+  "reserved_audit": {
+    "scope": "All config.json files under local results/ at review time; inspect seed5001..5005 and trial5002..5006",
+    "files_scanned": 293,
+    "hits": []
+  },
+  "limitations": [
+    "One diagnostic seed3001 and reduced profile; no reserved or paper reporting trials.",
+    "Initial exported summary interpretation incorrectly says reserved transfer comparison despite diagnostic kind. Source and original evidence are preserved; final source will correct interpretation before a fresh diagnostic."
+  ]
+}

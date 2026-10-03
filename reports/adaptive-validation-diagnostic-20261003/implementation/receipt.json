@@ -1,0 +1,9 @@
+{
+  "purpose": "Exact first diagnostic implementation before reviewed hardening; its original freeze remains immutable",
+  "source_sha256": {
+    "src/shinka_crl/adaptive_validation.py": "f87993969f03c417693a426dd641054814bdddd4e7ae4e946760b8d25288ea22",
+    "scripts/run_adaptive_validation.py": "debd65b5cddc7b72b1e9618a6a79a73868d439dd149d16c9af88c93258d0e463",
+    "scripts/report_adaptive_validation.py": "6b5f5f301bba36fbf67180d1fe8f1c1a5b015e5672b01b3f6367df166edd5752"
+  },
+  "freeze_plan_sha256": "ce23bba8ab006b56bc7f9229d070f0d51f34f21f0d6dbd292bfaf5cd18abbf34"
+}

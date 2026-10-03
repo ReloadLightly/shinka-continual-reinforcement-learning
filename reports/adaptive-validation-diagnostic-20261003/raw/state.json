@@ -1,0 +1,33 @@
+{
+  "context_sha256": "0d29fc5d53ae7cf59e6166146585fcc4aa5a612e19dd1fafdfa41b0c096defb9",
+  "frozen": "/home/roland/actir/shinka-continual-reinforcement-learning/reports/adaptive-validation-diagnostic-freeze-20261003",
+  "attempts": [
+    {
+      "trial_index": 0,
+      "path": "trials/000/attempt_0001",
+      "receipt_sha256": "161f212632cf18f8dd131647d285a4753843a1737f930799ed2f6473809b460e"
+    },
+    {
+      "trial_index": 1,
+      "path": "trials/001/attempt_0001",
+      "receipt_sha256": "3e992781d13607eb7f683717a91f25bb1ff2c64ad51afb456636f13159c2c349"
+    },
+    {
+      "trial_index": 2,
+      "path": "trials/002/attempt_0001",
+      "receipt_sha256": "eeabe0492b61f3bf7b3ecabc8a2e0b2a9ab5d40ff15579d126ad857333350797"
+    }
+  ],
+  "sessions": [
+    {
+      "status": "complete",
+      "started_at": "2026-10-03T09:44:25.544911+00:00",
+      "wall_seconds": 112.01443531899895,
+      "review_sha256": null,
+      "review_reason": null,
+      "requested_trials": 3,
+      "completed_trials": 3,
+      "finished_at": "2026-10-03T09:46:25.813449+00:00"
+    }
+  ]
+}
