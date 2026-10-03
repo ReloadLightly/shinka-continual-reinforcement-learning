@@ -22,7 +22,7 @@ the paired difference is −0.0631 ± 0.0632 (mean ± sample standard deviation)
 This comparison does not support an advantage for the selected rule. The study
 provides controlled development evidence for the reproduction and extension;
 full-budget GA and ES development trials attain maximal phase-end learning
-accuracy. Their ten-trial reporting comparison remains pending; the PPO
+accuracy. Their ten-trial reporting comparison is in progress; the PPO
 development comparison is complete over its shorter, resource-limited horizon.
 
 ## 1. Introduction
@@ -100,7 +100,7 @@ steps per update. These are explicit reductions from Table 1.
 | Adaptive finalist validation | 5001–5005 | 5002–5006 | 30.72 × 10⁶ | Evaluate a previously selected rule |
 | Full-budget GA/ES development | 1001 | 1002 | 3.072 × 10⁹ | Measure native learning and compute |
 | Matched GA/ES/PPO development prefixes | 1001 | 1002 | 614.4 × 10⁶ | Early acquisition and retention; GA/ES reused |
-| Final paper reporting | 42–51 | 1–10 | 3.072 × 10⁹ | Untouched; GA/ES planned, PPO deferred |
+| Final paper reporting | 42–51 | 1–10 | 3.072 × 10⁹ | GA/ES in progress; PPO deferred |
 
 *Table 2. Scientific data partitions. Search uses 20 generations per phase;
 both validation studies use 80. Validation therefore changes task draws and
@@ -582,10 +582,11 @@ remained fixed, and consumed slots were not replaced.
 
 The reproduction remains incomplete. The pilot and extension studies use
 reduced populations and shorter task sequences; the reported normalization
-differs from the paper. Final reporting seeds 42–51 and task trials 1–10 remain untouched.
+differs from the paper. Final reporting seeds 42–51 and task trials 1–10
+were reserved independently of development and selection.
 The [reference comparison](docs/reference-comparison.md) uses unchanged baseline
 settings. Full-budget GA/ES development observations are available, and their
-reporting trials remain planned. The completed PPO prefix supplies an
+reporting trials are in progress. The completed PPO prefix supplies an
 early-phase development analysis, leaving the full three-method reproduction
 incomplete.
 Broader reproduction also requires the other environments, task variations,

@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "mode": "diagnostic",
+  "status": "partial",
+  "declared_methods": [
+    "ga",
+    "es",
+    "ppo"
+  ],
+  "original_three_method_target_complete": false,
+  "caption": "Reporting completion refers to the declared methods and trials. Development and diagnostic results remain separate. Dispersion is sample SD across trials, not a confidence interval. Training steps are nominal episode-cap budgets; evaluation is separate. Raw reward units and /500 normalization differ from paper reference-based rescaling.",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "profiles": {
+    "smoke": {
+      "name": "smoke",
+      "purpose": "Reduced execution diagnostic; not reporting",
+      "env": "CartPole-v1_sigma0.5",
+      "num_phases": 2,
+      "num_tasks": 2,
+      "episode_length": 32,
+      "eval_episodes": 1,
+      "seeds": [
+        3001
+      ],
+      "ne": {
+        "num_generations": 4,
+        "task_interval": 2,
+        "pop_size": 8,
+        "num_evals": 1
+      },
+      "ppo": {
+        "num_updates": 4,
+        "task_interval": 2,
+        "num_envs": 8,
+        "num_steps": 16,
+        "num_minibatches": 2
+      }
+    }
+  },
+  "completed_trials": 2,
+  "planned_trials": 3,
+  "rows": [
+    {
+      "profile": "smoke",
+      "method": "ga",
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "metrics": {
+        "learning_accuracy": 20.35,
+        "forgetting": 0.0,
+        "learning_minus_forgetting": 20.35,
+        "zero_shot_transfer": 9.3,
+        "cumulative_reward_steps": 15744.0,
+        "cumulative_reward_generation_equivalents": 61.5,
+        "cumulative_reward_steps_exact": 15744.0,
+        "normalized_curve_average": 0.48046875
+      },
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 512,
+          "own_mean": 32.0,
+          "previous_mean": null,
+          "next_mean": 9.3
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 1024,
+          "own_mean": 8.7,
+          "previous_mean": 32.0,
+          "next_mean": null
+        }
+      ],
+      "phase_training_returns": [
+        20.5,
+        10.5
+      ],
+      "training_env_steps_nominal": 1024,
+      "training_wall_seconds": 33.45837420099997,
+      "analysis_wall_seconds": 7.175444268999854,
+      "maximum_trainer_rss_kib": 720592,
+      "fresh_evaluation_episodes": 120,
+      "training_path": "trials/ga/seed_3001/training/attempt_001",
+      "analysis_path": "trials/ga/seed_3001/analysis/attempt_001"
+    },
+    {
+      "profile": "smoke",
+      "method": "es",
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "metrics": {
+        "learning_accuracy": 26.15,
+        "forgetting": 15.399999999999999,
+        "learning_minus_forgetting": 10.75,
+        "zero_shot_transfer": 11.5,
+        "cumulative_reward_steps": 26368.0,
+        "cumulative_reward_generation_equivalents": 103.0,
+        "cumulative_reward_steps_exact": 26368.0,
+        "normalized_curve_average": 0.8046875
+      },
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 512,
+          "own_mean": 32.0,
+          "previous_mean": null,
+          "next_mean": 11.5
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 1024,
+          "own_mean": 20.3,
+          "previous_mean": 16.6,
+          "next_mean": null
+        }
+      ],
+      "phase_training_returns": [
+        32.0,
+        17.5
+      ],
+      "training_env_steps_nominal": 1024,
+      "training_wall_seconds": 14.38930655799777,
+      "analysis_wall_seconds": 5.7486895309994,
+      "maximum_trainer_rss_kib": 668896,
+      "fresh_evaluation_episodes": 120,
+      "training_path": "trials/es/seed_3001/training/attempt_001",
+      "analysis_path": "trials/es/seed_3001/analysis/attempt_001"
+    }
+  ],
+  "groups": [
+    {
+      "method": "ga",
+      "n": 1,
+      "seeds": [
+        3001
+      ],
+      "metrics": {
+        "learning_accuracy": {
+          "n": 1,
+          "mean": 20.35,
+          "sample_sd": null,
+          "values": [
+            20.35
+          ]
+        },
+        "forgetting": {
+          "n": 1,
+          "mean": 0.0,
+          "sample_sd": null,
+          "values": [
+            0.0
+          ]
+        },
+        "learning_minus_forgetting": {
+          "n": 1,
+          "mean": 20.35,
+          "sample_sd": null,
+          "values": [
+            20.35
+          ]
+        },
+        "zero_shot_transfer": {
+          "n": 1,
+          "mean": 9.3,
+          "sample_sd": null,
+          "values": [
+            9.3
+          ]
+        },
+        "cumulative_reward_steps": {
+          "n": 1,
+          "mean": 15744.0,
+          "sample_sd": null,
+          "values": [
+            15744.0
+          ]
+        },
+        "cumulative_reward_generation_equivalents": {
+          "n": 1,
+          "mean": 61.5,
+          "sample_sd": null,
+          "values": [
+            61.5
+          ]
+        },
+        "cumulative_reward_steps_exact": {
+          "n": 1,
+          "mean": 15744.0,
+          "sample_sd": null,
+          "values": [
+            15744.0
+          ]
+        },
+        "normalized_curve_average": {
+          "n": 1,
+          "mean": 0.48046875,
+          "sample_sd": null,
+          "values": [
+            0.48046875
+          ]
+        }
+      },
+      "training_wall_seconds": {
+        "n": 1,
+        "mean": 33.45837420099997,
+        "sample_sd": null,
+        "values": [
+          33.45837420099997
+        ]
+      },
+      "analysis_wall_seconds": {
+        "n": 1,
+        "mean": 7.175444268999854,
+        "sample_sd": null,
+        "values": [
+          7.175444268999854
+        ]
+      },
+      "maximum_trainer_rss_kib": {
+        "n": 1,
+        "mean": 720592,
+        "sample_sd": null,
+        "values": [
+          720592
+        ]
+      }
+    },
+    {
+      "method": "es",
+      "n": 1,
+      "seeds": [
+        3001
+      ],
+      "metrics": {
+        "learning_accuracy": {
+          "n": 1,
+          "mean": 26.15,
+          "sample_sd": null,
+          "values": [
+            26.15
+          ]
+        },
+        "forgetting": {
+          "n": 1,
+          "mean": 15.399999999999999,
+          "sample_sd": null,
+          "values": [
+            15.399999999999999
+          ]
+        },
+        "learning_minus_forgetting": {
+          "n": 1,
+          "mean": 10.75,
+          "sample_sd": null,
+          "values": [
+            10.75
+          ]
+        },
+        "zero_shot_transfer": {
+          "n": 1,
+          "mean": 11.5,
+          "sample_sd": null,
+          "values": [
+            11.5
+          ]
+        },
+        "cumulative_reward_steps": {
+          "n": 1,
+          "mean": 26368.0,
+          "sample_sd": null,
+          "values": [
+            26368.0
+          ]
+        },
+        "cumulative_reward_generation_equivalents": {
+          "n": 1,
+          "mean": 103.0,
+          "sample_sd": null,
+          "values": [
+            103.0
+          ]
+        },
+        "cumulative_reward_steps_exact": {
+          "n": 1,
+          "mean": 26368.0,
+          "sample_sd": null,
+          "values": [
+            26368.0
+          ]
+        },
+        "normalized_curve_average": {
+          "n": 1,
+          "mean": 0.8046875,
+          "sample_sd": null,
+          "values": [
+            0.8046875
+          ]
+        }
+      },
+      "training_wall_seconds": {
+        "n": 1,
+        "mean": 14.38930655799777,
+        "sample_sd": null,
+        "values": [
+          14.38930655799777
+        ]
+      },
+      "analysis_wall_seconds": {
+        "n": 1,
+        "mean": 5.7486895309994,
+        "sample_sd": null,
+        "values": [
+          5.7486895309994
+        ]
+      },
+      "maximum_trainer_rss_kib": {
+        "n": 1,
+        "mean": 668896,
+        "sample_sd": null,
+        "values": [
+          668896
+        ]
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "profile": "smoke",
+      "method": "ga",
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "stage": "training",
+      "path": "trials/ga/seed_3001/training/attempt_001",
+      "status": "complete",
+      "wall_seconds": 33.45837420099997,
+      "wall_measurement_available": true,
+      "start_update": 0,
+      "observed_completed_updates": 4,
+      "nominal_training_steps_observed_lower_bound": 1024,
+      "maximum_trainer_rss_kib": 720592
+    },
+    {
+      "profile": "smoke",
+      "method": "ga",
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "stage": "analysis",
+      "path": "trials/ga/seed_3001/analysis/attempt_001",
+      "status": "complete",
+      "wall_seconds": 7.175444268999854,
+      "wall_measurement_available": true,
+      "saved_fresh_evaluation_episodes": 120
+    },
+    {
+      "profile": "smoke",
+      "method": "es",
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "stage": "training",
+      "path": "trials/es/seed_3001/training/attempt_001",
+      "status": "complete",
+      "wall_seconds": 14.38930655799777,
+      "wall_measurement_available": true,
+      "start_update": 0,
+      "observed_completed_updates": 4,
+      "nominal_training_steps_observed_lower_bound": 1024,
+      "maximum_trainer_rss_kib": 668896
+    },
+    {
+      "profile": "smoke",
+      "method": "es",
+      "seed": 3001,
+      "trial": 3002,
+      "eval_seed": 903001,
+      "stage": "analysis",
+      "path": "trials/es/seed_3001/analysis/attempt_001",
+      "status": "complete",
+      "wall_seconds": 5.7486895309994,
+      "wall_measurement_available": true,
+      "saved_fresh_evaluation_episodes": 120
+    }
+  ],
+  "compute": {
+    "suite_wall_seconds": 63.13385714699689,
+    "planned_training_env_steps_nominal": 2560,
+    "completed_trial_training_env_steps_nominal": 2048,
+    "attempted_training_env_steps_nominal_observed_lower_bound": 2048,
+    "training_wall_seconds_all_attempts": 47.84768075899774,
+    "analysis_wall_seconds_all_attempts": 12.924133799999254,
+    "maximum_trainer_rss_kib": 720592,
+    "saved_fresh_evaluation_episodes_all_attempts": 240,
+    "scored_fresh_evaluation_episodes": 240,
+    "unsuccessful_attempts": 0,
+    "note": "Failed/resumed attempt work is counted separately. Unsaved progress and unsaved evaluation episodes are unknown, not zero. Peak RSS covers native trainers only."
+  },
+  "validation": {
+    "frozen_protocol_and_sources_match": true,
+    "training_receipts_verified": true,
+    "posthoc_metrics_recomputed": true,
+    "matched_task_vectors": true,
+    "all_planned_trials": false
+  }
+}

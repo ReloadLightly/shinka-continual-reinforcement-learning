@@ -233,6 +233,12 @@ directory, and use new paths for distinct experiments and exports.
 
 ## Next reporting execution
 
+The first reporting seed pair began on October 4, 2026 (local date), after a
+[separate GA/ES allocation diagnostic](../reports/reference-ga-es-allocation-diagnostic-20261004/summary.json)
+validated training and fresh checkpoint evaluation on the eight-CPU allocation.
+The diagnostic executes only GA and ES from its three-method diagnostic plan;
+its partial status is explicit, and it supplies no scientific reporting trial.
+
 Run the amended GA/ES subset with the existing harness, retaining all ten
 reporting seeds, twenty phases, and the full training budget per method.
 The first invocation below completes the first seed's GA/ES pair within the

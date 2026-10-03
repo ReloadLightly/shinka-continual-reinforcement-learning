@@ -1,0 +1,273 @@
+{
+  "original_artifacts": {
+    "environment.json": {
+      "sha256": "4b63441f7abb6088ee497782372ff70fe2a1321f5af5d2fd2e3be699580ef96b",
+      "bytes": 3135,
+      "exported": true
+    },
+    "plan.json": {
+      "sha256": "1421d5bec53f47af88a5973f16dc3e87634dd07259c2de035cdf156ff38ef794",
+      "bytes": 3586,
+      "exported": true
+    },
+    "suite.json": {
+      "sha256": "3bafdaa8f84c4fadbc8b1ca6c2a768ca2f7d932ddbdf6114789403d9038e46a2",
+      "bytes": 5920,
+      "exported": true
+    },
+    "trials/es/seed_3001/analysis/attempt_001/checkpoint-metadata.json": {
+      "sha256": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+      "bytes": 372,
+      "exported": true
+    },
+    "trials/es/seed_3001/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+      "sha256": "e8ee6136c3540c2a4b644a18e6486dc9904ef3269d4cbdbd275ccbd466403941",
+      "bytes": 9567,
+      "exported": false
+    },
+    "trials/es/seed_3001/analysis/attempt_001/evaluation-input/evaluation.json": {
+      "sha256": "340b6ccfc6d8b8b3a295fff919235d0504c285018758a3fc853f5935f47ed9ef",
+      "bytes": 1360,
+      "exported": true
+    },
+    "trials/es/seed_3001/analysis/attempt_001/evaluation-input/results.json": {
+      "sha256": "a5c5691b9910f1536b2fad914c878502961365d9902432481a040ceb60adcee6",
+      "bytes": 1849,
+      "exported": true
+    },
+    "trials/es/seed_3001/analysis/attempt_001/evaluation.json": {
+      "sha256": "340b6ccfc6d8b8b3a295fff919235d0504c285018758a3fc853f5935f47ed9ef",
+      "bytes": 1360,
+      "exported": true
+    },
+    "trials/es/seed_3001/analysis/attempt_001/manifest.json": {
+      "sha256": "9ae34d2aa118e3573e3db7fcf41e35493761ca2dd8d671d04094a631da0ec125",
+      "bytes": 2369,
+      "exported": true
+    },
+    "trials/es/seed_3001/analysis/attempt_001/process.log": {
+      "sha256": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+      "bytes": 82,
+      "exported": true
+    },
+    "trials/es/seed_3001/analysis/attempt_001/summary.json": {
+      "sha256": "b72f6ff92e91fd319e4bd90d23577a5621eb5ec1a42238c7352418a74d3befe1",
+      "bytes": 1564,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/checkpoints.npz": {
+      "sha256": "e8ee6136c3540c2a4b644a18e6486dc9904ef3269d4cbdbd275ccbd466403941",
+      "bytes": 9567,
+      "exported": false
+    },
+    "trials/es/seed_3001/training/attempt_001/config.json": {
+      "sha256": "7333c45fd2d003d8c6121fece974b6ecc07af1c00e2290461f85eca9fae2501f",
+      "bytes": 1146,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/manifest.json": {
+      "sha256": "5d78d4f43d52686499eb6f68de155ef1a7896ecace9f090a46419b4dc9dc1699",
+      "bytes": 1838,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/phase-events.jsonl": {
+      "sha256": "164287b8bc8c1263997ee567cdd5e98a8bc07067d4f860dada2d91b6b999bbff",
+      "bytes": 195,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/process-measurement.json": {
+      "sha256": "d67b1d18b881bf691acaff33a55a4fd464380e803a30e1fff1e67b592c12f4e3",
+      "bytes": 731,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/process.log": {
+      "sha256": "f088f4731b3e1ac69de1eceecc463db3dd7865fdcffafe270bd63cfd96b3249e",
+      "bytes": 1375,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/receipt.json": {
+      "sha256": "2659f0587359efab630e84251ebb11efb818af39907f6bc59cdb3bd12cb68eac",
+      "bytes": 1061,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/results.json": {
+      "sha256": "a5c5691b9910f1536b2fad914c878502961365d9902432481a040ceb60adcee6",
+      "bytes": 1849,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/stacks.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/summary.json": {
+      "sha256": "3e1089223d9d81d9623a9b968cbe4206f5ea8f8e27c7d22236fbd4570ed588f4",
+      "bytes": 218,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/train.log": {
+      "sha256": "5f4ecab10dba3d2c25cbd9effed4ad7d0b82dc8db522349bc58a61ecb5e95236",
+      "bytes": 665,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/training_metrics.json": {
+      "sha256": "cda609e63845c39452a2201bbf768259757ba6607dc7b8c291a3d422ce304143",
+      "bytes": 4401,
+      "exported": true
+    },
+    "trials/es/seed_3001/training/attempt_001/trajectory.npz": {
+      "sha256": "4fe185b4a3afce3d727cd84c93aaac938204c7451ce3bc2c34a1787930019711",
+      "bytes": 6424,
+      "exported": false
+    },
+    "trials/ga/seed_3001/analysis/attempt_001/checkpoint-metadata.json": {
+      "sha256": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+      "bytes": 372,
+      "exported": true
+    },
+    "trials/ga/seed_3001/analysis/attempt_001/evaluation-input/checkpoints.npz": {
+      "sha256": "b3b8ca078ca77126015614b687697b07975782b91bfb228538a6c6f411aa4d18",
+      "bytes": 9568,
+      "exported": false
+    },
+    "trials/ga/seed_3001/analysis/attempt_001/evaluation-input/evaluation.json": {
+      "sha256": "b1933f5fc18a897ca9a39b68e9021881365969bebc458e999dc2d7054fd6fd0c",
+      "bytes": 1344,
+      "exported": true
+    },
+    "trials/ga/seed_3001/analysis/attempt_001/evaluation-input/results.json": {
+      "sha256": "323ed411f6721358e185906218c048d1ae4f7cfac7cad600309c18a7d73fe41f",
+      "bytes": 2070,
+      "exported": true
+    },
+    "trials/ga/seed_3001/analysis/attempt_001/evaluation.json": {
+      "sha256": "b1933f5fc18a897ca9a39b68e9021881365969bebc458e999dc2d7054fd6fd0c",
+      "bytes": 1344,
+      "exported": true
+    },
+    "trials/ga/seed_3001/analysis/attempt_001/manifest.json": {
+      "sha256": "b9a89fdd81147fd4096251970a00fc314932eaa4dd4e4573afa734d31cfb9a4a",
+      "bytes": 2371,
+      "exported": true
+    },
+    "trials/ga/seed_3001/analysis/attempt_001/process.log": {
+      "sha256": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+      "bytes": 82,
+      "exported": true
+    },
+    "trials/ga/seed_3001/analysis/attempt_001/summary.json": {
+      "sha256": "01227a5566fede918250253d7ddcb3a07f91d2d8fec0d54f48c2a891f3265544",
+      "bytes": 1546,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/checkpoints.npz": {
+      "sha256": "b3b8ca078ca77126015614b687697b07975782b91bfb228538a6c6f411aa4d18",
+      "bytes": 9568,
+      "exported": false
+    },
+    "trials/ga/seed_3001/training/attempt_001/config.json": {
+      "sha256": "7887d1078dd7787db801191325eecfa713559b724e3779d80eab847b6e690f17",
+      "bytes": 1346,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/manifest.json": {
+      "sha256": "32e7edf4b61b11c75bd5a8d240f32ef218a51f5d0e017c320076be8f9d0b3a9c",
+      "bytes": 1838,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/phase-events.jsonl": {
+      "sha256": "bfd4b40777904143fee974cef93d4b42976321974d20a02568c7322ff6bac4cc",
+      "bytes": 194,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/process-measurement.json": {
+      "sha256": "adf903d874db2b0264b68eb9d50477e5912ac4911205f07f673bc1179c396575",
+      "bytes": 731,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/process.log": {
+      "sha256": "70da7b34c6df6425bb77a1acf5346f3a9641e50e17dee00fb7122cef2a8d4878",
+      "bytes": 1375,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/receipt.json": {
+      "sha256": "fe5ff561919935418c1f1e23404d03940e7ec013ac75a7fc04927565c05088d7",
+      "bytes": 1061,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/results.json": {
+      "sha256": "323ed411f6721358e185906218c048d1ae4f7cfac7cad600309c18a7d73fe41f",
+      "bytes": 2070,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/stacks.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/summary.json": {
+      "sha256": "cb609e4d7d6b66ed0258778fbcd18abbc03b8934ea6caf9a810162ceeaf1f612",
+      "bytes": 216,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/train.log": {
+      "sha256": "95d5a50491060704910f8e95870678a2224406be65b79de03eea39b8b265f93f",
+      "bytes": 665,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/training_metrics.json": {
+      "sha256": "ca33e7f6dbbeb9e024f940ac2e79d4df41184811445735b5df1e2a0e4036445b",
+      "bytes": 4307,
+      "exported": true
+    },
+    "trials/ga/seed_3001/training/attempt_001/trajectory.npz": {
+      "sha256": "436f800f192c6a2f4de0219ac5c04ba97ad7d64e9f9292ac5acab65d6e5265b4",
+      "bytes": 3599,
+      "exported": false
+    }
+  },
+  "published_sha256": {
+    "raw/environment.json": "4b63441f7abb6088ee497782372ff70fe2a1321f5af5d2fd2e3be699580ef96b",
+    "raw/plan.json": "3f87f7f50a573d38a429224cc97a118b3606181a0ab45b5ea3fdc110f4360881",
+    "raw/suite.json": "3bafdaa8f84c4fadbc8b1ca6c2a768ca2f7d932ddbdf6114789403d9038e46a2",
+    "raw/trials/es/seed_3001/analysis/attempt_001/checkpoint-metadata.json": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+    "raw/trials/es/seed_3001/analysis/attempt_001/evaluation-input/evaluation.json": "340b6ccfc6d8b8b3a295fff919235d0504c285018758a3fc853f5935f47ed9ef",
+    "raw/trials/es/seed_3001/analysis/attempt_001/evaluation-input/results.json": "a5c5691b9910f1536b2fad914c878502961365d9902432481a040ceb60adcee6",
+    "raw/trials/es/seed_3001/analysis/attempt_001/evaluation.json": "340b6ccfc6d8b8b3a295fff919235d0504c285018758a3fc853f5935f47ed9ef",
+    "raw/trials/es/seed_3001/analysis/attempt_001/manifest.json": "ba5e81ee4e4c2925ac0212a5df84dc933164ddc7b1814effd58d338bf3ba1995",
+    "raw/trials/es/seed_3001/analysis/attempt_001/process.log": "e1e1376fe2befc1e75c4e5076749ffd1b968d798feab98cb6fd026e1fb692899",
+    "raw/trials/es/seed_3001/analysis/attempt_001/summary.json": "b72f6ff92e91fd319e4bd90d23577a5621eb5ec1a42238c7352418a74d3befe1",
+    "raw/trials/es/seed_3001/training/attempt_001/config.json": "7333c45fd2d003d8c6121fece974b6ecc07af1c00e2290461f85eca9fae2501f",
+    "raw/trials/es/seed_3001/training/attempt_001/manifest.json": "95a80c7afae2b4d59e642480ff5ec3a1ddd53a837d1841b2998b9d0ba46c78a9",
+    "raw/trials/es/seed_3001/training/attempt_001/phase-events.jsonl": "164287b8bc8c1263997ee567cdd5e98a8bc07067d4f860dada2d91b6b999bbff",
+    "raw/trials/es/seed_3001/training/attempt_001/process-measurement.json": "d67b1d18b881bf691acaff33a55a4fd464380e803a30e1fff1e67b592c12f4e3",
+    "raw/trials/es/seed_3001/training/attempt_001/process.log": "8f1fd9dc3c2fb08515f64cba3d39642d76f98b36c720095ae7519a00f1171632",
+    "raw/trials/es/seed_3001/training/attempt_001/receipt.json": "2659f0587359efab630e84251ebb11efb818af39907f6bc59cdb3bd12cb68eac",
+    "raw/trials/es/seed_3001/training/attempt_001/results.json": "a5c5691b9910f1536b2fad914c878502961365d9902432481a040ceb60adcee6",
+    "raw/trials/es/seed_3001/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/es/seed_3001/training/attempt_001/summary.json": "3e1089223d9d81d9623a9b968cbe4206f5ea8f8e27c7d22236fbd4570ed588f4",
+    "raw/trials/es/seed_3001/training/attempt_001/train.log": "94ee90dd04de235f1888218f4e1ba6a47216d71cee40beec58b2754695ddd75a",
+    "raw/trials/es/seed_3001/training/attempt_001/training_metrics.json": "cda609e63845c39452a2201bbf768259757ba6607dc7b8c291a3d422ce304143",
+    "raw/trials/ga/seed_3001/analysis/attempt_001/checkpoint-metadata.json": "63c5686cdcbfa65dfc1dd0d68f8e163f65996bded7a679529ca46d61fbbfa56c",
+    "raw/trials/ga/seed_3001/analysis/attempt_001/evaluation-input/evaluation.json": "b1933f5fc18a897ca9a39b68e9021881365969bebc458e999dc2d7054fd6fd0c",
+    "raw/trials/ga/seed_3001/analysis/attempt_001/evaluation-input/results.json": "323ed411f6721358e185906218c048d1ae4f7cfac7cad600309c18a7d73fe41f",
+    "raw/trials/ga/seed_3001/analysis/attempt_001/evaluation.json": "b1933f5fc18a897ca9a39b68e9021881365969bebc458e999dc2d7054fd6fd0c",
+    "raw/trials/ga/seed_3001/analysis/attempt_001/manifest.json": "4953a1774340838ced084a3af4d860fcdde4c6bc87fdc72e34bf6fb7d808deee",
+    "raw/trials/ga/seed_3001/analysis/attempt_001/process.log": "f94e4f946f69111353f28027e4186dbfe60e2121bba059a430f8b0fcc3edd586",
+    "raw/trials/ga/seed_3001/analysis/attempt_001/summary.json": "01227a5566fede918250253d7ddcb3a07f91d2d8fec0d54f48c2a891f3265544",
+    "raw/trials/ga/seed_3001/training/attempt_001/config.json": "7887d1078dd7787db801191325eecfa713559b724e3779d80eab847b6e690f17",
+    "raw/trials/ga/seed_3001/training/attempt_001/manifest.json": "23774b6732e6bc40aae06f1ef0edfdea8362778a42c06432426dda01dbcdd700",
+    "raw/trials/ga/seed_3001/training/attempt_001/phase-events.jsonl": "bfd4b40777904143fee974cef93d4b42976321974d20a02568c7322ff6bac4cc",
+    "raw/trials/ga/seed_3001/training/attempt_001/process-measurement.json": "adf903d874db2b0264b68eb9d50477e5912ac4911205f07f673bc1179c396575",
+    "raw/trials/ga/seed_3001/training/attempt_001/process.log": "7e2e662af9e3d47ff7669782afeb75db4caea84d3614cce6fabf223631300a98",
+    "raw/trials/ga/seed_3001/training/attempt_001/receipt.json": "fe5ff561919935418c1f1e23404d03940e7ec013ac75a7fc04927565c05088d7",
+    "raw/trials/ga/seed_3001/training/attempt_001/results.json": "323ed411f6721358e185906218c048d1ae4f7cfac7cad600309c18a7d73fe41f",
+    "raw/trials/ga/seed_3001/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/ga/seed_3001/training/attempt_001/summary.json": "cb609e4d7d6b66ed0258778fbcd18abbc03b8934ea6caf9a810162ceeaf1f612",
+    "raw/trials/ga/seed_3001/training/attempt_001/train.log": "0fc4baea9877eb90411ab0ee1f732633af3a66ee212c1f4a54d5132004136d0c",
+    "raw/trials/ga/seed_3001/training/attempt_001/training_metrics.json": "ca33e7f6dbbeb9e024f940ac2e79d4df41184811445735b5df1e2a0e4036445b",
+    "summary.json": "e7ce23689a26ad28a0fb61367d9034159546a0a8643b6c570a09c37ca4a6f204"
+  },
+  "exporter_sha256": "4b4b0896add80fb3fd3df29d6f2c06afc477cb50f9b44d584672df1939d8b291",
+  "artifact_policy": "All original artifacts are hashed; text is copied with local root paths redacted. Binary checkpoints remain outside Git. Every attempt is retained."
+}
