@@ -1,0 +1,24 @@
+<NAME>
+quality_anchored_recovery
+</NAME>
+<DESCRIPTION>
+A single strong individual can currently force mutation width down while the archive and population remain weak. Base difficulty on their average quality instead, and anchor width to a positive exploration target. Geometric interpolation should prevent persistent contraction from trapping search at the lower bound, while archive-loss feedback increases exploration after observed deterioration. These are feedback-driven changes; their effect on combined_score requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    difficulty = 1.0 - best
+=======
+    difficulty = 1.0 - 0.65 * archive - 0.35 * mean
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    step = 0.18 * tanh(3.0 * pressure) + 0.12 * difficulty * loss
+    lower = 0.003 + 0.009 * difficulty
+    upper = 0.025 + 0.475 * difficulty * difficulty
+    next_sigma = clip(clip(sigma, 0.001, 2.0) * exp(clip(step, -0.5, 0.5)), lower, upper)
+=======
+    target = 0.006 + 0.14 * difficulty * difficulty + 0.10 * exploration + 0.12 * difficulty * loss
+    step = 0.08 * tanh(3.0 * pressure)
+    log_width = 0.75 * log(clip(sigma, 0.001, 2.0)) + 0.25 * log(target) + step
+    next_sigma = exp(clip(log_width, -6.90, 0.69))
+>>>>>>> REPLACE
+</DIFF>

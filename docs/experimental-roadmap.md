@@ -34,7 +34,12 @@ runners are implemented. Their [execution protocol](finalist-validation.md)
 preserves the separate source contracts. The adaptive program adapter and native
 FocusGA support are implemented. The adaptive selection evaluator, verified
 cache, and 15 fixed-control trials are complete. The thirteen-slot adaptive
-Shinka checkpoint is complete; the next cumulative target is 25. Source revisions remain fixed by
+Shinka checkpoint completed; its continuation toward 25 stopped after a grammar
+failure, with 16 consumed slots and 14 valid programs. The
+[failure review and recovery work](adaptive-search.md#stopped-target-25-continuation)
+preserve the frozen evaluator and unsuccessful slots. The
+[reserved validation proposal](adaptive-validation.md) remains unexecuted pending
+an explicitly resolved search endpoint. Source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json). The full-paper protocol remains in
 the [reproduction plan](reproduction-plan.md).
 
@@ -626,7 +631,8 @@ training and checkpoint evidence before reuse.
 | 7 | One validation comparison and frozen static finalists | Reserved trials used once, candidate hashes, all continual metrics | Complete: 25 trials, 26.59 min; Shinka 11 and random 24 selected |
 | 8 | Adaptive-program adapter and native control support | Short identity traces, varying-sigma check, persistent memory, explicit upstream adaptive control | Complete: seven real trials, 19 numerical checks, 3.98 min |
 | 9 | Fixed adaptive selection evaluator and verified cache | Known-trace objective checks, new seed partitions, immutable cache identities, control evaluations | Complete: 15 trials, two cache checks, 15.21 min; 504 harness tests pass |
-| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Thirteen slots complete: twelve valid proposals, 36 new trials; next resume to 25 |
+| 10 | Shinka search over executable adaptive rules | Separate archive; staged proposals; control comparisons; individual learning and forgetting trajectories | Target-25 session stopped: 16 consumed slots, 14 valid programs, 39 new trials; reviewed recovery pending |
+| 11 | Reserved adaptive finalist handoff and comparison | Exact recipe freeze, separate runner, untouched five-seed comparison and all fixed controls | Proposed; unresolved search endpoint blocks execution |
 
 <sub>Table 8. Deliverables and observed status. The successful baseline-trial
 resume does not substitute for testing Shinka's separate archive-resume path.</sub>
@@ -662,12 +668,20 @@ added eight valid, distinct proposals and 24 training trials without failures.
 Generation 5 leads at 0.4871; native FocusGA remains higher at 0.5006. New
 evaluations took 19.98 minutes, native search 25.21 minutes, and session
 timestamps span 25.85 minutes including final checks. The original five programs
-and their scores are unchanged, and native archive resume is now exercised on
-the adaptive study. Continue to the declared endpoint of 25 slots under the
-same objective, grammar, controls, runtime, and development partition. At the
-observed mean evaluation time, twelve more proposals would need about 30 minutes
-of evaluation plus proposal and archive overhead. Reserved validation remains
-unopened until a frozen finalist handoff.
+and their scores are unchanged, and native archive resume was exercised on
+the adaptive study.
+
+The subsequent [target-25 session](../reports/adaptive-shinka-stage25-stopped-20261003/summary.json)
+added valid generation 13, rejected generation 14 at the frozen AST limit, and
+interrupted generation 15 before CLI launch. Sixteen slots remain consumed,
+including both unsuccessful attempts. The best valid score is unchanged. Only
+nine unused slots, generations 16–24, remain within the declared budget.
+The [reviewed recovery work](adaptive-search.md#reviewed-recovery-work) requires
+separate orchestration and a declared stale-RNG recovery decision before new
+model calls; the current failed archive cannot use ordinary resume. Keep the
+objective, grammar, controls, and development partition fixed. The
+[reserved validation proposal](adaptive-validation.md) remains unexecuted until
+the endpoint is explicitly resolved and a finalist handoff is frozen.
 
 After each substantive experiment, update the README as a scientific report:
 state the frozen protocol, link compact raw evidence and hashes, distinguish

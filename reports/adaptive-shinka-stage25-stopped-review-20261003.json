@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "status": "stopped_endpoint_reviewed_recovery_not_implemented",
+  "created_at": "2026-10-03T01:52:25.879437+00:00",
+  "execution_repository_revision": "272b9aad8183bd55a22c105765045baf691c7e4f",
+  "protocol": "adaptive-shinka-v1",
+  "target_slots": 25,
+  "evidence_sha256": {
+    "reports/adaptive-shinka-stage25-stopped-20261003/summary.json": "dffde97ae152167a037e1b24ca4f257ab00a387fa390f3f42d81db6692a05aea",
+    "reports/adaptive-shinka-stage25-stopped-20261003/checksums.json": "0bbe509485449922e62d40c5c8ce9b1245223ff75b992b3c23a341ea5e97dbb8",
+    "reports/adaptive-shinka-stage13-20261003/summary.json": "96f95e4691c54b411c151d0bc6048eb645263e4644bf754ea390cbfadd1cab1e",
+    "reports/adaptive-shinka-stage13-20261003/checksums.json": "f227a1bf429e5d92783e87937a4997ab2ddf13fbbdadd7bce325302c52f68a1f",
+    "reports/adaptive-shinka-stage25-stopped-20261003/raw/search/model_requests.jsonl": "0d3e509a32a63169a06e8d28c816c1e0fe8babb40edb6887b7a19c5fa6272bef",
+    "reports/adaptive-shinka-stage25-stopped-20261003/raw/search/state.json": "67728b732e85b86cb20f8b25cd298bdbdc69ba18366f971aacdf2c4d56f04d9c",
+    "reports/adaptive-shinka-stage25-stopped-20261003/raw/search/shinka/gen_14/main.py": "3cfdca4b3f397e9ae0ef300fb6736a497b43454adfd91fc3bccac0746a69435e",
+    "reports/adaptive-shinka-stage25-stopped-20261003/raw/search/shinka/gen_14/results/evaluation/request.json": "fd4b75759a08f4c4c6e3c9a8e8010e6dc55d2868d5524b1210fc180cd80e06fb"
+  },
+  "accounting": {
+    "slots_consumed": 16,
+    "proposal_slots_consumed": 15,
+    "programs_evaluated": 14,
+    "distinct_canonical_programs": 14,
+    "cache_hits": 1,
+    "new_training_trials": 39,
+    "new_nominal_training_steps": 299520000,
+    "incomplete_training_attempts": 0,
+    "proposal_usage": {
+      "guarded_requests": 15,
+      "codex_cli_launches": 14,
+      "successful_requests": 14,
+      "failed_or_incomplete_requests": 1,
+      "backend_model_requests": null,
+      "paid_api_calls": 0,
+      "note": "Guard enforces ChatGPT authentication; launches are not backend request counts or a remaining-subscription-allowance meter"
+    }
+  },
+  "added_since_thirteen_slots": {
+    "slots_consumed": 3,
+    "programs_evaluated": 1,
+    "proposal_slots_consumed": 3,
+    "new_training_trials": 3,
+    "new_nominal_training_steps": 23040000,
+    "new_scored_training_trials": 3,
+    "training_wall_seconds": 247.92856560798828,
+    "evaluation_wall_seconds": 318.9179554779548,
+    "session_wall_seconds": 409.8907525308896,
+    "fresh_checkpoint_evaluation_episodes": 900,
+    "session_timestamp_span_seconds": 421.360953
+  },
+  "total_fresh_checkpoint_evaluation_episodes": 11700,
+  "valid_generations": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "new_valid_program": {
+    "generation": 13,
+    "id": "d0bb7dcd-e657-4bdd-838f-c6abc333fbfa",
+    "parent_id": "77893de1-0961-4b52-aea2-6ff455823dac",
+    "program_sha256": "7d0a517d58b5630c7d966d299e6f24a826d7ff1ea33968f919ac2d1904427f97",
+    "canonical_ast_sha256": "5e7ac257ae81363f84133c0910408e8189300222d1fa2750d87c6bd790bc9acb",
+    "request": {
+      "status": "complete",
+      "request_id": "evaluation",
+      "context_sha256": "58b409f6946d9c9a3fcd77b1f66dbfc37feb35c772e25d41e217236abf63f0a7",
+      "cache_hit": false,
+      "slot_consumed": true,
+      "started_at": "2026-10-03T01:35:08.601857+00:00",
+      "evaluator_model_calls": 0,
+      "candidate": {
+        "id": "proposal",
+        "variant": "ga_adaptive",
+        "source": null,
+        "source_sha256": "7d0a517d58b5630c7d966d299e6f24a826d7ff1ea33968f919ac2d1904427f97",
+        "settings": null,
+        "program": {
+          "source_sha256": "7d0a517d58b5630c7d966d299e6f24a826d7ff1ea33968f919ac2d1904427f97",
+          "canonical_ast_sha256": "5e7ac257ae81363f84133c0910408e8189300222d1fa2750d87c6bd790bc9acb",
+          "ast_nodes": 493,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "cache_key": "f75452bc0d844ca3356c433f9d1f6b415df3f331530f168395938592dcebb74d",
+      "cache_origin": "cache/f75452bc0d844ca3356c433f9d1f6b415df3f331530f168395938592dcebb74d/attempt_0001",
+      "cache_receipt_sha256": "72ea2bb4ed18e078e04d34e41133feadb9e4603b9bc9c07a97c1a2a8f537205d",
+      "aggregate": {
+        "scores": {
+          "combined_score": {
+            "mean": 0.22964305667479834,
+            "sample_sd": 0.104573959298396,
+            "n": 3
+          },
+          "active_score": {
+            "mean": 0.41408611334959666,
+            "sample_sd": 0.17811423529963127,
+            "n": 3
+          },
+          "previous_score": {
+            "mean": 0.045200000000000004,
+            "sample_sd": 0.0319128674849364,
+            "n": 3
+          }
+        },
+        "reference_metrics": {
+          "learning_accuracy": {
+            "mean": 401.7,
+            "sample_sd": 88.73933738765463,
+            "n": 3
+          },
+          "forgetting": {
+            "mean": 378.3,
+            "sample_sd": 95.77143508258496,
+            "n": 3
+          },
+          "learning_minus_forgetting": {
+            "mean": 23.400000000000016,
+            "sample_sd": 54.98916054803692,
+            "n": 3
+          },
+          "zero_shot_transfer": {
+            "mean": 20.688888888888886,
+            "sample_sd": 17.330330936550816,
+            "n": 3
+          },
+          "normalized_curve_average": {
+            "mean": 0.4091819466630618,
+            "sample_sd": 0.17635992710121384,
+            "n": 3
+          }
+        }
+      },
+      "evaluated_source_sha256": "7d0a517d58b5630c7d966d299e6f24a826d7ff1ea33968f919ac2d1904427f97",
+      "new_training_trials": 3,
+      "new_training_steps_nominal": 23040000,
+      "avoided_training_steps_nominal": 0,
+      "wall_seconds": 318.91678077401593,
+      "finished_at": "2026-10-03T01:40:36.355751+00:00"
+    }
+  },
+  "invalid_slot": {
+    "generation": 14,
+    "ast_nodes": 539,
+    "frozen_max_ast_nodes": 512,
+    "error": "ProgramValidationError: AST exceeds 512 nodes",
+    "training_trials": 0,
+    "scientific_score": null,
+    "native_zero_is_placeholder": true
+  },
+  "interrupted_slot": {
+    "generation": 15,
+    "guarded_request_events": [
+      {
+        "request_id": "a74f5c4127394f3f8abcfbe970aeebae",
+        "event": "started",
+        "time_utc": "2026-10-03T01:41:19.135987+00:00"
+      },
+      {
+        "request_id": "a74f5c4127394f3f8abcfbe970aeebae",
+        "event": "finished",
+        "time_utc": "2026-10-03T01:41:19.522829+00:00",
+        "outcome": "provider_failure",
+        "returncode": -15,
+        "wall_seconds": 0.38684502500109375
+      }
+    ],
+    "recorded_codex_cli_launches": 0,
+    "program_returned": false,
+    "training_trials": 0,
+    "scientific_score": null,
+    "only_local_artifact": "shinka/gen_15/.generation_lock",
+    "artifact_publication": "Original empty lock hash retained in checksums.json; no program or evaluation text exists to publish."
+  },
+  "earlier_program_rows_unchanged": true,
+  "rng": {
+    "current_sha256": "eac320783b44307157cee89b99f529c4817995a6c1beaf766713600fede29d83",
+    "previous_checkpoint_sha256": "eac320783b44307157cee89b99f529c4817995a6c1beaf766713600fede29d83",
+    "current_after_consumed_sampling": false,
+    "explanation": "Native RNG persists only after graceful return; the file is the thirteen-slot checkpoint."
+  },
+  "stale_local_summary": {
+    "path": "raw/search/summary.json",
+    "status": "complete",
+    "programs_evaluated": 13,
+    "current_report_summary": "summary.json"
+  },
+  "observed_training_seeds": [
+    4001,
+    4002,
+    4003
+  ],
+  "remaining_unused_generations": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "recovery_status": "No retry, source change, RNG reset, or recovery launch. Separate failure-aware controller and explicit RNG decision required; see docs/adaptive-search.md.",
+  "validation_status": "Proposed only; reserved adaptive validation and final reporting remain unused.",
+  "verification": {
+    "published_hashes_checked": 1023,
+    "original_hashes_checked": 1152,
+    "prior_stage13_published_hashes_checked": 934,
+    "independently_recomputed_trials": 45,
+    "trial_scope": "14 valid programs and native FocusGA, each on three development seeds",
+    "gen13_applied_width_traces_verified": 3,
+    "focused_regression_command": ".venv/bin/python -m pytest -q tests/test_adaptive_search.py tests/test_adaptive_search_failures.py tests/test_plot_adaptive_search.py",
+    "focused_regression_result": "53 passed in 6.08s",
+    "lint_command": ".venv/bin/ruff check .",
+    "lint_result": "All checks passed",
+    "web_ui_status": 200,
+    "web_ui_database_rows": 15,
+    "web_ui_count_note": "Database includes invalid generation14 and excludes interrupted generation15 without code; consumed slots remain16."
+  }
+}

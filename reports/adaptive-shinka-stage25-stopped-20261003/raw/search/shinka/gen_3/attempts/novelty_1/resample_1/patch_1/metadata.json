@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "elite_progress_diversity",
+  "patch_description": "Use both mean and best-fitness progress to detect stagnation, so improving elites delay exploration increases. Reduce routine mutation width when strong individuals already exist, while increasing exploration more strongly during stagnation with low population fitness dispersion. Preserve the existing response to archive deterioration. This aims to balance acquisition and refinement; its effect on combined_score requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T02:25:39.974063",
+  "llm_cost": 0.0245128,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

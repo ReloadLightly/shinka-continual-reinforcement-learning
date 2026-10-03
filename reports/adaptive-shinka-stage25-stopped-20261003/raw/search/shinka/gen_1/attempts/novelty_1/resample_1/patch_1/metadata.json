@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_width_target",
+  "patch_description": "Replace constant mutation width with a smoothed exploration target. Lower fitness and stalled progress increase exploration; strong fitness reduces mutation width for refinement. A drop in archive fitness relative to remembered population fitness temporarily raises exploration without requiring task identifiers or a switch schedule. Archive-relative offspring success provides a small secondary adjustment, rather than being treated as parent-matched success. Four memory values track smoothed mean fitness, best fitness, stagnation, and initialization. This is an untested proposal.",
+  "error_msg": null,
+  "timestamp": "2026-10-03T02:05:21.983297",
+  "llm_cost": 0.0177708,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

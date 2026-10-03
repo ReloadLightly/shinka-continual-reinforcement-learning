@@ -1,0 +1,14 @@
+<NAME>
+archive_quality_exploration
+</NAME>
+<DESCRIPTION>
+Base mutation difficulty mainly on the re-scored archive’s mean rather than the population maximum. A single strong individual can currently suppress exploration while the broader archive remains weak. Giving archive quality more weight should sustain exploration until good performance is widespread, then reduce mutation width as the archive improves. This is a feedback-driven hypothesis; its effect on combined_score requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    difficulty = 1.0 - 0.7 * best - 0.3 * mean
+=======
+    archive_quality = clip(stats[3], 0.0, 1.0)
+    difficulty = 1.0 - 0.60 * archive_quality - 0.25 * mean - 0.15 * best
+>>>>>>> REPLACE
+</DIFF>

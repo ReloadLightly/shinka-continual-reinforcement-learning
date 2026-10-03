@@ -1,0 +1,25 @@
+<NAME>
+archive_drop_feedback
+</NAME>
+<DESCRIPTION>
+Detect fitness drops using the archive’s own smoothed history instead of the whole-population mean. This makes exploration pulses respond more directly to deterioration in previously selected policies. A faster archive-history update shortens pulses once fitness stabilizes, allowing fine-grained search to resume. This is a feedback-based hypothesis; improvement requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    old_best = where(memory[3] > 0.5, memory[1], best)
+=======
+    old_archive = where(memory[3] > 0.5, memory[1], clip(stats[3], 0.0, 1.0))
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    drop = clip(old_mean - stats[3] - 0.08, 0.0, 1.0)
+=======
+    drop = clip(old_archive - stats[3] - 0.08, 0.0, 1.0)
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    next_best = 0.8 * old_best + 0.2 * best
+    next_memory = stack([next_mean, next_best, stagnation, 1.0])
+=======
+    next_archive = 0.5 * old_archive + 0.5 * clip(stats[3], 0.0, 1.0)
+    next_memory = stack([next_mean, next_archive, stagnation, 1.0])
+>>>>>>> REPLACE
+</DIFF>

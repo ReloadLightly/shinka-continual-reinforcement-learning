@@ -1,0 +1,22 @@
+<NAME>
+centroid_driven_exploration
+</NAME>
+<DESCRIPTION>
+Use archive and population means to estimate difficulty: a single strong individual can otherwise reduce exploration while the centroid still performs poorly. Increase exploration during persistent stagnation, make its suppression by population spread gentler, and raise the minimum target width to preserve adaptation after convergence. Reduce abrupt loss-driven widening to limit disruption of previously acquired behavior. This is a feedback-based hypothesis; improved combined_score requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    difficulty = clip(1.0 - 0.60 * best - 0.40 * archive, 0.0, 1.0)
+    collapse = exp(-8.0 * spread)
+=======
+    difficulty = clip(1.0 - 0.65 * archive - 0.35 * mean, 0.0, 1.0)
+    collapse = exp(-4.0 * spread)
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    exploration = 0.085 * difficulty * difficulty + 0.11 * stagnation * difficulty * collapse
+    target = 0.006 + exploration * exp(-2.5 * advantage - 1.2 * improving) + 0.22 * loss
+=======
+    exploration = 0.060 * difficulty * difficulty + 0.16 * stagnation * difficulty * collapse
+    target = 0.012 + exploration * exp(-2.5 * advantage - 1.2 * improving) + 0.12 * loss
+>>>>>>> REPLACE
+</DIFF>
