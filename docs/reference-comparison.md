@@ -7,8 +7,10 @@ studies and reserved validations remain separate, including their negative
 results; none of their candidates or validation outcomes changes this
 comparison's settings or reopens completed selection. The original full-budget
 protocol is retained below. The October 3, 2026 resource amendment limits the
-active PPO experiment to a development prefix. Full-budget GA and ES reporting
-has completed four matched pairs; twelve of twenty trials remain.
+active PPO experiment to a development prefix. The October 4, 2026 scope
+amendment ended GA/ES reporting after the fifth matched pair then in progress.
+All five pairs are complete and published below. Baseline reporting has
+stopped; no further trial is scheduled.
 
 ## Protocol and partitions
 
@@ -26,8 +28,9 @@ evaluation. Baseline optimizers and architectures remain unchanged.
 Reporting seeds 42–51 map in order to task trials 1–10. The original execution
 order is seed-major, with GA, ES, and PPO at each seed. Methods share task draws
 and nominal budgets; their internal random draws remain method-specific. Under
-the amendment, GA and ES retain those reporting identities and full budgets;
-the ten full-budget PPO reporting trials are deferred. No candidate program
+the amendments, GA and ES retain the first five reporting identities and full
+per-trial budgets; the ten full-budget PPO reporting trials are deferred.
+The original ten-pair GA/ES target remains uncompleted. No candidate program
 participates in baseline execution or evaluation.
 
 Before reporting, full-budget development measurements use seed 1001, task
@@ -90,9 +93,47 @@ allocation.
 
 The full twenty-phase, ten-trial PPO arm remains an uncompleted reproduction
 target. Its omission prevents a full three-method reproduction claim. GA and
-ES retain their planned twenty-phase, ten-trial reporting comparison. The
+ES retain twenty phases per trial; the later scope amendment below limits
+their reporting comparison to five trials per method. The
 completed ShinkaEvolve studies, reserved outcomes, and their selection
 decisions are unchanged.
+
+## Baseline scope amendment — October 4, 2026
+
+The user directed the project to use the accumulated GA/ES evidence and focus
+subsequent work on ShinkaEvolve, rather than continue a multi-hour expansion of
+the baseline campaign. The [dated decision](../reports/reference-reporting-scope-amendment-20261004/decision.json)
+records the instruction while ES seed 46 was active. That trial and its fresh
+evaluation completed the fifth matched pair; baseline reporting then stopped.
+The resulting comparison comprises GA and ES at seeds **42–46**,
+task trials **1–5**, with **20 phases and 3,072,000,000 nominal training steps
+per trial**. Baseline settings, task construction, evaluation, source hashes,
+and all completed trajectories remain unchanged.
+
+This is a resource and project-scope decision, not selection of trials using
+their returns. Preserve every completed pair and all incurred compute,
+including negative findings and unsuccessful attempts. The original frozen
+plan remains a twenty-job, ten-pair plan; do not rewrite it as though five
+pairs had been the original sample target. Its unexecuted seeds 47–51 remain
+unexecuted, and its export remains partial against that original plan.
+No further GA, ES, or PPO reporting trial is authorized by this amendment;
+there is no automatic continuation after ES seed 46.
+
+The accumulated trials already form a valid matched comparison under the full
+per-trial protocol. The smaller sample changes the precision and scope of
+inference, not comparability within each pair. Report five individual outcomes
+per method and their dispersion; do not
+claim that the original ten-pair target or three-method reproduction is
+complete. Development seed 1001 and PPO's four-phase development prefix remain
+separate from these reporting aggregates. Display-smoothing and reference-data
+limitations remain as stated below.
+
+The completed static and adaptive Shinka searches and reserved comparisons
+remain closed. A renewed focus on Shinka does not reopen their candidate
+selection or permit feedback from reserved outcomes into the completed search.
+Any subsequent extension needs its own scientific question, declared budget,
+controls, and appropriate untouched evaluation data; it does not require
+automatically filling the unused baseline jobs.
 
 ## Evaluation and interpretation
 
@@ -115,7 +156,7 @@ Without matching reference normalization values, comparisons with the paper
 are restricted to the supported behavior and method ordering rather than
 claims of exact normalized numerical replication.
 
-For GA and ES reporting, report the ten individual values, mean, and sample
+For GA and ES reporting, report every completed individual value, mean, and sample
 standard deviation. The single PPO development prefix provides no estimate
 of between-trial variation. Its acquisition and early retention may be
 compared descriptively with the corresponding prefixes of the completed GA
@@ -180,22 +221,25 @@ took 13.9266 s and fresh evaluation 6.2488 s. The [complete cost accounting](../
 also includes 107.3577 s of prior verification and the remaining analysis
 overhead, for 22,340.0237 s total.
 
-The unchanged twenty-phase GA/ES reporting comparison, ten trials per method,
-is in progress. The full-budget PPO arm remains deferred; the completed
-development prefix does not consume any reporting trial.
+The twenty-phase GA/ES reporting comparison ended after five trials per method
+under the October 4 scope amendment. All five pairs are complete. The
+full-budget PPO arm remains deferred; the completed development prefix does
+not consume any reporting trial.
 
-## Interim full-budget reporting results
+## Bounded full-budget reporting results
 
-The [cumulative reporting evidence](../reports/reference-reporting-ga-es-pair04-20261004/summary.json)
-contains GA and ES at seeds 42–45, task trials 1–4, and evaluation seeds
-900042–900045. Methods share task vectors within each pair, twenty alternating
+The [cumulative reporting evidence](../reports/reference-reporting-ga-es-pair05-20261004/summary.json)
+contains GA and ES at seeds 42–46, task trials 1–5, and evaluation seeds
+900042–900046. Methods share task vectors within each pair, twenty alternating
 phases, 4,000 generations, and 3,072,000,000 nominal training steps per trial
-under the [exact frozen plan](../reports/reference-reporting-ga-es-pair04-20261004/raw/plan.json).
-Eight of twenty planned trials are complete, four of ten per method. The next
-prespecified pair, seed 46, is in progress. The export remains partial;
+under the [exact frozen plan](../reports/reference-reporting-ga-es-pair05-20261004/raw/plan.json).
+Ten of twenty originally planned trials are complete, five per method. This
+completes the bounded comparison under the scope amendment; no later pair
+will start automatically. The export remains partial against the frozen plan;
 full-budget PPO reporting is deferred and the original three-method target
-is incomplete. The [first-pair](../reports/reference-reporting-ga-es-pair01-20261004/summary.json)
-and [two-pair](../reports/reference-reporting-ga-es-pair02-20261004/summary.json)
+is incomplete. The [first-pair](../reports/reference-reporting-ga-es-pair01-20261004/summary.json),
+[two-pair](../reports/reference-reporting-ga-es-pair02-20261004/summary.json),
+and [four-pair](../reports/reference-reporting-ga-es-pair04-20261004/summary.json)
 archives remain unchanged; their verified trials are reused in this cumulative
 export.
 
@@ -205,16 +249,18 @@ export.
 | GA | 43 | 500.00 | 132.49 | 367.51 | 354.72 | 0.9878 |
 | GA | 44 | 500.00 | 20.96 | 479.04 | 500.00 | 0.9897 |
 | GA | 45 | 500.00 | 42.96 | 457.04 | 450.66 | 0.9886 |
-| GA | Mean ± SD | 500.00 ± 0.00 | 171.54 ± 217.56 | 328.46 ± 217.56 | 328.92 ± 220.81 | 0.9643 ± 0.0488 |
+| GA | 46 | 500.00 | 467.45 | 32.55 | 28.82 | 0.9639 |
+| GA | Mean ± SD | 500.00 ± 0.00 | 230.73 ± 230.24 | 269.27 ± 230.24 | 268.90 ± 233.62 | 0.9642 ± 0.0422 |
 | ES | 42 | 500.00 | 489.63 | 10.37 | 10.39 | 0.9605 |
 | ES | 43 | 500.00 | 5.07 | 494.93 | 477.06 | 0.9953 |
 | ES | 44 | 500.00 | 0.00 | 500.00 | 488.28 | 0.9937 |
 | ES | 45 | 500.00 | 0.00 | 500.00 | 500.00 | 0.9981 |
-| ES | Mean ± SD | 500.00 ± 0.00 | 123.67 ± 243.98 | 376.33 ± 243.98 | 368.93 ± 239.21 | 0.9869 ± 0.0177 |
+| ES | 46 | 500.00 | 488.21 | 11.79 | 11.65 | 0.9933 |
+| ES | Mean ± SD | 500.00 ± 0.00 | 196.58 ± 266.87 | 303.42 ± 266.87 | 297.48 ± 261.62 | 0.9882 ± 0.0156 |
 
-Aggregate rows show mean ± sample SD across four reporting trials, not
+Aggregate rows show mean ± sample SD across five reporting trials, not
 confidence intervals. Every fresh centroid own-task episode returns 500.
-Retention spans near-total loss for both methods at seed 42 and little or no
+Retention spans large losses for both methods at seeds 42 and 46 and little or no
 endpoint forgetting for ES at seeds 43–45. GA shows partial retention, losses
 followed by recovery, and a substantial terminal loss across these task draws.
 Signed forgetting and transfer average all nineteen switches per trial, with
@@ -223,7 +269,7 @@ both directions included.
 GA seed 44 has perfect measured transfer but loses previous-task return at
 its final checkpoint: mean 149.9, or a 350.1-unit loss. The only other
 nonzero endpoint loss is 48.2 at phase 7
-([raw seed-44 episodes](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/ga/seed_44/analysis/attempt_001/evaluation.json)).
+([raw seed-44 episodes](../reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_44/analysis/attempt_001/evaluation.json)).
 Transfer uses next-task probes from phases 1–19 and omits the final policy;
 previous-task and next-task probes use independent random keys even when they
 refer to the same recurring task. The [pinned evaluator](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/evaluate_continual.py#L277-L296)
@@ -231,33 +277,43 @@ and [metric definitions](../src/shinka_crl/analysis.py) preserve this distinctio
 GA seed 45 instead loses 288.8, 279.5, and 248.0 at phases 9, 11, and 13,
 respectively, after training the clean task; the other sixteen switches have
 zero measured loss. Both tasks score 500 at all final seven endpoints
-([raw seed-45 episodes](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/ga/seed_45/analysis/attempt_001/evaluation.json)).
+([raw seed-45 episodes](../reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_45/analysis/attempt_001/evaluation.json)).
 Its previous-task and next-task probe distributions can differ markedly under
 independent draws: at phase 9 their means are 211.2 and 67.0.
 
 For ES seed 45, every fresh centroid episode returns 500: 200 on the own task,
 190 on the previous task, and 190 on the next task
-([raw ES episodes](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/es/seed_45/analysis/attempt_001/evaluation.json)).
-Its [dense record](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/es/seed_45/training/attempt_001/training_metrics.json)
+([raw ES episodes](../reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_45/analysis/attempt_001/evaluation.json)).
+Its [dense record](../reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_45/training/attempt_001/training_metrics.json)
 contains 3,803 generations with both task means equal to 500, including every
 sample from phase 2 onward. GA seed 45 has 3,623 such generations, yet loses
 previous-task return within intermediate phases while current-task return
 remains maximal after phase 6
-([dense GA record](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/ga/seed_45/training/attempt_001/training_metrics.json)).
+([dense GA record](../reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_45/training/attempt_001/training_metrics.json)).
 In-training observations use different evaluation draws and do not replace
 fresh checkpoint measurements.
 
-The [curves](../reports/figures/reference-reporting-ga-es-pair04-20261004.svg),
-[metric figure](../reports/figures/reference-reporting-ga-es-pair04-20261004-metrics.svg),
-and [numerical provenance](../reports/figures/reference-reporting-ga-es-pair04-20261004.json)
+The final seed-46 pair again shows high active-task performance with poor
+retention. GA's mean previous-task endpoint return is 32.55, versus 11.79 for
+ES, while every own-task episode returns 500. Its forgetting is therefore
+467.45 for GA and 488.21 for ES. This pair reverses the forgetting ordering
+observed in the preceding pairs while retaining ES's higher cumulative
+active-task score. The [GA](../reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_46/analysis/attempt_001/evaluation.json)
+and [ES](../reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_46/analysis/attempt_001/evaluation.json)
+episode records retain these losses alongside their learning results.
+
+The [curves](../reports/figures/reference-reporting-ga-es-pair05-20261004.svg),
+[metric figure](../reports/figures/reference-reporting-ga-es-pair05-20261004-metrics.svg),
+and [numerical provenance](../reports/figures/reference-reporting-ga-es-pair05-20261004.json)
 show individual trials and arithmetic means. ES has higher cumulative
-active-task performance in all four observed pairs and lower mean forgetting.
-The large dispersion and four-trial sample do not establish a general method
+active-task performance in all five observed pairs and lower mean forgetting.
+ES has lower forgetting in four pairs, but higher forgetting at seed 46.
+The large dispersion and five-trial sample do not establish a general method
 ranking. Task draws and training seeds both change between pairs, so their
 contributions to variation are not separated. Development seed 1001 remains
 excluded from reporting aggregates.
 
-| Method | Seed | Training (s) | Fresh analysis (s) | Peak trainer RSS (KiB) | Fresh episodes, all sources |
+| Method | Seed | Recorded training (s) | Recorded fresh analysis (s) | Peak trainer RSS (KiB) | Fresh episodes, all sources |
 | :--- | ---: | ---: | ---: | ---: | ---: |
 | GA | 42 | 1,471.850347 | 9.603423 | 866,252 | 1,740 |
 | ES | 42 | 1,547.458632 | 15.842623 | 830,228 | 1,740 |
@@ -267,24 +323,37 @@ excluded from reporting aggregates.
 | ES | 44 | 1,215.605075 | 10.742931 | 834,056 | 1,740 |
 | GA | 45 | 1,456.594002 | 17.239226 | 863,268 | 1,740 |
 | ES | 45 | 1,659.131222 | 19.174077 | 826,080 | 1,740 |
+| GA | 46 | 1,352.595892 | 11.423535 | 856,496 | 1,740 |
+| ES | 46 | 1,550.186416 | 14.292836 | 783,228 | 1,740 |
 
-The [exact cumulative compute record](../reports/reference-reporting-ga-es-pair04-20261004/summary.json)
-reports 12,024.475008621994 s for the first four pairs' suite invocations,
-including 11,885.794788565 s of training and 110.65875075301301 s of fresh
-analysis. This includes all earlier invocations. The 13,920 fresh episodes
+The [exact cumulative compute record](../reports/reference-reporting-ga-es-pair05-20261004/summary.json)
+reports accumulated execution-duration counters of 14,959.309100890998 s for
+the five pairs' suite invocations, including 14,788.577096435998 s of training
+and 136.37512128600792 s of fresh analysis. These recorded counters include
+all earlier invocations; they are distinct from elapsed calendar time between
+UTC timestamps. The 17,400 fresh episodes
 cover centroid, final-generation best member, and incumbent; primary centroid
-metrics use 580 episodes per trial, or 4,640 across these eight trials. Each
+metrics use 580 episodes per trial, or 5,800 across these ten trials. Each
 source in each trial has 200 own-task, 190 previous-task, and 190 next-task
-episodes. Completed nominal training totals 24,576,000,000 steps.
+episodes. Completed nominal training totals 30,720,000,000 steps.
 
 The preserved [earlier reporting allocation](../reports/reference-reporting-eight-cpu-attempt-20261004/summary.json)
-adds 919.6690881920003 s of suite time, bringing charged reporting execution
-through these four pairs to 12,944.144096813994 s. Component training and
+adds 919.6690881920003 s to the recorded suite-duration accounting, bringing
+its reporting total through these five pairs to 15,878.978189082998 s. This
+is not a measurement of total elapsed calendar time. Component training and
 analysis costs, and earlier pairs, are already included and are not added again.
 The [allocation diagnostic](../reports/reference-ga-es-allocation-diagnostic-20261004/summary.json)
-adds 63.13385714699689 s in a separate diagnostic category. Ongoing trials
-are not included in this snapshot. All unsuccessful-attempt compute remains
+adds 63.13385714699689 s in a separate diagnostic category. No reporting trial
+remains active. All unsuccessful-attempt compute remains
 charged, without changing any trial's scientific settings.
+
+The [timestamp accounting](../reports/reference-reporting-scope-amendment-20261004/decision.json)
+records 35,558.2426 s (9.87729 h) from the first successful trainer start at
+2026-10-03 23:11:52.766115 UTC to the final suite timestamp at
+2026-10-04 09:04:31.008715 UTC. This calendar span includes gaps between
+controllers and excludes the earlier abandoned allocation, development, and
+diagnostics. It is distinct from the recorded duration counters above; the
+cause of their difference is not established.
 
 ## Reference findings to assess
 
@@ -337,7 +406,7 @@ outside this comparison.
 Development measurements run sequentially with the existing two-CPU allocation
 and numerical thread settings. Record training and analysis durations separately,
 trainer peak resident memory, completed updates, and nominal training steps.
-Use measured costs to schedule the remaining GA/ES reporting comparison. The
+Use measured costs to account for the bounded GA/ES reporting comparison. The
 explicit PPO amendment changes its experimental horizon and claims, while
 preserving its baseline settings and the original full-budget specification.
 Report measured active elapsed durations separately from UTC start and finish
@@ -387,10 +456,12 @@ trials; they are not removed by the fresh start.
 
 ## Reporting execution
 
-The active two-CPU suite uses the existing harness with all ten reporting
-seeds, twenty phases, and the full training budget per method. The first four
-pairs are complete and published above; the next pair at seed 46 is running. The
-original launch command completed seed 42 within the twenty-trial plan:
+The two-CPU suite retains its frozen twenty-job plan, twenty phases, and the
+full training budget per trial. All five allocated pairs are complete and
+published above. The fifth pair at seed 46 is the final allocation under the
+scope amendment. The following command is historical provenance: it launched
+seed 42 within the original twenty-trial plan, and is not a directive to
+start another run.
 
 ```bash
 .venv/bin/python scripts/run_reference_comparison.py \
@@ -400,20 +471,18 @@ original launch command completed seed 42 within the twenty-trial plan:
   --max-trials 2 --execute
 ```
 
-Continue subsequent pairs with the same arguments and `--resume`. The harness
-verifies completed trials before reuse; `--max-trials 2` bounds each invocation,
-not the declared number of reporting trials. Resume only the new two-CPU suite;
-the preserved eight-CPU suite remains closed. The command above records the
-original launch. The active seed-46 continuation already uses `--resume`;
-do not start a duplicate controller.
+The earlier continuations used the same arguments and `--resume`. The harness
+verified completed trials before reuse; `--max-trials 2` bounded each invocation,
+not the declared number of reporting trials. The seed-46 continuation used
+`--resume` and ended after ES completed. Do not start another controller or
+resume seed 47. The preserved eight-CPU suite also remains closed.
 
 This reporting allocation exposes two logical CPUs, matching the development
 allocation. Record actual affinity, elapsed training and evaluation costs,
 and peak trainer memory for every attempt, including the earlier eight-CPU
-work. Scientific settings, task draws, and nominal training budgets remain fixed. Completion
-of all twenty GA/ES trials supplies their full-budget reporting comparison;
-the original three-method comparison remains incomplete while full-budget
-PPO reporting is deferred.
+work. Scientific settings, task draws, and nominal training budgets remain
+fixed. Five completed pairs supply the bounded full-budget GA/ES comparison;
+the original ten-pair target and three-method reproduction remain incomplete.
 
 The scientific report summarizes experimental findings and material protocol
 deviations. Detailed commands, source revisions, runtime identities, raw curves,

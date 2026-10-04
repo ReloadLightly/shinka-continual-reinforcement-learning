@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-04T09:07:26.469449+00:00",
+  "decision_date": "2026-10-04",
+  "decision_basis": "User-directed resource and project-scope limit; finish the active ES seed-46 trial and cancel subsequent baseline reporting. The stop was requested while ES seed 46 was still running, without selecting trials by their results.",
+  "user_instructions": [
+    "why dont you finish the ES trial...its almost finisahed...no need to abprt it",
+    "you can abort that 4-5 hours GA/ES comparison"
+  ],
+  "disposition": "Current ES trial and fresh evaluation completed successfully; finite controller exited successfully after the fifth pair. No further GA, ES, or PPO reporting is scheduled under the cancelled campaign.",
+  "finished_at_utc": "2026-10-04T09:04:31.008715+00:00",
+  "published_report": "reports/reference-reporting-ga-es-pair05-20261004",
+  "source_suite": "results/reference-reporting-ga-es-two-cpu-20261004",
+  "frozen_plan_changed": false,
+  "frozen_plan_status": "partial",
+  "original_ga_es_planned_trials": 20,
+  "completed_reporting_trials": 10,
+  "completed_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "completed_task_trials": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "completed_eval_seeds": [
+    900042,
+    900043,
+    900044,
+    900045,
+    900046
+  ],
+  "unexecuted_seeds": [
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "methods": [
+    "ga",
+    "es"
+  ],
+  "num_phases_per_trial": 20,
+  "nominal_training_steps_per_trial": 3072000000,
+  "baseline_settings_and_evaluation_unchanged": true,
+  "original_three_method_target_complete": false,
+  "scientific_interpretation": "Five prespecified paired reporting trials per method provide a bounded comparison at the full per-trial budget. The original ten-trial-per-method target is incomplete. Report all five pairs and sample variation; development data and the shortened PPO development experiment are separate. Completed Shinka selections and reserved validation remain closed.",
+  "compute": {
+    "successful_reporting_suite_seconds": 14959.309100890998,
+    "successful_training_seconds": 14788.577096435998,
+    "successful_analysis_seconds": 136.37512128600792,
+    "successful_controller_overhead_seconds": 34.35688316899177,
+    "abandoned_eight_cpu_suite_seconds": 919.6690881920003,
+    "charged_reporting_seconds": 15878.978189082998,
+    "completed_nominal_training_steps": 30720000000,
+    "saved_fresh_evaluation_episodes_all_sources": 17400,
+    "accounting_note": "The terminal suite already accumulates all five reporting invocations. Add the abandoned eight-CPU suite once. Earlier reporting snapshots are overlapping cumulative records and are not added again. Development, allocation diagnostics, and Shinka search compute remain separately reported.",
+    "clock_note": "The runner wall_seconds fields are differences of time.monotonic readings. These diverge from archived UTC timestamp spans for the fifth pair; they must not be presented as elapsed calendar time or as measured CPU time. Preserve both recorded durations without inferring a cause from these files."
+  },
+  "evidence_sha256": {
+    "reports/reference-reporting-ga-es-pair05-20261004/summary.json": "229316c76e1e4bb314cfeff47d69e7c0ed371ee2baf718f63455f70f166a3dc0",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/plan.json": "4bdac9e5acf8910b888f234f6ce50f7287cbf368fd3b1c54cc8bd77a9526ef10",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/suite.json": "4b7ed70ca78e0334826da834e61c92ab2a7d38d2bbaf93a78e94ca6d8d52f504",
+    "reports/reference-reporting-eight-cpu-attempt-20261004/summary.json": "388c38a50e3e372ea40b96fb86ab688a7b6f097ae580afb2453f2508dcfdade6",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_42/training/attempt_001/manifest.json": "c00fd133f4f9da5b052d1b467007f8b27fe40630248b6e839a55c300410282b9",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_42/training/attempt_001/results.json": "40fdc1006cef0a9cc855fbddceff78a68e2dd9f37e2a7d226e85f18813e9da79",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_43/training/attempt_001/manifest.json": "aab5105c0ec082c87f7e56a2dd60675cc7cac6fba2f7dc820874d164c06dd883",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_43/training/attempt_001/results.json": "f7abeeba6333327dfb874dd5190fd7797be3b73d36b166cf45dafabb7cfb3bf5",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_44/training/attempt_001/manifest.json": "8703cd558236272f26b51b180c7ff6a5c69acdc076f3e45483dbcf91381d894a",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_44/training/attempt_001/results.json": "988df6afc5099eed0888bbd48a751d63884a824af0a422838352ef6ec35f28c3",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_45/training/attempt_001/manifest.json": "71711b5da7bb342e4330b908556afc14496e2bb5068d3a832292a28ac8fc8648",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_45/training/attempt_001/results.json": "59826c360eb053ed6f45302438bb319bfe78cd8bf142db862a3e5b1df7f32b6e",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_46/training/attempt_001/manifest.json": "058762a4055a3bf6e75b9aa65ad2a972504cea82cb5874a5725706838315a45a",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_46/training/attempt_001/results.json": "f483da44f43a0b70f47673b0839f5e228365839b296601fadacbee8d6894fa9a",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_42/training/attempt_001/manifest.json": "fe6b40a5fb5d7ecec67cb80d7a3e3dc0dc8b24661bc93d00ee978b5d7bf8835f",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_42/training/attempt_001/results.json": "c892e634c5363af1dc055a10f6a8bd71307d44a869175d1a032031887cc64b45",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_43/training/attempt_001/manifest.json": "0019cfea51529a294ca21e5265011577baae3c4bd0e8678063ac039354b25ba4",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_43/training/attempt_001/results.json": "38b54b42c0218826910171598999d20c9949796ce596bbba1a049c4d53db4130",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_44/training/attempt_001/manifest.json": "151ffdbab0f79ce9979d3b3fb73d10bd9fd4f90dd8b27449dd99a206ef446e34",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_44/training/attempt_001/results.json": "126a6e3f4a84ff36d0f6eaf314a3da9d9270c5fad87a98bf486afcd65fc7c398",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_45/training/attempt_001/manifest.json": "e72207e228a55f49b03c8ea4773ee29daac64ef72be9e3e823ec2086d71a45d6",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_45/training/attempt_001/results.json": "05a20028e771db5811ddc5a664c3f877cd1f88a92605c34602da6a9f5a728f58",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_46/training/attempt_001/manifest.json": "a5c521245f6df1ad7ef7be175cccd6a82c4c2d86c209211c9fbd4100ab1fa39c",
+    "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_46/training/attempt_001/results.json": "9310bacca6c06991ac69288ecb252a8db0a3f310df549226255db13b424d2e22"
+  },
+  "calendar_timing": {
+    "first_training_started_at_utc": "2026-10-03T23:11:52.766115+00:00",
+    "terminal_suite_finished_at_utc": "2026-10-04T09:04:31.008715+00:00",
+    "first_training_to_terminal_suite_seconds": 35558.2426,
+    "sum_training_utc_timestamp_spans_seconds": 35222.737670999995,
+    "sum_native_elapsed_seconds": 35039.15447592735,
+    "scope_note": "Span of successful two-CPU reporting from the first archived trainer start to the terminal suite timestamp, including gaps between controllers. The suite has no separately recorded initial UTC timestamp, so this is not an exact full suite calendar duration. Earlier abandoned work, development, and diagnostics are excluded from this calendar span.",
+    "training_rows": [
+      {
+        "method": "ga",
+        "seed": 42,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_42/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-03T23:11:52.766115+00:00",
+        "finished_at_utc": "2026-10-03T23:39:05.664866+00:00",
+        "utc_timestamp_span_seconds": 1632.898751,
+        "recorded_monotonic_seconds": 1471.8503466480033,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_42/training/attempt_001/results.json",
+        "native_elapsed_seconds": 1604.5649735927582
+      },
+      {
+        "method": "ga",
+        "seed": 43,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_43/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-04T00:09:19.337011+00:00",
+        "finished_at_utc": "2026-10-04T00:40:59.681920+00:00",
+        "utc_timestamp_span_seconds": 1900.344909,
+        "recorded_monotonic_seconds": 1718.3813872979954,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_43/training/attempt_001/results.json",
+        "native_elapsed_seconds": 1870.7751426696777
+      },
+      {
+        "method": "ga",
+        "seed": 44,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_44/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-04T01:08:59.558615+00:00",
+        "finished_at_utc": "2026-10-04T01:33:52.645504+00:00",
+        "utc_timestamp_span_seconds": 1493.086889,
+        "recorded_monotonic_seconds": 1347.026556734003,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_44/training/attempt_001/results.json",
+        "native_elapsed_seconds": 1479.567757844925
+      },
+      {
+        "method": "ga",
+        "seed": 45,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_45/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-04T01:56:43.366027+00:00",
+        "finished_at_utc": "2026-10-04T02:21:06.490671+00:00",
+        "utc_timestamp_span_seconds": 1463.124644,
+        "recorded_monotonic_seconds": 1456.5940017079993,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_45/training/attempt_001/results.json",
+        "native_elapsed_seconds": 1446.9298689365387
+      },
+      {
+        "method": "ga",
+        "seed": 46,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_46/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-04T02:50:11.613770+00:00",
+        "finished_at_utc": "2026-10-04T04:15:08.722344+00:00",
+        "utc_timestamp_span_seconds": 5097.108574,
+        "recorded_monotonic_seconds": 1352.5958919999975,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_46/training/attempt_001/results.json",
+        "native_elapsed_seconds": 5080.0202968120575
+      },
+      {
+        "method": "es",
+        "seed": 42,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_42/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-03T23:39:16.215206+00:00",
+        "finished_at_utc": "2026-10-04T00:07:48.631349+00:00",
+        "utc_timestamp_span_seconds": 1712.416143,
+        "recorded_monotonic_seconds": 1547.4586320359958,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_42/training/attempt_001/results.json",
+        "native_elapsed_seconds": 1693.276297569275
+      },
+      {
+        "method": "es",
+        "seed": 43,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_43/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-04T00:41:16.976511+00:00",
+        "finished_at_utc": "2026-10-04T01:08:19.003238+00:00",
+        "utc_timestamp_span_seconds": 1622.026727,
+        "recorded_monotonic_seconds": 1469.7475671499997,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_43/training/attempt_001/results.json",
+        "native_elapsed_seconds": 1606.8977162837982
+      },
+      {
+        "method": "es",
+        "seed": 44,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_44/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-04T01:34:10.580190+00:00",
+        "finished_at_utc": "2026-10-04T01:55:59.534581+00:00",
+        "utc_timestamp_span_seconds": 1308.954391,
+        "recorded_monotonic_seconds": 1215.6050750790018,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_44/training/attempt_001/results.json",
+        "native_elapsed_seconds": 1295.8326086997986
+      },
+      {
+        "method": "es",
+        "seed": 45,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_45/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-04T02:21:24.538394+00:00",
+        "finished_at_utc": "2026-10-04T02:49:04.822080+00:00",
+        "utc_timestamp_span_seconds": 1660.283686,
+        "recorded_monotonic_seconds": 1659.131221912001,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_45/training/attempt_001/results.json",
+        "native_elapsed_seconds": 1641.6891174316406
+      },
+      {
+        "method": "es",
+        "seed": 46,
+        "manifest_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_46/training/attempt_001/manifest.json",
+        "started_at_utc": "2026-10-04T04:15:23.209732+00:00",
+        "finished_at_utc": "2026-10-04T09:04:15.702689+00:00",
+        "utc_timestamp_span_seconds": 17332.492957,
+        "recorded_monotonic_seconds": 1550.1864158710014,
+        "native_results_path": "reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_46/training/attempt_001/results.json",
+        "native_elapsed_seconds": 17319.600696086884
+      }
+    ]
+  }
+}

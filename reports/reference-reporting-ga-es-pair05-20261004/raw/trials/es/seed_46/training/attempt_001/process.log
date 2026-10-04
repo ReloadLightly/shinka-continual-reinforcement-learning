@@ -1,0 +1,117 @@
+======================================================================
+gymnax | es (ne) | CartPole-v1_sigma0.5 | continual | trial 5
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 20
+  schedule       : switch, 2 sub-tasks
+  matched budget : 3.072e+09 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations)
+  seed           : 46
+  boundary info  : none
+  output         : <runs>/trials/es/seed_46/training/attempt_001
+======================================================================
+/home/roland/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-mtntgctl because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+  gen     0 task= 0 train=   11.5 t0=   27.4 t1=    9.6 gen'ist=    9.6
+  gen    50 task= 0 train=  500.0 t0=  500.0 t1=    9.8 gen'ist=    9.8
+  gen   100 task= 0 train=  500.0 t0=  500.0 t1=   10.0 gen'ist=   10.0
+  gen   150 task= 0 train=  500.0 t0=  500.0 t1=    9.7 gen'ist=    9.7
+  checkpoint: generation 200 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen   200 task= 1 train=    9.7 t0=  500.0 t1=   11.4 gen'ist=   11.4
+  gen   250 task= 1 train=  498.5 t0=   11.1 t1=  500.0 gen'ist=   11.1
+  gen   300 task= 1 train=  499.7 t0=   11.5 t1=  500.0 gen'ist=   11.5
+  gen   350 task= 1 train=  500.0 t0=   12.1 t1=  500.0 gen'ist=   12.1
+  checkpoint: generation 400 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen   400 task= 0 train=   11.1 t0=   15.3 t1=  500.0 gen'ist=   15.3
+  gen   450 task= 0 train=  500.0 t0=  500.0 t1=   13.2 gen'ist=   13.2
+  gen   500 task= 0 train=  500.0 t0=  500.0 t1=   12.1 gen'ist=   12.1
+  gen   550 task= 0 train=  500.0 t0=  500.0 t1=   12.5 gen'ist=   12.5
+  checkpoint: generation 600 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen   600 task= 1 train=   12.3 t0=  500.0 t1=   14.4 gen'ist=   14.4
+  gen   650 task= 1 train=  500.0 t0=   11.5 t1=  500.0 gen'ist=   11.5
+  gen   700 task= 1 train=  499.7 t0=   10.7 t1=  500.0 gen'ist=   10.7
+  gen   750 task= 1 train=  500.0 t0=   10.9 t1=  500.0 gen'ist=   10.9
+  checkpoint: generation 800 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen   800 task= 0 train=   11.0 t0=   16.7 t1=  500.0 gen'ist=   16.7
+  gen   850 task= 0 train=  500.0 t0=  500.0 t1=   12.6 gen'ist=   12.6
+  gen   900 task= 0 train=  500.0 t0=  500.0 t1=   12.2 gen'ist=   12.2
+  gen   950 task= 0 train=  500.0 t0=  500.0 t1=   12.4 gen'ist=   12.4
+  checkpoint: generation 1000 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  1000 task= 1 train=   14.4 t0=  500.0 t1=   16.3 gen'ist=   16.3
+  gen  1050 task= 1 train=  500.0 t0=   11.8 t1=  500.0 gen'ist=   11.8
+  gen  1100 task= 1 train=  500.0 t0=   11.1 t1=  500.0 gen'ist=   11.1
+  gen  1150 task= 1 train=  500.0 t0=   10.8 t1=  500.0 gen'ist=   10.8
+  checkpoint: generation 1200 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  1200 task= 0 train=   12.0 t0=   12.8 t1=  500.0 gen'ist=   12.8
+  gen  1250 task= 0 train=  500.0 t0=  500.0 t1=   11.9 gen'ist=   11.9
+  gen  1300 task= 0 train=  500.0 t0=  500.0 t1=   12.0 gen'ist=   12.0
+  gen  1350 task= 0 train=  500.0 t0=  500.0 t1=   11.7 gen'ist=   11.7
+  checkpoint: generation 1400 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  1400 task= 1 train=   17.4 t0=  500.0 t1=   78.4 gen'ist=   78.4
+  gen  1450 task= 1 train=  500.0 t0=   11.5 t1=  500.0 gen'ist=   11.5
+  gen  1500 task= 1 train=  500.0 t0=   12.0 t1=  500.0 gen'ist=   12.0
+  gen  1550 task= 1 train=  500.0 t0=   11.6 t1=  500.0 gen'ist=   11.6
+  checkpoint: generation 1600 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  1600 task= 0 train=   11.6 t0=   13.5 t1=  500.0 gen'ist=   13.5
+  gen  1650 task= 0 train=  500.0 t0=  500.0 t1=   11.5 gen'ist=   11.5
+  gen  1700 task= 0 train=  500.0 t0=  500.0 t1=   12.0 gen'ist=   12.0
+  gen  1750 task= 0 train=  500.0 t0=  500.0 t1=   12.0 gen'ist=   12.0
+  checkpoint: generation 1800 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  1800 task= 1 train=   11.8 t0=  500.0 t1=   20.4 gen'ist=   20.4
+  gen  1850 task= 1 train=  500.0 t0=   10.8 t1=  500.0 gen'ist=   10.8
+  gen  1900 task= 1 train=  500.0 t0=   11.2 t1=  500.0 gen'ist=   11.2
+  gen  1950 task= 1 train=  500.0 t0=   11.8 t1=  500.0 gen'ist=   11.8
+  checkpoint: generation 2000 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  2000 task= 0 train=   16.0 t0=   61.8 t1=  500.0 gen'ist=   61.8
+  gen  2050 task= 0 train=  500.0 t0=  500.0 t1=   12.5 gen'ist=   12.5
+  gen  2100 task= 0 train=  500.0 t0=  500.0 t1=   12.4 gen'ist=   12.4
+  gen  2150 task= 0 train=  500.0 t0=  500.0 t1=   12.1 gen'ist=   12.1
+  checkpoint: generation 2200 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  2200 task= 1 train=   14.6 t0=  500.0 t1=   39.7 gen'ist=   39.7
+  gen  2250 task= 1 train=  499.7 t0=   11.1 t1=  500.0 gen'ist=   11.1
+  gen  2300 task= 1 train=  500.0 t0=   11.9 t1=  500.0 gen'ist=   11.9
+  gen  2350 task= 1 train=  500.0 t0=   11.6 t1=  500.0 gen'ist=   11.6
+  checkpoint: generation 2400 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  2400 task= 0 train=   13.0 t0=   12.7 t1=  500.0 gen'ist=   12.7
+  gen  2450 task= 0 train=  500.0 t0=  500.0 t1=   13.5 gen'ist=   13.5
+  gen  2500 task= 0 train=  500.0 t0=  500.0 t1=   11.9 gen'ist=   11.9
+  gen  2550 task= 0 train=  500.0 t0=  500.0 t1=   12.6 gen'ist=   12.6
+  checkpoint: generation 2600 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  2600 task= 1 train=   15.0 t0=  500.0 t1=   15.5 gen'ist=   15.5
+  gen  2650 task= 1 train=  500.0 t0=   12.1 t1=  500.0 gen'ist=   12.1
+  gen  2700 task= 1 train=  500.0 t0=   11.6 t1=  500.0 gen'ist=   11.6
+  gen  2750 task= 1 train=  500.0 t0=   11.2 t1=  500.0 gen'ist=   11.2
+  checkpoint: generation 2800 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  2800 task= 0 train=   29.9 t0=  451.5 t1=  500.0 gen'ist=  451.5
+  gen  2850 task= 0 train=  500.0 t0=  500.0 t1=   14.3 gen'ist=   14.3
+  gen  2900 task= 0 train=  500.0 t0=  500.0 t1=   13.1 gen'ist=   13.1
+  gen  2950 task= 0 train=  500.0 t0=  500.0 t1=   11.9 gen'ist=   11.9
+  checkpoint: generation 3000 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  3000 task= 1 train=   15.9 t0=  500.0 t1=   15.4 gen'ist=   15.4
+  gen  3050 task= 1 train=  500.0 t0=   33.4 t1=  500.0 gen'ist=   33.4
+  gen  3100 task= 1 train=  500.0 t0=   11.6 t1=  500.0 gen'ist=   11.6
+  gen  3150 task= 1 train=  500.0 t0=   11.0 t1=  500.0 gen'ist=   11.0
+  checkpoint: generation 3200 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  3200 task= 0 train=   22.2 t0=  305.9 t1=  500.0 gen'ist=  305.9
+  gen  3250 task= 0 train=  500.0 t0=  500.0 t1=   12.2 gen'ist=   12.2
+  gen  3300 task= 0 train=  500.0 t0=  500.0 t1=   13.7 gen'ist=   13.7
+  gen  3350 task= 0 train=  500.0 t0=  500.0 t1=   12.4 gen'ist=   12.4
+  checkpoint: generation 3400 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  3400 task= 1 train=   17.2 t0=  500.0 t1=   53.4 gen'ist=   53.4
+  gen  3450 task= 1 train=  500.0 t0=   12.1 t1=  500.0 gen'ist=   12.1
+  gen  3500 task= 1 train=  500.0 t0=   11.2 t1=  500.0 gen'ist=   11.2
+  gen  3550 task= 1 train=  500.0 t0=   10.8 t1=  500.0 gen'ist=   10.8
+  checkpoint: generation 3600 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  3600 task= 0 train=   13.4 t0=   12.4 t1=  500.0 gen'ist=   12.4
+  gen  3650 task= 0 train=  500.0 t0=  500.0 t1=   14.3 gen'ist=   14.3
+  gen  3700 task= 0 train=  500.0 t0=  500.0 t1=   14.1 gen'ist=   14.1
+  gen  3750 task= 0 train=  500.0 t0=  500.0 t1=   14.0 gen'ist=   14.0
+  checkpoint: generation 3800 -> <runs>/trials/es/seed_46/training/attempt_001/resume.pkl
+  gen  3800 task= 1 train=   31.0 t0=  500.0 t1=  422.7 gen'ist=  422.7
+  gen  3850 task= 1 train=  500.0 t0=   12.1 t1=  500.0 gen'ist=   12.1
+  gen  3900 task= 1 train=  500.0 t0=   10.9 t1=  500.0 gen'ist=   10.9
+  gen  3950 task= 1 train=  500.0 t0=   10.9 t1=  500.0 gen'ist=   10.9
+  gen  3999 task= 1 train=  500.0 t0=   10.9 t1=  500.0 gen'ist=   10.9
+  wrote <runs>/trials/es/seed_46/training/attempt_001
+
+Done. <runs>/trials/es/seed_46/training/attempt_001

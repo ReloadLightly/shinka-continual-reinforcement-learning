@@ -20,13 +20,15 @@ compared with five fixed controls on a reserved five-seed partition. Its mean
 combined active/previous-task score is 0.8423, versus 0.9054 for native FocusGA;
 the paired difference is −0.0631 ± 0.0632 (mean ± sample standard deviation).
 This comparison does not support an advantage for the selected rule. Across
-the [first four full-budget reporting trials per method](reports/reference-reporting-ga-es-pair04-20261004/summary.json),
+the [five full-budget reporting trials per method](reports/reference-reporting-ga-es-pair05-20261004/summary.json),
 GA and ES attain maximal learning accuracy, but retention varies sharply.
-Both forget heavily on one task draw; ES shows little or no endpoint forgetting
+Both forget heavily on two task draws; ES shows little or no endpoint forgetting
 on the other three. GA's third trial has perfect measured transfer but loses
-previous-task performance at its final checkpoint. Six reporting trials per
-method remain; a general method ranking is unresolved. PPO contributes a
-completed development comparison over its shorter, resource-limited horizon.
+previous-task performance at its final checkpoint. A resource and project-scope
+amendment closes this comparison at five trials per method; the original
+ten-trial target remains incomplete and a general method ranking is unresolved.
+PPO contributes
+a completed development comparison over its shorter, resource-limited horizon.
 
 ## 1. Introduction
 
@@ -84,7 +86,14 @@ contains the first four complete phases (6,000 updates) of the existing
 trajectory, retaining the original phase duration and baseline settings.
 This shorter horizon supports early acquisition and retention
 analysis; twenty-phase PPO behavior and its ten-trial reporting distribution
-remain unresolved. GA and ES retain the full reporting protocol in Table 1.
+remain unresolved. GA and ES retain the full per-trial protocol in Table 1.
+A subsequent [scope amendment](reports/reference-reporting-scope-amendment-20261004/decision.json)
+ends baseline reporting after five prespecified trials per method to limit
+resources and maintain the project's focus on ShinkaEvolve. The remaining
+trials are cancelled; the frozen original plan is retained as incomplete.
+This decision was made while the final ES trial was running and did not select
+trials by their outcomes. Completed search selections and reserved validation
+remain closed.
 
 ### Partitions and development budgets
 
@@ -103,7 +112,7 @@ steps per update. These are explicit reductions from Table 1.
 | Adaptive finalist validation | 5001–5005 | 5002–5006 | 30.72 × 10⁶ | Evaluate a previously selected rule |
 | Full-budget GA/ES development | 1001 | 1002 | 3.072 × 10⁹ | Measure native learning and compute |
 | Matched GA/ES/PPO development prefixes | 1001 | 1002 | 614.4 × 10⁶ | Early acquisition and retention; GA/ES reused |
-| Final paper reporting | 42–51 | 1–10 | 3.072 × 10⁹ | GA/ES: 4/10 each complete; PPO deferred |
+| Original reporting allocation | 42–51 | 1–10 | 3.072 × 10⁹ | GA/ES: 5/10 each complete; remainder cancelled; PPO deferred |
 
 *Table 2. Scientific data partitions. Search uses 20 generations per phase;
 both validation studies use 80. Validation therefore changes task draws and
@@ -342,20 +351,22 @@ costs remain recorded above and in Table 12.
 
 ### Full-budget reporting: acquisition and retention across trials
 
-GA and ES have each completed four of the ten prespecified reporting trials,
-using seeds 42–45, task trials 1–4, and evaluation seeds 900042–900045. Within
-each pair, methods receive the same task perturbation and full twenty-phase
-budget. Development trials remain excluded from reporting aggregates.
+GA and ES each completed five prespecified reporting trials, using seeds 42–46,
+task trials 1–5, and evaluation seeds 900042–900046. Within each pair, methods
+receive the same task perturbation and full twenty-phase budget. Development
+trials remain excluded from reporting aggregates. This is the final bounded
+sample under the [scope amendment](reports/reference-reporting-scope-amendment-20261004/decision.json),
+covering ten of the original twenty planned GA/ES trials.
 
-![Learning and retention in the first four full-budget reporting pairs](reports/figures/reference-reporting-ga-es-pair04-20261004.svg)
+![Learning and retention in five full-budget reporting pairs](reports/figures/reference-reporting-ga-es-pair05-20261004.svg)
 
 *Figure 3. Unsmoothed active-task centroid returns over 3.072 billion nominal
 training steps (top), with fresh own-task and previous-task checkpoint means
-(bottom). Thin lines show the four individual reporting trials per method;
+(bottom). Thin lines show the five individual reporting trials per method;
 bold lines show their arithmetic mean.
-[PDF](reports/figures/reference-reporting-ga-es-pair04-20261004.pdf) ·
-[Metric figure](reports/figures/reference-reporting-ga-es-pair04-20261004-metrics.svg) ·
-[Exact inputs and values](reports/figures/reference-reporting-ga-es-pair04-20261004.json).*
+[PDF](reports/figures/reference-reporting-ga-es-pair05-20261004.pdf) ·
+[Metric figure](reports/figures/reference-reporting-ga-es-pair05-20261004-metrics.svg) ·
+[Exact inputs and values](reports/figures/reference-reporting-ga-es-pair05-20261004.json).*
 
 | Method | Seed / statistic | LA ↑ | F ↓ | LA − F ↑ | ZT ↑ | Cum. / (steps × 500) ↑ |
 | :--- | :--- | ---: | ---: | ---: | ---: | ---: |
@@ -363,27 +374,29 @@ bold lines show their arithmetic mean.
 | GA | 43 | 500.00 | 132.49 | 367.51 | 354.72 | 0.9878 |
 | GA | 44 | 500.00 | 20.96 | 479.04 | 500.00 | 0.9897 |
 | GA | 45 | 500.00 | 42.96 | 457.04 | 450.66 | 0.9886 |
-| GA | Mean ± SD | 500.00 ± 0.00 | 171.54 ± 217.56 | 328.46 ± 217.56 | 328.92 ± 220.81 | 0.9643 ± 0.0488 |
+| GA | 46 | 500.00 | 467.45 | 32.55 | 28.82 | 0.9639 |
+| GA | Mean ± SD | 500.00 ± 0.00 | 230.73 ± 230.24 | 269.27 ± 230.24 | 268.90 ± 233.62 | 0.9642 ± 0.0422 |
 | ES | 42 | 500.00 | 489.63 | 10.37 | 10.39 | 0.9605 |
 | ES | 43 | 500.00 | 5.07 | 494.93 | 477.06 | 0.9953 |
 | ES | 44 | 500.00 | 0.00 | 500.00 | 488.28 | 0.9937 |
 | ES | 45 | 500.00 | 0.00 | 500.00 | 500.00 | 0.9981 |
-| ES | Mean ± SD | 500.00 ± 0.00 | 123.67 ± 243.98 | 376.33 ± 243.98 | 368.93 ± 239.21 | 0.9869 ± 0.0177 |
+| ES | 46 | 500.00 | 488.21 | 11.79 | 11.65 | 0.9933 |
+| ES | Mean ± SD | 500.00 ± 0.00 | 196.58 ± 266.87 | 303.42 ± 266.87 | 297.48 ± 261.62 | 0.9882 ± 0.0156 |
 
-*Table 6. Interim full-budget reporting results: eight of twenty planned GA/ES
-trials are complete. LA, F, LA − F, and ZT use CartPole return units; normalized
-cumulative return is dimensionless. Forgetting and transfer average nineteen
-switches per trial. Aggregate rows show mean ± sample SD across four reporting
-trials, not confidence intervals.
-[Exact frozen protocol](reports/reference-reporting-ga-es-pair04-20261004/raw/plan.json) ·
-[Raw evidence and compute](reports/reference-reporting-ga-es-pair04-20261004/summary.json).*
+*Table 6. Bounded full-budget reporting results: ten of twenty originally planned
+GA/ES trials completed; subsequent trials cancelled. LA, F, LA − F, and ZT use
+CartPole return units; normalized cumulative return is dimensionless.
+Forgetting and transfer average nineteen switches per trial. Aggregate rows
+show mean ± sample SD across five reporting trials, not confidence intervals.
+[Exact frozen protocol](reports/reference-reporting-ga-es-pair05-20261004/raw/plan.json) ·
+[Raw evidence and compute](reports/reference-reporting-ga-es-pair05-20261004/summary.json).*
 
 Every fresh centroid own-task episode returns 500, while retention varies
-substantially across trials. Both methods lose nearly all previous-task
-performance at seed 42. ES shows little endpoint loss at seed 43 and none at
+substantially across trials. Both methods lose most previous-task performance
+at seeds 42 and 46. ES shows little endpoint loss at seed 43 and none at
 seeds 44–45, whereas GA has losses on each task draw. These outcomes coexist
 under unchanged baseline settings
-([per-phase evidence](reports/reference-reporting-ga-es-pair04-20261004/summary.json)).
+([per-phase evidence](reports/reference-reporting-ga-es-pair05-20261004/summary.json)).
 
 GA demonstrates both terminal forgetting and recovery from intermediate losses.
 At seed 44, transfer is 500, but final previous-task return is 149.9: a loss
@@ -393,20 +406,28 @@ At seed 45, losses of 288.8, 279.5, and 248.0 occur at phases 9, 11, and 13,
 after training the clean task. Both tasks return 500 at the final seven
 endpoints. Thus a small average loss can conceal a substantial terminal loss,
 while intermediate forgetting need not persist to the end
-([GA seed-44 episodes](reports/reference-reporting-ga-es-pair04-20261004/raw/trials/ga/seed_44/analysis/attempt_001/evaluation.json),
-[GA seed-45 episodes](reports/reference-reporting-ga-es-pair04-20261004/raw/trials/ga/seed_45/analysis/attempt_001/evaluation.json)).
+([GA seed-44 episodes](reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_44/analysis/attempt_001/evaluation.json),
+[GA seed-45 episodes](reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_45/analysis/attempt_001/evaluation.json)).
 
-For ES seed 45, all 580 fresh centroid own-task, previous-task, and next-task
-episodes return 500. Its dense curve, like ES seed 44's, records both task
-means at 500 throughout phases 2–20
-([ES episodes](reports/reference-reporting-ga-es-pair04-20261004/raw/trials/es/seed_45/analysis/attempt_001/evaluation.json),
-[ES curve](reports/reference-reporting-ga-es-pair04-20261004/raw/trials/es/seed_45/training/attempt_001/training_metrics.json)).
-Dense observations complement the fresh endpoints; they do not replace them.
-ES has higher cumulative active-task performance in all four observed pairs
-and lower mean forgetting, but four trials with large retention dispersion
-do not establish a general method ranking. Task draws and training seeds
-both change between trials. Twelve GA/ES reporting trials remain, with seed
-46 in progress; full-budget PPO reporting remains deferred.
+The fifth pair reinforces the distinction between active-task performance and
+retention. ES seed 46 has normalized cumulative active return 0.9933 but
+previous-task checkpoint means of only 10.6–13.7. Its dense active return
+falls below 500 for only one to three updates after each switch, indicating
+rapid reacquisition despite poor retention. GA's corresponding means
+range from 9.6 to 177.5, despite 189 logged generations with both task means
+at 500. Neither method retains both tasks at any fresh post-switch phase-end
+evaluation in this pair. These transient and endpoint measurements assess different
+parts of learning
+([GA episodes](reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_46/analysis/attempt_001/evaluation.json),
+[GA curve](reports/reference-reporting-ga-es-pair05-20261004/raw/trials/ga/seed_46/training/attempt_001/training_metrics.json),
+[ES episodes](reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_46/analysis/attempt_001/evaluation.json),
+[ES curve](reports/reference-reporting-ga-es-pair05-20261004/raw/trials/es/seed_46/training/attempt_001/training_metrics.json)).
+ES has higher cumulative active-task performance in all five observed pairs
+and lower mean forgetting, but its forgetting is greater than GA's in the
+fifth pair. The small sample and large retention dispersion preclude a general
+method ranking. Task draws and training seeds both change between trials.
+No further baseline training is scheduled; full-budget PPO reporting and the
+original three-method comparison remain incomplete.
 
 ### Static configuration search
 
@@ -583,7 +604,7 @@ to final reporting.
 | Static search, both arms | 147 | 1,128.96 × 10⁶ |
 | Static finalist validation | 25 | 768.00 × 10⁶ |
 | Full-budget GA/ES development reference | 2 | 6,144.00 × 10⁶ |
-| Full-budget GA/ES reporting, completed trials | 8 | 24,576.00 × 10⁶ |
+| Full-budget GA/ES reporting, completed trials | 10 | 30,720.00 × 10⁶ |
 | Four-phase PPO development prefix | 1 | 614.40 × 10⁶ |
 | Adaptive fixed controls | 15 | 115.20 × 10⁶ |
 | Adaptive program search | 60 | 460.80 × 10⁶ |
@@ -602,25 +623,28 @@ costs remain in the supplementary evidence. Sources and exact protocols:
 [static validation](reports/validation-static-20261002/summary.json),
 [GA reference](reports/reference-timing-20261002/summary.json),
 [ES reference](reports/reference-development-es-20261003/summary.json),
-[GA/ES reporting](reports/reference-reporting-ga-es-pair04-20261004/summary.json),
+[GA/ES reporting](reports/reference-reporting-ga-es-pair05-20261004/summary.json),
 [PPO prefix](reports/reference-development-ppo-prefix-20261003/summary.json),
 [adaptive controls](reports/adaptive-controls-20261003/summary.json),
 [adaptive search](reports/adaptive-endpoint-complete-20261003/summary.json),
 [adaptive validation](reports/adaptive-validation-complete-20261003/summary.json).*
 
-The [eight completed reporting trials](reports/reference-reporting-ga-es-pair04-20261004/summary.json)
-consumed 11,885.8 s of training and 110.7 s of fresh evaluation, with a maximum
-trainer peak memory of 845.9 MiB. Their cumulative measured suite cost,
-including orchestration, is 12,024.5 s. Including the
+The [ten completed reporting trials](reports/reference-reporting-ga-es-pair05-20261004/summary.json)
+recorded 14,788.6 s of training and 136.4 s of fresh evaluation, with a maximum
+trainer peak memory of 845.9 MiB. The cumulative recorded suite duration,
+including orchestration, is 14,959.3 s. Adding the
 [earlier incomplete reporting allocation](reports/reference-reporting-eight-cpu-attempt-20261004/summary.json)
-adds 919.7 s, giving 12,944.1 s charged through these four pairs; component
-durations and earlier pairs are not added again. A
-[separate allocation diagnostic](reports/reference-ga-es-allocation-diagnostic-20261004/summary.json)
-cost 63.1 s and supplies no comparative learning evidence. The eight trials
-used 13,920 fresh evaluation episodes across the three saved agent sources;
-primary centroid measurements use 4,640 of them. Per-trial costs remain in
-the [detailed accounting](docs/reference-comparison.md#interim-full-budget-reporting-results).
-These totals exclude ongoing trials.
+once gives 15,879.0 s (4.411 h) of recorded execution time. These monotonic-clock
+measurements diverge from archived UTC spans and are not calendar duration or
+CPU time. The successful reporting campaign spans 9.877 h from its first
+training start to final completion, including intervening gaps and excluding
+earlier abandoned work and development; both clocks are preserved in the
+[scope and cost record](reports/reference-reporting-scope-amendment-20261004/decision.json).
+A [separate allocation diagnostic](reports/reference-ga-es-allocation-diagnostic-20261004/summary.json)
+recorded 63.1 s and supplies no comparative learning evidence. The ten trials
+used 17,400 fresh evaluation episodes across the three saved agent sources;
+primary centroid measurements use 5,800 of them. Per-trial costs remain in
+the [detailed accounting](docs/reference-comparison.md#bounded-full-budget-reporting-results).
 
 Static search obtained 24 model responses; adaptive search obtained 23, with
 one additional request interrupted before model execution. Proposals used
@@ -648,14 +672,17 @@ less measured forgetting than GA or PPO, consistent with the direction of the
 PPO loses previous-task performance after the first switch but retains both
 tasks at the last two phase endpoints. Its higher cumulative active-task
 return in this seed therefore does not imply better retention. These
-observations support an early learning–retention comparison. The four
+observations support an early learning–retention comparison. The five
 full-budget reporting pairs show maximal endpoint acquisition alongside
 strong variation in forgetting (Table 6). ES has lower observed mean forgetting,
-but both methods forget heavily on one task draw. GA's perfect transfer score
+but both methods forget heavily on two task draws. GA's perfect transfer score
 on another draw coexists with substantial final-checkpoint forgetting, because
 these measurements evaluate different points in the trajectory. The reference
-paper's retention ordering remains unresolved pending the remaining trials,
-as do twenty-phase PPO behavior and its method comparison.
+paper's retention ordering remains unresolved in the bounded sample, as do
+twenty-phase PPO behavior and its method comparison. The resource-limited
+sample provides less precision than the original ten-trial design. Its closure
+preserves the project's emphasis on the separately controlled ShinkaEvolve
+experiments without reopening their selections or reserved validation.
 
 The experiments use one outer search per search arm and small seed sets.
 Selected development maxima are subject to selection bias; static finalist
@@ -678,8 +705,10 @@ reduced populations and shorter task sequences; the reported normalization
 differs from the paper. Final reporting seeds 42–51 and task trials 1–10
 were reserved independently of development and selection.
 The [reference comparison](docs/reference-comparison.md) uses unchanged baseline
-settings. Four full-budget reporting trials per GA/ES method are complete,
-with six per method remaining. The completed PPO prefix supplies an
+settings. Five full-budget reporting trials per GA/ES method are complete;
+the other five per method were cancelled under the documented resource and
+scope amendment. The original frozen plan remains partial. The completed PPO
+prefix supplies an
 early-phase development analysis, leaving the full three-method reproduction
 incomplete.
 Broader reproduction also requires the other environments, task variations,
