@@ -1,0 +1,116 @@
+{
+  "status": "complete",
+  "returncode": 0,
+  "wall_seconds": 1471.8503466480033,
+  "maximum_trainer_rss_kib": 866252,
+  "user_cpu_seconds": 2295.260266,
+  "system_cpu_seconds": 202.472588,
+  "trainer_cpu_affinity": [
+    0,
+    1
+  ],
+  "start_update": 0,
+  "phase_events": [
+    {
+      "completed_updates": 200,
+      "elapsed_seconds": 102.6580463440041,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 400,
+      "elapsed_seconds": 174.23913410900423,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 600,
+      "elapsed_seconds": 268.9217798430036,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 800,
+      "elapsed_seconds": 359.7692845290003,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 1000,
+      "elapsed_seconds": 441.9102544730049,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 1200,
+      "elapsed_seconds": 515.8628397690045,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 1400,
+      "elapsed_seconds": 586.7989196590061,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 1600,
+      "elapsed_seconds": 658.147335710004,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 1800,
+      "elapsed_seconds": 728.1919083310058,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 2000,
+      "elapsed_seconds": 817.1794402310043,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 2200,
+      "elapsed_seconds": 885.0083918340024,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 2400,
+      "elapsed_seconds": 946.804685328003,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 2600,
+      "elapsed_seconds": 1011.4331230810058,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 2800,
+      "elapsed_seconds": 1084.8797563059998,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 3000,
+      "elapsed_seconds": 1135.860755051006,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 3200,
+      "elapsed_seconds": 1202.0229813640035,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 3400,
+      "elapsed_seconds": 1273.5514477390025,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 3600,
+      "elapsed_seconds": 1337.6155023009997,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 3800,
+      "elapsed_seconds": 1396.815212199006,
+      "kind": "native_checkpoint_written"
+    },
+    {
+      "completed_updates": 4000,
+      "elapsed_seconds": 1460.3587345920023,
+      "kind": "last_update_logged"
+    }
+  ],
+  "timing_note": "Parent-observed flushed native boundaries include JIT, evaluation, diagnostics and checkpoint I/O; RSS is this trainer's Linux wait4 peak"
+}

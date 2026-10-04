@@ -7,8 +7,8 @@ studies and reserved validations remain separate, including their negative
 results; none of their candidates or validation outcomes changes this
 comparison's settings or reopens completed selection. The original full-budget
 protocol is retained below. The October 3, 2026 resource amendment limits the
-active PPO experiment to a development prefix; full-budget GA and ES reporting
-remains planned.
+active PPO experiment to a development prefix. Full-budget GA and ES reporting
+has completed its first matched pair; eighteen of twenty trials remain.
 
 ## Protocol and partitions
 
@@ -180,9 +180,68 @@ took 13.9266 s and fresh evaluation 6.2488 s. The [complete cost accounting](../
 also includes 107.3577 s of prior verification and the remaining analysis
 overhead, for 22,340.0237 s total.
 
-The next scientific stage is the unchanged twenty-phase GA/ES reporting
-comparison, ten trials per method. The full-budget PPO arm remains deferred;
-the completed development prefix does not consume any reporting trial.
+The unchanged twenty-phase GA/ES reporting comparison, ten trials per method,
+is in progress. The full-budget PPO arm remains deferred; the completed
+development prefix does not consume any reporting trial.
+
+## Interim full-budget reporting results
+
+The [first completed reporting pair](../reports/reference-reporting-ga-es-pair01-20261004/summary.json)
+contains GA and ES at seed 42, task trial 1, and evaluation seed 900042. Both
+use the same task vectors, twenty alternating phases, 4,000 generations, and
+3,072,000,000 nominal training steps under the [exact frozen plan](../reports/reference-reporting-ga-es-pair01-20261004/raw/plan.json).
+This is two of twenty planned trials, with one of ten complete per method.
+The next prespecified seed pair, 43, is in progress. The export remains partial;
+full-budget PPO reporting is deferred and the original three-method target
+is incomplete.
+
+| Method | LA (return) | Signed F (return) | LA − F (return) | ZT (return) | Cum. / (steps × 500) |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| GA | 500.00 | 489.76 | 10.24 | 10.30 | 0.8912 |
+| ES | 500.00 | 489.63 | 10.37 | 10.39 | 0.9605 |
+
+The [raw GA episodes](../reports/reference-reporting-ga-es-pair01-20261004/raw/trials/ga/seed_42/analysis/attempt_001/evaluation.json)
+and [raw ES episodes](../reports/reference-reporting-ga-es-pair01-20261004/raw/trials/es/seed_42/analysis/attempt_001/evaluation.json)
+give return 500 on every centroid own-task episode. Previous-task means range
+from 9.1 to 14.3 for GA and 8.9 to 12.6 for ES, demonstrating severe endpoint
+forgetting despite complete active-task acquisition. Signed forgetting and
+transfer average all nineteen switches. The [curves](../reports/figures/reference-reporting-ga-es-pair01-20261004.svg),
+[metric figure](../reports/figures/reference-reporting-ga-es-pair01-20261004-metrics.svg),
+and [numerical provenance](../reports/figures/reference-reporting-ga-es-pair01-20261004.json)
+retain the distinction between active learning and previous-task retention.
+
+GA's [dense record](../reports/reference-reporting-ga-es-pair01-20261004/raw/trials/ga/seed_42/training/attempt_001/training_metrics.json)
+contains 134 generations with both task means equal to 500 during phases
+18–20, but no phase endpoint retains that joint success. ES's
+[dense record](../reports/reference-reporting-ga-es-pair01-20261004/raw/trials/es/seed_42/training/attempt_001/training_metrics.json)
+contains no generation with both task means equal to 500. These in-training
+observations do not replace fresh checkpoint evaluation. ES has higher
+cumulative active-task performance in this pair; the similarly severe
+forgetting supplies no evidence for a retention advantage. With one trial
+per method, between-trial SD is undefined and no general method ranking is
+established. The favorable development seed-1001 outcomes use a different
+task draw and remain excluded from reporting aggregates.
+
+| Method | Training (s) | Fresh analysis (s) | Peak trainer RSS (KiB) | Fresh episodes, all sources |
+| :--- | ---: | ---: | ---: | ---: |
+| GA | 1,471.850347 | 9.603423 | 866,252 | 1,740 |
+| ES | 1,547.458632 | 15.842623 | 830,228 | 1,740 |
+
+The [exact compute record](../reports/reference-reporting-ga-es-pair01-20261004/summary.json)
+reports 3,057.1266927820034 s for the completed pair's suite, including
+3,019.308978683999 s of training and 25.446046144010324 s of fresh analysis.
+The 3,480 fresh episodes cover centroid, final-generation best member, and
+incumbent; primary centroid metrics use 580 episodes per method. Each source
+has 200 own-task, 190 previous-task, and 190 next-task episodes.
+
+The preserved [earlier reporting allocation](../reports/reference-reporting-eight-cpu-attempt-20261004/summary.json)
+adds 919.6690881920003 s of suite time, bringing charged reporting execution
+through this pair to 3,976.7957809740037 s. The component training and analysis
+costs are already included in those suite durations and are not added again.
+The [allocation diagnostic](../reports/reference-ga-es-allocation-diagnostic-20261004/summary.json)
+adds 63.13385714699689 s in a separate diagnostic category. Ongoing trials
+are not included in this completed-pair snapshot. All unsuccessful-attempt
+compute remains charged, without changing any trial's scientific settings.
 
 ## Reference findings to assess
 
@@ -270,8 +329,9 @@ trials; they are not removed by the fresh start.
 ## Reporting execution
 
 The active two-CPU suite uses the existing harness with all ten reporting
-seeds, twenty phases, and the full training budget per method. Its launch
-command completes the first seed's GA/ES pair within the twenty-trial plan:
+seeds, twenty phases, and the full training budget per method. The first pair
+is complete and published above; the next pair at seed 43 is running. The
+original launch command completed seed 42 within the twenty-trial plan:
 
 ```bash
 .venv/bin/python scripts/run_reference_comparison.py \
@@ -285,7 +345,8 @@ Continue subsequent pairs with the same arguments and `--resume`. The harness
 verifies completed trials before reuse; `--max-trials 2` bounds each invocation,
 not the declared number of reporting trials. Resume only the new two-CPU suite;
 the preserved eight-CPU suite remains closed. The command above records the
-already-started launch and must not start a duplicate controller.
+original launch. The active seed-43 continuation already uses `--resume`;
+do not start a duplicate controller.
 
 This reporting allocation exposes two logical CPUs, matching the development
 allocation. Record actual affinity, elapsed training and evaluation costs,
