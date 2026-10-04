@@ -1,0 +1,81 @@
+{
+  "analysis_version": 1,
+  "method": "ga",
+  "profile": "adaptive-validation",
+  "condition": "switching",
+  "seed": 7002,
+  "trial": 7003,
+  "agent_source": "centroid",
+  "episodes": 10,
+  "eval_seed": 907002,
+  "num_phases": 4,
+  "phase_sequence": [
+    0,
+    1,
+    0,
+    1
+  ],
+  "nominal_training_steps": 30720000,
+  "steps_per_update": 96000,
+  "metrics": {
+    "learning_accuracy": 470.125,
+    "forgetting": -39.833333333333336,
+    "zero_shot_transfer": 394.8,
+    "learning_minus_forgetting": 509.9583333333333,
+    "cumulative_reward_steps": 13890369614.822388,
+    "cumulative_reward_generation_equivalents": 144691.35015439987,
+    "cumulative_reward_steps_exact": 13890369614.822388,
+    "normalized_curve_average": 0.9043209384649993
+  },
+  "phase_returns": [
+    {
+      "phase": 0,
+      "task": 0,
+      "checkpoint_completed_steps": 7680000,
+      "own_mean": 380.5,
+      "previous_mean": null,
+      "next_mean": 195.1
+    },
+    {
+      "phase": 1,
+      "task": 1,
+      "checkpoint_completed_steps": 15360000,
+      "own_mean": 500.0,
+      "previous_mean": 500.0,
+      "next_mean": 489.3
+    },
+    {
+      "phase": 2,
+      "task": 0,
+      "checkpoint_completed_steps": 23040000,
+      "own_mean": 500.0,
+      "previous_mean": 500.0,
+      "next_mean": 500.0
+    },
+    {
+      "phase": 3,
+      "task": 1,
+      "checkpoint_completed_steps": 30720000,
+      "own_mean": 500.0,
+      "previous_mean": 500.0,
+      "next_mean": null
+    }
+  ],
+  "phase_training_returns": [
+    316.2187517404556,
+    495.5925001144409,
+    499.89500007629397,
+    500.0
+  ],
+  "clock": {
+    "record_timing": "after_update",
+    "raw_generation_labels": "zero_based",
+    "completed_steps": "(generation + 1) * steps_per_update",
+    "integration": "pinned_unit_NE_generation_grid_trapezoid",
+    "reference_steps_per_generation": 96000,
+    "integration_grid_points": 321,
+    "edge_values": "constant_first_and_last_logged_return",
+    "initial_untrained_policy_evaluated": false
+  },
+  "transfer_interpretation": "consecutive_switches_including_both_directions"
+}

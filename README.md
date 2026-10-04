@@ -19,7 +19,15 @@ For the adaptive extension, one rule is selected on development trials and
 compared with five fixed controls on a reserved five-seed partition. Its mean
 combined active/previous-task score is 0.8423, versus 0.9054 for native FocusGA;
 the paired difference is −0.0631 ± 0.0632 (mean ± sample standard deviation).
-This comparison does not support an advantage for the selected rule. Across
+This comparison does not support an advantage for the selected rule. A separate
+[controlled repeated-search experiment](reports/adaptive-repeated-finalists-20261004/protocol.md)
+compares evolutionary parent selection and archive feedback against independent
+adaptive-program proposals. Across two outer repetitions and 35 fresh finalist
+and control trials, the evolutionary-minus-independent difference is
+−0.0821 ± 0.0235 across repetition means. Both paired means favor independent
+proposals; this small, shared-task experiment does not establish a general
+search-method ranking
+([complete results](reports/adaptive-repeated-validation-20261004/summary.json)). Across
 the [five full-budget reporting trials per method](reports/reference-reporting-ga-es-pair05-20261004/summary.json),
 GA and ES attain maximal learning accuracy, but retention varies sharply.
 Both forget heavily on two task draws; ES shows little or no endpoint forgetting
@@ -110,12 +118,14 @@ steps per update. These are explicit reductions from Table 1.
 | Static finalist validation | 2001–2005 | 2002–2006 | 30.72 × 10⁶ | Select one finalist per search arm |
 | Adaptive controls / search | 4001–4003 | 4002–4004 | 7.68 × 10⁶ | Development |
 | Adaptive finalist validation | 5001–5005 | 5002–5006 | 30.72 × 10⁶ | Evaluate a previously selected rule |
+| Repeated adaptive controls / search | 6001–6003 | 6002–6004 | 7.68 × 10⁶ | Two paired outer-search repetitions |
+| Repeated-search finalist comparison | 7001–7005 | 7002–7006 | 30.72 × 10⁶ | Fresh evaluation of four frozen winners and three fixed learners |
 | Full-budget GA/ES development | 1001 | 1002 | 3.072 × 10⁹ | Measure native learning and compute |
 | Matched GA/ES/PPO development prefixes | 1001 | 1002 | 614.4 × 10⁶ | Early acquisition and retention; GA/ES reused |
 | Original reporting allocation | 42–51 | 1–10 | 3.072 × 10⁹ | GA/ES: 5/10 each complete; remainder cancelled; PPO deferred |
 
 *Table 2. Scientific data partitions. Search uses 20 generations per phase;
-both validation studies use 80. Validation therefore changes task draws and
+finalist comparisons use 80. Validation therefore changes task draws and
 adaptation interval together. Full-budget reference development uses Table 1
 and the [reference comparison protocol](docs/reference-comparison.md). The
 [GA/ES prefix protocol](reports/reference-development-prefixes-20261003/protocol.json)
@@ -125,8 +135,9 @@ Implementation diagnostics use separate reduced
 budgets and are excluded from method comparisons. Exact allocations:
 [pilot and static search](docs/experimental-roadmap.md),
 [static validation](docs/finalist-validation.md),
-[adaptive evaluation](docs/adaptive-evaluation.md), and
-[frozen adaptive validation](reports/adaptive-validation-freeze-20261003/protocol.md).*
+[adaptive evaluation](docs/adaptive-evaluation.md),
+[frozen adaptive validation](reports/adaptive-validation-freeze-20261003/protocol.md), and
+[repeated-search protocol](reports/adaptive-repeated-finalists-20261004/protocol.md).*
 
 ### Measurements
 
@@ -223,6 +234,32 @@ records that selection and all five controls before reserved outcomes.
 The primary validation comparison is the paired selected-minus-FocusGA
 difference in $J_{\mathrm{adaptive}}$; comparisons with the remaining controls
 are secondary. No validation feedback is used for further proposals.
+
+### Repeated adaptive-program search comparison
+
+The subsequent study tests the contribution of evolutionary parent selection
+and archive feedback within the same mutation-width interface. Two paired
+outer-search repetitions use host random seeds 202610041 and 202610042.
+Each arm receives identity plus four new proposal slots. The evolutionary arm
+uses Shinka's weighted parent selection and archive inspirations; the
+independent arm always uses the initial identity parent and receives no later
+programs or scores. Model, prompt, grammar, candidate objective, and learner
+budgets are matched. Host seeds govern recorded search sampling, not
+deterministic model responses. The
+[preregistered protocol](reports/adaptive-repeated-preregistration-20261004/protocol.md)
+specifies both arms and the two-hour total allocation.
+
+Each archive selects the highest exact mean development score, with earlier
+generation breaking an exact tie. All four selected programs and the identity,
+arithmetic, and FocusGA controls were
+[frozen together](reports/adaptive-repeated-finalists-20261004/plan.json)
+before evaluation on the fresh partition in Table 2. For each outer repetition,
+the primary contrast averages evolutionary-minus-independent combined scores
+over the five common evaluation seeds. Its overall mean and sample SD use the
+two outer-repetition contrasts, not ten independent observations. Both
+repetitions share their development and evaluation task draws; inference is
+conditional on that sample. This contrast jointly tests parent selection and
+archive feedback rather than isolating their individual effects.
 
 ## 3. Results
 
@@ -347,7 +384,7 @@ The [accounted PPO cost](reports/reference-development-ppo-prefix-20261003/summa
 is 22,340.0 s (6.206 h), including training, verification, and fresh evaluation,
 within the eight-hour allocation. Native training accounts for 22,197.3 s.
 GA and ES prefix analysis reused existing evidence; their complete source-run
-costs remain recorded above and in Table 12.
+costs remain recorded above and in Table 14.
 
 ### Full-budget reporting: acquisition and retention across trials
 
@@ -631,7 +668,7 @@ comparison does not isolate a width mechanism.
 
 The resulting hypothesis concerns the value of feedback-guided program search,
 rather than an assumed benefit from a more complicated mutation rule. The
-planned [repeated-search study](docs/adaptive-repeated-search.md) compares ShinkaEvolve with a matched search
+[repeated-search study](docs/adaptive-repeated-search.md) compares ShinkaEvolve with a matched search
 control that also proposes adaptive programs. The earlier random search varied
 static configurations and cannot answer this question. Independent searches
 and fresh test data are needed to assess the contribution of archive-guided
@@ -641,14 +678,10 @@ improves performance.
 
 ### Repeated adaptive-program search
 
-A [preregistered compact study](reports/adaptive-repeated-preregistration-20261004/protocol.md)
-compares evolutionary parent selection and archive feedback against independent
-proposals from the same identity program. Two outer-search repetitions each
-allocate four new proposals per arm, with the model, grammar, development tasks,
-and learner budgets held fixed. All finalists must be frozen before evaluation
-on a new five-seed partition. This tests the contribution of the search procedure
-within the existing mutation-width interface; it does not expand the baseline
-reproduction or reopen earlier selections.
+The [preregistered compact study](reports/adaptive-repeated-preregistration-20261004/protocol.md)
+completed both paired outer-search repetitions and the fresh finalist
+comparison. This tests the contribution of the search procedure within the
+existing mutation-width interface; earlier selections remain closed.
 
 The new fixed-control comparison completed fifteen development trials on seeds
 6001–6003. FocusGA has the highest observed mean combined score, 0.8970,
@@ -668,9 +701,82 @@ selected development maxima do not estimate performance on new tasks.
 [Independent archive](reports/adaptive-repeated-independent_202610041-20261004/summary.json) ·
 [Second evolutionary archive](reports/adaptive-repeated-evolutionary_202610042-20261004/summary.json) ·
 [Second independent archive](reports/adaptive-repeated-independent_202610042-20261004/summary.json).
-All four winners and three fixed learners are now
+All four winners and three fixed learners were
 [frozen together](reports/adaptive-repeated-finalists-20261004/plan.json)
-for the fresh five-seed comparison; its outcomes remain unobserved at this handoff.
+before the 35 fresh trials on seeds 7001–7005. The selected generations are
+2 and 3 in the first evolutionary/independent pair, and 1 and 3 in the second.
+All four programs adapt width using training-fitness feedback and offspring
+success, with different responses to progress and deterioration. These source
+structures describe the selected rules; they do not identify the causes of
+their comparative performance.
+
+![Repeated adaptive searches: paired outer differences, score components, learning, and retention](reports/figures/adaptive-repeated-20261004.svg)
+
+*Figure 8. Fresh evaluation of the four development-selected programs and
+three fixed learners. E1/I1 and E2/I2 denote the evolutionary/independent
+finalists from each outer repetition. Panel A averages the five paired task
+differences within each repetition before summarizing across the two searches.
+Panel B shows condition means and sample SD across five seeds; panels C and D
+show mean unsmoothed active-task curves and fresh previous-task endpoint
+returns. Error bars are sample SD, not confidence intervals.
+[PDF](reports/figures/adaptive-repeated-20261004.pdf) ·
+[Exact values, all individual curves, and provenance](reports/figures/adaptive-repeated-20261004.json) ·
+[Frozen protocol](reports/adaptive-repeated-finalists-20261004/protocol.md).*
+
+| Condition | Combined score ↑ | Active ↑ | Previous ↑ |
+| :--- | ---: | ---: | ---: |
+| Evolutionary 1 | 0.5558 ± 0.2473 | 0.8175 ± 0.1262 | 0.2941 ± 0.3885 |
+| Independent 1 | 0.6545 ± 0.2670 | 0.8308 ± 0.0818 | 0.4782 ± 0.4855 |
+| Evolutionary 2 | 0.6116 ± 0.2890 | 0.8170 ± 0.0712 | 0.4063 ± 0.5166 |
+| Independent 2 | 0.6771 ± 0.3082 | 0.8020 ± 0.1282 | 0.5521 ± 0.4988 |
+| Identity GA | 0.5609 ± 0.1999 | 0.8332 ± 0.0698 | 0.2886 ± 0.3464 |
+| Arithmetic update | 0.5956 ± 0.2009 | 0.5370 ± 0.2317 | 0.6543 ± 0.2219 |
+| Native FocusGA | 0.5926 ± 0.2246 | 0.8978 ± 0.0653 | 0.2874 ± 0.3967 |
+
+*Table 12. Fresh repeated-search comparison, mean ± sample SD across five
+evaluation seeds per condition. All scores are normalized by 500. These
+evaluation seeds are task draws, not additional outer-search repetitions.
+[Complete trial evidence](reports/adaptive-repeated-validation-20261004/summary.json) ·
+[Exact frozen protocol](reports/adaptive-repeated-finalists-20261004/protocol.md).*
+
+The primary evolutionary-minus-independent differences are −0.0987 and −0.0655
+for the two outer repetitions. Their mean ± sample SD is **−0.0821 ± 0.0235**
+with **n = 2 outer repetitions**. The first evolutionary finalist scores lower
+on every evaluation seed; the second has three positive seed differences but
+a lower paired mean. The results do not support an advantage from evolutionary
+parent selection and archive feedback at this allocation. The two repetitions
+and common task sample are insufficient for a general search-method ranking.
+[All paired differences](reports/adaptive-repeated-validation-20261004/summary.json).
+
+| Condition | LA ↑ | F ↓ | LA − F ↑ | ZT ↑ | Normalized cumulative return ↑ |
+| :--- | ---: | ---: | ---: | ---: | ---: |
+| Evolutionary 1 | 499.9 ± 0.2 | 352.8 ± 194.1 | 147.1 ± 194.2 | 126.9 ± 179.1 | 0.8160 ± 0.1262 |
+| Independent 1 | 500.0 ± 0.0 | 260.9 ± 242.8 | 239.1 ± 242.8 | 178.5 ± 217.7 | 0.8293 ± 0.0818 |
+| Evolutionary 2 | 493.9 ± 13.3 | 288.7 ± 269.9 | 205.2 ± 261.1 | 155.0 ± 189.2 | 0.8155 ± 0.0712 |
+| Independent 2 | 477.1 ± 51.1 | 193.5 ± 270.7 | 283.7 ± 253.2 | 184.2 ± 170.3 | 0.8005 ± 0.1282 |
+| Identity GA | 498.7 ± 2.9 | 354.0 ± 171.6 | 144.7 ± 172.8 | 145.8 ± 182.2 | 0.8316 ± 0.0698 |
+| Arithmetic update | 347.4 ± 117.3 | 65.8 ± 91.0 | 281.7 ± 133.6 | 197.1 ± 116.0 | 0.5363 ± 0.2309 |
+| Native FocusGA | 500.0 ± 0.0 | 356.3 ± 198.4 | 143.7 ± 198.4 | 162.1 ± 207.6 | 0.8963 ± 0.0653 |
+
+*Table 13. Continual-learning outcomes on the same five fresh trials per
+condition, mean ± sample SD. LA, signed F, LA − F, and ZT use return units;
+normalized cumulative return divides the active-curve integral by nominal
+training steps and the 500-step cap. ZT concerns the next recurring task,
+not a previously unseen task. Raw integrals and per-trial outcomes are retained
+in the [complete evidence](reports/adaptive-repeated-validation-20261004/summary.json)
+and [independently recomputed figure data](reports/figures/adaptive-repeated-20261004.json).
+[Measurement protocol](reports/adaptive-repeated-finalists-20261004/protocol.md).*
+
+High endpoint acquisition does not imply retention: all four finalists learn
+the active task to its maximum at each phase endpoint on seeds 7004 and 7005,
+yet forget heavily after switches. Arithmetic adaptation has much smaller
+mean forgetting, but also markedly lower acquisition and cumulative performance.
+On seed 7001 its phase-end active returns alternate between 500.0, 9.0,
+500.0, and 9.7; its signed forgetting of −0.17 therefore accompanies failure
+to learn the shifted task. This illustrates why the frozen objective includes
+both active and previous-task performance.
+[Phase-level returns](reports/adaptive-repeated-validation-20261004/summary.json) ·
+[Protocol](reports/adaptive-repeated-finalists-20261004/protocol.md).
 
 ### Computational budget
 
@@ -687,8 +793,9 @@ for the fresh five-seed comparison; its outcomes remain unobserved at this hando
 | Adaptive finalist validation | 30 | 921.60 × 10⁶ |
 | Repeated-study fixed controls | 15 | 115.20 × 10⁶ |
 | Repeated-study program search, both paired repetitions | 48 | 368.64 × 10⁶ |
+| Repeated-study fresh finalist comparison | 35 | 1,075.20 × 10⁶ |
 
-*Table 12. Training allocation consumed by the scientific experiments.
+*Table 14. Training allocation consumed by the scientific experiments.
 GA/ES counts use the episode cap and are nominal, not realized episode lengths.
 In-loop and post-hoc evaluation are additional work. Repeated static evaluations
 are charged; adaptive identity reuse is counted once in the fixed controls.
@@ -710,8 +817,23 @@ costs remain in the supplementary evidence. Sources and exact protocols:
 [first evolutionary search](reports/adaptive-repeated-evolutionary_202610041-20261004/summary.json),
 [first independent search](reports/adaptive-repeated-independent_202610041-20261004/summary.json),
 [second evolutionary search](reports/adaptive-repeated-evolutionary_202610042-20261004/summary.json),
-[second independent search](reports/adaptive-repeated-independent_202610042-20261004/summary.json).
-The repeated-study rows exclude the later fresh evaluation.*
+[second independent search](reports/adaptive-repeated-independent_202610042-20261004/summary.json),
+[repeated-study fresh comparison](reports/adaptive-repeated-validation-20261004/summary.json), and
+[complete repeated-study accounting](reports/adaptive-repeated-accounting-20261004/summary.json).*
+
+The repeated study used 98 distinct training trials and 16 model proposals,
+with 1,559.04 million nominal training steps and 29,400 fresh checkpoint
+evaluation episodes across the three saved agent sources; 9,800 episodes
+evaluate the primary centroid. Its complete elapsed experiment time was
+7,127.7 s (1 h 58 min 47.7 s), within the preregistered two-hour allocation.
+Recorded learner and checkpoint-analysis durations total 4,662.6 s and 899.0 s,
+respectively; proposal duration totals 648.0 s. These component measurements
+are included in the overall elapsed allocation and are not additional costs.
+The fresh comparison alone recorded 1,954.8 s of training and 266.9 s of
+checkpoint analysis. Peak memory was not measured for this study. All proposals
+used the authorized subscription route, with no paid model API calls.
+[Compute evidence and exact definitions](reports/adaptive-repeated-accounting-20261004/summary.json) ·
+[Resource protocol](reports/adaptive-repeated-finalists-20261004/protocol.md).
 
 The [ten completed reporting trials](reports/reference-reporting-ga-es-pair05-20261004/summary.json)
 recorded 14,788.6 s of training and 136.4 s of fresh evaluation, with a maximum
@@ -748,6 +870,10 @@ improves active return but does not resolve that trade-off. The adaptive
 objective explicitly includes previous-task performance, yet its
 development-selected rule does not outperform FocusGA in the reserved
 comparison. These negative and mixed outcomes constrain the extension's claims.
+The repeated-search comparison further finds lower mean fresh performance for
+the evolutionary winner in both paired repetitions (Tables 12–13). Under this
+compact allocation, archive-guided search did not improve on independent
+adaptive-program proposals from the same model and initial program.
 
 At the reference per-phase budgets, all methods achieve maximal endpoint
 learning accuracy in the matched four-phase development comparison. ES has
@@ -768,15 +894,22 @@ sample provides less precision than the original ten-trial design. Its closure
 preserves the project's emphasis on the separately controlled ShinkaEvolve
 experiments without reopening their selections or reserved validation.
 
-The experiments use one outer search per search arm and small seed sets.
+The initial static and adaptive experiments use one outer search per arm and
+small seed sets.
 Selected development maxima are subject to selection bias; static finalist
 validation also participates in selection. The adaptive reserved comparison
 evaluates a previously fixed rule, but changes both task draws and phase
 length. Its higher scores than development cannot be interpreted as a matched
-improvement. Repeated outer searches and appropriate search controls are
-required for claims about ShinkaEvolve as a search method.
+improvement. The later controlled study adds two paired outer repetitions and
+a matched adaptive-program search control, with all selected programs frozen
+before new evaluation. Its four-proposal budgets are small, both repetitions
+share the same task draws, and the primary sample size is two. Neither the
+negative mean contrast nor its sample SD establishes a general ordering of
+search methods. The contrast also combines parent selection and archive
+feedback; their individual contributions remain unresolved.
+[Study design and limits](reports/adaptive-repeated-finalists-20261004/protocol.md).
 
-The adaptive search resumed from an earlier saved random-number state after
+The initial adaptive search resumed from an earlier saved random-number state after
 an interruption. Its archive represents the recorded multi-session search,
 rather than an uninterrupted sampling trajectory. The
 [declared sampling deviation](reports/adaptive-recovery-preflight-20261003/recovery-plan.json)
@@ -812,7 +945,7 @@ interfaces, analysis, and experiment runners live in this repository.
 | ShinkaEvolve | [9912af12d423](https://github.com/SakanaAI/ShinkaEvolve/tree/9912af12d423504b8d580f4179fd15f5f88b8c50) |
 | Reference paper | [arXiv:2610.01583v1](https://arxiv.org/abs/2610.01583v1) |
 
-*Table 13. Pinned reference sources. Full revisions and dependency declarations
+*Table 15. Pinned reference sources. Full revisions and dependency declarations
 are retained in the [source lock](upstream.lock.json).*
 
 The [source lock](upstream.lock.json) and per-experiment manifests record exact
@@ -838,13 +971,20 @@ Detailed execution and replay instructions accompany the
 [static search](tasks/cartpole_ga/README.md),
 [static validation and full-budget reference](docs/finalist-validation.md),
 [adaptive evaluation](docs/adaptive-evaluation.md),
-[adaptive search](docs/adaptive-search.md), and
-[adaptive validation](docs/adaptive-validation.md).
+[adaptive search](docs/adaptive-search.md),
+[adaptive validation](docs/adaptive-validation.md), and
+[repeated adaptive search](docs/adaptive-repeated-search.md).
 Use each experiment's recorded source revision when replaying a frozen
 implementation and fresh output paths for new runs. Raw metrics, episode
 returns, failed attempts, protocol deviations, and artifact hashes remain
 in the linked evidence archives; large binary checkpoints remain outside Git.
 Existing reports are historical records, not rewritten to match later results.
+The [repeated-study figure script](scripts/plot_adaptive_repeated.py) verifies
+the frozen handoff and published artifact hashes, then reconstructs objectives,
+continual-learning metrics, and paired outer-search contrasts from saved curves
+and fresh episode returns. Its [figure data](reports/figures/adaptive-repeated-20261004.json)
+retain every individual learning curve and exact metric alongside the plotted
+aggregates.
 
 Implementation checks establish the conditions for interpreting the experiments:
 the [identity adapter](reports/adaptive-gate-20261003/summary.json) matches native

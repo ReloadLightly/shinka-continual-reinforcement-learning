@@ -1,0 +1,25 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 7004
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  seed           : 7003
+  boundary info  : none
+  output         : /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-validation-20261004/trials/019/attempt_0001/training
+======================================================================
+/home/roland/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-uifk9pak because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+  gen     0 task= 0 train=   12.2 t0=   56.6 t1=   25.8 gen'ist=   25.8
+  gen    50 task= 0 train=  485.2 t0=  500.0 t1=   70.7 gen'ist=   70.7
+  gen   100 task= 1 train=  498.7 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   150 task= 1 train=  500.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   200 task= 0 train=  498.8 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   250 task= 1 train=  500.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   300 task= 1 train=  500.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen   319 task= 1 train=  500.0 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  wrote /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-validation-20261004/trials/019/attempt_0001/training
+
+Done. /home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-validation-20261004/trials/019/attempt_0001/training

@@ -161,12 +161,27 @@ behavior, and its reporting-trial distribution remain unresolved.
 
 Keep population size, episode cap, generations, task sequence, evaluation budget, and allowed parameter bounds fixed outside the candidate. Use the same development trials for every candidate. Freeze the winner before evaluating on separate reporting trials. Record candidate source, selected parameters, upstream revision, seeds, resolved configuration, training metrics, selection score, failures, wall time, and LLM usage. Charge repeated trials and program-search evaluations to the search budget separately from each learner's environment-step budget.
 
+The subsequent [adaptive-program study](adaptive-repeated-search.md) is now
+complete. Two paired outer-search repetitions compare evolutionary parent
+selection and archive feedback with independent proposals from identity, using
+four proposals per archive. Fifteen fixed-control development trials and 48
+proposal-training trials precede the common finalist freeze; 35 fresh trials
+evaluate all four winners and three unchanged learners on seeds 7001–7005.
+The evolutionary-minus-independent combined-score difference is
+−0.0821 ± 0.0235 across the two outer repetitions. Both repetition means are
+negative; five shared evaluation seeds within each repetition are not ten
+independent searches. This is evidence about the compact extension protocol,
+separate from the original reference reproduction.
+[Frozen selections](../reports/adaptive-repeated-finalists-20261004/plan.json) ·
+[Complete evaluation](../reports/adaptive-repeated-validation-20261004/summary.json) ·
+[Measured costs](../reports/adaptive-repeated-accounting-20261004/summary.json).
+
 ## Milestones and acceptance criteria
 
 1. **Validate the scaffold — complete.** Command construction, parameter bounds, metric parsing, evaluator failure behavior, and real GA/ES/PPO training have been checked. The initial Shinka candidate reproduces the GA baseline's entire two-task centroid trace. These reduced-budget runs establish pipeline execution only.
 2. **Validate a matched pilot — complete.** Eighteen trials cover GA, ES, and PPO × stationary/switching conditions × three development seeds, each with 7.68 million nominal training steps and a 500-step episode cap. Saved configurations, task schedules, checkpoint evaluations, source/runtime identity, and artifact hashes validate; all methods pass the predefined stationary-learning gate. The run resumed after six trials without retraining them. [Evidence](../reports/pilot-20261002/summary.json). Reporting trials 1–10 were reserved independently of this pilot.
 3. **Complete the bounded CartPole reference comparison.** The original reproduction target remains ten trials per method under the 20-phase protocol with held-out evaluation episodes. The resource-limited PPO development prefix and matched GA/ES prefix analysis are complete. The October 4 scope amendment ended GA/ES reporting after five completed matched pairs, with no further baseline launches. Preserve the original twenty-job plan and identify its uncompleted sample target. Report learning accuracy, forgetting, their difference, cumulative return, and zero-shot transfer, with dispersion across completed reporting trials. For alternating tasks, forgetting must average loss at consecutive switches in both directions; a final-checkpoint-only formula is inappropriate. Follow the paper's Appendix A.3 for definitions and normalization. These observations support a bounded full-budget GA/ES comparison, while the original three-method reproduction remains incomplete.
-4. **Focus subsequent research on the Shinka extension.** Use existing GA/ES evidence as reference context. The completed static and adaptive searches and their reserved comparisons remain closed, including their negative outcomes. Any further extension requires a distinct question, declared budget, suitable controls, and an untouched evaluation partition; it cannot feed reserved outcomes back into the completed search or treat evidence from unequal task draws and budgets as matched. Report individual trial outcomes and search costs alongside aggregates.
+4. **Complete the controlled Shinka extension — compact repeated study complete.** The two paired adaptive-program searches and all 35 fresh evaluation trials are published. Existing GA/ES evidence supplies reference context. The static, adaptive, and repeated-search selections remain closed, including their negative outcomes. Further extension studies require a distinct question, declared budget, suitable controls, and an untouched evaluation partition; they cannot feed these outcomes back into completed searches or treat unequal task draws and budgets as matched. Two short outer repetitions do not establish a broad search-method ranking.
 5. **Retain broader reproduction as future scope.** Further baseline trials, task variations, environments, continual PPO variants, and neighborhood analyses are outside the present allocation. They are not prerequisites for interpreting the accumulated comparisons and must not launch automatically.
 
 Keep smoke outputs, search-development scores, and final reporting results distinguishable in artifact metadata. Record deviations from the pinned protocol before running comparisons; do not infer successful reproduction from a single favorable curve.

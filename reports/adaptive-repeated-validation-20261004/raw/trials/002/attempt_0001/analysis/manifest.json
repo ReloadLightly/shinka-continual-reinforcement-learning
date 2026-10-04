@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "episodes": 10,
+  "eval_seed": 907001,
+  "command": [
+    "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution/.venv/bin/python",
+    "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution/scripts/analysis/evaluate_continual.py",
+    "--root",
+    "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-validation-20261004/trials/002/attempt_0001/analysis/evaluation-input",
+    "--episodes",
+    "10",
+    "--seed",
+    "907001"
+  ],
+  "training_run": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-validation-20261004/trials/002/attempt_0001/training",
+  "input_sha256": {
+    "manifest.json": "54d4bab729c8dc6ecb7312f3d58fc2fda3df9ceb9b89e500244eb4c053dd4852",
+    "results.json": "33b39f508a252688c11c5b847d3b4bca218f9d4e50587191d7a691c825fbcbc0",
+    "config.json": "44c292b7719bfd875b493a5f52edcdbf454c8347ac6567f19e9f4d06d4fa6cc9",
+    "training_metrics.json": "29e29d8e5b8b0dc79c3d4c16ff5c5515b313d6f88806e3c833f9bee5bbcc348d",
+    "checkpoints.npz": "57973f7558357688018b214b31652a4afcefb4136e84bc4b74d22cf1ccd37b06"
+  },
+  "analysis_source_sha256": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+  "upstream_source_sha256": {
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b"
+  },
+  "jax_platforms": "cpu",
+  "python_version": "Python 3.11.15",
+  "output_sha256": {
+    "evaluation.json": "327f0d7484f9fbce317766d876112fba29e8d77044eeadd1ce2b18f8b40550dd",
+    "checkpoint-metadata.json": "38a592d670e376854282ed88baac876396b4b42fb58006a8267d0e2304ee022b",
+    "summary.json": "a04070a9ab2611fa5501eea113d808bea4c4475b6bcb5ed57bc67e51dcc616d0",
+    "process.log": "7c5270fdb514c53e6fb7ea55f0253db294f0a73dc3017278dd23820733549d68",
+    "evaluation-input/results.json": "33b39f508a252688c11c5b847d3b4bca218f9d4e50587191d7a691c825fbcbc0",
+    "evaluation-input/checkpoints.npz": "57973f7558357688018b214b31652a4afcefb4136e84bc4b74d22cf1ccd37b06"
+  },
+  "wall_seconds": 10.421401051993598
+}

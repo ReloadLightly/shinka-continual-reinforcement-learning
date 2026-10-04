@@ -1,0 +1,1536 @@
+{
+  "protocol_version": "adaptive-repeated-validation-v1",
+  "kind": "repeated_reserved",
+  "profile": {
+    "name": "adaptive-validation",
+    "purpose": "Reserved adaptive finalist validation; different phase interval and untouched partition",
+    "env": "CartPole-v1_sigma0.5",
+    "num_phases": 4,
+    "num_tasks": 2,
+    "episode_length": 500,
+    "eval_episodes": 10,
+    "seeds": [
+      7001,
+      7002,
+      7003,
+      7004,
+      7005
+    ],
+    "ne": {
+      "num_generations": 320,
+      "task_interval": 80,
+      "pop_size": 64,
+      "num_evals": 3
+    },
+    "ppo": null
+  },
+  "objective_version": "adaptive-active-previous-v1",
+  "objective_weights": {
+    "active": 0.5,
+    "previous": 0.5
+  },
+  "trial_offset": 1,
+  "eval_seed_offset": 900000,
+  "posthoc_episodes": 10,
+  "upstream": "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "python": "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution/.venv/bin/python",
+  "timeout_seconds": 1800,
+  "cpu_affinity": [
+    0,
+    1
+  ],
+  "thread_environment": {
+    "JAX_PLATFORMS": "cpu",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OMP_THREAD_LIMIT": "1",
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_WAIT_POLICY": "PASSIVE",
+    "MKL_DYNAMIC": "FALSE",
+    "NUMEXPR_NUM_THREADS": "1",
+    "NUMEXPR_MAX_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1",
+    "BLIS_NUM_THREADS": "1",
+    "GOTO_NUM_THREADS": "1"
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "jax_backend": "cpu",
+    "jax_devices": [
+      "TFRT_CPU_0"
+    ],
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "thread_environment": {
+      "JAX_PLATFORMS": "cpu",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OMP_THREAD_LIMIT": "1",
+      "OMP_DYNAMIC": "FALSE",
+      "OMP_WAIT_POLICY": "PASSIVE",
+      "MKL_DYNAMIC": "FALSE",
+      "NUMEXPR_NUM_THREADS": "1",
+      "NUMEXPR_MAX_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1",
+      "GOTO_NUM_THREADS": "1"
+    },
+    "packages": {
+      "PyYAML": "6.0.3",
+      "rich": "15.0.0",
+      "six": "1.17.0",
+      "tensorstore": "0.1.84",
+      "fonttools": "4.63.0",
+      "mdurl": "0.1.2",
+      "flax": "0.10.6",
+      "toolz": "1.1.0",
+      "pandas": "3.0.5",
+      "optax": "0.2.6",
+      "jaxlib": "0.5.3",
+      "ml_dtypes": "0.5.4",
+      "chex": "0.1.90",
+      "typing_extensions": "4.16.0",
+      "scipy": "1.17.1",
+      "seaborn": "0.13.2",
+      "humanize": "4.16.0",
+      "markdown-it-py": "4.2.0",
+      "simplejson": "4.1.1",
+      "contourpy": "1.3.3",
+      "pillow": "12.3.0",
+      "opt_einsum": "3.4.0",
+      "zipp": "4.1.0",
+      "aiofiles": "25.1.0",
+      "jax": "0.5.3",
+      "numpy": "1.26.4",
+      "nest-asyncio": "1.6.0",
+      "treescope": "0.1.10",
+      "protobuf": "6.33.6",
+      "Pygments": "2.20.0",
+      "packaging": "26.2",
+      "pyparsing": "3.3.2",
+      "kiwisolver": "1.5.0",
+      "absl-py": "2.5.0",
+      "matplotlib": "3.11.1",
+      "etils": "1.14.0",
+      "cloudpickle": "3.1.2",
+      "Farama-Notifications": "0.0.6",
+      "python-dateutil": "2.9.0.post0",
+      "gymnasium": "1.2.3",
+      "msgpack": "1.2.1",
+      "fsspec": "2026.6.0",
+      "cycler": "0.12.1",
+      "orbax-checkpoint": "0.11.24",
+      "gymnax": "0.0.9"
+    },
+    "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "numerical_environment": {
+      "XLA_FLAGS": null,
+      "JAX_ENABLE_X64": null,
+      "JAX_DEFAULT_MATMUL_PRECISION": null,
+      "JAX_NUM_CPU_DEVICES": null,
+      "PYTHONHASHSEED": null,
+      "PYTHONPATH": null
+    }
+  },
+  "source_sha256": {
+    "src/shinka_crl/adaptive_evaluation.py": "d36bca3150805a5f37be692724396988b1efee4780fc1c2c0ab1ee39990c23e7",
+    "src/shinka_crl/adaptive_objective.py": "47685df2f6c3597fdf29a4df6fc23bce54b2240b6ec8957178795d5079cd6422",
+    "src/shinka_crl/adaptive.py": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c",
+    "scripts/adaptive_train.py": "de5ddc28ce8c43e25c5bc96bfbec6df7aa945207ee38450422ac5bbedd4d5c8f",
+    "scripts/run_adaptive_controls.py": "13b253dc46e2019df965b77d00beb3dbfab88240eea2ac39f58d38a810a2e856",
+    "scripts/report_adaptive_controls.py": "c253007d97e4407cb2159c09a3aada68e4d35e70e5b0a779ef8ff6436f7607de",
+    "tasks/cartpole_adaptive/evaluate.py": "4267f8ede0321fcd84ae33caf6bcb75d1ecfb6416fb1444161789ec5f28ff05b",
+    "tasks/cartpole_adaptive/initial.py": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+    "tasks/cartpole_adaptive/arithmetic.py": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+    "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad",
+    "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+    "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+    "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+    "src/shinka_crl/search.py": "2acd57d3155d64015418ce8f581ad625767f729cd0ab17718ec8844c7db9d0dd",
+    "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+    "src/shinka_crl/profiles/adaptive-search.json": "d575715ba5bb53d20cf0e81982bfd2f5105397d46a9c2e0c6966e78457e8cca4",
+    "src/shinka_crl/profiles/adaptive-validation.json": "8a727f13482140dcb1acd4b5a6d917c347d4bcba89b60b96d51285636fe5d435",
+    "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+    "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267",
+    "docs/adaptive-seed-allocation-20261003.json": "e1fe429c29719a6db59e649d66e679261ed074f9a16bdef021539add79e1405a",
+    "reports/validation-static-20261002/summary.json": "65fd015d023103cd2d0aa2c76466ed73d49d8028687b16a086c17e0216fe81c6",
+    "src/shinka_crl/adaptive_validation.py": "0d0e5d46cdae5dfd3f4ac46563829926c4e938a3b53fdfea7b3bea4ec754bf25",
+    "scripts/run_adaptive_validation.py": "6bb67da57b83333990f4349645d96f90a978fc20fc3e3a561c63992c29c0bdec",
+    "scripts/report_adaptive_validation.py": "6b5f5f301bba36fbf67180d1fe8f1c1a5b015e5672b01b3f6367df166edd5752"
+  },
+  "implementation_revision": "f821946440ea7957b1f63958749159fd625c1f1d",
+  "native_source_sha256": {
+    "scripts/analysis/behavioural_divergence.py": "a4d807148d419173606a7d2f2c486386bdf5ad4c89083a7c251b7492b77450da",
+    "scripts/analysis/build_freq_matched.py": "6ca202a50e50460b3b680ef8258110cce375559004e058e89175663324a5bcbc",
+    "scripts/analysis/child_survival.py": "587c9776ab15f6ea0c611731b7a255d91dab7783d6b085afcb0fc81ff2aeaaf2",
+    "scripts/analysis/curvature_width.py": "a27f78f0e7a95332b4c51c8cfec9663b18fa6678e4b4c208c8bb341412c5db76",
+    "scripts/analysis/dormancy_at_init.py": "1b03dfcbf79db97d27181985ee92bbed50e50efec525eee8d7aa2cd6e685f6c8",
+    "scripts/analysis/es_arm.py": "d070493d90ad0df71a76e66301a083ff4eafd40aef62660b69938d67c486f0fa",
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "scripts/analysis/generalist_checkpoints.py": "daf8a7056a1e3f03cef4a3dd3b7c93c119f3b2898ac01c104f5f83bb5625f474",
+    "scripts/analysis/landscape_slices.py": "0585f44fbd37e09cbfafbf570a4c31de2439b7621c4915fcd769c6150337bc4b",
+    "scripts/analysis/merge_plasticity_checkpoints.py": "4b3cbe8d2efd92b0bdd05d64f73683927b7da08c7a8f3e69a1f6d4644528612a",
+    "scripts/analysis/plasticity_checkpoints.py": "b3d501a3eeb26454a198ec25f548e867ddd3f6edfacc5ef089878edc561cfa22",
+    "scripts/analysis/plot_basin_width_direction.py": "a2140d5ad12b71b87a7284e927ad3f7148c511f621669ad5b637f20594b42a4c",
+    "scripts/analysis/plot_basin_width_evolution.py": "7da79594a19a49a9f0801d2e94b2b0f219aa603cf010ed976d4deeca037eb8ed",
+    "scripts/analysis/plot_basin_width_levels.py": "fcdc66a9a1e64ea00c8e6c7026b70bf631d3c236a62cac9d83d395914aad762b",
+    "scripts/analysis/plot_basin_width_methods.py": "52d6c017840a81327dc90cf51e995898fc25f4c046b87e275849aa5d922b1bd7",
+    "scripts/analysis/plot_basin_width_return.py": "4e54e471d8212728d7a9ff6b00c1a64efd82ed79afcdd3bfbbbc15b25e751926",
+    "scripts/analysis/plot_continual_combined.py": "e3e5d0fd30a19074d61fcd3214687b4a456534314baeaefad84002abc6fcbc94",
+    "scripts/analysis/plot_continual_lineplots.py": "24e1f13b33467a587cf659a1bc2f0b08980924259855e4a440ad4dea60e397d8",
+    "scripts/analysis/plot_diversity_plasticity.py": "685b39e1c026d9d8b760f43c0acd9b1fcc1be142c3ee65b1c7aec8cec0b75515",
+    "scripts/analysis/plot_frequency.py": "f16de3103abcc7f62238c3e05459cbe12b62cd8603a505de7bfad09037ae7f99",
+    "scripts/analysis/plot_generalist_outcomes.py": "ae8410de6cffb23d93cf468cda9938ade5768a8957cd8f51ff9c991f3602582f",
+    "scripts/analysis/plot_generalist_scores.py": "e5a207395ef6b96a4f523fef21063b8cae1f9bb5458c4f5cb016511819ed1a16",
+    "scripts/analysis/plot_hparam_sigma.py": "7d2751fb9acce00e56e50534b90b5a7d9353b4a62fa0e3fa2a9980844a6351df",
+    "scripts/analysis/plot_hparam_updates.py": "28a7ea378cd5b2cb524880e78e1d459bc7fc5211d77696cef878cf5069bc74ea",
+    "scripts/analysis/plot_landscape_examples.py": "a36b27a8cd2d24eb9704fffddefbe127012952760013d391dc16f1accf4a0d43",
+    "scripts/analysis/plot_landscape_main.py": "76a90b408b02410c8c61c2b440d28ae9f3f28f7fbb4b10b83f88cb7e630f3648",
+    "scripts/analysis/plot_landscape_slices.py": "dd42db96649fc505777950446f69645db45b86ff30166ea9eb8c8c94314e33de",
+    "scripts/analysis/plot_metrics_appendix.py": "b2d87a088e2fd932a1fdeeeb5286237795e54afa4212ad10570c0ca6f8d7a2d8",
+    "scripts/analysis/plot_metrics_overview.py": "995d01a08c38e5f76d3764dac1c1c4b80b5fcbc1ad51a1a20c398c842f5e8f78",
+    "scripts/analysis/plot_noncontinual_solve.py": "a51fd3d67481cef632c17a63aa2d922a08d27797fd32e843bf98b1b9e112af71",
+    "scripts/analysis/plot_novelty_lineplots.py": "617001a19dcaf76a6185afb967d9481a09d68177c32283550e21f6e10dad5ca8",
+    "scripts/analysis/plot_plasticity_overview.py": "a04c2fce19ba0eb439255f922a23a1d3f4e81c375e499abf225e5592550ca8c7",
+    "scripts/analysis/plot_population_diversity.py": "712bfd29c9611e70e7e5ccdf80be3dbe34f2767fc5541e133dc04ff733d9f5f1",
+    "scripts/analysis/plot_shared_basin.py": "f246047b5353a9564e99fed9a2a8b0838c9b8178dc6347026ff245225b7244dc",
+    "scripts/analysis/plot_stability_plasticity.py": "5b8e7ed1fef510ede6a786c4537520c6683b861b9d9fcae68579034f5726d5fd",
+    "scripts/analysis/plot_toy_local_optima.py": "4bd1da6250ecb5da7a3e51115b6f2397923a0b2bbb57d05e92952eeccf197eac",
+    "scripts/analysis/plot_toy_sigma_basin.py": "f5a6880289b8e40e765873b677ee76303d777f5be942ab1efe99b88169fbd576",
+    "scripts/plotting/make_lineplot.py": "8e3aa0a7c8176da81aea6fde37702d022e65208506838380e4db70112dd132d2",
+    "scripts/plotting/make_metrics_figure.py": "296e00d2340ea5da3487a3657ec91e3c5da6ee456b2d1d0fdb5d2f057076b7ea",
+    "scripts/plotting/make_plasticity_figure.py": "862e765bb707ce85c39ceeb895822ac7e60743838bdae3d41bf8e490f4c1f9bb",
+    "scripts/plotting/make_toy_figures.py": "72935b218df86b68d3832894e83c024300994180d14f966141c13ac5cd80ad22",
+    "scripts/train/toy_sweep.py": "ca8f6726563ef40db8fd06d77ad47348a3cae4196fb112713a7cd2e9b7a44999",
+    "scripts/verify_runs.py": "48ac73513956cdbefd2bd9234ddf86e970b1bf112be39c4b18199e063f9eae6d",
+    "source/__init__.py": "1c25beab70941bdd9274e50815ff1b74b05dbc8a33c9636257913f7b87a81906",
+    "source/algorithms/__init__.py": "27963ee666194b727d243d2d18ddfc99aa899d75b5f3d289193754277e44d683",
+    "source/algorithms/ne/__init__.py": "a0fd4bc8e426f42263bcde6dceeda4b7268205c9cf6be02f56d262060618670b",
+    "source/algorithms/ne/dns.py": "73437aabb54e94e57a658c2674b3fd39209edd9a8a7a9f81148538e89c74bd62",
+    "source/algorithms/ne/es.py": "7532eca7d3a8537142d41d616f3e82ca6c5b23df4b6b069ea14897b4e1d825ea",
+    "source/algorithms/ne/ga.py": "597e33255acecd6f4aae9bde28c98a247659fb72b5641b41d31a507124d302bd",
+    "source/algorithms/ne/searchers.py": "1d7f66de7a7f909e0b693dcb15a1c1935f3b8b0b700852846f2aa484ddc65d03",
+    "source/algorithms/ne/variation.py": "7512fa01a251783a59e6fd47d0b7c64015b6f8232e207caa89b184cd3f1ba35b",
+    "source/algorithms/networks.py": "2d050532d2a1fff2d22ca978b4419cdef3eb3825ea95654f523b971e1918d83c",
+    "source/algorithms/rl/__init__.py": "aaaed49778008e4e4f8b1dc16a1482e12f74b3932bab7cf25f7cf0897014a4b9",
+    "source/algorithms/rl/action_heads.py": "ad9e72e284af8667944ebc7b816c2dbd87a017477bff6e69e29342f61666cb0c",
+    "source/algorithms/rl/cchain.py": "1d769034239a96483e38d9df6bf08e0ddf7041cd19371b15bc77526dfd512f03",
+    "source/algorithms/rl/pbt.py": "bb0476132bb29351021ebc121fce2434dbe035d0f15b4f885834e0e0ecaba84e",
+    "source/algorithms/rl/ppo.py": "a7e64ba657a28bbda175259800699b114c6ec0a85deeb266505c127c8d2b2ab2",
+    "source/algorithms/rl/redo.py": "d0896e6e7e3ccbcbdc0af179af105d1755a5c84de7b04f165c5e57fb0ffe287b",
+    "source/configs/gymnax.yaml": "02ba06617e0894fcaf02505d45c6d4157430f79378e3726c6560d3115674ad80",
+    "source/configs/kinetix.yaml": "3971bdd00be2847384c81a492ad38ea054d996b5f07cf6d4f0749033c7f90c73",
+    "source/configs/minigrid.yaml": "aa8379e654ec25c027f982e33b10cdcdc280fda80910fb864c8a6a476105555a",
+    "source/configs/mjx.yaml": "ee74967179071dcd57dc6910065888c7470fc47a49265f2a829d1fbfdaa5b2ae",
+    "source/envs/__init__.py": "80dc3aac3e11ed6a95cc6c74c23e9db2052d7f9862f57350d58874ae4dda1aee",
+    "source/envs/brax_common.py": "98453517832c6a373f518808719b2979355e98a9b50401860efb7d0c7112ba87",
+    "source/envs/gymnax_classic.py": "dcf3f417022fc205dead7771e33568e31dda1d511b7767d5cb08fdd88376c136",
+    "source/envs/kinetix.py": "1c9ac367a9f05af7bff9e9fbb9d3c8d38b78f17a44813d66d865fe3978a86184",
+    "source/envs/kinetix_levels.py": "92dfb407ccbd607e66da8106146286649a27cad0d8355b0509a974082e34b42e",
+    "source/envs/minigrid.py": "dd8aeb2ebf50e661b7d954a5ea5318ae961e14d475efb5494922e2bd8ce2208f",
+    "source/envs/mjx.py": "26493c356d7122171c34ce2f6c9aa555de4589e98a8028d514f96e8a9c0aa1fb",
+    "source/envs/registry.py": "8db58494594c42209c1db95552b08de9f4c8d7f8dc47351f18ff770c63f3f16e",
+    "source/envs/run_context.py": "b64d812403f91c333b4aa51d63efb3cc00cc63c9f5decc6099447fe6592d31f3",
+    "source/envs/toy_landscapes.py": "8107f177fe7b5eda48859142cb40feda8bd26795639736c0b827bd9e0ceee858",
+    "source/metrics/__init__.py": "7eb9270ab986f465a14fd90edaf7c61ac3bc6c2423e5711e5a36db3fa79b27bc",
+    "source/metrics/aurora.py": "815a15860e21d6c472b5e6488ec0a90e84a71a725a18c857ccdf77ad58b24bfc",
+    "source/metrics/behavioral_divergence.py": "89947df07635d55a0c45da0ab9ddcaaabcaeed347c4852ccbe944cd4e8d6b04d",
+    "source/metrics/behaviour_descriptors.py": "5bf3480c8d0930773ed06a52b6512c16cf6be8488dd0dc3f0fdd1dcfc16692a7",
+    "source/metrics/behaviour_tracking.py": "e8195d8aa95a8df0c8f68f8a851ada1e52a50678c6e6486cb26368b99dc0b973",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b",
+    "source/metrics/evaluation_metrics.py": "5a242bf9994eb2c9d705fc262c063be63107d130197689ec090ec7a6f93d4a3a",
+    "source/metrics/ntk.py": "069894b94ac335a5aefafc788b33412b84184d15e9eb8e75388cde48e1dd2e97",
+    "source/metrics/plasticity.py": "098f3ac31103d470ee78919574e9bb65e50475dc2227b3f0fc4bc520d4fcf6c2",
+    "source/metrics/population_diversity.py": "0a6a00f689bedc505b87c42645d4a53d15abc5bc96f60c4391ed95a5d1d9fcf2",
+    "source/metrics/probe.py": "dac5395d09cef41132666500c1e94f0d76301f23f4299a6f9238248f315c5f97",
+    "source/metrics/rl_diagnostics.py": "d947d5f885aa48fafb39dd75d1adbd5bfbf858718582955d42c3e9ab188b2348",
+    "source/metrics/weight_stats.py": "830944eaa3adcdc66cd1125fb2f8450cfc5dd6b0304d9758106388169492b6bd",
+    "source/metrics/zero_shot.py": "6d1021d43898e39199d1c47b08d5f78f6a2600d7011da67d9eda70fb0c0f8272",
+    "source/run.py": "867f76ec7527b7bc4093c9479cd803c26527e9315194e7840c67cb16209a1034",
+    "source/runners/__init__.py": "ce4da809c4c0853765d25484497737aa7b53d8ff0a7f88ef70e954179d995b10",
+    "source/runners/common.py": "7446a4978a7d3854343658e5b43fa1eddb1d3726b8aeac941d9a41e669e12a09",
+    "source/runners/train_nes.py": "9b67e64907ec1ee8f946568f2bcb69f12b581051e5e2a513b5e65deb1fda8ef7",
+    "source/runners/train_ppo.py": "1d7aa143393ac367d14ddb8e5bab30418a00918ef3714eecbead0e78ac089f0f",
+    "source/utils/__init__.py": "b8203d2260e552104a9a4e1c44ab77ad07722221eabc41a624e4f659d147d6fe",
+    "source/utils/config.py": "a10e513e4cafab183170e67c81491675d2e5e5d498ec25cac4b05afc88f14869",
+    "source/utils/run_artifacts.py": "f930bc84a88c428c1e950461aa2a18c30997874e45181b33caa2d4c86d08d128",
+    "source/utils/runtime.py": "1a35e167c2e390fba2aa7c3e8062c2eca31982dc396cc863fefe5b8bfb96eb1b",
+    "source/utils/task_sequence.py": "3c2bebb097f83dead31652d6391a1d86dfc76e619d64c111958770eca2a52e54"
+  },
+  "conditions": [
+    {
+      "id": "evolutionary_202610041",
+      "variant": "ga_adaptive",
+      "source": "programs/evolutionary_202610041.py",
+      "source_sha256": "b8becacc7b0954df3ee034a9741f7f15cca46ae24dc65a913e22a07195fc9dc7",
+      "settings": null,
+      "program": {
+        "source_sha256": "b8becacc7b0954df3ee034a9741f7f15cca46ae24dc65a913e22a07195fc9dc7",
+        "canonical_ast_sha256": "79b94bfe369d7bb547f77000911d177484e33035849cb853118875bdc9fab5e7",
+        "ast_nodes": 324,
+        "grammar_version": "adaptive-width-v1"
+      }
+    },
+    {
+      "id": "independent_202610041",
+      "variant": "ga_adaptive",
+      "source": "programs/independent_202610041.py",
+      "source_sha256": "accf7559efa2c56a6cbe80d979dc64a46b3f6a30e5a71d1993244aafbc351af5",
+      "settings": null,
+      "program": {
+        "source_sha256": "accf7559efa2c56a6cbe80d979dc64a46b3f6a30e5a71d1993244aafbc351af5",
+        "canonical_ast_sha256": "29e77040ad1e929b0abff52d42be75e2091b74dc2fed4648570786f121efd934",
+        "ast_nodes": 393,
+        "grammar_version": "adaptive-width-v1"
+      }
+    },
+    {
+      "id": "independent_202610042",
+      "variant": "ga_adaptive",
+      "source": "programs/independent_202610042.py",
+      "source_sha256": "3e9fd75231928baee313dcb7ab9464f959e8bda2da6694b2f9a0f15a51b78690",
+      "settings": null,
+      "program": {
+        "source_sha256": "3e9fd75231928baee313dcb7ab9464f959e8bda2da6694b2f9a0f15a51b78690",
+        "canonical_ast_sha256": "7256628dce286bdab4914a1cff2200f19e316ef929e15263633ed73035d40ff2",
+        "ast_nodes": 341,
+        "grammar_version": "adaptive-width-v1"
+      }
+    },
+    {
+      "id": "evolutionary_202610042",
+      "variant": "ga_adaptive",
+      "source": "programs/evolutionary_202610042.py",
+      "source_sha256": "cc131135d2880399079539fcab7a460bf2fab4a062e7868ef883f82974604f8d",
+      "settings": null,
+      "program": {
+        "source_sha256": "cc131135d2880399079539fcab7a460bf2fab4a062e7868ef883f82974604f8d",
+        "canonical_ast_sha256": "cd38de61e0b4da1faf75c09721e5ab9d6c8c4a6bc7cd9d93c3496e58b9ec6a12",
+        "ast_nodes": 339,
+        "grammar_version": "adaptive-width-v1"
+      }
+    },
+    {
+      "id": "identity",
+      "variant": "ga_adaptive",
+      "source": "programs/identity.py",
+      "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+      "settings": null,
+      "program": {
+        "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+        "canonical_ast_sha256": "17b9aa3eb9b1bd05e7cacaacbc7c4ca17b1d012a475754b9ebbaf8182dd1614c",
+        "ast_nodes": 13,
+        "grammar_version": "adaptive-width-v1"
+      }
+    },
+    {
+      "id": "arithmetic",
+      "variant": "ga_adaptive",
+      "source": "programs/arithmetic.py",
+      "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+      "settings": null,
+      "program": {
+        "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+        "canonical_ast_sha256": "d5971d9f394f0df46346e414e90557f96998a8ee6a1315982fb49b5c8481fcf4",
+        "ast_nodes": 29,
+        "grammar_version": "adaptive-width-v1"
+      }
+    },
+    {
+      "id": "focus",
+      "variant": "ga_focus",
+      "source": null,
+      "source_sha256": null,
+      "settings": null
+    }
+  ],
+  "unique_recipes": [
+    {
+      "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "79b94bfe369d7bb547f77000911d177484e33035849cb853118875bdc9fab5e7",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "fee1ea6ef383315e4e7986de5ee1c191a6da8847658d0e7bdf45798ada44c368"
+      },
+      "candidate": {
+        "id": "evolutionary_202610041",
+        "variant": "ga_adaptive",
+        "source": "programs/evolutionary_202610041.py",
+        "source_sha256": "b8becacc7b0954df3ee034a9741f7f15cca46ae24dc65a913e22a07195fc9dc7",
+        "settings": null,
+        "program": {
+          "source_sha256": "b8becacc7b0954df3ee034a9741f7f15cca46ae24dc65a913e22a07195fc9dc7",
+          "canonical_ast_sha256": "79b94bfe369d7bb547f77000911d177484e33035849cb853118875bdc9fab5e7",
+          "ast_nodes": 324,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "evolutionary_202610041"
+      ]
+    },
+    {
+      "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "29e77040ad1e929b0abff52d42be75e2091b74dc2fed4648570786f121efd934",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "fee1ea6ef383315e4e7986de5ee1c191a6da8847658d0e7bdf45798ada44c368"
+      },
+      "candidate": {
+        "id": "independent_202610041",
+        "variant": "ga_adaptive",
+        "source": "programs/independent_202610041.py",
+        "source_sha256": "accf7559efa2c56a6cbe80d979dc64a46b3f6a30e5a71d1993244aafbc351af5",
+        "settings": null,
+        "program": {
+          "source_sha256": "accf7559efa2c56a6cbe80d979dc64a46b3f6a30e5a71d1993244aafbc351af5",
+          "canonical_ast_sha256": "29e77040ad1e929b0abff52d42be75e2091b74dc2fed4648570786f121efd934",
+          "ast_nodes": 393,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "independent_202610041"
+      ]
+    },
+    {
+      "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "7256628dce286bdab4914a1cff2200f19e316ef929e15263633ed73035d40ff2",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "fee1ea6ef383315e4e7986de5ee1c191a6da8847658d0e7bdf45798ada44c368"
+      },
+      "candidate": {
+        "id": "independent_202610042",
+        "variant": "ga_adaptive",
+        "source": "programs/independent_202610042.py",
+        "source_sha256": "3e9fd75231928baee313dcb7ab9464f959e8bda2da6694b2f9a0f15a51b78690",
+        "settings": null,
+        "program": {
+          "source_sha256": "3e9fd75231928baee313dcb7ab9464f959e8bda2da6694b2f9a0f15a51b78690",
+          "canonical_ast_sha256": "7256628dce286bdab4914a1cff2200f19e316ef929e15263633ed73035d40ff2",
+          "ast_nodes": 341,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "independent_202610042"
+      ]
+    },
+    {
+      "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "cd38de61e0b4da1faf75c09721e5ab9d6c8c4a6bc7cd9d93c3496e58b9ec6a12",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "fee1ea6ef383315e4e7986de5ee1c191a6da8847658d0e7bdf45798ada44c368"
+      },
+      "candidate": {
+        "id": "evolutionary_202610042",
+        "variant": "ga_adaptive",
+        "source": "programs/evolutionary_202610042.py",
+        "source_sha256": "cc131135d2880399079539fcab7a460bf2fab4a062e7868ef883f82974604f8d",
+        "settings": null,
+        "program": {
+          "source_sha256": "cc131135d2880399079539fcab7a460bf2fab4a062e7868ef883f82974604f8d",
+          "canonical_ast_sha256": "cd38de61e0b4da1faf75c09721e5ab9d6c8c4a6bc7cd9d93c3496e58b9ec6a12",
+          "ast_nodes": 339,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "evolutionary_202610042"
+      ]
+    },
+    {
+      "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "17b9aa3eb9b1bd05e7cacaacbc7c4ca17b1d012a475754b9ebbaf8182dd1614c",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "fee1ea6ef383315e4e7986de5ee1c191a6da8847658d0e7bdf45798ada44c368"
+      },
+      "candidate": {
+        "id": "identity",
+        "variant": "ga_adaptive",
+        "source": "programs/identity.py",
+        "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+        "settings": null,
+        "program": {
+          "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+          "canonical_ast_sha256": "17b9aa3eb9b1bd05e7cacaacbc7c4ca17b1d012a475754b9ebbaf8182dd1614c",
+          "ast_nodes": 13,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "identity"
+      ]
+    },
+    {
+      "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+      "recipe": {
+        "native_method": "ga",
+        "variant": "ga_adaptive",
+        "program_identity": "d5971d9f394f0df46346e414e90557f96998a8ee6a1315982fb49b5c8481fcf4",
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 32,
+        "memory_initial": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "focus_settings": null,
+        "centroid_inside_population_budget": false,
+        "adapter": {
+          "grammar": "adaptive-width-v1",
+          "width_bounds": [
+            0.001,
+            2.0
+          ],
+          "source_sha256": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c"
+        },
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "fee1ea6ef383315e4e7986de5ee1c191a6da8847658d0e7bdf45798ada44c368"
+      },
+      "candidate": {
+        "id": "arithmetic",
+        "variant": "ga_adaptive",
+        "source": "programs/arithmetic.py",
+        "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+        "settings": null,
+        "program": {
+          "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+          "canonical_ast_sha256": "d5971d9f394f0df46346e414e90557f96998a8ee6a1315982fb49b5c8481fcf4",
+          "ast_nodes": 29,
+          "grammar_version": "adaptive-width-v1"
+        }
+      },
+      "memberships": [
+        "arithmetic"
+      ]
+    },
+    {
+      "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+      "recipe": {
+        "native_method": "ga_focus",
+        "variant": "ga_focus",
+        "program_identity": null,
+        "sigma_initial": 0.5,
+        "archive_fraction": 0.5,
+        "archive_size": 32,
+        "offspring_count": 31,
+        "memory_initial": null,
+        "focus_settings": {
+          "elite_ratio": 0.5,
+          "init_around_mean": false,
+          "cross_over_rate": 0.0,
+          "focus_rate": 0.3,
+          "sigma_rate": 0.1,
+          "track_target": 0.9,
+          "sigma_min": 1e-05,
+          "explore_fraction": 0.25
+        },
+        "centroid_inside_population_budget": true,
+        "adapter": null,
+        "settings": null,
+        "native_fixed": {
+          "hidden_dims": [
+            16,
+            16
+          ],
+          "num_params": 386,
+          "objective": "mean",
+          "obs_norm": false,
+          "first_task_clean": true,
+          "task_warmup": 0,
+          "init_around_mean": false,
+          "refresh": true,
+          "variation": "gaussian",
+          "cross_over_rate": 0.0,
+          "schedule": "switch",
+          "noise_range": 0.5
+        },
+        "evaluation_context_sha256": "fee1ea6ef383315e4e7986de5ee1c191a6da8847658d0e7bdf45798ada44c368"
+      },
+      "candidate": {
+        "id": "focus",
+        "variant": "ga_focus",
+        "source": null,
+        "source_sha256": null,
+        "settings": null
+      },
+      "memberships": [
+        "focus"
+      ]
+    }
+  ],
+  "trial_order": [
+    {
+      "index": 0,
+      "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+      "memberships": [
+        "evolutionary_202610041"
+      ],
+      "seed": 7001,
+      "trial": 7002,
+      "eval_seed": 907001
+    },
+    {
+      "index": 1,
+      "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+      "memberships": [
+        "independent_202610041"
+      ],
+      "seed": 7001,
+      "trial": 7002,
+      "eval_seed": 907001
+    },
+    {
+      "index": 2,
+      "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+      "memberships": [
+        "independent_202610042"
+      ],
+      "seed": 7001,
+      "trial": 7002,
+      "eval_seed": 907001
+    },
+    {
+      "index": 3,
+      "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+      "memberships": [
+        "evolutionary_202610042"
+      ],
+      "seed": 7001,
+      "trial": 7002,
+      "eval_seed": 907001
+    },
+    {
+      "index": 4,
+      "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+      "memberships": [
+        "identity"
+      ],
+      "seed": 7001,
+      "trial": 7002,
+      "eval_seed": 907001
+    },
+    {
+      "index": 5,
+      "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+      "memberships": [
+        "arithmetic"
+      ],
+      "seed": 7001,
+      "trial": 7002,
+      "eval_seed": 907001
+    },
+    {
+      "index": 6,
+      "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+      "memberships": [
+        "focus"
+      ],
+      "seed": 7001,
+      "trial": 7002,
+      "eval_seed": 907001
+    },
+    {
+      "index": 7,
+      "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+      "memberships": [
+        "evolutionary_202610041"
+      ],
+      "seed": 7002,
+      "trial": 7003,
+      "eval_seed": 907002
+    },
+    {
+      "index": 8,
+      "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+      "memberships": [
+        "independent_202610041"
+      ],
+      "seed": 7002,
+      "trial": 7003,
+      "eval_seed": 907002
+    },
+    {
+      "index": 9,
+      "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+      "memberships": [
+        "independent_202610042"
+      ],
+      "seed": 7002,
+      "trial": 7003,
+      "eval_seed": 907002
+    },
+    {
+      "index": 10,
+      "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+      "memberships": [
+        "evolutionary_202610042"
+      ],
+      "seed": 7002,
+      "trial": 7003,
+      "eval_seed": 907002
+    },
+    {
+      "index": 11,
+      "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+      "memberships": [
+        "identity"
+      ],
+      "seed": 7002,
+      "trial": 7003,
+      "eval_seed": 907002
+    },
+    {
+      "index": 12,
+      "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+      "memberships": [
+        "arithmetic"
+      ],
+      "seed": 7002,
+      "trial": 7003,
+      "eval_seed": 907002
+    },
+    {
+      "index": 13,
+      "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+      "memberships": [
+        "focus"
+      ],
+      "seed": 7002,
+      "trial": 7003,
+      "eval_seed": 907002
+    },
+    {
+      "index": 14,
+      "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+      "memberships": [
+        "evolutionary_202610041"
+      ],
+      "seed": 7003,
+      "trial": 7004,
+      "eval_seed": 907003
+    },
+    {
+      "index": 15,
+      "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+      "memberships": [
+        "independent_202610041"
+      ],
+      "seed": 7003,
+      "trial": 7004,
+      "eval_seed": 907003
+    },
+    {
+      "index": 16,
+      "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+      "memberships": [
+        "independent_202610042"
+      ],
+      "seed": 7003,
+      "trial": 7004,
+      "eval_seed": 907003
+    },
+    {
+      "index": 17,
+      "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+      "memberships": [
+        "evolutionary_202610042"
+      ],
+      "seed": 7003,
+      "trial": 7004,
+      "eval_seed": 907003
+    },
+    {
+      "index": 18,
+      "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+      "memberships": [
+        "identity"
+      ],
+      "seed": 7003,
+      "trial": 7004,
+      "eval_seed": 907003
+    },
+    {
+      "index": 19,
+      "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+      "memberships": [
+        "arithmetic"
+      ],
+      "seed": 7003,
+      "trial": 7004,
+      "eval_seed": 907003
+    },
+    {
+      "index": 20,
+      "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+      "memberships": [
+        "focus"
+      ],
+      "seed": 7003,
+      "trial": 7004,
+      "eval_seed": 907003
+    },
+    {
+      "index": 21,
+      "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+      "memberships": [
+        "evolutionary_202610041"
+      ],
+      "seed": 7004,
+      "trial": 7005,
+      "eval_seed": 907004
+    },
+    {
+      "index": 22,
+      "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+      "memberships": [
+        "independent_202610041"
+      ],
+      "seed": 7004,
+      "trial": 7005,
+      "eval_seed": 907004
+    },
+    {
+      "index": 23,
+      "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+      "memberships": [
+        "independent_202610042"
+      ],
+      "seed": 7004,
+      "trial": 7005,
+      "eval_seed": 907004
+    },
+    {
+      "index": 24,
+      "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+      "memberships": [
+        "evolutionary_202610042"
+      ],
+      "seed": 7004,
+      "trial": 7005,
+      "eval_seed": 907004
+    },
+    {
+      "index": 25,
+      "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+      "memberships": [
+        "identity"
+      ],
+      "seed": 7004,
+      "trial": 7005,
+      "eval_seed": 907004
+    },
+    {
+      "index": 26,
+      "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+      "memberships": [
+        "arithmetic"
+      ],
+      "seed": 7004,
+      "trial": 7005,
+      "eval_seed": 907004
+    },
+    {
+      "index": 27,
+      "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+      "memberships": [
+        "focus"
+      ],
+      "seed": 7004,
+      "trial": 7005,
+      "eval_seed": 907004
+    },
+    {
+      "index": 28,
+      "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+      "memberships": [
+        "evolutionary_202610041"
+      ],
+      "seed": 7005,
+      "trial": 7006,
+      "eval_seed": 907005
+    },
+    {
+      "index": 29,
+      "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+      "memberships": [
+        "independent_202610041"
+      ],
+      "seed": 7005,
+      "trial": 7006,
+      "eval_seed": 907005
+    },
+    {
+      "index": 30,
+      "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+      "memberships": [
+        "independent_202610042"
+      ],
+      "seed": 7005,
+      "trial": 7006,
+      "eval_seed": 907005
+    },
+    {
+      "index": 31,
+      "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+      "memberships": [
+        "evolutionary_202610042"
+      ],
+      "seed": 7005,
+      "trial": 7006,
+      "eval_seed": 907005
+    },
+    {
+      "index": 32,
+      "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+      "memberships": [
+        "identity"
+      ],
+      "seed": 7005,
+      "trial": 7006,
+      "eval_seed": 907005
+    },
+    {
+      "index": 33,
+      "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+      "memberships": [
+        "arithmetic"
+      ],
+      "seed": 7005,
+      "trial": 7006,
+      "eval_seed": 907005
+    },
+    {
+      "index": 34,
+      "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+      "memberships": [
+        "focus"
+      ],
+      "seed": 7005,
+      "trial": 7006,
+      "eval_seed": 907005
+    }
+  ],
+  "provenance": {
+    "development_plan": {
+      "schema_version": 1,
+      "protocol_version": "adaptive-cartpole-v2",
+      "profile": {
+        "name": "adaptive-search",
+        "purpose": "Adaptive mutation program development; fresh partition and active/previous-task objective",
+        "env": "CartPole-v1_sigma0.5",
+        "num_phases": 4,
+        "num_tasks": 2,
+        "episode_length": 500,
+        "eval_episodes": 3,
+        "seeds": [
+          6001,
+          6002,
+          6003
+        ],
+        "ne": {
+          "num_generations": 80,
+          "task_interval": 20,
+          "pop_size": 64,
+          "num_evals": 3
+        },
+        "ppo": null
+      },
+      "reserved_validation_profile": {
+        "name": "adaptive-validation",
+        "purpose": "Reserved adaptive finalist validation; different phase interval and untouched partition",
+        "env": "CartPole-v1_sigma0.5",
+        "num_phases": 4,
+        "num_tasks": 2,
+        "episode_length": 500,
+        "eval_episodes": 10,
+        "seeds": [
+          7001,
+          7002,
+          7003,
+          7004,
+          7005
+        ],
+        "ne": {
+          "num_generations": 320,
+          "task_interval": 80,
+          "pop_size": 64,
+          "num_evals": 3
+        },
+        "ppo": null
+      },
+      "trial_offset": 1,
+      "eval_seed_offset": 900000,
+      "posthoc_episodes": 10,
+      "objective_version": "adaptive-active-previous-v1",
+      "objective_weights": {
+        "active": 0.5,
+        "previous": 0.5
+      },
+      "grammar_version": "adaptive-width-v1",
+      "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+      "upstream": "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution",
+      "python": "/home/roland/actir/shinka-continual-reinforcement-learning/.upstream/continual_neuroevolution/.venv/bin/python",
+      "timeout_seconds": 1800,
+      "cpu_affinity": [
+        0,
+        1
+      ],
+      "thread_environment": {
+        "JAX_PLATFORMS": "cpu",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "OMP_THREAD_LIMIT": "1",
+        "OMP_DYNAMIC": "FALSE",
+        "OMP_WAIT_POLICY": "PASSIVE",
+        "MKL_DYNAMIC": "FALSE",
+        "NUMEXPR_NUM_THREADS": "1",
+        "NUMEXPR_MAX_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1",
+        "BLIS_NUM_THREADS": "1",
+        "GOTO_NUM_THREADS": "1"
+      },
+      "runtime": {
+        "python": "3.11.15",
+        "jax_backend": "cpu",
+        "jax_devices": [
+          "TFRT_CPU_0"
+        ],
+        "cpu_affinity": [
+          0,
+          1
+        ],
+        "thread_environment": {
+          "JAX_PLATFORMS": "cpu",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "OMP_THREAD_LIMIT": "1",
+          "OMP_DYNAMIC": "FALSE",
+          "OMP_WAIT_POLICY": "PASSIVE",
+          "MKL_DYNAMIC": "FALSE",
+          "NUMEXPR_NUM_THREADS": "1",
+          "NUMEXPR_MAX_THREADS": "1",
+          "VECLIB_MAXIMUM_THREADS": "1",
+          "BLIS_NUM_THREADS": "1",
+          "GOTO_NUM_THREADS": "1"
+        },
+        "packages": {
+          "PyYAML": "6.0.3",
+          "rich": "15.0.0",
+          "six": "1.17.0",
+          "tensorstore": "0.1.84",
+          "fonttools": "4.63.0",
+          "mdurl": "0.1.2",
+          "flax": "0.10.6",
+          "toolz": "1.1.0",
+          "pandas": "3.0.5",
+          "optax": "0.2.6",
+          "jaxlib": "0.5.3",
+          "ml_dtypes": "0.5.4",
+          "chex": "0.1.90",
+          "typing_extensions": "4.16.0",
+          "scipy": "1.17.1",
+          "seaborn": "0.13.2",
+          "humanize": "4.16.0",
+          "markdown-it-py": "4.2.0",
+          "simplejson": "4.1.1",
+          "contourpy": "1.3.3",
+          "pillow": "12.3.0",
+          "opt_einsum": "3.4.0",
+          "zipp": "4.1.0",
+          "aiofiles": "25.1.0",
+          "jax": "0.5.3",
+          "numpy": "1.26.4",
+          "nest-asyncio": "1.6.0",
+          "treescope": "0.1.10",
+          "protobuf": "6.33.6",
+          "Pygments": "2.20.0",
+          "packaging": "26.2",
+          "pyparsing": "3.3.2",
+          "kiwisolver": "1.5.0",
+          "absl-py": "2.5.0",
+          "matplotlib": "3.11.1",
+          "etils": "1.14.0",
+          "cloudpickle": "3.1.2",
+          "Farama-Notifications": "0.0.6",
+          "python-dateutil": "2.9.0.post0",
+          "gymnasium": "1.2.3",
+          "msgpack": "1.2.1",
+          "fsspec": "2026.6.0",
+          "cycler": "0.12.1",
+          "orbax-checkpoint": "0.11.24",
+          "gymnax": "0.0.9"
+        },
+        "platform": "Linux-6.6.114.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+        "machine": "x86_64",
+        "processor": "x86_64",
+        "numerical_environment": {
+          "XLA_FLAGS": null,
+          "JAX_ENABLE_X64": null,
+          "JAX_DEFAULT_MATMUL_PRECISION": null,
+          "JAX_NUM_CPU_DEVICES": null,
+          "PYTHONHASHSEED": null,
+          "PYTHONPATH": null
+        }
+      },
+      "source_sha256": {
+        "src/shinka_crl/adaptive_evaluation.py": "d36bca3150805a5f37be692724396988b1efee4780fc1c2c0ab1ee39990c23e7",
+        "src/shinka_crl/adaptive_objective.py": "47685df2f6c3597fdf29a4df6fc23bce54b2240b6ec8957178795d5079cd6422",
+        "src/shinka_crl/adaptive.py": "e0c037bec77c21a789507361ecde1ed813f69c9653d83f585dec6b4a0eedc12c",
+        "scripts/adaptive_train.py": "de5ddc28ce8c43e25c5bc96bfbec6df7aa945207ee38450422ac5bbedd4d5c8f",
+        "scripts/run_adaptive_controls.py": "13b253dc46e2019df965b77d00beb3dbfab88240eea2ac39f58d38a810a2e856",
+        "scripts/report_adaptive_controls.py": "c253007d97e4407cb2159c09a3aada68e4d35e70e5b0a779ef8ff6436f7607de",
+        "tasks/cartpole_adaptive/evaluate.py": "4267f8ede0321fcd84ae33caf6bcb75d1ecfb6416fb1444161789ec5f28ff05b",
+        "tasks/cartpole_adaptive/initial.py": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+        "tasks/cartpole_adaptive/arithmetic.py": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+        "src/shinka_crl/experiment.py": "18b4b4785d22f523de892c0a453c60f2a9c74e37aa7a97d1ee00c5394bbcb6ad",
+        "src/shinka_crl/analysis.py": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+        "src/shinka_crl/baseline_contract.py": "1eafa3d7e9ca5712a0f0cb6d36808c36094effea17cb24987fb1b17824d1b33d",
+        "src/shinka_crl/pilot.py": "89bca0308a6fbcb1195fd4d7f4211c14d9a7cb99dd29a4685d528099b6faa281",
+        "src/shinka_crl/search.py": "2acd57d3155d64015418ce8f581ad625767f729cd0ab17718ec8844c7db9d0dd",
+        "src/shinka_crl/reference_timing.py": "a31971d9248989903342c966e1b25a686d3fdb3f51e7299e43af544667858f24",
+        "src/shinka_crl/profiles/adaptive-search.json": "d575715ba5bb53d20cf0e81982bfd2f5105397d46a9c2e0c6966e78457e8cca4",
+        "src/shinka_crl/profiles/adaptive-validation.json": "8a727f13482140dcb1acd4b5a6d917c347d4bcba89b60b96d51285636fe5d435",
+        "requirements/cpu.lock": "894c32ca614cd4bb8b0df7ec96e5d37d7ae191cf25206a0634ce972a94b75053",
+        "upstream.lock.json": "938b16c1b1d5dc0c538b1d01b033d92f683e0a70972e72a86bc2a549786a3267",
+        "docs/adaptive-seed-allocation-20261003.json": "e1fe429c29719a6db59e649d66e679261ed074f9a16bdef021539add79e1405a",
+        "reports/validation-static-20261002/summary.json": "65fd015d023103cd2d0aa2c76466ed73d49d8028687b16a086c17e0216fe81c6"
+      },
+      "controls": [
+        {
+          "id": "identity",
+          "variant": "ga_adaptive",
+          "source": "tasks/cartpole_adaptive/initial.py",
+          "source_sha256": "31e48610502aea5e275a54b1b9e8095ba0cf02c6b5af12ee034be5fc5d6ad186",
+          "settings": null
+        },
+        {
+          "id": "arithmetic",
+          "variant": "ga_adaptive",
+          "source": "tasks/cartpole_adaptive/arithmetic.py",
+          "source_sha256": "f695c86ec513b61f537f9b715b2dbbbfe9bf6aa9e56c0d5a2f8cd0adc62b8fa3",
+          "settings": null
+        },
+        {
+          "id": "focus",
+          "variant": "ga_focus",
+          "source": null,
+          "source_sha256": null,
+          "settings": null
+        },
+        {
+          "id": "static_shinka11",
+          "variant": "ga_static",
+          "source": "reports/finalists-static-20261002/programs/ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501.py",
+          "source_sha256": "ee9753cfec5161c9e32bfe37472d141c4bef62e6e220b12c9b9645cf413a9501",
+          "settings": {
+            "sigma": 0.065,
+            "elite_ratio": 0.075
+          }
+        },
+        {
+          "id": "static_random24",
+          "variant": "ga_static",
+          "source": "reports/finalists-static-20261002/programs/cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9.py",
+          "source_sha256": "cc1f42f74dea2906e74a2eeb6e9f34f2f93aeba72c74c9fd7d46c7eaac2cd0d9",
+          "settings": {
+            "sigma": 0.224195451112929,
+            "elite_ratio": 0.0921597481719689
+          }
+        }
+      ],
+      "cache_policy": "Complete verified candidate evaluations only; canonical AST plus full context; duplicate requests consume slots, never extra training; failed attempts retained",
+      "outer_search_policy": "Separate Shinka archive; staged 5/13/25 total slots; each repeated or invalid proposal consumes its slot; no model calls in control study",
+      "seed_allocation": {
+        "source_path": "/home/roland/actir/shinka-continual-reinforcement-learning/docs/adaptive-repeated-seed-allocation-20261004.json",
+        "frozen_path": "seed-allocation.json",
+        "sha256": "9ae2eae244dbfe7381ea72a5ee70b12872be4cfb68b65c531dc52015ed2c6865"
+      }
+    },
+    "development_plan_sha256": "bb2dadc9b5d38b99baf1440f149a6afd0ed92cb8c49b752691e8ec205b057869",
+    "seed_allocation": {
+      "source": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-controls-20261004/seed-allocation.json",
+      "sha256": "9ae2eae244dbfe7381ea72a5ee70b12872be4cfb68b65c531dc52015ed2c6865"
+    },
+    "selected_searches": [
+      {
+        "id": "evolutionary_202610041",
+        "arm": "evolutionary",
+        "outer_seed": 202610041,
+        "archive": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-20261004/evolutionary_202610041",
+        "plan_sha256": "58eb4fdc838b34337cf6cb81be5cabe93d7e75b18d189a4139cd0d79787b9df9",
+        "state_sha256": "172eeb45f2e4c8bf73e22afa751d1dd69bafad3cdd896527d12dac6d8947d805",
+        "generation": 2,
+        "development_score": 0.8191041678971714,
+        "source_sha256": "b8becacc7b0954df3ee034a9741f7f15cca46ae24dc65a913e22a07195fc9dc7",
+        "ranked_candidates": [
+          {
+            "generation": 2,
+            "development_score": 0.8191041678971714
+          },
+          {
+            "generation": 4,
+            "development_score": 0.8159375012305048
+          },
+          {
+            "generation": 1,
+            "development_score": 0.7794444452563921
+          },
+          {
+            "generation": 3,
+            "development_score": 0.7467916675421926
+          },
+          {
+            "generation": 0,
+            "development_score": 0.4375986132913166
+          }
+        ]
+      },
+      {
+        "id": "independent_202610041",
+        "arm": "independent",
+        "outer_seed": 202610041,
+        "archive": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-20261004/independent_202610041",
+        "plan_sha256": "519649e247c117e58228a4d499d60920d37a73a53a9fcc0bffedad9ce7615ab0",
+        "state_sha256": "e2e04b7ccf850beac9f21f92a1bce1e5bce5e5904b91fe58069388df8a6a9e23",
+        "generation": 3,
+        "development_score": 0.8000236128886541,
+        "source_sha256": "accf7559efa2c56a6cbe80d979dc64a46b3f6a30e5a71d1993244aafbc351af5",
+        "ranked_candidates": [
+          {
+            "generation": 3,
+            "development_score": 0.8000236128886541
+          },
+          {
+            "generation": 1,
+            "development_score": 0.7650694460418489
+          },
+          {
+            "generation": 2,
+            "development_score": 0.7210277784758143
+          },
+          {
+            "generation": 4,
+            "development_score": 0.6076333348141777
+          },
+          {
+            "generation": 0,
+            "development_score": 0.4375986132913166
+          }
+        ]
+      },
+      {
+        "id": "independent_202610042",
+        "arm": "independent",
+        "outer_seed": 202610042,
+        "archive": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-20261004/independent_202610042",
+        "plan_sha256": "7e7670f7c602030609de65e3931bcd93e2c53566e03be3005cca7d7f3629fe70",
+        "state_sha256": "5bd12e0016e339144f2889bd5a6e0484cf1a3007e2342624879fc7bcfa6ba986",
+        "generation": 3,
+        "development_score": 0.7746166682640712,
+        "source_sha256": "3e9fd75231928baee313dcb7ab9464f959e8bda2da6694b2f9a0f15a51b78690",
+        "ranked_candidates": [
+          {
+            "generation": 3,
+            "development_score": 0.7746166682640712
+          },
+          {
+            "generation": 4,
+            "development_score": 0.7135361124065187
+          },
+          {
+            "generation": 2,
+            "development_score": 0.7125375013271967
+          },
+          {
+            "generation": 1,
+            "development_score": 0.5593916691554918
+          },
+          {
+            "generation": 0,
+            "development_score": 0.4375986132913166
+          }
+        ]
+      },
+      {
+        "id": "evolutionary_202610042",
+        "arm": "evolutionary",
+        "outer_seed": 202610042,
+        "archive": "/home/roland/actir/shinka-continual-reinforcement-learning/results/adaptive-repeated-20261004/evolutionary_202610042",
+        "plan_sha256": "3f8fdf9508893f8cd3a97d39b02166686d9428bf65f7d994928a0a87d700b497",
+        "state_sha256": "2ec77737e5264a65fb7c72d2f76be08acf62cc586a55636ecb4233588a8f3ee7",
+        "generation": 1,
+        "development_score": 0.7177958356340727,
+        "source_sha256": "cc131135d2880399079539fcab7a460bf2fab4a062e7868ef883f82974604f8d",
+        "ranked_candidates": [
+          {
+            "generation": 1,
+            "development_score": 0.7177958356340727
+          },
+          {
+            "generation": 3,
+            "development_score": 0.7177958356340727
+          },
+          {
+            "generation": 4,
+            "development_score": 0.7146222226142884
+          },
+          {
+            "generation": 2,
+            "development_score": 0.6793666682150629
+          },
+          {
+            "generation": 0,
+            "development_score": 0.4375986132913166
+          }
+        ]
+      }
+    ],
+    "selection": "Highest exact combined development mean among all five slots; earlier generation breaks exact ties; all finalists frozen before any fresh evaluation"
+  },
+  "protocol_sha256": "aae1ff57f8c5b0a1eced103c80f95d610283933f9c6fb5b7a725f88beab63671",
+  "session_limit_seconds": 14400,
+  "first_block_trials": 7,
+  "trial_steps_nominal": 30720000,
+  "planned_trials": 35,
+  "planned_nominal_training_steps": 1075200000,
+  "planned_fresh_evaluation_episodes": 10500,
+  "reporting": {
+    "primary": "Within each outer-search repetition, evolutionary minus independent finalist mean combined score across the five common fresh evaluation seeds",
+    "secondary": [
+      "identity",
+      "arithmetic",
+      "focus"
+    ],
+    "inference": "Report individual outer-search differences and their mean/sample SD; evaluation seeds are not independent search repetitions; no significance threshold or promotion rule",
+    "early_stop": "integrity or preregistered cumulative experiment deadline only; never score-dependent"
+  }
+}

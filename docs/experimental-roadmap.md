@@ -28,6 +28,17 @@ The completed development studies establish the following evidence:
   [search evidence](../reports/adaptive-endpoint-complete-20261003/summary.json),
   [selection freeze](../reports/adaptive-validation-freeze-20261003/plan.json), and
   [validation evidence](../reports/adaptive-validation-complete-20261003/summary.json).
+- A separately [preregistered adaptive-program study](adaptive-repeated-search.md)
+  completed two paired outer-search repetitions, comparing evolutionary archive
+  feedback with independent proposals. Four proposals per archive added 48
+  training trials, alongside 15 fixed-control development trials. All four
+  winners were frozen before 35 fresh evaluation trials. The evolutionary-minus-
+  independent combined-score difference was −0.0821 ± 0.0235 across the two
+  outer repetitions, with both differences negative. This result provides no
+  advantage for evolutionary feedback at this compact allocation; it does not
+  establish a general ranking of search methods.
+  [Evaluation evidence](../reports/adaptive-repeated-validation-20261004/summary.json) ·
+  [Compute accounting](../reports/adaptive-repeated-accounting-20261004/summary.json).
 
 The bounded reference comparison is complete: GA and ES each have five
 full-budget reporting trials, and PPO has a separate four-phase development
@@ -40,11 +51,13 @@ training is scheduled. The [reproduction plan](reproduction-plan.md) and
 record the current scope; source revisions remain fixed by
 [`upstream.lock.json`](../upstream.lock.json).
 
-Further ShinkaEvolve work should use a separately declared question, compute
-allocation, search controls, independent search repetitions, and fresh untouched
-evaluation data. The completed static and adaptive studies remain closed,
-including their negative results. Additional baseline trials alone would not
-address the present limit of one outer search per search arm.
+The compact repeated study addresses the earlier absence of a matched
+adaptive-program search control and independent outer repetitions. Its two
+short repetitions and common small task sample still limit generalization.
+Further ShinkaEvolve work requires a separately declared question, compute
+allocation, suitable controls, and fresh untouched evaluation data. All completed
+static, adaptive, and repeated-search studies remain closed, including their
+negative results.
 
 The numerical budgets below define the protocols. The [README](../README.md)
 synthesizes methods, results, and limitations; linked protocol documents and
@@ -76,15 +89,18 @@ experiment. The unchanged GA evolves policy weights inside each evaluation.
 | Adapter diagnostics | 3001 | 3002 | Implementation checks only |
 | Adaptive development | 4001–4003 | 4002–4004 | Fixed controls and adaptive-program feedback |
 | Adaptive validation | 5001–5005 | 5002–5006 | Reserved finalist transfer check; phase interval 80 |
+| Repeated-search development | 6001–6003 | 6002–6004 | Fixed controls and matched adaptive-program searches |
+| Repeated-search fresh evaluation | 7001–7005 | 7002–7006 | Four frozen winners and three fixed learners; phase interval 80 |
 | Final reporting | 42–51 | 1–10 | Frozen algorithms and paper-scale protocol |
 
-<sub>Table 1. Original study seed partitions. The upstream task offset depends
+<sub>Table 1. Study seed partitions. The upstream task offset depends
 on the task trial, so disjoint training seeds alone would not provide disjoint
 tasks. Development and validation use `trial=seed+1`; the original reporting
 allocation retains trials 1–10. GA/ES reporting seeds 42–46 and task trials 1–5
 have now been evaluated; seeds 47–51 remain unexecuted under the scope amendment.
 The completed validation partitions are no longer untouched data for a new
-study.</sub>
+study. The repeated study's [allocation audit](adaptive-repeated-seed-allocation-20261004.json)
+preceded all new training.</sub>
 
 Do not feed validation outcomes back into further candidate proposals. Freeze
 the selected programs, scorer, analysis definitions, and source hashes before
@@ -644,9 +660,11 @@ training and checkpoint evidence before reuse.
 | Adaptive fixed controls | Establish unchanged identity, arithmetic, FocusGA, and static-winner comparisons | Complete; [15 development trials](../reports/adaptive-controls-20261003/summary.json) |
 | Adaptive program search | Search training-dependent mutation rules under a fixed objective and grammar | Complete; [25 consumed slots and 21 valid programs](../reports/adaptive-endpoint-complete-20261003/summary.json) |
 | Adaptive finalist validation | Test the development-selected rule against all fixed controls on reserved tasks | Complete; [30 trials and the primary paired comparison](../reports/adaptive-validation-complete-20261003/summary.json) |
-| Paper-budget ES/PPO development references | Estimate method-specific cost without using reporting trials | Pending |
-| Full reference reproduction | Compare GA, ES, and PPO under the declared paper protocol | Pending; [reproduction plan](reproduction-plan.md) |
-| Full-budget extension comparison | Compare frozen static finalists with reference baselines on reporting tasks | Pending; freeze the complete comparison before execution |
+| ES/PPO development references | Estimate cost and learning without using reporting trials | Complete under amended scope: [full ES trial](../reports/reference-development-es-20261003/summary.json) and [four-phase PPO prefix](../reports/reference-development-ppo-prefix-20261003/summary.json) |
+| Bounded full-budget GA/ES reporting | Compare acquisition and retention across repeated task draws | Complete; [five pairs](../reports/reference-reporting-ga-es-pair05-20261004/summary.json); remaining baseline allocation closed |
+| Matched repeated adaptive-program search | Test evolutionary feedback against independent proposals | Complete; [two paired searches and 35 fresh trials](../reports/adaptive-repeated-validation-20261004/summary.json), following the [prospective protocol](adaptive-repeated-search.md) |
+| Full reference reproduction | Compare GA, ES, and PPO under the original ten-trial protocol | Incomplete and outside the current allocation; [reproduction plan](reproduction-plan.md) |
+| Full-budget extension comparison | Compare frozen static finalists with reference baselines on reporting tasks | Outside the current allocation; requires a separately declared comparison |
 
 <sub>Table 8. Completed studies and remaining research. Development and reserved
 validation findings are distinct from the final paper-scale comparison.</sub>
@@ -669,20 +687,14 @@ attempts and the declared deviations. They matter for proposal validity and
 search accounting; their execution chronology does not constitute a separate
 research result.
 
-The next experiments should answer the remaining scientific questions in this
-order:
-
-1. Measure ES and PPO on the same paper-budget development protocol used for the
-   GA reference. Retain original baseline settings and report method-specific
-   compute costs.
-2. Declare the final comparison, hardware allocation, reporting metrics, source
-   versions, and selected static candidates before using reporting seeds 42–51
-   and task trials 1–10. Keep the reference reproduction and extension analyses
-   separately identified.
-3. Run the full-budget study and report every trial, including negative results.
-   Any later redesign of the adaptive search requires a new declared experiment
-   and an untouched validation partition. Claims about Shinka as a search method
-   require repeated independent outer searches and appropriate search controls.
+The latest repeated-search comparison completes its declared compact allocation
+within the two-hour experiment limit. It adds a controlled negative result for
+evolutionary feedback at four proposals per archive. The retained scientific
+questions concern larger search allocations, variation across additional outer
+searches and task samples, and the causes of retention differences. Those
+questions require new prospective studies; the observed fresh outcomes cannot
+be used to reopen the completed selections. The original full reproduction and
+additional experiment families remain outside this allocation.
 
 After each substantive experiment, update the README around its research
 question, methods, observed results, and interpretation. Report uncertainty,

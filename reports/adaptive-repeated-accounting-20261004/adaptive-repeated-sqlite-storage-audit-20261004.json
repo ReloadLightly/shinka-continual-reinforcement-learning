@@ -1,0 +1,76 @@
+{
+  "cause": "Read-only-intent prompt audit used default sqlite3.connect (read/write connection); closing triggered automatic WAL checkpointing for the two independent databases. No SQL write statements were issued. Original published receipts retained; scientific rows and all non-SQLite artifacts reverified. Subsequent audit connections use explicit mode=ro.",
+  "archives": [
+    {
+      "archive": "independent_202610041",
+      "saved_summary_rederivation_equal": true,
+      "native_state_rows_equal": true,
+      "all_published_hashes_equal": true,
+      "all_other_original_hashes_equal": true,
+      "sqlite_storage_changes": [
+        {
+          "path": "results/adaptive-repeated-20261004/independent_202610041/shinka/programs.sqlite",
+          "expected_sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "current_sha256": "5a0fd7790d69862ea2c2fb0229aaf65ac07c5a2e600252f93d60317d71211b10",
+          "current_bytes": 167936
+        },
+        {
+          "path": "results/adaptive-repeated-20261004/independent_202610041/shinka/programs.sqlite-shm",
+          "expected_sha256": "1bb3f2fe79c6d6bb5ffb3ccc7a1bd446f61ed7ae5318392d7bf7cc6ecbe52298",
+          "current_sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+          "current_bytes": 32768
+        },
+        {
+          "path": "results/adaptive-repeated-20261004/independent_202610041/shinka/programs.sqlite-wal",
+          "expected_sha256": "f4b39a3c22cfd03e11d99d05145f6e90c703453e60c561adbe8195e4ec3a428d",
+          "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "current_bytes": 0
+        }
+      ],
+      "native_rows_equal_immutable_exported_state": true,
+      "published_state_sha256": "2aee72a33f2353990dcaa3300d7ea23f21538fb25867252ded8a03262993fda0",
+      "canonical_native_row_sha256": "22f738c658170db2bfdd2aaa75138cdba39c0cf371c43ffab9aed195a39acc3f"
+    },
+    {
+      "archive": "independent_202610042",
+      "saved_summary_rederivation_equal": true,
+      "native_state_rows_equal": true,
+      "all_published_hashes_equal": true,
+      "all_other_original_hashes_equal": true,
+      "sqlite_storage_changes": [
+        {
+          "path": "results/adaptive-repeated-20261004/independent_202610042/shinka/programs.sqlite",
+          "expected_sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+          "current_sha256": "93eee87e94f54db1e5f53eb7ac0a16347a7a98da16c38654ed29f74e775a1f71",
+          "current_bytes": 172032
+        },
+        {
+          "path": "results/adaptive-repeated-20261004/independent_202610042/shinka/programs.sqlite-shm",
+          "expected_sha256": "ed73ff43e4af4339602d11e2b528f7b7e3248f544bc0823c4227793f60c29312",
+          "current_sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+          "current_bytes": 32768
+        },
+        {
+          "path": "results/adaptive-repeated-20261004/independent_202610042/shinka/programs.sqlite-wal",
+          "expected_sha256": "109f8902e2582212d61404325bf7d8eb3e379fba525d206bd7c1dd4225a994df",
+          "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "current_bytes": 0
+        }
+      ],
+      "native_rows_equal_immutable_exported_state": true,
+      "published_state_sha256": "cdd4c2f12463d5f4091b8dc73e02af85885b7bc6fe9ab71c6f5e977edc08795d",
+      "canonical_native_row_sha256": "5555802d55794ce4018a92fa5bdb78f2a58fd6ba6e1cfad568e87fd3a3a196bb"
+    },
+    {
+      "archive": "evolutionary_202610042",
+      "saved_summary_rederivation_equal": true,
+      "native_state_rows_equal": true,
+      "all_published_hashes_equal": true,
+      "all_other_original_hashes_equal": true,
+      "sqlite_storage_changes": [],
+      "native_rows_equal_immutable_exported_state": true,
+      "published_state_sha256": "2edd87084204a4c033e430e5c1c1858fb9146f704c92a6fd3edff0b44df934eb",
+      "canonical_native_row_sha256": "4c9e365f18e92e051aa5586b9272438398b87b5916b8b8ff14d7d589bcc85c49"
+    }
+  ]
+}

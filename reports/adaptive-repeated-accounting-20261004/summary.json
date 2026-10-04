@@ -1,0 +1,2248 @@
+{
+  "schema_version": 1,
+  "protocol": "adaptive-repeated-accounting-v1",
+  "scientific_protocol": "reports/adaptive-repeated-preregistration-20261004/plan.json",
+  "status": "complete",
+  "audited_at_utc": "2026-10-04T11:38:54.614719+00:00",
+  "totals": {
+    "allocated_training_trials": 98,
+    "completed_training_trials": 98,
+    "completed_analysis_trials": 98,
+    "recorded_training_wall_seconds": 4662.621263838082,
+    "recorded_analysis_wall_seconds": 899.029792619971,
+    "allocated_nominal_steps": 1559040000,
+    "completed_nominal_steps": 1559040000,
+    "fresh_episodes_all_sources": 29400,
+    "fresh_episodes_centroid": 9800
+  },
+  "development": {
+    "attempts": [
+      {
+        "path": "cache/1ab13efa889f5d07914b358d4b1a7ded172f7d7b6edb4502f86cbd46c40c40d4/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "fixed_controls"
+      },
+      {
+        "path": "cache/4403ceca660695e690449882ba7f3aef3e0e515b715f0c12b4cee6b7c3862a20/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/57a23f546bdbf869670345a300cc7120c889fd8bbdfcb9b65e5ac6acea8bfb43/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/5cd35d8cd8e0bc8934e2344d630a325dc6d20bf885b2ad3ff99a6781d9970fdf/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/640ad2d17d201c65fa273ddfd465f897ee8f3ef622825379a75651463512ff4c/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "fixed_controls"
+      },
+      {
+        "path": "cache/67ca04f0edcfe24e1f4e82b92b53fe00559a6633ea0f0661d7a6edcbfc383475/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/6e419764b8c3acaed182c335d5a6d544029762201e88f6bcd208ae1391011b5c/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/707dc023c4c2e7bcc05633b74b10f75a6ed289247c177129a95f5b00f4bb9df6/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "fixed_controls"
+      },
+      {
+        "path": "cache/8b2a6df6d6468ff4fd1e036aaf1c7295ac6beaf3b46f2b5eb07bbc0a63eaaa92/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/921b24dfbb9ebc67aa3e44fdad0c4ca581b7c191dffbeb3a03b33db90407c24c/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/9604d6c750c60eec8099d8cf2c7ad70e0d7162f4f9e9da2e7ff75cc7d032f96c/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/9e290078ed893facca86eab6b1f7fa1021ec92df8c0d28d59f3e8294c2f2dedc/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/9f9d132c779b434d3bad52ede2b9fb01ec44ab7571d2c98283849d686b789c36/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/9fb06c1e499fe270f0e45d2ea5ddf5c22263282e4a872fc380a9a967b1aa6f6a/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/a89e6756bfd1203db694572d8f61ba0aecac838c08f054d220e01bb350e8176b/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "fixed_controls"
+      },
+      {
+        "path": "cache/aa89fe07c3bb7b96562ada69de2c3cb9390224b7a04d08c724c1cbc3ad1c002e/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "fixed_controls"
+      },
+      {
+        "path": "cache/d4e7bb425ace35541ec4a69e4fef47fea47343e4124542cc5b2696980091d93c/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      },
+      {
+        "path": "cache/f5f39f910e7295efe7873fd586ef8a44167e3d974e85683d9392ac0b7b3fdfa2/attempt_0001",
+        "sealed": true,
+        "status": "complete",
+        "role": "search_proposals"
+      }
+    ],
+    "unique_physical_trials": [
+      {
+        "path": "cache/1ab13efa889f5d07914b358d4b1a7ded172f7d7b6edb4502f86cbd46c40c40d4/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 33.533443661013735,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.485744029007037,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/1ab13efa889f5d07914b358d4b1a7ded172f7d7b6edb4502f86cbd46c40c40d4/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/1ab13efa889f5d07914b358d4b1a7ded172f7d7b6edb4502f86cbd46c40c40d4/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 42.381291174999205,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.983899047001614,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/1ab13efa889f5d07914b358d4b1a7ded172f7d7b6edb4502f86cbd46c40c40d4/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/1ab13efa889f5d07914b358d4b1a7ded172f7d7b6edb4502f86cbd46c40c40d4/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 29.109617538008024,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.280214201993658,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/1ab13efa889f5d07914b358d4b1a7ded172f7d7b6edb4502f86cbd46c40c40d4/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 118.65307378099533,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 21.475409516999207,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 42.958160716007114,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 11.806904988996394,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 57.836665000999346,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 27.82098064100137,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/4403ceca660695e690449882ba7f3aef3e0e515b715f0c12b4cee6b7c3862a20/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 29.522168619994773,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.11077785899397,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/4403ceca660695e690449882ba7f3aef3e0e515b715f0c12b4cee6b7c3862a20/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/4403ceca660695e690449882ba7f3aef3e0e515b715f0c12b4cee6b7c3862a20/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 35.88975601999846,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.186441680998541,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/4403ceca660695e690449882ba7f3aef3e0e515b715f0c12b4cee6b7c3862a20/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/4403ceca660695e690449882ba7f3aef3e0e515b715f0c12b4cee6b7c3862a20/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 32.25046651500452,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.724675464996835,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/4403ceca660695e690449882ba7f3aef3e0e515b715f0c12b4cee6b7c3862a20/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/57a23f546bdbf869670345a300cc7120c889fd8bbdfcb9b65e5ac6acea8bfb43/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 32.39937592699425,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 5.881415583004127,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/57a23f546bdbf869670345a300cc7120c889fd8bbdfcb9b65e5ac6acea8bfb43/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/57a23f546bdbf869670345a300cc7120c889fd8bbdfcb9b65e5ac6acea8bfb43/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 36.459780819001026,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.057686821004609,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/57a23f546bdbf869670345a300cc7120c889fd8bbdfcb9b65e5ac6acea8bfb43/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/57a23f546bdbf869670345a300cc7120c889fd8bbdfcb9b65e5ac6acea8bfb43/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 27.895745736008394,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.742147464989102,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/57a23f546bdbf869670345a300cc7120c889fd8bbdfcb9b65e5ac6acea8bfb43/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/5cd35d8cd8e0bc8934e2344d630a325dc6d20bf885b2ad3ff99a6781d9970fdf/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 51.84289448900381,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 22.545523206994403,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/5cd35d8cd8e0bc8934e2344d630a325dc6d20bf885b2ad3ff99a6781d9970fdf/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/5cd35d8cd8e0bc8934e2344d630a325dc6d20bf885b2ad3ff99a6781d9970fdf/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 51.361513173003914,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.616590375007945,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/5cd35d8cd8e0bc8934e2344d630a325dc6d20bf885b2ad3ff99a6781d9970fdf/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/5cd35d8cd8e0bc8934e2344d630a325dc6d20bf885b2ad3ff99a6781d9970fdf/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 43.182646589993965,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.2002601610001875,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/5cd35d8cd8e0bc8934e2344d630a325dc6d20bf885b2ad3ff99a6781d9970fdf/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/640ad2d17d201c65fa273ddfd465f897ee8f3ef622825379a75651463512ff4c/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 55.158158116006234,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.69249069399666,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/640ad2d17d201c65fa273ddfd465f897ee8f3ef622825379a75651463512ff4c/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/640ad2d17d201c65fa273ddfd465f897ee8f3ef622825379a75651463512ff4c/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 35.4455655999991,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.690684633998899,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/640ad2d17d201c65fa273ddfd465f897ee8f3ef622825379a75651463512ff4c/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/640ad2d17d201c65fa273ddfd465f897ee8f3ef622825379a75651463512ff4c/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 31.98860905800393,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.512182115999167,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/640ad2d17d201c65fa273ddfd465f897ee8f3ef622825379a75651463512ff4c/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/67ca04f0edcfe24e1f4e82b92b53fe00559a6633ea0f0661d7a6edcbfc383475/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 40.25539744000707,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 9.226959107996663,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/67ca04f0edcfe24e1f4e82b92b53fe00559a6633ea0f0661d7a6edcbfc383475/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/67ca04f0edcfe24e1f4e82b92b53fe00559a6633ea0f0661d7a6edcbfc383475/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 51.21401361000608,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.433247392997146,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/67ca04f0edcfe24e1f4e82b92b53fe00559a6633ea0f0661d7a6edcbfc383475/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/67ca04f0edcfe24e1f4e82b92b53fe00559a6633ea0f0661d7a6edcbfc383475/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 31.307403054001043,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.717101557995193,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/67ca04f0edcfe24e1f4e82b92b53fe00559a6633ea0f0661d7a6edcbfc383475/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/6e419764b8c3acaed182c335d5a6d544029762201e88f6bcd208ae1391011b5c/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 118.12041782900633,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 10.766779543002485,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/6e419764b8c3acaed182c335d5a6d544029762201e88f6bcd208ae1391011b5c/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/6e419764b8c3acaed182c335d5a6d544029762201e88f6bcd208ae1391011b5c/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 61.31745704301284,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 15.708129552003811,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/6e419764b8c3acaed182c335d5a6d544029762201e88f6bcd208ae1391011b5c/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/6e419764b8c3acaed182c335d5a6d544029762201e88f6bcd208ae1391011b5c/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 49.06923160799488,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 10.024068989005173,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/6e419764b8c3acaed182c335d5a6d544029762201e88f6bcd208ae1391011b5c/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/707dc023c4c2e7bcc05633b74b10f75a6ed289247c177129a95f5b00f4bb9df6/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 35.64443431900145,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 11.201582975001656,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/707dc023c4c2e7bcc05633b74b10f75a6ed289247c177129a95f5b00f4bb9df6/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/707dc023c4c2e7bcc05633b74b10f75a6ed289247c177129a95f5b00f4bb9df6/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 26.18220741100231,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 5.116939924002509,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/707dc023c4c2e7bcc05633b74b10f75a6ed289247c177129a95f5b00f4bb9df6/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/707dc023c4c2e7bcc05633b74b10f75a6ed289247c177129a95f5b00f4bb9df6/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 32.790016958002525,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.7461152040050365,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/707dc023c4c2e7bcc05633b74b10f75a6ed289247c177129a95f5b00f4bb9df6/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/8b2a6df6d6468ff4fd1e036aaf1c7295ac6beaf3b46f2b5eb07bbc0a63eaaa92/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 34.403866581997136,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.494688328995835,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/8b2a6df6d6468ff4fd1e036aaf1c7295ac6beaf3b46f2b5eb07bbc0a63eaaa92/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/8b2a6df6d6468ff4fd1e036aaf1c7295ac6beaf3b46f2b5eb07bbc0a63eaaa92/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 43.15869650099194,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.222623738998664,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/8b2a6df6d6468ff4fd1e036aaf1c7295ac6beaf3b46f2b5eb07bbc0a63eaaa92/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/8b2a6df6d6468ff4fd1e036aaf1c7295ac6beaf3b46f2b5eb07bbc0a63eaaa92/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 28.52225182300026,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.381830559999798,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/8b2a6df6d6468ff4fd1e036aaf1c7295ac6beaf3b46f2b5eb07bbc0a63eaaa92/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/921b24dfbb9ebc67aa3e44fdad0c4ca581b7c191dffbeb3a03b33db90407c24c/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 46.70001545199921,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.204913800997019,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/921b24dfbb9ebc67aa3e44fdad0c4ca581b7c191dffbeb3a03b33db90407c24c/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/921b24dfbb9ebc67aa3e44fdad0c4ca581b7c191dffbeb3a03b33db90407c24c/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 26.34339870399708,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.157766429998446,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/921b24dfbb9ebc67aa3e44fdad0c4ca581b7c191dffbeb3a03b33db90407c24c/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/921b24dfbb9ebc67aa3e44fdad0c4ca581b7c191dffbeb3a03b33db90407c24c/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 38.329033756999706,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 9.520614812005078,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/921b24dfbb9ebc67aa3e44fdad0c4ca581b7c191dffbeb3a03b33db90407c24c/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/9604d6c750c60eec8099d8cf2c7ad70e0d7162f4f9e9da2e7ff75cc7d032f96c/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 80.01973050700326,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.448840719996952,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/9604d6c750c60eec8099d8cf2c7ad70e0d7162f4f9e9da2e7ff75cc7d032f96c/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/9604d6c750c60eec8099d8cf2c7ad70e0d7162f4f9e9da2e7ff75cc7d032f96c/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 52.14430823799921,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 17.94871698701172,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/9604d6c750c60eec8099d8cf2c7ad70e0d7162f4f9e9da2e7ff75cc7d032f96c/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/9604d6c750c60eec8099d8cf2c7ad70e0d7162f4f9e9da2e7ff75cc7d032f96c/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 58.6658470830007,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 14.97870492200309,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/9604d6c750c60eec8099d8cf2c7ad70e0d7162f4f9e9da2e7ff75cc7d032f96c/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/9e290078ed893facca86eab6b1f7fa1021ec92df8c0d28d59f3e8294c2f2dedc/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 54.303801859001396,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.92695767400437,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/9e290078ed893facca86eab6b1f7fa1021ec92df8c0d28d59f3e8294c2f2dedc/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/9e290078ed893facca86eab6b1f7fa1021ec92df8c0d28d59f3e8294c2f2dedc/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 40.186188052000944,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 11.50064527700306,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/9e290078ed893facca86eab6b1f7fa1021ec92df8c0d28d59f3e8294c2f2dedc/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/9e290078ed893facca86eab6b1f7fa1021ec92df8c0d28d59f3e8294c2f2dedc/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 37.253396947999136,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 9.122903668001527,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/9e290078ed893facca86eab6b1f7fa1021ec92df8c0d28d59f3e8294c2f2dedc/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/9f9d132c779b434d3bad52ede2b9fb01ec44ab7571d2c98283849d686b789c36/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 52.905971333006164,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.194844380996074,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/9f9d132c779b434d3bad52ede2b9fb01ec44ab7571d2c98283849d686b789c36/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/9f9d132c779b434d3bad52ede2b9fb01ec44ab7571d2c98283849d686b789c36/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 35.1332639480097,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 9.962265306996414,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/9f9d132c779b434d3bad52ede2b9fb01ec44ab7571d2c98283849d686b789c36/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/9f9d132c779b434d3bad52ede2b9fb01ec44ab7571d2c98283849d686b789c36/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 38.394692610992934,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 10.946398804007913,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/9f9d132c779b434d3bad52ede2b9fb01ec44ab7571d2c98283849d686b789c36/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/9fb06c1e499fe270f0e45d2ea5ddf5c22263282e4a872fc380a9a967b1aa6f6a/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 39.28850936699746,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 10.582238830000279,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/9fb06c1e499fe270f0e45d2ea5ddf5c22263282e4a872fc380a9a967b1aa6f6a/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/9fb06c1e499fe270f0e45d2ea5ddf5c22263282e4a872fc380a9a967b1aa6f6a/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 31.697052251001878,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.154879611996876,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/9fb06c1e499fe270f0e45d2ea5ddf5c22263282e4a872fc380a9a967b1aa6f6a/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/9fb06c1e499fe270f0e45d2ea5ddf5c22263282e4a872fc380a9a967b1aa6f6a/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 33.2295824709945,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.683263797000109,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610041-20261004/raw/evaluation/cache/9fb06c1e499fe270f0e45d2ea5ddf5c22263282e4a872fc380a9a967b1aa6f6a/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/a89e6756bfd1203db694572d8f61ba0aecac838c08f054d220e01bb350e8176b/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 23.269310706993565,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 5.170573331000924,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/a89e6756bfd1203db694572d8f61ba0aecac838c08f054d220e01bb350e8176b/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/a89e6756bfd1203db694572d8f61ba0aecac838c08f054d220e01bb350e8176b/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 25.84257801599597,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 5.733801397997013,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/a89e6756bfd1203db694572d8f61ba0aecac838c08f054d220e01bb350e8176b/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/a89e6756bfd1203db694572d8f61ba0aecac838c08f054d220e01bb350e8176b/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 26.79909644399595,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 5.865926690996275,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/a89e6756bfd1203db694572d8f61ba0aecac838c08f054d220e01bb350e8176b/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/aa89fe07c3bb7b96562ada69de2c3cb9390224b7a04d08c724c1cbc3ad1c002e/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 56.08107264699356,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 9.658786186992074,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/aa89fe07c3bb7b96562ada69de2c3cb9390224b7a04d08c724c1cbc3ad1c002e/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/aa89fe07c3bb7b96562ada69de2c3cb9390224b7a04d08c724c1cbc3ad1c002e/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 31.304264979000436,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.232198502999381,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/aa89fe07c3bb7b96562ada69de2c3cb9390224b7a04d08c724c1cbc3ad1c002e/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/aa89fe07c3bb7b96562ada69de2c3cb9390224b7a04d08c724c1cbc3ad1c002e/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 36.15048696901067,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.995222356999875,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610042-20261004/raw/evaluation/cache/aa89fe07c3bb7b96562ada69de2c3cb9390224b7a04d08c724c1cbc3ad1c002e/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 32.6290105290027,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.755730536002375,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 47.756374837001204,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 10.555997012001171,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "fixed_controls",
+        "training_status": "complete",
+        "training_wall_seconds": 45.16298215900315,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 43.97012156299752,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-controls-20261004/raw/cache/ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/d4e7bb425ace35541ec4a69e4fef47fea47343e4124542cc5b2696980091d93c/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 51.106634914001916,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 9.101977034995798,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/d4e7bb425ace35541ec4a69e4fef47fea47343e4124542cc5b2696980091d93c/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/d4e7bb425ace35541ec4a69e4fef47fea47343e4124542cc5b2696980091d93c/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 35.90707346099953,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 6.50062018900644,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/d4e7bb425ace35541ec4a69e4fef47fea47343e4124542cc5b2696980091d93c/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/d4e7bb425ace35541ec4a69e4fef47fea47343e4124542cc5b2696980091d93c/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 27.171591083009844,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 9.115400135997334,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/d4e7bb425ace35541ec4a69e4fef47fea47343e4124542cc5b2696980091d93c/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 33.68879043600464,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 7.519472518994007,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 39.52393729100004,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 8.13478033899446,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 41.11367994399916,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 13.512553168999148,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-evolutionary_202610042-20261004/raw/evaluation/cache/ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1/attempt_0001/seed_6003/training/manifest.json"
+      },
+      {
+        "path": "cache/f5f39f910e7295efe7873fd586ef8a44167e3d974e85683d9392ac0b7b3fdfa2/attempt_0001/seed_6001",
+        "seed": 6001,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 53.749704779998865,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 15.295117642002879,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/f5f39f910e7295efe7873fd586ef8a44167e3d974e85683d9392ac0b7b3fdfa2/attempt_0001/seed_6001/training/manifest.json"
+      },
+      {
+        "path": "cache/f5f39f910e7295efe7873fd586ef8a44167e3d974e85683d9392ac0b7b3fdfa2/attempt_0001/seed_6002",
+        "seed": 6002,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 44.032021591992816,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 10.269250722005381,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/f5f39f910e7295efe7873fd586ef8a44167e3d974e85683d9392ac0b7b3fdfa2/attempt_0001/seed_6002/training/manifest.json"
+      },
+      {
+        "path": "cache/f5f39f910e7295efe7873fd586ef8a44167e3d974e85683d9392ac0b7b3fdfa2/attempt_0001/seed_6003",
+        "seed": 6003,
+        "role": "search_proposals",
+        "training_status": "complete",
+        "training_wall_seconds": 52.09624118699867,
+        "allocated_nominal_steps": 7680000,
+        "completed_nominal_steps": 7680000,
+        "cache_attempt_sealed": true,
+        "analysis_status": "complete",
+        "analysis_wall_seconds": 10.562493916004314,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "published_training_evidence": "reports/adaptive-repeated-independent_202610041-20261004/raw/evaluation/cache/f5f39f910e7295efe7873fd586ef8a44167e3d974e85683d9392ac0b7b3fdfa2/attempt_0001/seed_6003/training/manifest.json"
+      }
+    ],
+    "totals": {
+      "all": {
+        "allocated_training_trials": 63,
+        "completed_training_trials": 63,
+        "completed_analysis_trials": 63,
+        "recorded_training_wall_seconds": 2707.833971269065,
+        "recorded_analysis_wall_seconds": 632.138073626993,
+        "allocated_nominal_steps": 483840000,
+        "completed_nominal_steps": 483840000,
+        "fresh_episodes_all_sources": 18900,
+        "fresh_episodes_centroid": 6300
+      },
+      "fixed_controls": {
+        "allocated_training_trials": 15,
+        "completed_training_trials": 15,
+        "completed_analysis_trials": 15,
+        "recorded_training_wall_seconds": 638.1162436520099,
+        "recorded_analysis_wall_seconds": 186.11544122499618,
+        "allocated_nominal_steps": 115200000,
+        "completed_nominal_steps": 115200000,
+        "fresh_episodes_all_sources": 4500,
+        "fresh_episodes_centroid": 1500
+      },
+      "search_proposals": {
+        "allocated_training_trials": 48,
+        "completed_training_trials": 48,
+        "completed_analysis_trials": 48,
+        "recorded_training_wall_seconds": 2069.717727617055,
+        "recorded_analysis_wall_seconds": 446.0226324019968,
+        "allocated_nominal_steps": 368640000,
+        "completed_nominal_steps": 368640000,
+        "fresh_episodes_all_sources": 14400,
+        "fresh_episodes_centroid": 4800
+      }
+    },
+    "policy": "Count each physical cache attempt/seed once, including failures. Reused identity, preflight, and canonical matches add zero training trials. Running manifests without wall_seconds are pending, not zero-cost completed work."
+  },
+  "fresh_validation": {
+    "status": "complete",
+    "planned_trials": 35,
+    "scored_trials": 35,
+    "unique_physical_trials": [
+      {
+        "path": "trials/000/attempt_0001",
+        "index": 0,
+        "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+        "memberships": [
+          "evolutionary_202610041"
+        ],
+        "seed": 7001,
+        "trial": 7002,
+        "eval_seed": 907001,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 106.01362508200691,
+        "analysis_wall_seconds": 11.741836804008926,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/000/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/001/attempt_0001",
+        "index": 1,
+        "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+        "memberships": [
+          "independent_202610041"
+        ],
+        "seed": 7001,
+        "trial": 7002,
+        "eval_seed": 907001,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 56.962164433993166,
+        "analysis_wall_seconds": 11.469833176000975,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/001/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/002/attempt_0001",
+        "index": 2,
+        "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+        "memberships": [
+          "independent_202610042"
+        ],
+        "seed": 7001,
+        "trial": 7002,
+        "eval_seed": 907001,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 112.42842266100342,
+        "analysis_wall_seconds": 10.421401051993598,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/002/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/003/attempt_0001",
+        "index": 3,
+        "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+        "memberships": [
+          "evolutionary_202610042"
+        ],
+        "seed": 7001,
+        "trial": 7002,
+        "eval_seed": 907001,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 82.50111483799992,
+        "analysis_wall_seconds": 11.50854145399353,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/003/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/004/attempt_0001",
+        "index": 4,
+        "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+        "memberships": [
+          "identity"
+        ],
+        "seed": 7001,
+        "trial": 7002,
+        "eval_seed": 907001,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 65.73018206999404,
+        "analysis_wall_seconds": 9.83142838999629,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/004/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/005/attempt_0001",
+        "index": 5,
+        "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+        "memberships": [
+          "arithmetic"
+        ],
+        "seed": 7001,
+        "trial": 7002,
+        "eval_seed": 907001,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 71.3862565169984,
+        "analysis_wall_seconds": 9.047287653986132,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/005/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/006/attempt_0001",
+        "index": 6,
+        "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+        "memberships": [
+          "focus"
+        ],
+        "seed": 7001,
+        "trial": 7002,
+        "eval_seed": 907001,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 49.492709874990396,
+        "analysis_wall_seconds": 7.353303936004522,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/006/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/007/attempt_0001",
+        "index": 7,
+        "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+        "memberships": [
+          "evolutionary_202610041"
+        ],
+        "seed": 7002,
+        "trial": 7003,
+        "eval_seed": 907002,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 68.23571638099384,
+        "analysis_wall_seconds": 8.9152757510019,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/007/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/008/attempt_0001",
+        "index": 8,
+        "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+        "memberships": [
+          "independent_202610041"
+        ],
+        "seed": 7002,
+        "trial": 7003,
+        "eval_seed": 907002,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 49.71667521299969,
+        "analysis_wall_seconds": 7.012630387995159,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/008/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/009/attempt_0001",
+        "index": 9,
+        "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+        "memberships": [
+          "independent_202610042"
+        ],
+        "seed": 7002,
+        "trial": 7003,
+        "eval_seed": 907002,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 49.75872583000455,
+        "analysis_wall_seconds": 6.597320082000806,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/009/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/010/attempt_0001",
+        "index": 10,
+        "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+        "memberships": [
+          "evolutionary_202610042"
+        ],
+        "seed": 7002,
+        "trial": 7003,
+        "eval_seed": 907002,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 47.295413539992296,
+        "analysis_wall_seconds": 5.335304496999015,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/010/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/011/attempt_0001",
+        "index": 11,
+        "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+        "memberships": [
+          "identity"
+        ],
+        "seed": 7002,
+        "trial": 7003,
+        "eval_seed": 907002,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 44.80258044600487,
+        "analysis_wall_seconds": 6.482881132993498,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/011/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/012/attempt_0001",
+        "index": 12,
+        "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+        "memberships": [
+          "arithmetic"
+        ],
+        "seed": 7002,
+        "trial": 7003,
+        "eval_seed": 907002,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 50.1050806340063,
+        "analysis_wall_seconds": 7.761214423997444,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/012/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/013/attempt_0001",
+        "index": 13,
+        "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+        "memberships": [
+          "focus"
+        ],
+        "seed": 7002,
+        "trial": 7003,
+        "eval_seed": 907002,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 47.36369430299965,
+        "analysis_wall_seconds": 5.527018363005482,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/013/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/014/attempt_0001",
+        "index": 14,
+        "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+        "memberships": [
+          "evolutionary_202610041"
+        ],
+        "seed": 7003,
+        "trial": 7004,
+        "eval_seed": 907003,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 41.76598925700819,
+        "analysis_wall_seconds": 5.574448711005971,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/014/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/015/attempt_0001",
+        "index": 15,
+        "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+        "memberships": [
+          "independent_202610041"
+        ],
+        "seed": 7003,
+        "trial": 7004,
+        "eval_seed": 907003,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 43.01499284199963,
+        "analysis_wall_seconds": 5.063507127008052,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/015/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/016/attempt_0001",
+        "index": 16,
+        "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+        "memberships": [
+          "independent_202610042"
+        ],
+        "seed": 7003,
+        "trial": 7004,
+        "eval_seed": 907003,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 44.873002632011776,
+        "analysis_wall_seconds": 6.807283129994175,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/016/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/017/attempt_0001",
+        "index": 17,
+        "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+        "memberships": [
+          "evolutionary_202610042"
+        ],
+        "seed": 7003,
+        "trial": 7004,
+        "eval_seed": 907003,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 47.28829176000727,
+        "analysis_wall_seconds": 5.647673935003695,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/017/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/018/attempt_0001",
+        "index": 18,
+        "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+        "memberships": [
+          "identity"
+        ],
+        "seed": 7003,
+        "trial": 7004,
+        "eval_seed": 907003,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 46.942347578995395,
+        "analysis_wall_seconds": 4.923484425002243,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/018/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/019/attempt_0001",
+        "index": 19,
+        "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+        "memberships": [
+          "arithmetic"
+        ],
+        "seed": 7003,
+        "trial": 7004,
+        "eval_seed": 907003,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 43.56029372000194,
+        "analysis_wall_seconds": 5.725240144995041,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/019/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/020/attempt_0001",
+        "index": 20,
+        "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+        "memberships": [
+          "focus"
+        ],
+        "seed": 7003,
+        "trial": 7004,
+        "eval_seed": 907003,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 45.09976417000871,
+        "analysis_wall_seconds": 6.3524392300023464,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/020/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/021/attempt_0001",
+        "index": 21,
+        "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+        "memberships": [
+          "evolutionary_202610041"
+        ],
+        "seed": 7004,
+        "trial": 7005,
+        "eval_seed": 907004,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 52.43840612399799,
+        "analysis_wall_seconds": 7.716399854994961,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/021/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/022/attempt_0001",
+        "index": 22,
+        "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+        "memberships": [
+          "independent_202610041"
+        ],
+        "seed": 7004,
+        "trial": 7005,
+        "eval_seed": 907004,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 45.92613083800825,
+        "analysis_wall_seconds": 5.388360160999582,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/022/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/023/attempt_0001",
+        "index": 23,
+        "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+        "memberships": [
+          "independent_202610042"
+        ],
+        "seed": 7004,
+        "trial": 7005,
+        "eval_seed": 907004,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 42.99582766299136,
+        "analysis_wall_seconds": 6.188806160993408,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/023/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/024/attempt_0001",
+        "index": 24,
+        "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+        "memberships": [
+          "evolutionary_202610042"
+        ],
+        "seed": 7004,
+        "trial": 7005,
+        "eval_seed": 907004,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 60.20922408500337,
+        "analysis_wall_seconds": 9.658310591999907,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/024/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/025/attempt_0001",
+        "index": 25,
+        "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+        "memberships": [
+          "identity"
+        ],
+        "seed": 7004,
+        "trial": 7005,
+        "eval_seed": 907004,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 44.904510855005356,
+        "analysis_wall_seconds": 5.83426526299445,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/025/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/026/attempt_0001",
+        "index": 26,
+        "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+        "memberships": [
+          "arithmetic"
+        ],
+        "seed": 7004,
+        "trial": 7005,
+        "eval_seed": 907004,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 46.35246209699835,
+        "analysis_wall_seconds": 7.133424262996414,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/026/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/027/attempt_0001",
+        "index": 27,
+        "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+        "memberships": [
+          "focus"
+        ],
+        "seed": 7004,
+        "trial": 7005,
+        "eval_seed": 907004,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 64.11108954100928,
+        "analysis_wall_seconds": 9.351890703008394,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/027/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/028/attempt_0001",
+        "index": 28,
+        "recipe_key": "7ba6dbccc11c5c9925969879c5f03edfe7a8a3c8b62e4daa85dbeeccdef6c212",
+        "memberships": [
+          "evolutionary_202610041"
+        ],
+        "seed": 7005,
+        "trial": 7006,
+        "eval_seed": 907005,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 54.220597141000326,
+        "analysis_wall_seconds": 8.714238699001726,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/028/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/029/attempt_0001",
+        "index": 29,
+        "recipe_key": "0a848deb5fd6297afc19ca97f3ea1c32c45e8524436af24696f68b78da567e70",
+        "memberships": [
+          "independent_202610041"
+        ],
+        "seed": 7005,
+        "trial": 7006,
+        "eval_seed": 907005,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 65.29573009400337,
+        "analysis_wall_seconds": 8.101817229005974,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/029/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/030/attempt_0001",
+        "index": 30,
+        "recipe_key": "8344f2ae645cc4732b782d015a22cccf017ba7d0a67761bf7d39b518ee8483d9",
+        "memberships": [
+          "independent_202610042"
+        ],
+        "seed": 7005,
+        "trial": 7006,
+        "eval_seed": 907005,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 51.046511728985934,
+        "analysis_wall_seconds": 6.024367035002797,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/030/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/031/attempt_0001",
+        "index": 31,
+        "recipe_key": "9c558536f26eed69dcaa51cb37f6690ee0be7cf413df1830511f36c470d9c501",
+        "memberships": [
+          "evolutionary_202610042"
+        ],
+        "seed": 7005,
+        "trial": 7006,
+        "eval_seed": 907005,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 53.15728513599606,
+        "analysis_wall_seconds": 6.669234453001991,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/031/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/032/attempt_0001",
+        "index": 32,
+        "recipe_key": "37bab2eeda8ccac82ea6da5fbc3db703788e43a64d3e3333e010d70f244246c3",
+        "memberships": [
+          "identity"
+        ],
+        "seed": 7005,
+        "trial": 7006,
+        "eval_seed": 907005,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 47.49014152098971,
+        "analysis_wall_seconds": 5.26788672299881,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/032/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/033/attempt_0001",
+        "index": 33,
+        "recipe_key": "5087893035f6ecbf6352e9bb60a1ae2dc7f396faf1d04781dd112aba6055257d",
+        "memberships": [
+          "arithmetic"
+        ],
+        "seed": 7005,
+        "trial": 7006,
+        "eval_seed": 907005,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 53.91023223500815,
+        "analysis_wall_seconds": 5.95926986199629,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/033/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      },
+      {
+        "path": "trials/034/attempt_0001",
+        "index": 34,
+        "recipe_key": "da007f98ac980c15618a112517f9f4ba86124c460fe1539d6d9a9966ef910893",
+        "memberships": [
+          "focus"
+        ],
+        "seed": 7005,
+        "trial": 7006,
+        "eval_seed": 907005,
+        "status": "complete",
+        "completed_nominal_steps": 30720000,
+        "allocated_nominal_steps": 30720000,
+        "training_wall_seconds": 58.39209972599929,
+        "analysis_wall_seconds": 15.78409418699448,
+        "fresh_episodes_all_sources": 300,
+        "fresh_episodes_centroid": 100,
+        "training_status": "complete",
+        "published_training_evidence": "reports/adaptive-repeated-validation-20261004/raw/trials/034/attempt_0001/training/manifest.json",
+        "analysis_status": "complete"
+      }
+    ],
+    "totals": {
+      "allocated_training_trials": 35,
+      "completed_training_trials": 35,
+      "completed_analysis_trials": 35,
+      "recorded_training_wall_seconds": 1954.7872925690172,
+      "recorded_analysis_wall_seconds": 266.891718992978,
+      "allocated_nominal_steps": 1075200000,
+      "completed_nominal_steps": 1075200000,
+      "fresh_episodes_all_sources": 10500,
+      "fresh_episodes_centroid": 3500
+    },
+    "verified_export_hashes": {
+      "published": 633,
+      "originals": 763
+    },
+    "report": "reports/adaptive-repeated-validation-20261004",
+    "frozen_plan_sha256": "f541adae1cb9b4a4bc40fd38ad82f4badc57b0a96cb5381cae506ce8fedf6113",
+    "failed_attempts": []
+  },
+  "proposals": {
+    "guarded_requests": 16,
+    "codex_cli_launches": 16,
+    "successful_requests": 16,
+    "recorded_proposal_wall_seconds": 647.9842583210047,
+    "paid_api_calls": 0,
+    "auth": "chatgpt_subscription",
+    "model": "gpt-6.1-sol",
+    "note": "Guarded CLI launches are not backend model request counts or a subscription allowance meter"
+  },
+  "budget": {
+    "limit_seconds": 7200.0,
+    "started_utc": "2026-10-04T09:39:08.973200+00:00",
+    "finished_utc": "2026-10-04T11:37:56.709976+00:00",
+    "elapsed_utc_seconds_through_final_action": 7127.736775398254,
+    "elapsed_boottime_seconds_through_final_action": 6867.547300101993,
+    "recorded_max_clock_elapsed_seconds": 7127.736775398254,
+    "finished_action_utc_seconds": 6622.793923139572,
+    "finished_action_monotonic_seconds": 6378.525316290012,
+    "inter_action_utc_gap_seconds": 504.94285225868225,
+    "actions": [
+      {
+        "label": "controls-identity",
+        "status": "complete",
+        "returncode": 0,
+        "stop_reason": null,
+        "utc_wall_seconds": 122.93727135658264,
+        "monotonic_wall_seconds": 118.91196020300413
+      },
+      {
+        "label": "controls-remaining",
+        "status": "complete",
+        "returncode": 0,
+        "stop_reason": null,
+        "utc_wall_seconds": 748.2771117687225,
+        "monotonic_wall_seconds": 723.9473258310027
+      },
+      {
+        "label": "evolutionary_202610041",
+        "status": "complete",
+        "returncode": 0,
+        "stop_reason": null,
+        "utc_wall_seconds": 828.6563200950623,
+        "monotonic_wall_seconds": 799.4463102070004
+      },
+      {
+        "label": "independent_202610041",
+        "status": "complete",
+        "returncode": 0,
+        "stop_reason": null,
+        "utc_wall_seconds": 918.3772728443146,
+        "monotonic_wall_seconds": 885.0268948070006
+      },
+      {
+        "label": "independent_202610042",
+        "status": "complete",
+        "returncode": 0,
+        "stop_reason": null,
+        "utc_wall_seconds": 758.8592581748962,
+        "monotonic_wall_seconds": 730.5999313390057
+      },
+      {
+        "label": "evolutionary_202610042",
+        "status": "complete",
+        "returncode": 0,
+        "stop_reason": null,
+        "utc_wall_seconds": 922.9655566215515,
+        "monotonic_wall_seconds": 887.1886721689953
+      },
+      {
+        "label": "validation-seed1",
+        "status": "complete",
+        "returncode": 0,
+        "stop_reason": null,
+        "utc_wall_seconds": 646.1828744411469,
+        "monotonic_wall_seconds": 621.956477647007
+      },
+      {
+        "label": "validation-remaining",
+        "status": "complete",
+        "returncode": 0,
+        "stop_reason": null,
+        "utc_wall_seconds": 1676.5382578372955,
+        "monotonic_wall_seconds": 1611.447744086996
+      }
+    ]
+  },
+  "memory": {
+    "peak_trainer_rss_kib": null,
+    "measurement_status": "Not measured by the existing adaptive manifests; no new instrumentation used"
+  },
+  "integrity": {
+    "preregistered_sources_verified": 33,
+    "publications": {
+      "reports/adaptive-repeated-preregistration-20261004": {
+        "published": 3
+      },
+      "reports/adaptive-repeated-controls-20261004": {
+        "published": 268,
+        "originals": 328
+      },
+      "reports/adaptive-repeated-evolutionary_202610041-20261004": {
+        "published": 381,
+        "originals": 428,
+        "scientific_rows_equal_immutable_exported_state": true
+      },
+      "reports/adaptive-repeated-independent_202610041-20261004": {
+        "published": 381,
+        "originals": 428,
+        "sqlite_checkpoint_storage_deviations": [
+          {
+            "path": "results/adaptive-repeated-20261004/independent_202610041/shinka/programs.sqlite",
+            "expected_sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+            "current_sha256": "5a0fd7790d69862ea2c2fb0229aaf65ac07c5a2e600252f93d60317d71211b10",
+            "current_bytes": 167936
+          },
+          {
+            "path": "results/adaptive-repeated-20261004/independent_202610041/shinka/programs.sqlite-shm",
+            "expected_sha256": "1bb3f2fe79c6d6bb5ffb3ccc7a1bd446f61ed7ae5318392d7bf7cc6ecbe52298",
+            "current_sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+            "current_bytes": 32768
+          },
+          {
+            "path": "results/adaptive-repeated-20261004/independent_202610041/shinka/programs.sqlite-wal",
+            "expected_sha256": "f4b39a3c22cfd03e11d99d05145f6e90c703453e60c561adbe8195e4ec3a428d",
+            "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "current_bytes": 0
+          }
+        ],
+        "scientific_rows_equal_immutable_exported_state": true
+      },
+      "reports/adaptive-repeated-independent_202610042-20261004": {
+        "published": 381,
+        "originals": 428,
+        "sqlite_checkpoint_storage_deviations": [
+          {
+            "path": "results/adaptive-repeated-20261004/independent_202610042/shinka/programs.sqlite",
+            "expected_sha256": "0ab48b25cba617ed3a4acca0161813b314c095ef63544bb4af60769eb1012977",
+            "current_sha256": "93eee87e94f54db1e5f53eb7ac0a16347a7a98da16c38654ed29f74e775a1f71",
+            "current_bytes": 172032
+          },
+          {
+            "path": "results/adaptive-repeated-20261004/independent_202610042/shinka/programs.sqlite-shm",
+            "expected_sha256": "ed73ff43e4af4339602d11e2b528f7b7e3248f544bc0823c4227793f60c29312",
+            "current_sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+            "current_bytes": 32768
+          },
+          {
+            "path": "results/adaptive-repeated-20261004/independent_202610042/shinka/programs.sqlite-wal",
+            "expected_sha256": "109f8902e2582212d61404325bf7d8eb3e379fba525d206bd7c1dd4225a994df",
+            "current_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "current_bytes": 0
+          }
+        ],
+        "scientific_rows_equal_immutable_exported_state": true
+      },
+      "reports/adaptive-repeated-evolutionary_202610042-20261004": {
+        "published": 381,
+        "originals": 428,
+        "scientific_rows_equal_immutable_exported_state": true
+      }
+    },
+    "archives": [
+      {
+        "outer_seed": 202610041,
+        "arm": "evolutionary",
+        "target_slots": 5,
+        "path": "results/adaptive-repeated-20261004/evolutionary_202610041",
+        "status": "complete",
+        "verified_pinned_native_sources": 115,
+        "guarded_requests": 4,
+        "codex_cli_launches": 4,
+        "successful_requests": 4,
+        "recorded_proposal_wall_seconds": 153.68023834199266,
+        "native_rows": [
+          {
+            "generation": 0,
+            "parent_id": null,
+            "id": "07b38b3c-4833-489c-8505-b1e1c9fb5ba1",
+            "score": 0.4375986132913166
+          },
+          {
+            "generation": 1,
+            "parent_id": "07b38b3c-4833-489c-8505-b1e1c9fb5ba1",
+            "id": "67ddc121-fb13-4d56-943f-6dc6956d15e5",
+            "score": 0.7794444452563921
+          },
+          {
+            "generation": 2,
+            "parent_id": "67ddc121-fb13-4d56-943f-6dc6956d15e5",
+            "id": "0861570b-5956-4bef-aeee-2bf4fe9fac6d",
+            "score": 0.8191041678971714
+          },
+          {
+            "generation": 3,
+            "parent_id": "0861570b-5956-4bef-aeee-2bf4fe9fac6d",
+            "id": "57bf9c42-2b3c-4198-b87c-f7c51d6f65bd",
+            "score": 0.7467916675421926
+          },
+          {
+            "generation": 4,
+            "parent_id": "0861570b-5956-4bef-aeee-2bf4fe9fac6d",
+            "id": "e911043d-7a11-4b7c-8df5-47cbc07cf71f",
+            "score": 0.8159375012305048
+          }
+        ],
+        "paid_api_calls": 0,
+        "slots_recorded": 5,
+        "scores_and_receipts_rederived": true
+      },
+      {
+        "outer_seed": 202610041,
+        "arm": "independent",
+        "target_slots": 5,
+        "path": "results/adaptive-repeated-20261004/independent_202610041",
+        "status": "complete",
+        "verified_pinned_native_sources": 115,
+        "guarded_requests": 4,
+        "codex_cli_launches": 4,
+        "successful_requests": 4,
+        "recorded_proposal_wall_seconds": 167.6502298869891,
+        "native_rows": [
+          {
+            "generation": 0,
+            "parent_id": null,
+            "id": "c9d3854d-799a-4500-9c92-89a9e1c6d572",
+            "score": 0.4375986132913166
+          },
+          {
+            "generation": 1,
+            "parent_id": "c9d3854d-799a-4500-9c92-89a9e1c6d572",
+            "id": "bdc372ee-cf05-462e-a7cb-5150aaabb3a9",
+            "score": 0.7650694460418489
+          },
+          {
+            "generation": 2,
+            "parent_id": "c9d3854d-799a-4500-9c92-89a9e1c6d572",
+            "id": "2bb40e50-3d8a-4be9-bd15-cc446521f3b9",
+            "score": 0.7210277784758143
+          },
+          {
+            "generation": 3,
+            "parent_id": "c9d3854d-799a-4500-9c92-89a9e1c6d572",
+            "id": "0f71ba69-82c2-4f8a-bb11-ad02f542d5d8",
+            "score": 0.8000236128886541
+          },
+          {
+            "generation": 4,
+            "parent_id": "c9d3854d-799a-4500-9c92-89a9e1c6d572",
+            "id": "42f14eae-464c-4e43-83a6-fe0bfda46b48",
+            "score": 0.6076333348141777
+          }
+        ],
+        "paid_api_calls": 0,
+        "slots_recorded": 5,
+        "scores_and_receipts_rederived": true,
+        "fixed_identity_prompts_and_empty_history_verified": 4
+      },
+      {
+        "outer_seed": 202610042,
+        "arm": "independent",
+        "target_slots": 5,
+        "path": "results/adaptive-repeated-20261004/independent_202610042",
+        "status": "complete",
+        "verified_pinned_native_sources": 115,
+        "guarded_requests": 4,
+        "codex_cli_launches": 4,
+        "successful_requests": 4,
+        "recorded_proposal_wall_seconds": 165.43802185302775,
+        "native_rows": [
+          {
+            "generation": 0,
+            "parent_id": null,
+            "id": "d1fe372c-7a1b-4991-b0d5-df04d75124f4",
+            "score": 0.4375986132913166
+          },
+          {
+            "generation": 1,
+            "parent_id": "d1fe372c-7a1b-4991-b0d5-df04d75124f4",
+            "id": "a1bd5ba8-2334-4b1c-890e-176dcf7a8157",
+            "score": 0.5593916691554918
+          },
+          {
+            "generation": 2,
+            "parent_id": "d1fe372c-7a1b-4991-b0d5-df04d75124f4",
+            "id": "0e2fa709-75aa-4f5d-bf98-cb1ce2e8f29d",
+            "score": 0.7125375013271967
+          },
+          {
+            "generation": 3,
+            "parent_id": "d1fe372c-7a1b-4991-b0d5-df04d75124f4",
+            "id": "14f0a1d4-97a8-4980-ad46-a7a68bbe541a",
+            "score": 0.7746166682640712
+          },
+          {
+            "generation": 4,
+            "parent_id": "d1fe372c-7a1b-4991-b0d5-df04d75124f4",
+            "id": "0eb79540-d7db-404b-bb60-12c2b8cf2018",
+            "score": 0.7135361124065187
+          }
+        ],
+        "paid_api_calls": 0,
+        "slots_recorded": 5,
+        "scores_and_receipts_rederived": true,
+        "fixed_identity_prompts_and_empty_history_verified": 4
+      },
+      {
+        "outer_seed": 202610042,
+        "arm": "evolutionary",
+        "target_slots": 5,
+        "path": "results/adaptive-repeated-20261004/evolutionary_202610042",
+        "status": "complete",
+        "verified_pinned_native_sources": 115,
+        "guarded_requests": 4,
+        "codex_cli_launches": 4,
+        "successful_requests": 4,
+        "recorded_proposal_wall_seconds": 161.21576823899522,
+        "native_rows": [
+          {
+            "generation": 0,
+            "parent_id": null,
+            "id": "92a459b8-6399-4bb8-9f33-4ef086eda47c",
+            "score": 0.4375986132913166
+          },
+          {
+            "generation": 1,
+            "parent_id": "92a459b8-6399-4bb8-9f33-4ef086eda47c",
+            "id": "00867762-3f70-44a5-bcda-9dad0e924783",
+            "score": 0.7177958356340727
+          },
+          {
+            "generation": 2,
+            "parent_id": "00867762-3f70-44a5-bcda-9dad0e924783",
+            "id": "922f69c8-f32e-4011-ab1c-c11be3c72f17",
+            "score": 0.6793666682150629
+          },
+          {
+            "generation": 3,
+            "parent_id": "922f69c8-f32e-4011-ab1c-c11be3c72f17",
+            "id": "6dbfcaf0-71a9-4fb1-a8f0-d25881b46fad",
+            "score": 0.7177958356340727
+          },
+          {
+            "generation": 4,
+            "parent_id": "6dbfcaf0-71a9-4fb1-a8f0-d25881b46fad",
+            "id": "06e78602-8738-477a-9b23-7eb4e984a2d3",
+            "score": 0.7146222226142884
+          }
+        ],
+        "paid_api_calls": 0,
+        "slots_recorded": 5,
+        "scores_and_receipts_rederived": true
+      }
+    ],
+    "sqlite_storage_deviation": "See adaptive-repeated-sqlite-storage-audit-20261004.json; all scientific rows equal immutable exported state"
+  },
+  "accounting_policy": "Count unique physical attempt/seed paths once. The first-block export, identity slots, scheduler preflights, and canonical cache hits add no training. Failed/incomplete attempts retain measured costs. Learner, analysis, proposal, and action durations are nested; never sum them with the total UTC elapsed. Total UTC elapsed ends at final action completion and includes intervening gaps. Subsequent report-writing time is outside this execution measurement."
+}
