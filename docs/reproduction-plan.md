@@ -38,6 +38,16 @@ allocation's 919.6690881920003 s gives 3,976.7957809740037 s of reporting
 execution through this pair, charged once; the 63.13385714699689 s allocation
 diagnostic remains a separate category. Ongoing trial costs are additional.
 
+Curve comparisons require the [reference display qualifications](reference-comparison.md#reference-findings-to-assess).
+The pinned plotting helpers apply a centered rolling median within each trial,
+then a mean and bootstrap interval across trials; our figures retain dense
+unsmoothed samples. Brief switch dips can therefore look different without
+establishing a reproduction discrepancy. The exact assembly of the published
+Figure 8 remains unresolved because its stated panel layout is not fully
+accounted for by the pinned curve path and the authors' saved arrays are absent.
+These limitations concern visual comparison and do not change the independently
+verified fresh endpoint learning and forgetting results.
+
 The active reporting suite uses two logical CPUs under the
 [October 4 scheduling amendment](reference-comparison.md#reporting-cpu-allocation-amendment--october-4-2026).
 The initial eight-CPU GA attempt completed no reporting trial; its

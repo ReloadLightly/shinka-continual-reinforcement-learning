@@ -245,13 +245,23 @@ compute remains charged, without changing any trial's scientific settings.
 
 ## Reference findings to assess
 
-The direct reference is [Appendix C.1, Figure 8b](https://arxiv.org/html/2610.01583v1#A3.F8),
-the first-row **CartPole noise** panel. Its [original curve figure](https://arxiv.org/html/2610.01583v1/continual_curves.png)
-shows GA and ES maintaining high active-task return after initial learning,
-while PPO has recurring return drops at switches. Assess initial acquisition,
-recovery after each switch, and whether later phases sustain performance.
-Treat these as qualitative targets: no precise reference values are inferred
-from the plotted curves.
+[Appendix C.1, Figure 8](https://arxiv.org/html/2610.01583v1#A3.F8)
+provides the reference training curves; its caption identifies part (b) as
+two alternating tasks. Assess initial acquisition, recovery after switches,
+and sustained active-task performance in the CartPole observation-offset
+setting, subject to the display and provenance qualifications below.
+No precise reference values are inferred from the plotted curves.
+
+The pinned [curve preparation](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/plot_continual_lineplots.py#L210-L216)
+applies a [centered rolling median](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/plotting/make_lineplot.py#L351-L365)
+to each trial, with an odd window of approximately one percent of its total
+record count. It then draws the [mean across trials](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/plot_noncontinual_solve.py#L245-L259)
+with a [pointwise 95% bootstrap interval](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/source/metrics/continual_metrics.py#L61-L96).
+Our figures retain dense unsmoothed samples and individual trials. Median
+smoothing can suppress brief return drops, and averaging changes their visual
+prominence. Differences in visible switch dips therefore do not alone establish
+a reproduction discrepancy. Fresh checkpoint learning and forgetting metrics
+are independent of these display transformations.
 
 Use [Figure 2b](https://arxiv.org/html/2610.01583v1#S5.F2) and
 [Appendix A.3](https://arxiv.org/html/2610.01583v1#A1.S3) to assess learning
@@ -265,11 +275,17 @@ Do not substitute Figure 3's two-task CartPole physics or action-reversal
 panels for observation offsets, or infer that an aggregate claim across
 environments must hold in this cell.
 
-The pinned [figure assembly](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/plot_continual_combined.py)
-identifies the source cell as `paper/gymnax/data/noise_2task/CartPole_v1_sigma0.5`.
-Its local source is `.upstream/continual_neuroevolution/scripts/analysis/plot_continual_combined.py`;
-the authors' raw trial tree is not present in this checkout. Exact numerical
-agreement with their trial distribution therefore remains unresolved.
+The pinned [Figure 2 trade-off mapping](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/plot_continual_combined.py#L69-L74)
+identifies our source cell as `paper/gymnax/data/noise_2task/CartPole_v1_sigma0.5`.
+The exact Figure 8 curve assembly is less certain: the same script's
+[`--part curves` path](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/plot_continual_combined.py#L192-L218)
+loads only the [main curve panels](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/plot_continual_lineplots.py#L282-L300),
+whose CartPole noise entry uses ten tasks and observation-offset scale 1.0;
+the [two-task entry](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/plot_continual_lineplots.py#L76-L115)
+is listed separately. That pinned path does not establish the full layout
+described by the published Figure 8 caption. The authors' raw trial tree and
+saved curve arrays are absent from this checkout, leaving the exact published
+assembly and numerical agreement with their trial distribution unresolved.
 Neighborhood mechanisms, other environments, and continual PPO variants are
 outside this comparison.
 
