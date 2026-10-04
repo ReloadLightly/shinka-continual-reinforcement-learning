@@ -1,0 +1,1401 @@
+{
+  "schema_version": 1,
+  "mode": "reporting",
+  "status": "partial",
+  "label": "Partial GA/ES reporting; PPO deferred \u00b7 6/20 trials",
+  "completed_trials": 6,
+  "input_report": "reference-reporting-ga-es-pair03-20261004",
+  "declared_methods": [
+    "ga",
+    "es"
+  ],
+  "original_three_method_target_complete": false,
+  "input_sha256": {
+    "raw/environment.json": "ca71b05b1a2caecb2c1a84e486ae4e51519eabc98563f8d9a89af522e9465c58",
+    "raw/plan.json": "4bdac9e5acf8910b888f234f6ce50f7287cbf368fd3b1c54cc8bd77a9526ef10",
+    "raw/suite.json": "2ee674649a38fbe263434316e530edbb48146a4882e49cc90b29bcc5884bfe7a",
+    "raw/trials/es/seed_42/analysis/attempt_001/checkpoint-metadata.json": "46f3d5c78949f34ad6a987b0a201819a0691f94560ec037df99df89b1a1abd68",
+    "raw/trials/es/seed_42/analysis/attempt_001/evaluation-input/evaluation.json": "7c6a162ac023b4f7b49b987b56b5065f5ffb9cd05c9ebf4435e86c1ac289cec7",
+    "raw/trials/es/seed_42/analysis/attempt_001/evaluation-input/results.json": "c892e634c5363af1dc055a10f6a8bd71307d44a869175d1a032031887cc64b45",
+    "raw/trials/es/seed_42/analysis/attempt_001/evaluation.json": "7c6a162ac023b4f7b49b987b56b5065f5ffb9cd05c9ebf4435e86c1ac289cec7",
+    "raw/trials/es/seed_42/analysis/attempt_001/manifest.json": "182763e32cdaff5a7b83900f70f21915e7db9a894afbe179641e4a347d245ab4",
+    "raw/trials/es/seed_42/analysis/attempt_001/process.log": "f2e01f8709682708d74ba11a905fd32c9fc5e6eebee774766a574fad53af919a",
+    "raw/trials/es/seed_42/analysis/attempt_001/summary.json": "181c70da55c311d8878acb219615348c30e815843bf880d13fff08d6089570d3",
+    "raw/trials/es/seed_42/training/attempt_001/config.json": "f9e69ee02dbd15aaf7645af73076470368e63a5e5b9105014f65f8c5acbfb045",
+    "raw/trials/es/seed_42/training/attempt_001/manifest.json": "fe6b40a5fb5d7ecec67cb80d7a3e3dc0dc8b24661bc93d00ee978b5d7bf8835f",
+    "raw/trials/es/seed_42/training/attempt_001/phase-events.jsonl": "c86844b4e63900e1224200be9c29956f700de808650699fde321c88ff1240cc5",
+    "raw/trials/es/seed_42/training/attempt_001/process-measurement.json": "e3cf3e9cb3351ef041391db161bb0a2374d5d0815dd3a1475b064edf8a379185",
+    "raw/trials/es/seed_42/training/attempt_001/process.log": "fdce0c1851ca631c4d513cb58a4421e6f575d7c09acc58c90ce6eb0f2a48393f",
+    "raw/trials/es/seed_42/training/attempt_001/receipt.json": "ffe19b59535917b9cf924ebd1d84c08d4edcab8cbc41da64b0b7a02ba9834f34",
+    "raw/trials/es/seed_42/training/attempt_001/results.json": "c892e634c5363af1dc055a10f6a8bd71307d44a869175d1a032031887cc64b45",
+    "raw/trials/es/seed_42/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/es/seed_42/training/attempt_001/summary.json": "d07477a782f475eedb6ec72550368b0b5711d05ba63e1423a0b2a9c74ab42543",
+    "raw/trials/es/seed_42/training/attempt_001/train.log": "8038e981a71d1cb0510f975dc196460a462cbf88ef90da0a88eb64ba3f191a18",
+    "raw/trials/es/seed_42/training/attempt_001/training_metrics.json": "bc2dc5059aa2e0db140e01fce4474f737a9db2e7fb7077f0a6436cac2b53bb70",
+    "raw/trials/es/seed_43/analysis/attempt_001/checkpoint-metadata.json": "869e4b3c4bc954fa5bad777806e5264517b155faee1a28628dc354a95b39795a",
+    "raw/trials/es/seed_43/analysis/attempt_001/evaluation-input/evaluation.json": "0fcd199cf6883063fe1aa2dcb458a7138daf822c690037ae8fe3e6e262bb8415",
+    "raw/trials/es/seed_43/analysis/attempt_001/evaluation-input/results.json": "38b54b42c0218826910171598999d20c9949796ce596bbba1a049c4d53db4130",
+    "raw/trials/es/seed_43/analysis/attempt_001/evaluation.json": "0fcd199cf6883063fe1aa2dcb458a7138daf822c690037ae8fe3e6e262bb8415",
+    "raw/trials/es/seed_43/analysis/attempt_001/manifest.json": "f892a157702fc201053ae7e9c79d7bfbd0a3cc89d36a55d3fe06c3ad272063ab",
+    "raw/trials/es/seed_43/analysis/attempt_001/process.log": "6348744aecf792327793ae4cdd2c055080ebeb7dc943392b4dfe72c93c1e6758",
+    "raw/trials/es/seed_43/analysis/attempt_001/summary.json": "ab2136c0f07ddb77900432376e6ed3c911daf6116e7443c3b218c3ab44b7edd5",
+    "raw/trials/es/seed_43/training/attempt_001/config.json": "ee039ebe07a6a1e822aedd00a08a7253810ca05dde1bd664c12c76a124d98ef0",
+    "raw/trials/es/seed_43/training/attempt_001/manifest.json": "0019cfea51529a294ca21e5265011577baae3c4bd0e8678063ac039354b25ba4",
+    "raw/trials/es/seed_43/training/attempt_001/phase-events.jsonl": "8e8fb14c99e65ad6241460d36efc84179df3ff76aa65cf860887d8e3ea62ea9d",
+    "raw/trials/es/seed_43/training/attempt_001/process-measurement.json": "93b31b4351bce5e7f35e3c39cad06ce45431a88ac52936923b6eaaa5ff712a9a",
+    "raw/trials/es/seed_43/training/attempt_001/process.log": "8c413af45378f2f94cc72ac05a301f879b4b4ca58d46a3f95ceaa5922141c592",
+    "raw/trials/es/seed_43/training/attempt_001/receipt.json": "6f9ffb995ad91bbbfb64530752aa6682fff6994ded95b6fbfb6eb074aa00477c",
+    "raw/trials/es/seed_43/training/attempt_001/results.json": "38b54b42c0218826910171598999d20c9949796ce596bbba1a049c4d53db4130",
+    "raw/trials/es/seed_43/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/es/seed_43/training/attempt_001/summary.json": "fda11d9756d0c95126d9a3d1132a12faf0ff9f6f15e3bf8c8343ee6ea05edac4",
+    "raw/trials/es/seed_43/training/attempt_001/train.log": "3987cd204772d4800cd39d484e83a4fe2cc344cc1fa1b93ba14fc8b1a5ac194e",
+    "raw/trials/es/seed_43/training/attempt_001/training_metrics.json": "dcaff8e2d30496d9c2cecb99c6f245a06ec3aa3c27e5eaf35f65d4e4623c634c",
+    "raw/trials/es/seed_44/analysis/attempt_001/checkpoint-metadata.json": "a9709e4fc711241f0c786785da89c50e283fcf76062e7425bafc9b746079ee9b",
+    "raw/trials/es/seed_44/analysis/attempt_001/evaluation-input/evaluation.json": "b2ec73a838da3bc8823e7246316a37331e3cbda0f1439744c521747f25d2e244",
+    "raw/trials/es/seed_44/analysis/attempt_001/evaluation-input/results.json": "126a6e3f4a84ff36d0f6eaf314a3da9d9270c5fad87a98bf486afcd65fc7c398",
+    "raw/trials/es/seed_44/analysis/attempt_001/evaluation.json": "b2ec73a838da3bc8823e7246316a37331e3cbda0f1439744c521747f25d2e244",
+    "raw/trials/es/seed_44/analysis/attempt_001/manifest.json": "3c5e23c2dba16f56bb4cbcadf2a46525a18240b83143a75489256cef7c4ffa48",
+    "raw/trials/es/seed_44/analysis/attempt_001/process.log": "2097cb4d4320e34b77dc20bff95f788fc11aba3cb08954b205e688e2767b394b",
+    "raw/trials/es/seed_44/analysis/attempt_001/summary.json": "e5fef8c1905598ed3dc9ca83441780e0b5185e6da33c684c3f5583342c6a701e",
+    "raw/trials/es/seed_44/training/attempt_001/config.json": "b5e8601d04aeeb90efa8d15710bec535db51e6249d2bc157dcc7afcb18403edb",
+    "raw/trials/es/seed_44/training/attempt_001/manifest.json": "151ffdbab0f79ce9979d3b3fb73d10bd9fd4f90dd8b27449dd99a206ef446e34",
+    "raw/trials/es/seed_44/training/attempt_001/phase-events.jsonl": "7aadd1feea758af3be0d30409ffaf5b7d8e63f519e92164759e7863f92ba06ea",
+    "raw/trials/es/seed_44/training/attempt_001/process-measurement.json": "172802de09ff6375de5e4479c7ecb01633fd83c6ebc2dc95ab0f57b97bb13642",
+    "raw/trials/es/seed_44/training/attempt_001/process.log": "30f5e6a714be9ee44d34c0c43e4dfd5b7b6f1179dc701215dc2cf2e4343b93e9",
+    "raw/trials/es/seed_44/training/attempt_001/receipt.json": "9b59590ac8684b12e58f11243534a33a07dc923af0cc88aafb3229e8669d2a43",
+    "raw/trials/es/seed_44/training/attempt_001/results.json": "126a6e3f4a84ff36d0f6eaf314a3da9d9270c5fad87a98bf486afcd65fc7c398",
+    "raw/trials/es/seed_44/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/es/seed_44/training/attempt_001/summary.json": "6c33113e9e962d92799852c1e270ad6f40523109976773e01aab3c991d7d8720",
+    "raw/trials/es/seed_44/training/attempt_001/train.log": "06c162b9ccbde3e657e57ae35b8227cc2612fd906625e730bb0507672bce3424",
+    "raw/trials/es/seed_44/training/attempt_001/training_metrics.json": "5dac8500e64b52d7849bc885987d3549b9625b5632b635cc5ce5a8a5baea59f3",
+    "raw/trials/ga/seed_42/analysis/attempt_001/checkpoint-metadata.json": "46f3d5c78949f34ad6a987b0a201819a0691f94560ec037df99df89b1a1abd68",
+    "raw/trials/ga/seed_42/analysis/attempt_001/evaluation-input/evaluation.json": "0fd11b5b02f4e7f69df65501f40d5ea7183522fe16522cfc5e7ae2cafa18eff2",
+    "raw/trials/ga/seed_42/analysis/attempt_001/evaluation-input/results.json": "40fdc1006cef0a9cc855fbddceff78a68e2dd9f37e2a7d226e85f18813e9da79",
+    "raw/trials/ga/seed_42/analysis/attempt_001/evaluation.json": "0fd11b5b02f4e7f69df65501f40d5ea7183522fe16522cfc5e7ae2cafa18eff2",
+    "raw/trials/ga/seed_42/analysis/attempt_001/manifest.json": "a44ab3cd2c58afd830f28b83f3a0226caaaca8342d204bfeb78f04321aec80c6",
+    "raw/trials/ga/seed_42/analysis/attempt_001/process.log": "1e12901482311cbe1cebd4036209432406a58b537b03dcc49f4c4a40de4a0e20",
+    "raw/trials/ga/seed_42/analysis/attempt_001/summary.json": "949e15334fba9f4cbf1755321400e70dd1443af8c021c786c23bdeba4581a19a",
+    "raw/trials/ga/seed_42/training/attempt_001/config.json": "c8fcf4fc3b19fe09cb77ce54a0c36e3f20443b4bbe247a1c006859dafc923024",
+    "raw/trials/ga/seed_42/training/attempt_001/manifest.json": "c00fd133f4f9da5b052d1b467007f8b27fe40630248b6e839a55c300410282b9",
+    "raw/trials/ga/seed_42/training/attempt_001/phase-events.jsonl": "98ff713148e4947d11d8e4a626633bed714d5879c70264130f4f17aebde3f973",
+    "raw/trials/ga/seed_42/training/attempt_001/process-measurement.json": "be2991fc85b8a27c81e8abd4b3373e3f1a71155fc3737d1f58c7d1c2054a3816",
+    "raw/trials/ga/seed_42/training/attempt_001/process.log": "163ef3cb55a777a69d8b5184000786454180941005484b6bbfb8d38d6089c0bd",
+    "raw/trials/ga/seed_42/training/attempt_001/receipt.json": "85c80ae3962d01efefc40ab1365b1072a13623bdcd1592d7a863ddaf1372062a",
+    "raw/trials/ga/seed_42/training/attempt_001/results.json": "40fdc1006cef0a9cc855fbddceff78a68e2dd9f37e2a7d226e85f18813e9da79",
+    "raw/trials/ga/seed_42/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/ga/seed_42/training/attempt_001/summary.json": "84050c4c41357e7aa08330b9b380a8a94dd8f3c7cdb4a4e9b97dc2cd91c16528",
+    "raw/trials/ga/seed_42/training/attempt_001/train.log": "b1a943b4c96f602c26ca261ed3b26e674d461a14f95c2b2817a04cd63ad8539b",
+    "raw/trials/ga/seed_42/training/attempt_001/training_metrics.json": "0ab57488198a8ff4c9d167f4cb2b9c98730bf380d7fc1a65cf4a0d48767139fd",
+    "raw/trials/ga/seed_43/analysis/attempt_001/checkpoint-metadata.json": "869e4b3c4bc954fa5bad777806e5264517b155faee1a28628dc354a95b39795a",
+    "raw/trials/ga/seed_43/analysis/attempt_001/evaluation-input/evaluation.json": "9d021651569be3d55cf708f971fd6fe0aeaf4d161c88cc39ece0164e6069b30d",
+    "raw/trials/ga/seed_43/analysis/attempt_001/evaluation-input/results.json": "f7abeeba6333327dfb874dd5190fd7797be3b73d36b166cf45dafabb7cfb3bf5",
+    "raw/trials/ga/seed_43/analysis/attempt_001/evaluation.json": "9d021651569be3d55cf708f971fd6fe0aeaf4d161c88cc39ece0164e6069b30d",
+    "raw/trials/ga/seed_43/analysis/attempt_001/manifest.json": "c698dbc42b63fb02da821d08b6aeb38d2b9e434975c6f71c2cfb9eabbfb40736",
+    "raw/trials/ga/seed_43/analysis/attempt_001/process.log": "82a522c8f51cd34f021e589edee76d9a42fbee1f124b5a6f16934034a38f871b",
+    "raw/trials/ga/seed_43/analysis/attempt_001/summary.json": "d0807bfa990d96b17b0da366c835ab509970c0106c88601e0080b248cfa52b26",
+    "raw/trials/ga/seed_43/training/attempt_001/config.json": "6f5a5b573a3e3113c28dec9d14208032211926869e3c8ffd68cfd9b07dbb3fa2",
+    "raw/trials/ga/seed_43/training/attempt_001/manifest.json": "aab5105c0ec082c87f7e56a2dd60675cc7cac6fba2f7dc820874d164c06dd883",
+    "raw/trials/ga/seed_43/training/attempt_001/phase-events.jsonl": "3e9eb5db7671f2ae62f3e831980cb9e3a3cfc67378da42155ff4fd27aa09d414",
+    "raw/trials/ga/seed_43/training/attempt_001/process-measurement.json": "3a4ce0d179a8d921e0081ead64ff7259d4a93215fdaa01d7017325d902f95ca5",
+    "raw/trials/ga/seed_43/training/attempt_001/process.log": "b58921fe61afa3cf43ca1886640d70c4386846f2b8b7d6799937882a192e73d7",
+    "raw/trials/ga/seed_43/training/attempt_001/receipt.json": "9e9b16972d7038b8cbef09faa9214fdfee9be529b412121b383e8475788e1b60",
+    "raw/trials/ga/seed_43/training/attempt_001/results.json": "f7abeeba6333327dfb874dd5190fd7797be3b73d36b166cf45dafabb7cfb3bf5",
+    "raw/trials/ga/seed_43/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/ga/seed_43/training/attempt_001/summary.json": "696ca01f307977ef4e1ca94fdcdb8d2e0a157eaaf673f0da02847e846542ff84",
+    "raw/trials/ga/seed_43/training/attempt_001/train.log": "4da35dab6a41375ef1d2feca8093e0c5965575ecabc4c9017d7aa7f024bb427b",
+    "raw/trials/ga/seed_43/training/attempt_001/training_metrics.json": "45f7c25b46059beeac07c6c7e1aa7192bc031f199b7ea41e91235e8e9ebdafd7",
+    "raw/trials/ga/seed_44/analysis/attempt_001/checkpoint-metadata.json": "a9709e4fc711241f0c786785da89c50e283fcf76062e7425bafc9b746079ee9b",
+    "raw/trials/ga/seed_44/analysis/attempt_001/evaluation-input/evaluation.json": "dc801f979b6412e9dff82517fdf216f270331e47a9e7930b28408b0a55255ebf",
+    "raw/trials/ga/seed_44/analysis/attempt_001/evaluation-input/results.json": "988df6afc5099eed0888bbd48a751d63884a824af0a422838352ef6ec35f28c3",
+    "raw/trials/ga/seed_44/analysis/attempt_001/evaluation.json": "dc801f979b6412e9dff82517fdf216f270331e47a9e7930b28408b0a55255ebf",
+    "raw/trials/ga/seed_44/analysis/attempt_001/manifest.json": "5272911d8bee68f368276ddfc9b58fa86e2664a827b5be73e5b29516ee0fd8d6",
+    "raw/trials/ga/seed_44/analysis/attempt_001/process.log": "2eecd32d88422028b6743242a200c8552ec0766bab8458524b94420d1ed35a74",
+    "raw/trials/ga/seed_44/analysis/attempt_001/summary.json": "8414513c2cc6b23b03f418390813586c9c0c218a6afe1d2acf76e6776975bd9e",
+    "raw/trials/ga/seed_44/training/attempt_001/config.json": "b7b74ed863cba9d68ad5d055474d14a4c9af824b4a1113635d126983e98a2ca4",
+    "raw/trials/ga/seed_44/training/attempt_001/manifest.json": "8703cd558236272f26b51b180c7ff6a5c69acdc076f3e45483dbcf91381d894a",
+    "raw/trials/ga/seed_44/training/attempt_001/phase-events.jsonl": "021995a3eb8d9ec3d24c70adfcb149e1796ead06619d93855feb2d5a72293db8",
+    "raw/trials/ga/seed_44/training/attempt_001/process-measurement.json": "b113ec68b4efdb25fd80c47ec625f2ac29afa51739d473f6cd47f4bdbc478f7b",
+    "raw/trials/ga/seed_44/training/attempt_001/process.log": "52d25f0217e8b3093c0412cb9a7335f84536742bb6adfd7d61d302375b45277d",
+    "raw/trials/ga/seed_44/training/attempt_001/receipt.json": "35be0d44b991a0a6a89504d157c2b12ea5941c07a6febf92ce8963d6e7b9a34f",
+    "raw/trials/ga/seed_44/training/attempt_001/results.json": "988df6afc5099eed0888bbd48a751d63884a824af0a422838352ef6ec35f28c3",
+    "raw/trials/ga/seed_44/training/attempt_001/stacks.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw/trials/ga/seed_44/training/attempt_001/summary.json": "680e6088a48b75b65440738e887de2e6c1b7b3542449fa2237026d7b7384ca42",
+    "raw/trials/ga/seed_44/training/attempt_001/train.log": "4812f71364dacc4860e1b2421db912b4ae46744126260bbd663dc70e7b9a18fe",
+    "raw/trials/ga/seed_44/training/attempt_001/training_metrics.json": "13dc38c24cfdd578378b7d444bc6213a48b3e613b27880ab76f70a3147668369",
+    "summary.json": "b0597f96db2a7629863b97991a2afeafb4ca5cf8d6f515e4858a4e8959b31f57",
+    "checksums.json": "6cb6c03db4d504b8fbaea5db62deeccb7d77fc87af44aaa1ba18d116c90ec53a"
+  },
+  "plot_script_sha256": "e7f11cd2ea02ecb14e9a32fda1144921f0e3ce11411d8ca79889143c3ca7a88b",
+  "matplotlib_version": "3.11.2",
+  "numpy_version": "2.4.6",
+  "curve_clock": "(zero-based update + 1) * nominal steps per update; no cross-method interpolation",
+  "smoothing": null,
+  "curve_rendering": "Unsmoothed native samples rasterized at 300 dpi; axes remain vector",
+  "dispersion": "sample standard deviation across trials; no confidence intervals",
+  "groups": [
+    {
+      "method": "ga",
+      "n": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "metrics": {
+        "learning_accuracy": {
+          "n": 3,
+          "mean": 500.0,
+          "sample_sd": 0.0,
+          "values": [
+            500.0,
+            500.0,
+            500.0
+          ]
+        },
+        "forgetting": {
+          "n": 3,
+          "mean": 214.40526315789472,
+          "sample_sd": 244.89999474034846,
+          "values": [
+            489.7631578947368,
+            132.48947368421054,
+            20.96315789473684
+          ]
+        },
+        "learning_minus_forgetting": {
+          "n": 3,
+          "mean": 285.59473684210525,
+          "sample_sd": 244.89999474034846,
+          "values": [
+            10.236842105263179,
+            367.51052631578943,
+            479.03684210526313
+          ]
+        },
+        "zero_shot_transfer": {
+          "n": 3,
+          "mean": 288.33859649122803,
+          "sample_sd": 251.50739812413602,
+          "values": [
+            10.3,
+            354.71578947368414,
+            500.0
+          ]
+        },
+        "cumulative_reward_steps": {
+          "n": 3,
+          "mean": 1468754778000.7324,
+          "sample_sd": 86561337735.5926,
+          "values": [
+            1368816423331.421,
+            1517271667461.5479,
+            1520176243209.2285
+          ]
+        },
+        "cumulative_reward_generation_equivalents": {
+          "n": 3,
+          "mean": 1912441.1171884537,
+          "sample_sd": 112710.07517655287,
+          "values": [
+            1782313.0512127876,
+            1975614.150340557,
+            1979396.1500120163
+          ]
+        },
+        "cumulative_reward_steps_exact": {
+          "n": 3,
+          "mean": 1468754778000.7324,
+          "sample_sd": 86561337735.5926,
+          "values": [
+            1368816423331.421,
+            1517271667461.5479,
+            1520176243209.2285
+          ]
+        },
+        "normalized_curve_average": {
+          "n": 3,
+          "mean": 0.9562205585942268,
+          "sample_sd": 0.05635503758827638,
+          "values": [
+            0.8911565256063939,
+            0.9878070751702785,
+            0.9896980750060081
+          ]
+        }
+      },
+      "training_wall_seconds": {
+        "n": 3,
+        "mean": 1512.4194302266671,
+        "sample_sd": 188.97219491928527,
+        "values": [
+          1471.8503466480033,
+          1718.3813872979954,
+          1347.026556734003
+        ]
+      },
+      "analysis_wall_seconds": {
+        "n": 3,
+        "mean": 12.054776988668891,
+        "sample_sd": 2.2152762222255,
+        "values": [
+          9.60342337700422,
+          12.647525802000018,
+          13.913381787002436
+        ]
+      },
+      "maximum_trainer_rss_kib": {
+        "n": 3,
+        "mean": 859878.6666666666,
+        "sample_sd": 5539.613464253019,
+        "values": [
+          866252,
+          856220,
+          857164
+        ]
+      }
+    },
+    {
+      "method": "es",
+      "n": 3,
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "metrics": {
+        "learning_accuracy": {
+          "n": 3,
+          "mean": 500.0,
+          "sample_sd": 0.0,
+          "values": [
+            500.0,
+            500.0,
+            500.0
+          ]
+        },
+        "forgetting": {
+          "n": 3,
+          "mean": 164.8982456140351,
+          "sample_sd": 281.23417625333184,
+          "values": [
+            489.62631578947367,
+            5.06842105263158,
+            0.0
+          ]
+        },
+        "learning_minus_forgetting": {
+          "n": 3,
+          "mean": 335.1017543859649,
+          "sample_sd": 281.23417625333184,
+          "values": [
+            10.373684210526335,
+            494.9315789473684,
+            500.0
+          ]
+        },
+        "zero_shot_transfer": {
+          "n": 3,
+          "mean": 325.2456140350877,
+          "sample_sd": 272.72662813418884,
+          "values": [
+            10.394736842105264,
+            477.0578947368421,
+            488.28421052631575
+          ]
+        },
+        "cumulative_reward_steps": {
+          "n": 3,
+          "mean": 1510118105700.6836,
+          "sample_sd": 30118807549.398766,
+          "values": [
+            1475368512249.0234,
+            1528714329626.9531,
+            1526271475226.0742
+          ]
+        },
+        "cumulative_reward_generation_equivalents": {
+          "n": 3,
+          "mean": 1966299.616797765,
+          "sample_sd": 39217.19732994631,
+          "values": [
+            1921052.7503242493,
+            1990513.4500350952,
+            1987332.6500339508
+          ]
+        },
+        "cumulative_reward_steps_exact": {
+          "n": 3,
+          "mean": 1510118105700.6836,
+          "sample_sd": 30118807549.398766,
+          "values": [
+            1475368512249.0234,
+            1528714329626.9531,
+            1526271475226.0742
+          ]
+        },
+        "normalized_curve_average": {
+          "n": 3,
+          "mean": 0.9831498083988826,
+          "sample_sd": 0.019608598664973175,
+          "values": [
+            0.9605263751621246,
+            0.9952567250175476,
+            0.9936663250169754
+          ]
+        }
+      },
+      "training_wall_seconds": {
+        "n": 3,
+        "mean": 1410.9370914216659,
+        "sample_sd": 173.5675656849428,
+        "values": [
+          1547.4586320359958,
+          1469.7475671499997,
+          1215.6050750790018
+        ]
+      },
+      "analysis_wall_seconds": {
+        "n": 3,
+        "mean": 12.693705539667766,
+        "sample_sd": 2.7528845980945853,
+        "values": [
+          15.842622767006105,
+          11.495563058997504,
+          10.742930792999687
+        ]
+      },
+      "maximum_trainer_rss_kib": {
+        "n": 3,
+        "mean": 832077.3333333334,
+        "sample_sd": 1917.274454357887,
+        "values": [
+          830228,
+          831948,
+          834056
+        ]
+      }
+    }
+  ],
+  "phase_returns": [
+    {
+      "method": "ga",
+      "seed": 42,
+      "trial": 1,
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 10.1
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 9.5,
+          "next_mean": 9.6
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 9.9,
+          "next_mean": 9.7
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 9.7,
+          "next_mean": 10.2
+        },
+        {
+          "phase": 4,
+          "task": 0,
+          "checkpoint_completed_steps": 768000000,
+          "own_mean": 500.0,
+          "previous_mean": 9.7,
+          "next_mean": 9.5
+        },
+        {
+          "phase": 5,
+          "task": 1,
+          "checkpoint_completed_steps": 921600000,
+          "own_mean": 500.0,
+          "previous_mean": 10.9,
+          "next_mean": 11.2
+        },
+        {
+          "phase": 6,
+          "task": 0,
+          "checkpoint_completed_steps": 1075200000,
+          "own_mean": 500.0,
+          "previous_mean": 9.3,
+          "next_mean": 9.2
+        },
+        {
+          "phase": 7,
+          "task": 1,
+          "checkpoint_completed_steps": 1228800000,
+          "own_mean": 500.0,
+          "previous_mean": 9.7,
+          "next_mean": 9.7
+        },
+        {
+          "phase": 8,
+          "task": 0,
+          "checkpoint_completed_steps": 1382400000,
+          "own_mean": 500.0,
+          "previous_mean": 9.7,
+          "next_mean": 10.2
+        },
+        {
+          "phase": 9,
+          "task": 1,
+          "checkpoint_completed_steps": 1536000000,
+          "own_mean": 500.0,
+          "previous_mean": 11.2,
+          "next_mean": 12.0
+        },
+        {
+          "phase": 10,
+          "task": 0,
+          "checkpoint_completed_steps": 1689600000,
+          "own_mean": 500.0,
+          "previous_mean": 9.2,
+          "next_mean": 9.3
+        },
+        {
+          "phase": 11,
+          "task": 1,
+          "checkpoint_completed_steps": 1843200000,
+          "own_mean": 500.0,
+          "previous_mean": 10.2,
+          "next_mean": 9.8
+        },
+        {
+          "phase": 12,
+          "task": 0,
+          "checkpoint_completed_steps": 1996800000,
+          "own_mean": 500.0,
+          "previous_mean": 10.9,
+          "next_mean": 10.8
+        },
+        {
+          "phase": 13,
+          "task": 1,
+          "checkpoint_completed_steps": 2150400000,
+          "own_mean": 500.0,
+          "previous_mean": 9.2,
+          "next_mean": 9.5
+        },
+        {
+          "phase": 14,
+          "task": 0,
+          "checkpoint_completed_steps": 2304000000,
+          "own_mean": 500.0,
+          "previous_mean": 14.3,
+          "next_mean": 13.1
+        },
+        {
+          "phase": 15,
+          "task": 1,
+          "checkpoint_completed_steps": 2457600000,
+          "own_mean": 500.0,
+          "previous_mean": 9.1,
+          "next_mean": 9.3
+        },
+        {
+          "phase": 16,
+          "task": 0,
+          "checkpoint_completed_steps": 2611200000,
+          "own_mean": 500.0,
+          "previous_mean": 9.3,
+          "next_mean": 9.3
+        },
+        {
+          "phase": 17,
+          "task": 1,
+          "checkpoint_completed_steps": 2764800000,
+          "own_mean": 500.0,
+          "previous_mean": 9.7,
+          "next_mean": 9.6
+        },
+        {
+          "phase": 18,
+          "task": 0,
+          "checkpoint_completed_steps": 2918400000,
+          "own_mean": 500.0,
+          "previous_mean": 13.7,
+          "next_mean": 13.6
+        },
+        {
+          "phase": 19,
+          "task": 1,
+          "checkpoint_completed_steps": 3072000000,
+          "own_mean": 500.0,
+          "previous_mean": 9.3,
+          "next_mean": null
+        }
+      ]
+    },
+    {
+      "method": "es",
+      "seed": 42,
+      "trial": 1,
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 10.1
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 9.1,
+          "next_mean": 8.9
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 9.9,
+          "next_mean": 10.1
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 9.2,
+          "next_mean": 9.4
+        },
+        {
+          "phase": 4,
+          "task": 0,
+          "checkpoint_completed_steps": 768000000,
+          "own_mean": 500.0,
+          "previous_mean": 10.5,
+          "next_mean": 10.0
+        },
+        {
+          "phase": 5,
+          "task": 1,
+          "checkpoint_completed_steps": 921600000,
+          "own_mean": 500.0,
+          "previous_mean": 10.2,
+          "next_mean": 9.9
+        },
+        {
+          "phase": 6,
+          "task": 0,
+          "checkpoint_completed_steps": 1075200000,
+          "own_mean": 500.0,
+          "previous_mean": 10.2,
+          "next_mean": 10.7
+        },
+        {
+          "phase": 7,
+          "task": 1,
+          "checkpoint_completed_steps": 1228800000,
+          "own_mean": 500.0,
+          "previous_mean": 9.9,
+          "next_mean": 10.1
+        },
+        {
+          "phase": 8,
+          "task": 0,
+          "checkpoint_completed_steps": 1382400000,
+          "own_mean": 500.0,
+          "previous_mean": 11.2,
+          "next_mean": 11.0
+        },
+        {
+          "phase": 9,
+          "task": 1,
+          "checkpoint_completed_steps": 1536000000,
+          "own_mean": 500.0,
+          "previous_mean": 9.7,
+          "next_mean": 9.4
+        },
+        {
+          "phase": 10,
+          "task": 0,
+          "checkpoint_completed_steps": 1689600000,
+          "own_mean": 500.0,
+          "previous_mean": 11.6,
+          "next_mean": 11.4
+        },
+        {
+          "phase": 11,
+          "task": 1,
+          "checkpoint_completed_steps": 1843200000,
+          "own_mean": 500.0,
+          "previous_mean": 9.3,
+          "next_mean": 9.5
+        },
+        {
+          "phase": 12,
+          "task": 0,
+          "checkpoint_completed_steps": 1996800000,
+          "own_mean": 500.0,
+          "previous_mean": 11.7,
+          "next_mean": 12.0
+        },
+        {
+          "phase": 13,
+          "task": 1,
+          "checkpoint_completed_steps": 2150400000,
+          "own_mean": 500.0,
+          "previous_mean": 9.7,
+          "next_mean": 9.4
+        },
+        {
+          "phase": 14,
+          "task": 0,
+          "checkpoint_completed_steps": 2304000000,
+          "own_mean": 500.0,
+          "previous_mean": 11.2,
+          "next_mean": 11.6
+        },
+        {
+          "phase": 15,
+          "task": 1,
+          "checkpoint_completed_steps": 2457600000,
+          "own_mean": 500.0,
+          "previous_mean": 9.7,
+          "next_mean": 9.7
+        },
+        {
+          "phase": 16,
+          "task": 0,
+          "checkpoint_completed_steps": 2611200000,
+          "own_mean": 500.0,
+          "previous_mean": 12.6,
+          "next_mean": 12.1
+        },
+        {
+          "phase": 17,
+          "task": 1,
+          "checkpoint_completed_steps": 2764800000,
+          "own_mean": 500.0,
+          "previous_mean": 8.9,
+          "next_mean": 9.4
+        },
+        {
+          "phase": 18,
+          "task": 0,
+          "checkpoint_completed_steps": 2918400000,
+          "own_mean": 500.0,
+          "previous_mean": 12.6,
+          "next_mean": 12.8
+        },
+        {
+          "phase": 19,
+          "task": 1,
+          "checkpoint_completed_steps": 3072000000,
+          "own_mean": 500.0,
+          "previous_mean": 9.9,
+          "next_mean": null
+        }
+      ]
+    },
+    {
+      "method": "ga",
+      "seed": 43,
+      "trial": 2,
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 20.4
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 335.3,
+          "next_mean": 320.4
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 212.8,
+          "next_mean": 213.6
+        },
+        {
+          "phase": 4,
+          "task": 0,
+          "checkpoint_completed_steps": 768000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 5,
+          "task": 1,
+          "checkpoint_completed_steps": 921600000,
+          "own_mean": 500.0,
+          "previous_mean": 53.2,
+          "next_mean": 47.6
+        },
+        {
+          "phase": 6,
+          "task": 0,
+          "checkpoint_completed_steps": 1075200000,
+          "own_mean": 500.0,
+          "previous_mean": 18.0,
+          "next_mean": 14.0
+        },
+        {
+          "phase": 7,
+          "task": 1,
+          "checkpoint_completed_steps": 1228800000,
+          "own_mean": 500.0,
+          "previous_mean": 344.0,
+          "next_mean": 351.4
+        },
+        {
+          "phase": 8,
+          "task": 0,
+          "checkpoint_completed_steps": 1382400000,
+          "own_mean": 500.0,
+          "previous_mean": 265.3,
+          "next_mean": 311.6
+        },
+        {
+          "phase": 9,
+          "task": 1,
+          "checkpoint_completed_steps": 1536000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 10,
+          "task": 0,
+          "checkpoint_completed_steps": 1689600000,
+          "own_mean": 500.0,
+          "previous_mean": 301.3,
+          "next_mean": 329.1
+        },
+        {
+          "phase": 11,
+          "task": 1,
+          "checkpoint_completed_steps": 1843200000,
+          "own_mean": 500.0,
+          "previous_mean": 307.6,
+          "next_mean": 403.6
+        },
+        {
+          "phase": 12,
+          "task": 0,
+          "checkpoint_completed_steps": 1996800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 13,
+          "task": 1,
+          "checkpoint_completed_steps": 2150400000,
+          "own_mean": 500.0,
+          "previous_mean": 403.5,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 14,
+          "task": 0,
+          "checkpoint_completed_steps": 2304000000,
+          "own_mean": 500.0,
+          "previous_mean": 241.7,
+          "next_mean": 227.9
+        },
+        {
+          "phase": 15,
+          "task": 1,
+          "checkpoint_completed_steps": 2457600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 16,
+          "task": 0,
+          "checkpoint_completed_steps": 2611200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 17,
+          "task": 1,
+          "checkpoint_completed_steps": 2764800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 18,
+          "task": 0,
+          "checkpoint_completed_steps": 2918400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 19,
+          "task": 1,
+          "checkpoint_completed_steps": 3072000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": null
+        }
+      ]
+    },
+    {
+      "method": "es",
+      "seed": 43,
+      "trial": 2,
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 160.7
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 451.8,
+          "next_mean": 403.4
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 4,
+          "task": 0,
+          "checkpoint_completed_steps": 768000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 5,
+          "task": 1,
+          "checkpoint_completed_steps": 921600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 6,
+          "task": 0,
+          "checkpoint_completed_steps": 1075200000,
+          "own_mean": 500.0,
+          "previous_mean": 451.9,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 7,
+          "task": 1,
+          "checkpoint_completed_steps": 1228800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 8,
+          "task": 0,
+          "checkpoint_completed_steps": 1382400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 9,
+          "task": 1,
+          "checkpoint_completed_steps": 1536000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 10,
+          "task": 0,
+          "checkpoint_completed_steps": 1689600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 11,
+          "task": 1,
+          "checkpoint_completed_steps": 1843200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 12,
+          "task": 0,
+          "checkpoint_completed_steps": 1996800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 13,
+          "task": 1,
+          "checkpoint_completed_steps": 2150400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 14,
+          "task": 0,
+          "checkpoint_completed_steps": 2304000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 15,
+          "task": 1,
+          "checkpoint_completed_steps": 2457600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 16,
+          "task": 0,
+          "checkpoint_completed_steps": 2611200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 17,
+          "task": 1,
+          "checkpoint_completed_steps": 2764800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 18,
+          "task": 0,
+          "checkpoint_completed_steps": 2918400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 19,
+          "task": 1,
+          "checkpoint_completed_steps": 3072000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": null
+        }
+      ]
+    },
+    {
+      "method": "ga",
+      "seed": 44,
+      "trial": 3,
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 4,
+          "task": 0,
+          "checkpoint_completed_steps": 768000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 5,
+          "task": 1,
+          "checkpoint_completed_steps": 921600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 6,
+          "task": 0,
+          "checkpoint_completed_steps": 1075200000,
+          "own_mean": 500.0,
+          "previous_mean": 451.8,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 7,
+          "task": 1,
+          "checkpoint_completed_steps": 1228800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 8,
+          "task": 0,
+          "checkpoint_completed_steps": 1382400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 9,
+          "task": 1,
+          "checkpoint_completed_steps": 1536000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 10,
+          "task": 0,
+          "checkpoint_completed_steps": 1689600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 11,
+          "task": 1,
+          "checkpoint_completed_steps": 1843200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 12,
+          "task": 0,
+          "checkpoint_completed_steps": 1996800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 13,
+          "task": 1,
+          "checkpoint_completed_steps": 2150400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 14,
+          "task": 0,
+          "checkpoint_completed_steps": 2304000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 15,
+          "task": 1,
+          "checkpoint_completed_steps": 2457600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 16,
+          "task": 0,
+          "checkpoint_completed_steps": 2611200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 17,
+          "task": 1,
+          "checkpoint_completed_steps": 2764800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 18,
+          "task": 0,
+          "checkpoint_completed_steps": 2918400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 19,
+          "task": 1,
+          "checkpoint_completed_steps": 3072000000,
+          "own_mean": 500.0,
+          "previous_mean": 149.9,
+          "next_mean": null
+        }
+      ]
+    },
+    {
+      "method": "es",
+      "seed": 44,
+      "trial": 3,
+      "phase_returns": [
+        {
+          "phase": 0,
+          "task": 0,
+          "checkpoint_completed_steps": 153600000,
+          "own_mean": 500.0,
+          "previous_mean": null,
+          "next_mean": 277.4
+        },
+        {
+          "phase": 1,
+          "task": 1,
+          "checkpoint_completed_steps": 307200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 2,
+          "task": 0,
+          "checkpoint_completed_steps": 460800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 3,
+          "task": 1,
+          "checkpoint_completed_steps": 614400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 4,
+          "task": 0,
+          "checkpoint_completed_steps": 768000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 5,
+          "task": 1,
+          "checkpoint_completed_steps": 921600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 6,
+          "task": 0,
+          "checkpoint_completed_steps": 1075200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 7,
+          "task": 1,
+          "checkpoint_completed_steps": 1228800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 8,
+          "task": 0,
+          "checkpoint_completed_steps": 1382400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 9,
+          "task": 1,
+          "checkpoint_completed_steps": 1536000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 10,
+          "task": 0,
+          "checkpoint_completed_steps": 1689600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 11,
+          "task": 1,
+          "checkpoint_completed_steps": 1843200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 12,
+          "task": 0,
+          "checkpoint_completed_steps": 1996800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 13,
+          "task": 1,
+          "checkpoint_completed_steps": 2150400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 14,
+          "task": 0,
+          "checkpoint_completed_steps": 2304000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 15,
+          "task": 1,
+          "checkpoint_completed_steps": 2457600000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 16,
+          "task": 0,
+          "checkpoint_completed_steps": 2611200000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 17,
+          "task": 1,
+          "checkpoint_completed_steps": 2764800000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 18,
+          "task": 0,
+          "checkpoint_completed_steps": 2918400000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": 500.0
+        },
+        {
+          "phase": 19,
+          "task": 1,
+          "checkpoint_completed_steps": 3072000000,
+          "own_mean": 500.0,
+          "previous_mean": 500.0,
+          "next_mean": null
+        }
+      ]
+    }
+  ],
+  "native_clocks": {
+    "ga": {
+      "samples": 4000,
+      "first_step": 768000,
+      "final_step": 3072000000
+    },
+    "es": {
+      "samples": 4000,
+      "first_step": 768000,
+      "final_step": 3072000000
+    }
+  },
+  "outputs_sha256": {
+    "reference-reporting-ga-es-pair03-20261004.svg": "33e40481c55d614b1f5bf1f3e6dcd792207cc3afb5b309f7048d3194ee401a55",
+    "reference-reporting-ga-es-pair03-20261004.pdf": "e0f6b1ad995c36da47997d1e637c53ed415eaeceaaed53e5421cdba99bd3ac94",
+    "reference-reporting-ga-es-pair03-20261004-metrics.svg": "bdf0243bbeebb449493d9ac6d59c5efb84bdb7caf8c1cf80067385f069460d98",
+    "reference-reporting-ga-es-pair03-20261004-metrics.pdf": "6ebe59223492eddba2866478115bcba32c1d806ae358884de13e11b3e408e150"
+  }
+}
