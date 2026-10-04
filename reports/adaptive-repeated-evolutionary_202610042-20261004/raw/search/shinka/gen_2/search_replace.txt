@@ -1,0 +1,14 @@
+<NAME>
+fitness_conditioned_success_target
+</NAME>
+<DESCRIPTION>
+Raise the archive-relative success target as mean fitness improves. The current fixed target of 0.3 can keep increasing mutation width even near strong solutions, where smaller mutations may improve centroid performance. A fitness-dependent target preserves exploration at low returns and encourages gradual refinement at high returns, while retaining the existing decline-triggered reheating and persistent feedback. This uses observed fitness rather than a switch schedule; its performance remains to be evaluated.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    rate = clip(0.12 * (success_avg - 0.3) + 0.045 * stalled - 0.1 * gap - 0.4 * progress, -0.15, 0.15)
+=======
+    success_target = 0.3 + 0.3 * mean
+    rate = clip(0.12 * (success_avg - success_target) + 0.045 * stalled - 0.1 * gap - 0.4 * progress, -0.15, 0.15)
+>>>>>>> REPLACE
+</DIFF>

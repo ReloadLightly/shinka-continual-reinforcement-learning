@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "archive_advantage_feedback",
+  "patch_description": "Use the re-scored archive mean as a reference for mutation quality. With equal archive and offspring fractions, the batch-minus-archive mean tracks offspring advantage. Normalize this signal by population spread and bound it to temper noisy feedback. Apply it to gradual width adaptation, while reserving reheating for sharp fitness declines. This may reduce excessive exploration when offspring beat the archive median but lower average fitness; improvement requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:49:55.420768",
+  "llm_cost": 0.0178068,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

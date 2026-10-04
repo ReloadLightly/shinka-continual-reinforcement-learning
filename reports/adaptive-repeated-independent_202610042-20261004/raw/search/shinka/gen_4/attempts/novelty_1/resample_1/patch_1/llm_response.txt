@@ -1,0 +1,30 @@
+<NAME>
+feedback_width_recovery
+</NAME>
+<DESCRIPTION>
+Adapt mutation width to smoothed fitness, stalled progress, and sudden fitness declines. Higher fitness lowers the target width for refinement; stagnation and declines raise it to encourage exploration and recovery. Archive-relative offspring success provides a modest correction rather than acting as parent-matched success. Memory initializes from observed fitness and persists without assuming a switch schedule. This is an untested candidate.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+def update_sigma(sigma, stats, memory):
+    return sigma, memory
+=======
+def update_sigma(sigma, stats, memory):
+    fitness = clip(0.65 * stats[0] + 0.35 * stats[3], 0.0, 1.0)
+    previous = where(memory[3] > 0.5, memory[0], fitness)
+    progress = fitness - previous
+    smoothed = 0.7 * previous + 0.3 * fitness
+    success_previous = where(memory[3] > 0.5, memory[1], stats[4])
+    success = 0.75 * success_previous + 0.25 * stats[4]
+    stalled = where(progress < 0.002, 1.0, 0.0)
+    stagnation = 0.9 * memory[2] + 0.1 * stalled
+    decline = clip(-progress / 0.25, 0.0, 1.0)
+    remaining = 1.0 - smoothed
+    target = 0.025 + 0.45 * remaining * remaining + 0.2 * stagnation * remaining + 0.6 * decline
+    safe_sigma = clip(sigma, 0.001, 2.0)
+    adjustment = 0.3 * log(target / safe_sigma) + 0.1 * (success - 0.3)
+    next_sigma = clip(safe_sigma * exp(clip(adjustment, -0.5, 0.5)), 0.001, 2.0)
+    next_memory = stack([smoothed, success, stagnation, 1.0])
+    return next_sigma, next_memory
+>>>>>>> REPLACE
+</DIFF>

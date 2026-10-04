@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_width_recovery",
+  "patch_description": "Adapt mutation width to smoothed fitness, stalled progress, and sudden fitness declines. Higher fitness lowers the target width for refinement; stagnation and declines raise it to encourage exploration and recovery. Archive-relative offspring success provides a modest correction rather than acting as parent-matched success. Memory initializes from observed fitness and persists without assuming a switch schedule. This is an untested candidate.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:35:44.692742",
+  "llm_cost": 0.0161388,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

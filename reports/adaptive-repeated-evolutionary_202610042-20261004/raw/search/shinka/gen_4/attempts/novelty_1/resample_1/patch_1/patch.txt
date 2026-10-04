@@ -1,0 +1,30 @@
+--- a/original.py
++++ b/original.py
+@@ -1,23 +1,24 @@
+ # EVOLVE-BLOCK-START
+ def update_sigma(sigma, stats, memory):
+     mean = clip(stats[0], 0.0, 1.0)
+     best = clip(stats[2], 0.0, 1.0)
+     success = clip(stats[4], 0.0, 1.0)
+     ready = clip(memory[3], 0.0, 1.0)
+     change = ready * (mean - memory[0])
+     progress = 0.8 * memory[1] + 0.2 * change
+     success_avg = where(memory[3] > 0.5, 0.75 * memory[2] + 0.25 * success, success)
+     gap = maximum(0.0, best - mean)
+     stalled = exp(-clip(40.0 * abs(progress), 0.0, 20.0)) * (1.0 - best)
+     decline = maximum(0.0, -change - 0.08)
+-    archive_loss = maximum(0.0, mean - clip(stats[3], 0.0, 1.0))
+-    reheat = clip(2.0 * decline + 0.3 * archive_loss, 0.0, 0.5)
++    archive_mean = clip(stats[3], 0.0, 1.0)
++    archive_advantage = clip((mean - archive_mean) / (0.05 + clip(stats[1], 0.0, 1.0)), -1.0, 1.0)
++    reheat = clip(2.0 * decline, 0.0, 0.5)
+     success_target = 0.3
+-    rate = clip(0.12 * (success_avg - success_target) + 0.045 * stalled - 0.1 * gap - 0.4 * progress, -0.15, 0.15)
++    rate = clip(0.12 * (success_avg - success_target) + 0.06 * archive_advantage + 0.045 * stalled - 0.1 * gap - 0.4 * progress, -0.15, 0.15)
+     collapsed = exp(-clip(30.0 * stats[1], 0.0, 20.0)) * (1.0 - best)
+     floor = 0.008 + 0.06 * (1.0 - mean) * (1.0 - mean) + 0.04 * collapsed
+     adapted = sigma * exp(rate + reheat)
+     next_sigma = clip(maximum(adapted, floor + 0.15 * reheat), 0.008, 0.8)
+     next_memory = stack([mean, progress, success_avg, 1.0])
+     return next_sigma, next_memory
+ # EVOLVE-BLOCK-END

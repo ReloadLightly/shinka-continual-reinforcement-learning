@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "request_id": "evaluation",
+  "context_sha256": "bb2dadc9b5d38b99baf1440f149a6afd0ed92cb8c49b752691e8ec205b057869",
+  "cache_hit": false,
+  "slot_consumed": true,
+  "started_at": "2026-10-04T10:46:24.738201+00:00",
+  "evaluator_model_calls": 0,
+  "candidate": {
+    "id": "proposal",
+    "variant": "ga_adaptive",
+    "source": null,
+    "source_sha256": "c2df4116359c5e9490b5db5b9f89ab5a53d03027bcbbb6feca62d239657729b3",
+    "settings": null,
+    "program": {
+      "source_sha256": "c2df4116359c5e9490b5db5b9f89ab5a53d03027bcbbb6feca62d239657729b3",
+      "canonical_ast_sha256": "b379c8e38544b9d503550fcda3e1db7c79af1e7b5eb203fc2f991c09c846002c",
+      "ast_nodes": 379,
+      "grammar_version": "adaptive-width-v1"
+    }
+  },
+  "cache_key": "ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1",
+  "cache_origin": "cache/ea3d360f6dcb3f5650ce513bc3c9bf2c6384d9f89b23ee3698ab6221b52e12b1/attempt_0001",
+  "cache_receipt_sha256": "7010c3d8988ce187f0ca42efafe5837267968cc0b9b02d24ad565b5c416c984a",
+  "aggregate": {
+    "scores": {
+      "combined_score": {
+        "mean": 0.7177958356340727,
+        "sample_sd": 0.09012825412532276,
+        "n": 3
+      },
+      "active_score": {
+        "mean": 0.6405250046014785,
+        "sample_sd": 0.06545121253534542,
+        "n": 3
+      },
+      "previous_score": {
+        "mean": 0.7950666666666667,
+        "sample_sd": 0.19115243480880206,
+        "n": 3
+      }
+    },
+    "reference_metrics": {
+      "learning_accuracy": {
+        "mean": 394.5,
+        "sample_sd": 43.27721686984967,
+        "n": 3
+      },
+      "forgetting": {
+        "mean": -38.199999999999996,
+        "sample_sd": 100.66143474262844,
+        "n": 3
+      },
+      "learning_minus_forgetting": {
+        "mean": 432.7,
+        "sample_sd": 93.59479300568907,
+        "n": 3
+      },
+      "zero_shot_transfer": {
+        "mean": 258.0777777777778,
+        "sample_sd": 101.744125319534,
+        "n": 3
+      },
+      "normalized_curve_average": {
+        "mean": 0.6343958379387855,
+        "sample_sd": 0.06545344260742787,
+        "n": 3
+      }
+    }
+  },
+  "evaluated_source_sha256": "c2df4116359c5e9490b5db5b9f89ab5a53d03027bcbbb6feca62d239657729b3",
+  "new_training_trials": 3,
+  "new_training_steps_nominal": 23040000,
+  "avoided_training_steps_nominal": 0,
+  "wall_seconds": 144.86246265300724,
+  "finished_at": "2026-10-04T10:48:56.155332+00:00"
+}

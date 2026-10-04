@@ -1,0 +1,24 @@
+--- a/original.py
++++ b/original.py
+@@ -1,4 +1,20 @@
+ # EVOLVE-BLOCK-START
+ def update_sigma(sigma, stats, memory):
+-    return sigma, memory
++    fitness = clip(stats[0], 0.0, 1.0)
++    initialized = clip(memory[3], 0.0, 1.0)
++    reference = initialized * memory[0] + (1.0 - initialized) * fitness
++    change = fitness - reference
++    trend = 0.8 * memory[2] + 0.2 * change
++    success = initialized * memory[1] + (1.0 - initialized) * stats[4]
++    next_success = 0.8 * success + 0.2 * clip(stats[4], 0.0, 1.0)
++    deficit = 1.0 - fitness
++    stall = exp(-40.0 * abs(trend))
++    drop = clip(-4.0 * change, 0.0, 1.0)
++    target = 0.025 + 0.30 * deficit * deficit + 0.08 * deficit * stall + 0.35 * drop
++    adjusted = clip(target * exp(0.6 * (next_success - 0.5)), 0.015, 0.8)
++    rate = 0.2 + 0.5 * drop
++    next_sigma = exp((1.0 - rate) * log(clip(sigma, 0.001, 2.0)) + rate * log(adjusted))
++    next_mean = 0.7 * reference + 0.3 * fitness
++    next_memory = stack([next_mean, next_success, trend, 1.0])
++    return next_sigma, next_memory
+ # EVOLVE-BLOCK-END

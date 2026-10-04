@@ -1,0 +1,19 @@
+<NAME>
+diversity_sensitive_exploration
+</NAME>
+<DESCRIPTION>
+Restore the fixed archive-relative success target supported by the stronger prior result. Add a bounded exploration floor when population fitness spread is small and the best individual remains weak. This may help escape premature convergence after task changes while allowing precise mutations once strong solutions emerge. The improvement remains to be evaluated.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    success_target = 0.3 + 0.3 * mean
+=======
+    success_target = 0.3
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    floor = 0.008 + 0.06 * (1.0 - mean) * (1.0 - mean)
+=======
+    collapsed = exp(-clip(30.0 * stats[1], 0.0, 20.0)) * (1.0 - best)
+    floor = 0.008 + 0.06 * (1.0 - mean) * (1.0 - mean) + 0.04 * collapsed
+>>>>>>> REPLACE
+</DIFF>

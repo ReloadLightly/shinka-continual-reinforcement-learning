@@ -1,0 +1,20 @@
+<NAME>
+archive_advantage_feedback
+</NAME>
+<DESCRIPTION>
+Use the re-scored archive mean as a reference for mutation quality. With equal archive and offspring fractions, the batch-minus-archive mean tracks offspring advantage. Normalize this signal by population spread and bound it to temper noisy feedback. Apply it to gradual width adaptation, while reserving reheating for sharp fitness declines. This may reduce excessive exploration when offspring beat the archive median but lower average fitness; improvement requires evaluation.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    archive_loss = maximum(0.0, mean - clip(stats[3], 0.0, 1.0))
+    reheat = clip(2.0 * decline + 0.3 * archive_loss, 0.0, 0.5)
+    success_target = 0.3
+    rate = clip(0.12 * (success_avg - success_target) + 0.045 * stalled - 0.1 * gap - 0.4 * progress, -0.15, 0.15)
+=======
+    archive_mean = clip(stats[3], 0.0, 1.0)
+    archive_advantage = clip((mean - archive_mean) / (0.05 + clip(stats[1], 0.0, 1.0)), -1.0, 1.0)
+    reheat = clip(2.0 * decline, 0.0, 0.5)
+    success_target = 0.3
+    rate = clip(0.12 * (success_avg - success_target) + 0.06 * archive_advantage + 0.045 * stalled - 0.1 * gap - 0.4 * progress, -0.15, 0.15)
+>>>>>>> REPLACE
+</DIFF>

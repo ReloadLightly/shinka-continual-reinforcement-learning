@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "diversity_sensitive_exploration",
+  "patch_description": "Restore the fixed archive-relative success target supported by the stronger prior result. Add a bounded exploration floor when population fitness spread is small and the best individual remains weak. This may help escape premature convergence after task changes while allowing precise mutations once strong solutions emerge. The improvement remains to be evaluated.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:46:24.634542",
+  "llm_cost": 0.0141548,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

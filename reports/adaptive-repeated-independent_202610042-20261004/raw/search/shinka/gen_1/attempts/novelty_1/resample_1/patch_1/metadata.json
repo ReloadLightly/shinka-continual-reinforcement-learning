@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "shock_plateau_controller",
+  "patch_description": "A memory-based controller chooses a target mutation width from population and archive quality. Sudden fitness declines trigger temporary exploration, while persistent plateaus increase exploration in proportion to remaining performance headroom. Strong performance narrows mutations. Smoothed updates aim to balance adaptation and preservation without assuming a task schedule; improvement requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:26:53.403330",
+  "llm_cost": 0.0163828,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

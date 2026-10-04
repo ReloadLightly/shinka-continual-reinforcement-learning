@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_width_target",
+  "patch_description": "Replace identity with a bounded exploration target that decreases as population fitness improves. Smoothed progress sustains exploration during stalls, while an observed fitness drop temporarily widens mutations. Archive-relative offspring success adjusts the target modestly. Geometric smoothing limits abrupt changes, and persistent memory uses only observed feedback without assuming a switch schedule. This is an untested proposal.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:29:39.107546",
+  "llm_cost": 0.0157848,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

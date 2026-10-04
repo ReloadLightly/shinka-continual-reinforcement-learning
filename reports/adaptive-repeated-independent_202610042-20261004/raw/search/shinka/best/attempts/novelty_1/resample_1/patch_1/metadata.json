@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_reheat",
+  "patch_description": "The current rule keeps the initial width of 0.5 fixed and ignores feedback. This proposal uses 0.15-rate fitness smoothing, an adaptive width target, and archive-relative success feedback centered at 0.25. Higher fitness narrows mutations; stalled progress and drops in archive fitness increase exploration. Persistent memory detects changes without a task identifier or switch schedule. These choices aim to improve acquisition while limiting disruptive mutations; performance requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:32:52.735371",
+  "llm_cost": 0.0157848,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "audited_at_utc": "2026-10-04T09:28:30.231700+00:00",
+  "repository_commit": "0f2166b5548da14049f89574ab578811b9e37383",
+  "scope": "Existing JSON under results/ and reports/: identity fields only, no learning outcomes used for allocation. Includes duplicated snapshots.",
+  "json_files_scanned": 12118,
+  "observed": {
+    "seed": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      1001,
+      1002,
+      1003,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      3001,
+      4001,
+      4002,
+      4003,
+      5001,
+      5002,
+      5003,
+      5004,
+      5005,
+      20261002
+    ],
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      1001,
+      1002,
+      1003,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      3001,
+      4001,
+      4002,
+      4003,
+      5001,
+      5002,
+      5003,
+      5004,
+      5005
+    ],
+    "trial": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      1002,
+      1003,
+      1004,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      3002,
+      4002,
+      4003,
+      4004,
+      5002,
+      5003,
+      5004,
+      5005,
+      5006
+    ],
+    "eval_seed": [
+      900042,
+      900043,
+      900044,
+      900045,
+      900046,
+      900047,
+      900048,
+      900049,
+      900050,
+      900051,
+      901001,
+      901002,
+      901003,
+      902001,
+      902002,
+      902003,
+      902004,
+      902005,
+      903001,
+      904001,
+      904002,
+      904003,
+      905001,
+      905002,
+      905003,
+      905004,
+      905005
+    ]
+  },
+  "proposed": {
+    "adaptive_search": {
+      "seeds": [
+        6001,
+        6002,
+        6003
+      ],
+      "trials": [
+        6002,
+        6003,
+        6004
+      ],
+      "eval_seeds": [
+        906001,
+        906002,
+        906003
+      ]
+    },
+    "adaptive_validation": {
+      "seeds": [
+        7001,
+        7002,
+        7003,
+        7004,
+        7005
+      ],
+      "trials": [
+        7002,
+        7003,
+        7004,
+        7005,
+        7006
+      ],
+      "eval_seeds": [
+        907001,
+        907002,
+        907003,
+        907004,
+        907005
+      ]
+    }
+  },
+  "proposed_existing_hits": [],
+  "invalid_json": [],
+  "paper_reporting": {
+    "configured_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "reserved_trials": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "notes": [
+    "Fresh development tasks shared across paired search arms and independent outer-search repetitions.",
+    "Fresh validation remains unavailable to all proposal generators and is used only after all finalists are frozen.",
+    "Previous reserved findings may motivate this new study; previous selections and result files remain closed."
+  ]
+}

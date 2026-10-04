@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_reheat",
+  "patch_description": "Adapt mutation width using archive-relative offspring success, smoothed progress, and population fitness spread. Poor-performing plateaus encourage exploration, while a large best-to-mean gap favors smaller mutations. A sudden fitness decline triggers bounded reheating to help acquire changed dynamics. Fitness-dependent minimum widths preserve exploration after convergence. Memory tracks observed feedback without assuming a switch schedule; performance improvement remains to be evaluated.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:40:27.149345",
+  "llm_cost": 0.0271268,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}
