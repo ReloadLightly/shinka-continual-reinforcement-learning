@@ -10,6 +10,9 @@ def main():
     parser.add_argument("--frozen", type=Path, required=True)
     parser.add_argument("--closure", type=Path)
     parser.add_argument("--diagnostic-study", type=Path)
+    parser.add_argument("--repeated-searches", type=Path, nargs="+")
+    parser.add_argument("--study-dir", type=Path)
+    parser.add_argument("--protocol", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--execute", action="store_true")
     parser.add_argument("--max-trials", type=int)
@@ -17,7 +20,14 @@ def main():
     parser.add_argument("--review-reason")
     parser.add_argument("--retry-failed", action="store_true")
     args = parser.parse_args()
-    if args.closure:
+    if sum(bool(x) for x in (args.closure, args.diagnostic_study, args.repeated_searches)) > 1:
+        parser.error("Choose only one finalist-freeze mode")
+    if args.repeated_searches:
+        if args.study_dir is None or args.protocol is None:
+            parser.error("Repeated search freeze requires --study-dir and --protocol")
+        result = validation.freeze_repeated(study=args.study_dir, archives=args.repeated_searches,
+                                            output=args.frozen, protocol_path=args.protocol)
+    elif args.closure:
         result = validation.freeze(closure_path=args.closure, output=args.frozen)
     elif args.diagnostic_study:
         result = validation.freeze_diagnostic(study=args.diagnostic_study, output=args.frozen)

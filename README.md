@@ -596,6 +596,49 @@ combined score. All directions are retained in the
 The result does not reopen the search or automatically promote any rule
 to final reporting.
 
+### What does the selected mutation rule retain?
+
+A post-hoc analysis of the completed trials separates the selected rule's
+active-task performance from its retention deficit. On the original reserved
+partition, selected-minus-FocusGA differences are −0.0110 ± 0.0142 for the
+normalized active score and −0.1151 ± 0.1131 for the previous-task score
+(mean ± sample SD across paired seeds). The negative combined result therefore
+arises mainly from lower previous-task performance.
+[Exact values](reports/adaptive-mechanism-20261004/summary.json) ·
+[Diagnostic protocol](reports/adaptive-mechanism-20261004/protocol.md).
+
+![Mutation widths and task returns for the completed adaptive comparison](reports/figures/adaptive-mechanism-20261004.svg)
+
+*Figure 7. Mutation width used to generate each population, active-task return,
+and inactive-task return for all five original reserved seeds. Lines show
+unsmoothed centroid evaluations; dots show independent fresh previous-task
+checkpoint evaluations. The inactive task in the first phase has not yet been
+trained, so its return does not measure forgetting. The logged post-update
+width is shifted by one generation to recover the width actually used.
+[PDF](reports/figures/adaptive-mechanism-20261004.pdf) ·
+[Generation traces](reports/adaptive-mechanism-20261004/traces.csv) ·
+[Analysis script](scripts/analyze_adaptive_mechanism.py) ·
+[Evidence hashes](reports/adaptive-mechanism-20261004/checksums.json).*
+
+The selected rule's per-trial median widths occupy the narrow range
+0.00805–0.00825, while previous-task scores range from 0.0592 to 1.0000.
+Its width briefly increases after some task switches and then contracts.
+Arithmetic adaptation reaches still smaller widths while attaining a higher
+mean previous-task score. These observations do not establish width contraction
+as a cause of forgetting. FocusGA also changes parent selection, so its
+comparison does not isolate a width mechanism.
+[Per-trial widths, phase summaries, and scores](reports/adaptive-mechanism-20261004/summary.json).
+
+The resulting hypothesis concerns the value of feedback-guided program search,
+rather than an assumed benefit from a more complicated mutation rule. The
+planned [repeated-search study](docs/adaptive-repeated-search.md) compares ShinkaEvolve with a matched search
+control that also proposes adaptive programs. The earlier random search varied
+static configurations and cannot answer this question. Independent searches
+and fresh test data are needed to assess the contribution of archive-guided
+selection; the completed studies and their selections remain closed. This
+diagnostic supplies a hypothesis, not evidence that the new search design
+improves performance.
+
 ### Computational budget
 
 | Experiment | New training trials | Nominal training steps |

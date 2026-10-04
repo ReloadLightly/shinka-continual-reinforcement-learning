@@ -182,3 +182,48 @@ def test_native_scheduler_and_random_controls_share_numeric_thread_limits():
     random_env = search.subscription_environment("gpt-6.1-sol", 600)
     assert overrides and all(random_env[name] == value for name, value in overrides.items())
     assert all(search.SEARCH_THREAD_ENV[name] == value for name, value in overrides.items())
+
+
+def test_native_outer_seed_controls_initial_rng_and_resumed_state(tmp_path, monkeypatch):
+    import importlib.metadata
+    import random
+
+    np = pytest.importorskip("numpy")
+    native_cli = pytest.importorskip("shinka.cli.run")
+    draws = []
+
+    class Distribution:
+        def locate_file(self, name):
+            return tmp_path / name
+
+    monkeypatch.setattr(importlib.metadata, "distribution", lambda _: Distribution())
+
+    def native_main(arguments):
+        assert arguments == ["native-arguments"]
+        draws.append((random.random(), np.random.random()))
+        return 0
+
+    monkeypatch.setattr(native_cli, "main", native_main)
+    python_state, numpy_state = random.getstate(), np.random.get_state()
+    try:
+        path = tmp_path / "outer-6011.json"
+        search.native_main(path, ["native-arguments"], outer_seed=6011)
+        search.native_main(path, ["native-arguments"], outer_seed=6011)
+        reference_python = random.Random(6011)
+        reference_numpy = np.random.RandomState(6011)
+        assert draws == [(reference_python.random(), reference_numpy.random()) for _ in range(2)]
+        assert search.read_json(path)["outer_seed"] == 6011
+        with pytest.raises(ValueError, match="outer seed changed"):
+            search.native_main(path, ["native-arguments"], outer_seed=6012)
+        search.native_main(tmp_path / "outer-6012.json", ["native-arguments"], outer_seed=6012)
+        assert draws[-1] != draws[0]
+        legacy = tmp_path / "legacy.json"
+        search.native_main(legacy, ["native-arguments"])
+        value = search.read_json(legacy)
+        del value["outer_seed"]
+        search.write_json(legacy, value)
+        search.native_main(legacy, ["native-arguments"])
+        assert search.read_json(legacy)["outer_seed"] == search.RANDOM_SEED
+    finally:
+        random.setstate(python_state)
+        np.random.set_state(numpy_state)

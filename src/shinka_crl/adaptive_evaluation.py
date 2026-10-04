@@ -28,6 +28,8 @@ from shinka_crl.reference_timing import artifact_files, artifact_hashes, runtime
 from shinka_crl.search import SEARCH_THREAD_ENV
 
 VERSION = "adaptive-cartpole-v1"
+PARTITION_VERSION = "adaptive-cartpole-v2"
+HISTORICAL_ALLOCATION = "docs/adaptive-seed-allocation-20261003.json"
 WINNERS = "reports/validation-static-20261002/summary.json"
 FINALISTS = "reports/finalists-static-20261002"
 CONTROL_IDS = ("identity", "arithmetic", "focus", "static_shinka11", "static_random24")
@@ -46,7 +48,7 @@ SOURCE_FILES = (
     "src/shinka_crl/pilot.py", "src/shinka_crl/search.py", "src/shinka_crl/reference_timing.py",
     "src/shinka_crl/profiles/adaptive-search.json",
     "src/shinka_crl/profiles/adaptive-validation.json", "requirements/cpu.lock", "upstream.lock.json",
-    "docs/adaptive-seed-allocation-20261003.json",
+    HISTORICAL_ALLOCATION,
     WINNERS,
 )
 
@@ -107,11 +109,68 @@ def controls() -> list[dict]:
     return declared
 
 
+def _partition(seeds, size, name):
+    require(isinstance(seeds, list) and len(seeds) == size
+            and all(type(seed) is int and 0 <= seed < 2**32 - 900000 for seed in seeds)
+            and len(set(seeds)) == size,
+            f"{name} requires {size} distinct seeds with valid derived trial/evaluation IDs")
+    return {"seeds": seeds, "trials": [seed + 1 for seed in seeds],
+            "eval_seeds": [seed + 900000 for seed in seeds]}
+
+
+def _validate_allocation(evidence, development_seeds, validation_seeds):
+    """Check task identities as well as training/evaluation RNG identities."""
+    partitions = {"adaptive_search": _partition(development_seeds, 3, "Development"),
+                  "adaptive_validation": _partition(validation_seeds, 5, "Validation")}
+    require(evidence.get("schema_version") == 1 and evidence.get("invalid_json") == []
+            and evidence.get("proposed_existing_hits") == []
+            and evidence.get("proposed") == partitions,
+            "Seed allocation audit is incomplete or differs from the requested partitions")
+    observed = evidence.get("observed", {})
+    for field in ("seed", "seeds", "trial", "eval_seed"):
+        require(isinstance(observed.get(field), list)
+                and all(type(value) is int and value >= 0 for value in observed[field]),
+                f"Seed allocation audit lacks observed {field} identities")
+    history = read_json(REPO_ROOT / HISTORICAL_ALLOCATION)
+    historical = history["observed"]
+    reserved = {
+        "seeds": set(historical["seed"] + historical["seeds"] + list(range(42, 52))),
+        "trials": set(historical["trial"] + list(range(1, 11))),
+        "eval_seeds": set(historical["eval_seed"] + list(range(900042, 900052))),
+    }
+    for partition in history["proposed"].values():
+        for field in reserved:
+            reserved[field].update(partition[field])
+    reserved["seeds"].update(observed["seed"] + observed["seeds"])
+    reserved["trials"].update(observed["trial"])
+    reserved["eval_seeds"].update(observed["eval_seed"])
+    for field in reserved:
+        development = set(partitions["adaptive_search"][field])
+        validation = set(partitions["adaptive_validation"][field])
+        require(development.isdisjoint(validation), f"Development and validation {field} overlap")
+        require((development | validation).isdisjoint(reserved[field]),
+                f"New {field} overlap existing or reserved experiment identities")
+    return partitions
+
+
 def freeze_study(*, output: Path, upstream: Path = DEFAULT_UPSTREAM,
-                 python: str = str(DEFAULT_PYTHON), timeout: int = 1800) -> dict:
+                 python: str = str(DEFAULT_PYTHON), timeout: int = 1800,
+                 development_seeds: list[int] | None = None,
+                 validation_seeds: list[int] | None = None,
+                 seed_allocation: Path | None = None) -> dict:
     require(type(timeout) is int and timeout > 0, "Timeout must be a positive integer")
     output, upstream = Path(output).resolve(), Path(upstream).resolve()
     require(not output.exists(), "Study must use a fresh directory")
+    partitioned = any(value is not None for value in
+                      (development_seeds, validation_seeds, seed_allocation))
+    allocation_path = None
+    if partitioned:
+        require(all(value is not None for value in
+                    (development_seeds, validation_seeds, seed_allocation)),
+                "Explicit development and validation seeds require a seed allocation audit")
+        allocation_path = Path(seed_allocation).resolve()
+        _validate_allocation(read_json(allocation_path), development_seeds, validation_seeds)
+        allocation_sha256 = sha256(allocation_path)
     verify_upstream(upstream)
     interpreter = shutil.which(python)
     require(interpreter is not None, "Missing training interpreter")
@@ -123,7 +182,10 @@ def freeze_study(*, output: Path, upstream: Path = DEFAULT_UPSTREAM,
     profile, reserved = load_profile("adaptive-search"), load_profile("adaptive-validation")
     require(profile["seeds"] == [4001, 4002, 4003] and reserved["seeds"] == list(range(5001, 5006)),
             "Adaptive seed partition changed")
-    plan = {"schema_version": 1, "protocol_version": VERSION, "profile": profile,
+    if partitioned:
+        profile["seeds"], reserved["seeds"] = list(development_seeds), list(validation_seeds)
+    plan = {"schema_version": 1,
+            "protocol_version": PARTITION_VERSION if partitioned else VERSION, "profile": profile,
             "reserved_validation_profile": reserved, "trial_offset": 1, "eval_seed_offset": 900000,
             "posthoc_episodes": 10, "objective_version": "adaptive-active-previous-v1",
             "objective_weights": {"active": .5, "previous": .5}, "grammar_version": GRAMMAR_VERSION,
@@ -134,7 +196,14 @@ def freeze_study(*, output: Path, upstream: Path = DEFAULT_UPSTREAM,
                             "duplicate requests consume slots, never extra training; failed attempts retained",
             "outer_search_policy": "Separate Shinka archive; staged 5/13/25 total slots; each repeated or "
                                    "invalid proposal consumes its slot; no model calls in control study"}
+    if partitioned:
+        plan["seed_allocation"] = {"source_path": str(allocation_path),
+                                   "frozen_path": "seed-allocation.json", "sha256": allocation_sha256}
     output.mkdir(parents=True)
+    if partitioned:
+        shutil.copyfile(allocation_path, output / "seed-allocation.json")
+        require(sha256(output / "seed-allocation.json") == allocation_sha256,
+                "Seed allocation audit changed while freezing")
     (output / "programs").mkdir()
     for control in plan["controls"]:
         if control["source"]:
@@ -151,10 +220,24 @@ def read_plan(study: Path) -> dict:
     require(receipt == {"plan_sha256": sha256(study / "plan.json"),
                        "program_sha256": {p.name: sha256(p) for p in sorted((study / "programs").glob("*.py"))}},
             "Study plan or frozen controls changed")
-    require(plan["protocol_version"] == VERSION and plan["source_sha256"] == source_hashes(),
+    require(plan["protocol_version"] in (VERSION, PARTITION_VERSION)
+            and plan["source_sha256"] == source_hashes(),
             "Evaluation sources changed; use the recorded revision")
-    require(plan["profile"] == load_profile("adaptive-search")
-            and plan["reserved_validation_profile"] == load_profile("adaptive-validation")
+    profile, reserved = load_profile("adaptive-search"), load_profile("adaptive-validation")
+    if plan["protocol_version"] == PARTITION_VERSION:
+        allocation = plan.get("seed_allocation", {})
+        require(set(allocation) == {"source_path", "frozen_path", "sha256"}
+                and allocation["frozen_path"] == "seed-allocation.json"
+                and isinstance(allocation["source_path"], str)
+                and sha256(study / "seed-allocation.json") == allocation["sha256"],
+                "Frozen seed allocation audit changed")
+        _validate_allocation(read_json(study / "seed-allocation.json"),
+                             plan["profile"]["seeds"], plan["reserved_validation_profile"]["seeds"])
+        profile["seeds"] = plan["profile"]["seeds"]
+        reserved["seeds"] = plan["reserved_validation_profile"]["seeds"]
+    else:
+        require("seed_allocation" not in plan, "Legacy study cannot override its seed allocation")
+    require(plan["profile"] == profile and plan["reserved_validation_profile"] == reserved
             and plan["controls"] == controls(), "Frozen study protocol changed")
     require(plan["objective_weights"] == {"active": .5, "previous": .5}
             and plan["objective_version"] == "adaptive-active-previous-v1"
@@ -556,7 +639,7 @@ def summarize_study(study):
     completed_training = sum(t["status"] == "complete" for t in training_attempts)
     steps = nominal_training_steps(plan["profile"], "ga")
     return {"schema_version": 1, "status": "complete" if set(selected) == set(CONTROL_IDS) and duplicate_ok else "partial",
-            "protocol_version": VERSION, "profile": plan["profile"], "requests": requests,
+            "protocol_version": plan["protocol_version"], "profile": plan["profile"], "requests": requests,
             "control_requests": selected, "failed_requests": failed_requests,
             "cache_format_check_passed": duplicate_ok, "training_attempts": training_attempts,
             "cache_attempts": len(attempts), "failed_attempts": sum(a["status"] != "complete" for a in attempts),

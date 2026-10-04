@@ -368,10 +368,12 @@ def run_search(*, output: Path, model: str = "gpt-6.1-sol", cpus: int = 2,
     return state
 
 
-def native_main(rng_path: Path, arguments: list[str]) -> int:
+def native_main(rng_path: Path, arguments: list[str], *, outer_seed: int = RANDOM_SEED) -> int:
     """Preserve native host sampling RNG across graceful stage boundaries."""
     import importlib.metadata
 
+    require(type(outer_seed) is int and 0 <= outer_seed < 2**32,
+            "Outer seed must be an unsigned 32-bit integer")
     root = Path(importlib.metadata.distribution("shinka-evolve").locate_file("shinka"))
     require(not any(path.exists() for path in (root.parent / ".env", Path.cwd() / ".env")),
             "Shinka dotenv override appeared after preparation")
@@ -380,18 +382,20 @@ def native_main(rng_path: Path, arguments: list[str]) -> int:
 
     if rng_path.is_file():
         saved = read_json(rng_path)
+        require(saved.get("outer_seed", RANDOM_SEED) == outer_seed,
+                "Saved native RNG outer seed changed")
         state = saved["python"]
         random.setstate((state[0], tuple(state[1]), state[2]))
         state = saved["numpy"]
         np.random.set_state((state[0], np.asarray(state[1], dtype=np.uint32),
                              state[2], state[3], state[4]))
     else:
-        random.seed(RANDOM_SEED)
-        np.random.seed(RANDOM_SEED)
+        random.seed(outer_seed)
+        np.random.seed(outer_seed)
     result = main(arguments)
     state = np.random.get_state()
     rng_path.parent.mkdir(parents=True, exist_ok=True)
-    write_json(rng_path, {"python": random.getstate(),
+    write_json(rng_path, {"outer_seed": outer_seed, "python": random.getstate(),
                          "numpy": [state[0], state[1].tolist(), *state[2:]]})
     return result
 
@@ -399,4 +403,9 @@ def native_main(rng_path: Path, arguments: list[str]) -> int:
 if __name__ == "__main__":
     if len(sys.argv) < 3 or sys.argv[1] != "--native":
         raise SystemExit("Use scripts/run_search.py")
-    raise SystemExit(native_main(Path(sys.argv[2]), sys.argv[3:]))
+    import argparse
+
+    parser = argparse.ArgumentParser(add_help=False, allow_abbrev=False)
+    parser.add_argument("--outer-seed", type=int, default=RANDOM_SEED)
+    native_args, remaining = parser.parse_known_args(sys.argv[3:])
+    raise SystemExit(native_main(Path(sys.argv[2]), remaining, outer_seed=native_args.outer_seed))

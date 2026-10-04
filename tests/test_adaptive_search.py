@@ -99,7 +99,8 @@ def native(tmp_path, monkeypatch):
         with sqlite3.connect(shinka / "programs.sqlite") as db:
             db.execute("CREATE TABLE IF NOT EXISTS programs (id TEXT PRIMARY KEY, generation INT, "
                        "parent_id TEXT,code TEXT,combined_score REAL,correct INT,"
-                       "public_metrics TEXT,private_metrics TEXT)")
+                       "public_metrics TEXT,private_metrics TEXT,"
+                       "archive_inspiration_ids TEXT,top_k_inspiration_ids TEXT)")
             count = db.execute("SELECT COUNT(*) FROM programs").fetchone()[0]
             for generation in range(count, target):
                 directory = shinka / f"gen_{generation}"
@@ -109,11 +110,13 @@ def native(tmp_path, monkeypatch):
                 code = (path / "program.py").read_text()
                 (directory / "main.py").write_text(code)
                 metrics = search.read_json(path / "metrics.json")
-                db.execute("INSERT INTO programs VALUES (?,?,?,?,?,?,?,?)",
+                independent = "db.parent_selection_strategy=best_of_n" in command
+                parent_id = "id-0" if independent else f"id-{generation - 1}"
+                db.execute("INSERT INTO programs VALUES (?,?,?,?,?,?,?,?,?,?)",
                            (f"id-{generation}", generation,
-                            f"id-{generation - 1}" if generation else None, code,
+                            parent_id if generation else None, code,
                             metrics["combined_score"], 1, json.dumps(metrics["public"]),
-                            json.dumps(metrics["private"])))
+                            json.dumps(metrics["private"]), "[]", "[]"))
                 if generation:
                     with (output / "model_requests.jsonl").open("a") as writer:
                         for event in ("started", "codex_exec", "finished"):
@@ -167,6 +170,83 @@ def test_prepare_freezes_task_controls_and_sources_without_model_or_training(nat
     assert plan["proposal_slots"] == 24 and plan["max_model_requests_per_slot"] == 1
     assert plan["evaluation_context_sha256"] == search.digest(native["evaluation"])
     search.validate_task(native["output"])
+
+
+def test_independent_native_control_and_outer_seed_are_frozen_and_verified(native):
+    run(native, arm="independent", outer_seed=6011)
+    plan = search.read_json(native["output"] / "plan.json")
+    assert plan["protocol"] == "adaptive-shinka-v2"
+    assert plan["arm"] == "independent" and plan["outer_random_seed"] == 6011
+    assert plan["native_selection"] == {"parent_selection_strategy": "best_of_n",
+                                        "num_archive_inspirations": 0,
+                                        "num_top_k_inspirations": 0}
+    command = native["calls"][-1]["command"]
+    assert command[command.index("--outer-seed") + 1] == "6011"
+    assert "db.parent_selection_strategy=best_of_n" in command
+    assert "db.num_archive_inspirations=0" in command
+    assert "db.num_top_k_inspirations=0" in command
+    summary = search.summarize(native["output"])
+    assert summary["arm"] == "independent" and summary["outer_random_seed"] == 6011
+    assert all(row["parent_id"] == "id-0" for row in summary["programs"][1:])
+    assert "First adaptive" not in summary["interpretation"]
+    before = len(native["calls"])
+    for changed in ({"outer_seed": 6012, "arm": "independent"},
+                    {"outer_seed": 6011, "arm": "evolutionary"}):
+        with pytest.raises(ValueError, match="Frozen search plan"):
+            run(native, resume=True, target=13, **changed)
+    assert len(native["calls"]) == before
+
+
+@pytest.mark.parametrize("column,value,error", [
+    ("parent_id", "id-1", "identity parent"),
+    ("archive_inspiration_ids", '["id-1"]', "archive inspirations"),
+    ("top_k_inspiration_ids", '["id-1"]', "archive inspirations"),
+])
+def test_independent_control_rejects_evolving_ancestry_or_context(native, column, value, error):
+    run(native, arm="independent", outer_seed=6011)
+    database_edit(native, f"UPDATE programs SET {column}=? WHERE generation=2", (value,))
+    with pytest.raises(ValueError, match=error):
+        search.verified_rows(native["output"], search.read_json(native["output"] / "plan.json"),
+                             native["evaluation"])
+
+
+@pytest.mark.parametrize("kwargs,error", [
+    ({"outer_seed": -1}, "Outer seed"), ({"outer_seed": 2**32}, "Outer seed"),
+    ({"outer_seed": True}, "Outer seed"), ({"arm": "random"}, "Unknown adaptive search arm"),
+])
+def test_invalid_seed_or_arm_fails_before_any_work(native, kwargs, error):
+    with pytest.raises(ValueError, match=error):
+        run(native, **kwargs)
+    assert not native["output"].exists() and not native["calls"]
+
+
+def test_pinned_native_best_of_n_has_no_evolving_context(tmp_path):
+    native_db = pytest.importorskip("shinka.database")
+    sampler = pytest.importorskip("shinka.core.sampler")
+    config = native_db.DatabaseConfig(db_path=str(tmp_path / "native.sqlite"), num_islands=1,
+                                      **search.native_selection("independent"))
+    db = native_db.ProgramDatabase(config, embedding_model=None)
+    identity = "def update_sigma(sigma, stats, memory):\n    return sigma, memory\n"
+    try:
+        db.add(native_db.Program(id="identity", code=identity, correct=True,
+                                 combined_score=0.25, public_metrics={"initial_metric": 0.25},
+                                 text_feedback="Constant identity feedback", island_idx=0))
+        db.add(native_db.Program(id="better-proposal", code="def marker_previous_proposal(): pass",
+                                 correct=True, generation=1, parent_id="identity", island_idx=0,
+                                 combined_score=0.99, public_metrics={"hidden_metric": 0.99},
+                                 text_feedback="Hidden proposal feedback"))
+        parent, archive, top_k, fix = db.sample_with_fix_mode(target_generation=2)
+        assert parent.id == "identity" and archive == top_k == [] and fix is False
+        prompt = sampler.PromptSampler(task_sys_msg="Fixed grammar", patch_types=["diff"],
+                                       patch_type_probs=[1.0], use_text_feedback=True)
+        system, message, patch_type = prompt.sample(parent, archive, top_k)
+        assert system.startswith("Fixed grammar") and patch_type == "diff"
+        assert identity in message and "initial_metric" in message
+        assert "Constant identity feedback" in message
+        assert "marker_previous_proposal" not in message and "hidden_metric" not in message
+        assert "Hidden proposal feedback" not in message and "# Prior programs" not in message
+    finally:
+        db.close()
 
 
 def test_staged_resume_keeps_existing_sources_and_counts_cache_reuse(native):

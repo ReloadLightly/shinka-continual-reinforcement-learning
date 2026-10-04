@@ -27,6 +27,7 @@ from shinka_crl.reference_timing import artifact_files, artifact_hashes, utc_now
 from shinka_crl.search import SEARCH_THREAD_ENV
 
 VERSION = "adaptive-reserved-validation-v1"
+REPEATED_VERSION = "adaptive-repeated-validation-v1"
 SOURCE_FILES = (*ae.SOURCE_FILES, "src/shinka_crl/adaptive_validation.py",
                 "scripts/run_adaptive_validation.py", "scripts/report_adaptive_validation.py")
 CONDITIONS = ("selected", *ae.CONTROL_IDS)
@@ -180,13 +181,14 @@ def deduplicate(conditions: list[dict], context: dict) -> list[dict]:
     return unique
 
 
-def _context(development: dict, *, diagnostic: bool = False) -> dict:
-    profile = load_profile("adaptive-validation")
+def _context(development: dict, *, diagnostic: bool = False, repeated: bool = False) -> dict:
+    profile = copy.deepcopy(development["reserved_validation_profile"]) if repeated else load_profile("adaptive-validation")
     if diagnostic:
         profile = load_profile("adaptive-gate-switching")
         profile.update(num_phases=4, ne={"num_generations": 8, "task_interval": 2,
                                        "pop_size": 8, "num_evals": 1})
-    return {"protocol_version": VERSION, "kind": "diagnostic" if diagnostic else "reserved",
+    return {"protocol_version": REPEATED_VERSION if repeated else VERSION,
+            "kind": "repeated_reserved" if repeated else "diagnostic" if diagnostic else "reserved",
             "profile": profile, "objective_version": "adaptive-active-previous-v1",
             "objective_weights": {"active": .5, "previous": .5}, "trial_offset": 1,
             "eval_seed_offset": 900000, "posthoc_episodes": 10,
@@ -224,7 +226,7 @@ def _write_freeze(output, context, conditions, *, provenance, protocol_path):
               for i, seed in enumerate(context["profile"]["seeds"]) for j, item in enumerate(unique)]
     steps = nominal_training_steps(context["profile"], "ga")
     revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO_ROOT, text=True).strip()
-    if context["kind"] == "reserved":
+    if context["kind"] in {"reserved", "repeated_reserved"}:
         for name in SOURCE_FILES:
             require(subprocess.check_output(["git", "show", f"{revision}:{name}"], cwd=REPO_ROOT)
                     == (REPO_ROOT / name).read_bytes(), "Commit tested validation implementation before freeze")
@@ -241,9 +243,78 @@ def _write_freeze(output, context, conditions, *, provenance, protocol_path):
                           "inference": "descriptive only; no significance threshold or promotion rule",
                           "early_stop": "integrity or fixed resource limit only; never score-dependent",
                           "deadline": "whole-trial wall deadline includes metadata probes; terminal receipt finalization overhead is retained in session cost"}}
+    if context["kind"] == "repeated_reserved":
+        allocation = provenance["seed_allocation"]
+        require(sha256(Path(allocation["source"])) == allocation["sha256"],
+                "Fresh seed allocation evidence changed before finalist freeze")
+        shutil.copyfile(allocation["source"], output / "seed-allocation.json")
+        require(sha256(output / "seed-allocation.json") == allocation["sha256"],
+                "Fresh seed allocation evidence changed while freezing")
+        plan["reporting"] = {
+            "primary": "Within each outer-search repetition, evolutionary minus independent finalist mean combined score across the five common fresh evaluation seeds",
+            "secondary": ["identity", "arithmetic", "focus"],
+            "inference": "Report individual outer-search differences and their mean/sample SD; evaluation seeds are not independent search repetitions; no significance threshold or promotion rule",
+            "early_stop": "integrity or preregistered cumulative experiment deadline only; never score-dependent",
+        }
     write_json(output / "plan.json", plan)
     write_json(output / "receipt.json", artifact_hashes(output))
     return plan
+
+
+def freeze_repeated(*, study: Path, archives: list[Path], output: Path, protocol_path: Path) -> dict:
+    """Freeze all search finalists together before opening the new evaluation split."""
+    from shinka_crl import adaptive_search as search
+    development = ae.read_plan(study.resolve())
+    require(development["protocol_version"] == ae.PARTITION_VERSION,
+            "Repeated search needs a separately allocated fresh evaluation partition")
+    selections, conditions, identities = [], [], set()
+    for archive in archives:
+        archive = archive.resolve()
+        summary = search.summarize(archive)
+        plan = read_json(archive / "plan.json")
+        state = read_json(archive / "state.json")
+        require(state["status"] == "complete" and summary["slots_consumed"] == 5
+                and summary["programs_evaluated"] == 5
+                and not summary["failed_requests"] and not summary["terminal_proposal_failures"],
+                "Every five-slot search must be complete before the common finalist freeze")
+        require(plan["evaluation_context_sha256"] == ae.digest(development), "Search evaluation context differs")
+        arm, seed = plan.get("arm", "evolutionary"), plan["outer_random_seed"]
+        require(arm in {"evolutionary", "independent"} and (seed, arm) not in identities,
+                "Duplicated or unsupported search arm")
+        identities.add((seed, arm))
+        ranked = rank_programs([
+            {"generation": row["generation"],
+             "development_score": row["request"]["aggregate"]["scores"]["combined_score"]["mean"],
+             "request": row["request"]} for row in summary["programs"]])
+        require({row["generation"] for row in ranked} == set(range(5)),
+                "Five-slot selection must include the identity and every proposal")
+        winner = ranked[0]
+        request = winner["request"]
+        source = archive / "shinka" / f"gen_{winner['generation']}" / "main.py"
+        require(sha256(source) == request["candidate"]["source_sha256"]
+                and load_program(source).metadata() == request["candidate"]["program"],
+                "Selected source differs from the verified development request")
+        identifier = f"{arm}_{seed}"
+        conditions.append({"id": identifier, "variant": "ga_adaptive", "source": str(source),
+                           "source_sha256": sha256(source), "settings": None,
+                           "program": request["candidate"]["program"]})
+        selections.append({"id": identifier, "arm": arm, "outer_seed": seed,
+                           "archive": str(archive), "plan_sha256": sha256(archive / "plan.json"),
+                           "state_sha256": sha256(archive / "state.json"),
+                           "generation": winner["generation"], "development_score": winner["development_score"],
+                           "source_sha256": sha256(source),
+                           "ranked_candidates": [{k: r[k] for k in ("generation", "development_score")} for r in ranked]})
+    seeds = sorted({seed for seed, _ in identities})
+    require(len(seeds) >= 2 and identities == {(seed, arm) for seed in seeds for arm in ("evolutionary", "independent")},
+            "Require at least two complete paired outer-search repetitions")
+    conditions.extend(copy.deepcopy(c) for c in development["controls"] if c["id"] in {"identity", "arithmetic", "focus"})
+    provenance = {"development_plan": development, "development_plan_sha256": ae.digest(development),
+                  "seed_allocation": {"source": str(study.resolve() / "seed-allocation.json"),
+                                      "sha256": development["seed_allocation"]["sha256"]},
+                  "selected_searches": selections,
+                  "selection": "Highest exact combined development mean among all five slots; earlier generation breaks exact ties; all finalists frozen before any fresh evaluation"}
+    return _write_freeze(output.resolve(), _context(development, repeated=True), conditions,
+                         provenance=provenance, protocol_path=protocol_path.resolve())
 
 
 def freeze(*, closure_path: Path, output: Path) -> dict:
@@ -274,7 +345,7 @@ def freeze_diagnostic(*, study: Path, output: Path) -> dict:
 def read_plan(frozen: Path) -> dict:
     require(artifact_hashes(frozen) == read_json(frozen / "receipt.json"), "Frozen handoff evidence changed")
     plan = read_json(frozen / "plan.json")
-    require(plan["protocol_version"] == VERSION and plan["source_sha256"] == source_hashes(),
+    require(plan["protocol_version"] in {VERSION, REPEATED_VERSION} and plan["source_sha256"] == source_hashes(),
             "Validation implementation changed")
     require(plan["session_limit_seconds"] == LIMIT and plan["timeout_seconds"] == 1800
             and plan["posthoc_episodes"] == 10 and plan["objective_weights"] == {"active": .5, "previous": .5}
@@ -282,14 +353,65 @@ def read_plan(frozen: Path) -> dict:
             and plan["thread_environment"] == SEARCH_THREAD_ENV and plan["upstream_commit"] == UPSTREAM_COMMIT,
             "Validation numerical contract changed")
     require(plan["native_source_sha256"] == native_sources(Path(plan["upstream"])), "Pinned native implementation changed")
-    if plan["kind"] == "reserved":
+    if plan["kind"] == "repeated_reserved":
+        development = plan["provenance"]["development_plan"]
+        require(plan["protocol_version"] == REPEATED_VERSION
+                and development["protocol_version"] == ae.PARTITION_VERSION
+                and ae.digest(development) == plan["provenance"]["development_plan_sha256"]
+                and plan["profile"] == development["reserved_validation_profile"], "Repeated validation partition changed")
+        allocation = plan["provenance"]["seed_allocation"]
+        require(sha256(frozen / "seed-allocation.json") == allocation["sha256"]
+                == development["seed_allocation"]["sha256"], "Fresh seed allocation evidence changed")
+        ae._validate_allocation(read_json(frozen / "seed-allocation.json"),
+                                development["profile"]["seeds"], plan["profile"]["seeds"])
+        expected_development = load_profile("adaptive-search")
+        expected_development["seeds"] = development["profile"]["seeds"]
+        require(development["profile"] == expected_development
+                and development["source_sha256"] == ae.source_hashes()
+                and development["controls"] == ae.controls(), "Repeated development contract changed")
+        expected_profile = load_profile("adaptive-validation")
+        expected_profile["seeds"] = development["reserved_validation_profile"]["seeds"]
+        require(plan["profile"] == expected_profile and len(plan["profile"]["seeds"]) == 5
+                and not set(plan["profile"]["seeds"]) & set(development["profile"]["seeds"]),
+                "Repeated validation scientific profile changed")
+        require(all(plan[key] == value for key, value in _context(development, repeated=True).items()),
+                "Repeated validation context changed")
+        selections = plan["provenance"]["selected_searches"]
+        identities = {(s["outer_seed"], s["arm"]) for s in selections}
+        seeds = {seed for seed, _ in identities}
+        require(len(selections) == len(identities) and len(seeds) >= 2
+                and identities == {(seed, arm) for seed in seeds for arm in ("evolutionary", "independent")},
+                "Repeated validation requires complete search pairs")
+        require([c["id"] for c in plan["conditions"]] == [s["id"] for s in selections] + ["identity", "arithmetic", "focus"],
+                "Repeated finalist or control memberships changed")
+        for candidate, selection in zip(plan["conditions"], selections):
+            ranked = rank_programs(selection["ranked_candidates"])
+            require(candidate["id"] == f"{selection['arm']}_{selection['outer_seed']}"
+                    and candidate["variant"] == "ga_adaptive" and candidate["settings"] is None
+                    and candidate["source"] == f"programs/{candidate['id']}.py"
+                    and candidate["source_sha256"] == selection["source_sha256"]
+                    and {row["generation"] for row in ranked} == set(range(5))
+                    and selection["generation"] == ranked[0]["generation"]
+                    and selection["development_score"] == ranked[0]["development_score"],
+                    "Repeated finalist selection changed")
+        for candidate in plan["conditions"][len(selections):]:
+            expected = copy.deepcopy(next(c for c in development["controls"] if c["id"] == candidate["id"]))
+            if expected["source"]:
+                expected["source"] = f"programs/{expected['id']}.py"
+                if expected["variant"] == "ga_adaptive":
+                    expected["program"] = load_program(frozen / expected["source"]).metadata()
+            require(candidate == expected, "Repeated validation fixed control changed")
+    elif plan["kind"] == "reserved":
+        require(plan["protocol_version"] == VERSION, "Legacy validation version changed")
         require(plan["profile"] == load_profile("adaptive-validation")
                 and tuple(c["id"] for c in plan["conditions"]) == CONDITIONS,
                 "Reserved partition or controls changed")
     else:
         require(plan["kind"] == "diagnostic" and plan["profile"]["seeds"] == [3001]
                 and plan["profile"]["name"] == "adaptive-gate-switching", "Invalid diagnostic partition")
-    context = {key: plan[key] for key in _context(plan, diagnostic=plan["kind"] == "diagnostic")}
+    context = {key: plan[key] for key in _context(
+        plan["provenance"]["development_plan"] if plan["kind"] == "repeated_reserved" else plan,
+        diagnostic=plan["kind"] == "diagnostic", repeated=plan["kind"] == "repeated_reserved")}
     require(plan["unique_recipes"] == deduplicate(plan["conditions"], context), "Full recipe identities changed")
     unique = plan["unique_recipes"]
     expected_trials = [{"index": len(unique) * i + j, "recipe_key": item["recipe_key"],
@@ -413,7 +535,7 @@ def run(*, frozen: Path, output: Path, max_trials: int | None = None,
     frozen, output = frozen.resolve(), output.resolve()
     plan = read_plan(frozen)
     require(not output.is_relative_to(frozen) and not frozen.is_relative_to(output), "Handoff and results must be separate")
-    if plan["kind"] == "reserved":
+    if plan["kind"] in {"reserved", "repeated_reserved"}:
         _published(frozen)
     require(max_trials is None or type(max_trials) is int and max_trials > 0, "Positive whole-trial block required")
     output.mkdir(parents=True, exist_ok=True)
@@ -505,9 +627,31 @@ def summarize(*, frozen: Path, output: Path) -> dict:
             evaluation = read_json(episode_paths[0])
             episodes += sum(len(values) for entry in evaluation.get("per_task", [])
                             for key, values in entry.items() if key.endswith("returns") and isinstance(values, list))
-    return {"protocol_version": VERSION, "kind": plan["kind"],
+    repetition_comparisons = []
+    if plan["kind"] == "repeated_reserved":
+        for seed in sorted({s["outer_seed"] for s in plan["provenance"]["selected_searches"]}):
+            left = {r["seed"]: r for r in conditions[f"evolutionary_{seed}"]["trials"]}
+            right = {r["seed"]: r for r in conditions[f"independent_{seed}"]["trials"]}
+            differences = [{"seed": s, "difference": left[s]["score"]["combined_score"] - right[s]["score"]["combined_score"]}
+                           for s in sorted(left.keys() & right.keys())]
+            repetition_comparisons.append({"outer_seed": seed, "paired_seed_differences": differences,
+                "aggregate": ae.describe([r["difference"] for r in differences]) if differences else None,
+                "complete_five_seed_comparison": len(differences) == 5})
+        for candidate in plan["provenance"]["selected_searches"]:
+            selected = {r["seed"]: r for r in conditions[candidate["id"]]["trials"]}
+            for name in ("identity", "arithmetic", "focus"):
+                differences = [{"seed": r["seed"], "difference": selected[r["seed"]]["score"]["combined_score"] - r["score"]["combined_score"]}
+                               for r in conditions[name]["trials"] if r["seed"] in selected]
+                comparisons[f"{candidate['id']}_minus_{name}"] = {
+                    "paired_differences": differences,
+                    "aggregate": ae.describe([r["difference"] for r in differences]) if differences else None}
+    return {"protocol_version": plan["protocol_version"], "kind": plan["kind"],
             "status": "complete" if len(completed) == plan["planned_trials"] else "partial",
             "conditions": conditions, "comparisons": comparisons, "sessions": state["sessions"],
+            **({"repetition_comparisons": repetition_comparisons,
+                "across_search_repetitions": ae.describe([r["aggregate"]["mean"] for r in repetition_comparisons])
+                  if repetition_comparisons and all(r["complete_five_seed_comparison"] for r in repetition_comparisons) else None}
+               if plan["kind"] == "repeated_reserved" else {}),
             "planned_trials": plan["planned_trials"], "allocated_training_trials": len(manifests),
             "completed_training_trials": trained, "scored_trials": len(completed),
             "failed_attempts": failures, "completed_nominal_training_steps": trained * plan["trial_steps_nominal"],
@@ -521,6 +665,8 @@ def summarize(*, frozen: Path, output: Path) -> dict:
             "training_wall_seconds": sum(m.get("wall_seconds", 0.) for m in manifests),
             "interpretation": ("Reduced implementation diagnostic on development seed 3001; no reserved outcomes"
                                if plan["kind"] == "diagnostic" else
+                               "Fresh paired finalist comparison across independent outer searches; fixed common development/evaluation tasks; limited repetitions do not establish broad search-method superiority"
+                               if plan["kind"] == "repeated_reserved" else
                                "Reserved transfer comparison of one development-selected rule; separate from final paper reporting")}
 
 

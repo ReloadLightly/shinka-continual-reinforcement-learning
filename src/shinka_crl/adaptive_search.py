@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import shutil
+import sqlite3
 import sys
 import time
 
@@ -29,6 +30,14 @@ SOURCE_FILES = (
     *TASK_FILES.values(),
 )
 TARGETS = (5, 13, 25)
+ARMS = ("evolutionary", "independent")
+
+
+def native_selection(arm: str) -> dict:
+    require(arm in ARMS, "Unknown adaptive search arm")
+    return {"parent_selection_strategy": "best_of_n" if arm == "independent" else "weighted",
+            "num_archive_inspirations": 0 if arm == "independent" else 1,
+            "num_top_k_inspirations": 0 if arm == "independent" else 1}
 
 
 def search_environment(study: Path, plan: dict, model: str, timeout: int) -> dict:
@@ -44,22 +53,32 @@ def search_environment(study: Path, plan: dict, model: str, timeout: int) -> dic
     return env
 
 
-def native_command(output: Path, target: int) -> list[str]:
+def native_command(output: Path, target: int, *, outer_seed: int = RANDOM_SEED,
+                   arm: str = "evolutionary") -> list[str]:
+    selection = native_selection(arm)
+    overrides = [value for name, setting in selection.items()
+                 for value in ("--set", f"db.{name}={setting}")] if arm == "independent" else []
+    seed_arguments = ["--outer-seed", str(outer_seed)] if outer_seed != RANDOM_SEED else []
     return [sys.executable, "-m", "shinka_crl.search", "--native",
-            str(output / "shinka/rng_state.json"), "--task-dir", str(output / "task"),
+            str(output / "shinka/rng_state.json"), *seed_arguments,
+            "--task-dir", str(output / "task"),
             "--config-fname", "shinka-subscription.yaml", "--results_dir",
-            str(output / "shinka"), "--num_generations", str(target)]
+            str(output / "shinka"), *overrides, "--num_generations", str(target)]
 
 
-def make_plan(study: Path, evaluation: dict, env: dict, model: str, timeout: int) -> dict:
+def make_plan(study: Path, evaluation: dict, env: dict, model: str, timeout: int,
+              *, outer_seed: int = RANDOM_SEED, arm: str = "evolutionary") -> dict:
     require(timeout >= 90, "Proposal timeout must be at least 90 seconds")
+    require(type(outer_seed) is int and 0 <= outer_seed < 2**32,
+            "Outer seed must be an unsigned 32-bit integer")
+    selection = native_selection(arm)
     controls = {name: validate_request(study, study / "requests" / name, evaluation)
                 for name in CONTROL_IDS}
     with runtime_scope(evaluation["cpu_affinity"]):
         require(runtime_fingerprint(evaluation["python"]) == evaluation["runtime"],
                 "Frozen adaptive evaluation runtime changed")
         runtime = runtime_identity(env)
-    return {
+    plan = {
         "schema_version": 1, "protocol": "adaptive-shinka-v1",
         "evaluation_study": str(study), "evaluation_context_sha256": digest(evaluation),
         "evaluation_plan_sha256": sha256(study / "plan.json"),
@@ -70,7 +89,7 @@ def make_plan(study: Path, evaluation: dict, env: dict, model: str, timeout: int
         "model": model, "reasoning_effort": "medium", "auth": "chatgpt",
         "proposal_timeout_seconds": timeout, "runtime": runtime,
         "cpu_affinity": evaluation["cpu_affinity"], "stages": list(TARGETS),
-        "outer_random_seed": RANDOM_SEED, "proposal_slots": 24,
+        "outer_random_seed": outer_seed, "proposal_slots": 24,
         "max_model_requests_per_slot": 1,
         "duplicate_policy": "Each request consumes a slot; only verified canonical-AST cache reuse",
         "failure_policy": "Stop on terminal proposal/evaluation failure; preserve failed slots; no automatic retry",
@@ -78,6 +97,14 @@ def make_plan(study: Path, evaluation: dict, env: dict, model: str, timeout: int
                       "do not guarantee the uninterrupted trajectory",
         "reporting": "Development search; reserved validation and final reporting remain unused",
     }
+    if outer_seed != RANDOM_SEED or arm != "evolutionary":
+        plan.update(protocol="adaptive-shinka-v2", arm=arm, native_selection=selection,
+                    proposal_context=("Fixed identity parent and its constant evaluation feedback; "
+                                      "no earlier proposals, archive inspirations, meta recommendations "
+                                      "or conversation history" if arm == "independent" else
+                                      "Native weighted parent selection and archive feedback"),
+                    reporting="Independent outer search; selection uses only its development partition")
+    return plan
 
 
 def validate_task(output: Path) -> None:
@@ -92,6 +119,18 @@ def verified_rows(output: Path, plan: dict, evaluation: dict, *, allow_failed: b
     rows = database_snapshot(output / "shinka/programs.sqlite")
     require(len({r["generation"] for r in rows}) == len(rows), "Duplicate native generation")
     ids = {row["id"]: row["generation"] for row in rows}
+    if plan.get("arm") == "independent":
+        require(plan.get("native_selection") == native_selection("independent"),
+                "Independent native selection changed")
+        identity_ids = [row["id"] for row in rows if row["generation"] == 0]
+        require(not rows or len(identity_ids) == 1, "Independent search needs one identity parent")
+        if rows:
+            with sqlite3.connect(f"file:{output / 'shinka/programs.sqlite'}?mode=ro", uri=True) as db:
+                inspirations = db.execute("SELECT archive_inspiration_ids,top_k_inspiration_ids "
+                                          "FROM programs").fetchall()
+            require(all(json.loads(archive) == json.loads(top_k) == []
+                        for archive, top_k in inspirations),
+                    "Independent proposals must not use archive inspirations")
     verified = []
     for row in rows:
         if not row["correct"] and allow_failed:
@@ -114,6 +153,8 @@ def verified_rows(output: Path, plan: dict, evaluation: dict, *, allow_failed: b
         generation, parent = row["generation"], row["parent_id"]
         require((generation == 0 and parent is None)
                 or (parent in ids and ids[parent] < generation), "Invalid native ancestry")
+        if plan.get("arm") == "independent" and generation:
+            require(parent == identity_ids[0], "Independent proposal must use the identity parent")
         if generation == 0:
             identity = validate_request(study, study / "requests/identity", evaluation)
             require(request["cache_hit"] and request["new_training_trials"] == 0
@@ -261,6 +302,7 @@ def summarize(output: Path, *, check_state: bool = True) -> dict:
         require(usage["guarded_requests"] == usage["successful_requests"] == len(rows) - 1
                 and usage["codex_cli_launches"] == len(rows) - 1, "Proposal ledger differs from stage")
     return {"schema_version": 1, "status": state["status"], "protocol": plan["protocol"],
+            "arm": plan.get("arm", "evolutionary"), "outer_random_seed": plan["outer_random_seed"],
             "evaluation_profile": evaluation["profile"], "objective": evaluation["objective_version"],
             "slots_consumed": len(slots), "programs_evaluated": len(rows),
             "proposal_slots_consumed": sum(s > 0 for s in slots),
@@ -284,12 +326,17 @@ def summarize(output: Path, *, check_state: bool = True) -> dict:
             "cache_attempts": attempts, "training_attempts": training_attempts,
             "evidence_cache_origins": sorted(origins),
             "programs": rows, "controls": plan["controls"], "sessions": state["sessions"],
-            "interpretation": "First adaptive program search on three development seeds; "
-                              "no reserved validation or general search-method comparison"}
+            "interpretation": ("First adaptive program search on three development seeds; "
+                               "no reserved validation or general search-method comparison"
+                               if plan["protocol"] == "adaptive-shinka-v1" else
+                               "One bounded outer search using only its development partition; "
+                               "cross-search and untouched evaluation evidence are required for "
+                               "search-method comparisons")}
 
 
 def run_search(*, output: Path, study: Path, target: int = 5, model: str = "gpt-6.1-sol",
-               timeout: int = 600, prepare_only: bool = False, resume: bool = False) -> dict:
+               timeout: int = 600, prepare_only: bool = False, resume: bool = False,
+               outer_seed: int = RANDOM_SEED, arm: str = "evolutionary") -> dict:
     require(target in TARGETS, "Use a declared cumulative target: 5, 13, 25")
     output, study = Path(output).resolve(), Path(study).resolve()
     require(not output.is_relative_to(study) and not study.is_relative_to(output),
@@ -297,7 +344,7 @@ def run_search(*, output: Path, study: Path, target: int = 5, model: str = "gpt-
     evaluation = read_plan(study)
     env = search_environment(study, evaluation, model, timeout)
     env["SHINKA_SUBSCRIPTION_LEDGER"] = str(output / "model_requests.jsonl")
-    plan = make_plan(study, evaluation, env, model, timeout)
+    plan = make_plan(study, evaluation, env, model, timeout, outer_seed=outer_seed, arm=arm)
     if output.exists():
         require(resume, "Existing archive requires explicit --resume")
         require(read_json(output / "plan.json") == plan, "Frozen search plan or runtime changed")
@@ -325,7 +372,7 @@ def run_search(*, output: Path, study: Path, target: int = 5, model: str = "gpt-
     require(target > count, "Target must exceed completed slots")
     if count:
         summarize(output)
-    command = native_command(output, target)
+    command = native_command(output, target, outer_seed=outer_seed, arm=arm)
     session = {"index": len(state["sessions"]) + 1, "target": target, "command": command,
                "status": "running", "started_at": utc_now()}
     state["sessions"].append(session)

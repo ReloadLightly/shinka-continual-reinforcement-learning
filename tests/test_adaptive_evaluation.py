@@ -89,6 +89,7 @@ def test_freeze_and_read_plan_preserve_partitions_controls_and_caller(study):
     assert plan == study["plan"]
     assert plan["profile"]["seeds"] == [4001, 4002, 4003]
     assert plan["reserved_validation_profile"]["seeds"] == [5001, 5002, 5003, 5004, 5005]
+    assert plan["protocol_version"] == study_api.VERSION and "seed_allocation" not in plan
     assert [c["id"] for c in plan["controls"]] == list(study_api.CONTROL_IDS)
     assert study["affinity"] == {0, 1, 2, 3} and not study["training_calls"]
     assert plan["controls"][-2]["settings"] == {"sigma": .065, "elite_ratio": .075}
@@ -97,6 +98,127 @@ def test_freeze_and_read_plan_preserve_partitions_controls_and_caller(study):
             assert sha256(study["path"] / "programs" / f"{control['id']}.py") == control["source_sha256"]
     with pytest.raises(ValueError, match="fresh"):
         study_api.freeze_study(output=study["path"], python=sys.executable)
+
+
+def allocation_audit(tmp_path, development=None, validation=None, observed=None):
+    development = [6001, 6002, 6003] if development is None else development
+    validation = [7001, 7002, 7003, 7004, 7005] if validation is None else validation
+    evidence = {
+        "schema_version": 1, "invalid_json": [], "proposed_existing_hits": [],
+        "observed": observed or {"seed": [4001], "seeds": [5001], "trial": [5002],
+                                  "eval_seed": [905001]},
+        "proposed": {name: {"seeds": seeds, "trials": [seed + 1 for seed in seeds],
+                            "eval_seeds": [seed + 900000 for seed in seeds]}
+                     for name, seeds in (("adaptive_search", development),
+                                         ("adaptive_validation", validation))},
+    }
+    path = tmp_path / "allocation.json"
+    write_json(path, evidence)
+    return path, development, validation
+
+
+def freeze_partitioned(study, tmp_path, *, development=None, validation=None, observed=None):
+    audit, development, validation = allocation_audit(tmp_path, development, validation, observed)
+    path = tmp_path / "partitioned-study"
+    plan = study_api.freeze_study(output=path, python=sys.executable,
+                                  development_seeds=development, validation_seeds=validation,
+                                  seed_allocation=audit)
+    return path, plan, audit
+
+
+def resign_plan(path):
+    receipt = read_json(path / "plan-receipt.json")
+    receipt["plan_sha256"] = sha256(path / "plan.json")
+    write_json(path / "plan-receipt.json", receipt)
+
+
+def test_new_partitions_change_only_seeds_and_bind_allocation_copy(study, tmp_path):
+    path, plan, audit = freeze_partitioned(study, tmp_path)
+    assert study_api.read_plan(path) == plan
+    assert plan["protocol_version"] == study_api.PARTITION_VERSION
+    for field in ("profile", "reserved_validation_profile"):
+        expected = deepcopy(study["plan"][field])
+        expected["seeds"] = plan[field]["seeds"]
+        assert plan[field] == expected
+    assert plan["seed_allocation"] == {
+        "source_path": str(audit.resolve()), "frozen_path": "seed-allocation.json",
+        "sha256": sha256(audit),
+    }
+    audit.unlink()
+    assert study_api.read_plan(path) == plan
+    assert study_api.summarize_study(path)["protocol_version"] == study_api.PARTITION_VERSION
+    assert not study["training_calls"]
+
+
+@pytest.mark.parametrize("development,validation,match", [
+    ([6001, 6001, 6003], None, "distinct"),
+    ([6001, 6002], None, "distinct"),
+    ([True, 6002, 6003], None, "distinct"),
+    ([2**32 - 900000, 6002, 6003], None, "distinct"),
+    ([6001, 6002, 6003], [6001, 7002, 7003, 7004, 7005], "overlap"),
+    ([4001, 6002, 6003], None, "overlap"),
+    ([1001, 6002, 6003], None, "overlap"),
+    ([42, 6002, 6003], None, "overlap"),
+    ([9, 6002, 6003], None, "trials overlap"),
+])
+def test_partition_freeze_rejects_overlap_invalid_or_reused_ids(study, tmp_path,
+                                                               development, validation, match):
+    with pytest.raises(ValueError, match=match):
+        freeze_partitioned(study, tmp_path, development=development, validation=validation)
+    assert not (tmp_path / "partitioned-study").exists()
+    assert not study["training_calls"]
+
+
+@pytest.mark.parametrize("field,value", [("seed", 6001), ("seeds", 6001),
+                                         ("trial", 6002), ("eval_seed", 906001)])
+def test_partition_freeze_checks_each_audited_identity_namespace(study, tmp_path, field, value):
+    observed = {"seed": [], "seeds": [], "trial": [], "eval_seed": []}
+    observed[field] = [value]
+    with pytest.raises(ValueError, match="overlap"):
+        freeze_partitioned(study, tmp_path, observed=observed)
+
+
+@pytest.mark.parametrize("missing", ["development_seeds", "validation_seeds", "seed_allocation"])
+def test_partition_freeze_requires_both_partitions_and_audit(study, tmp_path, missing):
+    audit, development, validation = allocation_audit(tmp_path)
+    arguments = {"development_seeds": development, "validation_seeds": validation,
+                 "seed_allocation": audit}
+    arguments.pop(missing)
+    with pytest.raises(ValueError, match="require"):
+        study_api.freeze_study(output=tmp_path / "partitioned-study", python=sys.executable, **arguments)
+
+
+@pytest.mark.parametrize("mutation", ["allocation", "budget", "purpose", "seeds", "version"])
+def test_partition_replay_rejects_audit_or_resigned_scientific_drift(study, tmp_path, mutation):
+    path, _, _ = freeze_partitioned(study, tmp_path)
+    plan = read_json(path / "plan.json")
+    if mutation == "allocation":
+        audit = path / "seed-allocation.json"
+        audit.write_text(audit.read_text() + "\n")
+    elif mutation == "budget":
+        plan["profile"]["ne"]["pop_size"] = 128
+    elif mutation == "purpose":
+        plan["reserved_validation_profile"]["purpose"] = "Changed scientific interpretation"
+    elif mutation == "seeds":
+        plan["profile"]["seeds"] = [8001, 8002, 8003]
+    else:
+        plan["protocol_version"] = "adaptive-cartpole-v3"
+    write_json(path / "plan.json", plan)
+    resign_plan(path)
+    with pytest.raises(ValueError, match="changed|differs"):
+        study_api.read_plan(path)
+
+
+def test_new_seed_cache_is_separate_and_reuses_only_matching_context(study, tmp_path):
+    legacy = evaluate(study)
+    path, plan, _ = freeze_partitioned(study, tmp_path)
+    new = {**study, "path": path, "plan": plan}
+    first = evaluate(new)
+    second = evaluate(new, request_name="duplicate")
+    assert first["cache_key"] != legacy["cache_key"]
+    assert first["cache_hit"] is False and second["cache_hit"] is True
+    assert [seed for _, seed in study["training_calls"]] == [4001, 4002, 4003, 6001, 6002, 6003]
+    assert study_api.validate_request(path, path / "requests/duplicate", plan) == second
 
 
 @pytest.mark.parametrize("changed", ["plan", "program", "source"])
