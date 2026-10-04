@@ -29,11 +29,22 @@ The completed development studies establish the following evidence:
   [selection freeze](../reports/adaptive-validation-freeze-20261003/plan.json), and
   [validation evidence](../reports/adaptive-validation-complete-20261003/summary.json).
 
-The next study is the full-budget reference comparison. ES and PPO require
-separate development runtime measurements before its computational budget can
-be declared. Final-reporting seeds and task trials remain untouched. The
-[reproduction plan](reproduction-plan.md) defines the paper protocol; source
-revisions remain fixed by [`upstream.lock.json`](../upstream.lock.json).
+The bounded reference comparison is complete: GA and ES each have five
+full-budget reporting trials, and PPO has a separate four-phase development
+comparison. The remaining baseline campaign was cancelled under the
+[October 4 scope amendment](reference-comparison.md#baseline-scope-amendment--october-4-2026).
+The original larger reproduction remains incomplete; completing its unused
+trials is not a prerequisite for further ShinkaEvolve research. No baseline
+training is scheduled. The [reproduction plan](reproduction-plan.md) and
+[published results](../README.md#full-budget-reporting-acquisition-and-retention-across-trials)
+record the current scope; source revisions remain fixed by
+[`upstream.lock.json`](../upstream.lock.json).
+
+Further ShinkaEvolve work should use a separately declared question, compute
+allocation, search controls, independent search repetitions, and fresh untouched
+evaluation data. The completed static and adaptive studies remain closed,
+including their negative results. Additional baseline trials alone would not
+address the present limit of one outer search per search arm.
 
 The numerical budgets below define the protocols. The [README](../README.md)
 synthesizes methods, results, and limitations; linked protocol documents and
@@ -67,9 +78,13 @@ experiment. The unchanged GA evolves policy weights inside each evaluation.
 | Adaptive validation | 5001–5005 | 5002–5006 | Reserved finalist transfer check; phase interval 80 |
 | Final reporting | 42–51 | 1–10 | Frozen algorithms and paper-scale protocol |
 
-<sub>Table 1. Study seed partitions. The upstream task offset depends on the
-task trial, so disjoint training seeds alone would not provide disjoint tasks.
-Development and validation use `trial=seed+1`; reporting retains trials 1–10.</sub>
+<sub>Table 1. Original study seed partitions. The upstream task offset depends
+on the task trial, so disjoint training seeds alone would not provide disjoint
+tasks. Development and validation use `trial=seed+1`; the original reporting
+allocation retains trials 1–10. GA/ES reporting seeds 42–46 and task trials 1–5
+have now been evaluated; seeds 47–51 remain unexecuted under the scope amendment.
+The completed validation partitions are no longer untouched data for a new
+study.</sub>
 
 Do not feed validation outcomes back into further candidate proposals. Freeze
 the selected programs, scorer, analysis definitions, and source hashes before
