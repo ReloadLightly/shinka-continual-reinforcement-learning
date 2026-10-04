@@ -1,0 +1,71 @@
+{
+  "status": "complete",
+  "request_id": "focus",
+  "context_sha256": "bb2dadc9b5d38b99baf1440f149a6afd0ed92cb8c49b752691e8ec205b057869",
+  "cache_hit": false,
+  "slot_consumed": true,
+  "started_at": "2026-10-04T09:43:29.932204+00:00",
+  "evaluator_model_calls": 0,
+  "candidate": {
+    "id": "focus",
+    "variant": "ga_focus",
+    "source": null,
+    "source_sha256": null,
+    "settings": null
+  },
+  "cache_key": "ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806",
+  "cache_origin": "cache/ad3bd2445402a255e7a7f81b9359ed13af97d88918bb3f8ccc6abcb31528d806/attempt_0001",
+  "cache_receipt_sha256": "23fe80bfbe48656c5f26a94fa86702d42e2c3f7110e33cf187c7d2d7342075ed",
+  "aggregate": {
+    "scores": {
+      "combined_score": {
+        "mean": 0.8970486116409302,
+        "sample_sd": 0.028881773016443294,
+        "n": 3
+      },
+      "active_score": {
+        "mean": 0.8312972232818603,
+        "sample_sd": 0.02467582036900892,
+        "n": 3
+      },
+      "previous_score": {
+        "mean": 0.9628,
+        "sample_sd": 0.0580860664110689,
+        "n": 3
+      }
+    },
+    "reference_metrics": {
+      "learning_accuracy": {
+        "mean": 500.0,
+        "sample_sd": 0.0,
+        "n": 3
+      },
+      "forgetting": {
+        "mean": 18.599999999999998,
+        "sample_sd": 29.043033205534467,
+        "n": 3
+      },
+      "learning_minus_forgetting": {
+        "mean": 481.4,
+        "sample_sd": 29.043033205534464,
+        "n": 3
+      },
+      "zero_shot_transfer": {
+        "mean": 390.2666666666667,
+        "sample_sd": 95.28931384648192,
+        "n": 3
+      },
+      "normalized_curve_average": {
+        "mean": 0.825165278840065,
+        "sample_sd": 0.024678428000564256,
+        "n": 3
+      }
+    }
+  },
+  "evaluated_source_sha256": null,
+  "new_training_trials": 3,
+  "new_training_steps_nominal": 23040000,
+  "avoided_training_steps_nominal": 0,
+  "wall_seconds": 188.7360653959986,
+  "finished_at": "2026-10-04T09:46:44.926328+00:00"
+}

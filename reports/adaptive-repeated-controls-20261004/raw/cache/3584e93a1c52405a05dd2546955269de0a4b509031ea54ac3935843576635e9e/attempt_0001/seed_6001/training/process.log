@@ -1,0 +1,22 @@
+======================================================================
+gymnax | ga (ne) | CartPole-v1_sigma0.5 | continual | trial 6002
+  environment    : CartPole-v1
+  sub-task       : noise, sigma 0.5
+  phases         : 4
+  schedule       : switch, 2 sub-tasks
+  matched budget : 6.144e+08 environment steps
+  NOT MATCHED    : budget overridden (task_interval, episode_length, num_generations, pop_size)
+  ne overrides   : ['sigma=0.065', 'searcher_kwargs.elite_ratio=0.075'] []
+  seed           : 6001
+  boundary info  : none
+  output         : $STUDY/cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6001/training
+======================================================================
+/home/roland/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/matplotlib-j99qiif4 because there was an issue with the default path ({configdir}); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+  gen     0 task= 0 train=    9.6 t0=   18.3 t1=   18.7 gen'ist=   18.3
+  gen    50 task= 0 train=  217.5 t0=  500.0 t1=  500.0 gen'ist=  500.0
+  gen    79 task= 1 train=  205.9 t0=  173.7 t1=  500.0 gen'ist=  173.7
+  wrote $STUDY/cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6001/training
+
+Done. $STUDY/cache/3584e93a1c52405a05dd2546955269de0a4b509031ea54ac3935843576635e9e/attempt_0001/seed_6001/training

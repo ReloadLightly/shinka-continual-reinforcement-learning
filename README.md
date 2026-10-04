@@ -639,6 +639,28 @@ selection; the completed studies and their selections remain closed. This
 diagnostic supplies a hypothesis, not evidence that the new search design
 improves performance.
 
+### Repeated adaptive-program search
+
+A [preregistered compact study](reports/adaptive-repeated-preregistration-20261004/protocol.md)
+compares evolutionary parent selection and archive feedback against independent
+proposals from the same identity program. Two outer-search repetitions each
+allocate four new proposals per arm, with the model, grammar, development tasks,
+and learner budgets held fixed. All finalists must be frozen before evaluation
+on a new five-seed partition. This tests the contribution of the search procedure
+within the existing mutation-width interface; it does not expand the baseline
+reproduction or reopen earlier selections.
+
+The new fixed-control comparison completed fifteen development trials on seeds
+6001–6003. FocusGA has the highest observed mean combined score, 0.8970,
+compared with 0.6373 for arithmetic adaptation and 0.4376 for unchanged-width
+GA. These are three-seed development observations, with substantial variation
+across task draws; they are not fresh finalist results. Both static controls,
+all seed outcomes, score components, dispersion, and exact settings are retained
+in the [control evidence](reports/adaptive-repeated-controls-20261004/summary.json)
+and [frozen plan](reports/adaptive-repeated-controls-20261004/raw/plan.json).
+The paired program searches are in progress; the new evaluation partition
+remains untouched.
+
 ### Computational budget
 
 | Experiment | New training trials | Nominal training steps |
@@ -652,6 +674,7 @@ improves performance.
 | Adaptive fixed controls | 15 | 115.20 × 10⁶ |
 | Adaptive program search | 60 | 460.80 × 10⁶ |
 | Adaptive finalist validation | 30 | 921.60 × 10⁶ |
+| Repeated-study fixed controls | 15 | 115.20 × 10⁶ |
 
 *Table 12. Training allocation consumed by the scientific experiments.
 GA/ES counts use the episode cap and are nominal, not realized episode lengths.
@@ -670,7 +693,10 @@ costs remain in the supplementary evidence. Sources and exact protocols:
 [PPO prefix](reports/reference-development-ppo-prefix-20261003/summary.json),
 [adaptive controls](reports/adaptive-controls-20261003/summary.json),
 [adaptive search](reports/adaptive-endpoint-complete-20261003/summary.json),
-[adaptive validation](reports/adaptive-validation-complete-20261003/summary.json).*
+[adaptive validation](reports/adaptive-validation-complete-20261003/summary.json),
+[repeated-study controls](reports/adaptive-repeated-controls-20261004/summary.json).
+The repeated-study row excludes the ongoing program searches and their later
+fresh evaluation.*
 
 The [ten completed reporting trials](reports/reference-reporting-ga-es-pair05-20261004/summary.json)
 recorded 14,788.6 s of training and 136.4 s of fresh evaluation, with a maximum
