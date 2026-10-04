@@ -8,7 +8,7 @@ results; none of their candidates or validation outcomes changes this
 comparison's settings or reopens completed selection. The original full-budget
 protocol is retained below. The October 3, 2026 resource amendment limits the
 active PPO experiment to a development prefix. Full-budget GA and ES reporting
-has completed three matched pairs; fourteen of twenty trials remain.
+has completed four matched pairs; twelve of twenty trials remain.
 
 ## Protocol and partitions
 
@@ -186,13 +186,13 @@ development prefix does not consume any reporting trial.
 
 ## Interim full-budget reporting results
 
-The [cumulative reporting evidence](../reports/reference-reporting-ga-es-pair03-20261004/summary.json)
-contains GA and ES at seeds 42–44, task trials 1–3, and evaluation seeds
-900042–900044. Methods share task vectors within each pair, twenty alternating
+The [cumulative reporting evidence](../reports/reference-reporting-ga-es-pair04-20261004/summary.json)
+contains GA and ES at seeds 42–45, task trials 1–4, and evaluation seeds
+900042–900045. Methods share task vectors within each pair, twenty alternating
 phases, 4,000 generations, and 3,072,000,000 nominal training steps per trial
-under the [exact frozen plan](../reports/reference-reporting-ga-es-pair03-20261004/raw/plan.json).
-Six of twenty planned trials are complete, three of ten per method. The next
-prespecified pair, seed 45, is in progress. The export remains partial;
+under the [exact frozen plan](../reports/reference-reporting-ga-es-pair04-20261004/raw/plan.json).
+Eight of twenty planned trials are complete, four of ten per method. The next
+prespecified pair, seed 46, is in progress. The export remains partial;
 full-budget PPO reporting is deferred and the original three-method target
 is incomplete. The [first-pair](../reports/reference-reporting-ga-es-pair01-20261004/summary.json)
 and [two-pair](../reports/reference-reporting-ga-es-pair02-20261004/summary.json)
@@ -204,57 +204,58 @@ export.
 | GA | 42 | 500.00 | 489.76 | 10.24 | 10.30 | 0.8912 |
 | GA | 43 | 500.00 | 132.49 | 367.51 | 354.72 | 0.9878 |
 | GA | 44 | 500.00 | 20.96 | 479.04 | 500.00 | 0.9897 |
-| GA | Mean ± SD | 500.00 ± 0.00 | 214.41 ± 244.90 | 285.59 ± 244.90 | 288.34 ± 251.51 | 0.9562 ± 0.0564 |
+| GA | 45 | 500.00 | 42.96 | 457.04 | 450.66 | 0.9886 |
+| GA | Mean ± SD | 500.00 ± 0.00 | 171.54 ± 217.56 | 328.46 ± 217.56 | 328.92 ± 220.81 | 0.9643 ± 0.0488 |
 | ES | 42 | 500.00 | 489.63 | 10.37 | 10.39 | 0.9605 |
 | ES | 43 | 500.00 | 5.07 | 494.93 | 477.06 | 0.9953 |
 | ES | 44 | 500.00 | 0.00 | 500.00 | 488.28 | 0.9937 |
-| ES | Mean ± SD | 500.00 ± 0.00 | 164.90 ± 281.23 | 335.10 ± 281.23 | 325.25 ± 272.73 | 0.9831 ± 0.0196 |
+| ES | 45 | 500.00 | 0.00 | 500.00 | 500.00 | 0.9981 |
+| ES | Mean ± SD | 500.00 ± 0.00 | 123.67 ± 243.98 | 376.33 ± 243.98 | 368.93 ± 239.21 | 0.9869 ± 0.0177 |
 
-Aggregate rows show mean ± sample SD across three reporting trials, not
+Aggregate rows show mean ± sample SD across four reporting trials, not
 confidence intervals. Every fresh centroid own-task episode returns 500.
-Retention spans near-total loss for both methods at seed 42 and much stronger
-retention on the other task draws: at seed 43, GA and ES have zero measured
-loss at nine and seventeen of nineteen switch endpoints, respectively;
-at seed 44, the corresponding counts are seventeen and nineteen. Signed
-forgetting and transfer average all nineteen switches per trial, with both
-directions included.
+Retention spans near-total loss for both methods at seed 42 and little or no
+endpoint forgetting for ES at seeds 43–45. GA shows partial retention, losses
+followed by recovery, and a substantial terminal loss across these task draws.
+Signed forgetting and transfer average all nineteen switches per trial, with
+both directions included.
 
 GA seed 44 has perfect measured transfer but loses previous-task return at
 its final checkpoint: mean 149.9, or a 350.1-unit loss. The only other
-nonzero endpoint loss is 48.2 at phase 7, where one previous-task episode
-returns 18 and the other nine return 500. At the final checkpoint, nine
-previous-task episodes return 103–117 and one returns 500
-([raw GA episodes](../reports/reference-reporting-ga-es-pair03-20261004/raw/trials/ga/seed_44/analysis/attempt_001/evaluation.json)).
+nonzero endpoint loss is 48.2 at phase 7
+([raw seed-44 episodes](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/ga/seed_44/analysis/attempt_001/evaluation.json)).
 Transfer uses next-task probes from phases 1–19 and omits the final policy;
 previous-task and next-task probes use independent random keys even when they
 refer to the same recurring task. The [pinned evaluator](https://github.com/eleninisioti/continual_neuroevolution/blob/821570eb6a22db0f7aa77111b2ea541fe8fa795b/scripts/analysis/evaluate_continual.py#L277-L296)
 and [metric definitions](../src/shinka_crl/analysis.py) preserve this distinction.
-For ES seed 44, all centroid own-task and previous-task episodes return 500;
-only the first next-task probe has a mean below 500 (277.4), accounting for its transfer
-mean of 488.28421052631575
-([raw ES episodes](../reports/reference-reporting-ga-es-pair03-20261004/raw/trials/es/seed_44/analysis/attempt_001/evaluation.json)).
+GA seed 45 instead loses 288.8, 279.5, and 248.0 at phases 9, 11, and 13,
+respectively, after training the clean task; the other sixteen switches have
+zero measured loss. Both tasks score 500 at all final seven endpoints
+([raw seed-45 episodes](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/ga/seed_45/analysis/attempt_001/evaluation.json)).
+Its previous-task and next-task probe distributions can differ markedly under
+independent draws: at phase 9 their means are 211.2 and 67.0.
 
-The [curves](../reports/figures/reference-reporting-ga-es-pair03-20261004.svg),
-[metric figure](../reports/figures/reference-reporting-ga-es-pair03-20261004-metrics.svg),
-and [numerical provenance](../reports/figures/reference-reporting-ga-es-pair03-20261004.json)
-show individual trials and their arithmetic means. Temporary joint success
-in GA seed 42 does not persist to phase endpoints; GA seed 43 retains both
-tasks at its final five endpoints but has intervening losses. GA seed 44 has
-3,817 dense generations with both task means equal to 500, yet its previous-task
-return falls to 66.6 within the final phase and ends at 104.4 in the dense
-record. Active-task return remains 500 throughout phases 2–20. ES seed 44
-records both task means at 500 throughout phases 2–20
-([GA dense record](../reports/reference-reporting-ga-es-pair03-20261004/raw/trials/ga/seed_44/training/attempt_001/training_metrics.json),
-[ES dense record](../reports/reference-reporting-ga-es-pair03-20261004/raw/trials/es/seed_44/training/attempt_001/training_metrics.json)).
+For ES seed 45, every fresh centroid episode returns 500: 200 on the own task,
+190 on the previous task, and 190 on the next task
+([raw ES episodes](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/es/seed_45/analysis/attempt_001/evaluation.json)).
+Its [dense record](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/es/seed_45/training/attempt_001/training_metrics.json)
+contains 3,803 generations with both task means equal to 500, including every
+sample from phase 2 onward. GA seed 45 has 3,623 such generations, yet loses
+previous-task return within intermediate phases while current-task return
+remains maximal after phase 6
+([dense GA record](../reports/reference-reporting-ga-es-pair04-20261004/raw/trials/ga/seed_45/training/attempt_001/training_metrics.json)).
 In-training observations use different evaluation draws and do not replace
 fresh checkpoint measurements.
 
-ES has higher cumulative active-task performance in all three observed pairs
-and lower mean forgetting. The large observed dispersion and three-trial
-sample do not establish a general method ranking. Task draws and training
-seeds both change between pairs, so their contributions to this variation
-are not separated. Development seed 1001 remains excluded from reporting
-aggregates.
+The [curves](../reports/figures/reference-reporting-ga-es-pair04-20261004.svg),
+[metric figure](../reports/figures/reference-reporting-ga-es-pair04-20261004-metrics.svg),
+and [numerical provenance](../reports/figures/reference-reporting-ga-es-pair04-20261004.json)
+show individual trials and arithmetic means. ES has higher cumulative
+active-task performance in all four observed pairs and lower mean forgetting.
+The large dispersion and four-trial sample do not establish a general method
+ranking. Task draws and training seeds both change between pairs, so their
+contributions to variation are not separated. Development seed 1001 remains
+excluded from reporting aggregates.
 
 | Method | Seed | Training (s) | Fresh analysis (s) | Peak trainer RSS (KiB) | Fresh episodes, all sources |
 | :--- | ---: | ---: | ---: | ---: | ---: |
@@ -264,19 +265,21 @@ aggregates.
 | ES | 43 | 1,469.747567 | 11.495563 | 831,948 | 1,740 |
 | GA | 44 | 1,347.026557 | 13.913382 | 857,164 | 1,740 |
 | ES | 44 | 1,215.605075 | 10.742931 | 834,056 | 1,740 |
+| GA | 45 | 1,456.594002 | 17.239226 | 863,268 | 1,740 |
+| ES | 45 | 1,659.131222 | 19.174077 | 826,080 | 1,740 |
 
-The [exact cumulative compute record](../reports/reference-reporting-ga-es-pair03-20261004/summary.json)
-reports 8,867.463213206996 s for the first three pairs' suite invocations,
-including 8,770.069564944999 s of training and 74.24544758500997 s of fresh
-analysis. This includes all earlier invocations. The 10,440 fresh episodes
+The [exact cumulative compute record](../reports/reference-reporting-ga-es-pair04-20261004/summary.json)
+reports 12,024.475008621994 s for the first four pairs' suite invocations,
+including 11,885.794788565 s of training and 110.65875075301301 s of fresh
+analysis. This includes all earlier invocations. The 13,920 fresh episodes
 cover centroid, final-generation best member, and incumbent; primary centroid
-metrics use 580 episodes per trial, or 3,480 across these six trials. Each
+metrics use 580 episodes per trial, or 4,640 across these eight trials. Each
 source in each trial has 200 own-task, 190 previous-task, and 190 next-task
-episodes. Completed nominal training totals 18,432,000,000 steps.
+episodes. Completed nominal training totals 24,576,000,000 steps.
 
 The preserved [earlier reporting allocation](../reports/reference-reporting-eight-cpu-attempt-20261004/summary.json)
 adds 919.6690881920003 s of suite time, bringing charged reporting execution
-through these three pairs to 9,787.132301398997 s. Component training and
+through these four pairs to 12,944.144096813994 s. Component training and
 analysis costs, and earlier pairs, are already included and are not added again.
 The [allocation diagnostic](../reports/reference-ga-es-allocation-diagnostic-20261004/summary.json)
 adds 63.13385714699689 s in a separate diagnostic category. Ongoing trials
@@ -385,8 +388,8 @@ trials; they are not removed by the fresh start.
 ## Reporting execution
 
 The active two-CPU suite uses the existing harness with all ten reporting
-seeds, twenty phases, and the full training budget per method. The first three
-pairs are complete and published above; the next pair at seed 45 is running. The
+seeds, twenty phases, and the full training budget per method. The first four
+pairs are complete and published above; the next pair at seed 46 is running. The
 original launch command completed seed 42 within the twenty-trial plan:
 
 ```bash
@@ -401,7 +404,7 @@ Continue subsequent pairs with the same arguments and `--resume`. The harness
 verifies completed trials before reuse; `--max-trials 2` bounds each invocation,
 not the declared number of reporting trials. Resume only the new two-CPU suite;
 the preserved eight-CPU suite remains closed. The command above records the
-original launch. The active seed-45 continuation already uses `--resume`;
+original launch. The active seed-46 continuation already uses `--resume`;
 do not start a duplicate controller.
 
 This reporting allocation exposes two logical CPUs, matching the development

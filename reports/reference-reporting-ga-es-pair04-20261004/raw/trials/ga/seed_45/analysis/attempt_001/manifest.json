@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "upstream_commit": "821570eb6a22db0f7aa77111b2ea541fe8fa795b",
+  "episodes": 10,
+  "eval_seed": 900045,
+  "command": [
+    "<repo>/.upstream/continual_neuroevolution/.venv/bin/python",
+    "<repo>/.upstream/continual_neuroevolution/scripts/analysis/evaluate_continual.py",
+    "--root",
+    "<runs>/trials/ga/seed_45/analysis/attempt_001/evaluation-input",
+    "--episodes",
+    "10",
+    "--seed",
+    "900045"
+  ],
+  "training_run": "<runs>/trials/ga/seed_45/training/attempt_001",
+  "input_sha256": {
+    "manifest.json": "0b2a50bfa5a158942941cd94ef9c49e194fbe562e62518780eaab55bee068c79",
+    "results.json": "59826c360eb053ed6f45302438bb319bfe78cd8bf142db862a3e5b1df7f32b6e",
+    "config.json": "053dbcf55ea76a111390af38c266dce9b2ee56eaaca761c43a10c447ecb9dd0d",
+    "training_metrics.json": "472117c422acaf358ee2184c4d3ec08bfbcc45229f6184b84ae69d4796faf4b7",
+    "checkpoints.npz": "0820f85e05e7662d8fad6d716c82c5dadaae9e6993fe8ef5217aa0098bd74239"
+  },
+  "analysis_source_sha256": "83c317c8078a853424e03a96c302f4a11fac5358ae648a8cd9c586fd1673258d",
+  "upstream_source_sha256": {
+    "scripts/analysis/evaluate_continual.py": "269638d6219a7d049516c5e232d452735ceba13e05b5c9ae4df47273d7a262bf",
+    "source/metrics/continual_metrics.py": "b4ca19d7d168410b2ba694e38ea99bfd13b850fa00025cb6ada668b10f6fcf6b"
+  },
+  "jax_platforms": "cpu",
+  "python_version": "Python 3.11.15",
+  "output_sha256": {
+    "evaluation.json": "ca8e23c776a8610e075767dd4f9d130188a4c40201c6b1fe177735bbb3be3f54",
+    "checkpoint-metadata.json": "b4c284cbd1b825531926fd4148a1ebb9adef5e5bfb0e4939a009c895d7effcd5",
+    "summary.json": "6d1e41d851d8a6643f58d3e1db059f3917c6d0d2ac038011d320d09f7a8fec43",
+    "process.log": "d39dfb8446199193951d8811cff558a0753c7aa1172740b8d3aa93ed69e4a0bb",
+    "evaluation-input/results.json": "59826c360eb053ed6f45302438bb319bfe78cd8bf142db862a3e5b1df7f32b6e",
+    "evaluation-input/checkpoints.npz": "0820f85e05e7662d8fad6d716c82c5dadaae9e6993fe8ef5217aa0098bd74239"
+  },
+  "wall_seconds": 17.239225671000895
+}

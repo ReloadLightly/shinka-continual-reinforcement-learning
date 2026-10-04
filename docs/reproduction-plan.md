@@ -2,7 +2,7 @@
 
 The [experimental roadmap](experimental-roadmap.md) defines the immediate matched pilot, subscription-backed Shinka stages, validation split, and adaptive-rule extension. This document retains the full reproduction specification; completing the reduced search is not completion of the paper reproduction.
 
-This project starts a reproduction of [Continual Reinforcement Learning with Neuroevolution](https://arxiv.org/abs/2610.01583), by Eleni Nisioti, Andrea Cossu, Kathrin Korte, and Sebastian Risi (arXiv:2610.01583v1, October 1, 2026). The initial scope is a CartPole comparison with upstream GA, ES, and PPO, followed by a ShinkaEvolve extension. [CPU smoke validation](../reports/smoke-20261002/summary.json), a [paper-budget GA development trial](../reports/reference-timing-20261002/summary.json), a [paper-budget ES development trial](../reports/reference-development-es-20261003/summary.json), and the [resource-limited PPO development prefix](../reports/reference-development-ppo-prefix-20261003/summary.json) are complete. The [first three full-budget GA/ES reporting pairs](../reports/reference-reporting-ga-es-pair03-20261004/summary.json) are also complete; fourteen GA/ES reporting trials remain. The original full three-method reproduction remains incomplete.
+This project starts a reproduction of [Continual Reinforcement Learning with Neuroevolution](https://arxiv.org/abs/2610.01583), by Eleni Nisioti, Andrea Cossu, Kathrin Korte, and Sebastian Risi (arXiv:2610.01583v1, October 1, 2026). The initial scope is a CartPole comparison with upstream GA, ES, and PPO, followed by a ShinkaEvolve extension. [CPU smoke validation](../reports/smoke-20261002/summary.json), a [paper-budget GA development trial](../reports/reference-timing-20261002/summary.json), a [paper-budget ES development trial](../reports/reference-development-es-20261003/summary.json), and the [resource-limited PPO development prefix](../reports/reference-development-ppo-prefix-20261003/summary.json) are complete. The [first four full-budget GA/ES reporting pairs](../reports/reference-reporting-ga-es-pair04-20261004/summary.json) are also complete; twelve GA/ES reporting trials remain. The original full three-method reproduction remains incomplete.
 
 The reference implementation is pinned to [`821570eb6a22db0f7aa77111b2ea541fe8fa795b`](https://github.com/eleninisioti/continual_neuroevolution/tree/821570eb6a22db0f7aa77111b2ea541fe8fa795b). Keep it as an external checkout; no top-level license was present at that revision. This repository contains the integration and experiment specification, rather than a vendored copy of that implementation.
 
@@ -11,7 +11,7 @@ The reference implementation is pinned to [`821570eb6a22db0f7aa77111b2ea541fe8fa
 The [reference comparison](reference-comparison.md) originally specified GA,
 ES, and PPO with ten reporting trials per method under the full protocol below.
 GA and ES development measurements are complete, and each full twenty-phase
-reporting arm has completed three of ten trials. Following the user's October 3, 2026
+reporting arm has completed four of ten trials. Following the user's October 3, 2026
 compute limit, PPO completed a resource-limited development prefix under the
 [dated amendment](reference-comparison.md#ppo-resource-amendment--october-3-2026).
 The ten full-budget PPO reporting trials are deferred. The completed
@@ -19,34 +19,36 @@ ShinkaEvolve searches and reserved validations remain separate studies,
 including their negative results; their selection decisions remain closed.
 No selected candidate changes this reference comparison.
 
-The first three reporting pairs use seeds 42–44, task trials 1–3, and evaluation
-seeds 900042–900044, with matched task vectors within each pair and 3.072 billion
-nominal training steps per trial. Learning accuracy is 500 in all six trials,
-but retention varies sharply: GA forgetting is 489.76, 132.49, and 20.96 at
-seeds 42, 43, and 44; ES forgetting is 489.63, 5.07, and 0.00. Mean ± sample SD
-is 214.41 ± 244.90 for GA and 164.90 ± 281.23 for ES. Mean LA − F is
-285.59 ± 244.90 versus 335.10 ± 281.23; mean transfer is 288.34 ± 251.51
-versus 325.25 ± 272.73; normalized cumulative return is 0.9562 ± 0.0564
-versus 0.9831 ± 0.0196. All quantities except normalized cumulative return
-use episode-return units. The [complete individual and aggregate outcomes](../reports/reference-reporting-ga-es-pair03-20261004/summary.json)
-and [exact frozen plan](../reports/reference-reporting-ga-es-pair03-20261004/raw/plan.json)
-retain reporting identities and exclude development evidence. These
-three-trial estimates describe observed variation and do not establish a
-general method ranking or complete the reference comparison.
+The first four reporting pairs use seeds 42–45, task trials 1–4, and evaluation
+seeds 900042–900045, with matched task vectors within each pair and 3.072 billion
+nominal training steps per trial. Learning accuracy is 500 in all eight trials,
+but retention varies sharply. GA forgetting is 489.76, 132.49, 20.96, and 42.96
+at seeds 42–45; ES forgetting is 489.63, 5.07, 0.00, and 0.00. Mean ± sample SD
+is 171.54 ± 217.56 for GA and 123.67 ± 243.98 for ES. Mean LA − F is
+328.46 ± 217.56 versus 376.33 ± 243.98; mean transfer is 328.92 ± 220.81
+versus 368.93 ± 239.21; normalized cumulative return is 0.9643 ± 0.0488
+versus 0.9869 ± 0.0177. All quantities except normalized cumulative return
+use episode-return units. The [complete individual and aggregate outcomes](../reports/reference-reporting-ga-es-pair04-20261004/summary.json)
+and [exact frozen plan](../reports/reference-reporting-ga-es-pair04-20261004/raw/plan.json)
+retain reporting identities and exclude development evidence. These four-trial
+estimates describe observed variation and do not establish a general method
+ranking or complete the reference comparison.
 
-Strong acquisition can coexist with late retention loss. GA seed 44 has
-transfer 500, yet its final previous-task mean is 149.9, a loss of 350.1;
-another loss of 48.2 occurs at phase 7. Transfer excludes the final policy,
-and previous-task and next-task probes use independent evaluation draws.
-ES seed 44 has no measured endpoint forgetting and records both task means
-at 500 throughout phases 2–20. These outcomes coexist with near-total loss
-for both methods at seed 42. The [learning curves](../reports/figures/reference-reporting-ga-es-pair03-20261004.svg)
+The trajectories distinguish terminal forgetting from losses followed by
+recovery. GA seed 44 has transfer 500 but loses 350.1 return units on the
+previous task at its final checkpoint; transfer excludes the final policy,
+and previous-task and next-task probes use independent draws. GA seed 45
+instead loses 288.8, 279.5, and 248.0 at phases 9, 11, and 13, then retains
+both tasks at all final seven endpoints. ES seed 45 returns 500 in every
+fresh centroid own-task, previous-task, and next-task episode, and its dense
+curve retains both tasks throughout phases 2–20. These outcomes coexist with
+near-total loss for both methods at seed 42. The [learning curves](../reports/figures/reference-reporting-ga-es-pair04-20261004.svg)
 and [full interpretation and costs](reference-comparison.md#interim-full-budget-reporting-results)
-distinguish dense observations from fresh checkpoint metrics. Seed 45 is now
+distinguish dense observations from fresh checkpoint metrics. Seed 46 is now
 in progress under the unchanged protocol. The cumulative completed-trial
-suite cost is 8,867.463213206996 s. Including the earlier allocation's
-919.6690881920003 s gives 9,787.132301398997 s of reporting execution through
-three pairs, charged once; the 63.13385714699689 s allocation diagnostic remains
+suite cost is 12,024.475008621994 s. Including the earlier allocation's
+919.6690881920003 s gives 12,944.144096813994 s of reporting execution through
+four pairs, charged once; the 63.13385714699689 s allocation diagnostic remains
 a separate category. Ongoing trial costs are additional.
 
 Curve comparisons require the [reference display qualifications](reference-comparison.md#reference-findings-to-assess).
@@ -141,7 +143,7 @@ Keep population size, episode cap, generations, task sequence, evaluation budget
 
 1. **Validate the scaffold — complete.** Command construction, parameter bounds, metric parsing, evaluator failure behavior, and real GA/ES/PPO training have been checked. The initial Shinka candidate reproduces the GA baseline's entire two-task centroid trace. These reduced-budget runs establish pipeline execution only.
 2. **Validate a matched pilot — complete.** Eighteen trials cover GA, ES, and PPO × stationary/switching conditions × three development seeds, each with 7.68 million nominal training steps and a 500-step episode cap. Saved configurations, task schedules, checkpoint evaluations, source/runtime identity, and artifact hashes validate; all methods pass the predefined stationary-learning gate. The run resumed after six trials without retraining them. [Evidence](../reports/pilot-20261002/summary.json). Reporting trials 1–10 were reserved independently of this pilot.
-3. **Run the CartPole reference comparison.** The full reproduction target remains ten trials per method under the 20-phase protocol with held-out evaluation episodes. The resource-limited PPO development prefix and matched GA/ES prefix analysis are complete. Under the October 3 amendment, the full GA and ES reporting comparison has completed six of twenty trials (three per method); the next prespecified pair is in progress and the full-budget PPO reporting arm is deferred. Report learning accuracy, forgetting, their difference, cumulative return, and zero-shot transfer, with trial uncertainty where repeated reporting trials exist. For alternating tasks, forgetting must average loss at consecutive switches in both directions; a final-checkpoint-only formula is inappropriate. Follow the paper's Appendix A.3 for definitions and normalization. Completion of the amended work does not establish completion of the original three-method reproduction.
+3. **Run the CartPole reference comparison.** The full reproduction target remains ten trials per method under the 20-phase protocol with held-out evaluation episodes. The resource-limited PPO development prefix and matched GA/ES prefix analysis are complete. Under the October 3 amendment, the full GA and ES reporting comparison has completed eight of twenty trials (four per method); the next prespecified pair is in progress and the full-budget PPO reporting arm is deferred. Report learning accuracy, forgetting, their difference, cumulative return, and zero-shot transfer, with trial uncertainty where repeated reporting trials exist. For alternating tasks, forgetting must average loss at consecutive switches in both directions; a final-checkpoint-only formula is inappropriate. Follow the paper's Appendix A.3 for definitions and normalization. Completion of the amended work does not establish completion of the original three-method reproduction.
 4. **Evaluate the Shinka extension.** Compare the frozen searched configuration against the original GA and a search-budget-matched random hyperparameter search. Preserve ES and PPO as reference learners. Report individual trial outcomes as well as aggregates, and account for search cost.
 5. **Expand after baseline validation.** Add other task variations and environments, continual PPO variants, and neighborhood analysis. Adaptive mutation or selection rules are a later search space requiring their own interface and controlled comparisons.
 
