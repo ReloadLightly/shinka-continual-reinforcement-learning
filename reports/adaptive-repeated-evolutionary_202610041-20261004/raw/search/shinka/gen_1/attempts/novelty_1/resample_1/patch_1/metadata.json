@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_width_target",
+  "patch_description": "Adapt mutation width toward a bounded target that decreases as fitness improves. Low population diversity and stalled progress raise exploration, while a fitness drop relative to recent memory raises it more quickly. Smoothed archive-relative success provides a modest adjustment rather than acting as parent-matched success. Memory initializes from observed statistics and persists without assuming a switch schedule.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T11:56:17.529438",
+  "llm_cost": 0.0170088,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

@@ -1,0 +1,27 @@
+# EVOLVE-BLOCK-START
+def update_sigma(sigma, stats, memory):
+    fitness = clip(stats[0], 0.0, 1.0)
+    archive = clip(stats[3], 0.0, 1.0)
+    success = clip(stats[4], 0.0, 1.0)
+    spread = clip(stats[1], 0.0, 1.0)
+    previous_fitness = where(memory[3] > 0.0, memory[0], fitness)
+    previous_archive = where(memory[3] > 0.0, memory[1], archive)
+    progress = fitness - previous_fitness
+    deterioration = maximum(previous_fitness - fitness, 0.0)
+    archive_loss = maximum(previous_archive - archive, 0.0)
+    shock = clip(deterioration + 0.5 * archive_loss, 0.0, 1.0)
+    stagnation = clip(1.0 - 25.0 * maximum(progress, 0.0), 0.0, 1.0)
+    pressure = stagnation * (1.0 - fitness) * (1.0 - success)
+    exploration = clip(0.9 * memory[2] + 0.1 * pressure, 0.0, 1.0)
+    gap = 1.0 - fitness
+    target = 0.02 + 0.5 * gap * gap + 0.25 * exploration
+    target = target + 1.1 * shock + 0.12 * spread
+    target = clip(target * exp(0.3 * (success - 0.35)), 0.005, 1.5)
+    response = clip(0.18 + 1.8 * shock, 0.18, 0.65)
+    safe_sigma = clip(sigma, 0.001, 2.0)
+    next_sigma = exp((1.0 - response) * log(safe_sigma) + response * log(target))
+    fitness_average = 0.8 * previous_fitness + 0.2 * fitness
+    archive_average = 0.8 * previous_archive + 0.2 * archive
+    next_memory = stack([fitness_average, archive_average, exploration, 1.0])
+    return next_sigma, next_memory
+# EVOLVE-BLOCK-END

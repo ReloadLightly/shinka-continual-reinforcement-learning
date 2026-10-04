@@ -1,0 +1,14 @@
+<NAME>
+stagnant_elite_refinement
+</NAME>
+<DESCRIPTION>
+Reduce mutation width when progress stalls but the best individual substantially outperforms the population mean. This encourages refinement around successful policies and may improve active-task centroid return. Gate this extra reduction by stagnation so improving populations retain exploration; preserve the existing archive feedback and fitness-drop response. This is an untested candidate.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    difficulty = 1.0 - fitness - 0.6 * archive_advantage
+=======
+    elite_advantage = maximum(clip(stats[2], 0.0, 1.0) - fitness, 0.0)
+    difficulty = 1.0 - fitness - 0.6 * archive_advantage - 0.2 * elite_advantage * stagnation
+>>>>>>> REPLACE
+</DIFF>

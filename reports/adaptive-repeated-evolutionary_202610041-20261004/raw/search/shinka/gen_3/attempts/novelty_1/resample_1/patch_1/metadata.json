@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "stagnant_elite_refinement",
+  "patch_description": "Reduce mutation width when progress stalls but the best individual substantially outperforms the population mean. This encourages refinement around successful policies and may improve active-task centroid return. Gate this extra reduction by stagnation so improving populations retain exploration; preserve the existing archive feedback and fitness-drop response. This is an untested candidate.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:02:13.276232",
+  "llm_cost": 0.0224788,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

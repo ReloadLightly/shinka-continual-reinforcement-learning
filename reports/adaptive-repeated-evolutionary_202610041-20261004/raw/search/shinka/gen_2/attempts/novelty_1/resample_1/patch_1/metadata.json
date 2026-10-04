@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "archive_guided_difficulty",
+  "patch_description": "Use the re-scored archive to distinguish poor population fitness from mutation-induced damage. When the archive outperforms the whole batch, reduce estimated difficulty and therefore the target mutation width. This may improve centroid performance by limiting disruptive exploration around strong archived policies. When both archive and population perform poorly, the existing exploration and fitness-drop response remain intact. The archive is evaluated on the current task, so this rule requires no task identity or switch schedule.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T11:59:23.711439",
+  "llm_cost": 0.0235648,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

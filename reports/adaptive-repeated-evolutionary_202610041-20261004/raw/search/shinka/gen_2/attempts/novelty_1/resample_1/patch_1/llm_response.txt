@@ -1,0 +1,14 @@
+<NAME>
+archive_guided_difficulty
+</NAME>
+<DESCRIPTION>
+Use the re-scored archive to distinguish poor population fitness from mutation-induced damage. When the archive outperforms the whole batch, reduce estimated difficulty and therefore the target mutation width. This may improve centroid performance by limiting disruptive exploration around strong archived policies. When both archive and population perform poorly, the existing exploration and fitness-drop response remain intact. The archive is evaluated on the current task, so this rule requires no task identity or switch schedule.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    difficulty = 1.0 - fitness
+=======
+    archive_advantage = maximum(clip(stats[3], 0.0, 1.0) - fitness, 0.0)
+    difficulty = 1.0 - fitness - 0.6 * archive_advantage
+>>>>>>> REPLACE
+</DIFF>

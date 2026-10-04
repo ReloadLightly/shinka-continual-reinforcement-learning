@@ -1,0 +1,15 @@
+{
+  "generation": 1,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_width_recovery",
+  "patch_description": "Adapt mutation width to population quality, smoothed archive-relative success, and fitness declines. Strong populations receive smaller mutations for refinement; declines relative to remembered population or archive fitness temporarily widen exploration. Memory initializes from observed statistics and persists across switches, allowing recovery without task identifiers or a fixed schedule. This is a proposed heuristic; its combined-score improvement requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:10:48.813024",
+  "llm_cost": 0.0173428,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_1/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

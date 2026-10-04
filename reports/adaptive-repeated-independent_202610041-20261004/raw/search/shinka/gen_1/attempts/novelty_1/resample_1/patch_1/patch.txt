@@ -1,0 +1,20 @@
+--- a/original.py
++++ b/original.py
+@@ -1,4 +1,16 @@
+ # EVOLVE-BLOCK-START
+ def update_sigma(sigma, stats, memory):
+-    return sigma, memory
++    prior_mean = where(memory[3] > 0.0, memory[0], stats[0])
++    prior_archive = where(memory[3] > 0.0, memory[1], stats[3])
++    prior_success = where(memory[3] > 0.0, memory[2], stats[4])
++    mean_trace = 0.85 * prior_mean + 0.15 * stats[0]
++    archive_trace = 0.85 * prior_archive + 0.15 * stats[3]
++    success_trace = 0.75 * prior_success + 0.25 * stats[4]
++    decline = clip(maximum(prior_mean - stats[0], prior_archive - stats[3]), 0.0, 1.0)
++    quality = clip(0.6 * stats[0] + 0.4 * stats[2], 0.0, 1.0)
++    target = 0.025 + 0.4 * (1.0 - quality) * (1.0 - quality) + 0.8 * decline
++    adjustment = 0.2 * log(target / maximum(sigma, 0.001)) + 0.12 * (success_trace - 0.3)
++    next_sigma = clip(sigma * exp(clip(adjustment, -0.4, 0.4)), 0.001, 2.0)
++    next_memory = stack([mean_trace, archive_trace, success_trace, 1.0])
++    return next_sigma, next_memory
+ # EVOLVE-BLOCK-END

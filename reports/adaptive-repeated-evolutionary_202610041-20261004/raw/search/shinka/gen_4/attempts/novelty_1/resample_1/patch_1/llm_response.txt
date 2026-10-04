@@ -1,0 +1,21 @@
+<NAME>
+archive_confirmed_reheating
+</NAME>
+<DESCRIPTION>
+Require declining re-scored archive fitness to confirm reheating. A falling batch mean can result from overly broad mutations even while the archive remains strong; increasing sigma then can amplify the decline. Store smoothed archive fitness in the fourth memory slot, retaining its initialization role through a 1.0 offset. This preserves reheating when both population and archive performance deteriorate, using feedback without assuming a task-switch schedule.
+</DESCRIPTION>
+<DIFF>
+<<<<<<< SEARCH
+    drop = maximum(previous - fitness, 0.0)
+=======
+    archive_fitness = clip(stats[3], 0.0, 1.0)
+    previous_archive = where(memory[3] > 0.5, memory[3] - 1.0, archive_fitness)
+    archive_drop = maximum(previous_archive - archive_fitness, 0.0)
+    drop = minimum(maximum(previous - fitness, 0.0), 1.5 * archive_drop)
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+    next_memory = stack([0.65 * previous + 0.35 * fitness, trend, success, 1.0])
+=======
+    next_memory = stack([0.65 * previous + 0.35 * fitness, trend, success, 1.0 + 0.65 * previous_archive + 0.35 * archive_fitness])
+>>>>>>> REPLACE
+</DIFF>

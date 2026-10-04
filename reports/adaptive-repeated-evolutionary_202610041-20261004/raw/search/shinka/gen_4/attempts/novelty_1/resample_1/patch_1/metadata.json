@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 2,
+  "patch_name": "archive_confirmed_reheating",
+  "patch_description": "Require declining re-scored archive fitness to confirm reheating. A falling batch mean can result from overly broad mutations even while the archive remains strong; increasing sigma then can amplify the decline. Store smoothed archive fitness in the fourth memory slot, retaining its initialization role through a 1.0 offset. This preserves reheating when both population and archive performance deteriorate, using feedback without assuming a task-switch schedule.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:06:08.602482",
+  "llm_cost": 0.0187248,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

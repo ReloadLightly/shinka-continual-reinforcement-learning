@@ -1,0 +1,81 @@
+{
+  "analysis_version": 1,
+  "method": "ga",
+  "profile": "adaptive-search",
+  "condition": "switching",
+  "seed": 6002,
+  "trial": 6003,
+  "agent_source": "centroid",
+  "episodes": 10,
+  "eval_seed": 906002,
+  "num_phases": 4,
+  "phase_sequence": [
+    0,
+    1,
+    0,
+    1
+  ],
+  "nominal_training_steps": 7680000,
+  "steps_per_update": 96000,
+  "metrics": {
+    "learning_accuracy": 377.35,
+    "forgetting": -163.53333333333333,
+    "zero_shot_transfer": 336.3666666666667,
+    "learning_minus_forgetting": 540.8833333333333,
+    "cumulative_reward_steps": 2116384006.7138672,
+    "cumulative_reward_generation_equivalents": 22045.666736602783,
+    "cumulative_reward_steps_exact": 2116384006.7138672,
+    "normalized_curve_average": 0.5511416684150696
+  },
+  "phase_returns": [
+    {
+      "phase": 0,
+      "task": 0,
+      "checkpoint_completed_steps": 1920000,
+      "own_mean": 9.4,
+      "previous_mean": null,
+      "next_mean": 9.1
+    },
+    {
+      "phase": 1,
+      "task": 1,
+      "checkpoint_completed_steps": 3840000,
+      "own_mean": 500.0,
+      "previous_mean": 500.0,
+      "next_mean": 500.0
+    },
+    {
+      "phase": 2,
+      "task": 0,
+      "checkpoint_completed_steps": 5760000,
+      "own_mean": 500.0,
+      "previous_mean": 500.0,
+      "next_mean": 500.0
+    },
+    {
+      "phase": 3,
+      "task": 1,
+      "checkpoint_completed_steps": 7680000,
+      "own_mean": 500.0,
+      "previous_mean": 500.0,
+      "next_mean": null
+    }
+  ],
+  "phase_training_returns": [
+    56.06666979789734,
+    58.46666703224182,
+    500.0,
+    500.0
+  ],
+  "clock": {
+    "record_timing": "after_update",
+    "raw_generation_labels": "zero_based",
+    "completed_steps": "(generation + 1) * steps_per_update",
+    "integration": "pinned_unit_NE_generation_grid_trapezoid",
+    "reference_steps_per_generation": 96000,
+    "integration_grid_points": 81,
+    "edge_values": "constant_first_and_last_logged_return",
+    "initial_untrained_policy_evaluated": false
+  },
+  "transfer_interpretation": "consecutive_switches_including_both_directions"
+}

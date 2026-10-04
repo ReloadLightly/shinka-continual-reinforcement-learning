@@ -1,0 +1,15 @@
+{
+  "generation": 2,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_width_recovery",
+  "patch_description": "Adapt mutation width to fitness, stalled progress, and declines in archive performance. Smoothed feedback raises exploration when low fitness stops improving or the archive deteriorates, while strong fitness narrows mutations. Gradual width changes and an initialization gate limit reactions to noise and zero-filled memory. This rule uses no task schedule; its effect on combined_score requires evaluation.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:13:37.860147",
+  "llm_cost": 0.0148428,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_2/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

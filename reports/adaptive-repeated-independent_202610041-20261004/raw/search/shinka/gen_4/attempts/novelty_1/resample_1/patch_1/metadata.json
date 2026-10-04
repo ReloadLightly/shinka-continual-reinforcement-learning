@@ -1,0 +1,15 @@
+{
+  "generation": 4,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_exploration_recovery",
+  "patch_description": "Adapt mutation width to current fitness, increasing exploration when progress stalls and temporarily widening mutations when archive fitness drops. Persistent moving averages detect these changes without task labels or a switch schedule. As fitness approaches the ceiling, the target width shrinks to support precise refinement. Bounded logarithmic updates smooth transitions; archive-relative offspring success provides a modest correction. This is an untested candidate for the combined objective.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:22:29.289562",
+  "llm_cost": 0.0152588,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_4/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

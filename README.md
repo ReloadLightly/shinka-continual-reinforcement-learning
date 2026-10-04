@@ -658,8 +658,15 @@ across task draws; they are not fresh finalist results. Both static controls,
 all seed outcomes, score components, dispersion, and exact settings are retained
 in the [control evidence](reports/adaptive-repeated-controls-20261004/summary.json)
 and [frozen plan](reports/adaptive-repeated-controls-20261004/raw/plan.json).
-The paired program searches are in progress; the new evaluation partition
-remains untouched.
+The first paired search repetition is complete. Its development-selected
+evolutionary rule scores 0.8191, compared with 0.8000 for the independent-proposal
+winner. Each arm evaluates four new proposals on three development seeds,
+adding 24 training trials in total; identity evaluations are reused. These
+selected development maxima do not estimate performance on new tasks.
+[Evolutionary archive](reports/adaptive-repeated-evolutionary_202610041-20261004/summary.json) ·
+[Independent archive](reports/adaptive-repeated-independent_202610041-20261004/summary.json).
+The second repetition is in progress; the new evaluation partition remains
+untouched until all four finalists are frozen together.
 
 ### Computational budget
 
@@ -675,6 +682,7 @@ remains untouched.
 | Adaptive program search | 60 | 460.80 × 10⁶ |
 | Adaptive finalist validation | 30 | 921.60 × 10⁶ |
 | Repeated-study fixed controls | 15 | 115.20 × 10⁶ |
+| Repeated-study program search, first paired repetition | 24 | 184.32 × 10⁶ |
 
 *Table 12. Training allocation consumed by the scientific experiments.
 GA/ES counts use the episode cap and are nominal, not realized episode lengths.
@@ -694,9 +702,11 @@ costs remain in the supplementary evidence. Sources and exact protocols:
 [adaptive controls](reports/adaptive-controls-20261003/summary.json),
 [adaptive search](reports/adaptive-endpoint-complete-20261003/summary.json),
 [adaptive validation](reports/adaptive-validation-complete-20261003/summary.json),
-[repeated-study controls](reports/adaptive-repeated-controls-20261004/summary.json).
-The repeated-study row excludes the ongoing program searches and their later
-fresh evaluation.*
+[repeated-study controls](reports/adaptive-repeated-controls-20261004/summary.json),
+[first evolutionary search](reports/adaptive-repeated-evolutionary_202610041-20261004/summary.json),
+[first independent search](reports/adaptive-repeated-independent_202610041-20261004/summary.json).
+The repeated-study rows exclude the ongoing second search repetition and its
+later fresh evaluation.*
 
 The [ten completed reporting trials](reports/reference-reporting-ga-es-pair05-20261004/summary.json)
 recorded 14,788.6 s of training and 136.4 s of fresh evaluation, with a maximum

@@ -1,0 +1,15 @@
+{
+  "generation": 3,
+  "novelty_attempt": 1,
+  "resample_attempt": 1,
+  "patch_attempt": 1,
+  "success": true,
+  "num_applied": 1,
+  "patch_name": "feedback_target_controller",
+  "patch_description": "Replaces the identity update with a bounded target-width controller. Persistent fitness averages detect deterioration, while accumulated stagnation encourages exploration. Width contracts as fitness improves and responds faster to deterioration, without task identifiers or switch timing.",
+  "error_msg": null,
+  "timestamp": "2026-10-04T12:18:33.993374",
+  "llm_cost": 0.0267548,
+  "llm_model": "headless/codex?effort=medium",
+  "headless_prompt_path": "$SEARCH/shinka/gen_3/attempts/novelty_1/resample_1/patch_1/headless_prompt.md"
+}

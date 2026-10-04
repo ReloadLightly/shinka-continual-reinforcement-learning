@@ -1,0 +1,19 @@
+# EVOLVE-BLOCK-START
+def update_sigma(sigma, stats, memory):
+    ready = clip(memory[3], 0.0, 1.0)
+    fitness = clip(stats[0], 0.0, 1.0)
+    progress = ready * (fitness - memory[0])
+    decline = ready * maximum(memory[1] - stats[3], 0.0)
+    success = ready * memory[2] + (1.0 - ready) * stats[4]
+    stalled = exp(-30.0 * abs(progress))
+    difficulty = 1.0 - fitness
+    recovery = tanh(5.0 * decline)
+    target = 0.025 + 0.20 * difficulty * difficulty + 0.15 * difficulty * stalled + 0.40 * recovery
+    adjustment = exp(0.20 * (clip(success, 0.0, 1.0) - 0.5))
+    next_sigma = clip(0.80 * sigma + 0.20 * target * adjustment, 0.001, 2.0)
+    mean_memory = fitness + 0.85 * ready * (memory[0] - fitness)
+    archive_memory = stats[3] + 0.85 * ready * (memory[1] - stats[3])
+    success_memory = stats[4] + 0.75 * ready * (memory[2] - stats[4])
+    next_memory = stack([mean_memory, archive_memory, success_memory, 1.0])
+    return next_sigma, next_memory
+# EVOLVE-BLOCK-END

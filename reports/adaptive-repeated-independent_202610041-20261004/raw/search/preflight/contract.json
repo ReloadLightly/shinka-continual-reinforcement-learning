@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "purpose": "Native scheduler cache check",
+  "new_training_trials": 0,
+  "model_calls": 0,
+  "command": [
+    "$REPO_ROOT/.venv/bin/python",
+    "-c",
+    "\nimport sys\nfrom shinka.launch.scheduler import JobScheduler, LocalJobConfig\nscheduler = JobScheduler(job_type='local', config=LocalJobConfig(\n    eval_program_path=sys.argv[1], numeric_threads_per_job=1, time='00:02:00'), verbose=False)\nresults, duration = scheduler.run(sys.argv[2], sys.argv[3])\nif not results.get('correct', {}).get('correct'):\n    raise SystemExit('Native scheduler identity preflight failed')\n",
+    "$SEARCH/task/evaluate.py",
+    "$SEARCH/task/initial.py",
+    "$SEARCH/preflight/results"
+  ],
+  "returncode": 0,
+  "stop_reason": null,
+  "wall_seconds": 2.50165636400925
+}
